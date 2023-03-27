@@ -5,16 +5,25 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
+    background: linear-gradient(106.5deg, rgba(255, 215, 185, 0.91) 23%, rgba(223, 159, 247, 0.8) 93%);
 }
 
+.FormPassword {
+    display: block;
+    width: calc(100% - 40px);
+    height: calc(100vh - 200px);
+    padding: 200px 20px 0 20px;
+}
 #password-container {
     margin: 50px auto;
     text-align: center;
 }
 
 #password-input {
-    font-size: 24px;
-    padding: 10px;
+    width: 250px;
+    font-size: 30px;
+    padding: 14px 0 0 0;
+    text-align: center;
 }
 
 #keypad-container {
@@ -22,22 +31,23 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    margin: 20px 60px;
-    width: calc(100% - 120px);
+    margin: 20px 50px;
+    width: calc(100% - 100px);
 }
 
 .key {
     background-color: #e0e0e0;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     color: #333;
-    font-size: 24px;
-    height: 60px;
+    font-size: 30px;
+    height: 70px;
+    font-weight: bold;
 }
 
 .key:hover {
-    background-color:
-        #bbb;
+    /* background-color:
+        #bbb; */
     cursor: pointer;
 }
 
@@ -120,4 +130,11 @@ body {
 
 .Home {
     text-align: center;
+}
+
+#lock-button {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    margin: 20px;
 }
