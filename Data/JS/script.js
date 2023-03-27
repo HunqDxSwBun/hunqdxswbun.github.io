@@ -58,11 +58,55 @@ if (localStorage.getItem("password") !== null) {
   showMyLove();
 }
 
-window.addEventListener("beforeunload", function() {
-  if (myLove.style.display === "block") {
-    localStorage.setItem("password", password);
-  } else {
-    localStorage.removeItem("password");
+// Lưu trữ trạng thái của trang web
+function storeStateInLocalStorage(state) {
+	localStorage.setItem('my-web-page-state', JSON.stringify(state));
   }
-});
-
+  
+  // Lấy trạng thái của trang web từ localStorage
+  function getStateFromLocalStorage() {
+	const state = localStorage.getItem('my-web-page-state');
+	return state ? JSON.parse(state) : null;
+  }
+  
+  // Sử dụng localStorage để lưu trữ thông tin mật khẩu
+  function savePasswordToLocalStorage(password) {
+	localStorage.setItem('my-web-page-password', password);
+  }
+  
+  // Kiểm tra mật khẩu đã được lưu trữ trong localStorage hay chưa
+  function checkPasswordInLocalStorage() {
+	const password = localStorage.getItem('my-web-page-password');
+	if (password === "150721") {
+	  showMyLove();
+	}
+  }
+  
+  // Kiểm tra trạng thái của trang web khi tải lại
+  window.addEventListener('load', () => {
+	const state = getStateFromLocalStorage();
+	if (state) {
+	  if (state.isMyLoveVisible) {
+		showMyLove();
+	  } else {
+		hideMyLove();
+	  }
+	  passwordInput.value = state.passwordInputValue;
+	  password = state.password;
+	} else {
+	  passwordInput.value = "";
+	  password = "";
+	}
+  
+	checkPasswordInLocalStorage();
+  });
+  
+  // Lưu trạng thái của trang web trước khi tải lại
+  window.addEventListener('beforeunload', () => {
+	storeStateInLocalStorage({
+	  isMyLoveVisible: myLove.style.display === "block",
+	  passwordInputValue: passwordInput.value,
+	  password: password
+	});
+  });
+  
