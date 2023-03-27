@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-body{
-    background-color: #000;
-    
-}
-img {
-width: 100%;
-max-height:100%;
-  border-radius: 8px;
-}
-</style>
+  <title>Mật khẩu</title>
+
+  <!-- Bộ giải mã và phân loại thiết bị -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- CSS của web -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
+  <div class="FormPassword">
+    <div id="password-container">
+      <h1>Mật khẩu:</h1>
+      <input type="text" id="password-input" disabled>
+    </div>
+    <div id="keypad-container">
+      <button class="key" id="key-1">1</button>
+      <button class="key" id="key-2">2</button>
+      <button class="key" id="key-3">3</button>
+      <button class="key" id="key-4">4</button>
+      <button class="key" id="key-5">5</button>
+      <button class="key" id="key-6">6</button>
+      <button class="key" id="key-7">7</button>
+      <button class="key" id="key-8">8</button>
+      <button class="key" id="key-9">9</button>
+      <button class="key" id="key-clear">Xoá</button>
+      <button class="key" id="key-0">0</button>
+      <button class="key" id="key-ok">OK</button>
+    </div>
+  </div>
 
-<img src="https://hunqdxswbun.github.io/32A1C0E7-3C35-4C52-A376-B6FE30682CBF.jpeg" alt="img" >
+  <div class="MyLove" style="display:none">
+    
+    <div class="Home">
+      <div class="DaysLove" id="DaysLove">
+        <div class="progress-bar">
+          <div>
+            <h5>Hiện tại</h5>
+            <h1 class="timeel days" id="iDaysLove">365</h1>
+            <span class="timeel hours">16</span>
+            <span class="timeel timeRefHours">:</span>
+            <span class="timeel minutes">41</span>
+            <span class="timeel timeRefMinutes">:</span>
+            <span class="timeel seconds">23</span>
+            <span class="timeel timeRefSeconds"></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
+
+
+
+    <div class="Timeline" style="display: none;">
+      <div class="Memory"></div>
+      <div class="UpComing"></div>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div id="upcoming-events" style="display: none;"></div>
+
+
+
+
+
+    <button id="lock-button">Khoá</button>
+  </div>
 </body>
+
+<script src="./Data/JS/script.js"></script>
+<script src="./Data/JS/Event.js"></script>
+
 </html>
-
-
-
-
