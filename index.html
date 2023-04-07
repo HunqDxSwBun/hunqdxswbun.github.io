@@ -15,22 +15,39 @@
     <link rel="apple-touch-icon" href="./Data/icon/Logo.png" sizes="150x150" />
 
     <!-- CSS của web -->
-    <link rel="stylesheet" type="text/css" href="./Data/style.css">
+    <link rel="stylesheet" type="text/css" href="./Data/Css/style.css">
     <!-- FontAweSome fas fa icon -->
     <script src="https://kit.fontawesome.com/9392097706.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <div class="container">
-		<h1>Điểm danh mỗi ngày</h1>
-		<p>Bấm nút bên dưới để điểm danh hôm nay:</p>
-		<button id="btn-diem-danh" onclick="diemDanh()">Điểm danh</button>
-        <br>
-        <!-- <button id="btn-xoa-diem-danh" onclick="xoaDaDiemDanh()">Xoá điểm danh</button> -->
-		<p id="da-diem-danh"></p>
-        
-	</div>
+    <div class="ThongBao"></div>
+
+    <div class="ChaoMung">
+        <h1>Vui lòng chọn nhân vật</h1>
+        <div class="ChonNhanVat">
+            <div class="NhanVat">
+                <img src="./Data/img/Chapter/SwBun.GIF" alt="Em Yêu ❤" srcset="">
+            </div>
+            <div class="NhanVat">
+                <img src="./Data/img/Chapter/HunqD.GIF" alt="Anh Yêu ❤" srcset="">
+            </div>
+        </div>
+        <button id="XacNhanNhanVat">Xác Nhận</button>
+    </div>
+    <div class="Home">
+        <div class="DaysLove" id="days"></div>
+       
+        <div class="CapNhatSapToi">
+            <p>Sắp tới anh sẽ cố gắng vào những lúc rảnh để hoàn thiện trang web này.</p>
+            <p>Sẽ bao gồm điểm danh hằng ngày, game trồng cây và anh nghĩ khả năng dễ nhất anh có thể làm là 1 cây 😅. Nên anh mong em sẽ thích nó.</p>
+        </div>
+        <button onclick="Reset()">Chọn lại nhân vật</button>
+    </div>
+
+
+  
 </body>
 <script src="./Data/Js/script.js"></script>
 

@@ -1,52 +1,81 @@
-function diemDanh() {
-    var btn = document.getElementById("btn-diem-danh");
-    var daDiemDanh = document.getElementById("da-diem-danh");
-
-    if (localStorage.getItem("daDiemDanh") === null) {
-        localStorage.setItem("daDiemDanh", "[]");
-    }
-
-    var ngayHienTai = new Date().toLocaleDateString();
-    var daDiemDanhArr = JSON.parse(localStorage.getItem("daDiemDanh"));
-
-    if (daDiemDanhArr.includes(ngayHienTai)) {
-        alert("Bạn đã điểm danh hôm nay rồi!");
-    } else {
-        daDiemDanhArr.push(ngayHienTai);
-        localStorage.setItem("daDiemDanh", JSON.stringify(daDiemDanhArr));
-        btn.style.display = "none";
-        daDiemDanh.innerText = "Bạn đã điểm danh " + daDiemDanhArr.length;
-    }
+var nhanVats = document.querySelectorAll(".NhanVat");
+for (var i = 0; i < nhanVats.length; i++) {
+    nhanVats[i].addEventListener("click", function () {
+        var chonNhanVat = document.querySelector(".NhanVat.Chon");
+        if (chonNhanVat) {
+            chonNhanVat.classList.remove("Chon");
+        }
+        this.classList.add("Chon");
+        document.querySelector("#XacNhanNhanVat").style.display = "block";
+    });
 }
 
-function kiemTraDaDiemDanh() {
-    var btn = document.getElementById("btn-diem-danh");
-    var daDiemDanh = document.getElementById("da-diem-danh");
-
-    if (localStorage.getItem("daDiemDanh") === null) {
-        localStorage.setItem("daDiemDanh", "[]");
-    }
-
-    var daDiemDanhArr = JSON.parse(localStorage.getItem("daDiemDanh"));
-    var ngayHienTai = new Date().toLocaleDateString();
-
-    if (daDiemDanhArr.includes(ngayHienTai)) {
-        btn.style.display = "none";
-        daDiemDanh.innerText = "Bạn đã điểm danh " + daDiemDanhArr.length + " ngày liên tiếp!";
+document.querySelector("#XacNhanNhanVat").addEventListener("click", function () {
+    var chonNhanVat = document.querySelector(".NhanVat.Chon");
+    if (chonNhanVat) {
+        var tenNhanVat = chonNhanVat.querySelector("img").alt;
+        localStorage.setItem("tenNhanVat", tenNhanVat);
+        document.querySelector(".ChaoMung").style.display = "none";
+        document.querySelector(".Home").style.display = "block";
+        console.log("Đã chọn nhân vật: " + tenNhanVat);
+        ThongBao('Đã chọn nhân vật ' + tenNhanVat );
+   
     } else {
-        btn.style.display = "block";
-        daDiemDanh.innerText = "";
+        console.log("Vui lòng chọn một nhân vật.");
     }
+});
+
+var tenNhanVat = localStorage.getItem("tenNhanVat");
+if (tenNhanVat) {
+    console.log("Đã chọn nhân vật: " + tenNhanVat);
+    document.querySelector(".ChaoMung").style.display = "none";
+    document.querySelector(".Home").style.display = "block";
 }
 
-function xoaDaDiemDanh() {
+function CapNhatNhanVat() {
+    if (tenNhanVat == 'Em Yêu ❤') {
+        var imgNhanVat = './Data/img/Chapter/SwBun.GIF'
+    }
+    if (tenNhanVat == 'Anh Yêu ❤') {
+        var imgNhanVat = './Data/img/Chapter/HunqD.GIF'
+    }
+    var NhanVat =  document.querySelector("#NhanVat");
+    NhanVat.innerHTML = '<img src="'+ imgNhanVat +'" alt="" srcset="">'
+    
+}
+
+function Reset() {
     localStorage.removeItem("daDiemDanh");
-    var daDiemDanh = document.getElementById("da-diem-danh");
-    daDiemDanh.innerText = "";
-    var btn = document.getElementById("btn-diem-danh");
-    btn.style.display = "block";
-    var btnXoa = document.getElementById("btn-xoa");
-    btnXoa.style.display = "none";
+    // localStorage.clear();
+    localStorage.removeItem("tenNhanVat");
+    document.querySelector("#XacNhanNhanVat").style.display = "none";
+    document.querySelector(".ChaoMung").style.display = "flex";
+    document.querySelector(".Home").style.display = "none";
 }
 
-kiemTraDaDiemDanh(); 
+function ThongBao(noidung) {
+    var ThongBao =  document.querySelector(".ThongBao");
+    ThongBao.style.display = 'block'
+    ThongBao.innerHTML = '<p>'+ noidung +'</p>'
+    setTimeout(() => {
+        ThongBao.style.display = 'none'
+    }, 2000);
+}
+DemNgayYeu();
+
+function DemNgayYeu() {
+// Lấy ngày hiện tại
+var today = new Date();
+
+// Lấy ngày 1/1/2021
+var startDate = new Date(2021, 0, 1);
+
+// Tính số ngày kể từ ngày 1/1/2021 đến ngày hiện tại
+var daysCount = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+
+// Hiển thị số ngày lên trang web
+document.getElementById("days").innerHTML = daysCount;
+setTimeout(() => {
+    DemNgayYeu()
+}, 1000);
+}
