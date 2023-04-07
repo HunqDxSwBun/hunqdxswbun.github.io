@@ -1,112 +1,52 @@
+function diemDanh() {
+    var btn = document.getElementById("btn-diem-danh");
+    var daDiemDanh = document.getElementById("da-diem-danh");
 
-var password = "";
-var passwordInput = document.getElementById("password-input");
-var keypad = document.getElementById("keypad-container");
-var myLove = document.querySelector(".MyLove");
-var lockButton = document.getElementById("lock-button");
+    if (localStorage.getItem("daDiemDanh") === null) {
+        localStorage.setItem("daDiemDanh", "[]");
+    }
 
-function showMyLove() {
-	myLove.style.display = "block";
-	document.querySelector('.FormPassword').style.display = 'none';
+    var ngayHienTai = new Date().toLocaleDateString();
+    var daDiemDanhArr = JSON.parse(localStorage.getItem("daDiemDanh"));
+
+    if (daDiemDanhArr.includes(ngayHienTai)) {
+        alert("Bạn đã điểm danh hôm nay rồi!");
+    } else {
+        daDiemDanhArr.push(ngayHienTai);
+        localStorage.setItem("daDiemDanh", JSON.stringify(daDiemDanhArr));
+        btn.style.display = "none";
+        daDiemDanh.innerText = "Bạn đã điểm danh " + daDiemDanhArr.length;
+    }
 }
 
-function hideMyLove() {
-	myLove.style.display = "none";
-	document.querySelector('.FormPassword').style.display = 'block';
-	password = "";
-	passwordInput.value = "";
+function kiemTraDaDiemDanh() {
+    var btn = document.getElementById("btn-diem-danh");
+    var daDiemDanh = document.getElementById("da-diem-danh");
+
+    if (localStorage.getItem("daDiemDanh") === null) {
+        localStorage.setItem("daDiemDanh", "[]");
+    }
+
+    var daDiemDanhArr = JSON.parse(localStorage.getItem("daDiemDanh"));
+    var ngayHienTai = new Date().toLocaleDateString();
+
+    if (daDiemDanhArr.includes(ngayHienTai)) {
+        btn.style.display = "none";
+        daDiemDanh.innerText = "Bạn đã điểm danh " + daDiemDanhArr.length + " ngày liên tiếp!";
+    } else {
+        btn.style.display = "block";
+        daDiemDanh.innerText = "";
+    }
 }
 
-lockButton.addEventListener("click", function() {
-	hideMyLove();
-});
-
-if (localStorage.getItem("password") !== null) {
-	password = localStorage.getItem("password");
-	passwordInput.value = "*".repeat(password.length);
+function xoaDaDiemDanh() {
+    localStorage.removeItem("daDiemDanh");
+    var daDiemDanh = document.getElementById("da-diem-danh");
+    daDiemDanh.innerText = "";
+    var btn = document.getElementById("btn-diem-danh");
+    btn.style.display = "block";
+    var btnXoa = document.getElementById("btn-xoa");
+    btnXoa.style.display = "none";
 }
 
-keypad.addEventListener("click", function(event) {
-	var key = event.target;
-	var keyValue = key.innerHTML;
-
-	if (keyValue === "Xoá") {
-		password = "";
-		passwordInput.value = "";
-	} else if (keyValue === "OK") {
-		if (password === "150721") {
-			alert("Đăng nhập thành công!");
-			localStorage.setItem("password", password);
-			showMyLove();
-		} else {
-			alert("Sai mật khẩu!");
-			password = "";
-			passwordInput.value = "";
-		}
-	} else {
-		password += keyValue;
-		passwordInput.value += "*";
-		if (password === "150721") {
-			localStorage.setItem("password", password);
-			showMyLove();
-		}
-	}
-});
-if (localStorage.getItem("password") !== null) {
-  password = localStorage.getItem("password");
-  passwordInput.value = "*".repeat(password.length);
-  showMyLove();
-}
-
-// Lưu trữ trạng thái của trang web
-function storeStateInLocalStorage(state) {
-	localStorage.setItem('my-web-page-state', JSON.stringify(state));
-  }
-  
-  // Lấy trạng thái của trang web từ localStorage
-  function getStateFromLocalStorage() {
-	const state = localStorage.getItem('my-web-page-state');
-	return state ? JSON.parse(state) : null;
-  }
-  
-  // Sử dụng localStorage để lưu trữ thông tin mật khẩu
-  function savePasswordToLocalStorage(password) {
-	localStorage.setItem('my-web-page-password', password);
-  }
-  
-  // Kiểm tra mật khẩu đã được lưu trữ trong localStorage hay chưa
-  function checkPasswordInLocalStorage() {
-	const password = localStorage.getItem('my-web-page-password');
-	if (password === "150721") {
-	  showMyLove();
-	}
-  }
-  
-  // Kiểm tra trạng thái của trang web khi tải lại
-  window.addEventListener('load', () => {
-	const state = getStateFromLocalStorage();
-	if (state) {
-	  if (state.isMyLoveVisible) {
-		showMyLove();
-	  } else {
-		hideMyLove();
-	  }
-	  passwordInput.value = state.passwordInputValue;
-	  password = state.password;
-	} else {
-	  passwordInput.value = "";
-	  password = "";
-	}
-  
-	checkPasswordInLocalStorage();
-  });
-  
-  // Lưu trạng thái của trang web trước khi tải lại
-  window.addEventListener('beforeunload', () => {
-	storeStateInLocalStorage({
-	  isMyLoveVisible: myLove.style.display === "block",
-	  passwordInputValue: passwordInput.value,
-	  password: password
-	});
-  });
-  
+kiemTraDaDiemDanh(); 
