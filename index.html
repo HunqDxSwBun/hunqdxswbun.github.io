@@ -22,7 +22,54 @@
 </head>
 
 <body>
+    <div class="ChucNang">
+        <div class="NutChucNang">
+            <img src="./Data/img/Menu/task-actions.png" alt="" srcset="">
+        </div>
+        <div class="NutChucNang">
+            <img src="./Data/img/Menu/plant.png" alt="" srcset="">
+        </div>
+        <div class="NutChucNang">
+            <img src="./Data/img/Menu/fish.png" alt="" srcset="">
+        </div>
+        <div class="NutChucNang">
+            <img src="./Data/img/Menu/settings.png" alt="" srcset="">
+        </div>
+    </div>
+    <div class="DuLieuTroChoi">
+        <div class="DL CapDo">
+            <div>
+                <img class="icon" src="./Data/img/Menu/DataGame/level-up.png" alt="" srcset="">
+            </div>
+            <div>
+                10
+            </div>
+        </div>
+        <div class="DL Nuoc">
+            <div>
+                <img class="icon" src="./Data/img/Menu/DataGame/water-drop.png" alt="" srcset="">
+            </div>
+            <div>
+                1000
+            </div>
+        </div>
+        <div class="DL Xu">
+            <div>
+                <img class="icon" src="./Data/img/Menu/DataGame/coin.png" alt="" srcset="">
+            </div>
+            <div>
+                1000
+            </div>
+        </div>
+    </div>
+
     <div class="ThongBao"></div>
+    <div class="NhacNen">
+        <audio id="myAudio" >
+            <source src="./Data/Music/Theme1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+    </div>
 
     <div class="ChaoMung">
         <h1>Vui lòng chọn nhân vật</h1>
@@ -36,19 +83,27 @@
         </div>
         <button id="XacNhanNhanVat">Xác Nhận</button>
     </div>
-    <div class="Home">
-        <div class="DaysLove" id="days"></div>
-       
-        <div class="CapNhatSapToi">
-            <p>Sắp tới anh sẽ cố gắng vào những lúc rảnh để hoàn thiện trang web này.</p>
-            <p>Sẽ bao gồm điểm danh hằng ngày, game trồng cây và anh nghĩ khả năng dễ nhất anh có thể làm là 1 cây 😅. Nên anh mong em sẽ thích nó.</p>
+
+    <div class="TrangChu none">
+        <div class="Nha">
+            <div class="DemNgayYeu" id="days"></div>
+            <div class="DanhSachNhiemVu">
+                <div class="NhiemVu"></div>
+                <div class="NhiemVu"></div>
+                <div class="NhiemVu"></div>
+            </div>
+            <button onclick="Reset()">Chọn lại nhân vật</button>
         </div>
-        <button onclick="Reset()">Chọn lại nhân vật</button>
+        
+        
+      
     </div>
+
+    
 
 
   
 </body>
 <script src="./Data/Js/Script.js"></script>
-
+<script src="./Data/Js/ThemeSound.js"></script>
 </html>

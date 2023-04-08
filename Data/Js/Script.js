@@ -11,25 +11,29 @@ for (var i = 0; i < nhanVats.length; i++) {
 }
 
 document.querySelector("#XacNhanNhanVat").addEventListener("click", function () {
+    
     var chonNhanVat = document.querySelector(".NhanVat.Chon");
     if (chonNhanVat) {
         var tenNhanVat = chonNhanVat.querySelector("img").alt;
         localStorage.setItem("tenNhanVat", tenNhanVat);
         document.querySelector(".ChaoMung").style.display = "none";
-        document.querySelector(".Home").style.display = "block";
+        document.querySelector(".TrangChu").style.display = "block";
         console.log("Đã chọn nhân vật: " + tenNhanVat);
+
         ThongBao('Đã chọn nhân vật ' + tenNhanVat );
-   
+        
     } else {
-        console.log("Vui lòng chọn một nhân vật.");
+        ThongBao('Vui lòng chọn một nhân vật.');
     }
+    
 });
 
 var tenNhanVat = localStorage.getItem("tenNhanVat");
 if (tenNhanVat) {
     console.log("Đã chọn nhân vật: " + tenNhanVat);
     document.querySelector(".ChaoMung").style.display = "none";
-    document.querySelector(".Home").style.display = "block";
+    document.querySelector(".TrangChu").style.display = "block";
+
 }
 
 function CapNhatNhanVat() {
@@ -45,12 +49,11 @@ function CapNhatNhanVat() {
 }
 
 function Reset() {
-    localStorage.removeItem("daDiemDanh");
     // localStorage.clear();
     localStorage.removeItem("tenNhanVat");
     document.querySelector("#XacNhanNhanVat").style.display = "none";
     document.querySelector(".ChaoMung").style.display = "flex";
-    document.querySelector(".Home").style.display = "none";
+    document.querySelector(".TrangChu").style.display = "none";
 }
 
 function ThongBao(noidung) {

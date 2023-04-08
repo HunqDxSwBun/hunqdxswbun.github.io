@@ -11,6 +11,80 @@ body {
 	display: none;
 }
 
+.ChucNang {
+	z-index: -1;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	position: fixed;
+	bottom: 20px;
+	left: 10px;
+	height: 60px;
+	width: calc(100% - 20px);
+}
+.NutChucNang {
+	background-color: #00000056;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	margin: auto;
+	padding: 10px;
+	border: 2px solid rgba(0, 0, 0, 0.281);
+}
+.NutChucNang img {
+	width: 85%;
+}
+.NutChucNang:nth-child(1) {
+	background-color: #0055CC;
+}
+.NutChucNang:nth-child(2) {
+	background-color: #8b4821;
+}
+.NutChucNang:nth-child(3) {
+	background-color: #3086fd;
+}
+.NutChucNang:nth-child(4) {
+	background-color: #00c5cc;
+}
+
+.DuLieuTroChoi {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	row-gap: 2px;
+	right: 10px;
+	top: 5px;
+	z-index: -1;
+	position: fixed;
+	width: 100px;
+}
+.DuLieuTroChoi .DL {
+	display: grid;
+	grid-template-columns: 20px auto;
+	gap: 6px;
+	text-align: center;
+	color: black;
+	background-color: #fa4c4c;
+	height: 24px;
+	padding: 2px 0 2px 3px;
+	width: 100px;
+	border-radius: 10px;
+}
+.DuLieuTroChoi .DL .icon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.DuLieuTroChoi .icon {
+	height: 20px;
+	margin: 2px;
+}
+
+
+
 .ThongBao {
 	bottom: 20px;
 	display: none;
@@ -31,6 +105,17 @@ body {
 	height: 100vh;
 	/* Đảm bảo .ChaoMung chiếm toàn bộ màn hình */
 }
+.ChaoMung button {
+	display: none;
+	background-color: #fa4c4c;
+	padding: 10px 50px;
+	margin: 0 auto;
+	font-weight: bold;
+}
+
+.ChaoMung button:hover {
+	background-color: #73adff;
+}
 
 .ChonNhanVat {
 	display: grid;
@@ -40,7 +125,7 @@ body {
 }
 
 .NhanVat {
-	background-color: #00000017;
+	background-color: #0000003a;
 	padding: 5px;
 	display: flex;
 	border-radius: 15px;
@@ -59,31 +144,18 @@ body {
 
 .NhanVat img {
 	width: 100%;
+	max-height: 500px;
 	border-radius: 10px;
 }
 
-.ChaoMung button {
-	display: none;
-	background-color: #fa4c4c;
-	padding: 10px 50px;
-	margin: 0 auto;
-	font-weight: bold;
-}
 
-.ChaoMung button:hover {
+.TrangChu {
 	background-color: #73adff;
 }
 
-
-.Home {
-	padding: 20px;
-	height: calc(100vh - 40px);
-	background-color: #73adff;
-}
-
-.DaysLove {
-	margin: auto;
-	color: pink;
+.DemNgayYeu {
+	margin: 10px;
+	color: #fff;
 	font-size: 26px;
 	font-weight: bold;
 	background-image: url(/Data/img/Home/heart.png);
@@ -94,32 +166,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	animation: heartbeat 1.5s infinite;
+	animation: heartbeat 1s infinite ;
 }
-#NhanVat {
-	margin: 20px 0;
-	text-align: center;
-}
-#NhanVat img {
-	width: 100px;
-	margin: auto;
-	border-radius: 15px;
-}
-button {
-	padding: 10px 20px;
-	background-color: #0077FF;
-	color: #FFFFFF;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
-	margin-top: 20px;
-}
-
-button:hover {
-	background-color: #0055CC;
-}
-
 
 @keyframes heartbeat {
 	0% {
@@ -136,4 +184,37 @@ button:hover {
 		color: pink;
 		transform: scale(0.9);
 	}
+}
+
+
+.Nha {
+	position: absolute;
+	z-index: -2;
+	height: 100vh;
+	width: 100%;
+	background-image: url(/Data/img/Home/House.gif);
+	background-size: cover;
+}
+.DanhSachNhiemVu {
+	position: absolute;
+	bottom: 0;
+	background-color: rgb(245, 245, 220);
+	border: 5px  solid #71471d ;
+	height: 400px;
+	width: calc(100% - 10px);
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #0077FF;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+button:hover {
+	background-color: #0055CC;
 }
