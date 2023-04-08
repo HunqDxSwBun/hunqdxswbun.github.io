@@ -16,7 +16,7 @@ body {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
 	position: fixed;
-	bottom: 20px;
+	bottom: 25px;
 	left: 10px;
 	height: 60px;
 	width: calc(100% - 20px);
@@ -35,7 +35,8 @@ body {
 	border: 2px solid rgba(0, 0, 0, 0.281);
 }
 .NutChucNang img {
-	width: 85%;
+	width: 35px;
+	height: 35px;
 }
 .NutChucNang:nth-child(1) {
 	background-color: #0055CC;
@@ -83,14 +84,12 @@ body {
 	margin: 2px;
 }
 
-
-
 .ThongBao {
-	bottom: 20px;
 	display: none;
+    top: 35%;
+    right: 45%;
 	position: fixed;
-	width: calc(100% - 40px);
-	margin: 10px;
+	width: 45%;
 	background-color: #2980f8;
 	border-radius: 10px;
 	padding: 10px;
@@ -124,7 +123,7 @@ body {
 	margin: 20px;
 }
 
-.NhanVat {
+.ChonNhanVat .NhanVat {
 	background-color: #0000003a;
 	padding: 5px;
 	display: flex;
@@ -134,20 +133,19 @@ body {
 	align-items: center;
 }
 
-.NhanVat:hover {
+.ChonNhanVat .NhanVat:hover {
 	background-color: pink;
 }
 
-.NhanVat:last-child:hover {
+.ChonNhanVat .NhanVat:last-child:hover {
 	background-color: #2980f8;
 }
 
-.NhanVat img {
+.ChonNhanVat .NhanVat img {
 	width: 100%;
 	max-height: 500px;
 	border-radius: 10px;
 }
-
 
 .TrangChu {
 	background-color: #73adff;
@@ -195,16 +193,69 @@ body {
 	background-image: url(/Data/img/Home/House.gif);
 	background-size: cover;
 }
+.Nha #NhanVat {
+	position: absolute;
+	right: 20%;
+    top: 30%;
+	width: 100px;
+}
+.Nha #NhanVat img {
+	width: 100%;
+}
 .DanhSachNhiemVu {
 	position: absolute;
 	bottom: 0;
 	background-color: rgb(245, 245, 220);
-	border: 5px  solid #71471d ;
+	border: 10px  solid #71471d ;
 	height: 400px;
-	width: calc(100% - 10px);
+	width: calc(100% - 20px);
+	overflow-x: auto;
+}
+.DanhSachNhiemVu .NhiemVu {
+	display: grid;
+	grid-template-columns: 50px auto 100px;
+	gap: 5px;
+	color: #fff;
+	background-color: rgb(255, 60, 0);
+	padding: 10px;
+	margin: 10px;
+	height: 50px;
+	border-radius: 10px;
+}
+.DanhSachNhiemVu .NhiemVu .TenNV {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.DanhSachNhiemVu .NhiemVu .TenNV h1{
+	font-size: 16px;
+}
+.DanhSachNhiemVu .NhiemVu .TenNV p {
+	font-size: 14px;
+}
+.DanhSachNhiemVu .NhiemVu .XacNhan {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.DanhSachNhiemVu .NhiemVu .XacNhan button{
+	background-color: #0077FF;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 0;
+	width: 80px;
+	margin: auto;
+	font-weight: 600;
+}
+.DanhSachNhiemVu .NhiemVu .icon img {
+	height: 45px;
+	width: 45px;
 }
 
-button {
+/* button {
 	padding: 10px 20px;
 	background-color: #0077FF;
 	color: #FFFFFF;
@@ -217,4 +268,4 @@ button {
 
 button:hover {
 	background-color: #0055CC;
-}
+} */

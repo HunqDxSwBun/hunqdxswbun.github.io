@@ -41,7 +41,7 @@
             <div>
                 <img class="icon" src="./Data/img/Menu/DataGame/level-up.png" alt="" srcset="">
             </div>
-            <div>
+            <div id="CapDo">
                 10
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div>
                 <img class="icon" src="./Data/img/Menu/DataGame/water-drop.png" alt="" srcset="">
             </div>
-            <div>
+            <div id="Nuoc">
                 1000
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div>
                 <img class="icon" src="./Data/img/Menu/DataGame/coin.png" alt="" srcset="">
             </div>
-            <div>
+            <div id="Xu">
                 1000
             </div>
         </div>
@@ -86,24 +86,48 @@
 
     <div class="TrangChu none">
         <div class="Nha">
-            <div class="DemNgayYeu" id="days"></div>
+            <div class="DemNgayYeu"  id="days"></div>
+            <div id="NhanVat" onclick="ThongBaoNgayYeu()"></div>
             <div class="DanhSachNhiemVu">
-                <div class="NhiemVu"></div>
-                <div class="NhiemVu"></div>
-                <div class="NhiemVu"></div>
+                <div class="NhiemVu">
+                    <div class="icon">
+                        <img src="./Data/img/Missions/planner.png" alt="" srcset="">
+                    </div>
+                    <div class="TenNV">
+                        <h1>Điểm danh hằng ngày</h1>
+                        <p>Đã điểm danh: <span id="daily">0</span></p>
+                    </div>
+                    <div class="XacNhan">
+                        <button id="checkin">Điểm danh</button>
+                    </div>
+                </div>
+
+                <!-- .NhiemVu*5>.icon+.TenNV+.XacNhan -->
             </div>
             <button onclick="Reset()">Chọn lại nhân vật</button>
+            <button onclick="tangCap()">Cấp</button>
+            <button onclick="tangXu(1)">Xu</button>
+            <button onclick="tangNuoc(1)">Nước</button>
+            <button onclick="tangCay()">Xu</button>
+            <button onclick="tangKinhNghiemCay()">Xu</button>
+            <button onclick="XoaDuLieuGame()">Xoá Dữ liệu Game</button>
+        
+    <button id="reset">Xoá</button>
         </div>
         
-        
+
+
       
     </div>
 
     
+<script>
 
+</script>
 
   
 </body>
 <script src="./Data/Js/Script.js"></script>
+<script src="./Data/Js/Games.js"></script>
 <script src="./Data/Js/ThemeSound.js"></script>
 </html>
