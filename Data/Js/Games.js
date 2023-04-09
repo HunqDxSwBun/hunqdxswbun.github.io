@@ -1,6 +1,6 @@
-let cap = 0;
-let xu = 0;
-let nuoc = 0;
+let cap = 1;
+let xu = 10;
+let nuoc = 20;
 let cay = 0;
 let kinhNghiemCay = 0;
 
@@ -46,13 +46,12 @@ function CapNhatGame() {
 function XoaDuLieuGame() {
     localStorage.clear();
     cap = 1;
-    xu = 1;
+    xu = 10;
     nuoc = 20;
     cay = 1;
     kinhNghiemCay = 10;
   }
   
-
 
 // Load dữ liệu từ local storage (nếu có)
 cap = parseInt(localStorage.getItem('cap')) || cap;
@@ -88,6 +87,11 @@ checkinButton.addEventListener('click', () => {
     localStorage.setItem('lastCheckinDate', today);
     dailyElement.innerText = days;
     alert('Điểm danh thành công!');
+    if (days <= 10) {
+      tangXu(10);
+      tangNuoc(20);
+    }
+
   }
 });
 
