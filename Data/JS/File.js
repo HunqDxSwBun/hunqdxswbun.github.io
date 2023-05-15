@@ -20,14 +20,16 @@ function countDaysLove() {
 
   var years = Math.floor(dayDifference / 365);
   var months = Math.floor((dayDifference % 365) / 30);
-  var days = Math.floor((dayDifference % 365) % 30);
+  var weeks = Math.floor(dayDifference / 7); // Thêm tính toán số tuần
+  var days = (dayDifference % 365) % 30;
   var hours = currentDate.getHours();
   var minutes = currentDate.getMinutes();
   var seconds = currentDate.getSeconds();
 
-  document.getElementById("DaysLove").innerHTML = dayDifference ;
+  document.getElementById("DaysLove").innerHTML = (dayDifference - 1).toString(); // Trừ 1 ngày để tính từ ngày yêu
   document.getElementById("Years").getElementsByClassName("number")[0].textContent = years;
   document.getElementById("Months").getElementsByClassName("number")[0].textContent = months;
+  document.getElementById("Weeks").getElementsByClassName("number")[0].textContent = weeks;
   document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
   document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
   document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
@@ -35,4 +37,3 @@ function countDaysLove() {
 }
 
 setInterval(countDaysLove, 1000);
-
