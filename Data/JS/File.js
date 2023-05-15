@@ -35,5 +35,4 @@ function countDaysLove() {
 }
 
 setInterval(countDaysLove, 1000);
-});
 
