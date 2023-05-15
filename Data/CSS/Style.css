@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Wix+Madefor+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Wix+Madefor+Display:wght@500&display=swap');
 
 :root {
     --HeadColor: #ff2655;
@@ -142,9 +142,9 @@ header .HeadApp h1 {
     align-items: center;
     justify-content: left;
 }
-.DaysLove .Grid .DGrid:first-child {
+.DaysLove .Grid .DGrid:first-child img{
     color: #ff2655;
-    font-size: 30px;
+    width: 30px;
     margin: 0 0 0 10px;
     animation: heart2 1.2s infinite alternate;
 }
@@ -213,8 +213,15 @@ header .HeadApp h1 {
     border-radius: 50%;
     border: 3px solid #ff2655;
 }
+.Info.Male .Name {
+    color: var(--Male);
+}
+.Info.Female .Name {
+    color: var(--Female);
+}
 .Info .Name {
     font-size: 18px;
+    font-weight: bold;
 }
 .Info .Age {
     font-size: 16px;
@@ -239,7 +246,7 @@ header .HeadApp h1 {
 }
 #rss-feed {
     padding: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 .rss-story {
     background-color: #ff314d;
@@ -252,14 +259,17 @@ header .HeadApp h1 {
 }
 .rss-story h1 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .rss-story p:last-child {
     font-size: 14px;
     font-weight: 500;
     text-align: right;
-    margin-bottom: 0 ;
+    margin-top: 10px ;
 }
 .rss-story img,.rss-story video,.rss-story iframe {
-    max-width: 100%;
+    max-width: calc(100% - 6px);
+    border-radius: 10px;
+    border: 3px solid #eee;
+    margin-top: 10px;
 }
