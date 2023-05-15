@@ -25,7 +25,7 @@ function countDaysLove() {
   var minutes = currentDate.getMinutes();
   var seconds = currentDate.getSeconds();
 
-  document.getElementById("DaysLove").innerHTML = dayDifference ;
+  document.getElementById("DaysLove").innerHTML = timeDifference ;
   document.getElementById("Years").getElementsByClassName("number")[0].textContent = years;
   document.getElementById("Months").getElementsByClassName("number")[0].textContent = months;
   document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
