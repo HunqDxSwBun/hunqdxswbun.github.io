@@ -13,8 +13,8 @@ function openTAB(evt, TabName) {
 }
 
 function countDaysLove() {
-  var startDate = new Date('2021-07-15 00:00:00');
-  // Thu Jul 15 2021 00:00:00 GMT+0700 (Giờ Đông Dương)
+  var startDate = new Date('2021-07-15');
+  // Thu Jul 15 2021 00:00:00 GMT+0700 (Giờ Đông Dương) 
   var currentDate = new Date();
   var timeDifference = currentDate.getTime() - startDate.getTime();
 
@@ -30,11 +30,11 @@ function countDaysLove() {
   document.getElementById("DaysLove").innerHTML = (dayDifference).toString();
   document.getElementById("Years").getElementsByClassName("number")[0].textContent = years;
   document.getElementById("Months").getElementsByClassName("number")[0].textContent = months;
-  // document.getElementById("Weeks").getElementsByClassName("number")[0].textContent = weeks;
-  // document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
-  // document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
-  // document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
-  // document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
+  document.getElementById("Weeks").getElementsByClassName("number")[0].textContent = weeks;
+  document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
+  document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
+  document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
+  document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
 
 
 }
