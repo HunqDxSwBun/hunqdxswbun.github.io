@@ -21,11 +21,11 @@ function countDaysLove() {
   var dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
   var years = Math.floor(dayDifference / 365);
   var months = Math.floor((dayDifference % 365) / 30);
-  // var weeks = Math.floor(((dayDifference % 365) % 30) / 7); // Tính số tuần từ số ngày dư
-  // var days = ((dayDifference % 365) % 30) % 7; // Tính số ngày từ số ngày dư
-  // var hours = currentDate.getHours();
-  // var minutes = currentDate.getMinutes();
-  // var seconds = currentDate.getSeconds();
+  var weeks = Math.floor(((dayDifference % 365) % 30) / 7); // Tính số tuần từ số ngày dư
+  var days = ((dayDifference % 365) % 30) % 7; // Tính số ngày từ số ngày dư
+  var hours = currentDate.getHours();
+  var minutes = currentDate.getMinutes();
+  var seconds = currentDate.getSeconds();
 
   document.getElementById("DaysLove").innerHTML = (dayDifference).toString();
   document.getElementById("Years").getElementsByClassName("number")[0].textContent = years;
@@ -38,7 +38,6 @@ function countDaysLove() {
 
 
 }
-
 setInterval(countDaysLove, 1000);
 
 // Ngày sinh của Hung và Thy
