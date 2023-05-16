@@ -2,7 +2,7 @@
 
 :root {
     --HeadColor: #ff2655;
-    --HeadBgColor: #70707057;
+    --HeadBgColor: #111;
     --Male: rgb(0, 119, 255);
     --Female: #ff314d;
 }
@@ -89,7 +89,7 @@ header .HeadApp h1 {
     max-height: 200px;
     margin: 10px;
     padding: 10px;
-    background-color: var(--HeadBgColor);
+    background-color: #11111180;
     border-radius: 10px;
 }
 .NewPost .excerpt-audio-block {
@@ -164,8 +164,8 @@ header .HeadApp h1 {
 .DaysLove2 {
     text-align: center;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    gap: 2px;
+    grid-template-columns: auto auto ;
+    gap: 5px;
     margin: 20px auto;
     padding: 0 20px;
 }
@@ -173,8 +173,14 @@ header .HeadApp h1 {
     margin: auto;
     background-color: #ff2655;
     padding-bottom: 5px;
-    border-radius: 6px;
-    width: 52px;
+    border-radius: 10px;
+    width: 50px;
+}
+.DaysLove2 .Num:first-child {
+    margin:  0 0 0 auto  ;
+}
+.DaysLove2 .Num:last-child {
+    margin:  auto 0 0 0   ;
 }
 .unit {
     font-size: 12px;
@@ -249,7 +255,7 @@ header .HeadApp h1 {
     padding-bottom: 60px;
 }
 .rss-story {
-    background-color: #ff314d;
+    background-color: #fa7f7f;
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
@@ -269,7 +275,30 @@ header .HeadApp h1 {
 }
 .rss-story img,.rss-story video,.rss-story iframe {
     max-width: calc(100% - 6px);
+    max-height: 250px;
     border-radius: 10px;
     border: 3px solid #eee;
     margin-top: 10px;
+}
+.rss-story figure {
+    text-align: center;
+    max-height: 270px;
+}
+.rss-story figcaption {
+    text-align: center;
+    position: relative;
+    top: -30px;
+    color: #fff;
+    text-shadow: 0px 2px 6px #ff2655;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.rss-story hr {
+    border: none;
+    height: 2px;
+    width: 80%;
+    background-color: #eee;
+    margin: 10px auto;
 }

@@ -28,15 +28,15 @@
 <body>
     <header>
         <div class="icon">
-            <a href="jetpack://">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
+            <i class="fa-solid fa-bars"></i>
         </div>
         <div class="HeadApp">
             <h1>Nhật kí tình yêu</h1>
         </div>
         <div class="icon">
-            <i class="fa-solid fa-bars"></i>
+            <a href="jetpack://">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </a>
         </div>
     </header>
     <div class="Tab">
@@ -70,15 +70,15 @@
                     <span class="number"></span>
                     <span class="unit">tháng</span>
                   </div>
-                  <div class="Num" id="Weeks">
+                  <!-- <div class="Num" id="Weeks">
                     <span class="number"></span>
                     <span class="unit">tuần</span>
                   </div>
                   <div class="Num" id="Days">
                     <span class="number"></span>
                     <span class="unit">ngày</span>
-                  </div>
-                  <div class="Num" id="Hours">
+                  </div> -->
+                  <!-- <div class="Num" id="Hours">
                     <span class="number"></span>
                     <span class="unit">giờ</span>
                   </div>
@@ -89,7 +89,7 @@
                   <div class="Num" id="Secs">
                     <span class="number"></span>
                     <span class="unit">giây</span>
-                  </div>                  
+                  </div>                   -->
             </div>
            
     
@@ -102,7 +102,7 @@
                     <div class="Name">
                         Mạnh Hùng
                     </div>
-                    <div class="Age">
+                    <div class="Age" id="ageHung" onclick="AgeOnload('Hung')" >
                         <i class="fa-solid fa-mars"></i> 22
                     </div>
                 </div>
@@ -119,8 +119,8 @@
                     <div class="Name">
                         Thy
                     </div>
-                    <div class="Age">
-                        <i class="fa-solid fa-venus"></i> 22
+                    <div class="Age" id="ageThy" onclick="AgeOnload('Thy')">
+                        <i class="fa-solid fa-venus"></i> 
                     </div>
                 </div>
             </div>
@@ -130,10 +130,10 @@
     <div id="Story" class="tabcontent">
         <div id="rss-feed"></div>
     </div>
-   
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="./Data/JS/File.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 
