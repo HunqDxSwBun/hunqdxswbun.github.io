@@ -56,7 +56,7 @@ header .HeadApp h1 {
     position: fixed;
     bottom: 0;
     display: grid;
-    grid-template-columns:  auto auto;
+    grid-template-columns:  auto ;
 }
 .Tab .tablinks {
     background-color: transparent;
