@@ -26,18 +26,15 @@
 
 
 <body>
-
-
     <div class="Tab">
-        <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Ascii')"><i class="fa-solid fa-shield"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Security')"><i class="fa-solid fa-shield"></i></button>
+        <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Games')"><i class="fa-solid fa-gamepad"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Settings')"><i class="fa-solid fa-gear"></i></button>
-
     </div>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent ">
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
@@ -121,6 +118,7 @@
     </div>
 
     <div id="Story" class="tabcontent">
+        <h1 class="head">Nhật Ký</h1>
         <div id="rss-feed"></div>
         <div class="write">
             <a href="jetpack://">
@@ -129,31 +127,38 @@
         </div>
     </div>
 
-    <div id="Ascii" class="tabcontent ">
-        <h1>Văn bản bảo mật</h1>
-        <div class="Ascii">
+    <div id="Security" class="tabcontent show">
+        <h1 class="head">Văn bản bảo mật</h1>
+        <div class="Security">
             <div class="Option">
+                <select id="mySelect">
+                    <option value="Ascii">Ascii</option>
+                    <option value="Morse">Morse</option>
+                    <option value="Base64">Base64</option>
+                </select>
+                <br>
+                <br>
                 <input type="radio" id="textOption" name="option" checked>
                 <label for="textOption">Chuyển sang văn bản</label>
                 <br>
-                <input type="radio" id="asciiOption" name="option">
-                <label for="asciiOption">Chuyển sang mã</label>
+                <input type="radio" id="Option" name="option">
+                <label for="Option">Chuyển sang mã</label>
             </div>
             <textarea id="inputText"></textarea>
             <button id="convertButton" onclick="convertText()">Chuyển đổi</button>
             <textarea id="outputText"></textarea>
             <button id="copyOutputText" onclick="copyText()">Sao chép</button>
         </div>
-    
-          
     </div>
 
     <div id="Games" class="tabcontent">
-       
+        <h1 class="head">Trò chơi</h1>
+        <p style="text-align: center; color: #111;">Đang cập nhật</p>
     </div>
 
     <div id="Settings" class="tabcontent">
-        <a href="/Data/Downloads/NhatKiTinhYeu.mobileconfig" style="text-decoration: none;">
+        <h1 class="head">Cài đặt</h1>
+        <a href="/Data/Downloads/nhatkitinhyeu.mobileconfig" style="text-decoration: none;">
             <div class="DownloadApp">
                 <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
                 <h1>Tải Ngay</h1>

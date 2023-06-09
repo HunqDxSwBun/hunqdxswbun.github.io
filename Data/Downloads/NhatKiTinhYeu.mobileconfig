@@ -14,15 +14,15 @@
 			<key>IsRemovable</key>
 			<true/>
 			<key>Label</key>
-			<string>Nhật Kí Tình Yêu</string>
+			<string>Nhật kí tình yêu</string>
 			<key>PayloadDescription</key>
 			<string>Configures Web Clip</string>
 			<key>PayloadDisplayName</key>
-			<string>Web Clip (Nhật Kí Tình Yêu)</string>
+			<string>Web Clip (Nhật kí tình yêu)</string>
 			<key>PayloadIdentifier</key>
-			<string>net.codevn.Nhật Kí Tình Yêu.WebClip</string>
+			<string>net.codevn.Nhật kí tình yêu.WebClip</string>
 			<key>PayloadOrganization</key>
-			<string>HunqD & SwBun</string>
+			<string>HunqD SwBun</string>
 			<key>PayloadType</key>
 			<string>com.apple.webClip.managed</string>
 			<key>PayloadUUID</key>
@@ -32,17 +32,17 @@
 			<key>Precomposed</key>
 			<true/>
 			<key>URL</key>
-			<string>https://hunqdxswbun.github.io/</string>
+			<string>https://hunqdxswbun.github.io</string>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string>This Profile Installs an application called 'Nhật Kí Tình Yêu'. created using CodeVN Tools (by @codevn).</string>
+	<string>Nhật kí tình yêu là cấu hình dành cho iOS.</string>
 	<key>PayloadDisplayName</key>
-	<string>HunqD & SwBun</string>
+	<string>Nhật Kí Tinh Yêu</string>
 	<key>PayloadIdentifier</key>
-	<string>net.codevn.HunqD & SwBun.HunqD & SwBun</string>
+	<string>net.codevn.HunqD SwBun.Nhật Kí Tinh Yêu</string>
 	<key>PayloadOrganization</key>
-	<string>HunqD & SwBun</string>
+	<string>HunqD SwBun</string>
 	<key>PayloadRemovalDisallowed</key>
 	<false/>
 	<key>PayloadType</key>

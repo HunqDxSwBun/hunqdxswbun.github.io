@@ -12,30 +12,6 @@ function openTAB(evt, TabName) {
   evt.currentTarget.className += " active";
 }
 
-function NavMenu() {
-  $("body").css("overflow","hidden");
-  var NavCheck = document.getElementById('NavCheck');
-  if (NavCheck.className == 'fa-solid fa-bars-staggered') {
-    NavCheck.className = 'fa-solid fa-x'
-    openNav();
-  } else {
-    $("body").css("overflow","auto");
-    NavCheck.className = 'fa-solid fa-bars-staggered'
-    closeNav();
-  }
-}
-
-var myNav = document.getElementById("myNav");
-function openNav() {
-  myNav.style.height = "calc(100% - 78px)";
-  myNav.style.border = "4px solid black";
-}
-
-function closeNav() {
-  myNav.style.height = "0%";
-  myNav.style.border = "none";
-}
-
 // chỉ cần thêm div này vào HTML
 /* <div id="toggle-button" ></div> */
 
@@ -133,38 +109,148 @@ function mode3() {
 }
 
 function convertText() {
+  var selectElement = document.getElementById("mySelect");
+  var selectedValue = selectElement.value;
+
+  if (selectedValue === "Ascii") {
+    convertTextA();
+  } 
+  if (selectedValue === "Morse") {
+    convertTextB();
+  }
+  if (selectedValue === "Base64") {
+    convertTextC();
+  }
+}
+
+
+
+function convertTextA() {
   var option = "";
   if (document.getElementById("textOption").checked) {
-      option = "text";
-  } else if (document.getElementById("asciiOption").checked) {
-      option = "ascii";
+    option = "text";
+  } else if (document.getElementById("Option").checked) {
+    option = "ascii";
   }
 
   var inputText = document.getElementById("inputText").value;
   var outputText = "";
 
   if (option === "text") {
-      // Chuyển đổi ASCII sang văn bản (UTF-8)
-      var asciiArray = inputText.split(" ");
-      outputText = "";
+    // Chuyển đổi ASCII sang văn bản (UTF-8)
+    var asciiArray = inputText.split(" ");
+    outputText = "";
 
-      for (var i = 0; i < asciiArray.length; i++) {
-          var decimalValue = parseInt(asciiArray[i]);
-          var char = String.fromCharCode(decimalValue);
-          outputText += char;
-      }
+    for (var i = 0; i < asciiArray.length; i++) {
+      var decimalValue = parseInt(asciiArray[i]);
+      var char = String.fromCharCode(decimalValue);
+      outputText += char;
+    }
   } else if (option === "ascii") {
-      // Chuyển đổi văn bản sang ASCII
-      outputText = "";
+    // Chuyển đổi văn bản sang ASCII
+    outputText = "";
 
-      for (var i = 0; i < inputText.length; i++) {
-          var char = inputText.charCodeAt(i);
-          outputText += char + " ";
-      }
+    for (var i = 0; i < inputText.length; i++) {
+      var char = inputText.charCodeAt(i);
+      outputText += char + " ";
+    }
   }
 
   document.getElementById("outputText").value = outputText.trim();
 }
+
+
+function convertTextB() {
+  var inputText = document.getElementById("inputText").value.trim();
+  var outputText = document.getElementById("outputText");
+
+  var textOption = document.getElementById("textOption");
+  var Option = document.getElementById("Option");
+
+  if (textOption.checked) {
+    outputText.value = morseToText(inputText);
+  } else if (Option.checked) {
+    outputText.value = textToMorse(inputText);
+  }
+}
+
+function morseToText(morseCode) {
+  var morseTable = {
+    ".-": "a",
+    "-...": "b",
+    "-.-.": "c",
+    "-..": "d",
+    ".": "e",
+    "..-.": "f",
+    "--.": "g",
+    "....": "h",
+    "..": "i",
+    ".---": "j",
+    "-.-": "k",
+    ".-..": "l",
+    "--": "m",
+    "-.": "n",
+    "---": "o",
+    ".--.": "p",
+    "--.-": "q",
+    ".-.": "r",
+    "...": "s",
+    "-": "t",
+    "..-": "u",
+    "...-": "v",
+    ".--": "w",
+    "-..-": "x",
+    "-.--": "y",
+    "--..": "z"
+  };
+
+  return morseCode
+    .split(" ")
+    .map(function (morseChar) {
+      return morseTable[morseChar] || " ";
+    })
+    .join("");
+}
+
+function textToMorse(text) {
+  var morseTable = {
+    "a": ".-",
+    "b": "-...",
+    "c": "-.-.",
+    "d": "-..",
+    "e": ".",
+    "f": "..-.",
+    "g": "--.",
+    "h": "....",
+    "i": "..",
+    "j": ".---",
+    "k": "-.-",
+    "l": ".-..",
+    "m": "--",
+    "n": "-.",
+    "o": "---",
+    "p": ".--.",
+    "q": "--.-",
+    "r": ".-.",
+    "s": "...",
+    "t": "-",
+    "u": "..-",
+    "v": "...-",
+    "w": ".--",
+    "x": "-..-",
+    "y": "-.--",
+    "z": "--.."
+  };
+
+  return text
+    .toLowerCase()
+    .split("")
+    .map(function (char) {
+      return morseTable[char] || " ";
+    })
+    .join(" ");
+}
+
 
 function copyText() {
   var textArea = document.getElementById("outputText");
@@ -172,5 +258,27 @@ function copyText() {
   textArea.select();
   document.execCommand("copy");
   copyOutputText.innerText = 'Đã sao chép thành công!'
-  
+  setTimeout(() => {
+    copyOutputText.innerText = 'Sao chép'
+  }, 3000);
+
 }
+
+function convertTextC() {
+  var inputText = document.getElementById("inputText").value;
+  var outputText = document.getElementById("outputText");
+
+  var textOption = document.getElementById("textOption");
+  var Option = document.getElementById("Option");
+
+  if (textOption.checked) {
+    // Chuyển đổi từ mã sang văn bản
+    var decodedText = atob(inputText);
+    outputText.value = decodedText;
+  } else if (Option.checked) {
+    // Chuyển đổi từ văn bản sang mã
+    var encodedText = btoa(inputText);
+    outputText.value = encodedText;
+  }
+}
+
