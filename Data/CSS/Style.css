@@ -374,6 +374,8 @@ body {
     margin-bottom: 10px;
 }
 .Ascii textarea {
+    font-size: 18px;
+    padding: 10px;
     width: calc(100% - 6px);
     height: 100px;
     overflow: auto;
