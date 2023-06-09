@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Wix+Madefor+Display:wght@500&display=swap');
 
 :root {
-    --HeadColor: #ff2655;
-    --HeadBgColor: #111;
+    --HeadColor: pink;
+    --HeadBgColor: #ff2655;
     --Male: rgb(0, 119, 255);
     --Female: #ff314d;
 }
@@ -16,65 +16,36 @@ body {
     background-color: pink;
 
 }
-/* .darkmode {
-    --
-} */
-header {
-    position: relative;
-	transition: 0.5s;
-	z-index: 2;
-    color: var(--HeadColor);
-    background-color: var(--HeadBgColor);
-    display: grid;
-    grid-template-columns: 50px auto 50px;
-}
-header .icon {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 50px;
-    width: 50px;
-}
-header .icon i {
-    color: var(--HeadColor);
-    font-size: 20px;
-}
-header .HeadApp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-header .HeadApp h1 {
-    color: var(--HeadColor);
-    font-family: 'Quicksand', sans-serif;
-    font-size: 24px;
-}
 .Tab {
     text-align: center;
     background-color:#111;;
-    height: 50px;
-    width: 100%;
+    padding: 4px;
+    width: calc(100% - 18px);
     position: fixed;
     bottom: 0;
     display: grid;
-    grid-template-columns:  auto auto;
+    grid-template-columns: auto  auto auto auto auto;
+    gap: 4px;
+    margin: 5px;
+    border-radius: 22px;
 }
 .Tab .tablinks {
     cursor: pointer;
     background-color: transparent;
     height: 50px;
     border: none;
+    border-radius: 18px;
+    transition: 0.5s;
 }
+
 
 .Tab .tablinks i {
     color: var(--HeadColor);
     font-size: 20px;
+
 }
 .Tab .tablinks.active {
-    background-color: var(--HeadColor);
+    background-color: var(--HeadBgColor);
 }
 .Tab .tablinks.active i {
     color: #fff;
@@ -83,6 +54,9 @@ header .HeadApp h1 {
 
 .tabcontent {
     display: none;
+}
+.tabcontent img {
+    max-width: 100%;
 }
 .tabcontent.show {
     display: block;
@@ -94,7 +68,7 @@ header .HeadApp h1 {
     max-height: 200px;
     margin: 10px;
     padding: 10px;
-    background-color: #11111180;
+    background-color: #fa7f7f;
     border-radius: 10px;
 }
 .NewPost .excerpt-audio-block {
@@ -102,7 +76,7 @@ header .HeadApp h1 {
 }
 .NewPost h1 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .NewPost p {
     margin-bottom: 10px ;
@@ -130,7 +104,7 @@ header .HeadApp h1 {
     }
 }
 .DaysLove #DaysLove {
-    color: var(--HeadColor);
+    color: var(--HeadBgColor);
     font-family: 'Wix Madefor Display', sans-serif;
     font-size: 80px;
     text-align: right;
@@ -142,8 +116,8 @@ header .HeadApp h1 {
     grid-template-rows: 40% 60%; 
 }
 .DaysLove .Grid .DGrid {
-    text-align: left;
     display: flex;
+    text-align: left;
     align-items: center;
     justify-content: left;
 }
@@ -280,7 +254,7 @@ header .HeadApp h1 {
     font-size: 14px;
     font-weight: 500;
     text-align: right;
-    margin-top: 50px ;
+    margin-top: 10px ;
 }
 .rss-story img,.rss-story video,.rss-story iframe {
     max-width: calc(100% - 6px);
@@ -311,16 +285,116 @@ header .HeadApp h1 {
     margin: 10px auto;
 }
 
+.write {
+    position: fixed;
+    bottom: 70px ;
+    right: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+}
+.write i {
+    font-size: 20px;
+    color: var(--HeadColor);
+}
+
+.DownloadApp {
+    margin: 10px ;
+    text-align: center;
+    background-color: #111;
+    padding: 6px;
+    border-radius: 20px;
+}
+.DownloadApp img {
+    margin: auto;
+    width: 100%;
+    border-radius: 16px;
+}
+.DownloadApp h1 {
+    color: #fa7f7f;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.SettingDIV {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.SettingBlock {
+    text-align: center;
+    margin: 5px;
+    width: calc(50% - 10px);
+    text-align: left;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box; /* Đảm bảo padding và border không tăng kích thước */
+}
+.SettingBlock.Center {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.SettingBlock i {
+    font-size: 35px;
+}
+.SettingBlock h1 {
+    font-size: 20px;
+}
+.SettingBlock p {
+    color: #a8a8a8;
+    font-size: 12px;
+}
+.Ascii {
+    padding: 10px;
+    text-align: center;
+}
+.Ascii .Option {
+    color: #111;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.Ascii button {
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    color: #eee;
+    background-color: #111;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.Ascii textarea {
+    width: calc(100% - 6px);
+    height: 100px;
+    overflow: auto;
+    border: 2px solid #111;
+    border-radius: 10px;
+}
+
+
 .overlay {
+    margin: auto;
 	height: 0%;
-	width: 100%;
+	width: calc(100% - 18px);
+    border-radius: 20px;
 	position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
 	z-index: -10;
-	top: 0;
-	left: 0;
 	background-color: var(--HeadBgColor);
 	overflow-y: hidden;
 	transition: 0.5s;
+
 }
 
 

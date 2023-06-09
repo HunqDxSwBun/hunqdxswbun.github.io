@@ -26,30 +26,15 @@
 
 
 <body>
-    <header>
-        <div class="icon" onclick="NavMenu()">
-            <i id="NavCheck" class="fa-solid fa-bars-staggered"></i>
-        </div>
-        <div class="HeadApp">
-            <h1>Nhật kí tình yêu</h1>
-        </div>
-        <div class="icon">
-            <a href="jetpack://">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-        </div>
-
-        <div id="myNav" class="overlay">
-            <div class="overlay-content">
-                <a href="#">Trang Chủ</a>
-            </div>
-        </div>
-    </header>
 
 
     <div class="Tab">
         <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Ascii')"><i class="fa-solid fa-shield"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Games')"><i class="fa-solid fa-gamepad"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Settings')"><i class="fa-solid fa-gear"></i></button>
+
     </div>
 
     <div id="Home" class="tabcontent show">
@@ -67,18 +52,18 @@
                     </div>
                     <div class="DGrid">Ngày</div>
                 </div>
-               
+
             </div>
             <div class="DaysLove2">
                 <div class="Num" id="Years">
                     <span class="number"></span>
                     <span class="unit">năm</span>
-                  </div>
-                  <div class="Num" id="Months">
+                </div>
+                <div class="Num" id="Months">
                     <span class="number"></span>
                     <span class="unit">tháng</span>
-                  </div>
-                  <!-- <div class="Num" id="Weeks">
+                </div>
+                <!-- <div class="Num" id="Weeks">
                     <span class="number"></span>
                     <span class="unit">tuần</span>
                   </div>
@@ -86,7 +71,7 @@
                     <span class="number"></span>
                     <span class="unit">ngày</span>
                   </div> -->
-                  <!-- <div class="Num" id="Hours">
+                <!-- <div class="Num" id="Hours">
                     <span class="number"></span>
                     <span class="unit">giờ</span>
                   </div>
@@ -99,8 +84,8 @@
                     <span class="unit">giây</span>
                   </div>                   -->
             </div>
-           
-    
+
+
             <div class="Couple">
                 <div class="Info Male">
                     <div class="Avatar">
@@ -110,15 +95,15 @@
                     <div class="Name">
                         Mạnh Hùng
                     </div>
-                    <div class="Age" id="ageHung" onclick="AgeOnload('Hung')" >
+                    <div class="Age" id="ageHung" onclick="AgeOnload('Hung')">
                         <i class="fa-solid fa-mars"></i> 22
                     </div>
                 </div>
-    
+
                 <div class="Heart">
                     <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
                 </div>
-    
+
                 <div class="Info Female">
                     <div class="Avatar">
                         <img src="https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
@@ -128,7 +113,7 @@
                         Thy
                     </div>
                     <div class="Age" id="ageThy" onclick="AgeOnload('Thy')">
-                        <i class="fa-solid fa-venus"></i> 
+                        <i class="fa-solid fa-venus"></i>
                     </div>
                 </div>
             </div>
@@ -137,13 +122,68 @@
 
     <div id="Story" class="tabcontent">
         <div id="rss-feed"></div>
+        <div class="write">
+            <a href="jetpack://">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+        </div>
     </div>
 
+    <div id="Ascii" class="tabcontent ">
+        <h1>Văn bản bảo mật</h1>
+        <div class="Ascii">
+            <div class="Option">
+                <input type="radio" id="textOption" name="option" checked>
+                <label for="textOption">Chuyển sang văn bản</label>
+                <br>
+                <input type="radio" id="asciiOption" name="option">
+                <label for="asciiOption">Chuyển sang mã</label>
+            </div>
+            <textarea id="inputText"></textarea>
+            <button id="convertButton" onclick="convertText()">Chuyển đổi</button>
+            <textarea id="outputText"></textarea>
+            <button id="copyOutputText" onclick="copyText()">Sao chép</button>
+        </div>
     
+          
+    </div>
+
+    <div id="Games" class="tabcontent">
+       
+    </div>
+
+    <div id="Settings" class="tabcontent">
+        <a href="/Data/Downloads/NhatKiTinhYeu.mobileconfig" style="text-decoration: none;">
+            <div class="DownloadApp">
+                <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
+                <h1>Tải Ngay</h1>
+            </div>
+        </a>
+        <div class="SettingDIV">
+            <div class="SettingBlock Center" id="toggle-button">
+            </div>
+            <div class="SettingBlock Center">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+            <div class="SettingBlock ">
+                <i class="fa-solid fa-circle-down"></i>
+                <h1>Tải Dữ Liệu</h1>
+                <p>Tải xuống tất cả bài viết, hình ảnh, video,...</p>
+            </div>
+            <div class="SettingBlock ">
+                <i class="fa-solid fa-gift"></i>
+                <h1>Nhập mã thưởng</h1>
+                <p>Nhận thưởng những phần quà hấp dẫn.</p>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./Data/JS/File.js"></script>
+<script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 
 
