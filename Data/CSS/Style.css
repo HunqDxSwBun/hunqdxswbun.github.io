@@ -20,12 +20,16 @@ body {
     --
 } */
 header {
+    position: relative;
+	transition: 0.5s;
+	z-index: 2;
     color: var(--HeadColor);
     background-color: var(--HeadBgColor);
     display: grid;
     grid-template-columns: 50px auto 50px;
 }
 header .icon {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,9 +60,10 @@ header .HeadApp h1 {
     position: fixed;
     bottom: 0;
     display: grid;
-    grid-template-columns:  auto ;
+    grid-template-columns:  auto auto;
 }
 .Tab .tablinks {
+    cursor: pointer;
     background-color: transparent;
     height: 50px;
     border: none;
@@ -230,12 +235,16 @@ header .HeadApp h1 {
     font-weight: bold;
 }
 .Info .Age {
+    cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     width: 50px;
     padding: 2px 0;
     margin: 5px auto;
     border-radius: 20px;
+}
+.Info .Avatar img, header .HeadApp h1 {
+    cursor: url('/Data/IMG/Cur/cus.cur'), auto;	
 }
 
 .Info.Male .Avatar img {
@@ -271,13 +280,14 @@ header .HeadApp h1 {
     font-size: 14px;
     font-weight: 500;
     text-align: right;
-    margin-top: 10px ;
+    margin-top: 50px ;
 }
 .rss-story img,.rss-story video,.rss-story iframe {
     max-width: calc(100% - 6px);
     max-height: 250px;
     border-radius: 10px;
     border: 3px solid #eee;
+    background-color: #eee;
     margin-top: 10px;
 }
 .rss-story figure {
@@ -286,8 +296,6 @@ header .HeadApp h1 {
 }
 .rss-story figcaption {
     text-align: center;
-    position: relative;
-    top: -30px;
     color: #fff;
     text-shadow: 0px 2px 6px #ff2655;
     font-size: 12px;
@@ -301,4 +309,62 @@ header .HeadApp h1 {
     width: 80%;
     background-color: #eee;
     margin: 10px auto;
+}
+
+.overlay {
+	height: 0%;
+	width: 100%;
+	position: fixed;
+	z-index: -10;
+	top: 0;
+	left: 0;
+	background-color: var(--HeadBgColor);
+	overflow-y: hidden;
+	transition: 0.5s;
+}
+
+
+.overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 25px;
+	color: var(--color);
+	display: block;
+	transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+	color: var(--colorSel);
+}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+	.overlay {
+		overflow-y: auto;
+	}
+
+	.overlay a {
+		font-size: 20px
+	}
+
+	.overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
 }

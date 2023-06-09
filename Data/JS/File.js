@@ -30,11 +30,11 @@ function countDaysLove() {
   document.getElementById("DaysLove").innerHTML = (dayDifference).toString();
   document.getElementById("Years").getElementsByClassName("number")[0].textContent = years;
   document.getElementById("Months").getElementsByClassName("number")[0].textContent = months;
-  document.getElementById("Weeks").getElementsByClassName("number")[0].textContent = weeks;
-  document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
-  document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
-  document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
-  document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
+  // document.getElementById("Weeks").getElementsByClassName("number")[0].textContent = weeks;
+  // document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
+  // document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
+  // document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
+  // document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
 
 
 }
@@ -115,3 +115,25 @@ function AgeOnload(x) {
     
   }
 }
+
+function NavMenu() {
+  $("body").css("overflow","hidden");
+  var NavCheck = document.getElementById('NavCheck');
+  if (NavCheck.className == 'fa-solid fa-bars-staggered') {
+    NavCheck.className = 'fa-solid fa-x'
+    openNav();
+  } else {
+    $("body").css("overflow","auto");
+    NavCheck.className = 'fa-solid fa-bars-staggered'
+    closeNav();
+  }
+}
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+

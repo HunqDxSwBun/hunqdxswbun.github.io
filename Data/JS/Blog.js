@@ -1,5 +1,5 @@
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
-const proxyUrl = 'https://api.allorigins.win/raw?url=';
+const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
 
 fetch(proxyUrl + encodeURIComponent(rssUrl1))
@@ -30,7 +30,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
             } else if (minuteDiff > 0) {
                 TimeDiff = minuteDiff + " phút trước";
             } else {
-                TimeDiff = "vừa xong";
+                TimeDiff = "Vừa xong";
             }
 
             Story += `
@@ -80,7 +80,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
             } else if (minuteDiff > 0) {
                 TimeDiff = minuteDiff + " phút trước";
             } else {
-                TimeDiff = "vừa xong";
+                TimeDiff = "Vừa xong";
             }
         
             const NewPost = `

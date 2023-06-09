@@ -5,7 +5,7 @@
 
 <head>
     <!-- Tiêu đề trang -->
-    <title>404</title>
+    <title>Nhật kí tình yêu</title>
 
     <!-- Bộ giải mã và phân loại thiết bị -->
     <meta charset="UTF-8" />
@@ -27,25 +27,115 @@
 
 <body>
     <header>
-        <div class="icon">
-            <i class="fa-solid fa-bars"></i>
+        <div class="icon" onclick="NavMenu()">
+            <i id="NavCheck" class="fa-solid fa-bars-staggered"></i>
         </div>
         <div class="HeadApp">
-            <h1>No Hope</h1>
+            <h1>Nhật kí tình yêu</h1>
         </div>
         <div class="icon">
             <a href="jetpack://">
                 <i class="fa-regular fa-pen-to-square"></i>
             </a>
         </div>
+
+        <div id="myNav" class="overlay">
+            <div class="overlay-content">
+                <a href="#">Trang Chủ</a>
+            </div>
+        </div>
     </header>
+
+
     <div class="Tab">
-        <button class="tablinks active" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+        <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
     </div>
 
+    <div id="Home" class="tabcontent show">
+        <div class="NewPost" id="NewPost">
+            <h1>Không có bài viết mới nhất.</h1>
+            <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
+            <p>HunqD</p>
+        </div>
+        <div class="CardCouple">
+            <div class="DaysLove">
+                <h1 id="DaysLove"></h1>
+                <div class="Grid">
+                    <div class="DGrid">
+                        <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
+                    </div>
+                    <div class="DGrid">Ngày</div>
+                </div>
+               
+            </div>
+            <div class="DaysLove2">
+                <div class="Num" id="Years">
+                    <span class="number"></span>
+                    <span class="unit">năm</span>
+                  </div>
+                  <div class="Num" id="Months">
+                    <span class="number"></span>
+                    <span class="unit">tháng</span>
+                  </div>
+                  <!-- <div class="Num" id="Weeks">
+                    <span class="number"></span>
+                    <span class="unit">tuần</span>
+                  </div>
+                  <div class="Num" id="Days">
+                    <span class="number"></span>
+                    <span class="unit">ngày</span>
+                  </div> -->
+                  <!-- <div class="Num" id="Hours">
+                    <span class="number"></span>
+                    <span class="unit">giờ</span>
+                  </div>
+                  <div class="Num" id="Mins">
+                    <span class="number"></span>
+                    <span class="unit">phút</span>
+                  </div>
+                  <div class="Num" id="Secs">
+                    <span class="number"></span>
+                    <span class="unit">giây</span>
+                  </div>                   -->
+            </div>
+           
+    
+            <div class="Couple">
+                <div class="Info Male">
+                    <div class="Avatar">
+                        <img src="https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
+                            alt="" srcset="">
+                    </div>
+                    <div class="Name">
+                        Mạnh Hùng
+                    </div>
+                    <div class="Age" id="ageHung" onclick="AgeOnload('Hung')" >
+                        <i class="fa-solid fa-mars"></i> 22
+                    </div>
+                </div>
+    
+                <div class="Heart">
+                    <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
+                </div>
+    
+                <div class="Info Female">
+                    <div class="Avatar">
+                        <img src="https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
+                            alt="" srcset="">
+                    </div>
+                    <div class="Name">
+                        Thy
+                    </div>
+                    <div class="Age" id="ageThy" onclick="AgeOnload('Thy')">
+                        <i class="fa-solid fa-venus"></i> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-    <div id="Story" class="tabcontent show">
+    <div id="Story" class="tabcontent">
         <div id="rss-feed"></div>
     </div>
 
