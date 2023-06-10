@@ -75,8 +75,8 @@ function countDaysLove() {
   
   function AgeOnload(x) {
     if (x == 'all') {
-      divHung.innerHTML = (countHung === 0) ? daysLeftHung : `<i class="fa-solid fa-mars"></i> ` + ageHung;
-      divThy.innerHTML = (countThy === 0) ? daysLeftThy : `<i class="fa-solid fa-venus"></i> ` + ageThy;
+      divHung.innerHTML = (countHung === 0) ? ` <i class="fa-solid fa-cake-candles"></i> ` + daysLeftHung : `<i class="fa-solid fa-mars"></i> ` + ageHung;
+      divThy.innerHTML = (countThy === 0) ? ` <i class="fa-solid fa-cake-candles"></i> ` + daysLeftThy : `<i class="fa-solid fa-venus"></i> ` + ageThy;
   
       setTimeout(() => {
         divHung.innerHTML = `<i class="fa-solid fa-mars"></i> ` + ageHung;
@@ -84,7 +84,7 @@ function countDaysLove() {
       }, 3000);
     } else if (x == 'Hung') {
       if (countHung === 0) {
-        divHung.innerHTML = daysLeftHung;
+        divHung.innerHTML = ` <i class="fa-solid fa-cake-candles"></i> ` + daysLeftHung;
         countHung++;
       } else {
         divHung.innerHTML = `<i class="fa-solid fa-mars"></i> ` + ageHung;
@@ -93,7 +93,7 @@ function countDaysLove() {
      
     } else if (x == 'Thy') {
       if (countThy === 0) {
-        divThy.innerHTML = daysLeftThy;
+        divThy.innerHTML = ` <i class="fa-solid fa-cake-candles"></i> ` + daysLeftThy;
         countThy++;
       } else {
         divThy.innerHTML = `<i class="fa-solid fa-venus"></i> ` + ageThy;

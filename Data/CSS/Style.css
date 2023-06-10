@@ -1,33 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Wix+Madefor+Display:wght@500&display=swap');
 
 :root {
-    --HeadColor: pink;
-    --HeadBgColor: #ff2655;
+    --BodyCL: #ffffff;
+    --HeadCL: #ff2655;
+
+    --BodyBG: #ffc0cb;
+    --TabBG: #111111;
+    --CardBG: #111111;
+    --CardBGHV: #2e2e2e;
+    --StoryBG: #fa7f7f;
+    --ButtonBG: #ff2655;
+    --InputBG: transparent;
+
+
+
     --Male: rgb(0, 119, 255);
     --Female: #ff314d;
 }
+
+.dark-mode {
+    --BodyBG: #111;
+    --TabBG: #2e2e2e;
+    --CardBG: #000;
+    --StoryBG: #ff2655;
+}
+
 * {
     margin: 0;
 }
 
 body {
+
+    background-size: cover;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: aliceblue;
-    background-color: pink;
+    color: var(--BodyCL);
+    background-color: var(--BodyBG);
 
 }
+
 .Tab {
     text-align: center;
-    background-color:#111;;
+    background-color: var(--TabBG);
     padding: 4px;
     width: calc(100% - 18px);
     position: fixed;
     bottom: 0;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%   ;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 5px;
     border-radius: 22px;
 }
+
 .Tab .tablinks {
     cursor: pointer;
     background-color: transparent;
@@ -39,71 +62,90 @@ body {
 
 
 .Tab .tablinks i {
-    color: var(--HeadColor);
+    color: var(--HeadCL);
     font-size: 20px;
 
 }
+
 .Tab .tablinks.active {
-    background-color: var(--HeadBgColor);
+    background-color: var(--ButtonBG);
 }
+
 .Tab .tablinks.active i {
-    color: #fff;
+    color: var(--BodyCL);
 }
 
 
 .tabcontent {
     display: none;
+    padding-bottom: 80px;
 }
+
 .tabcontent img {
     max-width: 100%;
 }
+
 .tabcontent.show {
     display: block;
+}
+
+#Home {
+    background-size: cover;
+    height: calc(100vh - 10px);
+    padding: 10px 0 0 0;
 }
 
 
 
 .NewPost {
     max-height: 200px;
-    margin: 10px;
+    margin: 0 10px;
     padding: 10px;
-    background-color: #fa7f7f;
+    background-color: var(--StoryBG);
     border-radius: 10px;
 }
+
 .NewPost .excerpt-audio-block {
     display: none;
 }
+
 .NewPost h1 {
     font-size: 20px;
     margin-bottom: 5px;
 }
+
 .NewPost p {
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
 }
+
 .NewPost p:last-child {
     font-size: 14px;
     font-weight: 500;
     text-align: right;
-    margin-bottom: 0 ;
+    margin-bottom: 0;
 }
+
 .CardCouple {
     width: 100%;
-    margin: 20px 0 ;
+    margin: 20px 0;
 }
+
 .DaysLove {
     text-align: center;
     display: grid;
-    grid-template-columns: 60% 40% ;
+    grid-template-columns: 60% 40%;
     margin: auto;
     animation: heart 1.2s infinite alternate;
 }
+
 @keyframes heart {
     0% {
         scale: 0.9;
     }
 }
+
 .DaysLove #DaysLove {
-    color: var(--HeadBgColor);
+    color: var(--HeadCL);
     font-family: 'Wix Madefor Display', sans-serif;
     font-size: 80px;
     text-align: right;
@@ -112,64 +154,75 @@ body {
 .DaysLove .Grid {
     margin: 20px 0 5px 0;
     display: grid;
-    grid-template-rows: 40% 60%; 
+    grid-template-rows: 40% 60%;
 }
+
 .DaysLove .Grid .DGrid {
     display: flex;
     text-align: left;
     align-items: center;
     justify-content: left;
 }
-.DaysLove .Grid .DGrid:first-child img{
+
+.DaysLove .Grid .DGrid:first-child img {
     color: #ff2655;
     width: 30px;
     margin: 0 0 0 10px;
     animation: heart2 1.2s infinite alternate;
 }
+
 @keyframes heart2 {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .DaysLove .Grid .DGrid:last-child {
     color: #ff6b8b;
     font-size: 20px;
     font-weight: 500;
+    margin-left: 5px;
 }
+
 .DaysLove2 {
     text-align: center;
     display: grid;
-    grid-template-columns: auto auto ;
+    grid-template-columns: auto auto;
     gap: 5px;
     margin: 20px auto;
     padding: 0 20px;
 }
+
 .DaysLove2 .Num {
     margin: auto;
-    background-color: #ff2655;
+    background-color: var(--HeadCL);
     padding-bottom: 5px;
     border-radius: 10px;
     width: 50px;
 }
+
 .DaysLove2 .Num:first-child {
-    margin:  0 0 0 auto  ;
+    margin: 0 0 0 auto;
 }
+
 .DaysLove2 .Num:last-child {
-    margin:  auto 0 0 0   ;
+    margin: auto 0 0 0;
 }
+
 .unit {
     font-size: 12px;
     display: block;
-  }
-  
+}
+
 .number {
     font-size: 22px;
     font-weight: bold;
-  }
-  
+}
+
 .Couple {
     position: absolute;
     bottom: 100px;
@@ -178,13 +231,16 @@ body {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
 .Couple .Heart {
-    padding-top: 20px ;
+    padding-top: 20px;
 }
-.Couple .Heart img{
+
+.Couple .Heart img {
     width: 40px;
     animation: heart3 1.2s infinite alternate;
 }
+
 @keyframes heart3 {
     0% {
         scale: 1.2;
@@ -192,85 +248,102 @@ body {
 }
 
 .Couple .Info img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 3px solid #ff2655;
 }
+
 .Info.Male .Name {
     color: var(--Male);
 }
+
 .Info.Female .Name {
     color: var(--Female);
 }
+
 .Info .Name {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
+
 .Info .Age {
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    width: 50px;
-    padding: 2px 0;
+    font-size: 18px;
+    font-weight: 700;
+    width: 70px;
+    padding: 3px 0;
     margin: 5px auto;
     border-radius: 20px;
 }
-.Info .Avatar img, header .HeadApp h1 {
-    cursor: url('/Data/IMG/Cur/cus.cur'), auto;	
+
+.Info .Avatar img,
+header .HeadApp h1 {
+    cursor: url('/Data/IMG/Cur/cus.cur'), auto;
 }
 
 .Info.Male .Avatar img {
     border: 3px solid var(--Male);
 }
+
 .Info.Male .Age {
     background-color: var(--Male);
 }
+
 .Info.Female .Avatar img {
     border: 3px solid var(--Female);
 }
+
 .Info.Female .Age {
     background-color: var(--Female);
 }
+
 #rss-feed {
     padding: 10px;
-    padding-bottom: 125px;
+    padding-bottom: 25px;
 }
+
 .rss-story {
-    background-color: #fa7f7f;
+    background-color: var(--StoryBG);
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
 }
+
 .rss-story:first-child {
     margin-top: 0;
 }
+
 .rss-story h1 {
     font-size: 20px;
     margin-bottom: 5px;
 }
+
 .rss-story p:last-child {
     font-size: 14px;
     font-weight: 500;
     text-align: right;
-    margin-top: 10px ;
-}
-.rss-story img,.rss-story video,.rss-story iframe {
-    max-width: calc(100% - 6px);
-    max-height: 250px;
-    border-radius: 10px;
-    border: 3px solid #eee;
-    background-color: #eee;
     margin-top: 10px;
 }
+
+.rss-story img,
+.rss-story video,
+.rss-story iframe {
+    max-width: calc(100% - 6px);
+    max-height: 300px;
+    border-radius: 10px;
+    border: 3px solid var(--BodyCL);
+    background-color: var(--BodyCL);
+    margin-top: 10px;
+}
+
 .rss-story figure {
     text-align: center;
-    max-height: 270px;
 }
+
 .rss-story figcaption {
     text-align: center;
-    color: #fff;
-    text-shadow: 0px 2px 6px #ff2655;
+    text-shadow: 0px 2px 6px #111111;
     font-size: 12px;
     font-weight: 600;
 }
@@ -280,40 +353,43 @@ body {
     border: none;
     height: 2px;
     width: 80%;
-    background-color: #eee;
+    background-color: var(--BodyCL);
     margin: 10px auto;
 }
 
 .write {
     position: fixed;
-    bottom: 70px ;
+    bottom: 70px;
     right: 10px;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: #111111;
+    background-color: var(--TabBG);
     height: 50px;
     width: 50px;
     border-radius: 10px;
 }
+
 .write i {
     font-size: 20px;
-    color: var(--HeadColor);
+    color: var(--HeadCL);
 }
 
 .DownloadApp {
-    margin: 10px ;
+    margin: 10px;
     text-align: center;
-    background-color: #111;
+    background-color: var(--CardBG);
     padding: 10px;
     border-radius: 20px;
 }
+
 .DownloadApp img {
     margin: auto;
     width: 100%;
     border-radius: 14px;
 }
+
 .DownloadApp h1 {
     color: #fa7f7f;
     font-size: 22px;
@@ -323,18 +399,23 @@ body {
 .SettingDIV {
     display: flex;
     flex-wrap: wrap;
+    padding: 0px 10px;
 }
 
 .SettingBlock {
-    text-align: center;
-    margin: 5px;
+    margin: 5px auto;
     width: calc(50% - 10px);
-    text-align: left;
-    background-color: #111;
-    padding: 10px;
+    text-align: center;
+    background-color: var(--CardBG);
+    padding: 15px 5px;
     border-radius: 20px;
-    box-sizing: border-box; /* Đảm bảo padding và border không tăng kích thước */
+    box-sizing: border-box;
 }
+
+.SettingBlock:hover {
+    background-color: var(--CardBGHV);
+}
+
 .SettingBlock.Center {
     display: flex;
     text-align: center;
@@ -343,53 +424,176 @@ body {
     padding: 30px;
 }
 
+.SettingBlock.Active {
+    background-color: var(--ButtonBG);
+    display: none;
+    width: calc(100% - 10px);
+    padding: 10px;
+}
+
+.SettingBlock.Active h1 {
+    margin: 0 0 10px 0;
+
+}
+#Redeem h1 {
+    overflow: hidden;
+    font-size: 18px;
+    margin:  0;
+}
+.Redeem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Redeem input {
+    color: var(--ButtonBG);
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px; 
+    width: 70%; 
+    background-color: var(--BodyCL);
+    border: 2px solid var(--BodyCL);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.Redeem button {
+    color: var(--BodyCL);
+    background-color: var(--ButtonBG);
+    border: 2px solid var(--BodyCL);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 7px;
+    width: 30%;
+    border-radius: 10px;
+}
+.Redeem button:hover {
+    color: var(--ButtonBG);
+    background-color: var(--BodyBG);
+    border: 2px solid var(--ButtonBG);
+}
+
 .SettingBlock i {
     font-size: 35px;
 }
+
 .SettingBlock h1 {
     font-size: 20px;
+    margin: 5px 0 2px 0;
 }
+
 .SettingBlock p {
     color: #a8a8a8;
     font-size: 12px;
 }
+
+.SettingBlock input[type="color"] {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #eee;
+    padding: 0 2px;
+}
+
+.SettingBlock input[type="color"]::-webkit-color-swatch {
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.ColorPick {
+    background-color: var(--CardBG);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 2px solid var(--BodyCL);
+}
+
+.ColorPick h1 {
+    margin: 0 !important;
+}
+
+#CustomColor button{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--BodyCL);
+    background-color: var(--ButtonBG);
+    width: 100%;
+    padding: 12px 0;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 2px solid var(--BodyCLs);
+}
+
+/* .SettingBlock.Active .ColorPick:nth-child(2) {
+    background-color: var(--BodyBG);
+}
+.SettingBlock.Active .ColorPick:nth-child(3) {
+    background-color: var(--BodyCL);
+}
+.SettingBlock.Active .ColorPick:nth-child(4) {
+    background-color: var(--HeadCL);
+}
+.SettingBlock.Active .ColorPick:nth-child(5) {
+    background-color: var(--StoryBG);
+}
+.SettingBlock.Active .ColorPick:nth-child(6) {
+    background-color: var(--TabBG);
+}
+.SettingBlock.Active .ColorPick:nth-child(7) {
+    background-color: var(--CardBG);
+}
+.SettingBlock.Active .ColorPick:nth-child(8) {
+    background-color: var(--ButtonBG);
+} */
+
+
+
 .tabcontent .head {
     text-align: center;
-    color: var(--HeadBgColor);
+    color: var(--HeadCL);
     margin: 10px auto;
 }
+
 .Security {
     padding: 10px;
     text-align: center;
 }
 
 .Security .Option {
-    color: #111;
     text-align: left;
     margin-bottom: 10px;
 }
+
 .Security button {
     width: 100%;
     height: 50px;
     font-size: 20px;
     font-weight: bold;
     color: #eee;
-    background-color: #111;
+    background-color: var(--ButtonBG);
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
 .Security textarea {
     font-size: 18px;
     padding: 10px;
     width: calc(100% - 26px);
     height: 100px;
     overflow: auto;
-    border: 2px solid #111;
+    color: var(--BodyCL);
+    background-color: var(--InputBG);
+    border: 2px solid var(--ButtonBG);
     border-radius: 10px;
 }
 
 .Security label {
+    color: var(--ButtonBG);
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
@@ -397,8 +601,8 @@ body {
     vertical-align: middle;
     position: relative;
     top: -6px;
-  }
-  
+}
+
 
 .Security input[type="radio"] {
     appearance: none;
@@ -406,13 +610,12 @@ body {
     -moz-appearance: none;
     width: 20px;
     height: 20px;
-    /* border: 2px solid var(--HeadBgColor); */
     border-radius: 50%;
     display: inline-block;
     position: relative;
-    background-color: var(--HeadBgColor);
-  }
-  
+    background-color: var(--HeadCL);
+}
+
 .Security input[type="radio"]:checked::before {
     content: "";
     position: absolute;
@@ -422,89 +625,32 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: white;
-  }
-  
+    background-color: var(--BodyCL);
+}
+
 .Security input[type="radio"]:hover {
     border-color: #111;
 }
 
 .Security select {
+    color: var(--ButtonBG);
+    background-color: transparent;
     font-family: Arial, sans-serif;
     font-size: 18px;
     font-weight: bold;
     padding: 8px;
     border-radius: 10px;
     width: 100%;
-    border: 2px solid #111;
-    padding:  10px;
+    border: 2px solid var(--ButtonBG);
+    padding: 10px;
+    cursor: pointer;
 }
-  
+
 
 .Security select option {
+    color: var(--BodyCL);
+    background-color: var(--CardBG);
     font-family: Arial, sans-serif;
     font-size: 18px;
     font-weight: bold;
-  }
-  
-
-.overlay {
-    margin: auto;
-	height: 0%;
-	width: calc(100% - 18px);
-    border-radius: 20px;
-	position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
-	z-index: -10;
-	background-color: var(--HeadBgColor);
-	overflow-y: hidden;
-	transition: 0.5s;
-
-}
-
-
-.overlay-content {
-	position: relative;
-	top: 25%;
-	width: 100%;
-	text-align: center;
-	margin-top: 30px;
-}
-
-.overlay a {
-	padding: 8px;
-	text-decoration: none;
-	font-size: 25px;
-	color: var(--color);
-	display: block;
-	transition: 0.3s;
-}
-
-.overlay a:hover,
-.overlay a:focus {
-	color: var(--colorSel);
-}
-
-.overlay .closebtn {
-	position: absolute;
-	top: 20px;
-	right: 45px;
-	font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-	.overlay {
-		overflow-y: auto;
-	}
-
-	.overlay a {
-		font-size: 20px
-	}
-
-	.overlay .closebtn {
-		font-size: 40px;
-		top: 15px;
-		right: 35px;
-	}
 }

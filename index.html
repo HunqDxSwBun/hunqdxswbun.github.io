@@ -34,7 +34,7 @@
         <button class="tablinks " onclick="openTAB(event, 'Settings')"><i class="fa-solid fa-gear"></i></button>
     </div>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent ">
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
@@ -107,7 +107,7 @@
                             alt="" srcset="">
                     </div>
                     <div class="Name">
-                        Thy
+                        Thy Thy
                     </div>
                     <div class="Age" id="ageThy" onclick="AgeOnload('Thy')">
                         <i class="fa-solid fa-venus"></i>
@@ -156,7 +156,7 @@
         <p style="text-align: center; color: #111;">Đang cập nhật</p>
     </div>
 
-    <div id="Settings" class="tabcontent">
+    <div id="Settings" class="tabcontent show">
         <h1 class="head">Cài đặt</h1>
         <a href="/Data/Downloads/NhatKiTinhYeu.mobileconfig" style="text-decoration: none;">
             <div class="DownloadApp">
@@ -167,19 +167,105 @@
         <div class="SettingDIV">
             <div class="SettingBlock Center" id="toggle-button">
             </div>
-            <div class="SettingBlock Center">
-                <i class="fa-solid fa-palette"></i>
+            <div class="SettingBlock Center" onclick="Access()">
+                <i class="fa-solid fa-universal-access"></i>
             </div>
-            <div class="SettingBlock ">
+
+            <div class="SettingBlock Active" id="CustomColor">
+               <h1>Tuỳ chỉnh màu</h1>
+               <div class="ColorPick">
+                <input type="color" value="#ffc0cb" id="BodyBG">
+                <h1>Màu nền</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="color" value="#ffffff" id="BodyCL">
+                <h1>Màu chữ</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="color" value="#ff2655" id="HeadCL">
+                <h1>Màu chữ tiêu đề</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="color" value="#fa7f7f" id="StoryBG">
+                <h1>Màu nền nhật kí</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="color" value="#fa7f7f" id="TabBG">
+                <h1>Màu nền thanh menu</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="color" value="#111111" id="CardBG">
+                <h1>Màu nền các ô</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="color" value="#ff2655" id="ButtonBG">
+                <h1>Màu nút nhấn</h1>
+               </div>
+               <div class="ColorPick">
+                <input type="file" id="imageFileInput">
+                <button id="saveImageBtn">Lưu ảnh</button>
+                <button id="deleteImageBtn">Xoá ảnh</button>
+              </div>
+               <button id="resetColors">Đặt lại màu mặc định</button>
+            </div>
+
+            <div class="SettingBlock " onclick="DownloadFile()">
                 <i class="fa-solid fa-circle-down"></i>
                 <h1>Tải Dữ Liệu</h1>
                 <p>Tải xuống tất cả bài viết, hình ảnh, video,...</p>
             </div>
-            <div class="SettingBlock ">
+            <div class="SettingBlock" onclick="Redeem()">
                 <i class="fa-solid fa-gift"></i>
                 <h1>Nhập mã thưởng</h1>
                 <p>Nhận thưởng những phần quà hấp dẫn.</p>
             </div>
+
+            <div class="SettingBlock Active" id="Redeem">
+                <div class="Redeem">
+                    <input id="codeInput" type="text" maxlength="12" placeholder="Mã Thưởng">
+                    <button onclick="redeemCode()">
+                        Đổi Ngay
+                    </button>
+                </div>
+                <h1 id="codeOutput"></h1>
+            </div>
+
+            <div class="SettingBlock " >
+                <i class="fa-solid fa-folder"></i>
+                <h1>Thư mục</h1>
+                <p>Lưu trữ có mã bảo vệ </p>
+                <p> Hiện tại chưa khả dụng</p>
+            </div>
+            <div class="SettingBlock ">
+                <i class="fa-solid fa-user"></i>
+                <h1>Tài khoản</h1>
+                <p>Cá nhân hoá</p>
+                <p>Hiện tại chưa khả dụng</p>
+            </div>
+
+            <div class="SettingBlock ">
+                <i class="fa-solid fa-trophy"></i>
+                <h1>Thành tích</h1>
+                <p>Chưa khả dụng </p>
+            </div>
+            <div class="SettingBlock " >
+                <i class="fa-solid fa-bolt"></i>
+                <h1>Trạng thái</h1>
+                <p>Trang đang hoạt động bình thường</p>
+            </div>
+           
+            <div class="SettingBlock ">
+                <i class="fa-solid fa-circle-info"></i>
+                <h1>Thông tin</h1>
+                <p>Trang được làm với tình yêu của anh và em ❤</p>
+            </div>
+            <div class="SettingBlock " >
+                <i class="fa-solid fa-circle-question"></i>
+                <h1>Thắc mắc</h1>
+                <p>Hiện tại chưa khả dụng</p>
+            </div>
+
+
         </div>
     </div>
 
