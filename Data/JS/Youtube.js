@@ -25,5 +25,11 @@ function chuyenDoi() {
     resultDiv.appendChild(block);
     resultDiv.appendChild(iframe);
     
+    var iframe = document.getElementById('iframeYTB');
 
+        // Lắng nghe sự kiện khi iframe cố gắng mở tab mới
+        iframe.addEventListener('beforeunload', function (event) {
+            // Ngăn chặn mở tab mới
+            event.preventDefault();
+    });
 }
