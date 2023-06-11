@@ -33,3 +33,8 @@ function chuyenDoi() {
             event.preventDefault();
     });
 }
+
+function blockNewTab() {
+            var newTab = window.open("", "_blank");
+            newTab.close();
+}
