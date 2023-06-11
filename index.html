@@ -34,7 +34,7 @@
         <button class="tablinks " onclick="openTAB(event, 'Settings')"><i class="fa-solid fa-gear"></i></button>
     </div>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent ">
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
@@ -156,7 +156,7 @@
         <p style="text-align: center; color: #111;">Đang cập nhật</p>
     </div>
 
-    <div id="Settings" class="tabcontent ">
+    <div id="Settings" class="tabcontent show ">
         <h1 class="head">Cài đặt</h1>
         <a href="/Data/Downloads/NhatKiTinhYeu.mobileconfig" style="text-decoration: none;">
             <div class="DownloadApp">
@@ -216,13 +216,13 @@
             </div>
             <div class="SettingBlock" onclick="Redeem()">
                 <i class="fa-solid fa-gift"></i>
-                <h1>Nhập mã thưởng</h1>
+                <h1>Quy đổi</h1>
                 <p>Nhận thưởng những phần quà hấp dẫn.</p>
             </div>
 
             <div class="SettingBlock Active" id="Redeem">
                 <div class="Redeem">
-                    <input id="codeInput" type="text" maxlength="12" placeholder="Mã Thưởng">
+                    <input id="codeInput" type="text" maxlength="12" placeholder="Nhập mã tại đây">
                     <button onclick="redeemCode()">
                         Đổi Ngay
                     </button>
@@ -230,12 +230,53 @@
                 <h1 id="codeOutput"></h1>
             </div>
 
-            <div class="SettingBlock " >
+            <div class="SettingBlock " onclick="Folder()" >
                 <i class="fa-solid fa-folder"></i>
                 <h1>Thư mục</h1>
                 <p>Lưu trữ có mã bảo vệ </p>
-                <p> Hiện tại chưa khả dụng</p>
             </div>
+            <div class="SettingBlock" onclick="YoutubeMP3()" >
+                <i class="fa-brands fa-youtube"></i>
+                <h1>YouTube MP3</h1>
+                <p>Tải nhạc từ Youtube</p>
+            </div>
+
+            <div class="SettingBlock Active" id="Folder">
+                <h1>Thư mục</h1>
+                <div class="Folders">
+                    <h1>Cấu hình SIM 4G</h1>
+                    <a href="https://sim4.me/sm/sbi.mobileconfig">
+                        <button>Link chính thức</button>
+                    </a>
+                    <a href="/Files/sbi.mobileconfig">
+                        <button>Link dự phòng </button>
+                    </a>
+                </div>
+                
+                <div class="Folders">
+                    <h1>Cấu hình chặn quảng cáo</h1>
+                    <a href="https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig">
+                        <button>Link chính thức</button>
+                    </a>
+                    <a href="/Files/adguard-dns.mobileconfig">
+                        <button>Link dự phòng </button>
+                    </a>
+                </div>
+               
+               
+                
+            </div>
+
+            <div class="SettingBlock Active" id="YoutubeMp3">
+                <h1>Tải nhạc từ YouTube</h1>
+                <div class="YoutubeMp3">
+                    <input type="text" id="inputLinkYTB" placeholder="Link YouTube">
+                    <button onclick="chuyenDoi()">Chuyển đổi</button>
+                </div>
+                <div id="outLinkYTB">
+                </div>
+            </div>
+
             <div class="SettingBlock ">
                 <i class="fa-solid fa-user"></i>
                 <h1>Tài khoản</h1>
@@ -243,17 +284,26 @@
                 <p>Hiện tại chưa khả dụng</p>
             </div>
 
-            <div class="SettingBlock ">
+          
+            <div class="SettingBlock" >
+                <i class="fa-solid fa-box"></i>
+                <h1>Sắp có</h1>
+                <p>Tính năng mới</p>
+            </div>
+
+          
+
+            <div class="SettingBlock">
                 <i class="fa-solid fa-trophy"></i>
                 <h1>Thành tích</h1>
                 <p>Chưa khả dụng </p>
             </div>
-            <div class="SettingBlock " >
+            <div class="SettingBlock" >
                 <i class="fa-solid fa-bolt"></i>
                 <h1>Trạng thái</h1>
                 <p>Trang đang hoạt động bình thường</p>
             </div>
-           
+
             <div class="SettingBlock ">
                 <i class="fa-solid fa-circle-info"></i>
                 <h1>Thông tin</h1>
@@ -274,6 +324,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./Data/JS/File.js"></script>
+<script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 

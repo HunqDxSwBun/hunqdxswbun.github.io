@@ -39,6 +39,7 @@ body {
 }
 
 .Tab {
+    z-index: 999;
     text-align: center;
     background-color: var(--TabBG);
     padding: 4px;
@@ -403,6 +404,7 @@ header .HeadApp h1 {
 }
 
 .SettingBlock {
+    cursor: pointer;
     margin: 5px auto;
     width: calc(50% - 10px);
     text-align: center;
@@ -435,6 +437,39 @@ header .HeadApp h1 {
     margin: 0 0 10px 0;
 
 }
+
+.SettingBlock i {
+    font-size: 35px;
+}
+
+
+
+
+.SettingBlock h1 {
+    font-size: 20px;
+    margin: 5px 0 2px 0;
+}
+
+.SettingBlock p {
+    color: #a8a8a8;
+    font-size: 12px;
+}
+
+.SettingBlock input[type="color"] {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #eee;
+    padding: 0 2px;
+}
+
+.SettingBlock input[type="color"]::-webkit-color-swatch {
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+}
+
 #Redeem h1 {
     overflow: hidden;
     font-size: 18px;
@@ -463,9 +498,9 @@ header .HeadApp h1 {
     color: var(--BodyCL);
     background-color: var(--ButtonBG);
     border: 2px solid var(--BodyCL);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    padding: 7px;
+    padding: 7px 0;
     width: 30%;
     border-radius: 10px;
 }
@@ -475,34 +510,88 @@ header .HeadApp h1 {
     border: 2px solid var(--ButtonBG);
 }
 
-.SettingBlock i {
-    font-size: 35px;
-}
-
-.SettingBlock h1 {
-    font-size: 20px;
-    margin: 5px 0 2px 0;
-}
-
-.SettingBlock p {
-    color: #a8a8a8;
-    font-size: 12px;
-}
-
-.SettingBlock input[type="color"] {
-    border: none;
-    width: 30px;
-    height: 30px;
+.Folders {
+    background-color: var(--BodyBG);
+    padding: 10px 20px ;
     border-radius: 10px;
-    background-color: #eee;
-    padding: 0 2px;
+    margin: 10px 0;
+}
+.Folders img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--ButtonBG);
+}
+.Folders h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--ButtonBG);
+}
+.Folders button {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0 ;
+    border-radius: 10px;
+    color: var(--ButtonBG);
+    background-color: var(--CardBG);
+    border: 2px solid var(--ButtonBG);
+}
+.Folders button:hover {
+    color: var(--BodyCL);
+    background-color: var(--BodyBG);
+    border: 2px solid var(--BodyCL);
 }
 
-.SettingBlock input[type="color"]::-webkit-color-swatch {
-    margin: 0;
-    border: none;
+.YoutubeMp3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.YoutubeMp3 input {
+    color: var(--ButtonBG);
+    text-align: center;
+    font-size: 18px;
+    padding: 5px; 
+    width: 60%; 
+    background-color: var(--BodyCL);
+    border: 2px solid var(--BodyCL);
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.YoutubeMp3 button {
+    color: var(--BodyCL);
+    background-color: var(--ButtonBG);
+    border: 2px solid var(--BodyCL);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 2px;
+    width: 40%;
     border-radius: 10px;
 }
+.YoutubeMp3 button:hover {
+    color: var(--ButtonBG);
+    background-color: var(--BodyBG);
+    border: 2px solid var(--ButtonBG);
+}
+
+#YoutubeMp3 iframe {
+    margin: 10px 0;
+    height: 220px;
+    width: 100%;
+    border: 2px solid var(--BodyCL);
+    border-radius: 10px;
+}
+#YoutubeMp3 p {
+    font-size: 16px;
+    color: var(--BodyCL) ;
+}
+#YoutubeMp3 iframe .modal-box.max-h-full {
+    background-color: #111 !important;
+}
+
 
 .ColorPick {
     background-color: var(--CardBG);

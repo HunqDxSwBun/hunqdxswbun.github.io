@@ -447,6 +447,20 @@ function Access() {
   alert('Trợ năng chưa khả dụng')
 }
 
-function DownloadFile() {
-  alert('Hiện tại tính năng tải tất cả bài viết đang tạm dừng vì lý do lỗi sảy ra.')
+function Folder() {
+    var x = document.getElementById("Folder");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+}
+
+function YoutubeMP3() {
+  var x = document.getElementById("YoutubeMp3");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
