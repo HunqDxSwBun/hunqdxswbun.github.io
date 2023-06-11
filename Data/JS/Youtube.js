@@ -14,7 +14,7 @@ function chuyenDoi() {
     iframe.id = "iframeYTB";
     var block = document.createElement("div");
     block.id = "Block";
-    block.innerHTML = '<p>Bấm vào ô dưới đây.</p> <p>Sau đó chờ và bấm vào <b>"Download"</b> để tải về.</p> <p>Vì sử dụng nguồn cung cấp bên thứ 3 nên khi bấm "Download" có thể sẽ nhảy sang trang quảng cáo nên khi có trang quảng cáo hãy đóng trang đó càng nhanh càng tốt. Sắp tới sẽ xử lý vấn đề này nên tạm thời chịu quảng cáo 😓</p>';
+    block.innerHTML = '<p>Bấm vào ô dưới đây.</p> <p>Sau đó chờ và bấm vào <b>"Download"</b> để tải về.</p> <br> <p>Vì sử dụng nguồn cung cấp bên thứ 3 nên khi bấm "Download" có thể sẽ nhảy sang trang quảng cáo nên khi có trang quảng cáo hãy đóng trang đó càng nhanh càng tốt. Sắp tới sẽ xử lý vấn đề này nên tạm thời chịu quảng cáo 😓</p>';
 
     iframe.src = "https://convert2mp3s.com/api/single/mp3?url=" + encodeURIComponent(inputText);
     
