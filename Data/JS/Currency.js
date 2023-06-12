@@ -1,4 +1,4 @@
-fetch('https://api.currencyapi.com/v3/latest?apikey=Y689NLZpGYsZFoINNiiRw1Zf4arW1VpCO601ADbn&base_currency=JPY')
+fetch('https://api.currencyapi.com/v3/latest?apikey=UoxNnHpqRwtK03SnHBdcY7c7zIOC4J7c8FPT6ITp&base_currency=JPY')
   .then(response => response.json())
   .then(data => {
     const exchangeRate = data.data.VND.value.toFixed(0);
