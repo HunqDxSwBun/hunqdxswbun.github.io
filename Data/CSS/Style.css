@@ -584,6 +584,10 @@ header .HeadApp h1 {
     background-color: var(--BodyBG);
     border: 2px solid var(--BodyCL);
 }
+.Folders button span {
+    font-size: 12px;
+    color: var(--BodyCL);
+}
 
 .YoutubeMp3 {
     display: flex;
@@ -641,6 +645,7 @@ header .HeadApp h1 {
 #YoutubeMp3 p {
     font-size: 14px;
     color: var(--BodyCL);
+    margin: 10px 0;
 }
 
 .YoutubeMp3 p {
