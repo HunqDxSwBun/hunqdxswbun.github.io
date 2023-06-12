@@ -625,3 +625,18 @@ function Copy(x) {
  navigator.clipboard.writeText(x);
   alert('Sao chép thành công');
 }
+
+var vReset = 0 ;
+function Reset() {
+  vReset++;
+  if (vReset === 2) {
+    alert('Nếu nhấn thêm 1 lần nữa mọi dữ liệu sẽ bị xoá');
+  }
+  if (vReset === 3) {
+    localStorage.clear();
+    alert('Đã xoá dữ liệu thành công, trang sẽ tải lại sau 3 giây.');
+    setTimeout(() => {
+      location.reload()
+    }, 3000);
+  }
+}
