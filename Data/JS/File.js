@@ -1,13 +1,3 @@
-// Áp dụng bộ lọc sau khi đã tải
-window.onload = function() {
-  // Kiểm tra xem EasyList đã được tải thành công hay chưa
-  if (typeof EasyList !== 'undefined') {
-    // Áp dụng bộ lọc EasyList vào trang web của bạn
-    EasyList.enable();
-  }
-};
-
-
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -441,7 +431,7 @@ window.addEventListener('load', () => {
 var data = [
   { code: "SWBUN18", NoiDung: "Em tưởng anh nhầm ngày sinh nhật em à?. Không đâu 18 là Sendnupe 🌚", Data: "1000" },
   { code: "SWBUN19", NoiDung: "Yêu em nhiều lắm ❤", Data: "1000" },
-  { code: "ABC123", NoiDung: "Không có gì cả", Data: "1200" }
+  { code: "ABC123", NoiDung: "Không có gì cả", Data: "1200" },
 ];
 
 function redeemCode() {
@@ -496,7 +486,6 @@ function DownloadStory() {
     }
   }, 80);
 }
-
 
 
 function Redeem() {
@@ -629,4 +618,10 @@ function YoutubeMP3() {
     YTB.style.display = "block";
     Folderd.style.display = "none";
   }
+}
+
+
+function Copy(x) {
+ navigator.clipboard.writeText(x);
+  alert('Sao chép thành công');
 }
