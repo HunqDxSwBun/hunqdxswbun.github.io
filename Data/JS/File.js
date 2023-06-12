@@ -1,3 +1,8 @@
+document.addEventListener('gesturestart', function(event) {
+  event.preventDefault(); // Chặn sự kiện zoom
+});
+
+
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
