@@ -1,18 +1,26 @@
-fetch('https://api.currencyapi.com/v3/latest?apikey=UoxNnHpqRwtK03SnHBdcY7c7zIOC4J7c8FPT6ITp&base_currency=JPY')
-  .then(response => response.json())
-  .then(data => {
-    const exchangeRate = data.data.VND.value.toFixed(0);
-    const lastUpdated = new Date(data.meta.last_updated_at);
-    const lastUpdatedLocal = lastUpdated.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+var xCurrency = 0 ;
+function Currency() {
+  xCurrency++;
+  if (xCurrency === 1) {
+    fetch('https://api.currencyapi.com/v3/latest?apikey=UoxNnHpqRwtK03SnHBdcY7c7zIOC4J7c8FPT6ITp&base_currency=JPY')
+    .then(response => response.json())
+    .then(data => {
+      const exchangeRate = data.data.VND.value.toFixed(0);
+      const lastUpdated = new Date(data.meta.last_updated_at);
+      const lastUpdatedLocal = lastUpdated.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
 
+      document.getElementById('CurrencyOUT').innerText = exchangeRate + ' VND';
+      document.getElementById('CurrencyOUTlastUpdated').innerText = 'Cập nhật: ' + lastUpdatedLocal;
+      
+    })
+    .catch(error => {
+      console.log('Đã xảy ra lỗi:', error);
+    });
+  } else {
+    alert('Vì lý do nguồn cung cấp bên thứ 3 sẽ hạn chế số lần nhận dữ liệu nên hạn chế nhấn cập nhật nếu không cần thiết.')
+  }
+}
 
-    // document.getElementById('Currency')
-    document.getElementById('CurrencyOUT').innerText = exchangeRate + ' VND';
-    document.getElementById('CurrencyOUTlastUpdated').innerText = 'Cập nhật: ' + lastUpdatedLocal;
-  })
-  .catch(error => {
-    console.log('Đã xảy ra lỗi:', error);
-  });
 
 // 300/Tài khoản * 10
 // UoxNnHpqRwtK03SnHBdcY7c7zIOC4J7c8FPT6ITp - Đang sử dụng
