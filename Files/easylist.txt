@@ -52843,5 +52843,13 @@ browsershots.org#@#.advert_area
 ||st.ipornia.com^$third-party
 ||static.twincdn.com/special/license.packed
 ||static.twincdn.com/special/script.packed
-||streamen.com/exports/$third-party
-||st
+||streamen.com/exports/$
+||advice-ads.s3.amazonaws.com
+||advertising-api-eu.amazon.com
+||afs.googlesyndication.com
+||click.googleanalytics.com
+||analytics.google.com
+||ads-api.tiktok.com
+||business-api.tiktok.com
+||advertising.apple.com
+
