@@ -706,6 +706,30 @@ header .HeadApp h1 {
     background-color: var(--ButtonBG);
 } */
 
+#Games {
+    text-align: center;
+}
+#Games #DiemDanh {
+    font-family:cursive;
+    font-size: 80px;
+}
+
+#Games button {
+    cursor: pointer;
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--BodyBG);
+    background-color: var(--ButtonBG);
+    border: none;
+    border-radius: 10px;
+    margin: 2px 0 10px 0;
+}
+#Games button:hover {
+    color: var(--BodyCL);
+    border: 2px solid var(--BodyCL);
+}
 
 
 .tabcontent .head {

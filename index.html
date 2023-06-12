@@ -149,7 +149,7 @@
                 <button id="convertButton" onclick="pasteConvertText()"><i class="fa-regular fa-clipboard"></i></button>
                 <button id="convertButton" onclick="convertText()"><i class="fa-solid fa-right-left"></i></button>
             </div>
-           
+
             <textarea id="outputText"></textarea>
             <button id="copyOutputText" onclick="copyText()"><i class="fa-regular fa-clone"></i></button>
         </div>
@@ -158,6 +158,9 @@
     <div id="Games" class="tabcontent">
         <h1 class="head">Trò chơi</h1>
         <p style="text-align: center; color: #111;">Đang cập nhật</p>
+        <h1 id="DiemDanh">2</h1>
+        <button id="diemDanhBtn">Điểm Danh</button>
+        <button disabled id="xoaDuLieuBtn">Xoá Dữ liệu</button>
     </div>
 
     <div id="Settings" class="tabcontent ">
@@ -232,8 +235,8 @@
                 <h1>Tải dữ liệu</h1>
                 <div class="progress-container">
                     <div id="progressbar" class="progressbar"></div>
-                  </div>
-                  <button id="BTNDowload" onclick="downloadFile()">Tải xuống</button>
+                </div>
+                <button id="BTNDowload" onclick="downloadFile()">Tải xuống</button>
             </div>
 
             <div class="SettingBlock Active" id="Redeem">
@@ -278,6 +281,7 @@
                         <button>Link dự phòng </button>
                     </a>
                 </div>
+
                 <div class="Folders">
                     <h1>Chặn quảng cáo</h1>
                     <a href="http://hunqdxswbun.github.io/Files/easylist.txt" target="_blank" rel="noopener noreferrer">
@@ -285,14 +289,25 @@
                             Bộ Lọc quảng cáo <span>v1.0.1</span>
                         </button>
                     </a>
-                    <a href="https://apps.apple.com/vn/app/adblock/id691121579?l=vi" target="_blank" rel="noopener noreferrer">
+                    <a href="https://apps.apple.com/vn/app/adblock/id691121579?l=vi" target="_blank"
+                        rel="noopener noreferrer">
                         <button>
                             AdBlock <span>v4.7.3</span>
                         </button>
                     </a>
-                    
-                    
                 </div>
+
+                <div class="Folders">
+                    <h1>Nghe nhạc Youtube tắt màn hình</h1>
+                    <a href="https://apps.apple.com/vn/app/musi-simple-music-streaming/id591560124?l=vi" target="_blank" rel="noopener noreferrer">
+                        <button>
+                            Musi
+                        </button>
+                    </a>
+                </div>
+
+
+
             </div>
 
             <div class="SettingBlock Active" id="YoutubeMp3">
@@ -303,8 +318,10 @@
                     <button onclick="chuyenDoi()"><i class="fa-solid fa-circle-down"></i></button>
                 </div>
                 <div id="outLinkYTB"></div>
-                <p>Vì sử dụng nguồn cung cấp bên thứ 3 nên khi tải về có thể sẻ mở Tab QC mới. Hãy tắt Tab QC khi xuất hiện.</p>
-                <p>Hãy tải <b onclick="Folder()" style="text-decoration:underline;cursor: pointer;">Adblock</b> Để chặn quảng cáo.</p>
+                <p>Vì sử dụng nguồn cung cấp bên thứ 3 nên khi tải về có thể sẻ mở Tab QC mới. Hãy tắt Tab QC khi xuất
+                    hiện.</p>
+                <p>Hãy tải <b onclick="Folder()" style="text-decoration:underline;cursor: pointer;">Adblock</b> Để chặn
+                    quảng cáo.</p>
             </div>
 
             <div class="SettingBlock ">
@@ -346,9 +363,9 @@
             </div>
         </div>
     </div>
-<style>
-    
-</style>
+    <style>
+
+    </style>
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
@@ -358,6 +375,7 @@
 <script src="./Data/JS/Currency.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
+<script src="./Data/JS/Game.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 
 
