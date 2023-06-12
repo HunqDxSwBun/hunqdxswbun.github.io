@@ -5,7 +5,6 @@ fetch('https://api.currencyapi.com/v3/latest?apikey=Y689NLZpGYsZFoINNiiRw1Zf4arW
     const lastUpdated = new Date(data.meta.last_updated_at);
     const lastUpdatedLocal = lastUpdated.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
 
-<<<<<<< Updated upstream
     
     // document.getElementById('Currency')
     document.getElementById('CurrencyOUT').innerText =  exchangeRate + ' VND';
@@ -14,11 +13,4 @@ fetch('https://api.currencyapi.com/v3/latest?apikey=Y689NLZpGYsZFoINNiiRw1Zf4arW
   .catch(error => {
     console.log('Đã xảy ra lỗi:', error);
   });
-=======
-    document.getElementById('CurrencyOUT').innerText =  exchangeRate + ' VND';
-    document.getElementById('CurrencyOUTlastUpdated').innerText = 'Cập nhật: ' + lastUpdatedLocal;
-  })
-  .catch(error => {
-    console.log('Đã xảy ra lỗi:', error);
-  });
->>>>>>> Stashed changes
+
