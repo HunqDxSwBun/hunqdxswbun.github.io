@@ -1,3 +1,13 @@
+// Áp dụng bộ lọc sau khi đã tải
+window.onload = function() {
+  // Kiểm tra xem EasyList đã được tải thành công hay chưa
+  if (typeof EasyList !== 'undefined') {
+    // Áp dụng bộ lọc EasyList vào trang web của bạn
+    EasyList.enable();
+  }
+};
+
+
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -8,6 +18,15 @@ function openTAB(evt, TabName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
+
+  var body = document.querySelector('body');
+
+  if (TabName == "Home") {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "auto";
+  }
+  
   document.getElementById(TabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
@@ -294,15 +313,25 @@ function textToMorse(text) {
     .join(" ");
 }
 
+function pasteConvertText() {
+  navigator.clipboard.readText()
+    .then(function (clipboardData) {
+      // Gán giá trị từ clipboard vào trường input
+      document.getElementById('inputText').value = clipboardData;
+    })
+    .catch(function (error) {
+      console.error('Lỗi khi đọc dữ liệu từ clipboard: ', error);
+    });
+}
 
 function copyText() {
   var textArea = document.getElementById("outputText");
   var copyOutputText = document.getElementById("copyOutputText");
   textArea.select();
   document.execCommand("copy");
-  copyOutputText.innerText = 'Đã sao chép thành công!'
+  copyOutputText.innerHTML = '<i class="fa-solid fa-circle-check"></i>'
   setTimeout(() => {
-    copyOutputText.innerText = 'Sao chép'
+    copyOutputText.innerHTML = '<i class="fa-regular fa-clone"></i>'
   }, 3000);
 
 }
@@ -407,14 +436,7 @@ window.addEventListener('load', () => {
   }
 });
 
-function Redeem() {
-  var x = document.getElementById("Redeem");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+
 
 var data = [
   { code: "SWBUN18", NoiDung: "Em tưởng anh nhầm ngày sinh nhật em à?. Không đâu 18 là Sendnupe 🌚", Data: "1000" },
@@ -443,24 +465,168 @@ function redeemCode() {
   codeOutput.innerText = ("Mã không hợp lệ!");
 }
 
-function Access() {
-  alert('Trợ năng chưa khả dụng')
+
+var Dowloading = document.getElementById("Dowloading");
+var RedeemDIV = document.getElementById("Redeem");
+
+
+function DownloadStory() {
+  var BTNDowload = document.getElementById("BTNDowload");
+  if (Dowloading.style.display === "block") {
+    Dowloading.style.display = "none";
+  } else {
+    Dowloading.style.display = "block";
+    RedeemDIV.style.display = "none";
+  }
+  BTNDowload.style.display = "none";
+ var progressBar = document.getElementById("progressbar");
+  var percent = 0;
+  var interval = setInterval(function() {
+    percent += 1;
+    progressBar.style.width = percent + "%";
+    if (percent >= 100) {
+      
+      clearInterval(interval);
+      if (percent === 100) {
+        setTimeout(() => {
+          BTNDowload.style.display = "block";
+        }, 2000);
+      }
+      
+    }
+  }, 80);
 }
 
+
+
+function Redeem() {
+  if (RedeemDIV.style.display === "block") {
+    RedeemDIV.style.display = "none";
+  } else {
+    RedeemDIV.style.display = "block";
+    Dowloading.style.display = "none";
+  }
+}
+
+
+function downloadFile() {
+  // Lấy nội dung của div Story
+  var storyContent = document.getElementById('Story').innerHTML;
+
+  // Tạo thẻ <style> và thêm nội dung CSS
+  var styleTag = document.createElement('style');
+  styleTag.innerHTML = `
+    :root {
+      --BodyCL: #ffffff;
+      --HeadCL: #ff2655;
+
+      --BodyBG: #ffc0cb;
+      --StoryBG: #fa7f7f;
+    }
+    * {
+      margin: 0;
+    }
+
+    body {
+      background-size: cover;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: var(--BodyCL);
+      background-color: var(--BodyBG);
+    }
+    .head{
+      color: var(--HeadCL);
+      text-align: center;
+    }
+    #rss-feed {
+        padding: 10px;
+        padding-bottom: 45px;
+    }
+
+    .rss-story {
+        background-color: var(--StoryBG);
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .rss-story:first-child {
+        margin-top: 0;
+    }
+
+    .rss-story h1 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .rss-story p:last-child {
+        font-size: 14px;
+        font-weight: 500;
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .rss-story img,
+    .rss-story video,
+    .rss-story iframe {
+        max-width: calc(100% - 6px);
+        max-height: 300px;
+        border-radius: 10px;
+        border: 3px solid var(--BodyCL);
+        background-color: var(--BodyCL);
+        margin-top: 10px;
+    }
+
+    .rss-story figure {
+        text-align: center;
+    }
+
+    .rss-story figcaption {
+        text-align: center;
+        text-shadow: 0px 2px 6px #111111;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .rss-story hr {
+        border: none;
+        height: 2px;
+        width: 80%;
+        background-color: var(--BodyCL);
+        margin: 10px auto;
+    }
+  `;
+
+  // Tạo nội dung HTML
+  var htmlContent = '<html><head> <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />' + styleTag.outerHTML + '</head><body>' + storyContent + '</body></html>';
+
+  // Tạo một đối tượng Blob từ nội dung HTML
+  var blob = new Blob([htmlContent], { type: 'text/html' });
+
+  // Tạo một đối tượng URL để tải xuống tệp tin HTML
+  var downloadLink = document.createElement('a');
+  downloadLink.href = URL.createObjectURL(blob);
+  downloadLink.download = 'Story.html';
+  downloadLink.click();
+}
+
+
+var Folderd = document.getElementById("Folder");
+var YTB = document.getElementById("YoutubeMp3");
+
 function Folder() {
-    var x = document.getElementById("Folder");
-    if (x.style.display === "block") {
-      x.style.display = "none";
+    if (Folderd.style.display === "block") {
+      Folderd.style.display = "none";
     } else {
-      x.style.display = "block";
+      Folderd.style.display = "block";
+      YTB.style.display = "none";
     }
 }
 
 function YoutubeMP3() {
-  var x = document.getElementById("YoutubeMp3");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  if (YTB.style.display === "block") {
+    YTB.style.display = "none";
   } else {
-    x.style.display = "block";
+    YTB.style.display = "block";
+    Folderd.style.display = "none";
   }
 }

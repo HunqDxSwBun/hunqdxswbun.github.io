@@ -21,7 +21,6 @@
 
     <!-- FontAweSome fas fa icon -->
     <script src="https://kit.fontawesome.com/9392097706.js" crossorigin="anonymous"></script>
-
 </head>
 
 
@@ -31,10 +30,11 @@
         <button class="tablinks " onclick="openTAB(event, 'Security')"><i class="fa-solid fa-shield"></i></button>
         <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Games')"><i class="fa-solid fa-gamepad"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Settings')"><i class="fa-solid fa-gear"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
     </div>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent ">
+        <h1 class="head">Nhật kí tình yêu</h1>
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
@@ -145,9 +145,13 @@
                 <label for="Option">Chuyển sang mã</label>
             </div>
             <textarea id="inputText"></textarea>
-            <button id="convertButton" onclick="convertText()">Chuyển đổi</button>
+            <div class="BTN50">
+                <button id="convertButton" onclick="pasteConvertText()"><i class="fa-regular fa-clipboard"></i></button>
+                <button id="convertButton" onclick="convertText()"><i class="fa-solid fa-right-left"></i></button>
+            </div>
+           
             <textarea id="outputText"></textarea>
-            <button id="copyOutputText" onclick="copyText()">Sao chép</button>
+            <button id="copyOutputText" onclick="copyText()"><i class="fa-regular fa-clone"></i></button>
         </div>
     </div>
 
@@ -156,7 +160,7 @@
         <p style="text-align: center; color: #111;">Đang cập nhật</p>
     </div>
 
-    <div id="Settings" class="tabcontent ">
+    <div id="Settings" class="tabcontent show">
         <h1 class="head">Cài đặt</h1>
         <a href="/Data/Downloads/NhatKiTinhYeu.mobileconfig" style="text-decoration: none;">
             <div class="DownloadApp">
@@ -164,52 +168,60 @@
                 <h1>Tải Ngay</h1>
             </div>
         </a>
+
         <div class="SettingDIV">
             <div class="SettingBlock Center" id="toggle-button">
             </div>
-            <div class="SettingBlock Center" onclick="Access()">
-                <i class="fa-solid fa-universal-access"></i>
+<<<<<<< Updated upstream
+
+            <div class="SettingBlock ">
+=======
+            <div class="SettingBlock " >
+>>>>>>> Stashed changes
+                <i class="fa-solid fa-yen-sign"></i>
+                <h1 id="CurrencyOUT"></h1>
+                <p id="CurrencyOUTlastUpdated"></p>
             </div>
 
             <div class="SettingBlock Active" id="CustomColor">
-               <h1>Tuỳ chỉnh màu</h1>
-               <div class="ColorPick">
-                <input type="color" value="#ffc0cb" id="BodyBG">
-                <h1>Màu nền</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="color" value="#ffffff" id="BodyCL">
-                <h1>Màu chữ</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="color" value="#ff2655" id="HeadCL">
-                <h1>Màu chữ tiêu đề</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="color" value="#fa7f7f" id="StoryBG">
-                <h1>Màu nền nhật kí</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="color" value="#fa7f7f" id="TabBG">
-                <h1>Màu nền thanh menu</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="color" value="#111111" id="CardBG">
-                <h1>Màu nền các ô</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="color" value="#ff2655" id="ButtonBG">
-                <h1>Màu nút nhấn</h1>
-               </div>
-               <div class="ColorPick">
-                <input type="file" id="imageFileInput">
-                <button id="saveImageBtn">Lưu ảnh</button>
-                <button id="deleteImageBtn">Xoá ảnh</button>
-              </div>
-               <button id="resetColors">Đặt lại màu mặc định</button>
+                <h1>Tuỳ chỉnh màu</h1>
+                <div class="ColorPick">
+                    <input type="color" value="#ffc0cb" id="BodyBG">
+                    <h1>Màu nền</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#ffffff" id="BodyCL">
+                    <h1>Màu chữ</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#ff2655" id="HeadCL">
+                    <h1>Màu chữ tiêu đề</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#fa7f7f" id="StoryBG">
+                    <h1>Màu nền nhật kí</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#fa7f7f" id="TabBG">
+                    <h1>Màu nền thanh menu</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#111111" id="CardBG">
+                    <h1>Màu nền các ô</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#ff2655" id="ButtonBG">
+                    <h1>Màu nút nhấn</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="file" id="imageFileInput">
+                    <button id="saveImageBtn">Lưu ảnh</button>
+                    <button id="deleteImageBtn">Xoá ảnh</button>
+                </div>
+                <button id="resetColors">Đặt lại màu mặc định</button>
             </div>
 
-            <div class="SettingBlock " onclick="DownloadFile()">
+            <div class="SettingBlock " onclick="DownloadStory()">
                 <i class="fa-solid fa-circle-down"></i>
                 <h1>Tải Dữ Liệu</h1>
                 <p>Tải xuống tất cả bài viết, hình ảnh, video,...</p>
@@ -218,6 +230,14 @@
                 <i class="fa-solid fa-gift"></i>
                 <h1>Quy đổi</h1>
                 <p>Nhận thưởng những phần quà hấp dẫn.</p>
+            </div>
+
+            <div class="SettingBlock Active" id="Dowloading">
+                <h1>Tải dữ liệu</h1>
+                <div class="progress-container">
+                    <div id="progressbar" class="progressbar"></div>
+                  </div>
+                  <button id="BTNDowload" onclick="downloadFile()">Tải xuống</button>
             </div>
 
             <div class="SettingBlock Active" id="Redeem">
@@ -230,12 +250,12 @@
                 <h1 id="codeOutput"></h1>
             </div>
 
-            <div class="SettingBlock " onclick="Folder()" >
+            <div class="SettingBlock " onclick="Folder()">
                 <i class="fa-solid fa-folder"></i>
                 <h1>Thư mục</h1>
                 <p>Lưu trữ có mã bảo vệ </p>
             </div>
-            <div class="SettingBlock" onclick="YoutubeMP3()" >
+            <div class="SettingBlock" onclick="YoutubeMP3()">
                 <i class="fa-brands fa-youtube"></i>
                 <h1>YouTube MP3</h1>
                 <p>Tải nhạc từ Youtube</p>
@@ -244,7 +264,7 @@
             <div class="SettingBlock Active" id="Folder">
                 <h1>Thư mục</h1>
                 <div class="Folders">
-                    <h1>Cấu hình SIM 4G</h1>
+                    <h1>Cấu hình SIM SBI 4G</h1>
                     <a href="https://sim4.me/sm/sbi.mobileconfig">
                         <button>Link chính thức</button>
                     </a>
@@ -252,7 +272,7 @@
                         <button>Link dự phòng </button>
                     </a>
                 </div>
-                
+
                 <div class="Folders">
                     <h1>Cấu hình chặn quảng cáo</h1>
                     <a href="https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig">
@@ -262,19 +282,26 @@
                         <button>Link dự phòng </button>
                     </a>
                 </div>
-               
-               
-                
+                <div class="Folders">
+                    <h1>Link Filter chặn quảng cáo</h1>
+                    <a href="http://hunqdxswbun.github.io/Files/easylist.txt" target="_blank" rel="noopener noreferrer">
+                        <button>
+                            Lấy Link Filter
+                        </button>
+                    </a>
+                    
+                </div>
             </div>
 
             <div class="SettingBlock Active" id="YoutubeMp3">
                 <h1>Tải nhạc từ YouTube</h1>
                 <div class="YoutubeMp3">
                     <input type="text" id="inputLinkYTB" placeholder="Link YouTube">
-                    <button onclick="chuyenDoi()">Chuyển đổi</button>
+                    <button onclick="pasteClipboardData()"><i class="fa-regular fa-clipboard"></i></button>
+                    <button onclick="chuyenDoi()"><i class="fa-solid fa-circle-down"></i></button>
                 </div>
-                <div id="outLinkYTB">
-                </div>
+                <div id="outLinkYTB"></div>
+                <p>Vì sử dụng nguồn cung cấp bên thứ 3 nên khi tải về có thể sẻ mở Tab QC mới. Hãy tắt Tab QC khi xuất hiện. </p>
             </div>
 
             <div class="SettingBlock ">
@@ -284,21 +311,21 @@
                 <p>Hiện tại chưa khả dụng</p>
             </div>
 
-          
-            <div class="SettingBlock" >
+
+            <div class="SettingBlock">
                 <i class="fa-solid fa-box"></i>
                 <h1>Sắp có</h1>
                 <p>Tính năng mới</p>
             </div>
 
-          
+
 
             <div class="SettingBlock">
                 <i class="fa-solid fa-trophy"></i>
                 <h1>Thành tích</h1>
                 <p>Chưa khả dụng </p>
             </div>
-            <div class="SettingBlock" >
+            <div class="SettingBlock">
                 <i class="fa-solid fa-bolt"></i>
                 <h1>Trạng thái</h1>
                 <p>Trang đang hoạt động bình thường</p>
@@ -309,7 +336,7 @@
                 <h1>Thông tin</h1>
                 <p>Trang được làm với tình yêu của anh và em ❤</p>
             </div>
-            <div class="SettingBlock " >
+            <div class="SettingBlock ">
                 <i class="fa-solid fa-circle-question"></i>
                 <h1>Thắc mắc</h1>
                 <p>Hiện tại chưa khả dụng</p>
@@ -318,16 +345,19 @@
 
         </div>
     </div>
-
+<style>
+    
+</style>
 
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script src="./Data/JS/File.js"></script>
+<script src="./Data/JS/Currency.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
-
 
 
 </html>
