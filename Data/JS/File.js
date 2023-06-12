@@ -2,6 +2,15 @@ document.addEventListener('gesturestart', function(event) {
   event.preventDefault(); // Chặn sự kiện zoom
 });
 
+var lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+  var now = (new Date()).getTime();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
+
 
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
