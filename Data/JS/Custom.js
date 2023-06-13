@@ -45,7 +45,7 @@ const inputs = document.querySelectorAll('.SettingBlock input[type="color"]');
 const imageFileInput = document.getElementById('imageFileInput');
 const saveImageBtn = document.getElementById('saveImageBtn');
 const deleteImageBtn = document.getElementById('deleteImageBtn');
-const homeElement = document.getElementById('Home');
+const homeElement = document.getElementById('IMGBG');
 
 saveImageBtn.addEventListener('click', handleSaveImage);
 deleteImageBtn.addEventListener('click', handleDeleteImage);
