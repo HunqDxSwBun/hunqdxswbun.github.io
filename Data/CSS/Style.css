@@ -9,6 +9,7 @@
     --CardBG: #111111;
     --CardBGHV: #2e2e2e;
     --StoryBG: #fa7f7f;
+    --NewPost: #fa7f7f85;
     --ButtonBG: #ff2655;
     --InputBG: transparent;
 
@@ -44,12 +45,12 @@ body {
     text-align: center;
     background-color: var(--TabBG);
     padding: 4px;
-    width: calc(100% - 18px);
+    width: calc(100% - 38px);
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    margin: 5px;
+    margin: 5px 16px;
     border-radius: 22px;
 }
 
@@ -80,7 +81,7 @@ body {
 
 .tabcontent {
     display: none;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
 }
 
 .tabcontent img {
@@ -101,7 +102,7 @@ body {
     max-height: 200px;
     margin: 0 10px;
     padding: 10px;
-    background-color: var(--StoryBG);
+    background-color: var(--NewPost);
     border-radius: 10px;
 }
 
@@ -359,7 +360,7 @@ header .HeadApp h1 {
 
 .write {
     position: fixed;
-    bottom: 70px;
+    bottom: 90px;
     right: 10px;
     display: flex;
     text-align: center;
@@ -368,7 +369,7 @@ header .HeadApp h1 {
     background-color: var(--TabBG);
     height: 50px;
     width: 50px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .write i {
@@ -711,7 +712,8 @@ header .HeadApp h1 {
     text-align: center;
 }
 #Games #DiemDanh {
-    font-size: 80px;
+    color: var(--HeadCL);
+    font-size: 100px;
 }
 
 #Games button {
@@ -739,7 +741,7 @@ header .HeadApp h1 {
 }
 
 .Security {
-    padding: 10px;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -796,7 +798,7 @@ header .HeadApp h1 {
     padding: 10px;
     margin: 10px 0 0 0;
     width: calc(100% - 26px);
-    height: 100px;
+    height: 150px;
     overflow: auto;
     background-color: var(--InputBG);
     border: 2px solid var(--ButtonBG);
@@ -804,6 +806,7 @@ header .HeadApp h1 {
 }
 
 .Security label {
+    cursor: pointer;
     color: var(--ButtonBG);
     display: inline-block;
     font-size: 18px;
@@ -816,6 +819,7 @@ header .HeadApp h1 {
 
 
 .Security input[type="radio"] {
+    cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

@@ -1,7 +1,19 @@
+window.addEventListener('DOMContentLoaded', () => {
+  const exchangeRate = localStorage.getItem('exchangeRate');
+  const lastUpdated = localStorage.getItem('lastUpdated');
+
+  if (exchangeRate && lastUpdated) {
+    document.getElementById('CurrencyOUT').innerText = exchangeRate + ' VND';
+    document.getElementById('CurrencyOUTlastUpdated').innerText = 'Cập nhật: ' + lastUpdated;
+  }
+});
+
 var xCurrency = 0 ;
 function Currency() {
   xCurrency++;
   if (xCurrency === 1) {
+    localStorage.removeItem('exchangeRate');
+    localStorage.removeItem('lastUpdated');
     fetch('https://api.currencyapi.com/v3/latest?apikey=UoxNnHpqRwtK03SnHBdcY7c7zIOC4J7c8FPT6ITp&base_currency=JPY')
     .then(response => response.json())
     .then(data => {
@@ -11,7 +23,11 @@ function Currency() {
 
       document.getElementById('CurrencyOUT').innerText = exchangeRate + ' VND';
       document.getElementById('CurrencyOUTlastUpdated').innerText = 'Cập nhật: ' + lastUpdatedLocal;
-      
+      alert('Đã cập nhật thành công')
+
+      localStorage.setItem('exchangeRate', exchangeRate);
+      localStorage.setItem('lastUpdated', lastUpdatedLocal);
+
     })
     .catch(error => {
       console.log('Đã xảy ra lỗi:', error);

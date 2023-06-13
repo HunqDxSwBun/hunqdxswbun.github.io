@@ -1,0 +1,31 @@
+[
+    {
+      "Tên Folder": "Cấu hình 4G SIM Softbank",
+      "Type": "Link",
+      "Link": "https://sim4.me/sm/sbi.mobileconfig",
+      "Tên": "Link chính thức",
+      "Tên Phụ": ""
+    },
+    {
+      "Tên Folder": "Cấu hình 4G SIM Softbank",
+      "Type": "Link",
+      "Link": "/Files/sbi.mobileconfig",
+      "Tên": "Link dự phòng",
+      "Tên Phụ": ""
+    },
+    {
+      "Tên Folder": "Chặn quảng cáo",
+      "Type": "Copy",
+      "Link": "https://hunqdxswbun.github.io/Files/easylist.txt",
+      "Tên": "Bộ Lọc quảng cáo",
+      "Tên Phụ": "v1.0.1"
+    },
+    {
+      "Tên Folder": "Chặn quảng cáo",
+      "Type": "Link",
+      "Link": "https://apps.apple.com/vn/app/adblock/id691121579?l=vi",
+      "Tên": "AdBlock",
+      "Tên Phụ": " v0505"
+    }
+  ]
+  

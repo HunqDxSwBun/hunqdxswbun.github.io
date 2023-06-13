@@ -158,20 +158,18 @@
 
     <div id="Games" class="tabcontent">
         <h1 class="head">Trò chơi</h1>
-        <p style="text-align: center; color: #111;">Đang cập nhật</p>
-        <h1 id="DiemDanh">0</h1>
+        <h1 id="DiemDanh"></h1>
+        <br>
         <button id="diemDanhBtn">Điểm Danh</button>
-        <button disabled id="xoaDuLieuBtn">Xoá Dữ liệu</button>
+        <!-- <button id="xoaDuLieuBtn">Xoá Dữ liệu</button> -->
     </div>
 
     <div id="Settings" class="tabcontent ">
         <h1 class="head">Cài đặt</h1>
-        <a href="/Data/Downloads/NhatKiTinhYeu.mobileconfig" style="text-decoration: none;">
             <div class="DownloadApp">
                 <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
                 <h1>Tải Ngay</h1>
             </div>
-        </a>
 
         <div class="SettingDIV">
             <div class="SettingBlock Center" id="toggle-button">
@@ -263,50 +261,6 @@
 
             <div class="SettingBlock Active" id="Folder">
                 <h1>Thư mục</h1>
-                <div class="Folders">
-                    <h1>Cấu hình 4G SIM Softbank</h1>
-                    <a href="https://sim4.me/sm/sbi.mobileconfig">
-                        <button>Link chính thức</button>
-                    </a>
-                    <a href="/Files/sbi.mobileconfig">
-                        <button>Link dự phòng </button>
-                    </a>
-                </div>
-
-                <div class="Folders">
-                    <h1>Cấu hình chặn quảng cáo</h1>
-                    <a href="https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig">
-                        <button>Link chính thức</button>
-                    </a>
-                    <a href="/Files/adguard-dns.mobileconfig">
-                        <button>Link dự phòng </button>
-                    </a>
-                </div>
-
-                <div class="Folders">
-                    <h1>Chặn quảng cáo</h1>
-                        <button onclick="Copy('https://hunqdxswbun.github.io/Files/easylist.txt')">
-                            Bộ Lọc quảng cáo <span>v1.0.1</span>
-                        </button>
-                    <a href="https://apps.apple.com/vn/app/adblock/id691121579?l=vi" target="_blank"
-                        rel="noopener noreferrer">
-                        <button>
-                            AdBlock <span>v4.7.3</span>
-                        </button>
-                    </a>
-                </div>
-
-                <div class="Folders">
-                    <h1>Nghe nhạc Youtube tắt màn hình</h1>
-                    <a href="https://apps.apple.com/vn/app/musi-simple-music-streaming/id591560124?l=vi" target="_blank" rel="noopener noreferrer">
-                        <button>
-                            Musi
-                        </button>
-                    </a>
-                </div>
-
-
-
             </div>
 
             <div class="SettingBlock Active" id="YoutubeMp3">
@@ -367,15 +321,32 @@
     </style>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<!-- Tổng hợp -->
 <script src="./Data/JS/File.js"></script>
+
+<!-- Giao diện -->
+<script src="./Data/JS/DarkMode.js"></script>
+<script src="./Data/JS/Custom.js"></script>
+
+<!-- Bộ chuyển đổi -->
 <script src="./Data/JS/Currency.js"></script>
+<script src="./Data/JS/Security.js"></script>
+
+<!-- Đổi thưởng -->
+<script src="./Data/JS/Redeem.js"></script>
+
+<!-- Tải Story -->
+<script src="./Data/JS/Download.js"></script>
+
+<!-- Mở rộng -->
+<script src="./Data/JS/Folder.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Game.js"></script>
-<script src="./Data/JS/Blog.js"></script>
+<!-- <script src="./Data/JS/Blog.js"></script> -->
 
 
 </html>
