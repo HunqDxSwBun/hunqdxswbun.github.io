@@ -11,16 +11,6 @@ document.addEventListener('touchend', function (event) {
   lastTouchEnd = now;
 }, false);
 
-// Lấy tất cả các div có lớp wp-block-video
-var videoDivs = document.querySelectorAll('.wp-block-video');
-
-// Lặp qua từng div và tìm thẻ video trong mỗi div
-videoDivs.forEach(function(videoDiv) {
-  var video = videoDiv.querySelector('video');
-  if (video) {
-    video.setAttribute('playsinline', '');
-  }
-});
 
 
 

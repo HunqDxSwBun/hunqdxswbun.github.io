@@ -44,21 +44,21 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         });
 
         document.querySelector('#rss-feed').innerHTML = Story;
-       
-       
+
+
         let latestItem = null;
         let latestPubDate = null;
-        
+
         items.forEach(item => {
             const pubDate = item.querySelector("pubDate").textContent;
             const pubDateTimeStamp = Date.parse(pubDate);
-        
+
             if (latestPubDate === null || pubDateTimeStamp > latestPubDate) {
                 latestItem = item;
                 latestPubDate = pubDateTimeStamp;
             }
         });
-        
+
         if (latestItem !== null) {
             const title = latestItem.querySelector("title").textContent;
             const description = latestItem.querySelector("description").textContent;
@@ -66,7 +66,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
             const pubDateTimeStamp = Date.parse(pubDate);
             const nowTimeStamp = Date.now();
             const timeDiff = nowTimeStamp - pubDateTimeStamp;
-        
+
             // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
             const secondDiff = Math.floor(timeDiff / 1000);
             const minuteDiff = Math.floor(timeDiff / (1000 * 60));
@@ -82,16 +82,29 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
             } else {
                 TimeDiff = "Vừa xong";
             }
-        
+
             const NewPost = `
                 <h1>${title}</h1>
                 <p>${description}</p>
                 <p> ${TimeDiff}</p>
             `;
-        
+
             document.querySelector('#NewPost').innerHTML = NewPost;
         }
-        
+
+        // Lấy tất cả các div có lớp wp-block-video
+        var videoDivs = document.querySelectorAll('.wp-block-video');
+
+        // Lặp qua từng div và tìm thẻ video trong mỗi div
+        videoDivs.forEach(function (videoDiv) {
+            var video = videoDiv.querySelector('video');
+            if (video) {
+                video.setAttribute('webkit-playsinline', '');
+                video.setAttribute('playsinline', '');
+                video.setAttribute('controls', ''); // Thêm thuộc tính controls nếu chưa có
+            }
+        });
+
     })
     .catch(error => console.log(error));
 

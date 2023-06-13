@@ -364,8 +364,7 @@ header .HeadApp h1 {
 .rss-story img,
 .rss-story video,
 .rss-story iframe {
-    max-width: calc(100% - 6px);
-    max-height: 500px;
+    width: calc(100% - 6px);
     border-radius: 10px;
     border: 3px solid var(--BodyCL);
     background-color: var(--BodyCL);
@@ -385,7 +384,6 @@ header .HeadApp h1 {
 }
 
 .rss-story .wp-block-gallery {
-
     column-count: 2 !important;
     --webkit-column-count: 2;
     --moz-column-count: 2;
