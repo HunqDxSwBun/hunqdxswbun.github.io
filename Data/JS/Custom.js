@@ -83,3 +83,23 @@ window.addEventListener('load', () => {
   }
 });
 
+
+
+const randomImageBtn = document.getElementById('randomImageBtn');
+let currentImageIndex = 1;
+const SoLuongAnh = 11;
+
+randomImageBtn.addEventListener('click', handleRandomImage);
+
+function handleRandomImage() {
+  const imageUrl = `/Data/Wallpaper/${currentImageIndex}.jpg`;
+
+  homeElement.style.backgroundImage = `url('${imageUrl}')`;
+  localStorage.setItem('homeBackgroundImage', imageUrl);
+
+  // Tăng giá trị currentImageIndex và kiểm tra điều kiện lặp lại
+  currentImageIndex++;
+  if (currentImageIndex > SoLuongAnh) {
+    currentImageIndex = 1;
+  }
+}
