@@ -9,10 +9,10 @@
 
     <!-- Bộ giải mã và phân loại thiết bị -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Đảm bảo đặt meta tag sau -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#111111">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -39,6 +39,8 @@
     </div>
 
     <div id="Home" class="tabcontent show">
+        <div class="IMGBG">
+        </div>
         <h1 class="head">Nhật kí tình yêu</h1>
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
@@ -170,12 +172,23 @@
 
     <div id="Settings" class="tabcontent ">
         <h1 class="head">Cài đặt</h1>
-            <div class="DownloadApp">
-                <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
-                <h1>Tải Ngay</h1>
-            </div>
+        <div class="DownloadApp">
+            <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
+        </div>
 
         <div class="SettingDIV">
+            <div class="SettingBlock Active" id="CustomPIC">
+                <h1>Ảnh Nền</h1>
+                <div class="file-input">
+                        <input type="file" name="file-input" id="imageFileInput" class="file-input__input"/>
+                        <label class="file-input__label" for="imageFileInput">
+                        <span><i class="fa-solid fa-file-import"></i> <br>Tải Ảnh Hoặc Video Ngắn</span></label>
+                </div>
+                    
+                <button id="saveImageBtn">Lưu ảnh</button>
+                <button id="deleteImageBtn">Xoá ảnh</button>
+            </div>
+
             <div class="SettingBlock Center" id="toggle-button">
             </div>
 
@@ -183,10 +196,16 @@
                 <i class="fa-solid fa-yen-sign"></i>
                 <h1 id="CurrencyOUT">Yên Nhật</h1>
                 <p id="CurrencyOUTlastUpdated">Nhấn vào đây để cập nhật.</p>
+                <p style="margin-top: 5px;">Thường sẽ cao hơn 1VND so với SBI Remit</p>
+                <a href="https://www.remit.co.jp/en/kaigaisoukin/exchangeratecommission/exchange/" target="_blank"
+                rel="noopener noreferrer">
+                Mở trang SBI Remit
+                </a>
             </div>
 
             <div class="SettingBlock Active" id="CustomColor">
                 <h1>Tuỳ chỉnh màu</h1>
+
                 <div class="ColorPick">
                     <input type="color" value="#ffc0cb" id="BodyBG">
                     <h1>Màu nền</h1>
@@ -215,13 +234,10 @@
                     <input type="color" value="#ff2655" id="ButtonBG">
                     <h1>Màu nút nhấn</h1>
                 </div>
-                <div class="ColorPick">
-                    <input type="file" id="imageFileInput">
-                    <button id="saveImageBtn">Lưu ảnh</button>
-                    <button id="deleteImageBtn">Xoá ảnh</button>
-                </div>
+
                 <button id="resetColors">Đặt lại màu mặc định</button>
             </div>
+
 
             <div class="SettingBlock " onclick="DownloadStory()">
                 <i class="fa-solid fa-circle-down"></i>

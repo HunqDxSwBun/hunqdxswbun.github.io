@@ -65,11 +65,14 @@ function handleSaveImage() {
 
     reader.readAsDataURL(file);
   }
+  alert('Cài đặt hình nền thành công.')
 }
 
 function handleDeleteImage() {
   homeElement.style.backgroundImage = '';
   localStorage.removeItem('homeBackgroundImage');
+  alert('Đã xoá ảnh nền.')
+
 }
 
 window.addEventListener('load', () => {
@@ -79,3 +82,4 @@ window.addEventListener('load', () => {
     homeElement.style.backgroundImage = `url('${imageUrl}')`;
   }
 });
+

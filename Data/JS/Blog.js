@@ -96,3 +96,4 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
     .catch(error => console.log(error));
 
 
+// Lấy danh sách tất cả các thẻ video trên trang web
