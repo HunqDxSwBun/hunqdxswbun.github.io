@@ -47,7 +47,7 @@ body {
     padding: 4px;
     width: calc(100% - 38px);
     position: fixed;
-    bottom: 20px;
+    bottom: 10px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 5px 16px;
@@ -81,7 +81,7 @@ body {
 
 .tabcontent {
     display: none;
-    padding-bottom: 90px;
+    padding-bottom: 80px;
 }
 
 .tabcontent img {
@@ -234,8 +234,33 @@ body {
 }
 
 .Couple .Heart {
-    padding-top: 20px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
 }
+
+.Couple .Heart.large {
+    transform: scale(2);
+
+}
+.Heart {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.Heart.large {
+    transform: scale(2);
+    animation: large 1.2s infinite;
+}
+@keyframes large {
+    0% {
+        opacity: 0.8;
+    }
+}
+
 
 .Couple .Heart img {
     width: 40px;
@@ -244,6 +269,7 @@ body {
 
 @keyframes heart3 {
     0% {
+
         scale: 1.2;
     }
 }
@@ -360,7 +386,7 @@ header .HeadApp h1 {
 
 .write {
     position: fixed;
-    bottom: 90px;
+    bottom: 80px;
     right: 10px;
     display: flex;
     text-align: center;

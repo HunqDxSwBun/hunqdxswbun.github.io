@@ -118,3 +118,10 @@ function Reset() {
   }
 }
 
+var heartContainer = document.getElementById('heartContainer');
+var isAnimating = false;
+
+function toggleSize() {
+    var heart = document.querySelector('.Heart');
+    heart.classList.toggle('large');
+}
