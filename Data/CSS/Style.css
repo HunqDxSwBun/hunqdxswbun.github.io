@@ -629,11 +629,24 @@ header .HeadApp h1 {
 .YoutubeMp3 input {
     color: var(--ButtonBG);
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px;
-    width: 60%;
+    width: 40%;
     background-color: var(--BodyCL);
     border: 2px solid var(--BodyCL);
+    border-radius: 10px;
+}
+.YoutubeMp3 input::placeholder {
+    font-size: 14px;
+}
+.YoutubeMp3 select {
+    cursor: pointer;
+    color: var(--BodyBG);
+    background-color: var(--BodyCL);
+    border: 2px solid var(--BodyCL);
+    font-weight: bold;
+    padding: 7px 2px;
+    width: 20%;
     border-radius: 10px;
 }
 
@@ -652,7 +665,7 @@ header .HeadApp h1 {
     color: var(--BodyBG);
     background-color: var(--BodyCL);
     border: 2px solid var(--BodyCL);
-    width: 40px;
+    width: 10%;
 }
 
 .YoutubeMp3 button i {
@@ -667,7 +680,7 @@ header .HeadApp h1 {
 
 #YoutubeMp3 iframe {
     margin: 10px 0;
-    height: 220px;
+    height: 530px;
     width: 100%;
     border: 2px solid var(--BodyCL);
     border-radius: 10px;
