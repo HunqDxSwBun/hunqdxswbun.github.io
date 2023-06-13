@@ -640,6 +640,7 @@ header .HeadApp h1 {
     font-size: 14px;
 }
 .YoutubeMp3 select {
+    height: 35px;
     cursor: pointer;
     color: var(--BodyBG);
     background-color: var(--BodyCL);
