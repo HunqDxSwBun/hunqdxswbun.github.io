@@ -372,11 +372,11 @@ header .HeadApp h1 {
 }
 
 .rss-story figure {
-    text-align: left !important;
+    text-align: center !important;
 }
 
 .rss-story figcaption {
-    text-align: left;
+    text-align: center;
     text-shadow: 0px 2px 6px #111111;
     font-size: 12px;
     font-weight: 600;
