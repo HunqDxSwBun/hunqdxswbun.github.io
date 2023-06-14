@@ -242,4 +242,6 @@ function CheckWho2() {
 
 }
 
-
+function HideInfo() {
+  document.getElementById('Currency').innerHTML = '';
+}

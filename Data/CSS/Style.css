@@ -42,13 +42,13 @@ body {
     text-align: center;
     background-color: var(--TabBG);
     padding: 4px;
-    width: calc(100% - 40px);
+    width: calc(100% - 42px);
     position: fixed;
     bottom: 15px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 5px 16px;
-    border-radius: 22px;
+    border-radius: 20px;
 }
 
 .Tab .tablinks {
@@ -56,7 +56,7 @@ body {
     background-color: transparent;
     height: 50px;
     border: none;
-    border-radius: 18px;
+    border-radius: 16px;
     transition: 0.3s;
 }
 
@@ -90,8 +90,9 @@ body {
 }
 
 #Home {
-    padding-top: 5px;
     height: calc(100vh - 80px);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 #Home .IMGBG {
@@ -101,7 +102,7 @@ body {
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: calc(100% - 5px);
+    height: calc(100% - 0px);
     background-image: url(/Data/Wallpaper/1.jpg);
     background-size: cover;
     background-position: 50% 0;
@@ -446,6 +447,7 @@ header .HeadApp h1 {
     background-color: var(--CardBG);
     padding: 10px 20px 20px 20px;
     display: block !important;
+    margin-bottom: 10px;
 }
 
 #CustomPIC .file-input {
@@ -635,10 +637,10 @@ header .HeadApp h1 {
 }
 
 
-#Redeem h1 {
+#Redeem #codeOutput {
     overflow: hidden;
     font-size: 18px;
-    margin: 0;
+    position: relative;
 }
 
 .Redeem {
@@ -677,7 +679,21 @@ header .HeadApp h1 {
     background-color: var(--BodyBG);
     border: 2px solid var(--ButtonBG);
 }
+#Redeem #codeOutput h1 {
+    margin-top: 10px;
+}
+#Redeem #codeOutput img{
+    width: 100%;
+    border-radius: 20px;
+    margin: 10px 0;
+}
 
+#Redeem #codeOutput .shop img {
+    width: 80px;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 4px solid var(--BodyCL);
+}
 .Folders {
     background-color: var(--BodyBG);
     padding: 10px 20px;

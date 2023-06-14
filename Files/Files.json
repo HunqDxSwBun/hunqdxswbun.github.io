@@ -1,13 +1,13 @@
 [
     {
-      "Tên Folder": "Cấu hình 4G SIM Softbank",
+      "Tên Folder": "Cấu hình 4G SIM ",
       "Type": "Link",
       "Link": "https://sim4.me/sm/sbi.mobileconfig",
       "Tên": "Link chính thức",
       "Tên Phụ": ""
     },
     {
-      "Tên Folder": "Cấu hình 4G SIM Softbank",
+      "Tên Folder": "Cấu hình 4G SIM ",
       "Type": "Link",
       "Link": "/Files/sbi.mobileconfig",
       "Tên": "Link dự phòng",

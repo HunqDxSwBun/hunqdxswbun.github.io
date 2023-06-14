@@ -45,7 +45,7 @@
 
     <div id="Home" class="tabcontent show">
         <div class="IMGBG" id="IMGBG"></div>
-        <h1 class="head" onclick="handleRandomImage()">Nhật kí tình yêu</h1>
+        <h1 class="head" onclick="handleRandomImage()">Đếm Ngày Yêu</h1>
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
@@ -145,7 +145,7 @@
     </div>
 
     <div id="Security" class="tabcontent">
-        <h1 class="head">Văn bản bảo mật</h1>
+        <h1 class="head">Chuyển đổi văn bản</h1>
         <div class="Security">
             <div class="Option">
                 <select id="mySelect">
@@ -174,9 +174,10 @@
 
     <div id="Games" class="tabcontent">
         <h1 class="head">Trò chơi</h1>
-        <h1 id="DiemDanh"></h1>
+        <p>Hiện đang trong quá trình phát triển thử nghiệm.</p>
+        <!-- <h1 id="DiemDanh"></h1>
         <br>
-        <button id="diemDanhBtn">Điểm Danh</button>
+        <button id="diemDanhBtn">Điểm Danh</button> -->
         <!-- <button id="xoaDuLieuBtn">Xoá Dữ liệu</button> -->
     </div>
 
@@ -276,7 +277,8 @@
                         Đổi Ngay
                     </button>
                 </div>
-                <h1 id="codeOutput"></h1>
+                <div id="codeOutput">
+                </div>
             </div>
 
             <div class="SettingBlock " onclick="Folder()">
@@ -319,24 +321,21 @@
                 <p>Hiện tại chưa khả dụng</p>
             </div>
 
-
             <div class="SettingBlock">
                 <i class="fa-solid fa-box"></i>
                 <h1>Sắp có</h1>
                 <p>Tính năng mới</p>
             </div>
 
-
-
-            <div class="SettingBlock">
+            <div class="SettingBlock" id="ThanhTich">
                 <i class="fa-solid fa-trophy"></i>
                 <h1>Thành tích</h1>
                 <p>Chưa khả dụng </p>
             </div>
-            <div class="SettingBlock">
-                <i class="fa-solid fa-bolt"></i>
-                <h1>Trạng thái</h1>
-                <p>Trang đang hoạt động bình thường</p>
+            <div class="SettingBlock" onclick="HideInfo()">
+                <i class="fa-solid fa-eye-slash"></i>
+                <h1>Ẩn thông tin</h1>
+                <p>Tính năng ẩn bớt thông tin để chia sẻ</p>
             </div>
 
             <div class="SettingBlock" onclick="Reset()">
@@ -377,7 +376,7 @@
 <script src="./Data/JS/Folder.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
-<script src="./Data/JS/Game.js"></script>
+<!-- <script src="./Data/JS/Game.js"></script> -->
 <script src="./Data/JS/Blog.js"></script>
 
 
