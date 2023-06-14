@@ -9,7 +9,7 @@
     --CardBG: #111111;
     --CardBGHV: #2e2e2e;
     --StoryBG: #fa7f7f;
-    --NewPost: #fa7f7f85;
+    --NewPost: #fa7f7fc7;
     --ButtonBG: #ff2655;
     --InputBG: transparent;
 
@@ -42,7 +42,7 @@ body {
     text-align: center;
     background-color: var(--TabBG);
     padding: 4px;
-    width: calc(100% - 38px);
+    width: calc(100% - 40px);
     position: fixed;
     bottom: 15px;
     display: grid;
@@ -112,7 +112,7 @@ body {
     margin: 0 10px;
     padding: 10px;
     background-color: var(--NewPost);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .NewPost .excerpt-audio-block {
@@ -252,10 +252,11 @@ body {
     align-items: center;
     justify-content: center;
     transition: 0.2s;
+    padding-bottom: 30px;
 }
 
 .Couple .Heart.large {
-    transform: scale(2);
+    transform: scale(1.6);
 
 }
 .Heart {
@@ -273,7 +274,22 @@ body {
     }
 }
 
-
+.CoupleChat {
+    display: none;
+    position: absolute;
+    bottom: 285px;
+    padding: 10px 20px;
+    max-height: 170px;
+    width: calc(100% - 64px);
+    margin: 0 10px;
+    border-radius: 20px;
+    background-color: var(--CardBG);
+    border: 2px solid var(--BodyCL);
+}
+.CoupleChat h1 {
+    font-size: 18px;
+    margin: 0;
+}
 .Couple .Heart img {
     width: 40px;
     animation: heart3 1.2s infinite alternate;
@@ -339,14 +355,14 @@ header .HeadApp h1 {
 
 #rss-feed {
     padding: 10px;
-    padding-bottom: 55px;
+    padding-bottom: 35px;
 }
 
 .rss-story {
     background-color: var(--StoryBG);
     padding: 10px;
-    margin: 20px 10px;
-    border-radius: 10px;
+    margin: 14px 4px;
+    border-radius: 20px;
 }
 
 .rss-story:first-child {
@@ -410,7 +426,7 @@ header .HeadApp h1 {
 .write {
     position: fixed;
     bottom: 80px;
-    right: 14px;
+    right: 16px;
     display: flex;
     text-align: center;
     align-items: center;

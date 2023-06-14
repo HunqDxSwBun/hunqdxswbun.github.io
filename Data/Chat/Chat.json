@@ -1,0 +1,44 @@
+[
+    {
+        "Who": "Male",
+        "Say": "Thy Khùng",
+        "tSay": "2000",
+        "Rep": "Anh khùng á",
+        "tRep": "2000"
+    },
+    {
+        "Who": "Female",
+        "Say": "Hùng Điên",
+        "tSay": "2000",
+        "Rep": "Kẻ tổn thương lại muốn tổn thương người khác 🤪",
+        "tRep": "3000"
+    },
+    {
+        "Who": "Male",
+        "Say": "Anh yêu em lắm 🥰",
+        "tSay": "2000",
+        "Rep": "Em cũng iu anh lắm 😍",
+        "tRep": "2000"
+    },
+    {
+        "Who": "Female",
+        "Say": "Anh có yêu em không ?",
+        "tSay": "2000",
+        "Rep": "Tất nhiên là có chứ 😍",
+        "tRep": "2000"
+    },
+    {
+        "Who": "Male",
+        "Say": "Em có yêu anh không ? Có thì sao 😎",
+        "tSay": "3000",
+        "Rep": "Có nhưng mà đừng có xí dụ em nha 😑",
+        "tRep": "2000"
+    },
+    {
+        "Who": "Male",
+        "Say": "SendN... 🌚",
+        "tSay": "2000",
+        "Rep": "Này nha này nha 😑",
+        "tRep": "2000"
+    }
+]

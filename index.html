@@ -30,6 +30,11 @@
 
 
 <body>
+    <audio id="MusicBG" loop>
+        <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="Tab">
         <button class="tablinks " onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Security')"><i class="fa-solid fa-shield"></i></button>
@@ -39,14 +44,19 @@
     </div>
 
     <div id="Home" class="tabcontent show">
-        <div class="IMGBG" id="IMGBG">
-        </div>
+        <div class="IMGBG" id="IMGBG"></div>
         <h1 class="head" onclick="handleRandomImage()">Nhật kí tình yêu</h1>
         <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
             <p>HunqD</p>
         </div>
+
+        <div class="CoupleChat" id="CoupleChat">
+            <h1 id="Who"></h1>
+            <p id="Chat"></p>
+        </div>
+        
         <div class="CardCouple">
             <div class="DaysLove">
                 <h1 id="DaysLove"></h1>
@@ -91,7 +101,7 @@
 
 
             <div class="Couple">
-                <div class="Info Male">
+                <div class="Info Male" onclick="CoupleChat('Male')">
                     <div class="Avatar">
                         <img src="https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
                             alt="" srcset="">
@@ -108,7 +118,7 @@
                     <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
                 </div>
 
-                <div class="Info Female">
+                <div class="Info Female" onclick="CoupleChat('Female')">
                     <div class="Avatar">
                         <img src="https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
                             alt="" srcset="">
@@ -341,9 +351,6 @@
             </div>
         </div>
     </div>
-    <style>
-
-    </style>
 
 </body>
 
