@@ -1,3 +1,11 @@
+setTimeout(function() {
+  document.getElementById('loading').classList.add('hidden');
+  setTimeout(() => {
+    document.getElementById('loading').style.display = 'none';
+  }, 1000);
+}, 1000);
+
+
 document.addEventListener('gesturestart', function (event) {
   event.preventDefault(); // Chặn sự kiện zoom
 });
