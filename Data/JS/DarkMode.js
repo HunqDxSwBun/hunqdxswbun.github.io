@@ -70,7 +70,6 @@ function setMode(mode) {
         button.innerHTML = '<i class="fa-solid fa-desktop"></i>';
       }
 
-
       // Chạy hàm cho chế độ 3
       mode3();
       break;
