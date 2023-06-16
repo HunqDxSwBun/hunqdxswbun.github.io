@@ -44,7 +44,7 @@ body {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #8c4b3b;
+	background-color: var(--BodyBG);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -62,8 +62,8 @@ body {
 .loading_icon {
 	width: 150px;
 	height: 150px;
-	border: 10px solid #ffffff;
-	border-top-color: var(--ButtonBG);
+	border: 10px solid var(--ButtonBG);
+	border-top-color: var(--BodyCL);
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
 }
@@ -79,6 +79,29 @@ body {
 	width: 100%;
 	border-radius: 50%;
 
+}
+#Shopping {
+    padding: 10px;
+    padding-bottom: 80px;
+}
+#Shopping .Item {
+    background-color: var(--ButtonBG);
+    border-radius: 20px;
+    padding-right: 10px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    margin: 10px 0;
+}
+#Shopping .Item img{
+    width: 80px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-right: 10px;
+}
+#Shopping .Item h1 {
+    font-size: 22px;
 }
 
 @keyframes spin {
