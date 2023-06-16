@@ -1,9 +1,9 @@
-setTimeout(function() {
-  document.getElementById('loading').classList.add('hidden');
-  setTimeout(() => {
-    document.getElementById('loading').style.display = 'none';
-  }, 1000);
-}, 1000);
+// setTimeout(function() {
+//   document.getElementById('loading').classList.add('hidden');
+//   setTimeout(() => {
+//     document.getElementById('loading').style.display = 'none';
+//   }, 1000);
+// }, 1000);
 
 
 document.addEventListener('gesturestart', function (event) {
@@ -252,4 +252,36 @@ function CheckWho2() {
 
 function HideInfo() {
   document.getElementById('Currency').innerHTML = '';
+}
+
+
+
+// var Account = document.getElementById("Account");
+var vSecurity = document.getElementById("Security");
+
+function Security() {
+  if (vSecurity.style.display === "block") {
+    vSecurity.style.display = "none";
+  } else {
+    vSecurity.style.display = "block";
+  }
+}
+
+// function YoutubeMP3() {
+//   if (YTB.style.display === "block") {
+//     YTB.style.display = "none";
+//   } else {
+//     YTB.style.display = "block";
+//     Folderd.style.display = "none";
+//   }
+// }
+
+var vCustomPIC = document.getElementById("CustomPIC");
+
+function CustomPIC() {
+  if (vCustomPIC.style.display === "block") {
+    vCustomPIC.style.display = "none";
+  } else {
+    vCustomPIC.style.display = "block";
+  }
 }
