@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+}
+
+.Nuoc {
+    width: calc(100% - 20px);
+    height: 20px;
+    margin: 0px 10px;
+    background-color: #d6d6d6;
+    border-radius: 15px;
+  }
+.NuocDaTuoi {
+    width: 30%;
+    font-size: 14px;
+    height: 20px;
+    text-align: right;
+    background-color: red;
+    border-radius: 15px;
+  }

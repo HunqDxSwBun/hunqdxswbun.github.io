@@ -1,0 +1,272 @@
+:root {
+  --background: #eee;
+  --text: #111;
+  --BoxShadow: #00000029 ;
+  --BorderColor: rgba(95, 95, 95, 0.26);
+  --Sky: #def512;
+  --Cloud:#00cad1;
+  --menu: #fff;
+  --textMenu: #000;
+  --colorBatery: var(--background);
+}
+
+.darkmode {
+  --background: #111;
+  --text: #fff;
+  --menu: #000;
+  --textMenu: #000;
+  --BoxShadow: #000000 ;
+  --colorBatery: green;
+}
+.Night {
+  --Sky: #fff;
+  --Cloud:#0a2268;
+}
+
+
+
+
+*{
+    margin: 0;
+}
+body {
+  color: var(--text);
+  background-color: #111;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.hide {
+  display: none;
+}
+
+.Progress {
+  width: calc(100% - 20px);
+  height: 20px;
+  margin: 0px 10px;
+  background-color: #d6d6d6;
+  border-radius: 15px;
+}
+.skills {
+  font-size: 14px;
+  height: 20px;
+  text-align: right;
+  color: white;
+  border-radius: 15px;
+}
+
+.CoinLove {
+  background-color: #0000007c;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+  padding: 4px 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.Citem {
+  color: #fff;
+}
+.Citem p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.alert {
+  text-align: center;
+  position:fixed;
+  width: calc(100% - 4px);
+  top: 52px;
+
+}
+#Alert {
+  display: none;
+  background-color: var(--menu);
+  padding: 2px;
+  margin: 0;
+}
+
+
+.DivPlant {
+  height: 750px;
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  margin: 10px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-rows: 50px 200px 230px 110px 100px;
+
+}
+.Info {
+  background-color: var(--Cloud);
+  z-index: -1;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.Soil {
+  display: grid;
+  grid-template-rows: auto auto;
+  text-align: center;
+  height: 170px;
+  width: 100%;
+  background-image: url(/DaysLove/img/data/soil.jpg);
+  background-size: cover;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.Soil .Progress {
+  margin-top: 25px;
+  height: 12px;
+}
+
+.DivSoil img {
+  height: 50px;
+
+}
+.DivSoil img:hover {
+  animation: HieuUng1 2s alternate ;
+}
+
+.DivSoil p {
+  font-size: 18px;
+  font-weight: 600;
+}
+.DivSoil {
+  padding-top: 10px;
+  height: 90px;
+  width: 100%;
+  background-color: #05050552;
+  display: grid;
+  grid-template-columns: auto auto auto ;
+}
+.Sky {
+  position:relative;
+  text-align: center;
+  z-index: -1;
+  background-color: var(--Cloud);
+
+}
+.Sky img {
+  width: 35%;
+}
+.SkyGlow {
+  position: absolute;
+  z-index: -2;
+  right: 50%;
+  top: 65px;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  background-color: red;
+  box-shadow:
+    0 0 0px 0px #fff,  /* inner white */
+    0 0 100px 50px var(--Sky); /* outer cyan */
+}
+#idCloud {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+
+
+.More {
+  text-align: center;
+  z-index: -3;
+  background-color: var(--Cloud);
+}
+
+.Cloud img {
+  width: 100%;
+}
+.Plant {
+  text-align: center;
+  z-index: 1;
+  background-color: var(--Cloud);
+  display: grid;
+
+}
+.Plant img{
+  bottom: 0;
+  width: 130px;
+  height: 150px;
+  
+}
+
+#Watering {
+  display: none;
+  margin-top: 100px;
+  height: 140px;
+  margin-left: 150px;
+  animation: water 2s infinite alternate;
+  animation-play-state: paused;
+}
+@keyframes water{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes HieuUng1{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.Tips {
+  display: none;
+  background-color: red;
+  padding: 10px;
+  width: 50%;
+  border-radius: 20px;
+  margin: auto;
+}
+#iProgressTree {
+  width: 0%;
+  height: 12px;
+  background-color:#0393f0;
+  animation: load 1s ;
+  animation-play-state:paused;
+}
+
+
+button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}

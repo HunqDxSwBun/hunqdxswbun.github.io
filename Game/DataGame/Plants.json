@@ -1,0 +1,34 @@
+[
+  {
+    "PhanLoai": 1,
+    "CapDo": 1,
+    "TenCay": "Mầm xanh",
+    "HinhCay1": "/IMG/MamXanh.png",
+    "HinhCay2": "/IMG/MamXanh2.png",
+    "HinhCay3": "/IMG/MamXanh3.png",
+    "TienMua": 5,
+    "TienBan": 20,
+    "TuoiNuoc1": 5,
+    "TuoiNuoc2": 5,
+    "TuoiNuoc3": 5,
+    "ThoiGianTuoi": 1,
+    "ThoiGianHu": 3,
+    "SauBo": 0
+  },
+  {
+    "PhanLoai": 2,
+    "CapDo": 1,
+    "TenCay": "Cây Thường",
+    "HinhCay1": "/IMG/CayThuong.png",
+    "HinhCay2": "/IMG/CayThuong2.png",
+    "HinhCay3": "/IMG/CayThuong3.png",
+    "TienMua": 10,
+    "TienBan": 40,
+    "TuoiNuoc1": 10,
+    "TuoiNuoc2": 15,
+    "TuoiNuoc3": 20,
+    "ThoiGianTuoi": 2,
+    "ThoiGianHu": 1,
+    "SauBo": 5
+  }
+]

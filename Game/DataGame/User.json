@@ -1,0 +1,20 @@
+[
+    {
+      "TenNguoiChoi": "HunqD",
+      "SoTien": 1000,
+      "SoNuoc": 100,
+      "SoCayDaTrong": 0,
+      "PhanLoaiCayHienTai": 1,
+      "CapDoCayHienTai": 1,
+      "NuocDaTuoiHienTai": 1
+    },
+    {
+        "TenNguoiChoi": "SwBun",
+        "SoTien": 1000,
+        "SoNuoc": 100,
+        "SoCayDaTrong": 0,
+        "PhanLoaiCayHienTai": 1,
+        "CapDoCayHienTai": 1,
+        "NuocDaTuoiHienTai": 1
+    }
+  ]
