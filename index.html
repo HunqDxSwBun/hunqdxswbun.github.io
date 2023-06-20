@@ -22,21 +22,430 @@
     <!-- Biểu tượng iPhone -->
     <link rel="apple-touch-icon" href="./Data/icon/Logo.png" sizes="150x150" />
     <!-- CSS của web -->
- 
+    <link rel="stylesheet" href="./Data/CSS/Style.css" />
+
     <!-- FontAweSome fas fa icon -->
     <script src="https://kit.fontawesome.com/9392097706.js" crossorigin="anonymous"></script>
 </head>
-<style>
-    body {
-        background-color: #000;
-        color: #fff;
-    }
-</style>
+
 
 <body>
-    <h1>Không ai vào để làm gì, thằng làm ra cũng chính là thằng vào !</h1>
+    <div class="loading" id="loading">
+        <div class="loading_icon"></div>
+        <div class="loading_logo">
+            <img src="/Data/icon/Logo-Square.png" alt="" srcset="">
+        </div>
+    </div>
+
+    <audio id="MusicBG" loop>
+        <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="Tab">
+        <button class="tablinks " onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
+        <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Shopping')"><i class="fa-solid fa-cart-shopping"></i></button>
+        <!-- <button class="tablinks " onclick="openTAB(event, 'Games')"><i class="fa-solid fa-gamepad"></i></button> -->
+        <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
+    </div>
+
+    <div id="Home" class="tabcontent show">
+        <div class="IMGBG" id="IMGBG"></div>
+
+        <div class="NewPost" id="NewPost" onclick="handleRandomImage()">
+            <h1>Không có bài viết mới nhất.</h1>
+            <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
+            <p>HunqD</p>
+        </div>
+
+        <div class="CoupleChat" id="CoupleChat">
+            <h1 id="Who"></h1>
+            <p id="Chat"></p>
+        </div>
+        
+        <div class="CardCouple">
+            <div class="DaysLove">
+                <h1 id="DaysLove"></h1>
+                <div class="Grid">
+                    <div class="DGrid">
+                        <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
+                    </div>
+                    <div class="DGrid">Ngày</div>
+                </div>
+
+            </div>
+            <div class="DaysLove2">
+                <div class="Num" id="Years">
+                    <span class="number"></span>
+                    <span class="unit">năm</span>
+                </div>
+                <div class="Num" id="Months">
+                    <span class="number"></span>
+                    <span class="unit">tháng</span>
+                </div>
+                <!-- <div class="Num" id="Weeks">
+                    <span class="number"></span>
+                    <span class="unit">tuần</span>
+                  </div>
+                  <div class="Num" id="Days">
+                    <span class="number"></span>
+                    <span class="unit">ngày</span>
+                  </div> -->
+                <!-- <div class="Num" id="Hours">
+                    <span class="number"></span>
+                    <span class="unit">giờ</span>
+                  </div>
+                  <div class="Num" id="Mins">
+                    <span class="number"></span>
+                    <span class="unit">phút</span>
+                  </div>
+                  <div class="Num" id="Secs">
+                    <span class="number"></span>
+                    <span class="unit">giây</span>
+                  </div>                   -->
+            </div>
+
+
+            <div class="Couple">
+                <div class="Info Male" >
+                    <div class="Avatar" onclick="CoupleChat('Male')">
+                        <img src="https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
+                            alt="" srcset="">
+                    </div>
+                    <div class="Name">
+                        Mạnh Hùng
+                    </div>
+                    <div class="Age" id="ageHung" onclick="AgeOnload('Hung')">
+                        <i class="fa-solid fa-mars"></i> 22
+                    </div>
+                </div>
+
+                <div class="Heart" onclick="toggleSize()">
+                    <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
+                </div>
+
+                <div class="Info Female" >
+                    <div class="Avatar" onclick="CoupleChat('Female')">
+                        <img src="https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
+                            alt="" srcset="">
+                    </div>
+                    <div class="Name">
+                        Thy Thy
+                    </div>
+                    <div class="Age" id="ageThy" onclick="AgeOnload('Thy')">
+                        <i class="fa-solid fa-venus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Story" class="tabcontent">
+        <h1 class="head">Nhật Ký</h1>
+        <div id="rss-feed"></div>
+        <div class="write">
+            <a href="jetpack://">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="tabcontent" id="Shopping">
+        <h1 class="head">Tra cứu đơn hàng</h1>
+        <div class="Item">
+            <img src="./Temp/DonHang1/1.jpg" alt="" srcset="">
+            <h1>Khô gà lá chanh xé cay</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang1/2.jpg" alt="" srcset="">
+            <h1>Cơm cháy lắc khô gà</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang1/3.jpg" alt="" srcset="">
+            <h1>Da heo tỏi ớt</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang1/4.jpg" alt="" srcset="">
+            <h1>Khô bò miếng</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang1/5.jpg" alt="" srcset="">
+            <h1>Mực cán tẩm gia vị</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang1/6.jpg" alt="" srcset="">
+            <h1>Cơm cháy chà bông</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang3/gaubong.png" alt="" srcset="">
+            <h1>Gấu Bông Lena Cosplay Gấu Dâu</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang2/locknlock.png" alt="" srcset="">
+            <h1>Bình giữ nhiệt Lock&Lock 800ml</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang2/onghut.png" alt="" srcset="">
+            <h1>Ống hút inox Lock&Lock</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang3/aokhoac.png" alt="" srcset="">
+            <h1>DAVIES Black Daviesism Jacket</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang3/erylik.png" alt="" srcset="">
+            <h1>Gel Erylik Laboratoires Chemineau</h1>
+        </div>
+        <div class="Item">
+            <img src="./Temp/DonHang3/LuckyBox.jpg" alt="" srcset="">
+            <h1>Hộp quà bí ẩn ( sau ngày 19/10/23 )</h1>
+        </div>
+    </div>
+
+    <div id="Games" class="tabcontent">
+        <h1 class="head">Trò chơi</h1>
+        <p>Hiện đang trong quá trình phát triển thử nghiệm.</p>
+        <!-- <h1 id="DiemDanh"></h1>
+        <br>
+        <button id="diemDanhBtn">Điểm Danh</button> -->
+        <!-- <button id="xoaDuLieuBtn">Xoá Dữ liệu</button> -->
+    </div>
+
+    <div class="tabcontent" id="Event">
+        <h1 class="head">Sự kiện</h1>
+        <p>Hiện tại chưa có sự kiện nào.</p>
+    </div>
+
+    <div id="Settings" class="tabcontent" >
+        <h1 class="head">Cài đặt</h1>
+        <div class="DownloadApp" onclick="CustomPIC()">
+            <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
+        </div>
+
+        <div class="SettingDIV" >
+            <div class="SettingBlock Active" id="CustomPIC">
+                <h1>Ảnh Nền</h1>
+                <div class="file-input">
+                        <input type="file" name="file-input" id="imageFileInput" class="file-input__input"/>
+                        <label class="file-input__label" for="imageFileInput">
+                        <span><i class="fa-solid fa-file-import"></i> <br>Tải Ảnh Hoặc Video Ngắn</span></label>
+                </div>
+                    
+                <button id="saveImageBtn">Lưu</button>
+                <button id="deleteImageBtn">Xoá</button>
+                <button id="randomImageBtn">Ngẫu Nhiên</button>
+            </div>
+
+            <div class="SettingBlock Center" id="toggle-button">
+            </div>
+
+            <div class="SettingBlock" id="Currency" onclick="Currency()">
+                <i class="fa-solid fa-yen-sign"></i>
+                <h1 id="CurrencyOUT">Yên Nhật</h1>
+                <p id="CurrencyOUTlastUpdated">Nhấn vào đây để cập nhật.</p>
+                <p style="margin-top: 5px;">Thường sẽ cao hơn 1VND so với SBI Remit</p>
+                <a href="https://www.remit.co.jp/en/kaigaisoukin/exchangeratecommission/exchange/" target="_blank"
+                rel="noopener noreferrer">
+                Mở trang SBI Remit
+                </a>
+            </div>
+
+            <div class="SettingBlock Active" id="CustomColor">
+                <h1>Tuỳ chỉnh màu</h1>
+
+                <div class="ColorPick">
+                    <input type="color" value="#ffc0cb" id="BodyBG">
+                    <h1>Màu nền</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#ffffff" id="BodyCL">
+                    <h1>Màu chữ</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#ff2655" id="HeadCL">
+                    <h1>Màu chữ tiêu đề</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#fa7f7f" id="StoryBG">
+                    <h1>Màu nền nhật kí</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#fa7f7f" id="TabBG">
+                    <h1>Màu nền thanh menu</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#111111" id="CardBG">
+                    <h1>Màu nền các ô</h1>
+                </div>
+                <div class="ColorPick">
+                    <input type="color" value="#ff2655" id="ButtonBG">
+                    <h1>Màu nút nhấn</h1>
+                </div>
+
+                <button id="resetColors">Đặt lại màu mặc định</button>
+            </div>
+
+            <div class="SettingBlock " onclick="DownloadStory()">
+                <i class="fa-solid fa-circle-down"></i>
+                <h1>Tải Dữ Liệu</h1>
+                <p>Tải xuống tất cả bài viết, hình ảnh, video,...</p>
+            </div>
+
+            <div class="SettingBlock" onclick="Redeem()">
+                <i class="fa-solid fa-gift"></i>
+                <h1>Quy đổi</h1>
+                <p>Nhận thưởng những phần quà hấp dẫn.</p>
+            </div>
+
+            <div class="SettingBlock Active" id="Dowloading">
+                <h1>Tải dữ liệu</h1>
+                <div class="progress-container">
+                    <div id="progressbar" class="progressbar"></div>
+                </div>
+                <button id="BTNDowload" onclick="downloadFile()">Tải xuống</button>
+            </div>
+
+            <div class="SettingBlock Active" id="Redeem">
+                <div class="Redeem">
+                    <input id="codeInput" type="text" maxlength="12" placeholder="Nhập mã tại đây">
+                    <button onclick="redeemCode()">
+                        Đổi Ngay
+                    </button>
+                </div>
+                <div id="codeOutput">
+                </div>
+            </div>
+
+            <div class="SettingBlock " onclick="Folder()">
+                <i class="fa-solid fa-folder"></i>
+                <h1>Thư mục</h1>
+                <p>Lưu trữ có mã bảo vệ </p>
+            </div>
+
+            <div class="SettingBlock" onclick="YoutubeMP3()">
+                <i class="fa-solid fa-download"></i>
+                <h1>HunqD Social</h1>
+                <p>Tải nhạc, video từ YouTube, SoundCloud, Facebook, Twitter, Instagram, TikTok, URL</p>
+            </div>
+
+            <div class="SettingBlock Active" id="Folder">
+                <h1>Thư mục</h1>
+            </div>
+
+            <div class="SettingBlock Active" id="YoutubeMp3">
+                <h1>Tải nhạc từ YouTube</h1>
+                <div class="YoutubeMp3">
+                    <input type="text" id="inputLinkYTB" placeholder="Vui lòng nhập Link">
+                    <button onclick="pasteClipboardData()"><i class="fa-regular fa-clipboard"></i></button>
+                    <select name="Type" id="inputTypeYTB">
+                        <option value="mp3">Nhạc</option>
+                        <option value="mp4">Video</option>
+                    </select>
+                    <button onclick="chuyenDoi()"><i class="fa-solid fa-circle-down"></i></button>
+                </div>
+                <div id="outLinkYTB"></div>
+                <p>Vì sử dụng nguồn cung cấp bên thứ 3 nên khi tải về có thể sẻ mở Tab QC mới. Hãy tắt Tab QC khi xuất
+                    hiện.</p>
+                <p>Hãy tải <b onclick="Folder()" style="text-decoration:underline;cursor: pointer;">Adblock</b> Để chặn
+                    quảng cáo.</p>
+            </div>
+
+            <div class="SettingBlock ">
+                <i class="fa-solid fa-user"></i>
+                <h1>Tài khoản</h1>
+                <p>Cá nhân hoá</p>
+                <p>Hiện tại chưa khả dụng</p>
+            </div>
+
+            <div class="SettingBlock" onclick="Security()">
+                <i class="fa-solid fa-shield"></i>
+                <h1>Văn bản bảo mật</h1>
+                <p>Chuyển đổi văn bản </p>
+            </div>
+
+            <div class="SettingBlock Active"  id="Security">
+                    <h1>Chuyển đổi văn bản</h1>
+                    <div class="Security">
+                        <div class="Option">
+                            <select id="mySelect">
+                                <option value="Ascii">Ascii</option>
+                                <option value="Morse">Morse</option>
+                                <option value="Base64">Base64</option>
+                            </select>
+                            <br>
+                            <br>
+                            <input type="radio" id="textOption" name="option" checked>
+                            <label for="textOption">Chuyển sang văn bản</label>
+                            <br>
+                            <input type="radio" id="Option" name="option">
+                            <label for="Option">Chuyển sang mã</label>
+                        </div>
+                        <textarea id="inputText"></textarea>
+                        <div class="BTN50">
+                            <button id="convertButton" onclick="pasteConvertText()"><i class="fa-regular fa-clipboard"></i></button>
+                            <button id="convertButton" onclick="convertText()"><i class="fa-solid fa-right-left"></i></button>
+                        </div>
+            
+                        <textarea id="outputText"></textarea>
+                        <button id="copyOutputText" onclick="copyText()"><i class="fa-regular fa-clone"></i></button>
+                    </div>
+            </div>
+
+            <div class="SettingBlock" id="ThanhTich">
+                <i class="fa-solid fa-trophy"></i>
+                <h1>Thành tích</h1>
+                <p>Chưa khả dụng </p>
+            </div>
+
+            <div class="SettingBlock" onclick="HideInfo()">
+                <i class="fa-solid fa-eye-slash"></i>
+                <h1>Ẩn thông tin</h1>
+                <p>Tính năng ẩn bớt thông tin để chia sẻ</p>
+            </div>
+
+            <div class="SettingBlock" onclick="Reset()">
+                <i class="fa-solid fa-circle-info"></i>
+                <h1>Thông tin</h1>
+                <p>Trang được làm với tình yêu của anh và em ❤</p>
+            </div>
+
+            <div class="SettingBlock">
+                <i class="fa-solid fa-circle-question"></i>
+                <h1>Thắc mắc</h1>
+                <p>Hiện tại chưa khả dụng</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Tổng hợp -->
+<script src="./Data/JS/File.js"></script>
+
+<!-- Giao diện -->
+<script src="./Data/JS/DarkMode.js"></script>
+<script src="./Data/JS/Custom.js"></script>
+
+<!-- Bộ chuyển đổi -->
+<script src="./Data/JS/Currency.js"></script>
+<script src="./Data/JS/Security.js"></script>
+
+<!-- Đổi thưởng -->
+<script src="./Data/JS/Redeem.js"></script>
+
+<!-- Tải Story -->
+<script src="./Data/JS/Download.js"></script>
+
+<!-- Mở rộng -->
+<script src="./Data/JS/Folder.js"></script>
+<script src="./Data/JS/Youtube.js"></script>
+<script src="./Data/JS/DaysLove.js"></script>
+<!-- <script src="./Data/JS/Game.js"></script> -->
+<script src="./Data/JS/Blog.js"></script>
 
 
 </html>
