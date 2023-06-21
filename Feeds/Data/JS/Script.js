@@ -1,3 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash;
+
+  if (hash && hash !== '') {
+    const targetElement = document.querySelector(hash);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
+
+
+
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
 const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
@@ -7,8 +20,12 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
   .then(data => {
     const items = data.querySelectorAll("item");
 
-    let Story = '';
-    items.forEach(item => {
+    let storyCount = 0;
+    let storyHTML = '';
+
+    items.forEach((item, index) => {
+      storyCount++;
+
       const title = item.querySelector("title").textContent;
       const encoded = item.querySelector("encoded").textContent;
       const pubDate = item.querySelector("pubDate").textContent;
@@ -22,24 +39,24 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       const minuteDiff = Math.floor(timeDiff / (1000 * 60));
       const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
       const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-      let TimeDiff = '';
+      let timeDiffText = '';
       if (dayDiff > 0) {
-        TimeDiff = dayDiff + " ngày trước";
+        timeDiffText = dayDiff + " ngày trước";
       } else if (hourDiff > 0) {
-        TimeDiff = hourDiff + " giờ trước";
+        timeDiffText = hourDiff + " giờ trước";
       } else if (minuteDiff > 0) {
-        TimeDiff = minuteDiff + " phút trước";
+        timeDiffText = minuteDiff + " phút trước";
       } else {
-        TimeDiff = "Vừa xong";
+        timeDiffText = "Vừa xong";
       }
 
-      let Author = '';
+      let author = '';
       let srcIMG = '';
       if (creator === 'HunqD') {
-        Author = 'Đinh Mạnh Hùng';
+        author = 'Đinh Mạnh Hùng';
         srcIMG = 'https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662';
       } else if (creator === 'hoangnguyen thythy') {
-        Author = 'Hoàng Nguyễn Thy Thy';
+        author = 'Hoàng Nguyễn Thy Thy';
         srcIMG = 'https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662';
       }
 
@@ -47,16 +64,16 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       const videoBlockRegex = /<figure class="wp-block-video">([\s\S]*?)<\/figure>/gm;
       const contentWithoutVideoBlock = encoded.replace(videoBlockRegex, '');
 
-      Story += `
-        <div class="Story">
+      storyHTML += `
+        <div class="Story" id="StoryID${storyCount}">
           <div class="Head">
             <div class="Author">
               <div class="Avatar">
-                <img src="${srcIMG}" alt="${Author}">
+                <img src="${srcIMG}" alt="${author}">
               </div>
               <div class="Info">
-                <div class="Name">${Author}</div>
-                <div class="Time">${TimeDiff}</div>
+                <div class="Name">${author}</div>
+                <div class="Time">${timeDiffText}</div>
               </div>
             </div>
             <div class="BlockFunc">
@@ -67,44 +84,31 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
                 <i class="fa-solid fa-share-nodes"></i>
               </div>
               <div class="Func Download">
-              <i class="fa-solid fa-arrow-down"></i>
-            </div>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
             </div>
           </div>
           <div class="Body">
             <div class="Video">
-                <video>
-                    <source src="${videoUrl}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+              <video webkit-playsinline="" playsinline="">
+                <source src="${videoUrl}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
           <div class="Bottom">
             <div class="Content">
-                <h1>${title}</h1>
-                <p>${contentWithoutVideoBlock}</p>
+              <h1>${title}</h1>
+              <p>${contentWithoutVideoBlock}</p>
             </div>
           </div>
         </div>
       `;
     });
 
-    document.querySelector('#rss-feed').innerHTML = Story;
+    document.querySelector('#rss-feed').innerHTML = storyHTML;
 
-    // Lấy tất cả các div có lớp wp-block-video
-    var videoDivs = document.querySelectorAll('.wp-block-video');
-
-    // Lặp qua từng div và tìm thẻ video trong mỗi div
-    videoDivs.forEach(function (videoDiv) {
-      var video = videoDiv.querySelector('video');
-      if (video) {
-        video.setAttribute('webkit-playsinline', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('controls', ''); // Thêm thuộc tính controls nếu chưa có
-      }
-    });
-
-    const videos = document.querySelectorAll('video');
+    const videos = document.querySelectorAll('.Story video');
     videos.forEach(video => {
       video.addEventListener('click', function () {
         if (video.paused) {
@@ -141,36 +145,34 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         // Tạo một thẻ <a> để tải video
         const downloadLink = document.createElement('a');
         downloadLink.href = videoSrc;
-        downloadLink.download = 'video.mp4';
+        downloadLink.download = 'VideoStory.mp4';
         downloadLink.click();
       });
     });
 
-    const shareButton = document.querySelector('.Func.Share');
-    const storyDiv = document.querySelector('.Story');
+    const shareButtons = document.querySelectorAll('.Func.Share');
+
+    shareButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const story = button.closest('.Story');
+        const storyId = story.id;
+        const currentUrl = 'https://hunqdxswbun.github.io/Feeds/';
+        const shareUrl = `${currentUrl}#${storyId}`;
     
-    shareButton.addEventListener('click', function() {
-        html2canvas(storyDiv).then(function(canvas) {
-            canvas.toBlob(function(blob) { // Thêm phần này để tạo blob từ canvas
-                // Chia sẻ ảnh
-                if (navigator.share) {
-                    navigator.share({
-                        text: 'Chia sẻ trên iOS iPhone',
-                        files: [new File([blob], 'screenshot.png', { type: 'image/png' })],
-                    })
-                        .then(() => console.log('Chia sẻ thành công'))
-                        .catch((error) => console.error('Lỗi chia sẻ:', error));
-                } else {
-                    // Hiển thị thông báo cho các trình duyệt không hỗ trợ API Web Share
-                    alert('Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
-                }
-            }, 'image/png');
-        });
+        // Cập nhật URL chứa #StoryID vào clipboard
+        if (navigator.share) {
+          navigator.share({
+              url: shareUrl,
+          })
+              .then(() => console.log('Chia sẻ thành công'))
+              .catch((error) => console.error('Lỗi chia sẻ:', error));
+      } else {
+          // Hiển thị thông báo cho các trình duyệt không hỗ trợ API Web Share
+          alert('Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
+      }
+      });
     });
-    
+
+
   })
   .catch(error => console.log(error));
-
-// Lấy danh sách tất cả các thẻ video trên trang web
-var videoTags = document.querySelectorAll('video');
-
