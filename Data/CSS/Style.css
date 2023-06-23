@@ -513,6 +513,49 @@ header .HeadApp h1 {
 .Bottom {
     width: 100%;
 }
+.Bottom .RepMess {
+    display: grid;
+    grid-template-columns: 50px auto 50px  ;
+    background-color: #000;
+    border-radius: 10px;
+}
+.Bottom .RepStory {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+    text-align: center;
+    
+}
+.Bottom .RepStory textarea {
+    width: 100%;
+    min-height: 20px;
+    padding: 5px;
+    font-size: 18px;
+    color: var(--BodyCL);
+    background-color: var(--BodyBG);
+    border: 2px solid var(--BodyCL);
+    box-sizing: border-box;
+}
+.RepMess .Func {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+    text-align: center;
+    background-color: var(--Female);;
+    border: 2px solid var(--BodyCL);
+    border-left: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    box-sizing: border-box;
+}
+.RepMess .Func:first-child {
+    background-color: var(--Male);
+    border-left: 2px solid var(--BodyCL);
+    border-right: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
 
 .Bottom .BlockFunc .Func {
     cursor: pointer;
@@ -520,7 +563,7 @@ header .HeadApp h1 {
 	align-items: center;
 	justify-content: center;
     text-align: center;
-    margin: 0 0 0 auto;
+    margin: auto ;
     font-size: 20px;
     height: 50px ;
     width: 50px;

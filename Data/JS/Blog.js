@@ -1,6 +1,7 @@
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
 const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
+
 fetch(proxyUrl + encodeURIComponent(rssUrl1))
   .then(response => response.text())
   .then(str => new DOMParser().parseFromString(str, "text/xml"))
@@ -71,19 +72,29 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         </div>
 
         <div class="Bottom">
-            <div class="BlockFunc">
-                <div class="Func Share">
-                    <i class="fa-solid fa-share-from-square"></i>
+                <div class="BlockFunc">
+                    <div class="Func Share">
+                        <i class="fa-solid fa-share-from-square"></i>
+                    </div>
+                </div>
+                <div class="RepMess">
+                        <div class="Func RepStoryMale">
+                          <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        <div class="RepStory">
+                          <textarea></textarea>
+                        </div>
+                        <div class="Func RepStory">
+                          <i class="fa-solid fa-paper-plane"></i>
+                        </div>
                 </div>
             </div>
-        </div>
       </div>
       `;
     });
 
 
     document.querySelector('#rss-feed').innerHTML = storyHTML;
-
 
     // Lấy tất cả các div có lớp wp-block-video
     var videoDivs = document.querySelectorAll('.wp-block-video');
@@ -140,15 +151,54 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       });
     });
 
+    const RepStory = document.querySelectorAll('.Func.RepStory');
+
+    RepStory.forEach(button2 => {
+      button2.addEventListener('click', function () {
+        const story = button2.closest('.Feed');
+        const storyId = story.id;
+        const currentUrl = 'https://hunqdxswbun.github.io/';
+
+        const textarea = button2.previousElementSibling.querySelector('textarea');
+        const RepStoryMess = textarea.value;
+
+        window.open('https://www.messenger.com/t/100074217488487/?text=' + RepStoryMess + '%20' +currentUrl +'%23'+ storyId ,'_blank');
+        
+      });
+    });
+
+
+
+
+    const RepStoryMale = document.querySelectorAll('.Func.RepStoryMale');
+
+    RepStoryMale.forEach(button => {
+      button.addEventListener('click', function () {
+        const story = button.closest('.Feed');
+        const storyId = story.id;
+        const currentUrl = 'https://hunqdxswbun.github.io/';
+
+        const textarea = button.nextElementSibling.querySelector('textarea');
+        const RepStoryMess = textarea.value;
+
+        window.open('https://www.messenger.com/t/100045640179308/?text=' + RepStoryMess + '%20' +currentUrl +'%23'+ storyId ,'_blank');
+        
+      });
+    });
+
+
+    
+
+
     setTimeout(() => {
       const hash = window.location.hash;
 
       if (hash && hash !== '') {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
-            document.getElementById('tablinksStory').click();
-            targetElement.className += " Active";
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('tablinksStory').click();
+          targetElement.className += " Active";
+          targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
     }, 200);
@@ -159,50 +209,52 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
     let latestPubDate = null;
 
     items.forEach(item => {
-        const pubDate = item.querySelector("pubDate").textContent;
-        const pubDateTimeStamp = Date.parse(pubDate);
+      const pubDate = item.querySelector("pubDate").textContent;
+      const pubDateTimeStamp = Date.parse(pubDate);
 
-        if (latestPubDate === null || pubDateTimeStamp > latestPubDate) {
-            latestItem = item;
-            latestPubDate = pubDateTimeStamp;
-        }
+      if (latestPubDate === null || pubDateTimeStamp > latestPubDate) {
+        latestItem = item;
+        latestPubDate = pubDateTimeStamp;
+      }
     });
 
     if (latestItem !== null) {
-        const title = latestItem.querySelector("title").textContent;
-        const description = latestItem.querySelector("description").textContent;
-        const pubDate = latestItem.querySelector("pubDate").textContent;
-        const pubDateTimeStamp = Date.parse(pubDate);
-        const nowTimeStamp = Date.now();
-        const timeDiff = nowTimeStamp - pubDateTimeStamp;
+      const title = latestItem.querySelector("title").textContent;
+      const description = latestItem.querySelector("description").textContent;
+      const pubDate = latestItem.querySelector("pubDate").textContent;
+      const pubDateTimeStamp = Date.parse(pubDate);
+      const nowTimeStamp = Date.now();
+      const timeDiff = nowTimeStamp - pubDateTimeStamp;
 
-        // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
-        const secondDiff = Math.floor(timeDiff / 1000);
-        const minuteDiff = Math.floor(timeDiff / (1000 * 60));
-        const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
-        const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        let TimeDiff = '';
-        if (dayDiff > 0) {
-            TimeDiff = dayDiff + " ngày trước";
-        } else if (hourDiff > 0) {
-            TimeDiff = hourDiff + " giờ trước";
-        } else if (minuteDiff > 0) {
-            TimeDiff = minuteDiff + " phút trước";
-        } else {
-            TimeDiff = "Vừa xong";
-        }
+      // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
+      const secondDiff = Math.floor(timeDiff / 1000);
+      const minuteDiff = Math.floor(timeDiff / (1000 * 60));
+      const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
+      const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      let TimeDiff = '';
+      if (dayDiff > 0) {
+        TimeDiff = dayDiff + " ngày trước";
+      } else if (hourDiff > 0) {
+        TimeDiff = hourDiff + " giờ trước";
+      } else if (minuteDiff > 0) {
+        TimeDiff = minuteDiff + " phút trước";
+      } else {
+        TimeDiff = "Vừa xong";
+      }
 
-        const NewPost = `
+      const NewPost = `
             <h1>${title}</h1>
             <p>${description}</p>
             <p> ${TimeDiff}</p>
         `;
 
-        document.querySelector('#NewPost').innerHTML = NewPost;
+      document.querySelector('#NewPost').innerHTML = NewPost;
     }
-    
+
   })
   .catch(error => console.log(error));
+
+
 
 
 
