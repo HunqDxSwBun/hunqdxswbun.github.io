@@ -33,6 +33,25 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
                 TimeDiff = "Vừa xong";
             }
 
+            // Lấy form comment
+const commentForm = document.querySelector('form#comment');
+
+// Lấy nội dung comment
+const commentContent = commentForm.querySelector('textarea[name="comment"]');
+
+// Xuất ra #comment
+document.querySelector('#comment').innerHTML = `
+    <div>
+        <h2>Form Comment</h2>
+        ${commentForm.outerHTML}
+    </div>
+    <div>
+        <h2>Nội dung Comment</h2>
+        <p>${commentContent.value}</p>
+    </div>
+`;
+
+
             Story += `
     <div class="rss-story">
       <h1>${title}</h1>
