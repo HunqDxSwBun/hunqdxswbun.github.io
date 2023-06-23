@@ -451,6 +451,10 @@ header .HeadApp h1 {
 .Feed:last-child {
     margin-bottom: 0;
 }
+.Feed.Active {
+    background-color: #252525;
+}
+
 .Head .Author {
     display: flex;
 }
@@ -511,6 +515,7 @@ header .HeadApp h1 {
 }
 
 .Bottom .BlockFunc .Func {
+    cursor: pointer;
     display: flex;
 	align-items: center;
 	justify-content: center;
@@ -520,6 +525,8 @@ header .HeadApp h1 {
     height: 50px ;
     width: 50px;
 }
+
+
 
 .write {
     position: fixed;

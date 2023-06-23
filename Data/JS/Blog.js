@@ -147,10 +147,11 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         const targetElement = document.querySelector(hash);
         if (targetElement) {
             document.getElementById('tablinksStory').click();
+            targetElement.className += " Active";
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
-    }, 100);
+    }, 200);
 
 
 
