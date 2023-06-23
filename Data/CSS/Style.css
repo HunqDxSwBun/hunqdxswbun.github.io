@@ -536,6 +536,9 @@ header .HeadApp h1 {
     border: 2px solid var(--BodyCL);
     box-sizing: border-box;
 }
+.Bottom .RepStory textarea:focus{
+    outline: none;
+}
 .RepMess .Func {
     display: flex;
     align-items: center;

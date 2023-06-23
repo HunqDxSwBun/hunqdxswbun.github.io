@@ -168,8 +168,6 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
     });
 
 
-
-
     const RepStoryMale = document.querySelectorAll('.Func.RepStoryMale');
 
     RepStoryMale.forEach(button => {
