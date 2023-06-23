@@ -435,72 +435,90 @@ header .HeadApp h1 {
 
 #rss-feed {
     padding: 10px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 }
 
-.rss-story {
-    background-color: var(--StoryBG);
+.Feed {
+    color: #fff;
+    background-color: #111;
+    margin-bottom: 10px ;
     padding: 10px;
-    margin: 14px 4px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
-
-.rss-story:first-child {
+.Feed:first-child {
     margin-top: 0;
 }
-
-.rss-story h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
+.Feed:last-child {
+    margin-bottom: 0;
+}
+.Head .Author {
+    display: flex;
 }
 
-.rss-story p:last-child {
-    font-size: 14px;
-    font-weight: 500;
-    text-align: right;
-    margin-top: 10px;
+.Head .Author .Avatar img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
-.rss-story img,
-.rss-story video,
-.rss-story iframe {
-    max-width: calc(100% - 6px);
-    max-height: 500px;
-    border-radius: 10px;
-    border: 3px solid var(--BodyCL);
-    background-color: var(--BodyCL);
-    margin-top: 10px;
-}
-
-.rss-story figure {
-    text-align: center !important;
-}
-
-.rss-story figcaption {
-    text-align: center;
-    text-shadow: 0px 2px 6px #111111;
-    font-size: 12px;
-    font-weight: 600;
+.Head .Author .Info {
     margin-left: 10px;
 }
+.Head .Author .Info .Name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.Head .Author .Info .Time {
+    font-size: 14px;
+}
+.wp-block-video video {
+    max-width: 100%;
+    margin: 5px 0;
+}
 
-.rss-story .wp-block-gallery {
-    column-count: 2 !important;
+.Body .Status {
+    padding: 5px;
+}
+.figure {
+    margin: 5px 0;
+}
+.Body .Status img,
+.Body .Status video {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+}
+
+.Status .wp-block-gallery {
+    column-count: 3 !important;
     --webkit-column-count: 2;
     --moz-column-count: 2;
-    gap: 10px;
+    gap: 10px; 
+    margin: 5px 0;
 }
-.rss-story .wp-block-gallery img {
-    margin: 5px 0 0 0;
+.Status  .wp-block-image {
+    margin: 5px 0;
+}
+.Status .wp-block-gallery .wp-block-image {
+    margin: 0 auto;
+    text-align: center;
 }
 
 
-.rss-story hr {
-    border: none;
-    height: 2px;
-    width: 80%;
-    background-color: var(--BodyCL);
-    margin: 10px auto;
+.Bottom {
+    width: 100%;
+}
+
+.Bottom .BlockFunc .Func {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    text-align: center;
+    margin: 0 0 0 auto;
+    font-size: 20px;
+    height: 50px ;
+    width: 50px;
 }
 
 .write {

@@ -43,9 +43,9 @@
     </audio>
 
     <div class="Tab">
-        <button class="tablinks " onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+        <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
-        <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
+        <button class="tablinks active" id="tablinksHome" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Shopping')"><i class="fa-solid fa-cart-shopping"></i></button>
         <!-- <button class="tablinks " onclick="openTAB(event, 'Games')"><i class="fa-solid fa-gamepad"></i></button> -->
         <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
@@ -143,8 +143,8 @@
     </div>
 
     <div id="Story" class="tabcontent">
-        <h1 class="head">Nhật Ký</h1>
-        <div id="rss-feed"></div>
+        <h1 class="head">Bảng tin</h1>
+        <div class="rss-feed" id="rss-feed"></div>
         <div class="write">
             <a href="jetpack://">
                 <i class="fa-regular fa-pen-to-square"></i>

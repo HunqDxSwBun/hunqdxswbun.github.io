@@ -1,131 +1,208 @@
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
 const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
-
 fetch(proxyUrl + encodeURIComponent(rssUrl1))
-    .then(response => response.text())
-    .then(str => new DOMParser().parseFromString(str, "text/xml"))
-    .then(data => {
-        const items = data.querySelectorAll("item");
+  .then(response => response.text())
+  .then(str => new DOMParser().parseFromString(str, "text/xml"))
+  .then(data => {
+    const items = data.querySelectorAll("item");
 
-        let Story = '';
-        items.forEach(item => {
-            const title = item.querySelector("title").textContent;
-            const encoded = item.querySelector("encoded").textContent;
-            const pubDate = item.querySelector("pubDate").textContent;
-            const pubDateTimeStamp = Date.parse(pubDate);
-            const nowTimeStamp = Date.now();
-            const timeDiff = nowTimeStamp - pubDateTimeStamp;
+    let storyCount = 0;
+    let storyHTML = '';
 
-            // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
-            const secondDiff = Math.floor(timeDiff / 1000);
-            const minuteDiff = Math.floor(timeDiff / (1000 * 60));
-            const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
-            const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            let TimeDiff = '';
-            if (dayDiff > 0) {
-                TimeDiff = dayDiff + " ngày trước";
-            } else if (hourDiff > 0) {
-                TimeDiff = hourDiff + " giờ trước";
-            } else if (minuteDiff > 0) {
-                TimeDiff = minuteDiff + " phút trước";
-            } else {
-                TimeDiff = "Vừa xong";
-            }
+    items.forEach((item, index) => {
+      storyCount++;
 
-            // Lấy form comment
-const commentForm = document.querySelector('form#comment');
+      const title = item.querySelector("title").textContent;
+      const encoded = item.querySelector("encoded").textContent;
+      const pubDate = item.querySelector("pubDate").textContent;
+      const creator = item.querySelector("creator").textContent;
 
-// Lấy nội dung comment
-const commentContent = commentForm.querySelector('textarea[name="comment"]');
+      const pubDateTimeStamp = Date.parse(pubDate);
+      const nowTimeStamp = Date.now();
+      const timeDiff = nowTimeStamp - pubDateTimeStamp;
 
-// Xuất ra #comment
-document.querySelector('#comment').innerHTML = `
-    <div>
-        <h2>Form Comment</h2>
-        ${commentForm.outerHTML}
-    </div>
-    <div>
-        <h2>Nội dung Comment</h2>
-        <p>${commentContent.value}</p>
-    </div>
-`;
+      // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
+      const secondDiff = Math.floor(timeDiff / 1000);
+      const minuteDiff = Math.floor(timeDiff / (1000 * 60));
+      const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
+      const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      let timeDiffText = '';
+      if (dayDiff > 0) {
+        timeDiffText = dayDiff + " ngày trước";
+      } else if (hourDiff > 0) {
+        timeDiffText = hourDiff + " giờ trước";
+      } else if (minuteDiff > 0) {
+        timeDiffText = minuteDiff + " phút trước";
+      } else {
+        timeDiffText = "Vừa xong";
+      }
+
+      let author = '';
+      let srcIMG = '';
+      if (creator === 'HunqD') {
+        author = 'Đinh Mạnh Hùng';
+        srcIMG = 'https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662';
+      } else if (creator === 'hoangnguyen thythy') {
+        author = 'Hoàng Nguyễn Thy Thy';
+        srcIMG = 'https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662';
+      }
 
 
-            Story += `
-    <div class="rss-story">
-      <h1>${title}</h1>
-      <p>${encoded} </p>
-      <p class="time">${TimeDiff}</p>
-    </div>
-  `;
-            //   <a href="${link}">Xem thêm</a>
-        });
-
-        document.querySelector('#rss-feed').innerHTML = Story;
-
-
-        let latestItem = null;
-        let latestPubDate = null;
-
-        items.forEach(item => {
-            const pubDate = item.querySelector("pubDate").textContent;
-            const pubDateTimeStamp = Date.parse(pubDate);
-
-            if (latestPubDate === null || pubDateTimeStamp > latestPubDate) {
-                latestItem = item;
-                latestPubDate = pubDateTimeStamp;
-            }
-        });
-
-        if (latestItem !== null) {
-            const title = latestItem.querySelector("title").textContent;
-            const description = latestItem.querySelector("description").textContent;
-            const pubDate = latestItem.querySelector("pubDate").textContent;
-            const pubDateTimeStamp = Date.parse(pubDate);
-            const nowTimeStamp = Date.now();
-            const timeDiff = nowTimeStamp - pubDateTimeStamp;
-
-            // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
-            const secondDiff = Math.floor(timeDiff / 1000);
-            const minuteDiff = Math.floor(timeDiff / (1000 * 60));
-            const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
-            const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            let TimeDiff = '';
-            if (dayDiff > 0) {
-                TimeDiff = dayDiff + " ngày trước";
-            } else if (hourDiff > 0) {
-                TimeDiff = hourDiff + " giờ trước";
-            } else if (minuteDiff > 0) {
-                TimeDiff = minuteDiff + " phút trước";
-            } else {
-                TimeDiff = "Vừa xong";
-            }
-
-            const NewPost = `
+      storyHTML += `
+      <div class="Feed" id="FeedID${storyCount}">
+        <div class="Head">
+            <div class="Author">
+                <div class="Avatar">
+                    <img src="${srcIMG}" alt="${author}">
+                </div>
+                <div class="Info">
+                    <div class="Name">${author}</div>
+                    <div class="Time">${timeDiffText}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Body">
+            <div class="Status">
                 <h1>${title}</h1>
-                <p>${description}</p>
-                <p> ${TimeDiff}</p>
-            `;
+                <div class="Content">${encoded}</div>
+            </div>
+        </div>
 
-            document.querySelector('#NewPost').innerHTML = NewPost;
+        <div class="Bottom">
+            <div class="BlockFunc">
+                <div class="Func Share">
+                    <i class="fa-solid fa-share-from-square"></i>
+                </div>
+            </div>
+        </div>
+      </div>
+      `;
+    });
+
+
+    document.querySelector('#rss-feed').innerHTML = storyHTML;
+
+
+    // Lấy tất cả các div có lớp wp-block-video
+    var videoDivs = document.querySelectorAll('.wp-block-video');
+    // Lặp qua từng div và tìm thẻ video trong mỗi div
+    videoDivs.forEach(function (videoDiv) {
+      var video = videoDiv.querySelector('video');
+      if (video) {
+        video.setAttribute('webkit-playsinline', '');
+        video.setAttribute('playsinline', '');
+        video.removeAttribute('controls', ''); // Thêm thuộc tính controls nếu chưa có
+      }
+    });
+
+
+    const videos = document.querySelectorAll('.wp-block-video video');
+
+    videos.forEach(video => {
+      video.addEventListener('click', function () {
+        // Dừng tất cả các video khác
+        videos.forEach(otherVideo => {
+          if (otherVideo !== video) {
+            otherVideo.pause();
+          }
+        });
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    });
+
+
+    const shareButtons = document.querySelectorAll('.Func.Share');
+
+    shareButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const story = button.closest('.Feed');
+        const storyId = story.id;
+        const currentUrl = 'https://hunqdxswbun.github.io/';
+        const shareUrl = `${currentUrl}#${storyId}`;
+
+        // Cập nhật URL chứa #StoryID vào clipboard
+        if (navigator.share) {
+          navigator.share({
+            url: shareUrl,
+          })
+            .then(() => console.log('Chia sẻ thành công'))
+            .catch((error) => console.error('Lỗi chia sẻ:', error));
+        } else {
+          // Hiển thị thông báo cho các trình duyệt không hỗ trợ API Web Share
+          alert('Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
+        }
+      });
+    });
+
+    setTimeout(() => {
+      const hash = window.location.hash;
+
+      if (hash && hash !== '') {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            document.getElementById('tablinksStory').click();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100);
+
+
+
+    let latestItem = null;
+    let latestPubDate = null;
+
+    items.forEach(item => {
+        const pubDate = item.querySelector("pubDate").textContent;
+        const pubDateTimeStamp = Date.parse(pubDate);
+
+        if (latestPubDate === null || pubDateTimeStamp > latestPubDate) {
+            latestItem = item;
+            latestPubDate = pubDateTimeStamp;
+        }
+    });
+
+    if (latestItem !== null) {
+        const title = latestItem.querySelector("title").textContent;
+        const description = latestItem.querySelector("description").textContent;
+        const pubDate = latestItem.querySelector("pubDate").textContent;
+        const pubDateTimeStamp = Date.parse(pubDate);
+        const nowTimeStamp = Date.now();
+        const timeDiff = nowTimeStamp - pubDateTimeStamp;
+
+        // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
+        const secondDiff = Math.floor(timeDiff / 1000);
+        const minuteDiff = Math.floor(timeDiff / (1000 * 60));
+        const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
+        const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        let TimeDiff = '';
+        if (dayDiff > 0) {
+            TimeDiff = dayDiff + " ngày trước";
+        } else if (hourDiff > 0) {
+            TimeDiff = hourDiff + " giờ trước";
+        } else if (minuteDiff > 0) {
+            TimeDiff = minuteDiff + " phút trước";
+        } else {
+            TimeDiff = "Vừa xong";
         }
 
-        // Lấy tất cả các div có lớp wp-block-video
-        var videoDivs = document.querySelectorAll('.wp-block-video');
+        const NewPost = `
+            <h1>${title}</h1>
+            <p>${description}</p>
+            <p> ${TimeDiff}</p>
+        `;
 
-        // Lặp qua từng div và tìm thẻ video trong mỗi div
-        videoDivs.forEach(function (videoDiv) {
-            var video = videoDiv.querySelector('video');
-            if (video) {
-                video.setAttribute('webkit-playsinline', '');
-                video.setAttribute('playsinline', '');
-                video.setAttribute('controls', ''); // Thêm thuộc tính controls nếu chưa có
-            }
-        });
-
-    })
-    .catch(error => console.log(error));
+        document.querySelector('#NewPost').innerHTML = NewPost;
+    }
+    
+  })
+  .catch(error => console.log(error));
 
 
-// Lấy danh sách tất cả các thẻ video trên trang web
+
+
