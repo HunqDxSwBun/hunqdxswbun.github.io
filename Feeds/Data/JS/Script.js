@@ -1,14 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const hash = window.location.hash;
-
-  if (hash && hash !== '') {
-    const targetElement = document.querySelector(hash);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-});
-
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
 const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
@@ -65,7 +54,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         <div class="Head">
             <div class="Author">
                 <div class="Avatar">
-                    <img src="/Data/icon/Logo-Square.png" alt="${author}">
+                    <img src="${srcIMG}" alt="${author}">
                 </div>
                 <div class="Info">
                     <div class="Name">${author}</div>
@@ -91,24 +80,24 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       </div>
       `;
     });
-    
+
 
     document.querySelector('#rss-feed').innerHTML = storyHTML;
 
-    
+
     // Lấy tất cả các div có lớp wp-block-video
     var videoDivs = document.querySelectorAll('.wp-block-video');
     // Lặp qua từng div và tìm thẻ video trong mỗi div
     videoDivs.forEach(function (videoDiv) {
-        var video = videoDiv.querySelector('video');
-        if (video) {
-            video.setAttribute('webkit-playsinline', '');
-            video.setAttribute('playsinline', '');
-            video.removeAttribute('controls', ''); // Thêm thuộc tính controls nếu chưa có
-        }
+      var video = videoDiv.querySelector('video');
+      if (video) {
+        video.setAttribute('webkit-playsinline', '');
+        video.setAttribute('playsinline', '');
+        video.removeAttribute('controls', ''); // Thêm thuộc tính controls nếu chưa có
+      }
     });
 
-    
+
     const videos = document.querySelectorAll('.wp-block-video video');
 
     videos.forEach(video => {
@@ -126,7 +115,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         }
       });
     });
-    
+
 
     const shareButtons = document.querySelectorAll('.Func.Share');
 
@@ -151,10 +140,21 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       });
     });
 
+    setTimeout(() => {
+      const hash = window.location.hash;
+
+      if (hash && hash !== '') {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100);
+
 
   })
   .catch(error => console.log(error));
 
-  
+
 
 
