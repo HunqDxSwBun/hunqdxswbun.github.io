@@ -29,7 +29,20 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       const hourDiff = Math.floor(timeDiff / (1000 * 60 * 60));
       const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       let timeDiffText = '';
-      if (dayDiff > 0) {
+
+      var dateObj = new Date(pubDate);
+      var daysOfWeek = ["Chủ Nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"];
+      var dayOfWeek = daysOfWeek[dateObj.getDay()];
+      var day = dateObj.getDate();
+      var month = dateObj.getMonth() + 1; // Tháng trong JavaScript bắt đầu từ 0, nên cần cộng thêm 1
+      var year = dateObj.getFullYear();
+
+      var formattedDate = dayOfWeek + " " + day + "/" + month + "/" + year;
+
+
+      if (dayDiff >= 365) {
+        timeDiffText = formattedDate ;
+      } else if (dayDiff > 0) {
         timeDiffText = dayDiff + " ngày trước";
       } else if (hourDiff > 0) {
         timeDiffText = hourDiff + " giờ trước";
@@ -73,20 +86,22 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
 
         <div class="Bottom">
                 <div class="BlockFunc">
-                    <div class="Func Share">
-                        <i class="fa-solid fa-share-from-square"></i>
-                    </div>
+                    
                 </div>
                 <div class="RepMess">
-                        <div class="Func RepStoryMale">
-                          <i class="fa-solid fa-paper-plane"></i>
-                        </div>
+                      <div class="Func Share">
+                        <i class="fa-solid fa-share-from-square"></i>
+                      </div>
                         <div class="RepStory">
                           <textarea></textarea>
+                        </div>
+                        <div class="Func RepStoryMale">
+                          <i class="fa-solid fa-paper-plane"></i>
                         </div>
                         <div class="Func RepStory">
                           <i class="fa-solid fa-paper-plane"></i>
                         </div>
+                        
                 </div>
             </div>
       </div>
@@ -159,11 +174,11 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         const storyId = story.id;
         const currentUrl = 'https://hunqdxswbun.github.io/';
 
-        const textarea = button2.previousElementSibling.querySelector('textarea');
+        const textarea = button2.parentElement.querySelector('textarea'); // Sửa dòng này
         const RepStoryMess = textarea.value;
 
-        window.open('https://www.messenger.com/t/100074217488487/?text=' + RepStoryMess + '%20' +currentUrl +'%23'+ storyId ,'_blank');
-        
+        window.open('https://www.messenger.com/t/100074217488487/?text=' + currentUrl + '%23' + storyId + '%0A' + '%0A' + RepStoryMess, '_blank');
+
       });
     });
 
@@ -176,16 +191,16 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         const storyId = story.id;
         const currentUrl = 'https://hunqdxswbun.github.io/';
 
-        const textarea = button.nextElementSibling.querySelector('textarea');
+        const textarea = button.parentElement.querySelector('textarea'); // Sửa dòng này
         const RepStoryMess = textarea.value;
 
-        window.open('https://www.messenger.com/t/100045640179308/?text=' + RepStoryMess + '%20' +currentUrl +'%23'+ storyId ,'_blank');
-        
+        window.open('https://www.messenger.com/t/100045640179308/?text=' + currentUrl + '%23' + storyId + '%0A' + '%0A' + RepStoryMess, '_blank');
+
       });
     });
 
 
-    
+
 
 
     setTimeout(() => {

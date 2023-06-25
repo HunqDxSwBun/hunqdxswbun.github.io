@@ -1,0 +1,22 @@
+[
+    {
+        "Feeling": "HanhPhuc",
+        "Src": "happy.mp3"
+    },
+    {
+        "Feeling": "Buon",
+        "Src": "sad.mp3"
+    },
+    {
+        "Feeling": "BinhThuong",
+        "Src": "normal.mp3"
+    },
+    {
+        "Feeling": "SoHai",
+        "Src": "sohai.mp3"
+    },
+    {
+        "Feeling": "GianDu",
+        "Src": "giandu.mp3"
+    }
+]

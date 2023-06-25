@@ -43,11 +43,12 @@
     </audio>
 
     <div class="Tab">
-        <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+        <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i
+                class="fa-brands fa-readme"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
         <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Shopping')"><i class="fa-solid fa-cart-shopping"></i></button>
-        <!-- <button class="tablinks " onclick="openTAB(event, 'Games')"><i class="fa-solid fa-gamepad"></i></button> -->
+        <button class="tablinks " onclick="openTAB(event, 'Relax')"><i
+                class="fa-solid fa-heart-circle-check"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
     </div>
 
@@ -64,7 +65,7 @@
             <h1 id="Who"></h1>
             <p id="Chat"></p>
         </div>
-        
+
         <div class="CardCouple">
             <div class="DaysLove">
                 <h1 id="DaysLove"></h1>
@@ -109,7 +110,7 @@
 
 
             <div class="Couple">
-                <div class="Info Male" >
+                <div class="Info Male">
                     <div class="Avatar" onclick="CoupleChat('Male')">
                         <img src="https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
                             alt="" srcset="">
@@ -126,7 +127,7 @@
                     <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
                 </div>
 
-                <div class="Info Female" >
+                <div class="Info Female">
                     <div class="Avatar" onclick="CoupleChat('Female')">
                         <img src="https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
                             alt="" srcset="">
@@ -144,7 +145,7 @@
 
     <div id="Story" class="tabcontent">
         <h1 class="head">Bảng tin</h1>
-        
+
         <div class="rss-feed" id="rss-feed"></div>
         <div class="write">
             <a href="jetpack://">
@@ -153,56 +154,24 @@
         </div>
     </div>
 
-    <div class="tabcontent" id="Shopping">
-        <h1 class="head">Tra cứu đơn hàng</h1>
-        <div class="Item">
-            <img src="./Temp/DonHang1/1.jpg" alt="" srcset="">
-            <h1>Khô gà lá chanh xé cay</h1>
+    <div class="tabcontent" id="Relax">
+        <h1 class="head">Nhạc</h1>
+        <div class="Relax">
+            <audio id="myAudioRelax" controls>
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <button onclick="RelaxMusic('HanhPhuc')" >HanhPhuc</button>
+            <button onclick="RelaxMusic('BuonBa')" >Buồn bã</button>
+            <button onclick="RelaxMusic('BinhThuong')" >Bình thường</button>
+            <button onclick="RelaxMusic('SoHai')" >Sợ hãi</button>
+            <button onclick="RelaxMusic('GianDu')" >Giận dữ</button>
+            <button onclick="RelaxMusic('Vinahey')" >Vinahey</button>
+            <button onclick="RelaxMusic('TopTopRemix')" >TopTopRemix</button>
+        <button onclick="RelaxMusicLive()">Phát theo thời gian hiện tại</button>
         </div>
-        <div class="Item">
-            <img src="./Temp/DonHang1/2.jpg" alt="" srcset="">
-            <h1>Cơm cháy lắc khô gà</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang1/3.jpg" alt="" srcset="">
-            <h1>Da heo tỏi ớt</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang1/4.jpg" alt="" srcset="">
-            <h1>Khô bò miếng</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang1/5.jpg" alt="" srcset="">
-            <h1>Mực cán tẩm gia vị</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang1/6.jpg" alt="" srcset="">
-            <h1>Cơm cháy chà bông</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang3/gaubong.png" alt="" srcset="">
-            <h1>Gấu Bông Lena Cosplay Gấu Dâu</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang2/locknlock.png" alt="" srcset="">
-            <h1>Bình giữ nhiệt Lock&Lock 800ml</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang2/onghut.png" alt="" srcset="">
-            <h1>Ống hút inox Lock&Lock</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang3/aokhoac.png" alt="" srcset="">
-            <h1>DAVIES Black Daviesism Jacket</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang3/erylik.png" alt="" srcset="">
-            <h1>Gel Erylik Laboratoires Chemineau</h1>
-        </div>
-        <div class="Item">
-            <img src="./Temp/DonHang3/LuckyBox.jpg" alt="" srcset="">
-            <h1>Hộp quà bí ẩn ( sau ngày 19/10/23 )</h1>
-        </div>
+
     </div>
 
     <div id="Games" class="tabcontent">
@@ -219,21 +188,21 @@
         <p>Hiện tại chưa có sự kiện nào.</p>
     </div>
 
-    <div id="Settings" class="tabcontent" >
+    <div id="Settings" class="tabcontent">
         <h1 class="head">Cài đặt</h1>
         <div class="DownloadApp" onclick="CustomPIC()">
             <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
         </div>
 
-        <div class="SettingDIV" >
+        <div class="SettingDIV">
             <div class="SettingBlock Active" id="CustomPIC">
                 <h1>Ảnh Nền</h1>
                 <div class="file-input">
-                        <input type="file" name="file-input" id="imageFileInput" class="file-input__input"/>
-                        <label class="file-input__label" for="imageFileInput">
+                    <input type="file" name="file-input" id="imageFileInput" class="file-input__input" />
+                    <label class="file-input__label" for="imageFileInput">
                         <span><i class="fa-solid fa-file-import"></i> <br>Tải Ảnh Hoặc Video Ngắn</span></label>
                 </div>
-                    
+
                 <button id="saveImageBtn">Lưu</button>
                 <button id="deleteImageBtn">Xoá</button>
                 <button id="randomImageBtn">Ngẫu Nhiên</button>
@@ -248,8 +217,8 @@
                 <p id="CurrencyOUTlastUpdated">Nhấn vào đây để cập nhật.</p>
                 <p style="margin-top: 5px;">Thường sẽ cao hơn 1VND so với SBI Remit</p>
                 <a href="https://www.remit.co.jp/en/kaigaisoukin/exchangeratecommission/exchange/" target="_blank"
-                rel="noopener noreferrer">
-                Mở trang SBI Remit
+                    rel="noopener noreferrer">
+                    Mở trang SBI Remit
                 </a>
             </div>
 
@@ -366,32 +335,34 @@
                 <p>Chuyển đổi văn bản </p>
             </div>
 
-            <div class="SettingBlock Active"  id="Security">
-                    <h1>Chuyển đổi văn bản</h1>
-                    <div class="Security">
-                        <div class="Option">
-                            <select id="mySelect">
-                                <option value="Ascii">Ascii</option>
-                                <option value="Morse">Morse</option>
-                                <option value="Base64">Base64</option>
-                            </select>
-                            <br>
-                            <br>
-                            <input type="radio" id="textOption" name="option" checked>
-                            <label for="textOption">Chuyển sang văn bản</label>
-                            <br>
-                            <input type="radio" id="Option" name="option">
-                            <label for="Option">Chuyển sang mã</label>
-                        </div>
-                        <textarea id="inputText"></textarea>
-                        <div class="BTN50">
-                            <button id="convertButton" onclick="pasteConvertText()"><i class="fa-regular fa-clipboard"></i></button>
-                            <button id="convertButton" onclick="convertText()"><i class="fa-solid fa-right-left"></i></button>
-                        </div>
-            
-                        <textarea id="outputText"></textarea>
-                        <button id="copyOutputText" onclick="copyText()"><i class="fa-regular fa-clone"></i></button>
+            <div class="SettingBlock Active" id="Security">
+                <h1>Chuyển đổi văn bản</h1>
+                <div class="Security">
+                    <div class="Option">
+                        <select id="mySelect">
+                            <option value="Ascii">Ascii</option>
+                            <option value="Morse">Morse</option>
+                            <option value="Base64">Base64</option>
+                        </select>
+                        <br>
+                        <br>
+                        <input type="radio" id="textOption" name="option" checked>
+                        <label for="textOption">Chuyển sang văn bản</label>
+                        <br>
+                        <input type="radio" id="Option" name="option">
+                        <label for="Option">Chuyển sang mã</label>
                     </div>
+                    <textarea id="inputText"></textarea>
+                    <div class="BTN50">
+                        <button id="convertButton" onclick="pasteConvertText()"><i
+                                class="fa-regular fa-clipboard"></i></button>
+                        <button id="convertButton" onclick="convertText()"><i
+                                class="fa-solid fa-right-left"></i></button>
+                    </div>
+
+                    <textarea id="outputText"></textarea>
+                    <button id="copyOutputText" onclick="copyText()"><i class="fa-regular fa-clone"></i></button>
+                </div>
             </div>
 
             <div class="SettingBlock" id="ThanhTich">
@@ -420,7 +391,7 @@
         </div>
     </div>
 
-    
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -441,6 +412,9 @@
 
 <!-- Tải Story -->
 <script src="./Data/JS/Download.js"></script>
+
+<!-- Thư Giãn -->
+<script src="./Data/JS/Relax.js"></script>
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>
