@@ -36,6 +36,18 @@ body {
     color: var(--BodyCL);
     background-color: var(--BodyBG);
 }
+.Load {
+    text-align: center;
+}
+.Load button {
+    color: var(--BodyCL);
+    font-size: 18px;
+    width: 80px;
+    height: 30px;
+    background-color: var(--ButtonBG);
+    border-radius: 10px;
+    border: none;
+}
 
 
 .loading {

@@ -1,3 +1,5 @@
+ReloadBlog();
+function ReloadBlog() {
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
 const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
@@ -269,9 +271,5 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
 
   })
   .catch(error => console.log(error));
-
-
-
-
-
+}
 
