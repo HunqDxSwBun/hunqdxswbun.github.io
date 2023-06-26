@@ -1,0 +1,54 @@
+[
+    {
+        "TenBaiHat": "Summer Music Mix Vol.1",
+        "Ten": "Summer Music Mix Vol.1",
+        "SrcIMG": "/Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/SummerMusicMix.mp3"
+    },
+    {
+        "TenBaiHat": "Summer Music Mix Vol.2",
+        "Ten": "Summer Music Mix Vol.2",
+        "SrcIMG": "/Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/SummerMusicMix2.mp3"
+    },
+    {
+        "TenBaiHat": "Vinahouse",
+        "Ten": "Vinahouse Mix 1",
+        "SrcIMG": "/MusicRelax/IMG/vinahouse.jpg",
+        "Src": "/MusicRelax/Music/Vinahey.mp3"
+    }
+    ,
+    {
+        "TenBaiHat": "Tiktok Remix",
+        "Ten": "Tiktok Remix",
+        "SrcIMG": "/MusicRelax/IMG/Tiktok.jpg",
+        "Src": "/MusicRelax/Music/TopTopRemix.mp3"
+    },
+    {
+        "TenBaiHat": "Trước Khi Em Tồn Tại",
+        "Ten": "Trước Khi Em Tồn Tại | Việt Anh cover",
+        "SrcIMG": "Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/TruocKhiEmTonTai.mp3"
+    },
+    {
+        "TenBaiHat": "Chill Vol.1",
+        "Ten": "Chill Vol.1",
+        "SrcIMG": "Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/AmbientMusic.mp3"
+    },
+    {
+        "TenBaiHat": "Chill Vol.2",
+        "Ten": "Chill Vol.2",
+        "SrcIMG": "Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/RainyLofi.mp3"
+    }
+    ,
+    {
+        "TenBaiHat": "Chill Vol.3",
+        "Ten": "Chill Vol.3",
+        "SrcIMG": "Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/LofiHipHop.mp3"
+    }
+    
+
+]

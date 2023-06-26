@@ -47,8 +47,7 @@
                 class="fa-brands fa-readme"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
         <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Relax')"><i
-                class="fa-solid fa-heart-circle-check"></i></button>
+        <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
     </div>
 
@@ -154,22 +153,29 @@
         </div>
     </div>
 
-    <div class="tabcontent" id="Relax">
+    <div class="tabcontent" id="Music">
         <h1 class="head">Nhạc</h1>
         <div class="Relax">
-            <audio id="myAudioRelax" controls>
-                <source src="" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <div class="PlayerMusic">
+                <div class="IMGMusic"  onclick="PauseMusic()" id="IMGMusic"></div>
+                <div class="InfoMusic">
+                    <h1 id="NameSong">8 Letters</h1>
+                    <p id="TimeSong">0:00</p>
+                </div>
 
-            <button onclick="RelaxMusic('HanhPhuc')" >HanhPhuc</button>
-            <button onclick="RelaxMusic('BuonBa')" >Buồn bã</button>
-            <button onclick="RelaxMusic('BinhThuong')" >Bình thường</button>
-            <button onclick="RelaxMusic('SoHai')" >Sợ hãi</button>
-            <button onclick="RelaxMusic('GianDu')" >Giận dữ</button>
-            <button onclick="RelaxMusic('Vinahey')" >Vinahey</button>
-            <button onclick="RelaxMusic('TopTopRemix')" >TopTopRemix</button>
-        <button onclick="RelaxMusicLive()">Phát theo thời gian hiện tại</button>
+                <audio id="myAudioRelax" >
+                    <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <button id="loopButton"><i class="fa-solid fa-repeat"></i></button>
+                <button onclick="backwardTenSeconds()"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                <button onclick="PauseMusic()" id="BtnPause"><i class="fa-solid fa-play"></i></button>
+                <button onclick="forwardTenSeconds()"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                <button  id="MusicButton"><i class="fa-solid fa-satellite-dish"></i></button>
+            </div>
+            <div class="ListMusic" id="ListMusic">
+            </div>
         </div>
 
     </div>
@@ -413,8 +419,8 @@
 <!-- Tải Story -->
 <script src="./Data/JS/Download.js"></script>
 
-<!-- Thư Giãn -->
-<script src="./Data/JS/Relax.js"></script>
+<!-- Nhạc -->
+<script src="./Data/JS/Music.js"></script>
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>

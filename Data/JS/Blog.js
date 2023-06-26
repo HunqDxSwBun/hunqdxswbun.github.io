@@ -13,7 +13,10 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
 
     items.forEach((item, index) => {
       storyCount++;
+      const reverseIndex = items.length - index; // Tính chỉ số đếm ngược
+      const storyId = `FeedID${reverseIndex}`; // Tạo id của div Feed
 
+      
       const title = item.querySelector("title").textContent;
       const encoded = item.querySelector("encoded").textContent;
       const pubDate = item.querySelector("pubDate").textContent;
@@ -64,13 +67,13 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
 
 
       storyHTML += `
-      <div class="Feed" id="FeedID${storyCount}">
+      <div class="Feed" id="${storyId}">
         <div class="Head">
             <div class="Author">
                 <div class="Avatar">
                     <img src="${srcIMG}" alt="${author}">
                 </div>
-                <div class="Info">
+                <div class="Info">                                                                             
                     <div class="Name">${author}</div>
                     <div class="Time">${timeDiffText}</div>
                 </div>

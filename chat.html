@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PieSocket Tester</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+
+        #chatFormContainer {
+            text-align: center;
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+        }
+
+    </style>
+    <script src="https://unpkg.com/piesocket-js@3"></script>
+</head>
+
+<body>
+    <div id="chatLog"></div>
+    <div id="chatFormContainer">
+        <form id="chatForm">
+            <input id="userInput" placeholder="Nhập mã kích hoạt và nhấn enter..." type="text">
+            <br><br>
+            <input id="chatMessage" placeholder="Nhập tin nhắn và nhấn enter..." type="text" class="visible">
+            <button onclick="sendMessage()">Chat</button>
+        </form>
+    </div>
+    <script>
+        var username;
+        function askForUsername() {
+            var userInput = document.getElementById('userInput');
+            var chatFormContainer = document.getElementById('chatFormContainer');
+
+            userInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    var inputText = userInput.value.trim().toLowerCase();
+
+                    if (inputText === 'abc123') {
+                        username = 'Anh';
+                    } else if (inputText === 'abc234') {
+                        username = 'Em';
+                    } else {
+                        alert('Mã kích hoạt không hợp lệ.');
+                        return;
+                    }
+
+                    // Lưu giá trị vào local storage
+                    localStorage.setItem('username', username);
+
+                    // Ẩn đi input và hiển thị form chat
+                    chatFormContainer.style.display = 'block';
+
+                    var chatMessageInput = document.getElementById('chatMessage');
+                    chatMessageInput.focus();
+                }
+            });
+
+            // Kiểm tra nếu đã có giá trị trong local storage
+            var storedUsername = localStorage.getItem('username');
+            if (storedUsername) {
+                username = storedUsername;
+                userInput.style.display = 'none';
+                chatFormContainer.style.display = 'block';
+
+                var chatMessageInput = document.getElementById('chatMessage');
+                chatMessageInput.focus();
+            }
+        }
+
+        askForUsername();
+
+        var chatLog = document.getElementById('chatLog');
+        var chatForm = document.getElementById('chatForm');
+        chatForm.addEventListener("submit", sendMessage);
+
+        var piesocket = new PieSocket({
+            clusterId: "demo",
+            apiKey: "iL0T9OF4NHWeeGmmqQKQbTOsz7Y8q4IzybT8uwgo",
+            notifySelf: true,
+            presence: true,
+            userId: username
+        });
+
+        var channel;
+        piesocket.subscribe("chat-room").then(ch => {
+            channel = ch;
+
+            channel.listen("system:member_joined", function (data) {
+                if (data.member.user === 'anonymous') {
+                    data.member.user = 'Vui lòng nhập mã kích hoạt của bạn';
+                } else {
+                    if (data.member.user === username) {
+                        data.member.user = "<b>" + username + "</b> đã tham gia cuộc trò chuyện";
+                    }
+                }
+
+                chatLog.insertAdjacentHTML('afterend', `<div> ${data.member.user} </div>`);
+            });
+
+            channel.listen("new_message", function (data, meta) {
+                if (data.sender === username) {
+                    data.sender = "<b>You</b>";
+                }
+
+                chatLog.insertAdjacentHTML('afterend', `<div> ${data.sender}: ${data.text} </div>`);
+            });
+        });
+
+        function sendMessage(e) {
+            e.preventDefault();
+
+            if (!channel) {
+                alert("Kênh chưa được kết nối, vui lòng đợi một chút");
+                return;
+            }
+
+            var message = document.getElementById('chatMessage').value;
+
+            channel.publish("new_message", {
+                sender: username,
+                text: message
+            });
+        }
+    </script>
+</body>
+
+</html>

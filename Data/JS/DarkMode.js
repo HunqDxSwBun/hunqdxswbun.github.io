@@ -45,9 +45,14 @@ function toggleMode() {
 function setMode(mode) {
   switch (mode) {
     case 1:
-      button.innerHTML = '<i class="fa-solid fa-sun"></i>';
-      button.style.backgroundColor = '#f5c85d';
+      button.style.backgroundColor = '#40c3da';
       button.style.color = '#000';
+
+      if (isMobile) {
+        button.innerHTML = '<i class="fa-solid fa-mobile-screen-button"></i>';
+      } else {
+        button.innerHTML = '<i class="fa-solid fa-desktop"></i>';
+      }
       // Chạy hàm cho chế độ 1
       mode1();
       break;
@@ -61,14 +66,9 @@ function setMode(mode) {
       break;
     case 3:
 
-      button.style.backgroundColor = '#40c3da';
-      button.style.color = '#000';
-
-      if (isMobile) {
-        button.innerHTML = '<i class="fa-solid fa-mobile-screen-button"></i>';
-      } else {
-        button.innerHTML = '<i class="fa-solid fa-desktop"></i>';
-      }
+    button.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    button.style.backgroundColor = '#f5c85d';
+    button.style.color = '#000';
 
       // Chạy hàm cho chế độ 3
       mode3();
@@ -97,10 +97,14 @@ function setMode(mode) {
 
 // Hàm cho chế độ 1 chế độ sáng
 function mode1() {
-  console.log('Chế độ 1');
+  console.log('Chế độ 3');
 
   var body = document.querySelector('body');
-  body.classList.remove('dark-mode');
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    body.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
+  }
 }
 
 // Hàm cho chế độ 2 chế độ tối
@@ -113,14 +117,10 @@ function mode2() {
 
 // Hàm cho chế độ 3 chế độ sáng / tối
 function mode3() {
-  console.log('Chế độ 3');
+  console.log('Chế độ 1');
 
   var body = document.querySelector('body');
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    body.classList.add('dark-mode');
-  } else {
-    body.classList.remove('dark-mode');
-  }
+  body.classList.remove('dark-mode');
 }
 
 // Hàm cho chế độ 4 chế độ tối
