@@ -109,7 +109,7 @@ body {
     display: grid;
     grid-template-rows: 45% 55%  ;
     padding: 10px;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 160px);
 }
 .PlayerMusic {
     position: relative;
