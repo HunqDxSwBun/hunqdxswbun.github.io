@@ -1,4 +1,4 @@
-setTimeout(function() {
+setTimeout(function () {
   document.getElementById('loading').classList.add('hidden');
   setTimeout(() => {
     document.getElementById('loading').style.display = 'none';
@@ -20,7 +20,21 @@ document.addEventListener('touchend', function (event) {
 }, false);
 
 
+var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener('scroll', function () {
+  var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+  var tab = document.querySelector('.Tab');
+  var write = document.querySelector('.write');
+  if (prevScrollPos > currentScrollPos) {
+    tab.classList.remove('Hide');
+    write.classList.add('Hide');
+  } else {
+    tab.classList.add('Hide');
+    write.classList.remove('Hide');
+  }
 
+  prevScrollPos = currentScrollPos;
+});
 
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
@@ -181,7 +195,7 @@ var Name = '';
 function CoupleChat(who, chat) {
   vCoupleChat.style.display = "block";
   // Kiểm tra là ai và biệt danh hay gọi
-  
+
   function CheckWho() {
     if (who === "Male") {
       Name = 'Anh Yêu ❤';
@@ -198,49 +212,49 @@ function CoupleChat(who, chat) {
 
   if (chat === undefined) {
     // Lấy dữ liệu JSON từ đường dẫn
-  fetch('Data/Chat/Chat.json')
-  .then(response => response.json())
-  .then(jsonData => {
-    // Tìm dữ liệu phù hợp trong JSON
-    var matchingData = jsonData.filter(function (data) {
-      return data.Who === who;
-    });
+    fetch('Data/Chat/Chat.json')
+      .then(response => response.json())
+      .then(jsonData => {
+        // Tìm dữ liệu phù hợp trong JSON
+        var matchingData = jsonData.filter(function (data) {
+          return data.Who === who;
+        });
 
-    if (matchingData.length > 0) {
-      var randomIndex = Math.floor(Math.random() * matchingData.length);
-      var data = matchingData[randomIndex];
+        if (matchingData.length > 0) {
+          var randomIndex = Math.floor(Math.random() * matchingData.length);
+          var data = matchingData[randomIndex];
 
-      setTimeout(function () {
-        CheckWho();
-        vWho.innerText = (who === "Male") ? 'Anh Yêu ❤' : 'Em Yêu ❤';
-        vChat.innerText = data.Say;
-        setTimeout(function () {
-          vWho.innerText = (who === "Male") ? 'Em Yêu ❤' : 'Anh Yêu ❤';
-          CheckWho2();
-          console.log(who);
-          vChat.innerText = data.Rep;
           setTimeout(function () {
-            vCoupleChat.style.display = "none";
-          }, parseInt(data.tRep));
-        }, parseInt(data.tSay));
-      }, 0);
-    } else {
-      vCoupleChat.style.display = "none";
-    }
-  })
-  .catch(error => {
-    console.error('Error fetching JSON:', error);
-    vCoupleChat.style.display = "none";
-  });
+            CheckWho();
+            vWho.innerText = (who === "Male") ? 'Anh Yêu ❤' : 'Em Yêu ❤';
+            vChat.innerText = data.Say;
+            setTimeout(function () {
+              vWho.innerText = (who === "Male") ? 'Em Yêu ❤' : 'Anh Yêu ❤';
+              CheckWho2();
+              console.log(who);
+              vChat.innerText = data.Rep;
+              setTimeout(function () {
+                vCoupleChat.style.display = "none";
+              }, parseInt(data.tRep));
+            }, parseInt(data.tSay));
+          }, 0);
+        } else {
+          vCoupleChat.style.display = "none";
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching JSON:', error);
+        vCoupleChat.style.display = "none";
+      });
   } else {
     vWho.innerText = Name;
     vChat.innerText = chat;
   }
-  
+
 }
 
 function CheckWho2() {
-  if (vWho.innerText === 'Anh Yêu ❤' ) {
+  if (vWho.innerText === 'Anh Yêu ❤') {
     vCoupleChat.style.borderColor = 'var(--Male)';
     vWho.style.color = 'var(--Male)';
   } else {
@@ -267,14 +281,14 @@ function Security() {
   }
 }
 
-// function YoutubeMP3() {
-//   if (YTB.style.display === "block") {
-//     YTB.style.display = "none";
-//   } else {
-//     YTB.style.display = "block";
-//     Folderd.style.display = "none";
-//   }
-// }
+function YoutubeMP3() {
+  if (YTB.style.display === "block") {
+    YTB.style.display = "none";
+  } else {
+    YTB.style.display = "block";
+    Folderd.style.display = "none";
+  }
+}
 
 var vCustomPIC = document.getElementById("CustomPIC");
 

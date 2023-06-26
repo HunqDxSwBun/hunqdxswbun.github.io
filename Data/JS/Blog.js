@@ -1,5 +1,6 @@
 ReloadBlog();
 function ReloadBlog() {
+
 const rssUrl1 = 'https://hunqdswbun.data.blog/feed/';
 const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 
@@ -182,7 +183,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         const textarea = button2.parentElement.querySelector('textarea'); // Sửa dòng này
         const RepStoryMess = textarea.value;
 
-        window.open('https://www.messenger.com/t/100074217488487/?text=' RepStoryMess + '%0A'  + '%0A' + currentUrl + '%23' + storyId  , '_blank');
+        window.open('https://www.messenger.com/t/100074217488487/?text=' + RepStoryMess + '%0A'  + '%0A' + currentUrl + '%23' + storyId  , '_blank');
 
       });
     });
@@ -199,7 +200,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         const textarea = button.parentElement.querySelector('textarea'); // Sửa dòng này
         const RepStoryMess = textarea.value;
 
-        window.open('https://www.messenger.com/t/100045640179308/?text=' RepStoryMess + '%0A' + '%0A'  + currentUrl + '%23' + storyId  , '_blank');
+        window.open('https://www.messenger.com/t/100045640179308/?text=' + RepStoryMess + '%0A' + '%0A'  + currentUrl + '%23' + storyId  , '_blank');
 
       });
     });

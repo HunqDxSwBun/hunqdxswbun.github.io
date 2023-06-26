@@ -104,13 +104,15 @@ body {
 }
 
 
-#Music {
-    padding: 0;
-}
+
 .Relax {
+    display: grid;
+    grid-template-rows: 45% 55%  ;
     padding: 10px;
+    height: calc(100vh - 140px);
 }
 .PlayerMusic {
+    position: relative;
     background-color: var(--CardBG);
     width: 100%;
     text-align: center;
@@ -118,6 +120,13 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
 }
+.PlayerMusic video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
 .PlayerMusic #NameSong {
     font-size: 22px;
     margin: 10px 0 0 0;
@@ -129,8 +138,8 @@ body {
 .PlayerMusic .IMGMusic {
     background-image: url(/Data/icon/Logo2.png);
     background-size: cover;
-    height: 180px;
-    width: 180px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
     margin: 10px auto;
     border: 4px solid var(--BodyCL);
@@ -168,9 +177,10 @@ body {
 }
 .ListMusic {
     width: 100%;
+    max-height: 100%;
+    overflow: scroll;
     padding: 0 ;
     box-sizing: border-box;
-    overflow: auto;
     border-radius: 10px;
 }
 .ListMusic button {
@@ -178,7 +188,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
     background-color: var(--ButtonBG);
     border: none;
     margin: 8px 0;
@@ -199,6 +209,9 @@ body {
     grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 5px 16.5px;
     border-radius: 20px;
+}
+.Hide {
+    display: none !important;
 }
 
 .Tab .tablinks {
@@ -229,7 +242,7 @@ body {
 
 .tabcontent {
     display: none;
-    padding-bottom: 80px;
+    padding-bottom: 10px;
 }
 
 .tabcontent img {
@@ -508,7 +521,7 @@ header .HeadApp h1 {
 
 #rss-feed {
     padding: 10px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
 }
 
 .Feed {
@@ -556,6 +569,10 @@ header .HeadApp h1 {
 .Body .Status {
     padding: 5px;
 }
+.Body .Status h1{
+    font-size: 20px;
+    margin-bottom: 2px;
+} 
 .figure {
     margin: 5px 0;
 }
@@ -565,6 +582,14 @@ header .HeadApp h1 {
     border-radius: 10px;
     border: 3px solid #fff;
     box-sizing: border-box;
+}
+.Body .Status video {
+    background-color: var(--HeadCL);
+}
+
+
+.Body .Status .Content .wp-smiley {
+    border: none;
 }
 
 .Status .wp-block-gallery {
@@ -585,7 +610,7 @@ header .HeadApp h1 {
 
 .Bottom {
     width: 100%;
-    margin: 20px 0 10px 0;
+    margin: 10px 0 ;
 }
 .Bottom .RepMess {
     display: grid;
@@ -648,7 +673,7 @@ header .HeadApp h1 {
 
 .write {
     position: fixed;
-    bottom: 82px;
+    bottom: 20px;
     right: 16px;
     display: flex;
     text-align: center;

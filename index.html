@@ -43,8 +43,7 @@
     </audio>
 
     <div class="Tab">
-        <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i
-                class="fa-brands fa-readme"></i></button>
+        <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
         <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
         <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
@@ -145,7 +144,7 @@
     <div id="Story" class="tabcontent">
         <h1 class="head">Bảng tin</h1>
         <div class="Load">
-            <button onclick="ReloadBlog();"><i class="fa-solid fa-rotate-right"></i></button>
+            <button onclick="ReloadBlog(); alert('Đã tải bài viết mới nhất')"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
         
         <div class="rss-feed" id="rss-feed"></div>
@@ -155,10 +154,11 @@
             </a>
         </div>
     </div>
-
+   
     <div class="tabcontent" id="Music">
         <h1 class="head">Nhạc</h1>
         <div class="Relax">
+
             <div class="PlayerMusic">
                 <div class="IMGMusic"  onclick="PauseMusic()" id="IMGMusic"></div>
                 <div class="InfoMusic">

@@ -4,7 +4,6 @@ function PhatNhac(TenBaiHat) {
     var audio = document.getElementById('myAudioRelax');
     var NameSong = document.getElementById('NameSong');
     var IMGMusic = document.getElementById('IMGMusic');
-    var button = document.getElementById("MusicButton");
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/MusicRelax/MusicList.json', true);
@@ -34,7 +33,6 @@ function PhatNhac(TenBaiHat) {
 
         // Bật hoặc tắt audio
         if (src !== '') {
-            button.click();
             PauseMusic();
             IMGMusic.classList.add('rotate');
         } else {

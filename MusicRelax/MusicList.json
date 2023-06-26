@@ -6,12 +6,6 @@
         "Src": "/MusicRelax/Music/SummerMusicMix.mp3"
     },
     {
-        "TenBaiHat": "Summer Music Mix Vol.2",
-        "Ten": "Summer Music Mix Vol.2",
-        "SrcIMG": "/Data/icon/Logo2.png",
-        "Src": "/MusicRelax/Music/SummerMusicMix2.mp3"
-    },
-    {
         "TenBaiHat": "Vinahouse",
         "Ten": "Vinahouse Mix 1",
         "SrcIMG": "/MusicRelax/IMG/vinahouse.jpg",
@@ -35,6 +29,18 @@
         "Ten": "Chill Vol.1",
         "SrcIMG": "Data/icon/Logo2.png",
         "Src": "/MusicRelax/Music/AmbientMusic.mp3"
+    },
+    {
+        "TenBaiHat": "Chill Vol.2",
+        "Ten": "Chill Vol.2",
+        "SrcIMG": "Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/RainyLofi.mp3"
+    },
+    {
+        "TenBaiHat": "Falling Down",
+        "Ten": "Falling Down",
+        "SrcIMG": "Data/icon/Logo2.png",
+        "Src": "/MusicRelax/Music/FallingDown.mp3"
     },
     {
         "TenBaiHat": "Chill Vol.2",
