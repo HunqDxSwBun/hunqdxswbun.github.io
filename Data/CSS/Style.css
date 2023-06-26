@@ -149,6 +149,7 @@ body {
     }
 }
 .PlayerMusic button {
+    text-align: center;
     color: var(--BodyCL);
     font-size: 20px;
     background-color: var(--ButtonBG);
