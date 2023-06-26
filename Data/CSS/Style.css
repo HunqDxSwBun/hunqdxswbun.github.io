@@ -168,7 +168,6 @@ body {
 }
 .ListMusic {
     width: 100%;
-    height: 350px;
     padding: 0 ;
     box-sizing: border-box;
     overflow: auto;
