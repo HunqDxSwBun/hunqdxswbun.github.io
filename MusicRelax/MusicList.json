@@ -42,13 +42,4 @@
         "SrcIMG": "Data/icon/Logo2.png",
         "Src": "/MusicRelax/Music/RainyLofi.mp3"
     }
-    ,
-    {
-        "TenBaiHat": "Chill Vol.3",
-        "Ten": "Chill Vol.3",
-        "SrcIMG": "Data/icon/Logo2.png",
-        "Src": "/MusicRelax/Music/LofiHipHop.mp3"
-    }
-    
-
 ]
