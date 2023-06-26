@@ -1287,3 +1287,72 @@ header .HeadApp h1 {
 #Event {
     text-align: center;
 }
+.Feeling {
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    gap: 10px;
+    padding: 10px ;
+    box-sizing: border-box;
+}
+.Feeling .People {
+    background-color: #fa7f7f;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+}
+.Feeling .People.Male {
+    background-color: var(--Male);
+}
+.Feeling .People.Female {
+    background-color: var(--Female);
+}
+.Feeling .People h1 {
+    font-size: 50px;
+}
+.Feeling .People h2 {
+    font-size: 22px;
+}
+.Feeling .People p {
+    font-size: 16px;
+    font-weight: 600;
+}
+.EditFeeling {
+    background-color: var(--CardBG);
+    padding: 10px;
+    text-align: left;
+}
+.EditFeeling label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.EditFeeling input,
+.EditFeeling select{
+    width: 100%;
+    font-size: 18px;
+    padding: 10px ;
+    border-radius: 10px;
+    border: 2px solid var(--BodyCL);
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+.EditFeeling .Custom {
+    display: grid;
+    grid-template-columns: 20% calc(80% - 10px);
+    gap: 10px;
+}
+.EditFeeling .Custom input {
+    text-align: center;
+}
+.EditFeeling button {
+    color: var(--BodyCL);
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: var(--ButtonBG);
+    border: none;
+    margin: 10px 0;
+}

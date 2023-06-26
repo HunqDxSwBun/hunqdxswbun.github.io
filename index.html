@@ -30,12 +30,12 @@
 
 
 <body>
-    <div class="loading" id="loading">
+    <!-- <div class="loading" id="loading">
         <div class="loading_icon"></div>
         <div class="loading_logo">
             <img src="/Data/icon/Logo-Square.png" alt="" srcset="">
         </div>
-    </div>
+    </div> -->
 
     <audio id="MusicBG" loop>
         <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
@@ -50,7 +50,7 @@
         <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
     </div>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent ">
         <div class="IMGBG" id="IMGBG"></div>
 
         <div class="NewPost" id="NewPost" onclick="handleRandomImage()">
@@ -154,7 +154,7 @@
             </a>
         </div>
     </div>
-   
+
     <div class="tabcontent" id="Music">
         <h1 class="head">Nhạc</h1>
         <div class="Relax">
@@ -183,18 +183,30 @@
 
     </div>
 
-    <div id="Games" class="tabcontent">
-        <h1 class="head">Trò chơi</h1>
-        <p>Hiện đang trong quá trình phát triển thử nghiệm.</p>
-        <!-- <h1 id="DiemDanh"></h1>
-        <br>
-        <button id="diemDanhBtn">Điểm Danh</button> -->
-        <!-- <button id="xoaDuLieuBtn">Xoá Dữ liệu</button> -->
-    </div>
-
-    <div class="tabcontent" id="Event">
+    <div class="tabcontent show" id="Event">
         <h1 class="head">Sự kiện</h1>
-        <p>Hiện tại chưa có sự kiện nào.</p>
+        <div class="Feeling">
+            <div class="People Male">
+                <h2>Anh yêu ❤</h2>
+                <h1>🥰</h1>
+                <p>Đáng Yêu</p>
+            </div>
+            <div class="People Female">
+                <h2>Em yêu ❤</h2>
+                <h1>😍</h1>
+                <p>Hạnh phúc</p>
+            </div>
+        </div>
+        <div class="EditFeeling">
+            <input type="text" id="personalCode" placeholder="Mã cá nhân">
+            <br>
+            <h3 style="text-align: center;">Cảm xúc</h3>
+            <div class="Custom">
+                <input type="text" id="iconCustom" placeholder="😉">
+                <input type="text" id="sttCustom" placeholder="Bạn cảm thấy như nào ?">
+            </div>
+            <button onclick="updateFeeling()">Cập nhật cảm xúc</button>
+        </div>
     </div>
 
     <div id="Settings" class="tabcontent">
@@ -425,6 +437,8 @@
 <!-- Nhạc -->
 <script src="./Data/JS/Music.js"></script>
 
+<!-- Cảm xúc -->
+<script src="./Data/JS/Feeling.js"></script>
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
