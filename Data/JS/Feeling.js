@@ -15,11 +15,11 @@ socket.onmessage = function (event) {
     console.log(data);
 
     // Update UI based on received data
-    if (data.personalCode === 'ABC123') {
+    if (data.personalCode === 'H1507') {
         const peopleMale = document.querySelector('.People.Male');
         peopleMale.querySelector('h1').textContent = data.iconCustom;
         peopleMale.querySelector('p').textContent = data.sttCustom;
-    } else if (data.personalCode === 'XYZ123') {
+    } else if (data.personalCode === 'T1507') {
         const peopleFemale = document.querySelector('.People.Female');
         peopleFemale.querySelector('h1').textContent = data.iconCustom;
         peopleFemale.querySelector('p').textContent = data.sttCustom;
@@ -35,11 +35,11 @@ function updateFeeling() {
     sttCustom = document.getElementById('sttCustom').value;
 
     // Update the UI for the current user
-    if (personalCode === 'ABC123') {
+    if (personalCode === 'H1507') {
         const peopleMale = document.querySelector('.People.Male');
         peopleMale.querySelector('h1').textContent = iconCustom;
         peopleMale.querySelector('p').textContent = sttCustom;
-    } else if (personalCode === 'XYZ123') {
+    } else if (personalCode === 'T1507') {
         const peopleFemale = document.querySelector('.People.Female');
         peopleFemale.querySelector('h1').textContent = iconCustom;
         peopleFemale.querySelector('p').textContent = sttCustom;
