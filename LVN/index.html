@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<!-- Shift + Alt + F  để sắp xếp lại code ( format code )-->
+<html>
+
+<head>
+    <!-- Tiêu đề trang -->
+    <title>MiniShop</title>
+
+    <!-- Bộ giải mã và phân loại thiết bị -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Đảm bảo đặt meta tag sau -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Biểu tượng cho web -->
+    <link rel="icon" href="/Data/icon/Logo2.png" />
+
+    <!-- Biểu tượng iPhone -->
+    <link rel="apple-touch-icon" href="/Data/icon/Logo.png" sizes="150x150" />
+    <!-- CSS của web -->
+    <link rel="stylesheet" href="./Data/CSS/Style.css" />
+
+    <!-- FontAweSome fas fa icon -->
+    <script src="https://kit.fontawesome.com/9392097706.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="./Data/IMG/Banner.png" alt="" srcset="">
+    </header>
+    <div class="ChucNang">
+        <div class="NutChucNang">
+            <button class="tablinks" onclick="openTAB(event, 'NhiemVu')">
+                <i class="fa-solid fa-list"></i>
+                <p>Nhiệm vụ</p>
+            </button>
+            <button class="tablinks" onclick="openTAB(event, 'CuaHang')">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Cửa hàng</p>
+            </button>
+            <button class="tablinks" onclick="openTAB(event, 'TietKiem')">
+                <i class="fa-solid fa-seedling"></i>
+                <p>Tiết kiệm</p>
+            </button>
+            <button class="tablinks" onclick="openTAB(event, 'TaiKhoan')">
+                <i class="fa-solid fa-user"></i>
+                <p>Tài khoản</p>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="tabcontent" id="NhiemVu">
+        <div class="BlockItem">
+            <div class="Item">
+                <img src="./Data/IMG/icon/mop.png" alt="" srcset="">
+                <h1>Lau nhà & quét nhà</h1>
+                <p>5.000đ</p>
+                <button>Làm Ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/icon/dish-washing.png" alt="" srcset="">
+                <h1>Rửa chén</h1>
+                <p>5.000đ</p>
+                <button>Làm Ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/icon/washing-clothes.png" alt="" srcset="">
+                <h1>Giặt đồ & phơi đồ</h1>
+                <p>5.000đ</p>
+                <button>Làm Ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/icon/rice-cooker.png" alt="" srcset="">
+                <h1>Nấu cơm</h1>
+                <p>5.000đ</p>
+                <button>Làm Ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabcontent" id="CuaHang">
+        <div class="BlockItem">
+            <div class="Item">
+                <img src="./Data/IMG/ShopItem1.png" alt="">
+                <h1>Xe Cần Cẩu Cỡ Lớn</h1>
+                <p>250.000</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/ShopItem2.png" alt="">
+                <h1>Cờ tỷ phú</h1>
+                <p>150.000</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/ShopItem3.png" alt="">
+                <h1>Xe Ben Công Trình</h1>
+                <p>150.000</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/ShopItem4.png" alt="">
+                <h1>Toyota Camry 2019</h1>
+                <p>280.000</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/ShopItem5.png" alt="">
+                <h1>Máy chơi Game PS3</h1>
+                <p>10.000/Giờ</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="Item">
+                <img src="./Data/IMG/ShopItem6.png" alt="">
+                <h1>Máy tính</h1>
+                <p>20.000/Giờ</p>
+                <button>Mua ngay</button>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="tabcontent" id="TietKiem">
+
+    </div>
+    <div class="tabcontent" id="TaiKhoan">
+        
+    </div>
+
+</body>
+<script src="./Data/JS/Script.js"></script>
+
+</html>
