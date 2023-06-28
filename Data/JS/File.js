@@ -25,7 +25,7 @@ window.addEventListener('scroll', function () {
   var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
   var tab = document.querySelector('.Tab');
   var write = document.querySelector('.write');
-  if (prevScrollPos > currentScrollPos) {
+  if (prevScrollPos   > currentScrollPos ) {
     tab.classList.remove('Hide');
     write.classList.add('Hide');
   } else {
@@ -33,8 +33,9 @@ window.addEventListener('scroll', function () {
     write.classList.remove('Hide');
   }
 
-  prevScrollPos = currentScrollPos;
-});
+  prevScrollPos = currentScrollPos  ;
+
+}); 
 
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
