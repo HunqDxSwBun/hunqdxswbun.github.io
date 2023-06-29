@@ -11,6 +11,9 @@ img {
     max-width: 100%;
     border-radius: 20px;
 }
+button {
+    cursor: pointer;
+}
 
 .ChucNang {
     background-color: #000000;
