@@ -52,7 +52,7 @@
         </audio>
     </header>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent">
         <div class="IMGBG" id="IMGBG"></div>
 
         <div class="NewPost" id="NewPost" onclick="handleRandomImage()">
@@ -202,8 +202,10 @@
           </div>
     </div>
 
-    <div class="tabcontent" id="Event">
-
+    <div class="tabcontent show" id="Event">
+        <h1 class="head">Sự kiện</h1>
+        <div class="Event" id="root">
+        </div>
     </div>
 
     <div id="Settings" class="tabcontent">
@@ -433,6 +435,8 @@
 
 <!-- Nhạc -->
 <script src="./Data/JS/Music.js"></script>
+
+<script src="./Data/JS/Event.js"></script>
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>

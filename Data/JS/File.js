@@ -282,11 +282,11 @@ function Menu() {
   var x = document.getElementById("iMenu");
   var navbar = document.getElementById("navbar");
 
-  if (x.style.bottom === "20px") {
+  if (x.style.bottom === "10px") {
     x.style.bottom = '-100px'
-    navbar.style.bottom = '20px'
+    navbar.style.bottom = '15px'
   } else {
-    x.style.bottom = '20px'
-    navbar.style.bottom = '90px'
+    x.style.bottom = '10px'
+    navbar.style.bottom = '80px'
   }
 }

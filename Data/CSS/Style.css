@@ -29,6 +29,7 @@
 }
 
 body {
+    /* overflow: hidden; */
     touch-action: manipulation;
     background-size: cover;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -41,7 +42,7 @@ body {
     text-align: center;
     background-color: var(--HeadCL);
     position: fixed;
-    bottom: 20px;
+    bottom: 15px;
     right: 10px;
     width: 34px;
     height: 34px;
@@ -70,7 +71,7 @@ body {
     }
 
     100% {
-        bottom: 20px;
+        bottom: 15px;
     }
 }
 
@@ -190,7 +191,7 @@ body {
     height: calc(100% - 0px);
     background-image: url(/Data/Wallpaper/1.jpg);
     background-size: cover;
-    background-position: 50% 0;
+    background-position: 50% 50%;
 }
 
 .NewPost {
@@ -1411,4 +1412,65 @@ header .HeadApp h1 {
     padding: 16px 8px;
     color: #999;
     font-size: 18px;
+}
+
+.Event {
+    padding: 0 10px;
+}
+.Event .Comming {
+    background-image: url(/Events/Kiss.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: var(--ButtonBG);
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    align-items:end;
+    justify-content: left;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.Event .HeadComing {
+    text-align: left;
+    color: var(--BodyCL);
+    background-color: var(--HeadCL);
+    border: 2px solid var(--BodyCL);
+    border-left: 0;
+    padding: 5px 10px 10px 10px ;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.Event .HeadComing h1 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.Event .Upnext {
+    display: grid;
+    grid-template-columns: auto 50px;
+    background-color: var(--CardBG);
+    box-sizing: border-box;
+    margin: 5px 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.Event .Upnext .IMG  {
+    display: flex;
+    text-align: center;
+    align-items:center;
+    justify-content: center;
+}
+.Event .Upnext .IMG  img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    border: 2px solid var(--BodyCL);
+}
+.Event .Upnext h1 {
+    font-size: 20px;
+}
+.Event .Upnext p {
+    font-size: 14px;
 }
