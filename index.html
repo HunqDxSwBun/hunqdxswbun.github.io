@@ -30,27 +30,29 @@
 
 
 <body>
-    <!-- <div class="loading" id="loading">
-        <div class="loading_icon"></div>
-        <div class="loading_logo">
-            <img src="/Data/icon/Logo-Square.png" alt="" srcset="">
+    <header>
+        <div id="navbar" onclick="Menu()">
+            <i class="fa-solid fa-heart"></i>
         </div>
-    </div> -->
+        <div class="menu" id="iMenu">
+            <div id="MenuMuic">
+                <div class="Tab">
+                    <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
+                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
+                </div>
+            </div>
+        </div>
+    
+        <audio id="MusicBG" loop>
+            <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </header>
 
-    <audio id="MusicBG" loop>
-        <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <div class="Tab">
-        <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
-        <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
-        <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
-    </div>
-
-    <div id="Home" class="tabcontent shop">
+    <div id="Home" class="tabcontent show">
         <div class="IMGBG" id="IMGBG"></div>
 
         <div class="NewPost" id="NewPost" onclick="handleRandomImage()">
@@ -78,32 +80,24 @@
             <div class="DaysLove2">
                 <div class="Num" id="Years">
                     <span class="number"></span>
-                    <span class="unit">năm</span>
+                    <span class="unit">Năm</span>
                 </div>
                 <div class="Num" id="Months">
                     <span class="number"></span>
-                    <span class="unit">tháng</span>
+                    <span class="unit">Tháng</span>
                 </div>
-                <!-- <div class="Num" id="Weeks">
+                <div class="Num" id="Hours">
                     <span class="number"></span>
-                    <span class="unit">tuần</span>
-                  </div>
-                  <div class="Num" id="Days">
-                    <span class="number"></span>
-                    <span class="unit">ngày</span>
-                  </div> -->
-                <!-- <div class="Num" id="Hours">
-                    <span class="number"></span>
-                    <span class="unit">giờ</span>
+                    <span class="unit">Giờ</span>
                   </div>
                   <div class="Num" id="Mins">
                     <span class="number"></span>
-                    <span class="unit">phút</span>
+                    <span class="unit">Phút</span>
                   </div>
                   <div class="Num" id="Secs">
                     <span class="number"></span>
-                    <span class="unit">giây</span>
-                  </div>                   -->
+                    <span class="unit">Giây</span>
+                  </div>                  
             </div>
 
 
@@ -148,68 +142,68 @@
         </div>
         
         <div class="rss-feed" id="rss-feed"></div>
-        <div class="write">
+        <!-- <div class="write">
             <a href="jetpack://">
                 <i class="fa-regular fa-pen-to-square"></i>
             </a>
-        </div>
+        </div> -->
     </div>
 
     <div class="tabcontent" id="Music">
-        <h1 class="head">Nhạc</h1>
-        <div class="Relax">
-
-            <div class="PlayerMusic">
-                <div class="IMGMusic"  onclick="PauseMusic()" id="IMGMusic"></div>
-                <div class="InfoMusic">
-                    <h1 id="NameSong">8 Letters</h1>
-                    <p id="TimeSong">0:00</p>
+        <div class="player">
+            <!-- Dashboard -->
+            <div class="dashboard">
+              <!-- Header -->
+              <header>
+                <h4>Đang phát:</h4>
+                <h2>String 57th & 9th</h2>
+              </header>
+          
+              <!-- CD -->
+              <div class="cd">
+                <div class="cd-thumb">
                 </div>
-
-                <audio id="myAudioRelax" >
-                    <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                
-                <button id="loopButton"><i class="fa-solid fa-repeat"></i></button>
-                <button onclick="backwardTenSeconds()"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-                <button onclick="PauseMusic()" id="BtnPause"><i class="fa-solid fa-play"></i></button>
-                <button onclick="forwardTenSeconds()"><i class="fa-solid fa-arrow-rotate-right"></i></button>
-                <button  id="MusicButton"><i class="fa-solid fa-satellite-dish"></i></button>
+              </div>
+          
+              <!-- Control -->
+              <div class="control">
+                <div class="btn btn-repeat">
+                  <i class="fas fa-redo"></i>
+                </div>
+                <div class="btn btn-prev">
+                  <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="btn btn-toggle-play">
+                  <i class="fas fa-pause icon-pause"></i>
+                  <i class="fas fa-play icon-play"></i>
+                </div>
+                <div class="btn btn-next">
+                  <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="btn btn-random">
+                  <i class="fas fa-random"></i>
+                </div>
+              </div>
+          
+              <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+          
+              <audio id="audio" src=""></audio>
             </div>
-            <div class="ListMusic" id="ListMusic">
-            </div>
-        </div>
+            
+            <div class="Album">
+                <button id="vol1">Nhạc Âu Mỹ</button>
+                <button id="vol2">Nhạc tổng hợp</button>
 
+              </div>
+            <div class="playlist">
+            </div>
+            
+            
+          </div>
     </div>
 
     <div class="tabcontent" id="Event">
-        <h1 class="head">Sự kiện</h1>
-        <div class="Feeling">
-            <div class="People Male">
-                <h2>Anh yêu ❤</h2>
-                <h1>🥰</h1>
-                <p>Đáng Yêu</p>
-            </div>
-            <div class="People Female">
-                <h2>Em yêu ❤</h2>
-                <h1>😍</h1>
-                <p>Hạnh phúc</p>
-            </div>
-        </div>
-        <div class="EditFeeling">
-            <select id="personalCode">
-                <option value="SwBun">Em yêu</option>
-                <option value="HunqD">Anh Yêu</option>
-            </select>
-            <br>
-            <h3 style="text-align: center;">Cảm xúc</h3>
-            <div class="Custom">
-                <input type="text" id="iconCustom" placeholder="😉">
-                <input type="text" id="sttCustom" placeholder="Bạn cảm thấy như nào ?">
-            </div>
-            <button onclick="updateFeeling()">Cập nhật cảm xúc</button>
-        </div>
+
     </div>
 
     <div id="Settings" class="tabcontent">
@@ -217,7 +211,6 @@
         <div class="DownloadApp" onclick="CustomPIC()">
             <img src="./Data/IMG/BannerApp.png" alt="" srcset="">
         </div>
-
         <div class="SettingDIV">
             <div class="SettingBlock Active" id="CustomPIC">
                 <h1>Ảnh Nền</h1>
@@ -421,6 +414,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- Tổng hợp -->
+
 <script src="./Data/JS/File.js"></script>
 
 <!-- Giao diện -->
@@ -440,14 +434,11 @@
 <!-- Nhạc -->
 <script src="./Data/JS/Music.js"></script>
 
-<!-- Cảm xúc -->
-<script src="./Data/JS/Feeling.js"></script>
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
 <!-- <script src="./Data/JS/Game.js"></script> -->
 <script src="./Data/JS/Blog.js"></script>
-
 
 </html>

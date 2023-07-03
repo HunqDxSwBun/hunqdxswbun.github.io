@@ -1,11 +1,3 @@
-// setTimeout(function () {
-//   document.getElementById('loading').classList.add('hidden');
-//   setTimeout(() => {
-//     document.getElementById('loading').style.display = 'none';
-//   }, 1000);
-// }, 1000);
-
-
 document.addEventListener('gesturestart', function (event) {
   event.preventDefault(); // Chặn sự kiện zoom
 });
@@ -20,22 +12,6 @@ document.addEventListener('touchend', function (event) {
 }, false);
 
 
-var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-window.addEventListener('scroll', function () {
-  var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-  var tab = document.querySelector('.Tab');
-  var write = document.querySelector('.write');
-  if (prevScrollPos   > currentScrollPos ) {
-    tab.classList.remove('Hide');
-    write.classList.add('Hide');
-  } else {
-    tab.classList.add('Hide');
-    write.classList.remove('Hide');
-  }
-
-  prevScrollPos = currentScrollPos  ;
-
-}); 
 
 function openTAB(evt, TabName) {
   var i, tabcontent, tablinks;
@@ -301,3 +277,17 @@ function CustomPIC() {
   }
 }
 
+
+function Menu() {
+  var x = document.getElementById("iMenu");
+  var navbar = document.getElementById("navbar");
+
+  if (x.style.bottom === "0px") {
+    x.style.bottom = '-100px'
+    navbar.style.bottom = '10px'
+  } else {
+    
+    x.style.bottom = '0'
+    navbar.style.bottom = '70px'
+  }
+}

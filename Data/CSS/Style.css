@@ -30,15 +30,85 @@
 
 body {
     touch-action: manipulation;
-    overflow: hidden;
     background-size: cover;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--BodyCL);
     background-color: var(--BodyBG);
 }
+
+#navbar {
+    cursor: pointer;
+    text-align: center;
+    background-color: var(--HeadCL);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.3s;
+    z-index: 2;
+    animation: HieuUngnavbar 1s;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#navbar i {
+    color: var(--BodyCL);
+    font-size: 16px;
+    animation: HieuUng1 1s infinite;
+}
+
+@keyframes HieuUngnavbar {
+    0% {
+        bottom: -50px;
+    }
+
+    100% {
+        bottom: 10px;
+    }
+}
+
+@keyframes HieuUng1 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.menu {
+    bottom: 5px;
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: -100px;
+    padding: 0 10px;
+    margin: auto 0;
+    width: 100%;
+    border-radius: 20px;
+    transition: bottom 0.3s;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+
+
 .Load {
     text-align: center;
 }
+
 .Load button {
     color: var(--BodyCL);
     font-size: 18px;
@@ -49,170 +119,20 @@ body {
     border: none;
 }
 
-
-.loading {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background-color: var(--BodyBG);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 9999;
-	opacity: 1;
-	transition: opacity 0.5s ease;
-}
 .Block {
     display: block !important;
 }
-.loading.hidden {
-	opacity: 1;
-}
-
-.loading_icon {
-	width: 150px;
-	height: 150px;
-	border: 10px solid var(--ButtonBG);
-	border-top-color: var(--BodyCL);
-	border-radius: 50%;
-	animation: spin 1s linear infinite;
-}
-
-.loading_logo {
-	position: absolute;
-	height: 148px;
-	width: 148px;
-
-}
-
-.loading_logo img {
-	width: 100%;
-	border-radius: 50%;
-
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-
-
-.Relax {
-    display: grid;
-    grid-template-rows: 45% 55%  ;
-    padding: 10px;
-    height: calc(100vh - 160px);
-}
-.PlayerMusic {
-    position: relative;
-    background-color: var(--CardBG);
-    width: 100%;
-    text-align: center;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-.PlayerMusic video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
-.PlayerMusic #NameSong {
-    font-size: 22px;
-    margin: 10px 0 0 0;
-}
-.PlayerMusic #TimeSong {
-    font-size: 18px;
-    margin: 5px 0 10px 0;
-}
-.PlayerMusic .IMGMusic {
-    background-image: url(/Data/icon/Logo2.png);
-    background-size: cover;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    margin: 10px auto;
-    border: 4px solid var(--BodyCL);
-}
-
-.rotate {
-    box-shadow: 0 0 5px 5px var(--ButtonBG);
-    animation: rotation 8s infinite linear;
-}
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-}
-.PlayerMusic button {
-    text-align: center;
-    color: var(--BodyCL);
-    font-size: 20px;
-    background-color: var(--ButtonBG);
-    width: 50px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    box-sizing: border-box;
-}
-.PlayerMusic button:hover {
-    background-color: var(--BodyBG);
-}
-
-.PlayerMusic button.active {
-    border: 2px solid var(--BodyCL);
-}
-.ListMusic {
-    width: 100%;
-    max-height: 100%;
-    overflow: scroll;
-    padding: 0 ;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-.ListMusic button {
-    color: var(--BodyCL);
-    font-size: 16px;
-    font-weight: bold;
-    width: 100%;
-    padding: 15px 0;
-    background-color: var(--ButtonBG);
-    border: none;
-    margin: 8px 0;
-    border-radius: 10px;
-}
-
 
 
 .Tab {
-    z-index: 999;
-    text-align: center;
     background-color: var(--TabBG);
-    padding: 4px;
-    width: calc(100% - 42px);
-    position: fixed;
-    bottom: 15px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    margin: 5px 16.5px;
+    margin: 5px 0;
+    padding: 4px;
     border-radius: 20px;
 }
-.Hide {
-    display: none !important;
-}
+
 
 .Tab .tablinks {
     cursor: pointer;
@@ -275,7 +195,7 @@ body {
 
 .NewPost {
     max-height: 200px;
-    margin:  10px;
+    margin: 10px;
     padding: 10px 20px;
     background-color: var(--NewPost);
     border-radius: 30px;
@@ -318,6 +238,7 @@ body {
     0% {
         scale: 0.9;
     }
+
     100% {
         text-shadow: 0px 0px 10px var(--HeadCL);
     }
@@ -370,10 +291,10 @@ body {
 .DaysLove2 {
     text-align: center;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto auto;
     gap: 5px;
     margin: 20px auto;
-    padding: 0 20px;
+    padding: 0 50px;
 }
 
 .DaysLove2 .Num {
@@ -384,13 +305,7 @@ body {
     width: 50px;
 }
 
-.DaysLove2 .Num:first-child {
-    margin: 0 0 0 auto;
-}
 
-.DaysLove2 .Num:last-child {
-    margin: auto 0 0 0;
-}
 
 .unit {
     font-size: 12px;
@@ -425,6 +340,7 @@ body {
     transform: scale(1.6);
 
 }
+
 .Heart {
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
@@ -434,6 +350,7 @@ body {
     transform: scale(2);
     animation: large 1.2s infinite;
 }
+
 @keyframes large {
     0% {
         opacity: 0.8;
@@ -452,10 +369,12 @@ body {
     background-color: var(--CardBG);
     border: 2px solid var(--BodyCL);
 }
+
 .CoupleChat h1 {
     font-size: 18px;
     margin: 0;
 }
+
 .Couple .Heart img {
     width: 40px;
     animation: heart3 1.2s infinite alternate;
@@ -527,16 +446,19 @@ header .HeadApp h1 {
 .Feed {
     color: #fff;
     background-color: #111;
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
     padding: 10px;
     border-radius: 10px;
 }
+
 .Feed:first-child {
     margin-top: 0;
 }
+
 .Feed:last-child {
     margin-bottom: 0;
 }
+
 .Feed.Active {
     background-color: #252525;
 }
@@ -554,13 +476,16 @@ header .HeadApp h1 {
 .Head .Author .Info {
     margin-left: 10px;
 }
+
 .Head .Author .Info .Name {
     font-size: 20px;
     font-weight: bold;
 }
+
 .Head .Author .Info .Time {
     font-size: 14px;
 }
+
 .wp-block-video video {
     max-width: 100%;
     margin: 5px 0;
@@ -569,13 +494,16 @@ header .HeadApp h1 {
 .Body .Status {
     padding: 5px;
 }
-.Body .Status h1{
+
+.Body .Status h1 {
     font-size: 20px;
     margin-bottom: 2px;
-} 
+}
+
 .figure {
     margin: 5px 0;
 }
+
 .Body .Status img,
 .Body .Status video {
     max-width: 100%;
@@ -583,6 +511,7 @@ header .HeadApp h1 {
     border: 3px solid #fff;
     box-sizing: border-box;
 }
+
 .Body .Status video {
     background-color: var(--HeadCL);
 }
@@ -596,12 +525,14 @@ header .HeadApp h1 {
     column-count: 3 !important;
     --webkit-column-count: 2;
     --moz-column-count: 2;
-    gap: 10px; 
+    gap: 10px;
     margin: 5px 0;
 }
-.Status  .wp-block-image {
+
+.Status .wp-block-image {
     margin: 5px 0;
 }
+
 .Status .wp-block-gallery .wp-block-image {
     margin: 0 auto;
     text-align: center;
@@ -610,21 +541,24 @@ header .HeadApp h1 {
 
 .Bottom {
     width: 100%;
-    margin: 10px 0 ;
+    margin: 10px 0;
 }
+
 .Bottom .RepMess {
     display: grid;
-    grid-template-columns: 50px auto 50px 50px  ;
+    grid-template-columns: 50px auto 50px 50px;
     background-color: #000;
     border-radius: 10px;
 }
+
 .Bottom .RepStory {
     display: flex;
     align-items: center;
-	justify-content: center;
+    justify-content: center;
     text-align: center;
-    
+
 }
+
 .Bottom .RepStory textarea {
     width: 100%;
     min-height: 20px;
@@ -637,21 +571,25 @@ header .HeadApp h1 {
     border-radius: 0;
     border-left: 0;
 }
-.Bottom .RepStory textarea:focus{
+
+.Bottom .RepStory textarea:focus {
     outline: none;
 }
+
 .RepMess .Func {
     display: flex;
     align-items: center;
-	justify-content: center;
+    justify-content: center;
     text-align: center;
-    background-color: var(--Female);;
+    background-color: var(--Female);
+    ;
     border: 2px solid var(--BodyCL);
     border-left: none;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     box-sizing: border-box;
 }
+
 .RepMess .Func:nth-child(1) {
     border: 2px solid var(--BodyCL);
     border-right: 0;
@@ -660,6 +598,7 @@ header .HeadApp h1 {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
+
 .RepMess .Func:nth-child(3) {
     background-color: var(--Male);
     border-left: 2px solid var(--BodyCL);
@@ -699,6 +638,7 @@ header .HeadApp h1 {
 #CustomPIC .file-input {
     margin-bottom: 10px;
 }
+
 #CustomPIC .file-input__input {
     width: 0px;
     height: 0px;
@@ -706,8 +646,8 @@ header .HeadApp h1 {
     overflow: hidden;
     position: absolute;
     z-index: -1;
-  }
-  
+}
+
 #CustomPIC .file-input__label {
     width: calc(100% - 38px);
     cursor: pointer;
@@ -723,10 +663,12 @@ header .HeadApp h1 {
     background-color: var(--ButtonBG);
     border: 2px solid var(--BodyCL);
 }
+
 #CustomPIC .file-input__label i {
     font-size: 30px;
 }
-#CustomPIC button{
+
+#CustomPIC button {
     color: var(--BodyCL);
     background-color: var(--BodyBG);
     border: 2px solid var(--BodyCL);
@@ -737,18 +679,19 @@ header .HeadApp h1 {
     border-radius: 10px;
     margin: auto;
 }
+
 #CustomPIC button:last-child {
     width: 120px;
 }
 
 
-  
+
 
 #Currency a {
-   font-size: 14px;
-   font-weight: bold;
-   color: var(--ButtonBG);
-   text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--ButtonBG);
+    text-decoration: none;
 }
 
 .DownloadApp {
@@ -803,7 +746,7 @@ header .HeadApp h1 {
 }
 
 .SettingBlock.Active {
-    cursor:default;
+    cursor: default;
     background-color: var(--ButtonBG);
     display: none;
     width: calc(100% - 10px);
@@ -927,10 +870,12 @@ header .HeadApp h1 {
     background-color: var(--BodyBG);
     border: 2px solid var(--ButtonBG);
 }
+
 #Redeem #codeOutput h1 {
     margin-top: 10px;
 }
-#Redeem #codeOutput img{
+
+#Redeem #codeOutput img {
     width: 100%;
     border-radius: 20px;
     margin: 10px 0;
@@ -942,6 +887,7 @@ header .HeadApp h1 {
     margin: 0 5px;
     border: 4px solid var(--BodyCL);
 }
+
 .Folders {
     background-color: var(--BodyBG);
     padding: 10px 20px;
@@ -979,6 +925,7 @@ header .HeadApp h1 {
     background-color: var(--BodyBG);
     border: 2px solid var(--BodyCL);
 }
+
 .Folders button span {
     font-size: 12px;
     color: var(--BodyCL);
@@ -1002,13 +949,15 @@ header .HeadApp h1 {
     border: 2px solid var(--BodyCL);
     border-radius: 10px;
 }
+
 .YoutubeMp3 input::placeholder {
     font-size: 14px;
 }
+
 .YoutubeMp3 select {
     font-size: 14px;
     font-weight: bold;
-    height: 35px;   
+    height: 35px;
     cursor: pointer;
     color: var(--BodyBG);
     background-color: var(--BodyCL);
@@ -1065,6 +1014,7 @@ header .HeadApp h1 {
     font-size: 16px;
     color: var(--BodyCL);
 }
+
 #outLinkYTB {
     font-size: 14px;
 }
@@ -1118,6 +1068,7 @@ header .HeadApp h1 {
 #Games {
     text-align: center;
 }
+
 #Games #DiemDanh {
     color: var(--HeadCL);
     font-size: 100px;
@@ -1135,6 +1086,7 @@ header .HeadApp h1 {
     border-radius: 10px;
     margin: 2px 0 10px 0;
 }
+
 #Games button:hover {
     color: var(--BodyCL);
     border: 2px solid var(--BodyCL);
@@ -1145,11 +1097,13 @@ header .HeadApp h1 {
     font-size: 22px;
     text-align: center;
     color: var(--HeadCL);
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
 }
+
 #Security {
     color: var(--BodyBG);
 }
+
 .Security {
     padding: 10px 20px;
     text-align: center;
@@ -1182,9 +1136,11 @@ header .HeadApp h1 {
     display: flex;
     flex-wrap: wrap;
 }
+
 .Security .BTN50 button {
     cursor: pointer;
 }
+
 .Security .BTN50 button:first-child {
     width: calc(20% - 2px);
     margin-right: 2px;
@@ -1284,75 +1240,175 @@ header .HeadApp h1 {
     font-weight: bold;
 }
 
-#Event {
-    text-align: center;
-}
-.Feeling {
-    display: grid;
-    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
-    gap: 10px;
-    padding: 10px ;
-    box-sizing: border-box;
-}
-.Feeling .People {
-    background-color: #fa7f7f;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    border-radius: 10px;
-}
-.Feeling .People.Male {
-    background-color: var(--Male);
-}
-.Feeling .People.Female {
-    background-color: var(--Female);
-}
-.Feeling .People h1 {
-    font-size: 50px;
-}
-.Feeling .People h2 {
-    font-size: 22px;
-}
-.Feeling .People p {
-    font-size: 16px;
-    font-weight: 600;
-}
-.EditFeeling {
-    background-color: var(--CardBG);
-    padding: 10px;
-    text-align: left;
-}
-.EditFeeling label {
-    font-size: 16px;
-    font-weight: 400;
+
+.player {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.EditFeeling input,
-.EditFeeling select{
+.player .icon-pause {
+    display: none;
+}
+
+.player.playing .icon-pause {
+    display: inline-block;
+}
+
+.player.playing .icon-play {
+    display: none;
+}
+
+.dashboard {
+    padding: 16px 16px 14px;
+    background-color: var(--CardBG);
+    position: fixed;
+    top: 0;
     width: 100%;
-    font-size: 18px;
-    padding: 10px ;
-    border-radius: 10px;
-    border: 2px solid var(--BodyCL);
+    max-width: 100%;
     box-sizing: border-box;
-    margin: 5px 0;
+    border-bottom: 2px solid var(--BodyBG) ;
 }
-.EditFeeling .Custom {
-    display: grid;
-    grid-template-columns: 20% calc(80% - 10px);
-    gap: 10px;
+
+.cd {
+    display: flex;
+    margin: auto;
+    width: 200px;
 }
-.EditFeeling .Custom input {
+
+.cd-thumb {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-color: var(--BodyBG);
+    box-shadow: 0 0 10px 2px var(--ButtonBG);
+    background-size: cover;
+    margin: auto;
+}
+
+/* CONTROL */
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 0 8px 0;
+}
+
+.control .btn {
+    cursor: pointer;
+    color: var(--BodyCL);
+    padding: 18px;
+    font-size: 18px;
+}
+
+.control .btn.active {
+    color: var(--ButtonBG);
+}
+
+.control .btn-toggle-play {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ButtonBG);
+}
+
+.progress {
+    cursor: pointer;
+    width: 100%;
+    appearance: none;
+    height: 10px;
+    background: var(--BodyBG);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+  
+  .progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 10px;
+    background-color: var(--ButtonBG);
+    cursor: pointer;
+  }
+
+/* PLAYLIST */
+.playlist {
+    padding: 12px 12px 30px 12px;
+}
+.Album {
+    margin-top: 408px;
     text-align: center;
 }
-.EditFeeling button {
+.Album button{
+    cursor: pointer;
+    text-transform: capitalize;
     color: var(--BodyCL);
     font-size: 18px;
-    font-weight: bold;
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 10px;
+    font-weight: 500;
     background-color: var(--ButtonBG);
+    border-radius: 5px;
     border: none;
-    margin: 10px 0;
+    margin: 0 2px;
+    padding: 8px 20px;
+}
+
+.song {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: var(--CardBG);
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+    background-color: var(--ButtonBG);
+}
+
+.song:active {
+    opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+    color: #fff;
+}
+
+.song .thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 8px;
+}
+
+.song .body {
+    flex: 1;
+    padding: 0 16px;
+}
+
+.song .title {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.song .author {
+    font-size: 12px;
+    color: #999;
+}
+
+.song .option {
+    padding: 16px 8px;
+    color: #999;
+    font-size: 18px;
 }

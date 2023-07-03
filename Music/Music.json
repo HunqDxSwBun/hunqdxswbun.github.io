@@ -1,0 +1,104 @@
+[
+  {
+    "name": "8 Letters",
+    "singer": "Why Don't We",
+    "path": "/Music/Music/Vol1/8Letters.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "I'll Wait",
+    "singer": "Kygo, Sasha Sloan",
+    "path": "/Music/Music/Vol1/IllWait.mp3",
+    "image": "https://cdns-images.dzcdn.net/images/cover/51ae1c30b1a6e0ef2757602d8cf942e6/500x500.jpg"
+  },
+  {
+    "name": "Dusk Till Dawn",
+    "singer": "ZAYN & Sia",
+    "path": "/Music/Music/Vol1/DuskTillDawn.mp3",
+    "image": "https://avatar-ex-swe.nixcdn.com/song/2017/09/08/e/2/7/8/1504833729381_640.jpg"
+  },
+  {
+    "name": "In My Mind",
+    "singer": "ILLENIUM, Excision and Haliene",
+    "path": "/Music/Music/Vol1/InMyMind.mp3",
+    "image": "https://i.ytimg.com/an/GdFqRriKbY8/3442291099842374730_mq.jpg?v=60f3344e"
+  },
+  {
+    "name": "Nightlight",
+    "singer": "Finding Hope",
+    "path": "/Music/Music/Vol1/Nightlight.mp3",
+    "image": "https://i1.sndcdn.com/artworks-000645942352-uw338c-t500x500.jpg"
+  },
+  {
+    "name": "Downtown",
+    "singer": "Allie X",
+    "path": "/Music/Music/Vol1/Downtown.mp3",
+    "image": "https://i1.sndcdn.com/artworks-FRS0cntKkC0VsJRE-MmjA6w-t500x500.jpg"
+  },
+  {
+    "name": "Love Is In The Air",
+    "singer": "Tamiga & 2Bad",
+    "path": "/Music/Music/Vol1/LoveIsInTheAir.mp3",
+    "image": "https://i1.sndcdn.com/artworks-000581224001-57zg6t-t500x500.jpg"
+  },
+  {
+    "name": "L.I.F.E.",
+    "singer": "Remady & Manu-L",
+    "path": "/Music/Music/Vol1/LIFE.mp3",
+    "image": "https://avatar-ex-swe.nixcdn.com/song/2019/09/05/2/6/c/4/1567655840453_640.jpg"
+  },
+  {
+    "name": "Love Me Now",
+    "singer": "Kygo & Zoe Wees",
+    "path": "/Music/Music/Vol1/LoveMeNow.mp3",
+    "image": "https://m.media-amazon.com/images/I/81138Om9J5L._SS500_.jpg"
+  },
+  {
+    "name": "Rain",
+    "singer": "YVO  & Rebecca Helena",
+    "path": "/Music/Music/Vol1/Rain.mp3",
+    "image": "https://i1.sndcdn.com/artworks-HFxuMbl4fCV9-0-t500x500.png"
+  },
+  {
+    "name": "All My Days",
+    "singer": "Forester",
+    "path": "/Music/Music/Vol1/AllMyDays.mp3",
+    "image": "https://m.media-amazon.com/images/I/71DQj3W034L._SS500_.jpg"
+  },
+  {
+    "name": "Lullaby",
+    "singer": "R3HAB x Mike Williams",
+    "path": "/Music/Music/Vol1/Lullaby.mp3",
+    "image": "https://images.genius.com/c2777e6d3ea6b912fe71989753725462.1000x1000x1.png"
+  },
+  {
+    "name": "Stereo Hearts",
+    "singer": "Gym Class Heroes",
+    "path": "/Music/Music/Vol1/StereoHearts.mp3",
+    "image": "https://avatar-ex-swe.nixcdn.com/playlist/2015/03/21/1/3/7/8/1426912942770_500.jpg"
+  },
+  {
+    "name": "Is It Just Me?",
+    "singer": "Sasha Alex Sloan & Charlie Puth",
+    "path": "/Music/Music/Vol1/IsItJustMe.mp3",
+    "image": "https://avatar-ex-swe.nixcdn.com/song/2020/09/28/4/9/a/7/1601287381727_640.jpg"
+  },
+  {
+    "name": "Rhythm Of The Night",
+    "singer": "Sasha Alex Sloan & Charlie Puth",
+    "path": "/Music/Music/Vol1/RhythmOfTheNight.mp3",
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/ef/Corona_-_Rhythm_of_the_Night_single.png"
+  },
+  {
+    "name": "Sad Song Playlist",
+    "singer": "Youtube",
+    "path": "/Music/Music/Vol1/SadMusic1.mp3",
+    "image": "https://www.theplayground.co.uk/wp-content/uploads/2018/10/Sad.jpg"
+  },
+  {
+    "name": "Sadness and Sorrow",
+    "singer": "Naruto",
+    "path": "/Music/Music/Vol1/SadnessandSorrow.mp3",
+    "image": "https://wallpapers.com/images/high/sad-anime-boy-naruto-swing-vhw98373l2m5b2k1.jpg"
+  }
+]

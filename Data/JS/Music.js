@@ -1,157 +1,281 @@
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
-function PhatNhac(TenBaiHat) {
-    // Lấy đối tượng audio
-    var audio = document.getElementById('myAudioRelax');
-    var NameSong = document.getElementById('NameSong');
-    var IMGMusic = document.getElementById('IMGMusic');
+const PlAYER_STORAGE_KEY = "F8_PLAYER";
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/MusicRelax/MusicList.json', true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var musicList = JSON.parse(xhr.responseText);
-            // Gọi hàm xử lý dữ liệu trong musicList
-            processMusicList(musicList);
-        }
+const player = $(".player");
+const cd = $(".cd");
+const heading = $("header h2");
+const cdThumb = $(".cd-thumb");
+const audio = new Audio();
+const playBtn = $(".btn-toggle-play");
+const progress = $("#progress");
+const prevBtn = $(".btn-prev");
+const nextBtn = $(".btn-next");
+const randomBtn = $(".btn-random");
+const repeatBtn = $(".btn-repeat");
+const playlist = $(".playlist");
+
+const app = {
+  currentIndex: 0,
+  isPlaying: false,
+  isRandom: false,
+  isRepeat: false,
+  config: {},
+  songs: [],
+
+  setConfig: function (key, value) {
+    this.config[key] = value;
+    localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
+  },
+
+  loadSongs: function (songs) {
+    this.songs = songs;
+  },
+
+  render: function () {
+    const htmls = this.songs.map((song, index) => {
+      return `
+        <div class="song ${index === this.currentIndex ? "active" : ""}" data-index="${index}">
+          <div class="thumb" style="background-image: url('${song.image}')"></div>
+          <div class="body">
+            <h3 class="title">${song.name}</h3>
+            <p class="author">${song.singer}</p>
+          </div>
+          <div class="option">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+      `;
+    });
+    playlist.innerHTML = htmls.join("");
+  },
+
+  defineProperties: function () {
+    Object.defineProperty(this, "currentSong", {
+      get: function () {
+        return this.songs[this.currentIndex];
+      }
+    });
+  },
+
+  handleEvents: function () {
+    const _this = this;
+    const cdWidth = cd.offsetWidth;
+
+    // Xử lý CD quay / dừng
+    // Handle CD spins / stops
+    const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
+      duration: 10000, // 10 seconds
+      iterations: Infinity
+    });
+    cdThumbAnimate.pause();
+
+    // Xử lý phóng to / thu nhỏ CD
+    // Handles CD enlargement / reduction
+    // document.onscroll = function () {
+    //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    //   const newCdWidth = cdWidth - scrollTop;
+    
+    //   cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
+    //   cd.style.opacity = newCdWidth / cdWidth;
+    // };
+    
+
+    // Xử lý khi click play
+    // Handle when click play
+    playBtn.onclick = function () {
+      if (_this.isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
     };
-    xhr.send();
 
-    function processMusicList(musicList) {
-        // Tiếp tục xử lý dữ liệu trong musicList
-        var src = '';
-        for (var i = 0; i < musicList.length; i++) {
-            if (musicList[i].TenBaiHat === TenBaiHat) {
-                src = musicList[i].Src;
-                NameSong.innerText = musicList[i].Ten;
-                IMGMusic.style.backgroundImage = "url(" + musicList[i].SrcIMG + ")";
-                break;
-            }
+    audio.onplay = function () {
+      _this.isPlaying = true;
+      player.classList.add("playing");
+      cdThumbAnimate.play();
+    };
+
+    audio.onpause = function () {
+      _this.isPlaying = false;
+      player.classList.remove("playing");
+      cdThumbAnimate.pause();
+    };
+
+    audio.ontimeupdate = function () {
+      if (audio.duration) {
+        const progressPercent = Math.floor(
+          (audio.currentTime / audio.duration) * 100
+        );
+        progress.value = progressPercent;
+      }
+    };
+
+    progress.onchange = function (e) {
+      const seekTime = (audio.duration / 100) * e.target.value;
+      audio.currentTime = seekTime;
+    };
+
+
+    nextBtn.onclick = function () {
+      if (_this.isRandom) {
+        _this.playRandomSong();
+      } else {
+        _this.nextSong();
+      }
+      audio.play();
+      _this.render();
+      _this.scrollToActiveSong();
+    };
+
+    prevBtn.onclick = function () {
+      if (_this.isRandom) {
+        _this.playRandomSong();
+      } else {
+        _this.prevSong();
+      }
+      audio.play();
+      _this.render();
+      _this.scrollToActiveSong();
+    };
+
+    randomBtn.onclick = function () {
+      _this.isRandom = !_this.isRandom;
+      _this.setConfig("isRandom", _this.isRandom);
+      randomBtn.classList.toggle("active", _this.isRandom);
+    };
+
+    repeatBtn.onclick = function () {
+      _this.isRepeat = !_this.isRepeat;
+      _this.setConfig("isRepeat", _this.isRepeat);
+      repeatBtn.classList.toggle("active", _this.isRepeat);
+    };
+
+    // Xử lý next song khi audio ended
+    // Handle next song when audio ended
+    audio.onended = function () {
+      if (_this.isRepeat) {
+        audio.play();
+      } else {
+        nextBtn.click();
+      }
+    };
+
+    // Lắng nghe hành vi click vào playlist
+    // Listen to playlist clicks
+    playlist.onclick = function (e) {
+      const songNode = e.target.closest(".song:not(.active)");
+
+      if (songNode || e.target.closest(".option")) {
+        if (songNode) {
+          _this.currentIndex = Number(songNode.dataset.index);
+          _this.loadCurrentSong();
+          audio.play();
+          _this.render();
+          audio.play();
         }
+      }
+    };
 
-        // Cập nhật nguồn audio
-        audio.src = src;
+    // Handle vol1 button click event
+    const vol1Btn = $("#vol1");
+    vol1Btn.onclick = function () {
+      fetch("/Music/Music.json")
+        .then(response => response.json())
+        .then(data => {
+          _this.loadSongs(data);
+          _this.currentIndex = 0;
+          _this.loadCurrentSong();
+          _this.render();
+        })
+        .catch(error => {
+          console.log("An error occurred while fetching the JSON file:", error);
+        });
+    };
 
-        // Bật hoặc tắt audio
-        if (src !== '') {
-            PauseMusic();
-            IMGMusic.classList.add('rotate');
-        } else {
-            audio.pause();
-            IMGMusic.classList.remove('rotate');
-        }
+    // Handle vol2 button click event
+    const vol2Btn = $("#vol2");
+    vol2Btn.onclick = function () {
+      fetch("/Music/Music2.json")
+        .then(response => response.json())
+        .then(data => {
+          _this.loadSongs(data);
+          _this.currentIndex = 0;
+          _this.loadCurrentSong();
+          _this.render();
+        })
+        .catch(error => {
+          console.log("An error occurred while fetching the JSON file:", error);
+        });
+    };
+  },
+  scrollToActiveSong: function () {
+    setTimeout(() => {
+      $(".song.active").scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }, 300);
+  },
+  loadCurrentSong: function () {
+    heading.textContent = this.currentSong.name;
+    cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
+    audio.src = this.currentSong.path;
+  },
+  loadConfig: function () {
+    this.isRandom = this.config.isRandom;
+    this.isRepeat = this.config.isRepeat;
+  },
+  nextSong: function () {
+    this.currentIndex++;
+    if (this.currentIndex >= this.songs.length) {
+      this.currentIndex = 0;
     }
-   
-}
+    this.loadCurrentSong();
+  },
+  prevSong: function () {
+    this.currentIndex--;
+    if (this.currentIndex < 0) {
+      this.currentIndex = this.songs.length - 1;
+    }
+    this.loadCurrentSong();
+  },
+  playRandomSong: function () {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * this.songs.length);
+    } while (newIndex === this.currentIndex);
 
-fetch('/MusicRelax/MusicList.json')
+    this.currentIndex = newIndex;
+    this.loadCurrentSong();
+  },
+
+  start: function () {
+    const _this = this;
+
+    // Get config from local storage if available
+    this.config = JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {};
+    this.currentIndex = this.config.currentIndex || 0;
+    this.isRandom = this.config.isRandom || false;
+    this.isRepeat = this.config.isRepeat || false;
+
+    // Fetch initial songs from vol1
+    fetch("/Music/Music.json")
       .then(response => response.json())
       .then(data => {
-        var songs = data;
-
-        // Tạo nút nhấn dựa trên dữ liệu
-        var buttonContainer = document.getElementById("ListMusic");
-
-        for (var i = 0; i < songs.length; i++) {
-          var song = songs[i];
-          var button = document.createElement("button");
-          button.textContent = song.Ten;
-          button.setAttribute("onclick", "PhatNhac('" + song.TenBaiHat + "')");
-          buttonContainer.appendChild(button);
-        }
+        _this.loadSongs(data);
+        _this.loadConfig();
+        _this.defineProperties();
+        _this.handleEvents();
+        _this.loadCurrentSong();
+        _this.render();
       })
       .catch(error => {
-        console.log("Lỗi khi tải dữ liệu:", error);
+        console.log("An error occurred while fetching the JSON file:", error);
       });
+  }
+};
 
-
-var audio = document.getElementById('myAudioRelax');
-
-function backwardTenSeconds() {
-    audio.currentTime -= 10;
-    return;
-}
-
-function forwardTenSeconds() {
-    audio.currentTime += 10;
-    return;
-}
-
-function PauseMusic() {
-    var IMGMusic = document.getElementById('IMGMusic');
-    var BtnPause = document.getElementById('BtnPause');
-    var audio = document.querySelector('#myAudioRelax');
-
-    if (audio.paused) {
-        audio.play();
-        TimeSong();
-        IMGMusic.classList.add('rotate');
-        BtnPause.innerHTML = '<i class="fa-solid fa-pause"></i>';
-    } else {
-        audio.pause();
-        BtnPause.innerHTML = '<i class="fa-solid fa-play"></i>';
-        IMGMusic.classList.remove('rotate');
-    }
-}
-
-function TimeSong() {
-    audio.addEventListener('timeupdate', function () {
-        // Lấy số thời gian hiện tại của bài hát
-        var currentTime = audio.currentTime;
-
-        // Chuyển đổi số thời gian thành định dạng giờ:phút:giây
-        var hours = Math.floor(currentTime / 60 / 60);
-        var minutes = Math.floor(currentTime / 60);
-        var seconds = Math.floor(currentTime % 60);
-        if (hours > 0) {
-            var formattedTime = hours + ':' + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-        } else {
-            var formattedTime = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-        }
-
-        // Hiển thị số thời gian hiện tại
-        document.getElementById('TimeSong').innerText = formattedTime;
-    });
-}
-
-
-
-function Time() {
-    // Lấy thẻ audio từ HTML
-    var currentTime = new Date().getMinutes();
-    var currentTimes = new Date().getSeconds();
-    var currentSeconds = currentTime * 60;
-    audio.currentTime = currentSeconds + currentTimes;
-    TimeSong();
-}
-
-window.addEventListener("DOMContentLoaded", function () {
-    var button = document.getElementById("MusicButton");
-    var buttonState = localStorage.getItem("buttonState");
-
-    if (buttonState === "true") {
-        button.classList.add("active");
-        Time();
-    }
-
-    button.addEventListener("click", function () {
-        button.classList.toggle("active");
-
-        if (button.classList.contains("active")) {
-            localStorage.setItem("buttonState", true);
-            Time();
-        } else {
-            localStorage.setItem("buttonState", false);
-            // Dừng âm thanh
-            audio.currentTime = 0;
-        }
-    });
-});
-
-
-var audio = document.getElementById("myAudioRelax");
-var loopButton = document.getElementById("loopButton");
-
-loopButton.addEventListener("click", function() {
-  audio.loop = !audio.loop;
-  loopButton.classList.toggle("active");
-});
+app.start();

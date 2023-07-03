@@ -8,8 +8,6 @@ function countDaysLove() {
     var dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
     var years = Math.floor(dayDifference / 365);
     var months = Math.floor((dayDifference % 365) / 30);
-    var weeks = Math.floor(((dayDifference % 365) % 30) / 7); // Tính số tuần từ số ngày dư
-    var days = ((dayDifference % 365) % 30) % 7; // Tính số ngày từ số ngày dư
     var hours = currentDate.getHours();
     var minutes = currentDate.getMinutes();
     var seconds = currentDate.getSeconds();
@@ -17,11 +15,9 @@ function countDaysLove() {
     document.getElementById("DaysLove").innerHTML = (dayDifference).toString();
     document.getElementById("Years").getElementsByClassName("number")[0].textContent = years;
     document.getElementById("Months").getElementsByClassName("number")[0].textContent = months;
-    // document.getElementById("Weeks").getElementsByClassName("number")[0].textContent = weeks;
-    // document.getElementById("Days").getElementsByClassName("number")[0].textContent = days;
-    // document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
-    // document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
-    // document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
+    document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
+    document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
+    document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
   
   
   }
