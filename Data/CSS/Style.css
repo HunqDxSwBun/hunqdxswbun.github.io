@@ -41,7 +41,7 @@ body {
     text-align: center;
     background-color: var(--HeadCL);
     position: fixed;
-    bottom: 10px;
+    bottom: 20px;
     right: 10px;
     width: 34px;
     height: 34px;
@@ -70,7 +70,7 @@ body {
     }
 
     100% {
-        bottom: 10px;
+        bottom: 20px;
     }
 }
 
