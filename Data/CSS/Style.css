@@ -1415,7 +1415,10 @@ header .HeadApp h1 {
 }
 
 .Event {
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
+}
+.Event a {
+    text-decoration: none;
 }
 .Event .Comming {
     background-image: url(/Events/Kiss.png);
@@ -1448,26 +1451,41 @@ header .HeadApp h1 {
     text-transform: capitalize;
 }
 .Event .Upnext {
+    background-size: cover;
+    background-position: 50% 50%;
     display: grid;
-    grid-template-columns: auto 50px;
+    grid-template-columns: auto 60px;
+    gap: 5px;
     background-color: var(--CardBG);
     box-sizing: border-box;
     margin: 5px 0;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
-.Event .Upnext .IMG  {
+.Event .Upnext .Content {
+    color: var(--BodyCL);
+    background-color: #000000d0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.Event .Upnext .Countdown  {
+    background-color: #000000d0;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 10px;
     display: flex;
     text-align: center;
     align-items:center;
     justify-content: center;
+    box-sizing: border-box;
 }
-.Event .Upnext .IMG  img{
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    border: 2px solid var(--BodyCL);
+.Event .Upnext .Countdown h1 {
+    font-size: 25px;
 }
+
 .Event .Upnext h1 {
     font-size: 20px;
 }

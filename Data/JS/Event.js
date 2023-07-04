@@ -3,42 +3,50 @@ var events = [
   {
     "SuKien": "Tết Tây",
     "Ngay": "01/01",
-    "Anh": "/Events/Logo.png"
+    "Anh": "/Events/IMG/Logo.png",
+    "Link": "/index.html"
   },
   {
     "SuKien": "Tết Nguyên Đán",
     "Ngay": "09/02",
-    "Anh": "/Events/Logo.png"
+    "Anh": "/Events/IMG/Logo.png",
+    "Link": "/index.html"
   },
   {
     "SuKien": "Valentine",
     "Ngay": "14/02",
-    "Anh": "/Events/Logo.png"
+    "Anh": "/Events/IMG/Logo.png",
+    "Link": "/index.html"
   },
   {
     "SuKien": "Phụ nữ việt nam",
     "Ngay": "08/03",
-    "Anh": "/Events/Logo.png"
+    "Anh": "/Events/IMG/Logo.png",
+    "Link": "/index.html"
   },
   {
     "SuKien": "Kỉ niệm 2 năm yêu nhau",
     "Ngay": "15/07",
-    "Anh": "/Events/Kiss.png"
+    "Anh": "/Events/IMG/Kiss.png",
+    "Link": "/Events/Kỷ Niệm 2 Năm/"
   },
   {
     "SuKien": "Sinh Nhật Anh Yêu ❤",
     "Ngay": "30/08",
-    "Anh": "/Events/SinhNhat.png"
+    "Anh": "/Events/IMG/SinhNhat.png",
+    "Link": "/index.html"
   },
   {
     "SuKien": "Sinh Nhật Em Yêu ❤",
     "Ngay": "19/10",
-    "Anh": "/Events/SinhNhat.png"
+    "Anh": "/Events/IMG/SinhNhat.png",
+    "Link": "/index.html"
   },
   {
     "SuKien": "Noel",
     "Ngay": "25/12",
-    "Anh": "/Events/Noel.png"
+    "Anh": "/Events/IMG/Noel.png",
+    "Link": "/index.html"
   }
 ];
 
@@ -46,23 +54,26 @@ var events = [
 var currentDate = new Date();
 var currentYear = currentDate.getFullYear();
 
-events.forEach(function(event) {
+events.forEach(function (event) {
   var eventDate = new Date(currentYear, parseInt(event.Ngay.split('/')[1]) - 1, parseInt(event.Ngay.split('/')[0]));
-  
+
   if (eventDate < currentDate) {
     eventDate.setFullYear(eventDate.getFullYear() + 1);
   }
-  
+
   event['Ngay'] = eventDate;
 });
 
-events.sort(function(a, b) {
+events.sort(function (a, b) {
   return a.Ngay - b.Ngay;
 });
 
 // Tạo các phần tử HTML và cài đặt thuộc tính
 var eventContainer = document.createElement("div");
 eventContainer.classList.add("Event");
+
+var comingLink = document.createElement("a");
+comingLink.href = events[0].Link;
 
 var comingDiv = document.createElement("div");
 comingDiv.classList.add("Comming");
@@ -85,8 +96,9 @@ countdownElement.id = "Countdown";
 
 headComingDiv.appendChild(h1Element);
 headComingDiv.appendChild(countdownElement);
+comingLink.appendChild(comingDiv);
 comingDiv.appendChild(headComingDiv);
-eventContainer.appendChild(comingDiv);
+eventContainer.appendChild(comingLink);
 
 var countdownInterval = setInterval(updateCountdown, 1000);
 
@@ -100,11 +112,10 @@ function updateCountdown() {
   var minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
   var seconds = Math.floor((timeDiff / 1000) % 60);
 
-
   if (days >= 1) {
     countdownElement.textContent = days + " ngày " + hours + ":" + minutes + ":" + seconds;
   } else if (days === 0) {
-    countdownElement.textContent =  hours + ":" + minutes + ":" + seconds;
+    countdownElement.textContent = hours + ":" + minutes + ":" + seconds;
   } else {
     countdownElement.textContent = 'Đang diễn ra sự kiện';
   }
@@ -115,6 +126,7 @@ function updateCountdown() {
 for (var i = 1; i < events.length; i++) {
   var upnextDiv = document.createElement("div");
   upnextDiv.classList.add("Upnext");
+  upnextDiv.style.backgroundImage = "url(" + events[i].Anh + ")";
 
   var contentDiv = document.createElement("div");
   contentDiv.classList.add("Content");
@@ -132,16 +144,25 @@ for (var i = 1; i < events.length; i++) {
   contentDiv.appendChild(h1Element);
   contentDiv.appendChild(pElement);
 
-  var imgDiv = document.createElement("div");
-  imgDiv.classList.add("IMG");
+  var Countdown = document.createElement("div");
+  Countdown.classList.add("Countdown");
+  var countdown = document.createElement("h1");
 
-  var imgElement = document.createElement("img");
-  imgElement.src = events[i].Anh;
-  imgElement.alt = "";
+  // Đếm ngày còn lại
+  var eventDate = new Date(events[i].Ngay);
+  eventDate.setFullYear(currentDate.getFullYear()); // Đặt năm của sự kiện bằng năm hiện tại
+  if (eventDate < currentDate) {
+    eventDate.setFullYear(currentDate.getFullYear() + 1); // Tăng năm lên 1 nếu sự kiện đã qua
+  }
 
-  imgDiv.appendChild(imgElement);
+  var timeDiff = eventDate.getTime() - currentDate.getTime();
+  var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+  countdown.textContent = days ;
+
+  Countdown.appendChild(countdown);
   upnextDiv.appendChild(contentDiv);
-  upnextDiv.appendChild(imgDiv);
+  upnextDiv.appendChild(Countdown);
   eventContainer.appendChild(upnextDiv);
 }
 
