@@ -32,9 +32,9 @@ body {
 }
 .Content {
     text-align: center;
-    position: relative;
+    position: absolute;
     width: 100%;
-    bottom: 100px;
+    bottom: 80px;
 }
 .Content button {
     color: #fff ;
