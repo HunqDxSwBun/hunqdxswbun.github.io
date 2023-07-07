@@ -96,15 +96,18 @@ p {
     height: 100vh;
     box-sizing: border-box;
 }
-.Card .VideoBG  {
-    position: relative;
-}
+
 .Card .VideoBG video {
     max-width: 100%;
 
 }
 .Content {
+    text-align: center;
     background-color: red;
-    position: absolute;
+    position: relative;
+    width: 100%;
     bottom: 100px;
+}
+.Content button {
+    padding: 10px ;
 }
