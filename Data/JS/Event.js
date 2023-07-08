@@ -28,7 +28,7 @@ var events = [
     "SuKien": "Kỉ niệm 2 năm yêu nhau",
     "Ngay": "15/07",
     "Anh": "/Events/IMG/Kiss.png",
-    "Link": "/Events/Kỷ Niệm 2 Năm/"
+    "Link": "/Events/2Years/"
   },
   {
     "SuKien": "Sinh Nhật Anh Yêu ❤",
