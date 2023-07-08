@@ -1,13 +1,4 @@
-@font-face {
-    font-family: FontTinhYeu;
-    src: url(/DataWeb/Font/VietTay/iCiel\ Finch\ Bold.otf);
-}
-
-@font-face {
-    font-family: FontChuKy;
-    src: url(/DataWeb/Font/VietTay/NVNFunkySignature-Regular.ttf);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cherry+Bomb+One&display=swap');
 
 * {
     margin: 0;
@@ -53,7 +44,6 @@ body {
     display: none;
 }
 #Countdown {
-    font-family: cursive;
+    font-family: 'Bungee Shade', cursive;
     color: #fa7f7f;
-
 }
