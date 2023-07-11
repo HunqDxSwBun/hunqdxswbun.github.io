@@ -3,13 +3,13 @@ var events = [
   {
     "SuKien": "Tết Tây",
     "Ngay": "01/01",
-    "Anh": "/Events/IMG/Logo.png",
+    "Anh": "/Events/IMG/HPNY.JPG",
     "Link": "/index.html"
   },
   {
     "SuKien": "Tết Nguyên Đán",
     "Ngay": "09/02",
-    "Anh": "/Events/IMG/Logo.png",
+    "Anh": "/Events/IMG/TetTa.jpg",
     "Link": "/index.html"
   },
   {
@@ -21,7 +21,7 @@ var events = [
   {
     "SuKien": "Phụ nữ việt nam",
     "Ngay": "08/03",
-    "Anh": "/Events/IMG/Logo.png",
+    "Anh": "/Events/IMG/8thang3.jpg",
     "Link": "/index.html"
   },
   {
@@ -33,13 +33,13 @@ var events = [
   {
     "SuKien": "Sinh Nhật Anh Yêu ❤",
     "Ngay": "30/08",
-    "Anh": "/Events/IMG/SinhNhat.png",
+    "Anh": "/Events/IMG/SinhNhat.jpg",
     "Link": "/index.html"
   },
   {
     "SuKien": "Sinh Nhật Em Yêu ❤",
     "Ngay": "19/10",
-    "Anh": "/Events/IMG/SinhNhat.png",
+    "Anh": "/Events/IMG/SinhNhat.jpg",
     "Link": "/index.html"
   },
   {
@@ -158,7 +158,7 @@ for (var i = 1; i < events.length; i++) {
   var timeDiff = eventDate.getTime() - currentDate.getTime();
   var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-  countdown.textContent = days ;
+  countdown.textContent = days + 1  ;
 
   Countdown.appendChild(countdown);
   upnextDiv.appendChild(contentDiv);
