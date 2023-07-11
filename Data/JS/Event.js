@@ -9,7 +9,7 @@ var events = [
   {
     "SuKien": "Tết Nguyên Đán",
     "Ngay": "09/02",
-    "Anh": "/Events/IMG/TetTa.jpg",
+    "Anh": "/Events/IMG/TetTa.JPG",
     "Link": "/index.html"
   },
   {
@@ -21,7 +21,7 @@ var events = [
   {
     "SuKien": "Phụ nữ việt nam",
     "Ngay": "08/03",
-    "Anh": "/Events/IMG/8thang3.jpg",
+    "Anh": "/Events/IMG/8thang3.JPG",
     "Link": "/index.html"
   },
   {
@@ -33,13 +33,13 @@ var events = [
   {
     "SuKien": "Sinh Nhật Anh Yêu ❤",
     "Ngay": "30/08",
-    "Anh": "/Events/IMG/SinhNhat.jpg",
+    "Anh": "/Events/IMG/SinhNhat.JPG",
     "Link": "/index.html"
   },
   {
     "SuKien": "Sinh Nhật Em Yêu ❤",
     "Ngay": "19/10",
-    "Anh": "/Events/IMG/SinhNhat.jpg",
+    "Anh": "/Events/IMG/SinhNhat.JPG",
     "Link": "/index.html"
   },
   {
