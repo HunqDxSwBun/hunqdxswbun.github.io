@@ -19,7 +19,7 @@ var events = [
     "Link": "/index.html"
   },
   {
-    "SuKien": "Phụ nữ việt nam",
+    "SuKien": "Quốc tế phụ nữ",
     "Ngay": "08/03",
     "Anh": "/Events/IMG/8thang3.JPG",
     "Link": "/index.html"
@@ -43,7 +43,7 @@ var events = [
     "Link": "/index.html"
   },
   {
-    "SuKien": "Noel",
+    "SuKien": "Lễ Chúa giáng sinh",
     "Ngay": "25/12",
     "Anh": "/Events/IMG/Noel.png",
     "Link": "/index.html"
