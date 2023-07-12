@@ -37,15 +37,21 @@
         <div class="menu" id="iMenu">
             <div id="MenuMuic">
                 <div class="Tab">
-                    <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
-                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-heart"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
+                    <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i
+                            class="fa-brands fa-readme"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Event')"><i
+                            class="fa-solid fa-star"></i></button>
+                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
+                            class="fa-solid fa-heart"></i></button>
+                    <!-- <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button> -->
+                    <button class="tablinks " onclick="openTAB(event, 'Frame')"><i
+                            class="fa-solid fa-icons"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i
+                            class="fa-solid fa-box"></i></button>
                 </div>
             </div>
         </div>
-    
+
         <audio id="MusicBG" loop>
             <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -89,15 +95,15 @@
                 <div class="Num" id="Hours">
                     <span class="number"></span>
                     <span class="unit">Giờ</span>
-                  </div>
-                  <div class="Num" id="Mins">
+                </div>
+                <div class="Num" id="Mins">
                     <span class="number"></span>
                     <span class="unit">Phút</span>
-                  </div>
-                  <div class="Num" id="Secs">
+                </div>
+                <div class="Num" id="Secs">
                     <span class="number"></span>
                     <span class="unit">Giây</span>
-                  </div>                  
+                </div>
             </div>
 
 
@@ -138,9 +144,10 @@
     <div id="Story" class="tabcontent">
         <h1 class="head">Bảng tin</h1>
         <div class="Load">
-            <button onclick="ReloadBlog(); alert('Đã tải bài viết mới nhất')"><i class="fa-solid fa-rotate-right"></i></button>
+            <button onclick="ReloadBlog(); alert('Đã tải bài viết mới nhất')"><i
+                    class="fa-solid fa-rotate-right"></i></button>
         </div>
-        
+
         <div class="rss-feed" id="rss-feed"></div>
         <!-- <div class="write">
             <a href="jetpack://">
@@ -153,58 +160,68 @@
         <div class="player">
             <!-- Dashboard -->
             <div class="dashboard">
-              <!-- Header -->
-              <header>
-                <h4>Đang phát:</h4>
-                <h2>String 57th & 9th</h2>
-              </header>
-          
-              <!-- CD -->
-              <div class="cd">
-                <div class="cd-thumb">
+                <!-- Header -->
+                <header>
+                    <h4>Đang phát:</h4>
+                    <h2>String 57th & 9th</h2>
+                </header>
+
+                <!-- CD -->
+                <div class="cd">
+                    <div class="cd-thumb">
+                    </div>
                 </div>
-              </div>
-          
-              <!-- Control -->
-              <div class="control">
-                <div class="btn btn-repeat">
-                  <i class="fas fa-redo"></i>
+
+                <!-- Control -->
+                <div class="control">
+                    <div class="btn btn-repeat">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div class="btn btn-prev">
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="btn btn-toggle-play">
+                        <i class="fas fa-pause icon-pause"></i>
+                        <i class="fas fa-play icon-play"></i>
+                    </div>
+                    <div class="btn btn-next">
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                    <div class="btn btn-random">
+                        <i class="fas fa-random"></i>
+                    </div>
                 </div>
-                <div class="btn btn-prev">
-                  <i class="fas fa-step-backward"></i>
-                </div>
-                <div class="btn btn-toggle-play">
-                  <i class="fas fa-pause icon-pause"></i>
-                  <i class="fas fa-play icon-play"></i>
-                </div>
-                <div class="btn btn-next">
-                  <i class="fas fa-step-forward"></i>
-                </div>
-                <div class="btn btn-random">
-                  <i class="fas fa-random"></i>
-                </div>
-              </div>
-          
-              <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
-          
-              <audio id="audio" src=""></audio>
+
+                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+
+                <audio id="audio" src=""></audio>
             </div>
-            
+
             <div class="Album">
                 <button id="vol1">Nhạc Âu Mỹ</button>
                 <button id="vol2">Nhạc tổng hợp</button>
 
-              </div>
+            </div>
             <div class="playlist">
             </div>
-            
-            
-          </div>
+
+
+        </div>
     </div>
 
     <div class="tabcontent" id="Event">
         <h1 class="head">Sự kiện</h1>
         <div class="Event" id="root">
+        </div>
+    </div>
+    <div class="tabcontent" id="Frame">
+        <h1 class="head">Tạo khung hình đại diện</h1>
+        <div class="Frame">
+            <input type="file" id="fileInput" onchange="createImage()">
+            <div id="outpic"></div>
+            <a id="downloadLink" href="#" download="2YearsAnniversary.png">
+                <button>Tải ảnh về</button>
+            </a>
         </div>
     </div>
 
@@ -436,7 +453,11 @@
 <!-- Nhạc -->
 <script src="./Data/JS/Music.js"></script>
 
+<!-- Sự kiện -->
 <script src="./Data/JS/Event.js"></script>
+
+<!-- Tạo khung hình -->
+<script src="./Data/JS/Frame.js"></script>
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>

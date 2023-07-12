@@ -167,7 +167,7 @@ header .HeadApp h1,
 
 .tabcontent {
     display: none;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .tabcontent img {
@@ -1495,3 +1495,52 @@ header .HeadApp h1,
     font-size: 14px;
     font-weight: bold;
 }
+.Frame {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .Frame input[type="file"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--ButtonBG);
+  }
+  
+  .Frame button{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--ButtonBG);
+    color: var(--BodyCL);
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  
+  .Frame button:hover {
+    color: var(--ButtonBG);
+    background-color: #f9e5e5;
+  }
+  
+  .Frame #outpic {
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .Frame #outpic img {
+    max-width: 100%;
+    border-radius: 20px;
+    display: block;
+  }
+  .Frame #downloadLink {
+    display: none;
+    margin-top: 10px;
+  }
