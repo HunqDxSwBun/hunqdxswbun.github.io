@@ -218,10 +218,15 @@
         <h1 class="head">Tạo khung hình đại diện</h1>
         <div class="Frame">
             <input type="file" id="fileInput" onchange="createImage()">
+            <select id="frameSelect" onchange="createImage()">
+                <option value="/Data/Frames/1.png">Khung 1</option>
+                <option value="/Data/Frames/2.png">Khung 2</option>
+                <option value="/Data/Frames/3.png">Khung 3</option>
+                <option value="/Data/Frames/4.png">Khung 4</option>
+                <option value="/Data/Frames/5.png">Khung 5</option>
+              </select>
             <div id="outpic"></div>
-            <a id="downloadLink" href="#" download="2YearsAnniversary.png">
-                <button>Tải ảnh về</button>
-            </a>
+            <button id="outbtnDownload" onclick="downloadImage()">Tải ảnh</button>
         </div>
     </div>
 

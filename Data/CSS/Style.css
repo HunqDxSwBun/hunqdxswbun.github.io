@@ -1502,7 +1502,17 @@ header .HeadApp h1,
     border-radius: 5px;
     margin: 10px;
   }
-  
+  .Frame select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    color: var(--ButtonBG);
+    background-color: transparent;
+    border: 2px solid var(--ButtonBG);
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
   .Frame input[type="file"] {
     margin-bottom: 10px;
     padding: 10px;
@@ -1522,7 +1532,7 @@ header .HeadApp h1,
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin: auto;
+    margin: 5px auto;
     box-sizing: border-box;
   }
   
@@ -1540,7 +1550,6 @@ header .HeadApp h1,
     border-radius: 20px;
     display: block;
   }
-  .Frame #downloadLink {
+  .Frame #outbtnDownload {
     display: none;
-    margin-top: 10px;
   }
