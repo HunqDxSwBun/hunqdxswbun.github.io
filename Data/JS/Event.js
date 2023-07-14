@@ -25,7 +25,7 @@ var events = [
     "Link": "/index.html"
   },
   {
-    "SuKien": "Kỉ niệm 2 năm yêu nhau",
+    "SuKien": "Kỉ niệm 3 năm yêu nhau",
     "Ngay": "15/07",
     "Anh": "/Events/IMG/Kiss.png",
     "Link": "/Events/2Years/"
