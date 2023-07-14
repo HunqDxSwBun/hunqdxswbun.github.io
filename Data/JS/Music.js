@@ -44,7 +44,7 @@ const app = {
             <p class="author">${song.singer}</p>
           </div>
           <div class="option" >
-            <a href="${song.path}">
+            <a href="${song.path}" download>
             <i class="fa-regular fa-circle-down"></i>
             </a>
           </div>
@@ -114,11 +114,13 @@ const app = {
     };
 
     progress.onchange = function (e) {
+      liveOFF();
       const seekTime = (audio.duration / 100) * e.target.value;
       audio.currentTime = seekTime;
     };
 
     nextBtn.onclick = function () {
+      liveOFF();
       if (_this.isRandom) {
         _this.playRandomSong();
       } else {
@@ -130,6 +132,7 @@ const app = {
     };
 
     prevBtn.onclick = function () {
+      liveOFF();
       if (_this.isRandom) {
         _this.playRandomSong();
       } else {
@@ -170,6 +173,7 @@ const app = {
           audio.play();
           _this.render();
           audio.play();
+          liveOFF();
         }
       }
     };
@@ -235,10 +239,11 @@ const app = {
         button.classList.add("active");
       }
     });
-  
+
     fetch(`/Music/${albumName}.json`)
       .then((response) => response.json())
       .then((data) => {
+        liveOFF();
         this.loadSongs(data);
         this.currentIndex = 0;
         this.loadCurrentSong();
@@ -282,3 +287,44 @@ const app = {
 };
 
 app.start();
+
+
+
+function liveAUDIO() {
+  var timeAudio = audio.duration;
+  var hours = Math.floor(timeAudio / 3600);
+  var minutes = Math.floor((timeAudio % 3600) / 60);
+  console.log(minutes);
+  var currentDate = new Date();
+  // Lấy phút hiện tại
+  var currentMinute = currentDate.getMinutes();
+  // Lấy giây hiện tại
+  var currentSecond = currentDate.getSeconds();
+
+  var button = document.querySelector(".LiveBTN");
+  var isActive = button.classList.contains("active");
+  var LiveNoti = document.querySelector("#LiveNoti");
+
+
+  if (hours >= 1 || minutes >= 59) {
+    audio.currentTime = (currentMinute * 60) + currentSecond;
+    LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Đang phát trực tiếp';
+    if (isActive) {
+      button.classList.remove("active");
+      audio.currentTime = 0;
+    } else {
+      button.classList.add("active");
+    }
+  } else {
+    LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Không thể phát trực tiếp' ;
+  }
+
+}
+
+function liveOFF(){
+  var button = document.querySelector(".LiveBTN");
+  var LiveNoti = document.querySelector("#LiveNoti");
+
+  button.classList.remove("active");
+  LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp' ;
+}

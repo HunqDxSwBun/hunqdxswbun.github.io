@@ -41,8 +41,7 @@
                             class="fa-brands fa-readme"></i></button>
                     <button class="tablinks " onclick="openTAB(event, 'Event')"><i
                             class="fa-solid fa-star"></i></button>
-                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
-                            class="fa-solid fa-heart"></i></button>
+                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-house"></i></button>
                     <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
                     <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i
                             class="fa-solid fa-box"></i></button>
@@ -156,8 +155,11 @@
 
     <div class="tabcontent" id="Music">
         <div class="Album">
-            <button class="album-btn active" data-album="USUK">Nhạc Âu Mỹ</button>
-            <button class="album-btn" data-album="vol2">Nhạc tổng hợp</button>
+            <button class="album-btn active" data-album="USUK">Âu Mỹ</button>
+            <button class="album-btn" data-album="Remix">Vinahouse - Tiktok</button>
+            <button class="album-btn" data-album="USUKMix">US UK Mix</button>
+            <button class="album-btn" data-album="Chill">Chill</button>
+            <button class="album-btn" data-album="LofiViet">Lofi Việt</button>
             <!-- Thêm các nút album khác -->
         </div>
           
@@ -169,6 +171,9 @@
                     <h4>Đang phát:</h4>
                     <h2></h2>
                 </header>
+                <div class="Live" >
+                    <button class="LiveBTN" onclick="liveAUDIO()" ><p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p></button>
+                </div>
 
                 <!-- CD -->
                 <div class="cd">
@@ -195,7 +200,7 @@
                         <i class="fas fa-random"></i>
                     </div>
                 </div>
-
+                
                 <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
 
                 <audio id="audio" src=""></audio>

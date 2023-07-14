@@ -115,7 +115,7 @@ function updateCountdown() {
   if (days >= 1) {
     countdownElement.textContent = days + " ngày " + hours + ":" + minutes + ":" + seconds;
   } else if (days === 0) {
-    countdownElement.textContent = hours + ":" + minutes + ":" + seconds;
+    countdownElement.textContent = hours + " Giờ " + minutes + " Phút " + seconds + ' Giây';
   } else {
     countdownElement.textContent = 'Đang diễn ra sự kiện';
   }

@@ -12,6 +12,12 @@
     "image": "/Music/IMG/Logo.png"
   },
   {
+    "name": "Falling Down",
+    "singer": "Wild Cards",
+    "path": "/Music/Music/TongHop/FallingDown.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
     "name": "I'll Wait",
     "singer": "Kygo, Sasha Sloan",
     "path": "/Music/Music/Vol1/IllWait.mp3",
@@ -106,5 +112,12 @@
     "singer": "Naruto",
     "path": "/Music/Music/Vol1/SadnessandSorrow.mp3",
     "image": "https://wallpapers.com/images/high/sad-anime-boy-naruto-swing-vhw98373l2m5b2k1.jpg"
+  }
+  ,
+  {
+    "name": "After The Afterparty",
+    "singer": "Charli XCX & Alan Walker",
+    "path": "/Music/Music/Vol1/After The Afterparty.mp3",
+    "image": "/Music/IMG/Logo.png"
   }
 ]

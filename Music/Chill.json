@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Nhạc Chill",
+    "singer": "Sưu tầm",
+    "path": "/Music/Music/TongHop/AmbientMusic.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "Nhạc Lofi",
+    "singer": "Sưu tầm",
+    "path": "/Music/Music/TongHop/LofiHipHop.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "Nhạc Chill 2",
+    "singer": "Sưu tầm",
+    "path": "/Music/Music/TongHop/RainyLofi.mp3",
+    "image": "/Music/IMG/Logo.png"
+  }
+]

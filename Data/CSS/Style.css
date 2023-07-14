@@ -236,12 +236,14 @@ header .HeadApp h1,
     display: grid;
     grid-template-columns: 60% 40%;
     margin: auto;
+    text-shadow: 2px 2px 2px var(--BodyBG);
     animation: heart 1.2s infinite alternate;
 }
 
 @keyframes heart {
     0% {
         scale: 0.9;
+        text-shadow: 2px 2px 2px var(--BodyBG);
     }
 
     100% {
@@ -254,7 +256,6 @@ header .HeadApp h1,
     font-family: 'Wix Madefor Display', sans-serif;
     font-size: 80px;
     text-align: right;
-    text-shadow: 2px 2px 2px var(--BodyBG);
 }
 
 .DaysLove .Grid {
@@ -284,6 +285,7 @@ header .HeadApp h1,
 
     100% {
         opacity: 1;
+        
     }
 }
 
@@ -387,8 +389,8 @@ header .HeadApp h1,
 
 @keyframes heart3 {
     0% {
-
         scale: 1.2;
+        opacity: 0.8;
     }
 }
 
@@ -432,6 +434,7 @@ header .HeadApp h1,
 
 .Info.Male .Age {
     background-color: var(--Male);
+    box-shadow: 0px 0 10px 2px var(--Male);
 }
 
 .Info.Female .Avatar img {
@@ -441,6 +444,7 @@ header .HeadApp h1,
 
 .Info.Female .Age {
     background-color: var(--Female);
+    box-shadow: 0px 0 10px 2px var(--Female);
 }
 
 #rss-feed {
@@ -1153,6 +1157,9 @@ header .HeadApp h1,
     background-color: var(--BodyBG);
     border: 2px solid var(--ButtonBG);
 }
+.Security  i {
+    font-size: 24px;
+}
 
 .Security .BTN50 button:last-child {
     width: calc(80% - 2px);
@@ -1273,6 +1280,29 @@ header .HeadApp h1,
     max-width: 100%;
     box-sizing: border-box;
 }
+.Live {
+    margin-bottom: 20px;
+}
+.Live .LiveBTN {
+    cursor: pointer;
+    color: var(--BodyCL);
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    border: none;
+    padding: 5px ;
+}
+.Live .LiveBTN i {
+    font-size: 12px;
+}
+.Live .LiveBTN.active {
+    background-color: var(--ButtonBG);
+}
+.Live #LiveNoti {
+    font-weight: bold;
+    margin: 3px;
+}
 
 .cd {
     display: flex;
@@ -1323,6 +1353,7 @@ header .HeadApp h1,
     background-color: var(--ButtonBG);
 }
 
+
 .progress {
     cursor: pointer;
     width: 100%;
@@ -1330,6 +1361,7 @@ header .HeadApp h1,
     height: 10px;
     background: var(--BodyCL);
     outline: none;
+    border-radius: 2px;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
   }
@@ -1347,7 +1379,7 @@ header .HeadApp h1,
 .playlist {
     padding: 12px 12px 30px 12px;
 }.Album {
-    margin-top: 410px;
+    margin-top: 450px;
     text-align: center;
     display: flex;
     flex-direction: row;
