@@ -87,7 +87,7 @@ window.addEventListener('load', () => {
 
 const randomImageBtn = document.getElementById('randomImageBtn');
 let currentImageIndex = 1;
-const SoLuongAnh = 19;
+const SoLuongAnh = 20;
 
 randomImageBtn.addEventListener('click', handleRandomImage);
 

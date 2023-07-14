@@ -48,8 +48,8 @@ header .HeadApp h1,
     position: fixed;
     bottom: 15px;
     right: 10px;
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     text-align: center;
@@ -254,6 +254,7 @@ header .HeadApp h1,
     font-family: 'Wix Madefor Display', sans-serif;
     font-size: 80px;
     text-align: right;
+    text-shadow: 2px 2px 2px var(--BodyBG);
 }
 
 .DaysLove .Grid {
@@ -308,9 +309,8 @@ header .HeadApp h1,
     padding-bottom: 5px;
     border-radius: 10px;
     width: 50px;
+    box-shadow: 2px 2px 10px 0px var(--CardBG);
 }
-
-
 
 .unit {
     font-size: 12px;
@@ -401,10 +401,12 @@ header .HeadApp h1,
 
 .Info.Male .Name {
     color: var(--Male);
+    text-shadow: 0px 2px 10px  var(--Male);
 }
 
 .Info.Female .Name {
     color: var(--Female);
+    text-shadow: 0px 2px 10px  var(--Female);
 }
 
 .Info .Name {
@@ -425,7 +427,7 @@ header .HeadApp h1,
 
 .Info.Male .Avatar img {
     border: 3px solid var(--Male);
-    box-shadow: 0px 0 20px 10px var(--Male);
+    box-shadow: 0px 0 40px 10px var(--Male);
 }
 
 .Info.Male .Age {
@@ -434,7 +436,7 @@ header .HeadApp h1,
 
 .Info.Female .Avatar img {
     border: 3px solid var(--Female);
-    box-shadow: 0px 0 20px 10px var(--Female);
+    box-shadow: 0px 0 40px 10px var(--Female);
 }
 
 .Info.Female .Age {
@@ -638,11 +640,11 @@ header .HeadApp h1,
     margin-bottom: 10px;
 }
 
-#CustomPIC .file-input {
+.file-input {
     margin-bottom: 10px;
 }
 
-#CustomPIC .file-input__input {
+.file-input__input {
     width: 0px;
     height: 0px;
     opacity: 0;
@@ -651,7 +653,7 @@ header .HeadApp h1,
     z-index: -1;
 }
 
-#CustomPIC .file-input__label {
+.file-input__label {
     width: calc(100% - 38px);
     cursor: pointer;
     display: block;
@@ -667,7 +669,7 @@ header .HeadApp h1,
     border: 2px solid var(--BodyCL);
 }
 
-#CustomPIC .file-input__label i {
+.file-input__label i {
     font-size: 30px;
 }
 
@@ -1264,27 +1266,28 @@ header .HeadApp h1,
 
 .dashboard {
     padding: 16px 16px 14px;
-    background-color: var(--CardBG);
+    background-color: var(--BodyBG);
     position: fixed;
     top: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    border-bottom: 2px solid var(--BodyBG) ;
 }
 
 .cd {
     display: flex;
     margin: auto;
+    margin-top: 10px;
     width: 200px;
 }
-
+.player.playing .cd-thumb {
+    box-shadow: 0 0 20px 5px var(--ButtonBG);
+}
 .cd-thumb {
     width: 100%;
     padding-top: 100%;
     border-radius: 50%;
     background-color: var(--BodyBG);
-    box-shadow: 0 0 10px 2px var(--ButtonBG);
     background-size: cover;
     margin: auto;
 }
@@ -1325,9 +1328,8 @@ header .HeadApp h1,
     width: 100%;
     appearance: none;
     height: 10px;
-    background: var(--BodyBG);
+    background: var(--BodyCL);
     outline: none;
-    opacity: 0.7;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
   }
@@ -1335,7 +1337,7 @@ header .HeadApp h1,
   .progress::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 30px;
+    width: 50px;
     height: 10px;
     background-color: var(--ButtonBG);
     cursor: pointer;
@@ -1344,23 +1346,34 @@ header .HeadApp h1,
 /* PLAYLIST */
 .playlist {
     padding: 12px 12px 30px 12px;
-}
-.Album {
-    margin-top: 408px;
+}.Album {
+    margin-top: 410px;
     text-align: center;
-}
-.Album button{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+  }
+  
+  .Album button {
     cursor: pointer;
+    flex: 1; /* Thay đổi width thành flex */
     text-transform: capitalize;
     color: var(--BodyCL);
     font-size: 18px;
-    font-weight: 500;
-    background-color: var(--ButtonBG);
+    font-weight: bold;
+    background-color: var(--CardBG);
     border-radius: 5px;
     border: none;
     margin: 0 2px;
     padding: 8px 20px;
-}
+  }
+  .Album .album-btn.active {
+    background-color: var(--ButtonBG);
+  }
+  
 
 .song {
     cursor: pointer;
@@ -1412,8 +1425,10 @@ header .HeadApp h1,
 
 .song .option {
     padding: 16px 8px;
-    color: #999;
-    font-size: 18px;
+    font-size: 20px;
+}
+.song .option a {
+    color: var(--BodyCL);
 }
 
 .Event {
@@ -1497,36 +1512,31 @@ header .HeadApp h1,
 }
 .Frame {
     text-align: center;
-    padding: 20px;
-    background-color: var(--CardBG);
     border-radius: 5px;
     margin: 10px;
   }
   .Frame select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    color: var(--ButtonBG);
+    color: var(--BodyCL);
     background-color: transparent;
-    border: 2px solid var(--ButtonBG);
+    font-family: Arial, sans-serif;
     font-size: 18px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  .Frame input[type="file"] {
-    margin-bottom: 10px;
-    padding: 10px;
+    font-weight: bold;
+    padding: 8px;
     border-radius: 10px;
     width: 100%;
-    box-sizing: border-box;
-    background-color: var(--ButtonBG);
+    border: 2px solid var(--BodyCL);
+    padding: 10px;
+    cursor: pointer;
   }
-  
+
+  .Frame select option {
+    background-color: var(--BodyBG);
+  }
   .Frame button{
     width: 100%;
     padding: 10px 20px;
-    background-color: var(--ButtonBG);
-    color: var(--BodyCL);
+    background-color: #f9e5e5;
+    color: var(--ButtonBG);
     font-weight: bold;
     font-size: 20px;
     border: none;
@@ -1547,8 +1557,9 @@ header .HeadApp h1,
   }
   .Frame #outpic img {
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     display: block;
+    margin: 10px 0;
   }
   .Frame #outbtnDownload {
     display: none;

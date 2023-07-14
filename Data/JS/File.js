@@ -148,10 +148,9 @@ function toggleSize() {
   var heart = document.querySelector('.Heart');
   heart.classList.toggle('large');
   if (toggle == 1) {
-    playAudio();
+    handleRandomImage();
   } else {
     toggle = 0;
-    pauseAudio();
   }
 }
 function stopAllVideos() {
@@ -241,20 +240,38 @@ function CheckWho2() {
 
 }
 
+ var vHideInfo = 0 
 function HideInfo() {
-  document.getElementById('Currency').innerHTML = '';
+  vHideInfo++
+  console.log(vHideInfo);
+  if (vHideInfo === 1) {
+    document.getElementById('Currency').style.filter = 'brightness(0)';
+  } else {
+    vHideInfo = 0
+    document.getElementById('Currency').style.filter = 'brightness(1)';
+  }
 }
 
 
 
-// var Account = document.getElementById("Account");
+var vFrame = document.getElementById("Frame");
 var vSecurity = document.getElementById("Security");
+ 
+function Frame() {
+  if (vFrame.style.display === "block") {
+    vFrame.style.display = "none";
+  } else {
+    vFrame.style.display = "block";
+    vSecurity.style.display = "none";
+  }
+}
 
 function Security() {
   if (vSecurity.style.display === "block") {
     vSecurity.style.display = "none";
   } else {
     vSecurity.style.display = "block";
+    vFrame.style.display = "none";
   }
 }
 
@@ -281,12 +298,19 @@ function CustomPIC() {
 function Menu() {
   var x = document.getElementById("iMenu");
   var navbar = document.getElementById("navbar");
+  var tabContents = document.getElementsByClassName("tabcontent");
 
   if (x.style.bottom === "10px") {
-    x.style.bottom = '-100px'
-    navbar.style.bottom = '15px'
+    x.style.bottom = "-100px";
+    navbar.style.bottom = "15px";
+    for (var i = 0; i < tabContents.length; i++) {
+      tabContents[i].style.paddingBottom = "20px";
+    }
   } else {
-    x.style.bottom = '10px'
-    navbar.style.bottom = '80px'
+    x.style.bottom = "10px";
+    navbar.style.bottom = "80px";
+    for (var i = 0; i < tabContents.length; i++) {
+      tabContents[i].style.paddingBottom = "80px";
+    }
   }
 }

@@ -1,5 +1,5 @@
 // Fetch dữ liệu từ tệp JSON
-fetch('./Files/Files.json')
+fetch('./File/Files.json')
     .then(response => response.json())
     .then(jsonData => {
         // Convert JSON to HTML

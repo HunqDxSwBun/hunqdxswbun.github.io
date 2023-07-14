@@ -43,9 +43,7 @@
                             class="fa-solid fa-star"></i></button>
                     <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
                             class="fa-solid fa-heart"></i></button>
-                    <!-- <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button> -->
-                    <button class="tablinks " onclick="openTAB(event, 'Frame')"><i
-                            class="fa-solid fa-icons"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
                     <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i
                             class="fa-solid fa-box"></i></button>
                 </div>
@@ -61,7 +59,7 @@
     <div id="Home" class="tabcontent show">
         <div class="IMGBG" id="IMGBG"></div>
 
-        <div class="NewPost" id="NewPost" onclick="handleRandomImage()">
+        <div class="NewPost" id="NewPost">
             <h1>Không có bài viết mới nhất.</h1>
             <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
             <p>HunqD</p>
@@ -157,13 +155,19 @@
     </div>
 
     <div class="tabcontent" id="Music">
+        <div class="Album">
+            <button class="album-btn active" data-album="USUK">Nhạc Âu Mỹ</button>
+            <button class="album-btn" data-album="vol2">Nhạc tổng hợp</button>
+            <!-- Thêm các nút album khác -->
+        </div>
+          
         <div class="player">
             <!-- Dashboard -->
             <div class="dashboard">
                 <!-- Header -->
                 <header>
                     <h4>Đang phát:</h4>
-                    <h2>String 57th & 9th</h2>
+                    <h2></h2>
                 </header>
 
                 <!-- CD -->
@@ -197,11 +201,7 @@
                 <audio id="audio" src=""></audio>
             </div>
 
-            <div class="Album">
-                <button id="vol1">Nhạc Âu Mỹ</button>
-                <button id="vol2">Nhạc tổng hợp</button>
-
-            </div>
+            
             <div class="playlist">
             </div>
 
@@ -212,21 +212,6 @@
     <div class="tabcontent" id="Event">
         <h1 class="head">Sự kiện</h1>
         <div class="Event" id="root">
-        </div>
-    </div>
-    <div class="tabcontent" id="Frame">
-        <h1 class="head">Tạo khung hình đại diện</h1>
-        <div class="Frame">
-            <input type="file" id="fileInput" onchange="createImage()">
-            <select id="frameSelect" onchange="createImage()">
-                <option value="/Data/Frames/1.png">Khung 1</option>
-                <option value="/Data/Frames/2.png">Khung 2</option>
-                <option value="/Data/Frames/3.png">Khung 3</option>
-                <option value="/Data/Frames/4.png">Khung 4</option>
-                <option value="/Data/Frames/5.png">Khung 5</option>
-              </select>
-            <div id="outpic"></div>
-            <button id="outbtnDownload" onclick="downloadImage()">Tải ảnh</button>
         </div>
     </div>
 
@@ -363,17 +348,34 @@
                     quảng cáo.</p>
             </div>
 
-            <div class="SettingBlock ">
-                <i class="fa-solid fa-user"></i>
-                <h1>Tài khoản</h1>
-                <p>Cá nhân hoá</p>
-                <p>Hiện tại chưa khả dụng</p>
+            <div class="SettingBlock"  onclick="Frame()">
+                <i class="fa-solid fa-icons"></i>
+                <h1>Khung ảnh</h1>
+                <p>Thêm khung ảnh MyLove vào ảnh.</p>
             </div>
 
             <div class="SettingBlock" onclick="Security()">
                 <i class="fa-solid fa-shield"></i>
                 <h1>Văn bản bảo mật</h1>
                 <p>Chuyển đổi văn bản </p>
+            </div>
+            <div class="SettingBlock Active" id="Frame">
+                <div class="Frame">
+                    <div class="file-input">
+                        <input type="file" name="file-input" id="fileInput" class="file-input__input" onchange="createImage()" >
+                        <label class="file-input__label" for="fileInput">
+                            <span><i class="fa-solid fa-file-import"></i> <br>Tải Ảnh</span></label>
+                        </div>
+                        <select id="frameSelect" onchange="createImage()">
+                            <option value="/Data/Frames/1.png">Khung 1</option>
+                            <option value="/Data/Frames/2.png">Khung 2</option>
+                            <option value="/Data/Frames/3.png">Khung 3</option>
+                            <option value="/Data/Frames/4.png">Khung 4</option>
+                            <option value="/Data/Frames/5.png">Khung 5</option>
+                          </select>
+                        <div id="outpic"></div>
+                        <button id="outbtnDownload" onclick="downloadImage()">Tải ảnh</button>
+                </div>
             </div>
 
             <div class="SettingBlock Active" id="Security">
@@ -412,13 +414,13 @@
                 <p>Chưa khả dụng </p>
             </div>
 
-            <div class="SettingBlock" onclick="HideInfo()">
+            <div class="SettingBlock" onclick="HideInfo()" >
                 <i class="fa-solid fa-eye-slash"></i>
                 <h1>Ẩn thông tin</h1>
                 <p>Tính năng ẩn bớt thông tin để chia sẻ</p>
             </div>
 
-            <div class="SettingBlock" onclick="Reset()">
+            <div class="SettingBlock">
                 <i class="fa-solid fa-circle-info"></i>
                 <h1>Thông tin</h1>
                 <p>Trang được làm với tình yêu của anh và em ❤</p>
@@ -468,7 +470,6 @@
 <script src="./Data/JS/Folder.js"></script>
 <script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
-<!-- <script src="./Data/JS/Game.js"></script> -->
 <script src="./Data/JS/Blog.js"></script>
 
 </html>

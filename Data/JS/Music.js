@@ -1,7 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const PlAYER_STORAGE_KEY = "F8_PLAYER";
+const PLAYER_STORAGE_KEY = "F8_PLAYER";
 
 const player = $(".player");
 const cd = $(".cd");
@@ -15,6 +15,7 @@ const nextBtn = $(".btn-next");
 const randomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
 const playlist = $(".playlist");
+const albumButtons = $$(".album-btn");
 
 const app = {
   currentIndex: 0,
@@ -26,7 +27,7 @@ const app = {
 
   setConfig: function (key, value) {
     this.config[key] = value;
-    localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
+    localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
   },
 
   loadSongs: function (songs) {
@@ -42,8 +43,10 @@ const app = {
             <h3 class="title">${song.name}</h3>
             <p class="author">${song.singer}</p>
           </div>
-          <div class="option">
-            <i class="fas fa-ellipsis-h"></i>
+          <div class="option" >
+            <a href="${song.path}">
+            <i class="fa-regular fa-circle-down"></i>
+            </a>
           </div>
         </div>
       `;
@@ -61,29 +64,28 @@ const app = {
 
   handleEvents: function () {
     const _this = this;
-    const cdWidth = cd.offsetWidth;
+    const cdWidth = 200;
 
     // Xử lý CD quay / dừng
-    // Handle CD spins / stops
     const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
-      duration: 10000, // 10 seconds
+      duration: 10000,
       iterations: Infinity
     });
     cdThumbAnimate.pause();
 
     // Xử lý phóng to / thu nhỏ CD
-    // Handles CD enlargement / reduction
-    // document.onscroll = function () {
-    //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    //   const newCdWidth = cdWidth - scrollTop;
-    
-    //   cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
-    //   cd.style.opacity = newCdWidth / cdWidth;
-    // };
-    
+    document.onscroll = function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const newCdWidth = cdWidth - scrollTop;
+      if (scrollTop > 0) {
+        cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
+        cd.style.opacity = newCdWidth / cdWidth;
+      } else {
+        cd.style.width = cdWidth + "px";
+      }
+    };
 
     // Xử lý khi click play
-    // Handle when click play
     playBtn.onclick = function () {
       if (_this.isPlaying) {
         audio.pause();
@@ -106,9 +108,7 @@ const app = {
 
     audio.ontimeupdate = function () {
       if (audio.duration) {
-        const progressPercent = Math.floor(
-          (audio.currentTime / audio.duration) * 100
-        );
+        const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
         progress.value = progressPercent;
       }
     };
@@ -117,7 +117,6 @@ const app = {
       const seekTime = (audio.duration / 100) * e.target.value;
       audio.currentTime = seekTime;
     };
-
 
     nextBtn.onclick = function () {
       if (_this.isRandom) {
@@ -153,8 +152,6 @@ const app = {
       repeatBtn.classList.toggle("active", _this.isRepeat);
     };
 
-    // Xử lý next song khi audio ended
-    // Handle next song when audio ended
     audio.onended = function () {
       if (_this.isRepeat) {
         audio.play();
@@ -163,8 +160,6 @@ const app = {
       }
     };
 
-    // Lắng nghe hành vi click vào playlist
-    // Listen to playlist clicks
     playlist.onclick = function (e) {
       const songNode = e.target.closest(".song:not(.active)");
 
@@ -179,38 +174,14 @@ const app = {
       }
     };
 
-    // Handle vol1 button click event
-    const vol1Btn = $("#vol1");
-    vol1Btn.onclick = function () {
-      fetch("/Music/Music.json")
-        .then(response => response.json())
-        .then(data => {
-          _this.loadSongs(data);
-          _this.currentIndex = 0;
-          _this.loadCurrentSong();
-          _this.render();
-        })
-        .catch(error => {
-          console.log("An error occurred while fetching the JSON file:", error);
-        });
-    };
-
-    // Handle vol2 button click event
-    const vol2Btn = $("#vol2");
-    vol2Btn.onclick = function () {
-      fetch("/Music/Music2.json")
-        .then(response => response.json())
-        .then(data => {
-          _this.loadSongs(data);
-          _this.currentIndex = 0;
-          _this.loadCurrentSong();
-          _this.render();
-        })
-        .catch(error => {
-          console.log("An error occurred while fetching the JSON file:", error);
-        });
-    };
+    albumButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const albumName = this.dataset.album;
+        _this.changeAlbum(albumName);
+      });
+    });
   },
+
   scrollToActiveSong: function () {
     setTimeout(() => {
       $(".song.active").scrollIntoView({
@@ -219,15 +190,18 @@ const app = {
       });
     }, 300);
   },
+
   loadCurrentSong: function () {
     heading.textContent = this.currentSong.name;
     cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
     audio.src = this.currentSong.path;
   },
+
   loadConfig: function () {
     this.isRandom = this.config.isRandom;
     this.isRepeat = this.config.isRepeat;
   },
+
   nextSong: function () {
     this.currentIndex++;
     if (this.currentIndex >= this.songs.length) {
@@ -235,6 +209,7 @@ const app = {
     }
     this.loadCurrentSong();
   },
+
   prevSong: function () {
     this.currentIndex--;
     if (this.currentIndex < 0) {
@@ -242,6 +217,7 @@ const app = {
     }
     this.loadCurrentSong();
   },
+
   playRandomSong: function () {
     let newIndex;
     do {
@@ -252,19 +228,46 @@ const app = {
     this.loadCurrentSong();
   },
 
+  changeAlbum: function (albumName) {
+    albumButtons.forEach((button) => {
+      button.classList.remove("active");
+      if (button.dataset.album === albumName) {
+        button.classList.add("active");
+      }
+    });
+  
+    fetch(`/Music/${albumName}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        this.loadSongs(data);
+        this.currentIndex = 0;
+        this.loadCurrentSong();
+        this.render();
+        audio.play();
+      })
+      .catch((error) => {
+        console.log("An error occurred while fetching the JSON file:", error);
+      });
+  },
+
   start: function () {
     const _this = this;
 
-    // Get config from local storage if available
-    this.config = JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {};
+    this.config = JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {};
     this.currentIndex = this.config.currentIndex || 0;
     this.isRandom = this.config.isRandom || false;
     this.isRepeat = this.config.isRepeat || false;
 
-    // Fetch initial songs from vol1
-    fetch("/Music/Music.json")
-      .then(response => response.json())
-      .then(data => {
+    albumButtons.forEach((button) => {
+      const albumName = button.dataset.album;
+      if (albumName === this.config.currentAlbum) {
+        button.classList.add("active");
+      }
+    });
+
+    fetch(`/Music/${this.config.currentAlbum || "USUK"}.json`)
+      .then((response) => response.json())
+      .then((data) => {
         _this.loadSongs(data);
         _this.loadConfig();
         _this.defineProperties();
@@ -272,7 +275,7 @@ const app = {
         _this.loadCurrentSong();
         _this.render();
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("An error occurred while fetching the JSON file:", error);
       });
   }

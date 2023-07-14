@@ -9,7 +9,7 @@
     {
       "Tên Folder": "Cấu hình 4G SIM ",
       "Type": "Link",
-      "Link": "/Files/sbi.mobileconfig",
+      "Link": "/File/Files/sbi.mobileconfig",
       "Tên": "Link dự phòng",
       "Tên Phụ": ""
     },
@@ -40,6 +40,13 @@
       "Link": "X1sN7y80-08T1gtp7-2K54gtb8",
       "Tên": "Key cá nhân",
       "Tên Phụ": "1Tb"
+    },
+    {
+      "Tên Folder": "Minecraft PE",
+      "Type": "Link",
+      "Link": "/File/Files/VietnameseLanguage.mcpack",
+      "Tên": "Tiếng việt cho MCPE",
+      "Tên Phụ": "@Fury_VN "
     }
   ]
   
