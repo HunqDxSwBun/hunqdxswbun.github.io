@@ -6,6 +6,12 @@
     "image": "/Music/IMG/Logo.png"
   },
   {
+    "name": "Something Just Like This",
+    "singer": "The Chainsmokers & Coldplay",
+    "path": "/Music/Music/Vol1/The Chainsmokers & Coldplay - Something Just Like This.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
     "name": "I'll Wait",
     "singer": "Kygo, Sasha Sloan",
     "path": "/Music/Music/Vol1/IllWait.mp3",
