@@ -37,10 +37,29 @@ body {
     background-color: var(--BodyBG);
 }
 .Info .Avatar img,
-header .HeadApp h1,
-#navbar {
+header .HeadApp h1 {
     cursor: url('/Data/IMG/Cur/cus.cur'), auto !important;
 }
+
+::-webkit-scrollbar-track{ 
+    cursor: pointer;
+    margin: 0 10px;
+	border-radius: 4px;
+	background-color: var(--BodyBG);
+}
+
+::-webkit-scrollbar{   
+    height: 10px;
+	width: 10px;
+	background-color: var(--BodyBG);
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 4px;
+	background-color: var(--ButtonBG);
+}
+
 #navbar {
     cursor: pointer;
     text-align: center;
@@ -1378,13 +1397,14 @@ header .HeadApp h1,
 /* PLAYLIST */
 .playlist {
     padding: 12px 12px 30px 12px;
-}.Album {
+}
+.Album {
     margin-top: 450px;
     text-align: center;
     display: flex;
     flex-direction: row;
     overflow: auto;
-    padding: 0 10px;
+    padding: 10px;
     box-sizing: border-box;
     white-space: nowrap; /* Ngăn chữ xuống dòng */
   }

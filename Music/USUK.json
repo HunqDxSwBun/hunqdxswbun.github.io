@@ -112,12 +112,42 @@
     "singer": "Naruto",
     "path": "/Music/Music/Vol1/SadnessandSorrow.mp3",
     "image": "https://wallpapers.com/images/high/sad-anime-boy-naruto-swing-vhw98373l2m5b2k1.jpg"
-  }
-  ,
+  },
   {
     "name": "After The Afterparty",
     "singer": "Charli XCX & Alan Walker",
     "path": "/Music/Music/Vol1/After The Afterparty.mp3",
     "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "Crazy Lovers",
+    "singer": "Otto Le Blanc & Marc Korn",
+    "path": "/Music/Music/Vol1/Crazy Lovers.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "Picture Of You",
+    "singer": "Sara Kay",
+    "path": "/Music/Music/Vol1/Picture Of You.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "Past Lives",
+    "singer": "BØRNS",
+    "path": "/Music/Music/Vol1/Past Lives.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "In The End",
+    "singer": "Linkin Park (Mellen Gi & Tommee Profitt Remix)",
+    "path": "/Music/Music/Vol1/In The End.mp3",
+    "image": "/Music/IMG/Logo.png"
+  },
+  {
+    "name": "Dynasty",
+    "singer": "MIIA",
+    "path": "/Music/Music/Vol1/Dynasty.mp3",
+    "image": "/Music/IMG/Logo.png"
   }
+  
 ]
