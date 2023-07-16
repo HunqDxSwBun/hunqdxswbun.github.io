@@ -43,15 +43,15 @@ header .HeadApp h1 {
 
 ::-webkit-scrollbar-track{ 
     cursor: pointer;
-    margin: 0 10px;
+
 	border-radius: 4px;
 	background-color: var(--BodyBG);
 }
 
 ::-webkit-scrollbar{   
-    height: 10px;
+    height: 5px;
 	width: 10px;
-	background-color: var(--BodyBG);
+
 }
 
 ::-webkit-scrollbar-thumb
@@ -1396,15 +1396,15 @@ header .HeadApp h1 {
 
 /* PLAYLIST */
 .playlist {
+    margin-top: 500px;
     padding: 12px 12px 30px 12px;
 }
 .Album {
-    margin-top: 450px;
     text-align: center;
     display: flex;
     flex-direction: row;
     overflow: auto;
-    padding: 10px;
+    padding: 10px 0;
     box-sizing: border-box;
     white-space: nowrap; /* Ngăn chữ xuống dòng */
   }
