@@ -12,6 +12,55 @@
       "path": "/Music/Music/NhacViet/Không Sao Em À.mp3",
       "image": "/Music/IMG/Logo.png"
     }
+    ,
+    {
+      "name": "Đùa hơi quá",
+      "singer": "Lê Bảo Bình",
+      "path": "/Music/Music/NhacViet/Đùa hơi quá.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Là Anh",
+      "singer": "Phạm Lịch Cover",
+      "path": "/Music/Music/NhacViet/Là Anh.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Dạ Vũ",
+      "singer": "Tăng Duy Tân",
+      "path": "/Music/Music/NhacViet/Dạ Vũ.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Bên Trên Tầng Lầu",
+      "singer": "Tăng Duy Tân",
+      "path": "/Music/Music/NhacViet/Bên Trên Tầng Lầu.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Trước khi em tồn tại",
+      "singer": "Việt Anh Cover",
+      "path": "/Music/Music/NhacViet/Trước khi em tồn tại.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Ngày Chưa Giông Bão",
+      "singer": "Bùi Lan Hương",
+      "path": "/Music/Music/NhacViet/Ngày Chưa Giông Bão.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Nước Ngoài",
+      "singer": "Phan Mạnh Quỳnh",
+      "path": "/Music/Music/NhacViet/Nước Ngoài.mp3",
+      "image": "/Music/IMG/Logo.png"
+    },
+    {
+      "name": "Đùa hơi quá",
+      "singer": "Lê Bảo Bình",
+      "path": "/Music/Music/NhacViet/Đùa hơi quá.mp3",
+      "image": "/Music/IMG/Logo.png"
+    }
     
   ]
   

@@ -1298,12 +1298,13 @@ header .HeadApp h1 {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    border-bottom: 2px solid var(--CardBGHV);
+    border-bottom: 2px solid var(--CardBG);
 }
 .dashboard header h4 {
     font-size: 14px;
 }
 .dashboard header h2 {
+    text-transform: capitalize;
     font-size: 18px;
     color: var(--ButtonBG);
 }
@@ -1395,7 +1396,7 @@ header .HeadApp h1 {
     height: 10px;
     background: var(--BodyBG);
     outline: none;
-    border-radius: 2px;
+    border-radius: 8px;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
   }
@@ -1403,8 +1404,9 @@ header .HeadApp h1 {
   .progress::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
     background-color: var(--ButtonBG);
     cursor: pointer;
   }
@@ -1431,13 +1433,13 @@ header .HeadApp h1 {
     flex: 1; /* Thay đổi width thành flex */
     text-transform: capitalize;
     color: var(--BodyCL);
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--BodyBG);
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--CardBGHV);
     border-radius: 5px;
     border: none;
     margin: 0 2px;
-    padding: 8px 20px;
+    padding: 10px 20px;
   }
   .Album .album-btn.active {
     color: var(--BodyBG);
@@ -1484,6 +1486,7 @@ header .HeadApp h1 {
 }
 
 .song .title {
+    text-transform: capitalize;
     font-size: 18px;
     color: var(--text-color);
 }

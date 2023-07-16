@@ -298,19 +298,12 @@ function CustomPIC() {
 function Menu() {
   var x = document.getElementById("iMenu");
   var navbar = document.getElementById("navbar");
-  var tabContents = document.getElementsByClassName("tabcontent");
 
   if (x.style.bottom === "10px") {
     x.style.bottom = "-100px";
     navbar.style.bottom = "15px";
-    for (var i = 0; i < tabContents.length; i++) {
-      tabContents[i].style.paddingBottom = "20px";
-    }
   } else {
     x.style.bottom = "10px";
     navbar.style.bottom = "80px";
-    for (var i = 0; i < tabContents.length; i++) {
-      tabContents[i].style.paddingBottom = "80px";
-    }
   }
 }

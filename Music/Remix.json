@@ -1,27 +1,50 @@
 [
-    {
-      "name": "TikTok Remix",
-      "singer": "Youtube",
-      "path": "/Music/Music/TongHop/TopTopRemix.mp3",
-      "image": "/Data/IMG/404.gif"
-    },
-    {
-      "name": "Vinahouse",
-      "singer": "Youtube",
-      "path": "/Music/Music/TongHop/Vinahey.mp3",
-      "image": "/Data/IMG/404.gif"
-    },
-    {
-      "name": "VIET DEEP 2023",
-      "singer": "Youtube",
-      "path": "/Music/Music/TongHop/VIET DEEP 2023  MIXTAPE SET NHẠC CŨ 9X  DEEP HOUSE CHILL.mp3",
-      "image": "/Data/IMG/404.gif"
-    },
-    {
-      "name": "VIET DEEP 2023 Vol 2",
-      "singer": "Youtube",
-      "path": "/Music/Music/TongHop/VIET DEEP 2023.mp3",
-      "image": "/Data/IMG/404.gif"
-    }
-  ]
-  
+  {
+    "name": "SOFAR  Remix",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/SOFAR REMIX.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "Chờ đợi có đáng sợ Remix",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/Chờ đợi có đáng sợ.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "TikTok Remix",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/TopTopRemix.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "In The Club Remix",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/In The Club.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "Vinahouse",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/Vinahey.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "VIET DEEP 2023",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/VIET DEEP 2023  MIXTAPE SET NHẠC CŨ 9X  DEEP HOUSE CHILL.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "VIET DEEP 2023 Vol 2",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/VIET DEEP 2023.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "Mixtape My Everything",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/Việt Deep.mp3",
+    "image": "/Data/IMG/404.gif"
+  }
+]
