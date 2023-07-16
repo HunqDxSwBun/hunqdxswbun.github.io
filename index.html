@@ -41,8 +41,10 @@
                             class="fa-brands fa-readme"></i></button>
                     <button class="tablinks " onclick="openTAB(event, 'Event')"><i
                             class="fa-solid fa-star"></i></button>
-                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-house"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
+                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
+                            class="fa-solid fa-house"></i></button>
+                    <button class="tablinks " onclick="openTAB(event, 'Music')"><i
+                            class="fa-solid fa-music"></i></button>
                     <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i
                             class="fa-solid fa-box"></i></button>
                 </div>
@@ -154,25 +156,34 @@
     </div>
 
     <div class="tabcontent" id="Music">
-       
-          
+
+
         <div class="player">
             <!-- Dashboard -->
             <div class="dashboard">
-                <!-- Header -->
-                <header>
-                    <h4>Đang phát:</h4>
-                    <h2></h2>
-                </header>
-                <div class="Live" >
-                    <button class="LiveBTN" onclick="liveAUDIO()" ><p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p></button>
+                <div class="BlockDashboard">
+                    <div class="CDBlock">
+                        <!-- CD -->
+                        <div class="cd">
+                            <div class="cd-thumb">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Header">
+                        <!-- Header -->
+                        <header>
+                            <h4>Đang phát:</h4>
+                            <h2></h2>
+                        </header>
+                        <div class="Live">
+                            <button class="LiveBTN" onclick="liveAUDIO()">
+                                <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
+                            </button>
+                        </div>
+                    </div>   
                 </div>
 
-                <!-- CD -->
-                <div class="cd">
-                    <div class="cd-thumb">
-                    </div>
-                </div>
+                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
 
                 <!-- Control -->
                 <div class="control">
@@ -193,8 +204,6 @@
                         <i class="fas fa-random"></i>
                     </div>
                 </div>
-                
-                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
 
                 <audio id="audio" src=""></audio>
                 <div class="Album">
@@ -207,7 +216,7 @@
                 </div>
             </div>
 
-            
+
             <div class="playlist">
             </div>
 
@@ -354,7 +363,7 @@
                     quảng cáo.</p>
             </div>
 
-            <div class="SettingBlock"  onclick="Frame()">
+            <div class="SettingBlock" onclick="Frame()">
                 <i class="fa-solid fa-icons"></i>
                 <h1>Khung ảnh</h1>
                 <p>Thêm khung ảnh MyLove vào ảnh.</p>
@@ -368,19 +377,20 @@
             <div class="SettingBlock Active" id="Frame">
                 <div class="Frame">
                     <div class="file-input">
-                        <input type="file" name="file-input" id="fileInput" class="file-input__input" onchange="createImage()" >
+                        <input type="file" name="file-input" id="fileInput" class="file-input__input"
+                            onchange="createImage()">
                         <label class="file-input__label" for="fileInput">
                             <span><i class="fa-solid fa-file-import"></i> <br>Tải Ảnh</span></label>
-                        </div>
-                        <select id="frameSelect" onchange="createImage()">
-                            <option value="/Data/Frames/1.png">Khung 1</option>
-                            <option value="/Data/Frames/2.png">Khung 2</option>
-                            <option value="/Data/Frames/3.png">Khung 3</option>
-                            <option value="/Data/Frames/4.png">Khung 4</option>
-                            <option value="/Data/Frames/5.png">Khung 5</option>
-                          </select>
-                        <div id="outpic"></div>
-                        <button id="outbtnDownload" onclick="downloadImage()">Tải ảnh</button>
+                    </div>
+                    <select id="frameSelect" onchange="createImage()">
+                        <option value="/Data/Frames/1.png">Khung 1</option>
+                        <option value="/Data/Frames/2.png">Khung 2</option>
+                        <option value="/Data/Frames/3.png">Khung 3</option>
+                        <option value="/Data/Frames/4.png">Khung 4</option>
+                        <option value="/Data/Frames/5.png">Khung 5</option>
+                    </select>
+                    <div id="outpic"></div>
+                    <button id="outbtnDownload" onclick="downloadImage()">Tải ảnh</button>
                 </div>
             </div>
 
@@ -420,7 +430,7 @@
                 <p>Chưa khả dụng </p>
             </div>
 
-            <div class="SettingBlock" onclick="HideInfo()" >
+            <div class="SettingBlock" onclick="HideInfo()">
                 <i class="fa-solid fa-eye-slash"></i>
                 <h1>Ẩn thông tin</h1>
                 <p>Tính năng ẩn bớt thông tin để chia sẻ</p>

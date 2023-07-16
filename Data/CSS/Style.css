@@ -1292,28 +1292,42 @@ header .HeadApp h1 {
 
 .dashboard {
     padding: 16px 16px 14px;
-    background-color: var(--BodyBG);
+    background-color: var(--CardBG);
     position: fixed;
     top: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    border-bottom: 2px solid var(--CardBGHV);
 }
+.dashboard header h4 {
+    font-size: 14px;
+}
+.dashboard header h2 {
+    font-size: 18px;
+    color: var(--ButtonBG);
+}
+.dashboard .BlockDashboard {
+    display: grid;
+    grid-template-columns:  80px auto;
+    gap: 10px;
+}
+
 .Live {
-    margin-bottom: 20px;
+    margin: 5px 0;
 }
 .Live .LiveBTN {
     cursor: pointer;
     color: var(--BodyCL);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
-    background-color: var(--CardBG);
+    background-color: var(--BodyBG);
     border-radius: 5px;
     border: none;
     padding: 5px ;
 }
 .Live .LiveBTN i {
-    font-size: 12px;
+    font-size: 10px;
 }
 .Live .LiveBTN.active {
     background-color: var(--ButtonBG);
@@ -1322,20 +1336,21 @@ header .HeadApp h1 {
     font-weight: bold;
     margin: 3px;
 }
-
+.CDBlock {
+    display: block;
+    align-items: center;
+}
 .cd {
-    display: flex;
-    margin: auto;
-    margin-top: 10px;
-    width: 200px;
+    width: 80px;
 }
-.player.playing .cd-thumb {
-    box-shadow: 0 0 20px 5px var(--ButtonBG);
-}
+
+/* .player.playing .cd-thumb {
+    box-shadow: 0 0 0 2px var(--ButtonBG);
+} */
 .cd-thumb {
     width: 100%;
     padding-top: 100%;
-    border-radius: 50%;
+    border-radius: 10px;
     background-color: var(--BodyBG);
     background-size: cover;
     margin: auto;
@@ -1346,13 +1361,13 @@ header .HeadApp h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 18px 0 8px 0;
+    margin-top: 5px;
 }
 
 .control .btn {
     cursor: pointer;
     color: var(--BodyCL);
-    padding: 18px;
+    padding: 12px;
     font-size: 18px;
 }
 
@@ -1361,11 +1376,11 @@ header .HeadApp h1 {
 }
 
 .control .btn-toggle-play {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     font-size: 24px;
-    color: #fff;
+    color: var(--BodyCL);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1378,7 +1393,7 @@ header .HeadApp h1 {
     width: 100%;
     appearance: none;
     height: 10px;
-    background: var(--BodyCL);
+    background: var(--BodyBG);
     outline: none;
     border-radius: 2px;
     -webkit-transition: 0.2s;
@@ -1396,15 +1411,17 @@ header .HeadApp h1 {
 
 /* PLAYLIST */
 .playlist {
-    margin-top: 500px;
+    margin-top: 250px;
     padding: 12px 12px 30px 12px;
 }
 .Album {
+    margin-top: 400px;
     text-align: center;
     display: flex;
     flex-direction: row;
     overflow: auto;
-    padding: 10px 0;
+    padding: 5px 0;
+    margin: 5px 0 0 0 ;
     box-sizing: border-box;
     white-space: nowrap; /* Ngăn chữ xuống dòng */
   }
@@ -1416,13 +1433,14 @@ header .HeadApp h1 {
     color: var(--BodyCL);
     font-size: 18px;
     font-weight: bold;
-    background-color: var(--CardBG);
+    background-color: var(--BodyBG);
     border-radius: 5px;
     border: none;
     margin: 0 2px;
     padding: 8px 20px;
   }
   .Album .album-btn.active {
+    color: var(--BodyBG);
     background-color: var(--ButtonBG);
   }
   

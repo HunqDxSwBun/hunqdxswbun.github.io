@@ -63,26 +63,6 @@ const app = {
 
   handleEvents: function () {
     const _this = this;
-    const cdWidth = 200;
-
-    // Xử lý CD quay / dừng
-    const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
-      duration: 10000,
-      iterations: Infinity
-    });
-    cdThumbAnimate.pause();
-
-    // Xử lý phóng to / thu nhỏ CD
-    document.onscroll = function () {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const newCdWidth = cdWidth - scrollTop;
-      if (scrollTop > 0) {
-        cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
-        cd.style.opacity = newCdWidth / cdWidth;
-      } else {
-        cd.style.width = cdWidth + "px";
-      }
-    };
 
     // Xử lý khi click play
     playBtn.onclick = function () {
@@ -96,13 +76,11 @@ const app = {
     audio.onplay = function () {
       _this.isPlaying = true;
       player.classList.add("playing");
-      cdThumbAnimate.play();
     };
 
     audio.onpause = function () {
       _this.isPlaying = false;
       player.classList.remove("playing");
-      cdThumbAnimate.pause();
     };
 
     audio.ontimeupdate = function () {
