@@ -1388,7 +1388,7 @@ header .HeadApp h1 {
   .progress::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 50px;
+    width: 20px;
     height: 10px;
     background-color: var(--ButtonBG);
     cursor: pointer;

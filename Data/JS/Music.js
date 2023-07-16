@@ -16,7 +16,6 @@ const randomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
 const playlist = $(".playlist");
 const albumButtons = $$(".album-btn");
-
 const app = {
   currentIndex: 0,
   isPlaying: false,
@@ -199,7 +198,19 @@ const app = {
     heading.textContent = this.currentSong.name;
     cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
     audio.src = this.currentSong.path;
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: this.currentSong.name,
+        artist: this.currentSong.singer,
+        album: 'HunqDSwBun',
+        artwork: [
+          { src: this.currentSong.image , sizes: '512x512', type: 'image/png' }
+        ]
+      });
+    };  
+
   },
+
 
   loadConfig: function () {
     this.isRandom = this.config.isRandom;
@@ -321,6 +332,7 @@ function liveAUDIO() {
 
 }
 
+
 function liveOFF(){
   var button = document.querySelector(".LiveBTN");
   var LiveNoti = document.querySelector("#LiveNoti");
@@ -328,3 +340,23 @@ function liveOFF(){
   button.classList.remove("active");
   LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp' ;
 }
+
+
+function handlePlayTrack() {
+  playBtn.onclick();
+}
+function handlePauseTrack() {
+  playBtn.onclick();
+}
+
+function handlePreTrack() {
+  prevBtn.onclick();
+}
+function handleNextTrack() {
+  nextBtn.onclick();
+}
+navigator.mediaSession.setActionHandler('play', handlePlayTrack);
+navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
+navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
+navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
+
