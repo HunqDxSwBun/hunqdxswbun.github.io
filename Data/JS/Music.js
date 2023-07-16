@@ -204,6 +204,11 @@ const app = {
         artist: this.currentSong.singer,
         album: 'HunqDSwBun',
         artwork: [
+          { src: this.currentSong.image , sizes: '96x96', type: 'image/png' },
+          { src: this.currentSong.image , sizes: '128x128', type: 'image/png' },
+          { src: this.currentSong.image , sizes: '192x192', type: 'image/png' },
+          { src: this.currentSong.image , sizes: '256x256', type: 'image/png' },
+          { src: this.currentSong.image , sizes: '384x384', type: 'image/png' },
           { src: this.currentSong.image , sizes: '512x512', type: 'image/png' }
         ]
       });
