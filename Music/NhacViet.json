@@ -11,10 +11,9 @@
       "singer": "Đinh Tùng Huy",
       "path": "/Music/Music/NhacViet/Không Sao Em À.mp3",
       "image": "/Music/IMG/Logo.png"
-    }
-    ,
+    },
     {
-      "name": "Đùa hơi quá",
+      "name": "Đùa Hơi Quá",
       "singer": "Lê Bảo Bình",
       "path": "/Music/Music/NhacViet/Đùa hơi quá.mp3",
       "image": "/Music/IMG/Logo.png"
@@ -38,7 +37,7 @@
       "image": "/Music/IMG/Logo.png"
     },
     {
-      "name": "Trước khi em tồn tại",
+      "name": "Trước Khi Em Tồn Tại",
       "singer": "Việt Anh Cover",
       "path": "/Music/Music/NhacViet/Trước khi em tồn tại.mp3",
       "image": "/Music/IMG/Logo.png"
@@ -53,12 +52,6 @@
       "name": "Nước Ngoài",
       "singer": "Phan Mạnh Quỳnh",
       "path": "/Music/Music/NhacViet/Nước Ngoài.mp3",
-      "image": "/Music/IMG/Logo.png"
-    },
-    {
-      "name": "Đùa hơi quá",
-      "singer": "Lê Bảo Bình",
-      "path": "/Music/Music/NhacViet/Đùa hơi quá.mp3",
       "image": "/Music/IMG/Logo.png"
     }
     

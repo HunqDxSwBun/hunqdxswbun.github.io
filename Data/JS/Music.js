@@ -305,6 +305,7 @@ function liveAUDIO() {
     if (isActive) {
       button.classList.remove("active");
       audio.currentTime = 0;
+      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
     } else {
       button.classList.add("active");
     }
@@ -362,6 +363,10 @@ let audioSource = null;
 let analyser = null;
 
 function playAudio() {
+    if (audioSource !== null) {
+        audioSource.disconnect();
+    }
+
     audioSource = audioCtx.createMediaElementSource(audio1);
     analyser = audioCtx.createAnalyser();
     audioSource.connect(analyser);
@@ -403,6 +408,7 @@ function playAudio() {
 
     animate();
 }
+
 
 
 
