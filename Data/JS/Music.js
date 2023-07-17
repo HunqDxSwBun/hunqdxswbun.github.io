@@ -354,7 +354,7 @@ let audio1 = audio;
 const container = document.getElementById("container");
 const canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight / 1.5;
 
 const ctx = canvas.getContext("2d");
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -362,12 +362,11 @@ let audioSource = null;
 let analyser = null;
 
 function playAudio() {
-    audio1.play();
     audioSource = audioCtx.createMediaElementSource(audio1);
     analyser = audioCtx.createAnalyser();
     audioSource.connect(analyser);
     analyser.connect(audioCtx.destination);
-    analyser.fftSize = 128 * 16;
+    analyser.fftSize = 128 * 8;
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
     const barWidth = canvas.width / bufferLength * 2;
@@ -396,7 +395,7 @@ function playAudio() {
             const red = (i * barHeight);
             const green = i;
             const blue = barHeight;
-            ctx.fillStyle = `rgb(${green}, ${blue}, ${red})`;
+            ctx.fillStyle = `#ff2655`;
             ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
             x += barWidth;
         }
@@ -405,6 +404,5 @@ function playAudio() {
     animate();
 }
 
-container.addEventListener("click", playAudio);
 
 
