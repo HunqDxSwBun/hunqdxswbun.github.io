@@ -346,8 +346,7 @@ function handleNextTrack() {
 }
 navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
-navigator.mediaSession.setActionHandler('seekbackward',handleBackward);
-navigator.mediaSession.setActionHandler('seekforward', handleForward );
+
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
 
