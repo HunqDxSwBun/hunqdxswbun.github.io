@@ -1299,6 +1299,7 @@ header .HeadApp h1 {
     max-width: 100%;
     box-sizing: border-box;
     border-bottom: 2px solid var(--CardBG);
+    border-radius: 10px;
 }
 .dashboard header h4 {
     font-size: 14px;
@@ -1312,6 +1313,7 @@ header .HeadApp h1 {
     display: grid;
     grid-template-columns:  80px auto;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .Live {
@@ -1413,7 +1415,7 @@ header .HeadApp h1 {
 
 /* PLAYLIST */
 .playlist {
-    margin-top: 250px;
+    margin-top: 245px;
     padding: 12px 12px 30px 12px;
 }
 .Album {
@@ -1434,7 +1436,7 @@ header .HeadApp h1 {
     text-transform: capitalize;
     color: var(--BodyCL);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: bold;
     background-color: var(--CardBGHV);
     border-radius: 5px;
     border: none;
@@ -1442,7 +1444,6 @@ header .HeadApp h1 {
     padding: 10px 20px;
   }
   .Album .album-btn.active {
-    color: var(--BodyBG);
     background-color: var(--ButtonBG);
   }
   

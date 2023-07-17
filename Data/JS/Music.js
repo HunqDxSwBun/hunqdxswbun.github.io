@@ -94,6 +94,7 @@ const app = {
       liveOFF();
       const seekTime = (audio.duration / 100) * e.target.value;
       audio.currentTime = seekTime;
+      
     };
 
     nextBtn.onclick = function () {
@@ -142,7 +143,6 @@ const app = {
 
     playlist.onclick = function (e) {
       const songNode = e.target.closest(".song:not(.active)");
-
       if (songNode || e.target.closest(".option")) {
         if (songNode) {
           _this.currentIndex = Number(songNode.dataset.index);
@@ -288,7 +288,7 @@ function liveAUDIO() {
   var timeAudio = audio.duration;
   var hours = Math.floor(timeAudio / 3600);
   var minutes = Math.floor((timeAudio % 3600) / 60);
-  console.log(minutes);
+
   var currentDate = new Date();
   // Lấy phút hiện tại
   var currentMinute = currentDate.getMinutes();
@@ -298,7 +298,6 @@ function liveAUDIO() {
   var button = document.querySelector(".LiveBTN");
   var isActive = button.classList.contains("active");
   var LiveNoti = document.querySelector("#LiveNoti");
-
 
   if (hours >= 1 || minutes >= 59) {
     audio.currentTime = (currentMinute * 60) + currentSecond;
