@@ -348,6 +348,10 @@ navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
+
+
+
+
 let audio1 = audio;
 const container = document.getElementById("container");
 const canvas = document.getElementById("canvas");
@@ -364,10 +368,10 @@ audioSource = audioCtx.createMediaElementSource(audio1);
 analyser = audioCtx.createAnalyser();
 audioSource.connect(analyser);
 analyser.connect(audioCtx.destination);
-analyser.fftSize = 128 * 32;
+analyser.fftSize = 128 * 32  ;
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
-const barWidth = canvas.width / bufferLength * 2;
+const barWidth = canvas.width / bufferLength * 1.5;
 let xsx = 0;
 
 function animate() {
@@ -394,5 +398,6 @@ function drawVisualizer({ bufferLength, dataArray, barWidth }) {
 }
 
 animate();
+
 
 
