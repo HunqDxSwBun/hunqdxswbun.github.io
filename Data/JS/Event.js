@@ -34,7 +34,7 @@ var events = [
     "SuKien": "Sinh Nhật Anh Yêu ❤",
     "Ngay": "30/08",
     "Anh": "/Events/IMG/SinhNhat.JPG",
-    "Link": ""
+    "Link": "/index.html"
   },
   {
     "SuKien": "Sinh Nhật Em Yêu ❤",

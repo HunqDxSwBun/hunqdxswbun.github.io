@@ -7,6 +7,7 @@
     --BodyBG: #ffc0cb;
     --TabBG: #111111;
     --CardBG: #111111;
+    --CardMusic: #11111175;
     --CardBGHV: #2e2e2e;
     --StoryBG: #fa7f7f;
     --NewPost: #ff2655;
@@ -36,28 +37,28 @@ body {
     color: var(--BodyCL);
     background-color: var(--BodyBG);
 }
+
 .Info .Avatar img,
 header .HeadApp h1 {
     cursor: url('/Data/IMG/Cur/cus.cur'), auto !important;
 }
 
-::-webkit-scrollbar-track{ 
+::-webkit-scrollbar-track {
     cursor: pointer;
 
-	border-radius: 4px;
-	background-color: var(--BodyBG);
+    border-radius: 4px;
+    background-color: var(--BodyBG);
 }
 
-::-webkit-scrollbar{   
+::-webkit-scrollbar {
     height: 5px;
-	width: 10px;
+    width: 10px;
 
 }
 
-::-webkit-scrollbar-thumb
-{
-	border-radius: 4px;
-	background-color: var(--ButtonBG);
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--ButtonBG);
 }
 
 #navbar {
@@ -304,7 +305,7 @@ header .HeadApp h1 {
 
     100% {
         opacity: 1;
-        
+
     }
 }
 
@@ -422,12 +423,12 @@ header .HeadApp h1 {
 
 .Info.Male .Name {
     color: var(--Male);
-    text-shadow: 0px 2px 10px  var(--Male);
+    text-shadow: 0px 2px 10px var(--Male);
 }
 
 .Info.Female .Name {
     color: var(--Female);
-    text-shadow: 0px 2px 10px  var(--Female);
+    text-shadow: 0px 2px 10px var(--Female);
 }
 
 .Info .Name {
@@ -1176,7 +1177,8 @@ header .HeadApp h1 {
     background-color: var(--BodyBG);
     border: 2px solid var(--ButtonBG);
 }
-.Security  i {
+
+.Security i {
     font-size: 24px;
 }
 
@@ -1301,17 +1303,20 @@ header .HeadApp h1 {
     border-bottom: 2px solid var(--CardBG);
     border-radius: 10px;
 }
+
 .dashboard header h4 {
     font-size: 14px;
 }
+
 .dashboard header h2 {
     text-transform: capitalize;
     font-size: 18px;
     color: var(--ButtonBG);
 }
+
 .dashboard .BlockDashboard {
     display: grid;
-    grid-template-columns:  80px auto;
+    grid-template-columns: 80px auto;
     gap: 10px;
     margin-bottom: 10px;
 }
@@ -1319,6 +1324,7 @@ header .HeadApp h1 {
 .Live {
     margin: 5px 0;
 }
+
 .Live .LiveBTN {
     cursor: pointer;
     color: var(--BodyCL);
@@ -1327,22 +1333,27 @@ header .HeadApp h1 {
     background-color: var(--BodyBG);
     border-radius: 5px;
     border: none;
-    padding: 5px ;
+    padding: 5px;
 }
+
 .Live .LiveBTN i {
     font-size: 10px;
 }
+
 .Live .LiveBTN.active {
     background-color: var(--ButtonBG);
 }
+
 .Live #LiveNoti {
     font-weight: bold;
     margin: 3px;
 }
+
 .CDBlock {
     display: block;
     align-items: center;
 }
+
 .cd {
     width: 80px;
 }
@@ -1401,9 +1412,9 @@ header .HeadApp h1 {
     border-radius: 8px;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
-  }
-  
-  .progress::-webkit-slider-thumb {
+}
+
+.progress::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 16px;
@@ -1411,13 +1422,14 @@ header .HeadApp h1 {
     border-radius: 50%;
     background-color: var(--ButtonBG);
     cursor: pointer;
-  }
+}
 
 /* PLAYLIST */
 .playlist {
-    margin-top: 245px;
-    padding: 12px 12px 30px 12px;
+    margin-top: 255px;
+    padding: 12px 12px 60px 12px;
 }
+
 .Album {
     margin-top: 400px;
     text-align: center;
@@ -1425,14 +1437,16 @@ header .HeadApp h1 {
     flex-direction: row;
     overflow: auto;
     padding: 5px 0;
-    margin: 5px 0 0 0 ;
+    margin: 5px 0 0 0;
     box-sizing: border-box;
-    white-space: nowrap; /* Ngăn chữ xuống dòng */
-  }
-  
-  .Album button {
+    white-space: nowrap;
+    /* Ngăn chữ xuống dòng */
+}
+
+.Album button {
     cursor: pointer;
-    flex: 1; /* Thay đổi width thành flex */
+    flex: 1;
+    /* Thay đổi width thành flex */
     text-transform: capitalize;
     color: var(--BodyCL);
     font-size: 16px;
@@ -1442,21 +1456,22 @@ header .HeadApp h1 {
     border: none;
     margin: 0 2px;
     padding: 10px 20px;
-  }
-  .Album .album-btn.active {
+}
+
+.Album .album-btn.active {
     background-color: var(--ButtonBG);
-  }
-  
+}
+
 
 .song {
     cursor: pointer;
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    background-color: var(--CardBG);
+    background-color: var(--CardMusic);
     padding: 8px 16px;
     border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 5px rgb(0, 0, 0);
 }
 
 .song.active {
@@ -1501,6 +1516,7 @@ header .HeadApp h1 {
     padding: 16px 8px;
     font-size: 20px;
 }
+
 .song .option a {
     color: var(--BodyCL);
 }
@@ -1508,9 +1524,11 @@ header .HeadApp h1 {
 .Event {
     padding: 0 10px 20px 10px;
 }
+
 .Event a {
     text-decoration: none;
 }
+
 .Event .Comming {
     background-image: url(/Events/Kiss.png);
     background-size: cover;
@@ -1522,25 +1540,28 @@ header .HeadApp h1 {
     box-sizing: border-box;
     display: flex;
     text-align: center;
-    align-items:end;
+    align-items: end;
     justify-content: left;
     padding-bottom: 10px;
     border-radius: 10px;
 }
+
 .Event .HeadComing {
     text-align: left;
     color: var(--BodyCL);
     background-color: var(--HeadCL);
     border: 2px solid var(--BodyCL);
     border-left: 0;
-    padding: 5px 10px 10px 10px ;
+    padding: 5px 10px 10px 10px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
 .Event .HeadComing h1 {
     font-size: 20px;
     text-transform: capitalize;
 }
+
 .Event .Upnext {
     background-size: cover;
     background-position: 50% 50%;
@@ -1553,6 +1574,7 @@ header .HeadApp h1 {
     border-radius: 10px;
     padding: 8px;
 }
+
 .Event .Upnext .Content {
     color: var(--BodyCL);
     text-shadow: 5px 4px 8px black, 0 2px 5px black;
@@ -1560,7 +1582,8 @@ header .HeadApp h1 {
     border-radius: 10px;
     box-sizing: border-box;
 }
-.Event .Upnext .Countdown  {
+
+.Event .Upnext .Countdown {
     background-color: #00000080;
     width: 60px;
     height: 60px;
@@ -1569,10 +1592,11 @@ header .HeadApp h1 {
     border-radius: 10px;
     display: flex;
     text-align: center;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     box-sizing: border-box;
 }
+
 .Event .Upnext .Countdown h1 {
     font-size: 25px;
 }
@@ -1580,16 +1604,19 @@ header .HeadApp h1 {
 .Event .Upnext h1 {
     font-size: 24px;
 }
+
 .Event .Upnext p {
     font-size: 14px;
     font-weight: bold;
 }
+
 .Frame {
     text-align: center;
     border-radius: 5px;
     margin: 10px;
-  }
-  .Frame select {
+}
+
+.Frame select {
     color: var(--BodyCL);
     background-color: transparent;
     font-family: Arial, sans-serif;
@@ -1601,12 +1628,13 @@ header .HeadApp h1 {
     border: 2px solid var(--BodyCL);
     padding: 10px;
     cursor: pointer;
-  }
+}
 
-  .Frame select option {
+.Frame select option {
     background-color: var(--BodyBG);
-  }
-  .Frame button{
+}
+
+.Frame button {
     width: 100%;
     padding: 10px 20px;
     background-color: #f9e5e5;
@@ -1618,23 +1646,44 @@ header .HeadApp h1 {
     cursor: pointer;
     margin: 5px auto;
     box-sizing: border-box;
-  }
-  
-  .Frame button:hover {
+}
+
+.Frame button:hover {
     color: var(--ButtonBG);
     background-color: #f9e5e5;
-  }
-  
-  .Frame #outpic {
+}
+
+.Frame #outpic {
     border-radius: 20px;
     box-sizing: border-box;
-  }
-  .Frame #outpic img {
+}
+
+.Frame #outpic img {
     max-width: 100%;
     border-radius: 10px;
     display: block;
     margin: 10px 0;
-  }
-  .Frame #outbtnDownload {
+}
+
+.Frame #outbtnDownload {
     display: none;
-  }
+}
+
+
+#container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: #000;
+    width: 100%;
+    height: 100vh;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

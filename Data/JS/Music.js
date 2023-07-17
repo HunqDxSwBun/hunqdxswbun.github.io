@@ -346,7 +346,71 @@ function handleNextTrack() {
 }
 navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
-
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
+
+let audio1 = audio;
+const container = document.getElementById("container");
+const canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight / 1.5;
+
+const ctx = canvas.getContext("2d");
+let audioCtx;
+
+if (window.AudioContext) {
+  audioCtx = new AudioContext();
+} else if (window.webkitAudioContext) {
+  audioCtx = new webkitAudioContext();
+} else {
+  // Xử lý trường hợp không hỗ trợ AudioContext
+}
+
+let audioSource = null;
+let analyser = null;
+
+audioSource = audioCtx.createMediaElementSource(audio1);
+analyser = audioCtx.createAnalyser();
+audioSource.connect(analyser);
+analyser.connect(audioCtx.destination);
+analyser.fftSize = 128 * 32;
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+const barWidth = canvas.width / bufferLength * 2;
+let xsx = 0;
+
+function animate() {
+  xsx = 0;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  analyser.getByteFrequencyData(dataArray);
+  drawVisualizer({
+    bufferLength,
+    dataArray,
+    barWidth
+  });
+  requestAnimationFrame(animate);
+}
+
+// let hue = 0;
+
+function drawVisualizer({ bufferLength, dataArray, barWidth }) {
+  let barHeight;
+  for (let i = 0; i < bufferLength; i++) {
+    barHeight = dataArray[i];
+    // const red = hue;
+    // const green = i;
+    // const blue = barHeight;
+    // const color = `hsl(${hue}, 100%, 50%)`;
+    const color = `#ff2655`;
+    ctx.fillStyle = color;
+    ctx.fillRect(xsx, canvas.height - barHeight, barWidth, barHeight);
+    xsx += barWidth;
+
+    // hue += 0.001;
+    // hue %= 360;
+  }
+}
+animate();
+
+
 
