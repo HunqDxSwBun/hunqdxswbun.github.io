@@ -348,7 +348,6 @@ navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
-
 let audio1 = audio;
 const container = document.getElementById("container");
 const canvas = document.getElementById("canvas");
@@ -356,15 +355,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight / 1.5;
 
 const ctx = canvas.getContext("2d");
-let audioCtx;
-
-if (window.AudioContext) {
-  audioCtx = new AudioContext();
-} else if (window.webkitAudioContext) {
-  audioCtx = new webkitAudioContext();
-} else {
-  // Xử lý trường hợp không hỗ trợ AudioContext
-}
+let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 let audioSource = null;
 let analyser = null;
@@ -391,26 +382,17 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-// let hue = 0;
-
 function drawVisualizer({ bufferLength, dataArray, barWidth }) {
   let barHeight;
   for (let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i];
-    // const red = hue;
-    // const green = i;
-    // const blue = barHeight;
-    // const color = `hsl(${hue}, 100%, 50%)`;
     const color = `#ff2655`;
     ctx.fillStyle = color;
     ctx.fillRect(xsx, canvas.height - barHeight, barWidth, barHeight);
     xsx += barWidth;
-
-    // hue += 0.001;
-    // hue %= 360;
   }
 }
-animate();
 
+animate();
 
 
