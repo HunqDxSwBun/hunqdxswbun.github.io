@@ -264,7 +264,7 @@ const app = {
       }
     });
 
-    fetch(`/Music/${this.config.currentAlbum || "USUK"}.json`)
+    fetch(`/Music/${this.config.currentAlbum || "HOT"}.json`)
       .then((response) => response.json())
       .then((data) => {
         _this.loadSongs(data);
