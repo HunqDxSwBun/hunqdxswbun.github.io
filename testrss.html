@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lấy thông tin từ RSS feed</title>
+</head>
+<body>
+    <div id="rssData"></div>
+
+    <script>
+        // URL của RSS feed
+        const rssFeedURL = "https://hunqdswbun.data.blog/feed/";
+
+        // Hàm lấy dữ liệu từ RSS feed và hiển thị lên trang web
+        function fetchDataFromRSS() {
+            fetch(rssFeedURL, { mode: 'no-cors' })
+                .then(response => response.text())
+                .then(data => {
+                    // Since we're using no-cors mode, data will be an opaque response
+                    // and you won't be able to access its content directly.
+                    // You can still display the response in case you need to see its structure.
+                    const rssDataDiv = document.getElementById("rssData");
+                    rssDataDiv.innerHTML = `<pre>${data}</pre>`;
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        }
+
+        // Gọi hàm để lấy dữ liệu từ RSS feed
+        fetchDataFromRSS();
+    </script>
+</body>
+</html>
