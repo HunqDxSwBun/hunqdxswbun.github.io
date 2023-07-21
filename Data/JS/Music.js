@@ -394,8 +394,8 @@ navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
-navigator.mediaSession.setActionHandler("seekto", (details) => {
-  this.emitter.emit("seek", details.seekTime);
+navigator.mediaSession.setActionHandler("seekto", (e) => {
+  this.emitter.emit("seek", e.seekTime);
 });
 
 
