@@ -6,6 +6,12 @@
         "image": "/Music/IMG/Logo.png"
     },
     {
+        "name": "Healing Song",
+        "singer": "Lune",
+        "path": "/Music/Music/HOT/Healing Song.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
         "name": "Meant To Be",
         "singer": "Arc North",
         "path": "/Music/Music/HOT/Meant To Be.mp3",

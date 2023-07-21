@@ -363,3 +363,5 @@ function startMenuCloseTimer() {
 // console.log = function(message) {
 //     logToDivAndConsole(message);
 // };
+
+

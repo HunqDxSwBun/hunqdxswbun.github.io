@@ -51,7 +51,7 @@ header .HeadApp h1 {
 }
 
 ::-webkit-scrollbar {
-    height: 5px;
+    height: 8px;
     width: 10px;
 
 }

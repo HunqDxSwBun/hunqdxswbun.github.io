@@ -1,9 +1,9 @@
  // Danh sách các album và thông tin của từng album
  const albums = [
-  { name: '🔥', dataAlbum: "HOT" },
-  { name: "Âu Mỹ 🌎", dataAlbum: "USUK" },
-  { name: "Việt Nam 🇻🇳", dataAlbum: "NhacViet" },
-  { name: "Yêu Xa 🌏", dataAlbum: "TinhYeuXa" },
+  { name: '🔥 Nghe Nhiều', dataAlbum: "HOT" },
+  { name: "Âu Mỹ", dataAlbum: "USUK" },
+  { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
+  { name: "❤ Yêu Xa", dataAlbum: "TinhYeuXa" },
   { name: "Bích Phương", dataAlbum: "BichPhuong" },
   { name: "Remix", dataAlbum: "Remix" },
   { name: "EDM", dataAlbum: "EDM" },
@@ -16,19 +16,34 @@
 const albumContainer = document.getElementById("albumContainer");
 
 // Tạo và thêm các nút album vào div "Album"
-albums.forEach(album => {
+albums.forEach((album, index) => { // Thêm tham số index vào forEach
   const button = document.createElement("button");
   button.innerHTML = album.name;
   button.classList.add("album-btn");
   button.setAttribute("data-album", album.dataAlbum);
 
-  // // Thêm sự kiện click cho mỗi nút album
-  // button.addEventListener("click", () => {
-  //   // Xử lý khi người dùng nhấn vào nút album (thay thế thành logic xử lý của bạn)
-  //   console.log(`Bạn đã chọn album: ${album.name}`);
-  // });
+  if (index === 0) {
+    button.classList.add("active");
+  }
+
+  // Thêm sự kiện click cho mỗi nút album
+  button.addEventListener("click", () => {
+    const activeButton = document.querySelector(".album-btn.active");
+
+    // Loại bỏ lớp .active từ nút album đang có
+    if (activeButton) {
+      activeButton.classList.remove("active");
+    }
+
+    // Thêm lớp .active cho nút album vừa được nhấp vào
+    button.classList.add("active");
+
+    // Xử lý khi người dùng nhấn vào nút album (thay thế thành logic xử lý của bạn)
+    // console.log(`Bạn đã chọn album: ${album.name}`);
+  });
 
   albumContainer.appendChild(button);
+  
 });
 
 
@@ -379,10 +394,19 @@ function handlePreTrack() {
 function handleNextTrack() {
   nextBtn.onclick();
 }
+function handleSeektoTrack(details) {
+  if (details.fastSeek && 'seekTime' in details) {
+    const seekTime = details.seekTime;
+    audio.currentTime = seekTime;
+  }
+}
+
 navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
+navigator.mediaSession.setActionHandler('seekto', handleSeektoTrack);
+
 
 
 let audio1 = audio;
