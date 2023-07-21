@@ -395,9 +395,12 @@ function handleNextTrack() {
   nextBtn.onclick();
 }
 function handleSeektoTrack(details) {
-  if (details.fastSeek && 'seekTime' in details) {
-    const seekTime = details.seekTime;
-    audio.currentTime = seekTime;
+  if (details.seekTime2 !== undefined) {
+    const seekTime2 = details.seekTime2;
+    audio.currentTime = seekTime2;
+    if (!audio.paused) {
+      audio.play();
+    }
   }
 }
 
