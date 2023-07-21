@@ -398,19 +398,12 @@ navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
 
-const audioElement = audio; // Thay 'your-audio-element-id' bằng ID của thẻ audio
 
-audioElement.addEventListener('timeupdate', () => {
-  const currentTime = audioElement.currentTime; // Lấy thời gian hiện tại của audio
-  const minutes = Math.floor(currentTime / 60); // Phút
-  const seconds = Math.floor(currentTime % 60); // Giây
-
-  console.log(`Đã kéo ${minutes}:${seconds}`);
-});
 
 // Sau đó, bạn có thể sử dụng media session API để xử lý seek to như sau:
 navigator.mediaSession.setActionHandler('seekto', (details) => {
   const { seekTime } = details;
+  console.log(`SeekTime`details)
   // Xử lý seek to ở thời gian seekTime
 });
 
@@ -472,6 +465,6 @@ function playAudio() {
   animate();
 }
 
-console.log(`Phiên bản 1.10.0`)
+console.log(`Phiên bản 1.10.1`)
 
 
