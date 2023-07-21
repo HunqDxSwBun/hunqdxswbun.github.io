@@ -132,19 +132,19 @@ const app = {
       player.classList.remove("playing");
     };
 
-    audio.ontimeupdate = function () {
-      if (audio.duration) {
-        const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
-        progress.value = progressPercent;
-      }
-    };
+    // audio.ontimeupdate = function () {
+    //   if (audio.duration) {
+    //     const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
+    //     progress.value = progressPercent;
+    //   }
+    // };
 
-    progress.onchange = function (e) {
-      liveOFF();
-      const seekTime = (audio.duration / 100) * e.target.value;
-      audio.currentTime = seekTime;
+    // progress.onchange = function (e) {
+    //   liveOFF();
+    //   const seekTime = (audio.duration / 100) * e.target.value;
+    //   audio.currentTime = seekTime;
       
-    };
+    // };
 
     nextBtn.onclick = function () {
       liveOFF();
@@ -390,13 +390,12 @@ function handleNextTrack() {
   nextBtn.onclick();
 }
 
+
 navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
-navigator.mediaSession.setActionHandler("seekto", (e) => {
-  this.emitter.emit("seek", e.seekTime);
-});
+
 
 
 
