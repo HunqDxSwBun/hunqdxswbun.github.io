@@ -231,12 +231,7 @@ const app = {
         artist: this.currentSong.singer,
         album: 'HunqDSwBun',
         artwork: [
-          { src: this.currentSong.image , sizes: '96x96', type: 'image/png' },
-          { src: this.currentSong.image , sizes: '128x128', type: 'image/png' },
-          { src: this.currentSong.image , sizes: '192x192', type: 'image/png' },
-          { src: this.currentSong.image , sizes: '256x256', type: 'image/png' },
-          { src: this.currentSong.image , sizes: '384x384', type: 'image/png' },
-          { src: this.currentSong.image , sizes: '512x512', type: 'image/png' }
+          { src: this.currentSong.image , sizes: '600x600', type: 'image/png' }
         ]
       });
     };  
@@ -394,21 +389,14 @@ function handlePreTrack() {
 function handleNextTrack() {
   nextBtn.onclick();
 }
-function handleSeektoTrack(details) {
-  if (details.seekTime2 !== undefined) {
-    const seekTime2 = details.seekTime2;
-    audio.currentTime = seekTime2;
-    if (!audio.paused) {
-      audio.play();
-    }
-  }
-}
 
 navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
-navigator.mediaSession.setActionHandler('seekto', handleSeektoTrack);
+navigator.mediaSession.setActionHandler("seekto", (details) => {
+  this.emitter.emit("seek", details.seekTime);
+});
 
 
 
