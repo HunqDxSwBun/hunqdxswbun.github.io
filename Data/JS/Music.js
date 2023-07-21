@@ -398,21 +398,21 @@ navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
 
-// Kiểm tra nếu mediaSession được hỗ trợ bởi trình duyệt
-if ('mediaSession' in navigator) {
-  // Thêm trình xử lý seekto
-  navigator.mediaSession.setActionHandler('seekto', function (details) {
-    // details là một đối tượng chứa thông tin về vị trí người dùng đã chọn để tìm kiếm
-    // ở đây bạn có thể thực hiện xử lý tùy chỉnh dựa trên vị trí seek được chọn
-    console.log('Seek to:', details.seekTime);
+const audioElement = audio; // Thay 'your-audio-element-id' bằng ID của thẻ audio
 
-    // Ví dụ: Tìm kiếm đến vị trí cụ thể trong media player
-    const mediaElement = document.querySelector('audio'); // hoặc video
-    if (mediaElement && mediaElement.readyState !== 0) {
-      mediaElement.currentTime = details.seekTime;
-    }
-  });
-}
+audioElement.addEventListener('timeupdate', () => {
+  const currentTime = audioElement.currentTime; // Lấy thời gian hiện tại của audio
+  const minutes = Math.floor(currentTime / 60); // Phút
+  const seconds = Math.floor(currentTime % 60); // Giây
+
+  console.log(`Đã kéo ${minutes}:${seconds}`);
+});
+
+// Sau đó, bạn có thể sử dụng media session API để xử lý seek to như sau:
+navigator.mediaSession.setActionHandler('seekto', (details) => {
+  const { seekTime } = details;
+  // Xử lý seek to ở thời gian seekTime
+});
 
 let audio1 = audio;
 const container = document.getElementById("container");
@@ -472,6 +472,6 @@ function playAudio() {
   animate();
 }
 
-
+console.log(`Phiên bản 1.10.0`)
 
 
