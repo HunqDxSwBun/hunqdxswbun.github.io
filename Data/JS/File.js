@@ -294,6 +294,7 @@ function CustomPIC() {
   }
 }
 
+var timeoutId; // Biến để lưu trữ ID của đối tượng setTimeout
 
 function Menu() {
   var x = document.getElementById("iMenu");
@@ -306,4 +307,59 @@ function Menu() {
     x.style.bottom = "10px";
     navbar.style.bottom = "80px";
   }
+
+  // Nếu đã đặt timeout trước đó, hủy bỏ để tránh việc tự đóng menu nếu có thao tác trong 3 giây
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+
+  // Thiết lập một đối tượng setTimeout mới sau 3 giây
+  timeoutId = setTimeout(function() {
+    x.style.bottom = "-100px";
+    navbar.style.bottom = "15px";
+    timeoutId = null; // Đặt lại biến timeoutId thành null sau khi tự đóng menu
+  }, 3000); // 3000 milliseconds = 3 giây
 }
+
+// Hàm này sẽ được gọi khi người dùng nhấn vào các biểu tượng trong menu,
+// và nó sẽ hủy bỏ timeout để ngăn việc đóng menu tự động sau 3 giây
+function cancelMenuClose() {
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+    timeoutId = null;
+  }
+}
+
+// Hàm này được gọi khi người dùng rời chuột khỏi menu,
+// và nó sẽ bắt đầu tính thời gian để đóng menu tự động sau 3 giây
+function startMenuCloseTimer() {
+  // Chỉ khởi đầu tính thời gian khi timeoutId không tồn tại (không có timeout đang chạy)
+  if (!timeoutId) {
+    timeoutId = setTimeout(function() {
+      var x = document.getElementById("iMenu");
+      var navbar = document.getElementById("navbar");
+      x.style.bottom = "-100px";
+      navbar.style.bottom = "15px";
+      timeoutId = null; // Đặt lại biến timeoutId thành null sau khi tự đóng menu
+    }, 3000); // 3000 milliseconds = 3 giây
+  }
+}
+
+// // Lưu lại console.log ban đầu để sử dụng sau này
+// const originalConsoleLog = console.log;
+
+// // Hàm để đưa nội dung vào div và log ra console ban đầu
+// function logToDivAndConsole(message) {
+//     const logOutputDiv = document.getElementById("logOutput");
+//     const logMessage = document.createElement("p");
+//     logMessage.textContent = message;
+//     logOutputDiv.appendChild(logMessage);
+
+//     // Log ra console ban đầu nếu muốn
+//     originalConsoleLog(message);
+// }
+
+// // Ghi đè hàm console.log
+// console.log = function(message) {
+//     logToDivAndConsole(message);
+// };

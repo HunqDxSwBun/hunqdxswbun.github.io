@@ -1,3 +1,37 @@
+ // Danh sách các album và thông tin của từng album
+ const albums = [
+  { name: '🔥', dataAlbum: "HOT" },
+  { name: "Âu Mỹ 🌎", dataAlbum: "USUK" },
+  { name: "Việt Nam 🇻🇳", dataAlbum: "NhacViet" },
+  { name: "Yêu Xa 🌏", dataAlbum: "TinhYeuXa" },
+  { name: "Bích Phương", dataAlbum: "BichPhuong" },
+  { name: "Remix", dataAlbum: "Remix" },
+  { name: "EDM", dataAlbum: "EDM" },
+  { name: "US UK Mix", dataAlbum: "USUKMix" },
+  { name: "Chill", dataAlbum: "Chill" },
+  // Thêm các album khác vào đây nếu cần
+];
+
+// Lấy đối tượng div "Album" để tiến hành thêm nút
+const albumContainer = document.getElementById("albumContainer");
+
+// Tạo và thêm các nút album vào div "Album"
+albums.forEach(album => {
+  const button = document.createElement("button");
+  button.innerHTML = album.name;
+  button.classList.add("album-btn");
+  button.setAttribute("data-album", album.dataAlbum);
+
+  // // Thêm sự kiện click cho mỗi nút album
+  // button.addEventListener("click", () => {
+  //   // Xử lý khi người dùng nhấn vào nút album (thay thế thành logic xử lý của bạn)
+  //   console.log(`Bạn đã chọn album: ${album.name}`);
+  // });
+
+  albumContainer.appendChild(button);
+});
+
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -167,7 +201,7 @@ const app = {
     setTimeout(() => {
       $(".song.active").scrollIntoView({
         behavior: "smooth",
-        block: "nearest"
+        block: "center",
       });
     }, 300);
   },

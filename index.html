@@ -28,28 +28,25 @@
     <script src="https://kit.fontawesome.com/9392097706.js" crossorigin="anonymous"></script>
 </head>
 
-
+<!-- <div id="logOutput"></div> -->
 <body>
     <header>
         <div id="navbar" onclick="Menu()">
             <i class="fa-solid fa-heart"></i>
         </div>
-        <div class="menu" id="iMenu">
+        <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
+            <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
             <div id="MenuMuic">
-                <div class="Tab">
-                    <button class="tablinks " id="tablinksStory" onclick="openTAB(event, 'Story')"><i
-                            class="fa-brands fa-readme"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Event')"><i
-                            class="fa-solid fa-star"></i></button>
-                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
-                            class="fa-solid fa-house"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Music')"><i
-                            class="fa-solid fa-music"></i></button>
-                    <button class="tablinks " onclick="openTAB(event, 'Settings')"> <i
-                            class="fa-solid fa-box"></i></button>
-                </div>
+              <div class="Tab">
+                <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
+                <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-house"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
+              </div>
             </div>
-        </div>
+          </div>
+          
 
         <audio id="MusicBG" loop>
             <source src="./Data/Music/8Letter.mp3" type="audio/mpeg">
@@ -204,16 +201,8 @@
                 </div>
 
                 <audio id="audio" src=""></audio>
-                <div class="Album">
-                    <button class="album-btn active" data-album="HOT">Hot</button>
-                    <button class="album-btn" data-album="USUK">Âu Mỹ</button>
-                    <button class="album-btn" data-album="NhacViet">Việt Nam</button>
-                    <button class="album-btn" data-album="BichPhuong">Bích Phương</button>
-                    <button class="album-btn" data-album="Remix">Remix</button>
-                    <button class="album-btn" data-album="EDM">EDM</button>
-                    <button class="album-btn" data-album="USUKMix">US UK Mix</button>
-                    <button class="album-btn" data-album="Chill">Chill</button>
-                    <!-- Thêm các nút album khác -->
+                <div class="Album" id="albumContainer">
+         
                 </div>
             </div>
 
