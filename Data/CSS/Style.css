@@ -60,7 +60,14 @@ header .HeadApp h1 {
     border-radius: 4px;
     background-color: var(--ButtonBG);
 }
-
+.logOutput {
+    color: greenyellow;
+    background-color: var(--CardBG);
+    font-size: 14px;
+    margin: 10px 15px 50px 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
 #navbar {
     cursor: pointer;
     text-align: center;

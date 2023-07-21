@@ -345,23 +345,23 @@ function startMenuCloseTimer() {
   }
 }
 
-// // Lưu lại console.log ban đầu để sử dụng sau này
-// const originalConsoleLog = console.log;
+// Lưu lại console.log ban đầu để sử dụng sau này
+const originalConsoleLog = console.log;
 
-// // Hàm để đưa nội dung vào div và log ra console ban đầu
-// function logToDivAndConsole(message) {
-//     const logOutputDiv = document.getElementById("logOutput");
-//     const logMessage = document.createElement("p");
-//     logMessage.textContent = message;
-//     logOutputDiv.appendChild(logMessage);
+// Hàm để đưa nội dung vào div và log ra console ban đầu
+function logToDivAndConsole(message) {
+    const logOutputDiv = document.getElementById("logOutput");
+    const logMessage = document.createElement("p");
+    logMessage.textContent = message;
+    logOutputDiv.appendChild(logMessage);
 
-//     // Log ra console ban đầu nếu muốn
-//     originalConsoleLog(message);
-// }
+    // Log ra console ban đầu nếu muốn
+    originalConsoleLog(message);
+}
 
-// // Ghi đè hàm console.log
-// console.log = function(message) {
-//     logToDivAndConsole(message);
-// };
+// Ghi đè hàm console.log
+console.log = function(message) {
+    logToDivAndConsole(message);
+};
 
 

@@ -1,5 +1,5 @@
- // Danh sách các album và thông tin của từng album
- const albums = [
+// Danh sách các album và thông tin của từng album
+const albums = [
   { name: '🔥 Nghe Nhiều', dataAlbum: "HOT" },
   { name: "Âu Mỹ", dataAlbum: "USUK" },
   { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
@@ -43,7 +43,7 @@ albums.forEach((album, index) => { // Thêm tham số index vào forEach
   });
 
   albumContainer.appendChild(button);
-  
+
 });
 
 
@@ -132,19 +132,19 @@ const app = {
       player.classList.remove("playing");
     };
 
-    // audio.ontimeupdate = function () {
-    //   if (audio.duration) {
-    //     const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
-    //     progress.value = progressPercent;
-    //   }
-    // };
+    audio.ontimeupdate = function () {
+      if (audio.duration) {
+        const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
+        progress.value = progressPercent;
+      }
+    };
 
-    // progress.onchange = function (e) {
-    //   liveOFF();
-    //   const seekTime = (audio.duration / 100) * e.target.value;
-    //   audio.currentTime = seekTime;
-      
-    // };
+    progress.onchange = function (e) {
+      liveOFF();
+      const seekTime = (audio.duration / 100) * e.target.value;
+      audio.currentTime = seekTime;
+
+    };
 
     nextBtn.onclick = function () {
       liveOFF();
@@ -231,10 +231,16 @@ const app = {
         artist: this.currentSong.singer,
         album: 'HunqDSwBun',
         artwork: [
-          { src: this.currentSong.image , sizes: '600x600', type: 'image/png' }
+          { src: this.currentSong.image, sizes: '96x96', type: 'image/png' },
+          { src: this.currentSong.image, sizes: '128x128', type: 'image/png' },
+          { src: this.currentSong.image, sizes: '192x192', type: 'image/png' },
+          { src: this.currentSong.image, sizes: '256x256', type: 'image/png' },
+          { src: this.currentSong.image, sizes: '384x384', type: 'image/png' },
+          { src: this.currentSong.image, sizes: '512x512', type: 'image/png' },
+          { src: this.currentSong.image, sizes: '600x600', type: 'image/png' },
         ]
       });
-    };  
+    };
 
   },
 
@@ -326,8 +332,6 @@ const app = {
 
 app.start();
 
-
-
 function liveAUDIO() {
   var timeAudio = audio.duration;
   var hours = Math.floor(timeAudio / 3600);
@@ -354,20 +358,19 @@ function liveAUDIO() {
       button.classList.add("active");
     }
   } else {
-    LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Không thể phát trực tiếp' ;
+    LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Không thể phát trực tiếp';
   }
 
 }
 
 
-function liveOFF(){
+function liveOFF() {
   var button = document.querySelector(".LiveBTN");
   var LiveNoti = document.querySelector("#LiveNoti");
 
   button.classList.remove("active");
-  LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp' ;
+  LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
 }
-
 
 function handlePlayTrack() {
   playBtn.onclick();
@@ -390,14 +393,26 @@ function handleNextTrack() {
   nextBtn.onclick();
 }
 
-
 navigator.mediaSession.setActionHandler('play', handlePlayTrack);
 navigator.mediaSession.setActionHandler('pause', handlePauseTrack);
 navigator.mediaSession.setActionHandler('previoustrack', handlePreTrack);
 navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
 
+// Kiểm tra nếu mediaSession được hỗ trợ bởi trình duyệt
+if ('mediaSession' in navigator) {
+  // Thêm trình xử lý seekto
+  navigator.mediaSession.setActionHandler('seekto', function (details) {
+    // details là một đối tượng chứa thông tin về vị trí người dùng đã chọn để tìm kiếm
+    // ở đây bạn có thể thực hiện xử lý tùy chỉnh dựa trên vị trí seek được chọn
+    console.log('Seek to:', details.seekTime);
 
-
+    // Ví dụ: Tìm kiếm đến vị trí cụ thể trong media player
+    const mediaElement = document.querySelector('audio'); // hoặc video
+    if (mediaElement && mediaElement.readyState !== 0) {
+      mediaElement.currentTime = details.seekTime;
+    }
+  });
+}
 
 let audio1 = audio;
 const container = document.getElementById("container");
@@ -411,50 +426,50 @@ let audioSource = null;
 let analyser = null;
 
 function playAudio() {
-    if (audioSource !== null) {
-        audioSource.disconnect();
+  if (audioSource !== null) {
+    audioSource.disconnect();
+  }
+
+  audioSource = audioCtx.createMediaElementSource(audio1);
+  analyser = audioCtx.createAnalyser();
+  audioSource.connect(analyser);
+  analyser.connect(audioCtx.destination);
+  analyser.fftSize = 128 * 8;
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  const barWidth = canvas.width / bufferLength * 2;
+  let x = 0;
+
+  function animate() {
+    x = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    analyser.getByteFrequencyData(dataArray);
+    drawVisualizer({
+      bufferLength,
+      dataArray,
+      barWidth
+    });
+    requestAnimationFrame(animate);
+  }
+
+  const drawVisualizer = ({
+    bufferLength,
+    dataArray,
+    barWidth
+  }) => {
+    let barHeight;
+    for (let i = 0; i < bufferLength; i++) {
+      barHeight = dataArray[i];
+      const red = (i * barHeight);
+      const green = i;
+      const blue = barHeight;
+      ctx.fillStyle = `#ff2655`;
+      ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+      x += barWidth;
     }
+  }
 
-    audioSource = audioCtx.createMediaElementSource(audio1);
-    analyser = audioCtx.createAnalyser();
-    audioSource.connect(analyser);
-    analyser.connect(audioCtx.destination);
-    analyser.fftSize = 128 * 8;
-    const bufferLength = analyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
-    const barWidth = canvas.width / bufferLength * 2;
-    let x = 0;
-
-    function animate() {
-        x = 0;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        analyser.getByteFrequencyData(dataArray);
-        drawVisualizer({
-            bufferLength,
-            dataArray,
-            barWidth
-        });
-        requestAnimationFrame(animate);
-    }
-
-    const drawVisualizer = ({
-        bufferLength,
-        dataArray,
-        barWidth
-    }) => {
-        let barHeight;
-        for (let i = 0; i < bufferLength; i++) {
-            barHeight = dataArray[i];
-            const red = (i * barHeight);
-            const green = i;
-            const blue = barHeight;
-            ctx.fillStyle = `#ff2655`;
-            ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-            x += barWidth;
-        }
-    }
-
-    animate();
+  animate();
 }
 
 
