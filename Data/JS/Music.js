@@ -466,6 +466,6 @@ function playAudio() {
   animate();
 }
 
-console.log(`Phiên bản 1.10.2`)
+console.log(`Phiên bản 1.10.6`)
 
 
