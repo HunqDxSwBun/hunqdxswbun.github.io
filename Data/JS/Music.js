@@ -403,7 +403,7 @@ navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
 // Sau đó, bạn có thể sử dụng media session API để xử lý seek to như sau:
 navigator.mediaSession.setActionHandler('seekto', (details) => {
   const { seekTime } = details;
-  console.log(`SeekTime`details)
+  console.log(`SeekTime` + details)
   // Xử lý seek to ở thời gian seekTime
 });
 
@@ -465,6 +465,6 @@ function playAudio() {
   animate();
 }
 
-console.log(`Phiên bản 1.10.1`)
+console.log(`Phiên bản 1.10.2`)
 
 
