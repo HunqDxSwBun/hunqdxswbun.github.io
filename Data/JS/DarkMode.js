@@ -98,7 +98,6 @@ function setMode(mode) {
 // Hàm cho chế độ 1 chế độ sáng
 function mode1() {
   console.log('Chế độ 3');
-
   var body = document.querySelector('body');
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     body.classList.add('dark-mode');
@@ -110,7 +109,6 @@ function mode1() {
 // Hàm cho chế độ 2 chế độ tối
 function mode2() {
   console.log('Chế độ 2');
-
   var body = document.querySelector('body');
   body.classList.add('dark-mode');
 }

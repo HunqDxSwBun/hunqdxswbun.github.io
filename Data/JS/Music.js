@@ -332,6 +332,7 @@ const app = {
 
 app.start();
 
+
 function liveAUDIO() {
   var timeAudio = audio.duration;
   var hours = Math.floor(timeAudio / 3600);

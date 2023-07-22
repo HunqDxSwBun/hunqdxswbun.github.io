@@ -21,52 +21,62 @@
     "name": "I'll Wait",
     "singer": "Kygo, Sasha Sloan",
     "path": "/Music/Music/Vol1/IllWait.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Dusk Till Dawn",
     "singer": "ZAYN & Sia",
     "path": "/Music/Music/Vol1/DuskTillDawn.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "In My Mind",
     "singer": "ILLENIUM, Excision and Haliene",
     "path": "/Music/Music/Vol1/InMyMind.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Nightlight",
     "singer": "Finding Hope",
     "path": "/Music/Music/Vol1/Nightlight.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Downtown",
     "singer": "Allie X",
     "path": "/Music/Music/Vol1/Downtown.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Love Is In The Air",
     "singer": "Tamiga & 2Bad",
     "path": "/Music/Music/Vol1/LoveIsInTheAir.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "L.I.F.E.",
     "singer": "Remady & Manu-L",
     "path": "/Music/Music/Vol1/LIFE.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Love Me Now",
     "singer": "Kygo & Zoe Wees",
     "path": "/Music/Music/Vol1/LoveMeNow.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Rain",
     "singer": "YVO  & Rebecca Helena",
     "path": "/Music/Music/Vol1/Rain.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "All My Days",
     "singer": "Forester",
     "path": "/Music/Music/Vol1/AllMyDays.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Lullaby",
     "singer": "R3HAB x Mike Williams",
@@ -77,27 +87,32 @@
     "name": "Stereo Hearts",
     "singer": "Gym Class Heroes",
     "path": "/Music/Music/Vol1/StereoHearts.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Is It Just Me?",
     "singer": "Sasha Alex Sloan & Charlie Puth",
     "path": "/Music/Music/Vol1/IsItJustMe.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Rhythm Of The Night",
     "singer": "Sasha Alex Sloan & Charlie Puth",
     "path": "/Music/Music/Vol1/RhythmOfTheNight.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Sad Song Playlist",
     "singer": "Youtube",
     "path": "/Music/Music/Vol1/SadMusic1.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "Sadness and Sorrow",
     "singer": "Naruto",
     "path": "/Music/Music/Vol1/SadnessandSorrow.mp3",
-    "image": "/Music/IMG/Logo.png"  },
+    "image": "/Music/IMG/Logo.png"
+  },
   {
     "name": "After The Afterparty",
     "singer": "Charli XCX & Alan Walker",
@@ -134,5 +149,4 @@
     "path": "/Music/Music/Vol1/Dynasty.mp3",
     "image": "/Music/IMG/Logo.png"
   }
-  
 ]

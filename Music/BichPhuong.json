@@ -52,20 +52,23 @@
         "singer": "Bích Phương",
         "path": "/Music/Music/BichPhuong/Em bỏ hút thuốc chưa.mp3",
         "image": "/Music/IMG/Logo.png"
-    },{
+    },
+    {
         "name": "Một cú lừa Remix",
         "singer": "Bích Phương",
         "path": "/Music/Music/BichPhuong/Một cú lừa remix.mp3",
         "image": "/Music/IMG/Logo.png"
-      },{
+    },
+    {
         "name": "Bùa Yêu",
         "singer": "Bích Phương",
         "path": "/Music/Music/BichPhuong/Bùa Yêu.mp3",
         "image": "/Music/IMG/Logo.png"
-      },{
+    },
+    {
         "name": "Vẫn",
         "singer": "Bích Phương",
         "path": "/Music/Music/BichPhuong/Vẫn.mp3",
         "image": "/Music/IMG/Logo.png"
-      }
+    }
 ]

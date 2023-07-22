@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorting JSON Data</title>
+</head>
+<style>
+/* Reset CSS để loại bỏ các margin và padding mặc định của các phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Input file CSS */
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Nút sắp xếp và nút copy, tải về */
+button {
+    font-size: 16px;
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px auto;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Nút tải về */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Khối chứa JSON đã sắp xếp */
+#jsonFilter {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Căn lề cho tệp JSON */
+pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin: 10px 0;
+}
+
+
+</style>
+<body>
+    <input type="file" id="fileInput">
+  
+
+    <!-- Thêm các nút nhấn để sắp xếp dữ liệu -->
+    <button id="sortByNameAZ">Sắp xếp theo Name (A-Z)</button>
+    <button id="sortByNameZA">Sắp xếp theo Name (Z-A)</button>
+    <button id="sortBySingerAZ">Sắp xếp theo Singer (A-Z)</button>
+    <button id="sortBySingerZA">Sắp xếp theo Singer (Z-A)</button>
+
+    <!-- Thêm nút "Copy" và "Tải về" -->
+    <button id="copyJson">Copy</button>
+    <a id="downloadJson" download="file.json"><button>Tải về</button></a>
+    <div id="jsonFilter"></div>
+
+    <script>
+        // Khai báo biến lưu trữ dữ liệu JSON đã tải lên
+let jsonData = null;
+
+// Xử lý khi tải file lên
+document.getElementById('fileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    // Đọc file và xử lý khi đọc thành công
+    reader.onload = function(e) {
+        try {
+            jsonData = JSON.parse(e.target.result);
+            renderJsonData();
+        } catch (error) {
+            console.error("Lỗi đọc file JSON: ", error);
+        }
+    }
+
+    reader.readAsText(file);
+});
+
+// Xử lý sự kiện khi nhấn nút sắp xếp theo name A-Z
+document.getElementById('sortByNameAZ').addEventListener('click', function() {
+    if (jsonData) {
+        const sortedData = jsonData.slice().sort((a, b) => a.name.localeCompare(b.name));
+        renderJsonData(sortedData);
+    }
+});
+
+// Xử lý sự kiện khi nhấn nút sắp xếp theo name Z-A
+document.getElementById('sortByNameZA').addEventListener('click', function() {
+    if (jsonData) {
+        const sortedData = jsonData.slice().sort((a, b) => b.name.localeCompare(a.name));
+        renderJsonData(sortedData);
+    }
+});
+
+// Xử lý sự kiện khi nhấn nút sắp xếp theo singer A-Z
+document.getElementById('sortBySingerAZ').addEventListener('click', function() {
+    if (jsonData) {
+        const sortedData = jsonData.slice().sort((a, b) => a.singer.localeCompare(b.singer));
+        renderJsonData(sortedData);
+    }
+});
+
+// Xử lý sự kiện khi nhấn nút sắp xếp theo singer Z-A
+document.getElementById('sortBySingerZA').addEventListener('click', function() {
+    if (jsonData) {
+        const sortedData = jsonData.slice().sort((a, b) => b.singer.localeCompare(a.singer));
+        renderJsonData(sortedData);
+    }
+});
+
+// Hàm hiển thị dữ liệu JSON lên trang HTML
+function renderJsonData(data = jsonData) {
+    const jsonFilterElement = document.getElementById('jsonFilter');
+    jsonFilterElement.innerHTML = `
+        <h3>JSON đã sắp xếp theo Name (A-Z):</h3>
+        <pre>${JSON.stringify(data, null, 2)}</pre>
+    `;
+}
+// ... Đoạn mã JavaScript trước đó ...
+
+// Xử lý sự kiện khi nhấn nút "Copy"
+document.getElementById('copyJson').addEventListener('click', function() {
+    if (jsonData) {
+        const jsonText = JSON.stringify(jsonData, null, 2);
+        copyToClipboard(jsonText);
+    }
+});
+
+// Hàm copy dữ liệu vào clipboard
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}
+
+// Xử lý sự kiện khi nhấn nút "Tải về"
+document.getElementById('downloadJson').addEventListener('click', function() {
+    if (jsonData) {
+        const jsonText = JSON.stringify(jsonData, null, 2);
+        const blob = new Blob([jsonText], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+
+        // Lấy tên tệp tải lên và thêm vào tên tệp tải về
+        const fileInput = document.getElementById('fileInput');
+        const fileName = fileInput.files[0].name.replace(/\.[^/.]+$/, ""); // Lấy tên file và loại bỏ phần mở rộng
+        const downloadLink = document.getElementById('downloadJson');
+        downloadLink.href = url;
+        downloadLink.download = fileName + ".json";
+    }
+});
+
+// ... Đoạn mã JavaScript trước đó ...
+
+    </script>
+</body>
+</html>

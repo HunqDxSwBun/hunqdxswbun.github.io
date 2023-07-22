@@ -1,152 +1,8 @@
 [
     {
-        "name": "Tell Me",
-        "singer": "it's different & Helen",
-        "path": "/Music/Music/HOT/Tell Me.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Healing Song",
-        "singer": "Lune",
-        "path": "/Music/Music/HOT/Healing Song.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Meant To Be",
-        "singer": "Arc North",
-        "path": "/Music/Music/HOT/Meant To Be.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Save Your Tears",
-        "singer": "The Weeknd",
-        "path": "/Music/Music/HOT/Save Your Tears.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "In The Shadow Of The Sun",
-        "singer": "Professor Green",
-        "path": "/Music/Music/HOT/In The Shadow Of The Sun.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "End Of The Night",
-        "singer": "Danny Avila",
-        "path": "/Music/Music/HOT/End Of The Night.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Roses",
-        "singer": "The Chainsmokers",
-        "path": "/Music/Music/HOT/Roses.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Heat Waves",
-        "singer": "Glass Animals",
-        "path": "/Music/Music/HOT/Heat Waves.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "All We Know",
-        "singer": "The Chainsmokers",
-        "path": "/Music/Music/HOT/All We Know.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Million Days",
-        "singer": "Sabai x Hoang ",
-        "path": "/Music/Music/HOT/Million Days.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "The Ocean",
-        "singer": "Mike Perry",
-        "path": "/Music/Music/HOT/The Ocean.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Blinding Lights",
-        "singer": "The Weeknd",
-        "path": "/Music/Music/HOT/Blinding Lights.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Infinity",
-        "singer": "Jaymes Young",
-        "path": "/Music/Music/HOT/Infinity.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Hymn For The Weekend",
-        "singer": "Coldplay",
-        "path": "/Music/Music/HOT/Hymn For The Weekend.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Before You Exit",
-        "singer": "Silence",
-        "path": "/Music/Music/HOT/Before You Exit.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Takeaway",
-        "singer": "The Chainsmokers, ILLENIUM",
-        "path": "/Music/Music/HOT/Takeaway.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Let You Go",
-        "singer": "Jim Yosef",
-        "path": "/Music/Music/HOT/Let You Go.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Closer",
-        "singer": "The Chainsmokers",
-        "path": "/Music/Music/HOT/Closer.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Different World (Full Album)",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Different World (Full Album).mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Love Again",
-        "singer": "Alok",
-        "path": "/Music/Music/HOT/Love Again.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Hear Me Now",
-        "singer": "Alok",
-        "path": "/Music/Music/HOT/Hear Me Now.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Headlights",
-        "singer": "Alok & Alan Walker",
-        "path": "/Music/Music/HOT/Headlights.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Ignite",
-        "singer": "K-391 & Alan Walker",
-        "path": "/Music/Music/HOT/Ignite.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "End of Time",
-        "singer": "K-391, Alan Walker & Ahrix",
-        "path": "/Music/Music/HOT/End of Time.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Faded",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Faded.mp3",
+        "name": "Again",
+        "singer": "Alan Walker & Again ",
+        "path": "/Music/Music/HOT/Again.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
@@ -156,27 +12,9 @@
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Sing Me To Sleep",
+        "name": "Calma",
         "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Sing Me To Sleep.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "The Spectre",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/The Spectre.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Diamond Heart",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Diamond Heart.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "On My Way",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/On My Way.mp3",
+        "path": "/Music/Music/HOT/Calma.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
@@ -186,27 +24,27 @@
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Tired",
+        "name": "Diamond Heart",
         "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Tired.mp3",
+        "path": "/Music/Music/HOT/Diamond Heart.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "PLAY",
+        "name": "Different World (Full Album)",
         "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/PLAY.mp3",
+        "path": "/Music/Music/HOT/Different World (Full Album).mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Routine",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Routine.mp3",
+        "name": "End of Time",
+        "singer": "K-391, Alan Walker & Ahrix",
+        "path": "/Music/Music/HOT/End of Time.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Stranger Things",
-        "singer": "Kygo &  Alan Walker ",
-        "path": "/Music/Music/HOT/Stranger Things.mp3",
+        "name": "End Of The Night",
+        "singer": "Danny Avila",
+        "path": "/Music/Music/HOT/End Of The Night.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
@@ -216,33 +54,27 @@
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Sweet Dreams",
+        "name": "Faded",
         "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Sweet Dreams.mp3",
+        "path": "/Music/Music/HOT/Faded.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Hero",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Hero.mp3",
+        "name": "Headlights",
+        "singer": "Alok & Alan Walker",
+        "path": "/Music/Music/HOT/Headlights.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Again",
-        "singer": "Alan Walker & Again ",
-        "path": "/Music/Music/HOT/Again.mp3",
+        "name": "Hear Me Now",
+        "singer": "Alok",
+        "path": "/Music/Music/HOT/Hear Me Now.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Strongest",
-        "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Strongest.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Sorry",
-        "singer": "Alan Walker & ISÁK",
-        "path": "/Music/Music/HOT/Sorry.mp3",
+        "name": "Heat Waves",
+        "singer": "Glass Animals",
+        "path": "/Music/Music/HOT/Heat Waves.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
@@ -252,15 +84,129 @@
         "image": "/Music/IMG/Logo.png"
     },
     {
+        "name": "Hero",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/Hero.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Hymn For The Weekend",
+        "singer": "Coldplay",
+        "path": "/Music/Music/HOT/Hymn For The Weekend.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Ignite",
+        "singer": "K-391 & Alan Walker",
+        "path": "/Music/Music/HOT/Ignite.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "In The Shadow Of The Sun",
+        "singer": "Professor Green",
+        "path": "/Music/Music/HOT/In The Shadow Of The Sun.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Infinity",
+        "singer": "Jaymes Young",
+        "path": "/Music/Music/HOT/Infinity.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Let You Go",
+        "singer": "Jim Yosef",
+        "path": "/Music/Music/HOT/Let You Go.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Love Again",
+        "singer": "Alok",
+        "path": "/Music/Music/HOT/Love Again.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Meant To Be",
+        "singer": "Arc North",
+        "path": "/Music/Music/HOT/Meant To Be.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Million Days",
+        "singer": "Sabai x Hoang ",
+        "path": "/Music/Music/HOT/Million Days.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "On My Way",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/On My Way.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "PLAY",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/PLAY.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
         "name": "Paradise",
         "singer": "Alan Walker",
         "path": "/Music/Music/HOT/Paradise.mp3",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Calma",
+        "name": "Routine",
         "singer": "Alan Walker",
-        "path": "/Music/Music/HOT/Calma.mp3",
+        "path": "/Music/Music/HOT/Routine.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Roses",
+        "singer": "The Chainsmokers",
+        "path": "/Music/Music/HOT/Roses.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Save Your Tears",
+        "singer": "The Weeknd",
+        "path": "/Music/Music/HOT/Save Your Tears.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Sing Me To Sleep",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/Sing Me To Sleep.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Stranger Things",
+        "singer": "Kygo &  Alan Walker ",
+        "path": "/Music/Music/HOT/Stranger Things.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Strongest",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/Strongest.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Sweet Dreams",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/Sweet Dreams.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Takeaway",
+        "singer": "The Chainsmokers, ILLENIUM",
+        "path": "/Music/Music/HOT/Takeaway.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Tired",
+        "singer": "Alan Walker",
+        "path": "/Music/Music/HOT/Tired.mp3",
         "image": "/Music/IMG/Logo.png"
     }
 ]
