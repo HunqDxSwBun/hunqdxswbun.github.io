@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-color: #111;
+        color: #eee;
+    }
+
+    .weather-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .weather-info {
+        margin-top: 20px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    pre {
+        color: greenyellow;
+        font-size: 12px;
+        text-align: left;
+        font-family: "Courier New", monospace;
+        line-height: 1.5;
+        background-color: #000;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .Grid {
+        display: grid;
+        grid-template-columns: auto 30%;
+    }
+</style>
+
+<body>
+    <div class="Grid">
+        <div class="weather-container">
+            <h1>Thời tiết</h1>
+            <form id="weatherForm">
+                <label for="cityInput">Thành phố:</label>
+                <input type="text" id="cityInput" required>
+                <button type="submit">Tìm</button>
+            </form>
+            <button id="getLocationBtn">Lấy vị trí hiện tại</button>
+            <div class="weather-info">
+                <p><strong>Thành Phố:</strong> <span id="city"></span></p>
+                <p><strong>Nhiệt độ:</strong> <span id="temperature"></span></p>
+                <p><strong>Icon:</strong> <span id="weather"></span></p>
+                <p><strong>Hiện tại:</strong> <span id="main"></span></p>
+                <p><strong>Mô tả:</strong> <span id="description"></span></p>
+                <p><strong>Kinh độ:</strong> <span id="lon"></span></p>
+                <p><strong>Vĩ độ:</strong> <span id="lat"></span></p>
+                <p><strong>Cảm giác:</strong> <span id="feels-like"></span></p>
+                <p><strong>Nhiệt độ thấp nhất:</strong> <span id="temp-min"></span></p>
+                <p><strong>Nhiệt độ cao nhất:</strong> <span id="temp-max"></span></p>
+                <p><strong>Áp suất:</strong> <span id="pressure"></span></p>
+                <p><strong>Độ ẩm:</strong> <span id="humidity"></span></p>
+                <p><strong>Tốc độ gió:</strong> <span id="wind-speed"></span></p>
+                <p><strong>Hướng gió:</strong> <span id="wind-direction"></span></p>
+                <p><strong>Lượng mưa (1h):</strong> <span id="rain-1h"></span></p>
+                <p><strong>Mây:</strong> <span id="clouds"></span></p>
+                <p><strong>Hiển thị:</strong> <span id="visibility"></span></p>
+                <p><strong>Bình Minh:</strong> <span id="sunrise"></span></p>
+                <p><strong>Hoàng hôn:</strong> <span id="sunset"></span></p>
+            </div>
+        </div>
+        <pre id="Json"></pre>
+    </div>
+
+</body>
+<script>
+    const apiKey = "f8d7fa30ebf9c89f2bd47c28ef939564";
+
+    // Function to fetch weather data from OpenWeatherMap API by city name
+    async function getWeatherDataByCity(city) {
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            displayWeatherData(data);
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+        }
+    }
+
+    // Function to fetch weather data from OpenWeatherMap API by coordinates
+    async function getWeatherDataByCoords(latitude, longitude) {
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            displayWeatherData(data);
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+        }
+    }
+
+
+    // Function to display weather data on the page
+    function displayWeatherData(data) {
+        console.log(data);
+        var jsonData = JSON.stringify(data, null, 2);
+
+        document.getElementById("Json").innerHTML = jsonData;
+        document.getElementById("city").textContent = data.name + ' ' + data.sys.country;
+        document.getElementById("weather").innerHTML = data.weather[0].icon;
+        document.getElementById("temperature").textContent = data.main.temp + " °C";
+        document.getElementById("main").textContent = data.weather[0].main;
+        document.getElementById("description").textContent = data.weather[0].description;
+        document.getElementById("lon").textContent = "Kinh độ: " + data.coord.lon;
+        document.getElementById("lat").textContent = "Vĩ độ: " + data.coord.lat;
+        document.getElementById("feels-like").textContent = "Cảm giác như: " + data.main.feels_like + " °C";
+        document.getElementById("temp-min").textContent = "Nhiệt độ tối thiểu: " + data.main.temp_min + " °C";
+        document.getElementById("temp-max").textContent = "Nhiệt độ tối đa: " + data.main.temp_max + " °C";
+        document.getElementById("pressure").textContent = "Áp suất: " + data.main.pressure + " hPa";
+        document.getElementById("humidity").textContent = "Độ ẩm: " + data.main.humidity + " %";
+        document.getElementById("wind-speed").textContent = "Tốc độ gió: " + data.wind.speed + " m/s";
+        document.getElementById("wind-direction").textContent = "Hướng gió: " + data.wind.deg + " độ";
+        document.getElementById("rain-1h").textContent = "Lượng mưa (1h): " + (data.rain && data.rain["1h"] ? data.rain["1h"] : "Không có") + " mm";
+        document.getElementById("clouds").textContent = "Mây che phủ: " + data.clouds.all + " %";
+        document.getElementById("visibility").textContent = "Tầm nhìn: " + data.visibility + " mét";
+        document.getElementById("sunrise").textContent = "Mặt trời mọc: " + new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+        document.getElementById("sunset").textContent = "Mặt trời lặn: " + new Date(data.sys.sunset * 1000).toLocaleTimeString();
+    }
+
+    // Function to get user's current position
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    getWeatherDataByCoords(latitude, longitude);
+                },
+                (error) => {
+                    console.error("Error getting geolocation:", error);
+                }
+            );
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+        }
+    }
+
+    // Event listener for form submission
+    document.getElementById("weatherForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const city = document.getElementById("cityInput").value.trim();
+        if (city) {
+            getWeatherDataByCity(city);
+        }
+    });
+
+    // Event listener for "Get Weather for Current Location" button
+    document.getElementById("getLocationBtn").addEventListener("click", function () {
+        getLocation();
+    });
+
+</script>
+
+</html>
