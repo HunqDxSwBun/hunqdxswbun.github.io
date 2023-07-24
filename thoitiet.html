@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Weather App</title>
 </head>
 <style>
@@ -41,11 +41,18 @@
         background-color: #000;
         border: 1px solid #ccc;
         padding: 10px;
+        margin: 20px ;
     }
 
     .Grid {
         display: grid;
         grid-template-columns: auto 30%;
+    }
+    @media screen and (max-width: 800px) {
+        .Grid {
+        display: block;
+    }
+
     }
 </style>
 
@@ -57,6 +64,9 @@
                 <label for="cityInput">Thành phố:</label>
                 <input type="text" id="cityInput" required>
                 <button type="submit">Tìm</button>
+                <p id="latitude">Vĩ độ</p>
+                <p id="longitude">Kinh độ</p>
+              
             </form>
             <button id="getLocationBtn">Lấy vị trí hiện tại</button>
             <div class="weather-info">
@@ -81,7 +91,7 @@
                 <p><strong>Hoàng hôn:</strong> <span id="sunset"></span></p>
             </div>
         </div>
-        <pre id="Json"></pre>
+        <pre id="Json">1.0</pre>
     </div>
 
 </body>
@@ -115,7 +125,6 @@
 
     // Function to display weather data on the page
     function displayWeatherData(data) {
-        console.log(data);
         var jsonData = JSON.stringify(data, null, 2);
 
         document.getElementById("Json").innerHTML = jsonData;
@@ -142,21 +151,25 @@
 
     // Function to get user's current position
     function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    getWeatherDataByCoords(latitude, longitude);
-                },
-                (error) => {
-                    console.error("Error getting geolocation:", error);
-                }
-            );
-        } else {
-            console.error("Geolocation is not supported by this browser.");
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        getWeatherDataByCoords(latitude, longitude);
+                        console.log(latitude, longitude);
+                        document.getElementById("latitude").innerText = 'vĩ độ '+latitude ;
+                        document.getElementById("longitude").innerText = 'kinh độ '+ longitude;
+
+                    },
+                    (error) => {
+                        console.error("Error getting geolocation:", error);
+                    }
+                );
+            } else {
+                console.error("Geolocation is not supported by this browser.");
+            }
         }
-    }
 
     // Event listener for form submission
     document.getElementById("weatherForm").addEventListener("submit", function (event) {
