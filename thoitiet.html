@@ -41,17 +41,18 @@
         background-color: #000;
         border: 1px solid #ccc;
         padding: 10px;
-        margin: 20px ;
+        margin: 20px;
     }
 
     .Grid {
         display: grid;
         grid-template-columns: auto 30%;
     }
+
     @media screen and (max-width: 800px) {
         .Grid {
-        display: block;
-    }
+            display: block;
+        }
 
     }
 </style>
@@ -62,12 +63,22 @@
             <h1>Thời tiết</h1>
             <form id="weatherForm">
                 <label for="cityInput">Thành phố:</label>
-                <input type="text" id="cityInput" required>
+                <input type="text" id="cityInput" >
+                <br>
+                <br>
+                <label for="latitudeInput">Vĩ độ:</label>
+                <input type="text" id="latitudeInput">
+                <br>
+                <label for="longitudeInput">Kinh độ:</label>
+                <input type="text" id="longitudeInput">
+
                 <button type="submit">Tìm</button>
                 <p id="latitude">Vĩ độ</p>
                 <p id="longitude">Kinh độ</p>
-              
+
             </form>
+            <button id="clearLocationBtn">Xoá vị trí</button>
+
             <button id="getLocationBtn">Lấy vị trí hiện tại</button>
             <div class="weather-info">
                 <p><strong>Thành Phố:</strong> <span id="city"></span></p>
@@ -149,40 +160,137 @@
         document.getElementById("sunset").textContent = "Mặt trời lặn: " + new Date(data.sys.sunset * 1000).toLocaleTimeString();
     }
 
-    // Function to get user's current position
-    function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
-                        getWeatherDataByCoords(latitude, longitude);
-                        console.log(latitude, longitude);
-                        document.getElementById("latitude").innerText = 'vĩ độ '+latitude ;
-                        document.getElementById("longitude").innerText = 'kinh độ '+ longitude;
-
-                    },
-                    (error) => {
-                        console.error("Error getting geolocation:", error);
-                    }
-                );
-            } else {
-                console.error("Geolocation is not supported by this browser.");
+    // Function to check whether to get weather data by city or coordinates on page load
+    function getWeatherDataOnPageLoad() {
+        const savedLocation = getSavedLocationFromLocalStorage();
+        if (savedLocation.latitude && savedLocation.longitude) {
+            // If there's a saved location, fetch weather data by coordinates
+            getWeatherDataByCoords(savedLocation.latitude, savedLocation.longitude);
+            // Populate the input fields with the saved values
+            document.getElementById("latitudeInput").value = savedLocation.latitude;
+            document.getElementById("longitudeInput").value = savedLocation.longitude;
+        } else {
+            // If there's no saved location, fetch weather data by city name (if available)
+            const city = document.getElementById("cityInput").value.trim();
+            if (city) {
+                getWeatherDataByCity(city);
             }
         }
+    }
+
+    // Function to get user's current position
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    getWeatherDataByCoords(latitude, longitude);
+                    console.log(latitude, longitude);
+                    document.getElementById("latitude").innerText = 'Vĩ độ: ' + latitude;
+                    document.getElementById("longitude").innerText = 'Kinh độ: ' + longitude;
+                },
+                (error) => {
+                    console.error("Error getting geolocation:", error);
+                }
+            );
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+        }
+    }
+
 
     // Event listener for form submission
     document.getElementById("weatherForm").addEventListener("submit", function (event) {
         event.preventDefault();
+
+        // Get the city, latitude, and longitude values from the input fields
         const city = document.getElementById("cityInput").value.trim();
+        const latitude = document.getElementById("latitudeInput").value.trim();
+        const longitude = document.getElementById("longitudeInput").value.trim();
+
         if (city) {
+            // If city is entered, fetch weather data by city name
             getWeatherDataByCity(city);
+        } else if (latitude && longitude) {
+            // If latitude and longitude are entered, fetch weather data by coordinates
+            getWeatherDataByCoords(latitude, longitude);
+        } else {
+            console.error("Please enter either the city or both latitude and longitude.");
         }
     });
 
     // Event listener for "Get Weather for Current Location" button
     document.getElementById("getLocationBtn").addEventListener("click", function () {
         getLocation();
+    });
+
+    // Function to save latitude and longitude to local storage
+    function saveLocationToLocalStorage(latitude, longitude) {
+        localStorage.setItem("savedLatitude", latitude);
+        localStorage.setItem("savedLongitude", longitude);
+    }
+
+    // Function to get saved latitude and longitude from local storage
+    function getSavedLocationFromLocalStorage() {
+        const savedLatitude = localStorage.getItem("savedLatitude");
+        const savedLongitude = localStorage.getItem("savedLongitude");
+        return { latitude: savedLatitude, longitude: savedLongitude };
+    }
+
+    // Function to clear saved location from local storage
+    function clearSavedLocationFromLocalStorage() {
+        localStorage.removeItem("savedLatitude");
+        localStorage.removeItem("savedLongitude");
+    }
+
+    // Event listener for form submission
+    document.getElementById("weatherForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get the city, latitude, and longitude values from the input fields
+        const city = document.getElementById("cityInput").value.trim();
+        const latitude = document.getElementById("latitudeInput").value.trim();
+        const longitude = document.getElementById("longitudeInput").value.trim();
+
+        if (city) {
+            // If city is entered, fetch weather data by city name
+            getWeatherDataByCity(city);
+            // Clear saved location from local storage if city is used for weather data
+            clearSavedLocationFromLocalStorage();
+        } else if (latitude && longitude) {
+            // If latitude and longitude are entered, fetch weather data by coordinates
+            getWeatherDataByCoords(latitude, longitude);
+            // Save latitude and longitude to local storage
+            saveLocationToLocalStorage(latitude, longitude);
+        } else {
+            console.error("Please enter either the city or both latitude and longitude.");
+        }
+    });
+
+    // Event listener for "Lấy vị trí hiện tại" (Get Location) button
+    document.getElementById("getLocationBtn").addEventListener("click", function () {
+        getLocation();
+    });
+
+    // Event listener for "Xoá vị trí" (Clear Location) button
+    document.getElementById("clearLocationBtn").addEventListener("click", function () {
+        // Clear saved location from local storage and reset input fields
+        clearSavedLocationFromLocalStorage();
+        document.getElementById("latitudeInput").value = "";
+        document.getElementById("longitudeInput").value = "";
+    });
+
+    // When the page is loaded, check if there's a saved location in local storage
+    document.addEventListener("DOMContentLoaded", function () {
+        const savedLocation = getSavedLocationFromLocalStorage();
+        if (savedLocation.latitude && savedLocation.longitude) {
+            // If there's a saved location, fetch weather data by coordinates
+            getWeatherDataByCoords(savedLocation.latitude, savedLocation.longitude);
+            // Populate the input fields with the saved values
+            document.getElementById("latitudeInput").value = savedLocation.latitude;
+            document.getElementById("longitudeInput").value = savedLocation.longitude;
+        }
     });
 
 </script>

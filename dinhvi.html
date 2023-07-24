@@ -1,26 +1,45 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<title>iPhone 4.0 geolocation demo</title>
-<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
-<script>
-function handler(location) {
-var message = document.getElementById("message");
-message.innerHTML ="<img src='http://maps.google.com/maps/api/staticmap?center=" + location.coords.latitude + "," + location.coords.longitude + "&zoom=14&size=256x256&maptype=roadmap&sensor=false&markers=color:blue%7Clabel:ABC%7C" + location.coords.latitude + "," + location.coords.longitude + "' />";
-
-
-
-message.innerHTML+="<p>Longitude: " + location.coords.longitude + "</p>";
-message.innerHTML+="<p>Accuracy: " + location.coords.accuracy + "</p>";
-message.innerHTML+="<p>Latitude: " + location.coords.latitude + "</p>";
-
-
-
-}
-navigator.geolocation.getCurrentPosition(handler);
-</script>
+    <title>Geolocation API Example</title>
 </head>
 <body>
-<div id="message">Location unknown</div>
+    <h1>Get User Location</h1>
+    <p id="location"></p>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            document.getElementById("location").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("location").innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("location").innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("location").innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+
+        getLocation();
+    </script>
 </body>
 </html>
