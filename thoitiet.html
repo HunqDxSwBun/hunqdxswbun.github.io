@@ -130,7 +130,7 @@
         document.getElementById("Json").innerHTML = jsonData;
         document.getElementById("city").textContent = data.name + ' ' + data.sys.country;
         document.getElementById("weather").innerHTML = data.weather[0].icon;
-        document.getElementById("temperature").textContent = data.main.temp + " °C";
+        document.getElementById("temperature").textContent = Math.round(data.main.temp) + "°C";
         document.getElementById("main").textContent = data.weather[0].main;
         document.getElementById("description").textContent = data.weather[0].description;
         document.getElementById("lon").textContent = "Kinh độ: " + data.coord.lon;
