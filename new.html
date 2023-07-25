@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate Total Money</title>
 </head>
+
 <body>
-    <h1>Calculate Total Money</h1>
-    <label for="cash">Tiền mặt:</label>
-    <input type="number" id="cash" placeholder="Nhập số tiền mặt"><br>
-    <label for="card">Tiền thẻ:</label>
-    <input type="number" id="card" placeholder="Nhập số tiền thẻ"><br>
-    <button onclick="calculateTotal()">Nhập</button><br>
-    <p id="TotalMoney">Tổng tiền: 0</p>
-
-    <script>
-        // Đảm bảo gọi hàm này khi trang đã tải xong
-        document.addEventListener('DOMContentLoaded', function() {
-            // Lấy giá trị tổng tiền từ localStorage (nếu tồn tại), nếu không thì mặc định là 0
-            let totalValue = parseInt(localStorage.getItem('totalMoney')) || 0;
-
-            // Hiển thị giá trị tổng tiền trong phần tử TotalMoney
-            const TotalMoney = document.getElementById('TotalMoney');
-            TotalMoney.innerText = formatMoney(totalValue);
-        });
-
-        function calculateTotal() {
-            const cashValue = document.getElementById('cash').value;
-            const cardValue = document.getElementById('card').value;
-            const TotalMoney = document.getElementById('TotalMoney');
-
-            // Lấy giá trị tổng tiền từ localStorage (nếu tồn tại), nếu không thì mặc định là 0
-            let totalValue = parseInt(localStorage.getItem('totalMoney')) || 0;
-
-            // Kiểm tra nếu người dùng không nhập giá trị thì mặc định là 0
-            const cashAmount = parseInt(cashValue) || 0;
-            const cardAmount = parseInt(cardValue) || 0;
-
-            // Tính tổng giá trị mới từ người dùng
-            totalValue = totalValue + cashAmount + cardAmount;
-
-            // Lưu tổng tiền mới vào localStorage để giữ lại giá trị cho lần nhập tiếp theo
-            localStorage.setItem('totalMoney', totalValue);
-
-            TotalMoney.innerText = formatMoney(totalValue); // Thêm dấu phẩy mỗi 3 chữ số
-        }
-
-        // Hàm định dạng số với dấu phẩy mỗi 3 chữ số
-        function formatMoney(number) {
-            return number.toLocaleString();
-        }
-    </script>
+    <canvas id="myChart" width="300" height="300"></canvas>
 </body>
+<script>
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Red", "Blue", "Yellow"],
+            datasets: [{
+                data: [30, 50, 20],
+                backgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ]
+            }]
+        },
+        options: {
+            tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                    label: function (tooltipItem, data) {
+                        var allData = data.datasets[tooltipItem.datasetIndex].data;
+                        var tooltipLabel = data.labels[tooltipItem.index];
+                        var tooltipData = allData[tooltipItem.index];
+                        return tooltipLabel + ": " + tooltipData + "%";
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </html>

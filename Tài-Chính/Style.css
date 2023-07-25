@@ -1,11 +1,33 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --CL:black;
+    --BG:#1DCC70;
+    --CARD: #ffffff;
+}
 body {
     line-height: 1.6;
-    background-color: #eeeeee;
+    background-color: var(--BG);
+    color: var(--CL);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.dark-mode {
+    --CL:white;
+    --BG:#000000;
+    --CARD: #111111;
+}
+#toggle-button {
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .Container {
@@ -13,7 +35,7 @@ body {
 }
 
 .Card {
-    background-color: #ffffff;
+    background-color: var(--CARD);
     border-radius: 10px;
     padding: 10px 20px;
     width: 100%;
@@ -21,24 +43,59 @@ body {
 }
 
 .Card.Main .TotalMoney {
-  text-align: center;
+    text-align: center;
 }
+
+.Container .Wallet {
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+.Wallet .Card.Money {
+    margin: 0;
+}
+
+.Wallet .Card.Money p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Wallet .Card.Money h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.Wallet .Card.Money h1.green {
+    color: #1dcc70;
+}
+
+.Wallet .Card.Money h1.red {
+    color: #ff4545;
+}
+
+
 .Card.Main hr {
     height: 2px;
-    background-color: red;
+    background-color: var(--BG);
     border: none;
     margin: 10px 0;
 }
+
 .FuncBlock {
     width: 100%;
+    overflow-x: auto;
     margin: 10px 0;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 20% 20% ;
 }
+
 .FuncBlock .Func {
     cursor: pointer;
     text-align: center;
 }
+
 .FuncBlock .Func i {
     color: #ffffff;
     height: 40px;
@@ -52,30 +109,108 @@ body {
     justify-content: center;
     margin: auto;
 }
+
 .FuncBlock .Func strong {
     font-size: 14px;
     font-weight: 600;
 }
-.FuncBlock .Func:nth-child(1) i{
+
+.FuncBlock .Func:nth-child(1) i {
     background-color: #1DCC70;
 }
-.FuncBlock .Func:nth-child(2) i{
+
+.FuncBlock .Func:nth-child(2) i {
     background-color: #ff5555;
 }
-.FuncBlock .Func:nth-child(3) i{
-    background-color: #ffa947;
+
+.FuncBlock .Func:nth-child(3) i {
+    background-color: #2456ff;
 }
-.FuncBlock .Func:nth-child(4) i{
+
+.FuncBlock .Func:nth-child(4) i {
     background-color: #5199ff;
 }
-.FuncBlock .Func:nth-child(5) i{
-    background-color: #2456ff;
+
+.FuncBlock .Func:nth-child(5) i {
+    background-color: #ffa947;
+}
+
+.FuncBlock .Func:nth-child(6) i {
+    background-color: #fd75ae;
 }
 
 /* .FuncBlock .Func.active i {
     border: 2px solid  ;
 } */
 
-.Tabcontent {
+
+.Card.Card.Tabcontent {
     display: none;
+}
+
+#Transactions p {
+    margin: 5px 0;
+}
+
+.Transactions .Button {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+.Transactions .Button button {
+    color: var(--BG);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    width: 100%;
+    margin: 2px 0;
+    border-radius: 10px;
+    background-color: #1DCC70;
+    border: none;
+}
+
+
+.Card.Tabcontent label {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+}
+
+.Card.Tabcontent input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: right;
+    border-bottom: 2px solid #eee;
+    border-radius: 0;
+    height: 40px;
+    color: var(--CL);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Card.Tabcontent button {
+    color: var(--BG);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 20px;
+    background-color: #1DCC70;
+    border: none;
+}
+
+.Card input:focus {
+    outline: none;
+}
+
+#CoNenMuaKhong .alert.red {
+    color: red;
+}
+
+#CoNenMuaKhong .alert.green {
+    color: #1DCC70;
 }
