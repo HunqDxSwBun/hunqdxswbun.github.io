@@ -1302,6 +1302,7 @@ header .HeadApp h1 {
 .dashboard {
     padding: 16px 16px 14px;
     background-color: var(--CardBG);
+    display: block;
     position: fixed;
     top: 0;
     width: 100%;
@@ -1433,7 +1434,7 @@ header .HeadApp h1 {
 
 /* PLAYLIST */
 .playlist {
-    margin-top: 255px;
+    margin-top: 2px;
     padding: 12px 12px 60px 12px;
 }
 

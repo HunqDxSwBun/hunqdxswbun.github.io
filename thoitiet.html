@@ -49,7 +49,7 @@
         grid-template-columns: auto 30%;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 900px) {
         .Grid {
             display: block;
         }
@@ -64,18 +64,13 @@
             <form id="weatherForm">
                 <label for="cityInput">Thành phố:</label>
                 <input type="text" id="cityInput" >
-                <br>
-                <br>
+                
                 <label for="latitudeInput">Vĩ độ:</label>
                 <input type="text" id="latitudeInput">
-                <br>
                 <label for="longitudeInput">Kinh độ:</label>
                 <input type="text" id="longitudeInput">
 
                 <button type="submit">Tìm</button>
-                <p id="latitude">Vĩ độ</p>
-                <p id="longitude">Kinh độ</p>
-
             </form>
             <button id="clearLocationBtn">Xoá vị trí</button>
 
@@ -167,8 +162,6 @@
             // If there's a saved location, fetch weather data by coordinates
             getWeatherDataByCoords(savedLocation.latitude, savedLocation.longitude);
             // Populate the input fields with the saved values
-            document.getElementById("latitudeInput").value = savedLocation.latitude;
-            document.getElementById("longitudeInput").value = savedLocation.longitude;
         } else {
             // If there's no saved location, fetch weather data by city name (if available)
             const city = document.getElementById("cityInput").value.trim();

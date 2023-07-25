@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<!-- Shift + Alt + F  để sắp xếp lại code ( format code )-->
+<html>
+
+<head>
+    <!-- Tiêu đề trang -->
+    <title>Quản lý chi tiêu thông minh</title>
+
+    <!-- Bộ giải mã và phân loại thiết bị -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Đảm bảo đặt meta tag sau -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Biểu tượng cho web -->
+    <link rel="icon" href="./IMG/icon.png" />
+
+    <!-- Biểu tượng iPhone -->
+    <link rel="apple-touch-icon" href="./IMG/icon.png" sizes="150x150" />
+    <!-- CSS của web -->
+    <link rel="stylesheet" href="./Style.css" />
+
+    <!-- FontAweSome fas fa icon -->
+    <script src="https://kit.fontawesome.com/9392097706.js" crossorigiln="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="Container">
+        <div class="Card Main">
+            <div class="TotalMoney">
+                Tổng số tiền
+                <h1>
+                    <span id="displayTotal"></span><strong>đ</strong>
+                </h1>
+                <p>Số tiền mặt: <span id="displayCash">0</span></p>
+                <p>Số tiền thẻ: <span id="displayCard">0</span></p>
+
+            </div>
+            <hr>
+            <div class="FuncBlock">
+                <div class="Func" onclick="openTab(event, 'A')">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <strong>Thêm tiền</strong>
+                </div>
+                <div class="Func" onclick="openTab(event, 'B')">
+                    <i class="fa-solid fa-circle-minus"></i>
+                    <strong>Trừ tiền</strong>
+                </div>
+                <div class="Func" onclick="openTab(event, 'C')">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <strong>Mua đồ</strong>
+                </div>
+                <div class="Func" onclick="openTab(event, 'D')">
+                    <i class="fa-solid fa-receipt"></i>
+                    <strong>Nợ</strong>
+                </div>
+                <div class="Func" onclick="openTab(event, 'E')">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                    <strong>Tiết kiệm</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="Tab">
+            <div class="Card Tabcontent" id="A">
+                <label for="cash">Tiền mặt:</label>
+                <input type="number"  id="cash" name="cash" value="" pattern="[0-9]*">
+                <br>
+                <label for="card">Tiền thẻ:</label>
+                <input type="number" id="card" name="card" min="0" step="1000" value="0">
+                <br>
+                <input type="text" id="cashNote" name="cashNote" placeholder="Ghi chú (nếu có)">
+                <button onclick="addMoney()">Nhập</button>
+            </div>
+            <div class="Card Tabcontent" id="B">
+                <label for="cashWithdraw">Tiền mặt rút:</label>
+                <input type="number" id="cashWithdraw" name="cashWithdraw" min="0" step="1000" value="0">
+                <br>
+                <label for="cardWithdraw">Tiền thẻ rút:</label>
+                <input type="number" id="cardWithdraw" name="cardWithdraw" min="0" step="1000" value="0">
+                <br>
+                <input type="text" id="cashWithdrawNote" name="cashWithdrawNote" placeholder="Ghi chú (nếu có)">
+
+                <button onclick="addMoney()">Nhập</button>
+            </div>
+            <div class="Card Tabcontent" id="C">
+                C
+            </div>
+            <div class="Card Tabcontent" id="D">
+                D
+            </div>
+            <div class="Card Tabcontent" id="E">
+                E
+            </div>
+        </div>
+
+        <div class="Card Transactions">
+            <h1>Lịch sử giao dịch</h1>
+            <div id="Transactions">
+            </div>
+            <button onclick="exportTransactions()">Xuất giao dịch</button>
+            <button onclick="clearTransactions()">Xoá giao dịch</button>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+<script src="./Script.js"></script>
+
+</html>
