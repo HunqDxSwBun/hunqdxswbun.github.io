@@ -70,20 +70,20 @@
         <div class="Tab">
             <div class="Card Tabcontent" id="A">
                 <label for="cash">Tiền mặt:</label>
-                <input type="number"  id="cash" name="cash" value="" pattern="[0-9]*">
+                <input type="number"  id="cash" name="cash" pattern="[0-9]*">
                 <br>
                 <label for="card">Tiền thẻ:</label>
-                <input type="number" id="card" name="card" min="0" step="1000" value="0">
+                <input type="number" id="card" name="card"  pattern="[0-9]*" >
                 <br>
                 <input type="text" id="cashNote" name="cashNote" placeholder="Ghi chú (nếu có)">
                 <button onclick="addMoney()">Nhập</button>
             </div>
             <div class="Card Tabcontent" id="B">
                 <label for="cashWithdraw">Tiền mặt rút:</label>
-                <input type="number" id="cashWithdraw" name="cashWithdraw" min="0" step="1000" value="0">
+                <input type="number" id="cashWithdraw" name="cashWithdraw" pattern="[0-9]*">
                 <br>
                 <label for="cardWithdraw">Tiền thẻ rút:</label>
-                <input type="number" id="cardWithdraw" name="cardWithdraw" min="0" step="1000" value="0">
+                <input type="number" id="cardWithdraw" name="cardWithdraw" pattern="[0-9]*">
                 <br>
                 <input type="text" id="cashWithdrawNote" name="cashWithdrawNote" placeholder="Ghi chú (nếu có)">
 
