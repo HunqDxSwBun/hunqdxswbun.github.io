@@ -34,6 +34,7 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    background-color: var(--MAIN) !important;
 }
 
 .Container {
@@ -65,6 +66,9 @@ button {
     margin: 0;
     overflow: auto;
 }
+.Wallet .Card.Money.Alert {
+    background-color: #ff6600;
+}
 
 .Wallet .Card.Money p {
     font-size: 16px;
@@ -89,7 +93,7 @@ button {
 }
 
 .Wallet .Card.Money h1.green {
-    color: #1dcc70;
+    color: var(--MAIN);
 }
 
 .Wallet .Card.Money h1.red {

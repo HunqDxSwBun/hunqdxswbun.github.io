@@ -2,6 +2,14 @@ function openTab(evt, Tabname) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
+    // Check if the Tabname is already active, then hide it and return
+    var currentTab = document.getElementById(Tabname);
+    if (currentTab.style.display === "block") {
+        currentTab.style.display = "none";
+        evt.currentTarget.className = evt.currentTarget.className.replace(" active", "");
+        return;
+    }
+
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("Tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -14,10 +22,11 @@ function openTab(evt, Tabname) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(Tabname).style.display = "block";
+    // Show the current tab and add an "active" class to the button that opened the tab
+    currentTab.style.display = "block";
     evt.currentTarget.className += " active";
 }
+
 
 let cashAmount = 0;
 let cardAmount = 0;
@@ -225,6 +234,7 @@ function saveSavings() {
         savingsTotalDiv.innerText = savingsAmount.toLocaleString();
         localStorage.setItem('savingsAmount', savingsAmount);
 
+        addMoney(-savingsValue);
         transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
@@ -247,6 +257,7 @@ function withdrawSavings() {
         const savingsTotalDiv = document.getElementById('savingsTotal');
         savingsTotalDiv.innerText = savingsAmount.toLocaleString();
 
+        addMoney(withdrawalValue);
         localStorage.setItem('savingsAmount', savingsAmount);
         transactionMessage += 'Số dư Tiết Kiệm -' + withdrawalValue.toLocaleString() + 'đ.';
         displayTransaction(transactionMessage);
@@ -263,6 +274,10 @@ function withdrawSavings() {
     document.getElementById('withdrawalAmount').dataset.rawValue = 0;
 
 }
+
+
+
+
 
 
 function TinhTienMuaHang() {
@@ -409,15 +424,47 @@ function formatWithDots(value) {
 
 
 function Rule503020() {
+    document.getElementById('ToltalMoney').innerText = formatWithDots(totalAmount + savingsAmount) ;
+
+    
+    console.log('hi');
     totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
+
     var v50 = totalAmount * 50 / 100;
     var v30 = totalAmount * 30 / 100;
     var v20 = totalAmount * 20 / 100;
 
+    var v502 = (totalAmount+savingsAmount) * 50 / 100;
+    var v202 = 100 - 50 - (savingsAmount * 100 ) / (totalAmount+savingsAmount);
+    var v302 = (totalAmount+savingsAmount) * v202 / 100;
+
+
+    var v203 = (savingsAmount * 100 ) / (totalAmount+savingsAmount);
+    var v503 = totalAmount * 70 / 100;
+    var v303 = totalAmount * 30 / 100;
+
+    console.log(savingsAmount);
     if (savingsAmount <= 0 ) {
         document.getElementById('save20').innerText = '+'+ formatWithDots(v20) + 'đ';
+        document.getElementById('ThietYeu').innerText = formatWithDots(v50);
+        document.getElementById('TieuSai').innerText = formatWithDots(v30);
+        document.getElementById('ptsave50').innerText = '50%';
+        document.getElementById('ptsave30').innerText = '30%';
+        document.getElementById('ptsave20').innerText = '20%';
+    }else {
+        document.getElementById('save20').innerText = '';
+        document.getElementById('ThietYeu').innerText = formatWithDots(v502);
+        document.getElementById('TieuSai').innerText = formatWithDots(v302);
+        document.getElementById('ptsave50').innerText = '50%';
+        document.getElementById('ptsave30').innerText = '30%';
+        document.getElementById('ptsave20').innerText = '20%';
     }
-    document.getElementById('ThietYeu').innerText = formatWithDots(v50);
-    document.getElementById('TieuSai').innerText = formatWithDots(v30);
-    
+    if (v203 > 30) {
+        document.getElementById('save20').innerText = '';
+        document.getElementById('ThietYeu').innerText = formatWithDots(v503);
+        document.getElementById('TieuSai').innerText = formatWithDots(v303);
+        document.getElementById('ptsave50').innerText = (100 - v203)/2 +'%';
+        document.getElementById('ptsave30').innerText = (100 - v203)/2 +'%';
+        document.getElementById('ptsave20').innerText = v203 +'%';
+    }
 }
