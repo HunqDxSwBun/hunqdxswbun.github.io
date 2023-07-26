@@ -272,26 +272,26 @@ function TinhTienMuaHang() {
     if (GiaSanPham >= totalAmount) {
         if (ptramgiamgia >= 50) {
             CoNenMuaKhong.innerHTML = `
-        <p class="alert red">Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-        <p class="alert green" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
+        <p class="alert red">⚠ Nếu mua sẽ hết <strong>${ptram}%</strong> tổng số tiền của bạn.</p>
+        <p class="alert green" >✅ <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
         `
         } else {
             CoNenMuaKhong.innerHTML = `
-            <p class="alert red" >Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-            <p class="alert red" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
+            <p class="alert red" >⚠ Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
+            <p class="alert red" >⚠ <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
             `
         }
     }
     if (GiaSanPham < totalAmount) {
         if (ptramgiamgia >= 20) {
             CoNenMuaKhong.innerHTML = `
-        <p class="alert green">Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-        <p class="alert green" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
+        <p class="alert green">✅ Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
+        <p class="alert green" >✅ <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
         `
         } else {
             CoNenMuaKhong.innerHTML = `
-            <p class="alert green">Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-            <p>Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
+            <p class="alert green">✅Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
+            <p><strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
             `
         }
     }
