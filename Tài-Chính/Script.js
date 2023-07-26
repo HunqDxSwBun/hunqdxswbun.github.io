@@ -272,12 +272,12 @@ function TinhTienMuaHang() {
     if (GiaSanPham >= totalAmount) {
         if (ptramgiamgia >= 50) {
             CoNenMuaKhong.innerHTML = `
-        <p class="alert red">⚠ Nếu mua sẽ hết <strong>${ptram}%</strong> tổng số tiền của bạn.</p>
+        <p class="alert red">⚠ Nếu mua sẽ hết <strong>${ptram.toFixed(2)}%</strong> tổng số tiền của bạn.</p>
         <p class="alert green" >✅ <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
         `
         } else {
             CoNenMuaKhong.innerHTML = `
-            <p class="alert red" >⚠ Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
+            <p class="alert red" >⚠ Nếu mua sẽ hết <strong>${ptram.toFixed(2)}%</strong> tổng số tiền của bạn.</p>
             <p class="alert red" >⚠ <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
             `
         }
@@ -285,12 +285,12 @@ function TinhTienMuaHang() {
     if (GiaSanPham < totalAmount) {
         if (ptramgiamgia >= 20) {
             CoNenMuaKhong.innerHTML = `
-        <p class="alert green">✅ Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
+        <p class="alert green">✅ Nếu mua sẽ hết <strong>${ptram.toFixed(2)}%</strong> tổng số tiền của bạn.</p>
         <p class="alert green" >✅ <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
         `
         } else {
             CoNenMuaKhong.innerHTML = `
-            <p class="alert green">✅Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
+            <p class="alert green">✅Nếu mua sẽ hết <strong>${ptram.toFixed(2)}%</strong> tổng số tiền của bạn.</p>
             <p><strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
             `
         }
@@ -402,3 +402,32 @@ function formatWithDots(value) {
     return parts.join('.');
 }
 
+
+// let cashAmount = 0;
+// let cardAmount = 0;
+// let totalAmount = 0;
+// let transactionsHistory = [];
+// let debtAmount = 0;
+// let savingsAmount = 0;
+
+
+setTimeout(() => {
+    var xValues = ["Tổng", "Tiết kiệm", "Nợ"];
+    var yValues = [totalAmount, savingsAmount, debtAmount];
+    var barColors = [
+        "#4CAF50", // Xanh lá cây
+        "#2196F3", // Xanh dương
+        "#FFC107" // Vàng
+    ];
+
+    new Chart("myChart", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        }
+    });
+}, 100);

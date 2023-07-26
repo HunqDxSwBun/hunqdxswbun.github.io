@@ -85,11 +85,13 @@
             <div class="Card Tabcontent" id="A">
                 <h1>Thu nhập</h1>
                 <label for="cash">Tiền mặt:</label>
-                <input type="text" class="inputFM" id="cash" name="cash" pattern="[0-9]*" onfocus="this.value=''" value="0">
+                <input type="text" class="inputFM" id="cash" name="cash" pattern="[0-9]*" onfocus="this.value=''"
+                    value="0">
                 <br>
                 <br>
                 <label for="card">Tiền thẻ:</label>
-                <input type="text" class="inputFM" id="card" name="card" pattern="[0-9]*" onfocus="this.value=''" value="0">
+                <input type="text" class="inputFM" id="card" name="card" pattern="[0-9]*" onfocus="this.value=''"
+                    value="0">
                 <br>
                 <br>
                 <label for="cashNote">Ghi chú:</label>
@@ -99,13 +101,13 @@
             <div class="Card Tabcontent" id="B">
                 <h1>Chi tiêu</h1>
                 <label for="cashWithdraw">Tiền mặt rút:</label>
-                <input type="text" class="inputFM" id="cashWithdraw" name="cashWithdraw" pattern="[0-9]*" onfocus="this.value=''"
-                    value="0">
+                <input type="text" class="inputFM" id="cashWithdraw" name="cashWithdraw" pattern="[0-9]*"
+                    onfocus="this.value=''" value="0">
                 <br>
                 <br>
                 <label for="cardWithdraw">Tiền thẻ rút:</label>
-                <input type="text" class="inputFM" id="cardWithdraw" name="cardWithdraw" pattern="[0-9]*" onfocus="this.value=''"
-                    value="0">
+                <input type="text" class="inputFM" id="cardWithdraw" name="cardWithdraw" pattern="[0-9]*"
+                    onfocus="this.value=''" value="0">
                 <br>
                 <br>
                 <label for="cashWithdrawNote">Ghi chú:</label>
@@ -115,14 +117,15 @@
             <div class="Card Tabcontent" id="D">
                 <h1>Ghi nợ</h1>
                 <label for="debtAmount">Số tiền nợ:</label>
-                <input type="text" class="inputFM" id="debtAmount" name="debtAmount" pattern="[0-9]*" onfocus="this.value=''"
-                    value="0">
+                <input type="text" class="inputFM" id="debtAmount" name="debtAmount" pattern="[0-9]*"
+                    onfocus="this.value=''" value="0">
                 <br><br>
                 <label for="debtWho">Của ai:</label>
                 <input type="text" id="debtWho" onfocus="this.value=''" value="...">
                 <br><br>
                 <label for="payAmount">Số tiền trả:</label>
-                <input type="text" class="inputFM" id="payAmount" name="payAmount" pattern="[0-9]*" onfocus="this.value=''" value="0">
+                <input type="text" class="inputFM" id="payAmount" name="payAmount" pattern="[0-9]*"
+                    onfocus="this.value=''" value="0">
                 <br><br>
                 <label for="payWho">Của ai:</label>
                 <input type="text" id="payWho" onfocus="this.value=''" value="...">
@@ -131,8 +134,8 @@
             <div class="Card Tabcontent" id="E">
                 <h1>Tiết kiệm</h1>
                 <label for="savingsAmount">Số tiền tiết kiệm:</label>
-                <input type="text" class="inputFM" id="savingsAmount" name="savingsAmount" pattern="[0-9]*" onfocus="this.value=''"
-                    value="0">
+                <input type="text" class="inputFM" id="savingsAmount" name="savingsAmount" pattern="[0-9]*"
+                    onfocus="this.value=''" value="0">
                 <button onclick="saveSavings()">Tiết kiệm</button>
                 <br>
                 <label for="withdrawalAmount">Rút tiền tiết kiệm:</label>
@@ -144,7 +147,8 @@
             <div class="Card Tabcontent" id="C">
                 <h1>Mua đồ</h1>
                 <label for="">Giá gốc sản phẩm bạn tính mua ?</label>
-                <input id="GiaGocSanPham" type="text" class="inputFM" pattern="[0-9]*" onfocus="this.value=''" value="0">
+                <input id="GiaGocSanPham" type="text" class="inputFM" pattern="[0-9]*" onfocus="this.value=''"
+                    value="0">
                 <br>
                 <br>
                 <label for="">Giá sản phẩm hiện tại ?</label>
@@ -166,6 +170,8 @@
 
         </div>
 
+        <canvas id="myChart" style="max-width:600px;margin: 20px 0;"></canvas>
+
         <div class="Card Transactions">
             <h1>Lịch sử giao dịch</h1>
             <hr>
@@ -186,6 +192,7 @@
     </footer>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./Script.js"></script>
 <script src="./DarkMode.js"></script>
