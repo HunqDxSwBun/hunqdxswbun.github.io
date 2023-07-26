@@ -217,7 +217,7 @@ function recordDebt() {
 }
 
 function saveSavings() {
-    let transactionMessage = new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ';
+    let transactionMessage = '[' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + '] ';
     const savingsValue = parseInt(document.getElementById('savingsAmount').dataset.rawValue) || 0;
     if (savingsValue > 0) {
         savingsAmount += savingsValue;
