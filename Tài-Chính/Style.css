@@ -265,3 +265,25 @@ footer {
 .dark-mode footer {
     color: var(--MAIN);
 }
+
+.marquee-parent {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+  }
+  .marquee-child {
+    display: block;
+    width: max-content;
+    height: 40px;
+    position: absolute;
+    animation: marquee 8s linear infinite; /* change 5s value to your desired speed */
+  }
+  @keyframes marquee {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -500px /* same as your text width */
+    }
+  }
