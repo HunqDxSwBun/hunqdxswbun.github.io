@@ -101,6 +101,10 @@ function addMoney(x) {
     document.getElementById('card').value = 0;
     document.getElementById('cashWithdraw').value = 0;
     document.getElementById('cardWithdraw').value = 0;
+    document.getElementById('cash').dataset.rawValue = 0;
+    document.getElementById('card').dataset.rawValue = 0;
+    document.getElementById('cashWithdraw').dataset.rawValue = 0;
+    document.getElementById('cardWithdraw').dataset.rawValue = 0;
 
     localStorage.setItem('cashAmount', cashAmount);
     localStorage.setItem('cardAmount', cardAmount);
@@ -115,35 +119,26 @@ function addMoney(x) {
             transactionMessage += 'Số dư Tiền Mặt +' + cashValue.toLocaleString() + 'đ.';
             if (cashNote !== '') {
                 transactionMessage += cashNote + '.';
-                
+
             }
         }
 
         if (cardValue > 0) {
-            if (transactionMessage !== new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ') {
-                transactionMessage += '\n' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ';
-            }
-            transactionMessage += 'Đã thêm +' + cardValue.toLocaleString() + 'đ vào tài khoản [Tiền thẻ].';
+            transactionMessage += 'Số dư Tiền Thẻ +' + cardValue.toLocaleString() + 'đ.';
             if (cashNote !== '') {
                 transactionMessage += cashNote + '.';
             }
         }
 
         if (cashWithdrawValue > 0) {
-            if (transactionMessage !== new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ') {
-                transactionMessage += '\n' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ';
-            }
-            transactionMessage += 'Đã trừ -' + cashWithdrawValue.toLocaleString() + 'đ từ tài khoản [Tiền mặt].';
+            transactionMessage += 'Số dư Tiền Mặt -' + cashWithdrawValue.toLocaleString() + 'đ.';
             if (cashWithdrawNote !== '') {
                 transactionMessage += cashWithdrawNote + '.';
             }
         }
 
         if (cardWithdrawValue > 0) {
-            if (transactionMessage !== new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ') {
-                transactionMessage += '\n' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ';
-            }
-            transactionMessage += 'Đã trừ -' + cardWithdrawValue.toLocaleString() + 'đ từ tài khoản [Tiền thẻ].';
+            transactionMessage += 'Số dư Tiền Mặt -' + cardWithdrawValue.toLocaleString() + 'đ.';
             if (cashWithdrawNote !== '') {
                 transactionMessage += cashWithdrawNote + '.';
             }
@@ -176,7 +171,7 @@ function recordDebt() {
     const payWho = document.getElementById('payWho').value;
     const payAmount = parseInt(document.getElementById('payAmount').dataset.rawValue) || 0;
 
-    let transactionMessage = new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + ' - ';
+    let transactionMessage = '[' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + '] ';
 
     if (debtValue > 0) {
         addMoney(debtValue)
@@ -184,7 +179,7 @@ function recordDebt() {
         const tiennoDiv = document.getElementById('tienno');
         tiennoDiv.innerText = debtAmount.toLocaleString();
         localStorage.setItem('debtAmount', debtAmount);
-        transactionMessage += 'Đã mượn +' + debtValue.toLocaleString() + 'đ của ' + debtWho + ' vào tài khoản [Tiền mặt].';
+        transactionMessage += 'Số dư Tiền Mặt +' + debtValue.toLocaleString() + 'đ. Mượn của ' + debtWho + '.';
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
@@ -197,7 +192,7 @@ function recordDebt() {
             const tiennoDiv = document.getElementById('tienno');
             tiennoDiv.innerText = debtAmount.toLocaleString();
             localStorage.setItem('debtAmount', debtAmount);
-            transactionMessage += 'Đã trả -' + payAmount.toLocaleString() + 'đ cho ' + payWho + ' bằng tài khoản [Tiền mặt].';
+            transactionMessage += 'Số dư Tiền Mặt -' + payAmount.toLocaleString() + 'đ Trả cho ' + payWho + '.';
             displayTransaction(transactionMessage);
             transactionsHistory.unshift(transactionMessage);
             SaveHistory();
@@ -210,8 +205,11 @@ function recordDebt() {
 
     document.getElementById('debtWho').value = '...';
     document.getElementById('payWho').value = '...';
+
     document.getElementById('debtAmount').value = 0;
     document.getElementById('payAmount').value = 0;
+    document.getElementById('debtAmount').dataset.rawValue = 0;
+    document.getElementById('payAmount').dataset.rawValue = 0;
 
 }
 
@@ -232,6 +230,8 @@ function saveSavings() {
     }
     document.getElementById('savingsAmount').value = 0;
     document.getElementById('withdrawalAmount').value = 0;
+    document.getElementById('savingsAmount').dataset.rawValue = 0;
+    document.getElementById('withdrawalAmount').dataset.rawValue = 0;
 }
 
 
@@ -254,6 +254,8 @@ function withdrawSavings() {
     }
     document.getElementById('savingsAmount').value = 0;
     document.getElementById('withdrawalAmount').value = 0;
+    document.getElementById('savingsAmount').dataset.rawValue = 0;
+    document.getElementById('withdrawalAmount').dataset.rawValue = 0;
 
 }
 
@@ -276,7 +278,7 @@ function TinhTienMuaHang() {
         } else {
             CoNenMuaKhong.innerHTML = `
             <p class="alert red" >Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-            <p class="alert red" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgiaptram.toFixed(1)}%</strong> so với giá gốc.</p>
+            <p class="alert red" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
             `
         }
     }
@@ -284,12 +286,12 @@ function TinhTienMuaHang() {
         if (ptramgiamgia >= 20) {
             CoNenMuaKhong.innerHTML = `
         <p class="alert green">Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-        <p class="alert green" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgiaptram.toFixed(1)}%</strong> so với giá gốc.</p>
+        <p class="alert green" >Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
         `
         } else {
             CoNenMuaKhong.innerHTML = `
             <p class="alert green">Nếu mua sẽ hết <strong>${ptram.toFixed(1)}%</strong> tổng số tiền của bạn.</p>
-            <p>Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgiaptram.toFixed(1)}%</strong> so với giá gốc.</p>
+            <p>Giảm được <strong>${giamgia.toLocaleString()}đ | ${ptramgiamgia.toFixed(1)}%</strong> so với giá gốc.</p>
             `
         }
     }
@@ -337,11 +339,9 @@ function clearTransactions() {
 
 function changeColor() {
     var spanElements = document.querySelectorAll('.Card.Money h1 ');
-
     for (var i = 0; i < spanElements.length; i++) {
         var spanElement = spanElements[i];
         var value = parseFloat(spanElement.innerText);
-
 
         if (value < 0) {
             spanElement.classList.add('red');
@@ -354,6 +354,18 @@ function changeColor() {
             spanElement.classList.remove('red', 'green');
         }
     }
+
+    //Lịch sử giao dịch 
+    const transactions = document.querySelectorAll('#Transactions p');
+
+    // Duyệt qua từng thẻ p để thêm lớp CSS tương ứng
+    transactions.forEach((p) => {
+        if (p.textContent.includes('+')) {
+            p.classList.add('green');
+        } else if (p.textContent.includes('-')) {
+            p.classList.add('red');
+        }
+    });
 }
 
 // Call the function when the page loads and whenever the values change
@@ -367,31 +379,26 @@ function Clear() {
 const inputElements = document.querySelectorAll('.inputFM');
 inputElements.forEach((input) => {
     input.addEventListener('input', formatNumber);
-  });
+});
 
 function formatNumber(event) {
-  let input = event.target;
-  let rawValue = input.value.replace(/\./g, ''); // Lưu trữ giá trị gốc (loại bỏ dấu chấm)
-  let formattedValue = formatWithDots(rawValue);
-  input.value = formattedValue;
-  input.dataset.rawValue = rawValue; // Lưu trữ giá trị gốc trong thuộc tính 'data-raw-value'
+    let input = event.target;
+    let rawValue = input.value.replace(/\./g, ''); // Lưu trữ giá trị gốc (loại bỏ dấu chấm)
+    let formattedValue = formatWithDots(rawValue);
+    input.value = formattedValue;
+    input.dataset.rawValue = rawValue; // Lưu trữ giá trị gốc trong thuộc tính 'data-raw-value'
 }
 
 function formatWithDots(value) {
-  if (isNaN(value)) {
-    return ''; // Nếu không phải là số thì trả về chuỗi rỗng
-  }
+    if (isNaN(value)) {
+        return ''; // Nếu không phải là số thì trả về chuỗi rỗng
+    }
 
-  // Chuyển đổi giá trị thành số nguyên từ chuỗi đã loại bỏ dấu chấm
-  let intValue = parseInt(value, 10);
+    // Chuyển đổi giá trị thành số nguyên từ chuỗi đã loại bỏ dấu chấm
+    let intValue = parseInt(value, 10);
 
-  let parts = intValue.toString().split('.');
-  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  return parts.join('.');
+    let parts = intValue.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return parts.join('.');
 }
 
-
-  function test() {
-    var input = document.getElementById('test');
-    console.log(input.dataset.rawValue);
-  }

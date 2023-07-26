@@ -31,7 +31,7 @@ function toggleMode() {
 function setMode(mode) {
   switch (mode) {
     case 1:
-      button.style.backgroundColor = '#40c3da';
+      button.style.backgroundColor = '#1DCC70';
       button.style.color = '#000';
 
       if (isMobile) {
@@ -44,7 +44,7 @@ function setMode(mode) {
       break;
     case 2:
       button.innerHTML = '<i class="fa-solid fa-moon"></i>';
-      button.style.backgroundColor = '#211e2c';
+      button.style.backgroundColor = '#111111';
       button.style.color = '#eee';
 
       // Chạy hàm cho chế độ 2

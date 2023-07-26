@@ -20,6 +20,7 @@ body {
     --CARD: #111111;
 }
 #toggle-button {
+    margin:  auto;
     right: 10px;
     height: 50px;
     width: 50px;
@@ -159,11 +160,12 @@ body {
 
 .Transactions .Button {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     gap: 10px;
+    margin: 10px 0;
 }
 .Transactions .Button button {
-    color: var(--BG);
+    color: black;
     font-size: 18px;
     font-weight: bold;
     padding: 8px;
@@ -174,22 +176,17 @@ body {
     border: none;
 }
 
-#Transactions .Bill {
-    display: grid; 
-    grid-template-columns: auto auto;
+#Transactions p {
+    font-size: 14px;
 }
-#Transactions .Bill .icon img{
-    width: 50px;
+
+#Transactions p.green{
+    color: #1dcc70;
 }
-#Transactions .Bill .content {
-    text-align: right;
+#Transactions p.red{
+    color: #ff4545;
 }
-#Transactions .Bill .content h1 {
-    font-size: 16px;
-}
-#Transactions .Bill .content p {
-    font-size: 12px;
-}
+
 
 
 .Card.Tabcontent label {
@@ -214,7 +211,7 @@ body {
 }
 
 .Card.Tabcontent button {
-    color: var(--BG);
+    color: black;
     font-size: 18px;
     font-weight: bold;
     padding: 10px;
@@ -230,9 +227,20 @@ body {
 }
 
 #CoNenMuaKhong .alert.red {
-    color: red;
+    color: #ff4545;
 }
 
 #CoNenMuaKhong .alert.green {
     color: #1DCC70;
+}
+
+footer {
+    font-size: 14px;
+    color: var(--CL);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+.dark-mode footer {
+    color: var(--MAIN);
 }
