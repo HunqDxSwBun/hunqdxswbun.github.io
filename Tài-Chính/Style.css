@@ -6,6 +6,7 @@
     --CL:black;
     --BG:#1DCC70;
     --CARD: #ffffff;
+    --MAIN: #1DCC70;
 }
 body {
     line-height: 1.6;
@@ -31,7 +32,7 @@ body {
 }
 
 .Container {
-    padding: 0 10px;
+    padding: 0 10px ;
 }
 
 .Card {
@@ -40,6 +41,7 @@ body {
     padding: 10px 20px;
     width: 100%;
     margin: 10px 0;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.09);
 }
 
 .Card.Main .TotalMoney {
@@ -55,12 +57,14 @@ body {
 
 .Wallet .Card.Money {
     margin: 0;
+    overflow: auto;
 }
 
 .Wallet .Card.Money p {
     font-size: 16px;
     font-weight: 500;
 }
+
 
 .Wallet .Card.Money h1 {
     font-size: 22px;
@@ -147,9 +151,10 @@ body {
 .Card.Card.Tabcontent {
     display: none;
 }
-
-#Transactions p {
-    margin: 5px 0;
+.Card.Tabcontent h1{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--MAIN);
 }
 
 .Transactions .Button {
@@ -165,13 +170,30 @@ body {
     width: 100%;
     margin: 2px 0;
     border-radius: 10px;
-    background-color: #1DCC70;
+    background-color: var(--MAIN);
     border: none;
+}
+
+#Transactions .Bill {
+    display: grid; 
+    grid-template-columns: auto auto;
+}
+#Transactions .Bill .icon img{
+    width: 50px;
+}
+#Transactions .Bill .content {
+    text-align: right;
+}
+#Transactions .Bill .content h1 {
+    font-size: 16px;
+}
+#Transactions .Bill .content p {
+    font-size: 12px;
 }
 
 
 .Card.Tabcontent label {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     font-weight: 500;
     display: block;
@@ -183,10 +205,10 @@ body {
     background: transparent;
     border: none;
     text-align: right;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid var(--MAIN);
     border-radius: 0;
     height: 40px;
-    color: var(--CL);
+    color: var(--MAIN);
     font-size: 16px;
     font-weight: bold;
 }
@@ -199,7 +221,7 @@ body {
     width: 100%;
     margin: 20px 0;
     border-radius: 20px;
-    background-color: #1DCC70;
+    background-color: var(--MAIN);
     border: none;
 }
 
