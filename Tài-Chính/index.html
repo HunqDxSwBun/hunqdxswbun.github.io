@@ -41,15 +41,15 @@
             <div class="FuncBlock">
                 <div class="Func" onclick="openTab(event, 'A')">
                     <i class="fa-solid fa-circle-plus"></i>
-                    <strong>Thêm tiền</strong>
+                    <strong>Thu nhập</strong>
                 </div>
                 <div class="Func" onclick="openTab(event, 'B')">
                     <i class="fa-solid fa-circle-minus"></i>
-                    <strong>Trừ tiền</strong>
+                    <strong>Chi tiêu</strong>
                 </div>
                 <div class="Func" onclick="openTab(event, 'D')">
                     <i class="fa-solid fa-receipt"></i>
-                    <strong>Nợ</strong>
+                    <strong>Sổ Nợ</strong>
                 </div>
                 <div class="Func" onclick="openTab(event, 'E')">
                     <i class="fa-solid fa-money-bill-trend-up"></i>
@@ -83,7 +83,7 @@
 
         <div class="Tab">
             <div class="Card Tabcontent" id="A">
-                <h1>Thêm số dư</h1>
+                <h1>Thu nhập</h1>
                 <label for="cash">Tiền mặt:</label>
                 <input type="text" class="inputFM" id="cash" name="cash" pattern="[0-9]*" onfocus="this.value=''" value="0">
                 <br>
@@ -97,6 +97,7 @@
                 <button onclick="addMoney()">Nhập</button>
             </div>
             <div class="Card Tabcontent" id="B">
+                <h1>Chi tiêu</h1>
                 <label for="cashWithdraw">Tiền mặt rút:</label>
                 <input type="text" class="inputFM" id="cashWithdraw" name="cashWithdraw" pattern="[0-9]*" onfocus="this.value=''"
                     value="0">
@@ -112,6 +113,7 @@
                 <button onclick="addMoney()">Nhập</button>
             </div>
             <div class="Card Tabcontent" id="D">
+                <h1>Ghi nợ</h1>
                 <label for="debtAmount">Số tiền nợ:</label>
                 <input type="text" class="inputFM" id="debtAmount" name="debtAmount" pattern="[0-9]*" onfocus="this.value=''"
                     value="0">
@@ -166,6 +168,7 @@
 
         <div class="Card Transactions">
             <h1>Lịch sử giao dịch</h1>
+            <hr>
             <div id="Transactions">
             </div>
 

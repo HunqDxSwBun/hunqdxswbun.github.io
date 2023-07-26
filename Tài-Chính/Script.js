@@ -222,7 +222,7 @@ function saveSavings() {
         savingsTotalDiv.innerText = savingsAmount.toLocaleString();
         localStorage.setItem('savingsAmount', savingsAmount);
 
-        transactionMessage += 'Đã tiết kiệm +' + savingsValue.toLocaleString() + 'đ vào tài khoản [Tiết kiệm].';
+        transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
@@ -244,7 +244,7 @@ function withdrawSavings() {
         savingsTotalDiv.innerText = savingsAmount.toLocaleString();
 
         localStorage.setItem('savingsAmount', savingsAmount);
-        transactionMessage += 'Đã rút -' + withdrawalValue.toLocaleString() + 'đ từ tài khoản [Tiết kiệm].';
+        transactionMessage += 'Số dư Tiết Kiệm -' + withdrawalValue.toLocaleString() + 'đ.';
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
