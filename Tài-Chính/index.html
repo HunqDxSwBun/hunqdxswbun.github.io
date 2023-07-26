@@ -63,19 +63,27 @@
         </div>
 
         <div class="Wallet">
-            <div class="Card Money">
+            <div class="Card Money" onclick="alert('Đây là khoản tiền mặt của bạn hiện có.')">
                 <p>Tiền mặt</p>
                 <h1><span id="displayCash">0</span>đ</h1>
             </div>
-            <div class="Card Money">
+            <div class="Card Money" onclick="alert('Đây là khoản tiền trong thẻ của bạn hiện có.')">
                 <p>Tiền thẻ</p>
                 <h1><span id="displayCard">0</span>đ</h1>
             </div>
-            <div class="Card Money">
-                <p>Tiết kiệm</p>
-                <h1><span id="savingsTotal">0</span>đ</h1>
+            <div class="Card Money" onclick="alert('Đây là gợi ý khoản tiền có thể chi tiêu cho nhu cầu thiết yếu.')">
+                <p>Thiết yếu <span>50%</span></p>
+                <h1><span id="ThietYeu">0</span>đ</h1>
             </div>
-            <div class="Card Money">
+            <div class="Card Money" onclick="alert('Đây là gợi ý khoản tiền có thể chi tiêu cho nhu cầu cá nhân.')">
+                <p>Tiêu sài <span>30%</span></p>
+                <h1><span id="TieuSai">0</span>đ</h1>
+            </div>
+            <div class="Card Money" onclick="alert('Đây là gợi ý khoản tiền có thể đầu từ hoặc tiết kiệm.')">
+                <p>Tiết kiệm <span>20%</span></p>
+                <h1><span id="savingsTotal">0</span>đ <span id="save20"></span></h1>
+            </div>
+            <div class="Card Money" onclick="alert('Đây là khoản tiền bạn đang nợ.')">
                 <p>Nợ</p>
                 <h1><span id="tienno">0</span>đ</h1>
             </div>
@@ -170,7 +178,6 @@
 
         </div>
 
-        <canvas id="myChart" style="max-width:600px;margin: 20px 0;"></canvas>
 
         <div class="Card Transactions">
             <h1>Lịch sử giao dịch</h1>

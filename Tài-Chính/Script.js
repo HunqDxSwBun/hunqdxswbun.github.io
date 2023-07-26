@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Hiển thị lịch sử giao dịch
     displayTransactionHistory();
+    Rule503020();
 });
 
 function displayTransactionHistory() {
@@ -150,7 +151,9 @@ function addMoney(x) {
 
         SaveHistory();
         displayTransactionHistory();
+        Rule503020();
         changeColor();
+
     }
 }
 function SaveHistory() {
@@ -226,6 +229,7 @@ function saveSavings() {
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
+        Rule503020();
         changeColor();
     }
     document.getElementById('savingsAmount').value = 0;
@@ -248,6 +252,7 @@ function withdrawSavings() {
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
+        Rule503020();
         changeColor();
     } else {
         alert('vượt quá số dư');
@@ -403,31 +408,16 @@ function formatWithDots(value) {
 }
 
 
-// let cashAmount = 0;
-// let cardAmount = 0;
-// let totalAmount = 0;
-// let transactionsHistory = [];
-// let debtAmount = 0;
-// let savingsAmount = 0;
+function Rule503020() {
+    totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
+    var v50 = totalAmount * 50 / 100;
+    var v30 = totalAmount * 30 / 100;
+    var v20 = totalAmount * 20 / 100;
 
-
-setTimeout(() => {
-    var xValues = ["Tổng", "Tiết kiệm", "Nợ"];
-    var yValues = [totalAmount, savingsAmount, debtAmount];
-    var barColors = [
-        "#4CAF50", // Xanh lá cây
-        "#2196F3", // Xanh dương
-        "#FFC107" // Vàng
-    ];
-
-    new Chart("myChart", {
-        type: "doughnut",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-        }
-    });
-}, 100);
+    if (savingsAmount <= 0 ) {
+        document.getElementById('save20').innerText = '+'+ formatWithDots(v20) + 'đ';
+    }
+    document.getElementById('ThietYeu').innerText = formatWithDots(v50);
+    document.getElementById('TieuSai').innerText = formatWithDots(v30);
+    
+}
