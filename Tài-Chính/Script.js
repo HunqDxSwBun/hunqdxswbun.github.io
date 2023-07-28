@@ -78,7 +78,7 @@ function displayTransactionHistory() {
     }
 }
 
-function addMoney(x) {
+function addMoney(cash,card) {
     const cashValue = parseInt(document.getElementById('cash').dataset.rawValue) || 0;
     const cardValue = parseInt(document.getElementById('card').dataset.rawValue) || 0;
     const cashWithdrawValue = parseInt(document.getElementById('cashWithdraw').dataset.rawValue) || 0;
@@ -88,12 +88,18 @@ function addMoney(x) {
     const displayCard = document.getElementById('displayCard');
 
     // Cộng dồn số tiền mặt và tiền thẻ từ người dùng
-    if (x === undefined || x === 0) {
+    if (cash === undefined || cash === 0) {
         cashAmount += cashValue;
-    } else {
-        cashAmount += x;
     }
-    cardAmount += cardValue;
+    if (card === undefined || card === 0) {
+        cardAmount += cardValue;
+    }
+    if (cash !== undefined || cash >= 0) {
+        cashAmount += cash;
+    } 
+    if (card !== undefined || card >= 0) {
+        cardAmount += card;
+    }
 
     // Trừ số tiền mặt và tiền thẻ từ người dùng
     cashAmount -= cashWithdrawValue;
@@ -160,10 +166,9 @@ function addMoney(x) {
 
         SaveHistory();
         displayTransactionHistory();
-        Rule503020();
-        changeColor();
-
     }
+    Rule503020();
+    changeColor();
 }
 function SaveHistory() {
     // Giới hạn số lượng giao dịch lưu lại (nếu muốn)
@@ -195,7 +200,6 @@ function recordDebt() {
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
-        changeColor();
     }
     if (debtAmount < 0) {
         if (payAmount > 0) {
@@ -208,8 +212,6 @@ function recordDebt() {
             displayTransaction(transactionMessage);
             transactionsHistory.unshift(transactionMessage);
             SaveHistory();
-            changeColor();
-
         }
     } else {
         alert('Có nợ ai đâu mà trả 🤔')
@@ -222,30 +224,44 @@ function recordDebt() {
     document.getElementById('payAmount').value = 0;
     document.getElementById('debtAmount').dataset.rawValue = 0;
     document.getElementById('payAmount').dataset.rawValue = 0;
-
+    changeColor();
 }
 
 function saveSavings() {
     let transactionMessage = '[' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + '] ';
     const savingsValue = parseInt(document.getElementById('savingsAmount').dataset.rawValue) || 0;
     if (savingsValue > 0) {
-        savingsAmount += savingsValue;
+        
+        if (cashAmount >= savingsValue) {
+            addMoney(-savingsValue,0);
+            savingsAmount += savingsValue;
+            transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
+            displayTransaction(transactionMessage);
+            transactionsHistory.unshift(transactionMessage);
+        } else {
+            if (cardAmount >= savingsValue) {
+                addMoney(0,-savingsValue);
+                savingsAmount += savingsValue;
+                transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
+                displayTransaction(transactionMessage);
+                transactionsHistory.unshift(transactionMessage);
+            }else {
+                alert('Không có tiền bà đặt tiết kiệm 🤣.')
+            }
+            
+        }
+        SaveHistory();
         const savingsTotalDiv = document.getElementById('savingsTotal');
         savingsTotalDiv.innerText = savingsAmount.toLocaleString();
         localStorage.setItem('savingsAmount', savingsAmount);
-
-        addMoney(-savingsValue);
-        transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
-        displayTransaction(transactionMessage);
-        transactionsHistory.unshift(transactionMessage);
-        SaveHistory();
-        Rule503020();
-        changeColor();
     }
     document.getElementById('savingsAmount').value = 0;
     document.getElementById('withdrawalAmount').value = 0;
     document.getElementById('savingsAmount').dataset.rawValue = 0;
     document.getElementById('withdrawalAmount').dataset.rawValue = 0;
+
+    Rule503020();
+    changeColor();
 }
 
 
@@ -263,8 +279,6 @@ function withdrawSavings() {
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
-        Rule503020();
-        changeColor();
     } else {
         alert('vượt quá số dư');
     }
@@ -272,7 +286,8 @@ function withdrawSavings() {
     document.getElementById('withdrawalAmount').value = 0;
     document.getElementById('savingsAmount').dataset.rawValue = 0;
     document.getElementById('withdrawalAmount').dataset.rawValue = 0;
-
+    Rule503020();
+    changeColor();
 }
 
 
@@ -426,8 +441,6 @@ function formatWithDots(value) {
 function Rule503020() {
     document.getElementById('ToltalMoney').innerText = formatWithDots(totalAmount + savingsAmount) ;
 
-    
-    console.log('hi');
     totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
 
     var v50 = totalAmount * 50 / 100;
