@@ -130,7 +130,7 @@ function addMoney(cash, card) {
     localStorage.setItem('cardAmount', cardAmount);
     localStorage.setItem('totalAmount', totalValue);
 
-    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' +  new Date().toLocaleTimeString() + '] ';
+    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() + '] ';
     const cashNote = document.getElementById('cashNote').value.trim();
     const cashWithdrawNote = document.getElementById('cashWithdrawNote').value.trim();
 
@@ -190,7 +190,7 @@ function recordDebt() {
     const debtWho = payWho;
     const payAmount = parseInt(document.getElementById('payAmount').dataset.rawValue) || 0;
 
-    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' +  new Date().toLocaleTimeString() + '] ';
+    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() + '] ';
     if (debtValue > 0) {
         addMoney(debtValue)
         debtAmount -= debtValue;
@@ -231,7 +231,7 @@ function recordDebt() {
 }
 
 function saveSavings() {
-    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' +  new Date().toLocaleTimeString() + '] ';
+    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() + '] ';
     const savingsValue = parseInt(document.getElementById('savingsAmount').dataset.rawValue) || 0;
     if (savingsValue > 0) {
 
@@ -487,77 +487,80 @@ function Rule503020() {
 
 }
 
-// Hàm xử lý sự kiện click cho nút nhấp để dán
-function handlePasteClick() {
-    // Yêu cầu quyền truy cập vào Clipboard
-    navigator.permissions.query({ name: 'clipboard-read' }).then((result) => {
+function fClipboard() {
+    navigator.permissions.query({ name: 'clipboard-read' }).then(result => {
         if (result.state === 'granted' || result.state === 'prompt') {
+          // Đọc nội dung clipboard
+          navigator.clipboard.readText().then(clipboardContent => {
+            // Lấy đối tượng #io
+            var ioElement = document.getElementById('VCBTrans');
 
-            navigator.clipboard.readText().then((text) => {
-                // Khi đọc được nội dung từ Clipboard, gán nội dung vào phần tử "#io"
-                // document.getElementById('io').value = text;
-                const inputText = text;
-
-                const regexA = /[+-]?\d{1,3}(?:,\d{3})*(?:,\d{1,3})?(?= VND(?!\.))/;
-                const regexB = /\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}/;
-                const regexC = /\d{1,3}(?:,\d{3})*(?= VND\.)/;
-                const regexE = /toi\d{10} [A-Z\s]+|toi \d+ [A-Z\s]+/g;
-                const regexF = /(?<=\()[^)]+(?=\))/;
-                const regexD = /tu \d+ [A-Z\s]+/g;
-                const regexArr = [regexA, regexB, regexC, regexE, regexF, regexD];
-
-                const matches = regexArr.map(regex => inputText.match(regex));
-
-                let transactionMessage = '';
-
-                var SoTienGD = matches[0].toLocaleString().replace(/,/g, '');
-                var SoTienGDr = matches[0].toLocaleString();
-                var ThoiGianGD = '[' + matches[1].toLocaleString().replace(/-/g, '/') + ']';
-
-                if (matches[3] !== null) {
-                    var NguoiNhan = matches[3].toLocaleString().replace('toi', 'Chuyển tiền tới ').replace(/^toi | N$/g, '');
-                    var NguoiGui = matches[5].toLocaleString().replace('tu', 'Từ ');
-                    if (SoTienGD < 0) {
-                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiNhan + '.';
-                    } else {
-                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiGui + NguoiNhan + '.';
-                    }
-
-                } else {
-                    if (SoTienGD < 0) {
-                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
-                    } else {
-                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
-                    }
-                }
-
-                displayTransaction(transactionMessage);
-                transactionsHistory.unshift(transactionMessage);
-                SaveHistory();
-                displayTransactionHistory();
-
-
-                if (SoTienGD < 0) {
-                    addMoney(0, Number(SoTienGD));
-                    return;
-                }
-                if (SoTienGD > 0) {
-                    addMoney(0, Number(SoTienGD));
-                    return;
-                }
-
-
-            }).catch((err) => {
-                alert('Không đúng nội dung')
-            });
-        } else {
-            // Người dùng từ chối quyền truy cập vào Clipboard
-            console.warn('Quyền truy cập vào Clipboard bị từ chối.');
+            // Gán nội dung từ clipboard vào #io
+            ioElement.value = clipboardContent;
+            setTimeout(() => {
+                handlePasteClick();
+                ioElement.value = '';
+            }, 200);
+          }).catch(err => {
+            console.error('Không thể đọc clipboard: ', err);
+          });
         }
-    });
+      });
+}
+function handlePasteClick() {
+    const inputText = document.getElementById('VCBTrans').value;
 
+    const regexA = /[+-]?\d{1,3}(?:,\d{3})*(?:,\d{1,3})?(?= VND(?!\.))/;
+    const regexB = /\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}/;
+    const regexC = /\d{1,3}(?:,\d{3})*(?= VND\.)/;
+    const regexE = /toi\d{10} [A-Z\s]+|toi \d+ [A-Z\s]+/g;
+    const regexF = /(?<=\()[^)]+(?=\))/;
+    const regexD = /tu \d+ [A-Z\s]+/g;
+    const regexArr = [regexA, regexB, regexC, regexE, regexF, regexD];
 
+   
+    const matches = regexArr.map(regex => inputText.match(regex));
+
+    let transactionMessage = '';
+
+    if (matches[0] !== null ) {
+        var SoTienGD = matches[0].toLocaleString().replace(/,/g, '');
+        var SoTienGDr = matches[0].toLocaleString();
+        var ThoiGianGD = '[' + matches[1].toLocaleString().replace(/-/g, '/') + ']';
+    
+        if (matches[3] !== null) {
+            var NguoiNhan = matches[3].toLocaleString().replace('toi', 'Chuyển tiền tới ').replace(/^toi | N$/g, '');
+            var NguoiGui = matches[5].toLocaleString().replace('tu', 'Từ ');
+            if (SoTienGD < 0) {
+                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiNhan + '.';
+            } else {
+                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiGui + NguoiNhan + '.';
+            }
+    
+        } else {
+            if (SoTienGD < 0) {
+                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
+            } else {
+                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
+            }
+        }
+    
+        displayTransaction(transactionMessage);
+        transactionsHistory.unshift(transactionMessage);
+        SaveHistory();
+        displayTransactionHistory();
+    
+    
+        if (SoTienGD < 0) {
+            addMoney(0, Number(SoTienGD));
+            return;
+        }
+        if (SoTienGD > 0) {
+            addMoney(0, Number(SoTienGD));
+            return;
+        }
+    } else {
+        alert('Không đúng định dạng.')
+    }
 
 }
-// Gán sự kiện click cho nút nhấp để dán
-document.getElementById('pasteButton').addEventListener('click', handlePasteClick);
