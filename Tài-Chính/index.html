@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        
+
         <div class="Wallet">
             <div class="Card Money" onclick="alert('Đây là khoản tiền mặt của bạn hiện có.')">
                 <p>Tiền mặt</p>
@@ -80,29 +80,30 @@
                 <p>Tiêu sài <span id="ptsave30">30%</span></p>
                 <h1><span id="TieuSai">0</span>đ</h1>
             </div>
-            <div class="Card Money" onclick="alert('Đây là gợi ý khoản tiền có thể đầu từ hoặc tiết kiệm.\nChữ màu nhỏ màu xanh đó là khoảng tiền bạn nên thêm vào tiết kiệm của mình.')">
+            <div class="Card Money"
+                onclick="alert('Đây là gợi ý khoản tiền có thể đầu từ hoặc tiết kiệm.\nChữ màu nhỏ màu xanh đó là khoảng tiền bạn nên thêm vào tiết kiệm của mình.')">
                 <p>Tiết kiệm <span id="ptsave20">20%</span></p>
                 <h1><span id="savingsTotal">0</span>đ <span id="save20"></span></h1>
             </div>
             <div class="Card Money" onclick="alert('Đây là tổng tiền của bạn.')">
-                <p>Tổng tài sản  <span>100%</span></p>
+                <p>Tổng tài sản <span>100%</span></p>
                 <h1><span id="ToltalMoney">0</span>đ</h1>
             </div>
             <div class="Card Money" onclick="alert('Đây là khoản tiền bạn đang nợ.')">
                 <p>Nợ</p>
                 <h1><span id="tienno">0</span>đ</h1>
             </div>
-            <div class="Card Money Alert" >
+            <div class="Card Money Alert">
                 <p>⚠ Cảnh báo</p>
                 <div class="marquee-parent">
                     <div class="marquee-child">
                         <p>Đừng mua đồ Shopee nữa, bớt trà sữa lại tiết kiệm đi nào 🎉✨</p>
                     </div>
-                  </div>
+                </div>
             </div>
-            
+
         </div>
-        
+
 
         <div class="Tab">
             <div class="Card Tabcontent" id="A">
@@ -143,9 +144,6 @@
                 <input type="text" class="inputFM" id="debtAmount" name="debtAmount" pattern="[0-9]*"
                     onfocus="this.value=''" value="0">
                 <br><br>
-                <label for="debtWho">Của ai:</label>
-                <input type="text" id="debtWho" onfocus="this.value=''" value="...">
-                <br><br>
                 <label for="payAmount">Số tiền trả:</label>
                 <input type="text" class="inputFM" id="payAmount" name="payAmount" pattern="[0-9]*"
                     onfocus="this.value=''" value="0">
@@ -169,6 +167,7 @@
 
             <div class="Card Tabcontent" id="C">
                 <h1>Mua đồ</h1>
+                <div id="CoNenMuaKhong"></div>
                 <label for="">Giá gốc sản phẩm bạn tính mua ?</label>
                 <input id="GiaGocSanPham" type="text" class="inputFM" pattern="[0-9]*" onfocus="this.value=''"
                     value="0">
@@ -180,9 +179,7 @@
                 <br>
                 <button onclick="TinhTienMuaHang()">Tính ngay</button>
 
-                <div id="CoNenMuaKhong">
 
-                </div>
             </div>
             <div class="Card Tabcontent" id="F">
                 <h1>Tính toán</h1>
@@ -199,11 +196,11 @@
             <hr>
             <div id="Transactions">
             </div>
-
             <div class="Button">
                 <button onclick="exportTransactions()"><i class="fa-solid fa-circle-down"></i></button>
                 <button onclick="clearTransactions()"><i class="fa-solid fa-trash"></i></button>
                 <button onclick="Clear()"><i class="fa-solid fa-database"></i></button>
+                <button id="pasteButton">Nhập tin nhắn VCB</button>
             </div>
         </div>
         <div id="toggle-button">HIHI</div>

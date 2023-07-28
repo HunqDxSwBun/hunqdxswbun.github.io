@@ -1,4 +1,5 @@
 function openTab(evt, Tabname) {
+    var body = document.querySelector('body');
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -7,6 +8,7 @@ function openTab(evt, Tabname) {
     if (currentTab.style.display === "block") {
         currentTab.style.display = "none";
         evt.currentTarget.className = evt.currentTarget.className.replace(" active", "");
+        body.classList.remove('MenuON');
         return;
     }
 
@@ -14,6 +16,7 @@ function openTab(evt, Tabname) {
     tabcontent = document.getElementsByClassName("Tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
+        body.classList.remove('MenuON');
     }
 
     // Get all elements with class="tablinks" and remove the class "active"
@@ -23,6 +26,7 @@ function openTab(evt, Tabname) {
     }
 
     // Show the current tab and add an "active" class to the button that opened the tab
+    body.classList.add('MenuON');
     currentTab.style.display = "block";
     evt.currentTarget.className += " active";
 }
@@ -78,7 +82,7 @@ function displayTransactionHistory() {
     }
 }
 
-function addMoney(cash,card) {
+function addMoney(cash, card) {
     const cashValue = parseInt(document.getElementById('cash').dataset.rawValue) || 0;
     const cardValue = parseInt(document.getElementById('card').dataset.rawValue) || 0;
     const cashWithdrawValue = parseInt(document.getElementById('cashWithdraw').dataset.rawValue) || 0;
@@ -96,7 +100,7 @@ function addMoney(cash,card) {
     }
     if (cash !== undefined || cash >= 0) {
         cashAmount += cash;
-    } 
+    }
     if (card !== undefined || card >= 0) {
         cardAmount += card;
     }
@@ -126,7 +130,7 @@ function addMoney(cash,card) {
     localStorage.setItem('cardAmount', cardAmount);
     localStorage.setItem('totalAmount', totalValue);
 
-    let transactionMessage = '[' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + '] ';
+    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' +  new Date().toLocaleTimeString() + '] ';
     const cashNote = document.getElementById('cashNote').value.trim();
     const cashWithdrawNote = document.getElementById('cashWithdrawNote').value.trim();
 
@@ -160,10 +164,8 @@ function addMoney(cash,card) {
             }
         }
         displayTransaction(transactionMessage);
-
         // Thêm giao dịch mới vào đầu danh sách
         transactionsHistory.unshift(transactionMessage);
-
         SaveHistory();
         displayTransactionHistory();
     }
@@ -183,13 +185,12 @@ function SaveHistory() {
 
 
 function recordDebt() {
-    const debtWho = document.getElementById('debtWho').value;
     const debtValue = parseInt(document.getElementById('debtAmount').dataset.rawValue) || 0;
     const payWho = document.getElementById('payWho').value;
+    const debtWho = payWho;
     const payAmount = parseInt(document.getElementById('payAmount').dataset.rawValue) || 0;
 
-    let transactionMessage = '[' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + '] ';
-
+    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' +  new Date().toLocaleTimeString() + '] ';
     if (debtValue > 0) {
         addMoney(debtValue)
         debtAmount -= debtValue;
@@ -200,6 +201,7 @@ function recordDebt() {
         displayTransaction(transactionMessage);
         transactionsHistory.unshift(transactionMessage);
         SaveHistory();
+        changeColor();
     }
     if (debtAmount < 0) {
         if (payAmount > 0) {
@@ -212,6 +214,7 @@ function recordDebt() {
             displayTransaction(transactionMessage);
             transactionsHistory.unshift(transactionMessage);
             SaveHistory();
+            changeColor();
         }
     } else {
         alert('Có nợ ai đâu mà trả 🤔')
@@ -228,27 +231,27 @@ function recordDebt() {
 }
 
 function saveSavings() {
-    let transactionMessage = '[' + new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString() + '] ';
+    let transactionMessage = '[' + new Date().toLocaleDateString() + ' ' +  new Date().toLocaleTimeString() + '] ';
     const savingsValue = parseInt(document.getElementById('savingsAmount').dataset.rawValue) || 0;
     if (savingsValue > 0) {
-        
+
         if (cashAmount >= savingsValue) {
-            addMoney(-savingsValue,0);
+            addMoney(-savingsValue, 0);
             savingsAmount += savingsValue;
             transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
             displayTransaction(transactionMessage);
             transactionsHistory.unshift(transactionMessage);
         } else {
             if (cardAmount >= savingsValue) {
-                addMoney(0,-savingsValue);
+                addMoney(0, -savingsValue);
                 savingsAmount += savingsValue;
                 transactionMessage += 'Số dư Tiết Kiệm +' + savingsValue.toLocaleString() + 'đ.';
                 displayTransaction(transactionMessage);
                 transactionsHistory.unshift(transactionMessage);
-            }else {
+            } else {
                 alert('Không có tiền bà đặt tiết kiệm 🤣.')
             }
-            
+
         }
         SaveHistory();
         const savingsTotalDiv = document.getElementById('savingsTotal');
@@ -439,7 +442,7 @@ function formatWithDots(value) {
 
 
 function Rule503020() {
-    document.getElementById('ToltalMoney').innerText = formatWithDots(totalAmount + savingsAmount) ;
+    document.getElementById('ToltalMoney').innerText = formatWithDots(totalAmount + savingsAmount);
 
     totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
 
@@ -447,37 +450,114 @@ function Rule503020() {
     var v30 = totalAmount * 30 / 100;
     var v20 = totalAmount * 20 / 100;
 
-    var v502 = (totalAmount+savingsAmount) * 50 / 100;
-    var v202 = 100 - 50 - (savingsAmount * 100 ) / (totalAmount+savingsAmount);
-    var v302 = (totalAmount+savingsAmount) * v202 / 100;
+    var v502 = (totalAmount + savingsAmount) * 50 / 100;
+    var v202 = 100 - 50 - (savingsAmount * 100) / (totalAmount + savingsAmount);
+    var v302 = (totalAmount + savingsAmount) * v202 / 100;
 
 
-    var v203 = (savingsAmount * 100 ) / (totalAmount+savingsAmount);
+    var v203 = (savingsAmount * 100) / (totalAmount + savingsAmount);
     var v503 = totalAmount * 70 / 100;
     var v303 = totalAmount * 30 / 100;
 
-    console.log(savingsAmount);
-    if (savingsAmount <= 0 ) {
-        document.getElementById('save20').innerText = '+'+ formatWithDots(v20) + 'đ';
-        document.getElementById('ThietYeu').innerText = formatWithDots(v50);
-        document.getElementById('TieuSai').innerText = formatWithDots(v30);
-        document.getElementById('ptsave50').innerText = '50%';
-        document.getElementById('ptsave30').innerText = '30%';
-        document.getElementById('ptsave20').innerText = '20%';
-    }else {
-        document.getElementById('save20').innerText = '';
-        document.getElementById('ThietYeu').innerText = formatWithDots(v502);
-        document.getElementById('TieuSai').innerText = formatWithDots(v302);
-        document.getElementById('ptsave50').innerText = '50%';
-        document.getElementById('ptsave30').innerText = '30%';
-        document.getElementById('ptsave20').innerText = '20%';
+    if (totalAmount > 0) {
+        if (savingsAmount <= 0) {
+            document.getElementById('save20').innerText = '+' + formatWithDots(v20) + 'đ';
+            document.getElementById('ThietYeu').innerText = formatWithDots(v50);
+            document.getElementById('TieuSai').innerText = formatWithDots(v30);
+            document.getElementById('ptsave50').innerText = '50%';
+            document.getElementById('ptsave30').innerText = '30%';
+            document.getElementById('ptsave20').innerText = '20%';
+        } else {
+            document.getElementById('save20').innerText = '';
+            document.getElementById('ThietYeu').innerText = formatWithDots(v502);
+            document.getElementById('TieuSai').innerText = formatWithDots(v302);
+            document.getElementById('ptsave50').innerText = '50%';
+            document.getElementById('ptsave30').innerText = '30%';
+            document.getElementById('ptsave20').innerText = '20%';
+        }
+        if (v203 > 30) {
+            document.getElementById('save20').innerText = '';
+            document.getElementById('ThietYeu').innerText = formatWithDots(v503);
+            document.getElementById('TieuSai').innerText = formatWithDots(v303);
+            document.getElementById('ptsave50').innerText = (100 - v203) / 2 + '%';
+            document.getElementById('ptsave30').innerText = (100 - v203) / 2 + '%';
+            document.getElementById('ptsave20').innerText = v203 + '%';
+        }
     }
-    if (v203 > 30) {
-        document.getElementById('save20').innerText = '';
-        document.getElementById('ThietYeu').innerText = formatWithDots(v503);
-        document.getElementById('TieuSai').innerText = formatWithDots(v303);
-        document.getElementById('ptsave50').innerText = (100 - v203)/2 +'%';
-        document.getElementById('ptsave30').innerText = (100 - v203)/2 +'%';
-        document.getElementById('ptsave20').innerText = v203 +'%';
-    }
+
 }
+
+// Hàm xử lý sự kiện click cho nút nhấp để dán
+function handlePasteClick() {
+    // Yêu cầu quyền truy cập vào Clipboard
+    navigator.permissions.query({ name: 'clipboard-read' }).then((result) => {
+        if (result.state === 'granted' || result.state === 'prompt') {
+
+            navigator.clipboard.readText().then((text) => {
+                // Khi đọc được nội dung từ Clipboard, gán nội dung vào phần tử "#io"
+                // document.getElementById('io').value = text;
+                const inputText = text;
+
+                const regexA = /[+-]?\d{1,3}(?:,\d{3})*(?:,\d{1,3})?(?= VND(?!\.))/;
+                const regexB = /\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}/;
+                const regexC = /\d{1,3}(?:,\d{3})*(?= VND\.)/;
+                const regexE = /toi\d{10} [A-Z\s]+|toi \d+ [A-Z\s]+/g;
+                const regexF = /(?<=\()[^)]+(?=\))/;
+                const regexD = /tu \d+ [A-Z\s]+/g;
+                const regexArr = [regexA, regexB, regexC, regexE, regexF, regexD];
+
+                const matches = regexArr.map(regex => inputText.match(regex));
+
+                let transactionMessage = '';
+
+                var SoTienGD = matches[0].toLocaleString().replace(/,/g, '');
+                var SoTienGDr = matches[0].toLocaleString();
+                var ThoiGianGD = '[' + matches[1].toLocaleString().replace(/-/g, '/') + ']';
+
+                if (matches[3] !== null) {
+                    var NguoiNhan = matches[3].toLocaleString().replace('toi', 'Chuyển tiền tới ').replace(/^toi | N$/g, '');
+                    var NguoiGui = matches[5].toLocaleString().replace('tu', 'Từ ');
+                    if (SoTienGD < 0) {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiNhan + '.';
+                    } else {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiGui + NguoiNhan + '.';
+                    }
+
+                } else {
+                    if (SoTienGD < 0) {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
+                    } else {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
+                    }
+                }
+
+                displayTransaction(transactionMessage);
+                transactionsHistory.unshift(transactionMessage);
+                SaveHistory();
+                displayTransactionHistory();
+
+
+                if (SoTienGD < 0) {
+                    addMoney(0, Number(SoTienGD));
+                    return;
+                }
+                if (SoTienGD > 0) {
+                    addMoney(0, Number(SoTienGD));
+                    return;
+                }
+
+
+            }).catch((err) => {
+                alert('Không đúng nội dung')
+            });
+        } else {
+            // Người dùng từ chối quyền truy cập vào Clipboard
+            console.warn('Quyền truy cập vào Clipboard bị từ chối.');
+        }
+    });
+
+
+
+}
+// Gán sự kiện click cho nút nhấp để dán
+document.getElementById('pasteButton').addEventListener('click', handlePasteClick);

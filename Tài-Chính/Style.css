@@ -22,6 +22,9 @@ button {
     --BG:#000000;
     --CARD: #111111;
 }
+.MenuON {
+    padding-bottom: 240px;
+}
 #toggle-button {
     cursor: pointer;
     margin:  auto;
@@ -170,8 +173,14 @@ button {
 
 
 .Card.Card.Tabcontent {
+    width: 100%;
+    position: fixed;
+    margin: 0 -10px;
+    bottom: 0;
     display: none;
+    min-height: 320px;
 }
+
 .Card.Tabcontent h1,
 .Card.Transactions h1{
     font-size: 18px;
@@ -181,7 +190,7 @@ button {
 
 .Transactions .Button {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     gap: 10px;
     margin: 10px 0;
 }
@@ -223,9 +232,10 @@ button {
     background: transparent;
     border: none;
     text-align: right;
+    margin: 5px 0;
     border-bottom: 2px solid var(--MAIN);
     border-radius: 0;
-    height: 40px;
+    height: 30px;
     color: var(--MAIN);
     font-size: 16px;
     font-weight: bold;
@@ -237,7 +247,7 @@ button {
     font-weight: bold;
     padding: 10px;
     width: 100%;
-    margin: 20px 0;
+    margin: 5px 0;
     border-radius: 20px;
     background-color: var(--MAIN);
     border: none;
