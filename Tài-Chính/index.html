@@ -93,11 +93,11 @@
                 <p>Nợ</p>
                 <h1><span id="tienno">0</span>đ</h1>
             </div>
-            <div class="Card Money Alert">
+            <div class="Card Money Alert" onclick="Note()">
                 <p>⚠ Cảnh báo</p>
                 <div class="marquee-parent">
-                    <div class="marquee-child">
-                        <p>Đừng mua đồ Shopee nữa, bớt trà sữa lại tiết kiệm đi nào 🎉✨</p>
+                    <div class="marquee-child" >
+                        <p id="marquee">Đừng mua đồ Shopee nữa, bớt trà sữa lại tiết kiệm đi nào 🎉✨</p>
                     </div>
                 </div>
             </div>
@@ -197,11 +197,6 @@
             <div id="Transactions">
             </div>
 
-            <div class="VCBTrans">
-                <textarea name="" id="VCBTrans"></textarea>
-                <button onclick="fClipboard()"><i class="fa-regular fa-paste"></i></button>
-            </div>
-       
             <div class="Button">
                 <button onclick="exportTransactions()"><i class="fa-solid fa-circle-down"></i></button>
                 <button onclick="clearTransactions()"><i class="fa-solid fa-trash"></i></button>

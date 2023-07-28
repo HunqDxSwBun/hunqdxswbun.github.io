@@ -66,6 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
         transactionsHistory = JSON.parse(savedTransactions);
     }
 
+    var marquee = document.getElementById('marquee');
+    var storedText = localStorage.getItem('savedText');
+    if (storedText !== null) {
+        marquee.innerText = storedText;
+    }
+
     // Hiển thị lịch sử giao dịch
     displayTransactionHistory();
     Rule503020();
@@ -440,11 +446,29 @@ function formatWithDots(value) {
     return parts.join('.');
 }
 
+function Note() {
+    var marquee = document.getElementById('marquee');
+    var inputText = confirm("Nhấn OK nếu bạn muốn thay đổi văn bản.");
+
+    if (inputText) {
+        var text = prompt("Nhập văn bản của bạn:");
+        if (text !== null) {
+            marquee.innerText = text;
+            // Lưu văn bản vào local storage
+            localStorage.setItem('savedText', text);
+        } else {
+            alert("Bạn đã hủy nhập liệu.");
+        }
+    }
+}
+
 
 function Rule503020() {
+    totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
+    console.log(totalAmount);
     document.getElementById('ToltalMoney').innerText = formatWithDots(totalAmount + savingsAmount);
 
-    totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
+
 
     var v50 = totalAmount * 50 / 100;
     var v30 = totalAmount * 30 / 100;
@@ -487,80 +511,67 @@ function Rule503020() {
 
 }
 
-function fClipboard() {
-    navigator.permissions.query({ name: 'clipboard-read' }).then(result => {
-        if (result.state === 'granted' || result.state === 'prompt') {
-          // Đọc nội dung clipboard
-          navigator.clipboard.readText().then(clipboardContent => {
-            // Lấy đối tượng #io
-            var ioElement = document.getElementById('VCBTrans');
 
-            // Gán nội dung từ clipboard vào #io
-            ioElement.value = clipboardContent;
-            setTimeout(() => {
-                handlePasteClick();
-                ioElement.value = '';
-            }, 200);
-          }).catch(err => {
-            console.error('Không thể đọc clipboard: ', err);
-          });
-        }
-      });
-}
+
 function handlePasteClick() {
-    const inputText = document.getElementById('VCBTrans').value;
+    navigator.clipboard.readText()
+        .then(function (clipboardData) {
+            const inputText = clipboardData;
 
-    const regexA = /[+-]?\d{1,3}(?:,\d{3})*(?:,\d{1,3})?(?= VND(?!\.))/;
-    const regexB = /\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}/;
-    const regexC = /\d{1,3}(?:,\d{3})*(?= VND\.)/;
-    const regexE = /toi\d{10} [A-Z\s]+|toi \d+ [A-Z\s]+/g;
-    const regexF = /(?<=\()[^)]+(?=\))/;
-    const regexD = /tu \d+ [A-Z\s]+/g;
-    const regexArr = [regexA, regexB, regexC, regexE, regexF, regexD];
+            const regexA = /[+-]?\d{1,3}(?:,\d{3})*(?:,\d{1,3})?(?= VND(?!\.))/;
+            const regexB = /\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}/;
+            const regexC = /\d{1,3}(?:,\d{3})*(?= VND\.)/;
+            const regexE = /toi\d{10} [A-Z\s]+|toi \d+ [A-Z\s]+/g;
+            const regexF = /(?<=\()[^)]+(?=\))/;
+            const regexD = /tu \d+ [A-Z\s]+/g;
+            const regexArr = [regexA, regexB, regexC, regexE, regexF, regexD];
 
-   
-    const matches = regexArr.map(regex => inputText.match(regex));
+            const matches = regexArr.map(regex => inputText.match(regex));
 
-    let transactionMessage = '';
+            let transactionMessage = '';
 
-    if (matches[0] !== null ) {
-        var SoTienGD = matches[0].toLocaleString().replace(/,/g, '');
-        var SoTienGDr = matches[0].toLocaleString();
-        var ThoiGianGD = '[' + matches[1].toLocaleString().replace(/-/g, '/') + ']';
-    
-        if (matches[3] !== null) {
-            var NguoiNhan = matches[3].toLocaleString().replace('toi', 'Chuyển tiền tới ').replace(/^toi | N$/g, '');
-            var NguoiGui = matches[5].toLocaleString().replace('tu', 'Từ ');
-            if (SoTienGD < 0) {
-                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiNhan + '.';
+            if (matches[0] !== null) {
+                var SoTienGD = matches[0].toLocaleString().replace(/,/g, '');
+                var SoTienGDr = matches[0].toLocaleString();
+                var ThoiGianGD = '[' + matches[1].toLocaleString().replace(/-/g, '/') + ']';
+
+                if (matches[3] !== null) {
+                    var NguoiNhan = matches[3].toLocaleString().replace('toi', 'Chuyển tiền tới ').replace(/^toi | N$/g, '');
+                    var NguoiGui = matches[5].toLocaleString().replace('tu', 'Từ ');
+                    if (SoTienGD < 0) {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiNhan + '.';
+                    } else {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiGui + NguoiNhan + '.';
+                    }
+
+                } else {
+                    if (SoTienGD < 0) {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
+                    } else {
+                        transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
+                    }
+                }
+
+                displayTransaction(transactionMessage);
+                transactionsHistory.unshift(transactionMessage);
+                SaveHistory();
+                displayTransactionHistory();
+
+
+                if (SoTienGD < 0) {
+                    addMoney(0, Number(SoTienGD));
+                    return;
+                }
+                if (SoTienGD > 0) {
+                    addMoney(0, Number(SoTienGD));
+                    return;
+                }
             } else {
-                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ. ' + NguoiGui + NguoiNhan + '.';
+                alert('Không đúng định dạng hoặc không có dữ liệu.')
             }
-    
-        } else {
-            if (SoTienGD < 0) {
-                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
-            } else {
-                transactionMessage = ThoiGianGD + ' Số dư Tiền Thẻ ' + SoTienGDr + ' đ.';
-            }
-        }
-    
-        displayTransaction(transactionMessage);
-        transactionsHistory.unshift(transactionMessage);
-        SaveHistory();
-        displayTransactionHistory();
-    
-    
-        if (SoTienGD < 0) {
-            addMoney(0, Number(SoTienGD));
-            return;
-        }
-        if (SoTienGD > 0) {
-            addMoney(0, Number(SoTienGD));
-            return;
-        }
-    } else {
-        alert('Không đúng định dạng.')
-    }
-
+        })
+        .catch(function () {
+            alert('🤔 Có sao chép gì đâu mà dán.')
+        });
+    Rule503020();
 }
