@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<!-- Shift + Alt + F  để sắp xếp lại code ( format code )-->
+<html>
+
+<head>
+    <!-- Tiêu đề trang -->
+    <title>Mua sắm thông minh</title>
+
+    <!-- Bộ giải mã và phân loại thiết bị -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Đảm bảo đặt meta tag sau -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Biểu tượng cho web -->
+    <link rel="icon" href="/Tài-Chính/IMG/icon.png" />
+
+    <!-- Biểu tượng iPhone -->
+    <link rel="apple-touch-icon" href="/Tài-Chính/IMG/icon-square.png" sizes="150x150" />
+    <!-- CSS của web -->
+    <link rel="stylesheet" href="./Style.css" />
+
+    <!-- FontAweSome fas fa icon -->
+    <script src="https://kit.fontawesome.com/9392097706.js" crossorigiln="anonymous"></script>
+</head>
+
+<body>
+    <div class="CartBox">
+
+    </div>
+    <div class="InfoBox">
+        <div class="WalletBox">
+            <h1>1000</h1>
+        </div>
+    </div>
+    
+    <div class="InputBox">
+        <div class="Input1">
+            <input type="text" id="productName" placeholder="Tên sản phẩm">
+        </div>
+        <div class="Input2">
+            <input type="text" id="productPrice" class="inputFM" pattern="[0-9]*" placeholder="Giá">
+            <div class="ItemNumber">
+                <button class="btn-decrement">-</button>
+                <input type="number" id="productQuantity" class="input-number" value="1">
+                <button class="btn-increment">+</button>
+            </div>
+        </div>
+        <button class="Button" onclick="addProduct()">Thêm sản phẩm</button>
+    </div>
+</body>
+<script src="./Script.js"></script>
+
+</html>

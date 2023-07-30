@@ -179,6 +179,8 @@ button {
     bottom: 0;
     display: none;
     min-height: 320px;
+    background-color: #000000;
+    border: 3px solid var(--MAIN);
 }
 
 .Card.Tabcontent h1,

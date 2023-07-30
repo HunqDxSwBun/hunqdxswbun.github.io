@@ -123,10 +123,10 @@ function addMoney(cash, card) {
     displayCard.innerText = cardAmount.toLocaleString();
 
     // Reset các giá trị input về 0 sau khi nhấn nút "Nhập"
-    document.getElementById('cash').value = 0;
-    document.getElementById('card').value = 0;
-    document.getElementById('cashWithdraw').value = 0;
-    document.getElementById('cardWithdraw').value = 0;
+    document.getElementById('cash').value = '';
+    document.getElementById('card').value = '';
+    document.getElementById('cashWithdraw').value = '';
+    document.getElementById('cardWithdraw').value = '';
     document.getElementById('cash').dataset.rawValue = 0;
     document.getElementById('card').dataset.rawValue = 0;
     document.getElementById('cashWithdraw').dataset.rawValue = 0;
@@ -211,14 +211,30 @@ function recordDebt() {
     }
     if (debtAmount < 0) {
         if (payAmount > 0) {
-            addMoney(-payAmount)
-            debtAmount += payAmount;
-            const tiennoDiv = document.getElementById('tienno');
-            tiennoDiv.innerText = debtAmount.toLocaleString();
-            localStorage.setItem('debtAmount', debtAmount);
-            transactionMessage += 'Số dư Tiền Mặt -' + payAmount.toLocaleString() + 'đ Trả cho ' + payWho + '.';
-            displayTransaction(transactionMessage);
-            transactionsHistory.unshift(transactionMessage);
+            if (cashAmount >= payAmount) {
+                addMoney(-payAmount, 0);
+                debtAmount += payAmount;
+                const tiennoDiv = document.getElementById('tienno');
+                tiennoDiv.innerText = debtAmount.toLocaleString();
+                localStorage.setItem('debtAmount', debtAmount);
+                transactionMessage += 'Số dư Tiền Mặt -' + payAmount.toLocaleString() + 'đ Trả cho ' + payWho + '.';
+                displayTransaction(transactionMessage);
+                transactionsHistory.unshift(transactionMessage);
+            } else {
+                if (cardAmount >= payAmount) {
+                    addMoney(0, -payAmount);
+                    debtAmount += payAmount;
+                    const tiennoDiv = document.getElementById('tienno');
+                    tiennoDiv.innerText = debtAmount.toLocaleString();
+                    localStorage.setItem('debtAmount', debtAmount);
+                    transactionMessage += 'Số dư Tiền Thẻ -' + payAmount.toLocaleString() + 'đ Trả cho ' + payWho + '.';
+                    displayTransaction(transactionMessage);
+                    transactionsHistory.unshift(transactionMessage);
+                } else {
+                    alert('Tài khoản của bạn không đủ để trả nợ.');
+                };
+            };
+
             SaveHistory();
             changeColor();
         }
@@ -226,9 +242,7 @@ function recordDebt() {
         alert('Có nợ ai đâu mà trả 🤔')
     }
 
-    document.getElementById('debtWho').value = '...';
-    document.getElementById('payWho').value = '...';
-
+    document.getElementById('payWho').value = '';
     document.getElementById('debtAmount').value = 0;
     document.getElementById('payAmount').value = 0;
     document.getElementById('debtAmount').dataset.rawValue = 0;
@@ -264,8 +278,8 @@ function saveSavings() {
         savingsTotalDiv.innerText = savingsAmount.toLocaleString();
         localStorage.setItem('savingsAmount', savingsAmount);
     }
-    document.getElementById('savingsAmount').value = 0;
-    document.getElementById('withdrawalAmount').value = 0;
+    document.getElementById('savingsAmount').value = '';
+    document.getElementById('withdrawalAmount').value = '';
     document.getElementById('savingsAmount').dataset.rawValue = 0;
     document.getElementById('withdrawalAmount').dataset.rawValue = 0;
 
@@ -291,8 +305,8 @@ function withdrawSavings() {
     } else {
         alert('vượt quá số dư');
     }
-    document.getElementById('savingsAmount').value = 0;
-    document.getElementById('withdrawalAmount').value = 0;
+    document.getElementById('savingsAmount').value = '';
+    document.getElementById('withdrawalAmount').value = '';
     document.getElementById('savingsAmount').dataset.rawValue = 0;
     document.getElementById('withdrawalAmount').dataset.rawValue = 0;
     Rule503020();
@@ -465,11 +479,8 @@ function Note() {
 
 function Rule503020() {
     totalAmount = parseInt(localStorage.getItem('totalAmount')) || 0;
-    console.log(totalAmount);
     document.getElementById('ToltalMoney').innerText = formatWithDots(totalAmount + savingsAmount);
-
-
-
+    
     var v50 = totalAmount * 50 / 100;
     var v30 = totalAmount * 30 / 100;
     var v20 = totalAmount * 20 / 100;
