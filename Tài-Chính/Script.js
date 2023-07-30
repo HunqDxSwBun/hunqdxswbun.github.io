@@ -164,7 +164,7 @@ function addMoney(cash, card) {
         }
 
         if (cardWithdrawValue > 0) {
-            transactionMessage += 'Số dư Tiền Mặt -' + cardWithdrawValue.toLocaleString() + 'đ.';
+            transactionMessage += 'Số dư Tiền Thẻ -' + cardWithdrawValue.toLocaleString() + 'đ.';
             if (cashWithdrawNote !== '') {
                 transactionMessage += cashWithdrawNote + '.';
             }
