@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Text-to-Speech Example</title>
+</head>
+<body>
+  <h1>Text-to-Speech Example</h1>
+  <textarea id="textToSpeak" rows="4" cols="50">Xin chào bạn</textarea>
+  <label for="voicesSelect">Chọn giọng:</label>
+  <select id="voicesSelect"></select>
+  <button onclick="speakText()">Speak</button>
+
+  <script>
+    function populateVoices() {
+      const voicesSelect = document.getElementById('voicesSelect');
+      
+      // Kiểm tra xem trình duyệt có hỗ trợ Web Speech API không
+      if ('speechSynthesis' in window) {
+        // Đợi sự kiện voiceschanged để đảm bảo danh sách giọng đã sẵn sàng
+        window.speechSynthesis.addEventListener('voiceschanged', function() {
+          const voices = window.speechSynthesis.getVoices();
+          const filteredVoices = voices.filter(voice => {
+            // Lọc ra các giọng là nam hoặc nữ và ngôn ngữ là tiếng Việt
+            return (voice.lang.startsWith('vi') && (voice.name.includes('nam') || voice.name.includes('nữ')));
+          });
+
+          filteredVoices.forEach(voice => {
+            const option = document.createElement('option');
+            option.value = voice.name;
+            option.textContent = voice.name + ' (' + voice.lang + ')';
+            voicesSelect.appendChild(option);
+          });
+        });
+      } else {
+        alert('Trình duyệt của bạn không hỗ trợ Web Speech API.');
+      }
+    }
+
+    function speakText() {
+      const text = document.getElementById('textToSpeak').value;
+      const selectedVoice = document.getElementById('voicesSelect').value;
+
+      if ('speechSynthesis' in window) {
+        const speech = new SpeechSynthesisUtterance(text);
+        
+        // Tìm giọng được chọn trong danh sách giọng
+        const voices = window.speechSynthesis.getVoices();
+        const selectedVoiceObj = voices.find(voice => voice.name === selectedVoice);
+        
+        // Thiết lập giọng cho đối tượng SpeechSynthesisUtterance
+        speech.voice = selectedVoiceObj;
+
+        window.speechSynthesis.speak(speech);
+      } else {
+        alert('Trình duyệt của bạn không hỗ trợ Web Speech API.');
+      }
+    }
+
+    // Gọi hàm populateVoices khi trang được tải
+    window.onload = populateVoices;
+  </script>
+</body>
+</html>

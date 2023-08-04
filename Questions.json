@@ -1,0 +1,30 @@
+[
+    {
+        "CauHoi": "1 cộng 1 bằng mấy?",
+        "A": "2",
+        "B": "3",
+        "C": "1",
+        "D": "4",
+        "DapAn": "A",
+        "Goi": "Anh nghĩ câu A đó em.",
+        "HinhAnh": "/Data/icon/Logo2.png"
+    },
+    {
+        "CauHoi": "Mặt trời mọc từ hướng nào?",
+        "A": "Đông",
+        "B": "Tây",
+        "C": "Nam",
+        "D": "Bắc",
+        "DapAn": "A",
+        "HinhAnh": "/Data/icon/Logo2.png"
+    },
+    {
+        "CauHoi": "Bánh mỳ có màu gì?",
+        "A": "Xanh",
+        "B": "Đỏ",
+        "C": "Nâu",
+        "D": "Vàng",
+        "DapAn": "D",
+        "HinhAnh": "/Data/icon/Logo2.png"
+    }
+]
