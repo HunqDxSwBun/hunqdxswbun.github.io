@@ -64,6 +64,11 @@
     "singer": "Youtube",
     "path": "/Music/Music/TongHop/Remix Hot Tiktok.mp3",
     "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "NHẠC TRUNG REMIX",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/NHẠC TRUNG REMIX.mp3",
+    "image": "/Music/IMG/Logo.png"
   }
-  
 ]
