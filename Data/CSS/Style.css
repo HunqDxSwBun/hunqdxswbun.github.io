@@ -60,6 +60,7 @@ header .HeadApp h1 {
     border-radius: 4px;
     background-color: var(--ButtonBG);
 }
+
 .logOutput {
     color: greenyellow;
     background-color: var(--CardBG);
@@ -68,6 +69,7 @@ header .HeadApp h1 {
     padding: 10px;
     border-radius: 10px;
 }
+
 #navbar {
     cursor: pointer;
     text-align: center;
@@ -159,7 +161,7 @@ header .HeadApp h1 {
 .Tab {
     background-color: var(--TabBG);
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20% ;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     margin: 5px 0;
     padding: 4px;
     border-radius: 20px;
@@ -483,7 +485,7 @@ header .HeadApp h1 {
     color: #fff;
     background-color: #111;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 15px 10px 10px 10px;
     border-radius: 10px;
 }
 
@@ -500,17 +502,19 @@ header .HeadApp h1 {
 }
 
 .Head .Author {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60px auto 30px;
+    gap: 2px;
+}
+
+.Head .Author .Avatar {
+    text-align: center;
 }
 
 .Head .Author .Avatar img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-}
-
-.Head .Author .Info {
-    margin-left: 10px;
 }
 
 .Head .Author .Info .Name {
@@ -522,9 +526,18 @@ header .HeadApp h1 {
     font-size: 14px;
 }
 
+.Head .Author .Func.Share {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.Head .Author .Func.Share i {
+    font-size: 20px;
+}
+
 .wp-block-video video {
     max-width: 100%;
-    margin: 5px 0;
+    margin: 5px 0 0 0;
 }
 
 .Body .Status {
@@ -544,12 +557,12 @@ header .HeadApp h1 {
 .Body .Status video {
     max-width: 100%;
     border-radius: 10px;
-    border: 3px solid #fff;
+    border: 2px solid var(--BodyBG);
     box-sizing: border-box;
 }
 
 .Body .Status video {
-    background-color: var(--HeadCL);
+    background-color: var(--BodyBG);
 }
 
 
@@ -573,78 +586,6 @@ header .HeadApp h1 {
     margin: 0 auto;
     text-align: center;
 }
-
-
-.Bottom {
-    width: 100%;
-    margin: 10px 0;
-}
-
-.Bottom .RepMess {
-    display: grid;
-    grid-template-columns: 50px auto 50px 50px;
-    background-color: #000;
-    border-radius: 10px;
-}
-
-.Bottom .RepStory {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-}
-
-.Bottom .RepStory textarea {
-    width: 100%;
-    min-height: 20px;
-    padding: 5px;
-    font-size: 18px;
-    color: var(--BodyCL);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--BodyCL);
-    box-sizing: border-box;
-    border-radius: 0;
-    border-left: 0;
-}
-
-.Bottom .RepStory textarea:focus {
-    outline: none;
-}
-
-.RepMess .Func {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--Female);
-    ;
-    border: 2px solid var(--BodyCL);
-    border-left: none;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    box-sizing: border-box;
-}
-
-.RepMess .Func:nth-child(1) {
-    border: 2px solid var(--BodyCL);
-    border-right: 0;
-    background-color: var(--BodyBG);
-    border-radius: 0;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-.RepMess .Func:nth-child(3) {
-    background-color: var(--Male);
-    border-left: 2px solid var(--BodyCL);
-    border-left: 0;
-    border-radius: 0;
-    box-sizing: border-box;
-}
-
-
-
 
 .write {
     position: fixed;
@@ -970,24 +911,42 @@ header .HeadApp h1 {
 
 .YoutubeMp3 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
+    margin: 0;
 }
 
 .YoutubeMp3 input {
-    color: var(--ButtonBG);
-    text-align: center;
-    font-size: 16px;
-    padding: 5px;
-    width: 40%;
-    background-color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-    border-radius: 10px;
+    height: 35px;
+    border: none;
+    padding: 0 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
 }
 
 .YoutubeMp3 input::placeholder {
     font-size: 14px;
+}
+
+.YoutubeMp3 button {
+    cursor: pointer;
+    height: 35px;
+    width: 20%;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--BodyCL);
+}
+
+.YoutubeMp3 button:nth-child(2) {
+    width: 35px;
+    border-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: 5px;
+}
+
+.YoutubeMp3 button i {
+    font-size: 16px;
 }
 
 .YoutubeMp3 select {
@@ -1002,34 +961,7 @@ header .HeadApp h1 {
     padding: 7px 2px;
     width: 20%;
     border-radius: 10px;
-}
-
-.YoutubeMp3 button {
-    cursor: pointer;
-    color: var(--BodyCL);
-    background-color: var(--ButtonBG);
-    border: 2px solid var(--BodyCL);
-    font-weight: bold;
-    padding: 7px 2px;
-    width: 20%;
-    border-radius: 10px;
-}
-
-.YoutubeMp3 button:nth-child(2) {
-    color: var(--BodyBG);
-    background-color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-    width: 10%;
-}
-
-.YoutubeMp3 button i {
-    font-size: 16px;
-}
-
-.YoutubeMp3 button:hover {
-    color: var(--ButtonBG);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--BodyBG);
+    margin-right: 5px;
 }
 
 #YoutubeMp3 iframe {
@@ -1434,7 +1366,7 @@ header .HeadApp h1 {
 
 /* PLAYLIST */
 .playlist {
-    margin-top: 2px;
+    margin-top: 260px;
     padding: 12px 12px 60px 12px;
 }
 
@@ -1697,3 +1629,145 @@ header .HeadApp h1 {
 }
 
 
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(80px)
+    }
+}
+
+.snowflake {
+    color: #fff;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    -webkit-animation-delay: 2s, 0s;
+    animation-delay: 2s, 0s
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    -webkit-animation-delay: 4s, 2.5s;
+    animation-delay: 4s, 2.5s
+}

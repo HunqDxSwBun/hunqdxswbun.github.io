@@ -148,7 +148,7 @@ function toggleSize() {
   var heart = document.querySelector('.Heart');
   heart.classList.toggle('large');
   if (toggle == 1) {
-    handleRandomImage();
+    
   } else {
     toggle = 0;
   }

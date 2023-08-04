@@ -43,7 +43,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       var month = dateObj.getMonth() + 1; // Tháng trong JavaScript bắt đầu từ 0, nên cần cộng thêm 1
       var year = dateObj.getFullYear();
 
-      var formattedDate = dayOfWeek + " " + day + "/" + month + "/" + year;
+      var formattedDate = dayOfWeek + ". " + day + "/" + month + "/" + year;
 
 
       if (dayDiff >= 365) {
@@ -80,6 +80,9 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
                     <div class="Name">${author}</div>
                     <div class="Time">${timeDiffText}</div>
                 </div>
+                <div class="Func Share">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
             </div>
         </div>
         
@@ -89,27 +92,6 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
                 <div class="Content">${encoded}</div>
             </div>
         </div>
-
-        <div class="Bottom">
-                <div class="BlockFunc">
-                    
-                </div>
-                <div class="RepMess">
-                      <div class="Func Share">
-                        <i class="fa-solid fa-share-from-square"></i>
-                      </div>
-                        <div class="RepStory">
-                          <textarea></textarea>
-                        </div>
-                        <div class="Func RepStoryMale">
-                          <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-                        <div class="Func RepStory">
-                          <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-                        
-                </div>
-            </div>
       </div>
       `;
     });
@@ -171,42 +153,6 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
         }
       });
     });
-
-    const RepStory = document.querySelectorAll('.Func.RepStory');
-
-    RepStory.forEach(button2 => {
-      button2.addEventListener('click', function () {
-        const story = button2.closest('.Feed');
-        const storyId = story.id;
-        const currentUrl = 'https://hunqdxswbun.github.io/';
-
-        const textarea = button2.parentElement.querySelector('textarea'); // Sửa dòng này
-        const RepStoryMess = textarea.value;
-
-        window.open('https://www.messenger.com/t/100074217488487/?text=' + RepStoryMess + '%0A'  + '%0A' + currentUrl + '%23' + storyId  , '_blank');
-
-      });
-    });
-
-
-    const RepStoryMale = document.querySelectorAll('.Func.RepStoryMale');
-
-    RepStoryMale.forEach(button => {
-      button.addEventListener('click', function () {
-        const story = button.closest('.Feed');
-        const storyId = story.id;
-        const currentUrl = 'https://hunqdxswbun.github.io/';
-
-        const textarea = button.parentElement.querySelector('textarea'); // Sửa dòng này
-        const RepStoryMess = textarea.value;
-
-        window.open('https://www.messenger.com/t/100045640179308/?text=' + RepStoryMess + '%0A' + '%0A'  + currentUrl + '%23' + storyId  , '_blank');
-
-      });
-    });
-
-
-
 
 
     setTimeout(() => {
