@@ -148,7 +148,7 @@ function toggleSize() {
   var heart = document.querySelector('.Heart');
   heart.classList.toggle('large');
   if (toggle == 1) {
-    
+
   } else {
     toggle = 0;
   }
@@ -240,7 +240,7 @@ function CheckWho2() {
 
 }
 
- var vHideInfo = 0 
+var vHideInfo = 0
 function HideInfo() {
   vHideInfo++
   console.log(vHideInfo);
@@ -256,7 +256,7 @@ function HideInfo() {
 
 var vFrame = document.getElementById("Frame");
 var vSecurity = document.getElementById("Security");
- 
+
 function Frame() {
   if (vFrame.style.display === "block") {
     vFrame.style.display = "none";
@@ -314,7 +314,7 @@ function Menu() {
   }
 
   // Thiết lập một đối tượng setTimeout mới sau 3 giây
-  timeoutId = setTimeout(function() {
+  timeoutId = setTimeout(function () {
     x.style.bottom = "-100px";
     navbar.style.bottom = "15px";
     timeoutId = null; // Đặt lại biến timeoutId thành null sau khi tự đóng menu
@@ -335,7 +335,7 @@ function cancelMenuClose() {
 function startMenuCloseTimer() {
   // Chỉ khởi đầu tính thời gian khi timeoutId không tồn tại (không có timeout đang chạy)
   if (!timeoutId) {
-    timeoutId = setTimeout(function() {
+    timeoutId = setTimeout(function () {
       var x = document.getElementById("iMenu");
       var navbar = document.getElementById("navbar");
       x.style.bottom = "-100px";
@@ -350,18 +350,32 @@ const originalConsoleLog = console.log;
 
 // Hàm để đưa nội dung vào div và log ra console ban đầu
 function logToDivAndConsole(message) {
-    const logOutputDiv = document.getElementById("logOutput");
-    const logMessage = document.createElement("p");
-    logMessage.textContent = message;
-    logOutputDiv.appendChild(logMessage);
+  const logOutputDiv = document.getElementById("logOutput");
+  const logMessage = document.createElement("p");
+  logMessage.textContent = message;
+  logOutputDiv.appendChild(logMessage);
 
-    // Log ra console ban đầu nếu muốn
-    originalConsoleLog(message);
+  // Log ra console ban đầu nếu muốn
+  originalConsoleLog(message);
 }
 
 // Ghi đè hàm console.log
-console.log = function(message) {
-    logToDivAndConsole(message);
+console.log = function (message) {
+  logToDivAndConsole(message);
 };
 
+// Lặp qua tất cả các thẻ img trong trang
+function CheckIMG() {
+  var images = document.getElementsByTagName('img');
+  for (var i = 0; i < images.length; i++) {
+    // Thêm sự kiện onerror vào từng thẻ img
+    images[i].onerror = function () {
+      // Thay đổi đường dẫn hình ảnh khi lỗi 404
+      this.src = "/Data/IMG/BannerApp.png";
+      // Loại bỏ sự kiện onerror sau khi đã thay thế hình ảnh
+      this.onerror = null;
+    };
+  }
+}
+CheckIMG();
 

@@ -55,7 +55,7 @@
             <div id="MenuMuic">
               <div class="Tab">
                 <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
-                <!-- <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button> -->
+                <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
                 <button class="tablinks" onclick="openTAB(event, 'Questions')"> <i class="fa-solid fa-clipboard-question"></i></button>
                 <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-house"></i></button>
                 <button class="tablinks" onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
@@ -462,31 +462,38 @@
     </div>
 
     <div class="tabcontent" id="Questions">
-        <div class="container">
-            <h1>Ai là triệu phú</h1>
-            <div class="question">
-                <img class="question-image" src="" alt="Câu hỏi">
-                <p class="question-text"></p>
+        <div class="Questions">
+            <div class="StarQuestions">
+                <h1>Xem ai hiểu nhau hơn ?</h1>
+                <button onclick="startGameA()">Câu hỏi của Anh Yêu ❤</button>
+                <button onclick="startGameB()">Câu hỏi của Em Yêu ❤</button>
             </div>
-            <div class="timer">Thời gian còn lại: <span class="countdown"></span> giây</div>
-
-            <div class="DapAn">
-                <button class="DapAn" data-dapan="A" onclick="checkAnswer('A')">A: <span class="option-text"></span></button>
-                <button class="DapAn" data-dapan="B" onclick="checkAnswer('B')">B: <span class="option-text"></span></button>
-                <button class="DapAn" data-dapan="C" onclick="checkAnswer('C')">C: <span class="option-text"></span></button>
-                <button class="DapAn" data-dapan="D" onclick="checkAnswer('D')">D: <span class="option-text"></span></button>
+            <div class="QuestionsBlock">
+                <div class="Func">
+                    <button class="countdown">0s</button>
+                    <button id="Hide" onclick="lifeline('hideTwo')"><i class="fa-solid fa-2"></i></button>
+                    <button id="Call" onclick="lifeline('callFriend')"><i class="fa-solid fa-phone"></i></button>
+                    <button id="Skip" onclick="lifeline('skipQuestion')"><i class="fa-solid fa-forward"></i></button>
+                </div>
+                <div class="question">
+                    <img class="question-image" src="./Data/IMG/BannerApp.png" alt="Câu hỏi">
+                    <h1 class="question-text"></p>
+                </div>
+                <div class="DapAn">
+                    <button class="DapAn" data-dapan="A" onclick="checkAnswer('A')">A: <span class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="B" onclick="checkAnswer('B')">B: <span class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="C" onclick="checkAnswer('C')">C: <span class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="D" onclick="checkAnswer('D')">D: <span class="option-text"></span></button>
+                </div>
+                <div class="result"></div>
+                <button id="start-btn" onclick="backHome()">Bắt đầu</button>
+                <audio id="calling">
+                    <source src="./Data/Questions/Call Sound Effect.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
             </div>
-            <div class="result"></div>
-            <button class="lifeline-btn" onclick="lifeline('hideTwo')">Ẩn đi 2 câu trả lời sai</button>
-            <button class="lifeline-btn" onclick="lifeline('callFriend')">Gọi cho người thân</button>
-            <button class="lifeline-btn" onclick="lifeline('skipQuestion')">Bỏ qua câu hỏi</button>
-            <button id="start-btn" onclick="startGame()">Bắt đầu</button>
         </div>
-        <audio id="calling">
-            <source src="./Data/Questions/Call Sound Effect.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>
-        <button onclick="speakText('Xin chào bạn')">Xin chào thửu</button>
+
     </div>
 
 </body>
@@ -495,10 +502,6 @@
 
 <!-- Tổng hợp -->
 <script src="./Data/JS/File.js"></script>
-
-<!-- Các câu hỏi -->
-<script src="./Data/JS/Questions.js"></script>
-
 
 <!-- Giao diện -->
 <script src="./Data/JS/DarkMode.js"></script>
@@ -522,6 +525,10 @@
 
 <!-- Tạo khung hình -->
 <script src="./Data/JS/Frame.js"></script>
+
+<!-- Các câu hỏi -->
+<script src="./Data/JS/Questions.js"></script>
+
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>

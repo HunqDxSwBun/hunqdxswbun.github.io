@@ -7,8 +7,8 @@ let callFriendUsed = false;
 let skipQuestionUsed = 0;
 let timer;
 
-function startGame() {
-    fetch('./Questions.json')
+function startGameA() {
+    fetch('./Questions/QuestionsA.json')
         .then(response => response.json())
         .then(data => {
             questions = data;
@@ -17,12 +17,29 @@ function startGame() {
         .catch(error => console.error('Error fetching questions:', error));
 }
 
+function startGameB() {
+    fetch('./Questions/QuestionsB.json')
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            showQuestion();
+        })
+        .catch(error => console.error('Error fetching questions:', error));
+}
+
+
+
 function showQuestion() {
     clearTimeout(timer); // Xóa bỏ hẹn giờ trước đó (nếu có)
+    document.querySelector('.StarQuestions').style.display = "none";
+    document.querySelector('.QuestionsBlock').style.display = "block";
+    const allAnswerButtons = document.querySelectorAll('.DapAn');
+    allAnswerButtons.forEach((button) => {
+        button.classList.remove('correct', 'incorrect');
+    });
 
     const questionDiv = document.querySelector('.question');
     const DapAnDiv = document.querySelector('.DapAn');
-    const timerDiv = document.querySelector('.timer');
     const countdownSpan = document.querySelector('.countdown');
     const resultDiv = document.querySelector('.result');
     const startBtn = document.getElementById('start-btn');
@@ -30,7 +47,6 @@ function showQuestion() {
     if (currentQuestion < questions.length) {
         questionDiv.style.display = 'block';
         DapAnDiv.style.display = 'block';
-        timerDiv.style.display = 'block'; // Hiển thị đồng hồ đếm ngược
         resultDiv.innerText = '';
         startBtn.style.display = 'none';
 
@@ -48,7 +64,7 @@ function showQuestion() {
             const DapAnButton = document.querySelector(`.DapAn[data-dapan="${DapAn}"]`);
             if (questions[currentQuestion][DapAn]) {
                 DapAnButton.style.display = 'block';
-                DapAnButton.innerText = DapAn + ': ' + questions[currentQuestion][DapAn];
+                DapAnButton.innerText =  questions[currentQuestion][DapAn];
                 DapAnButton.disabled = false; // Cho phép người chơi chọn đáp án
             } else {
                 DapAnButton.style.display = 'none';
@@ -72,13 +88,13 @@ function showQuestion() {
     } else {
         questionDiv.style.display = 'none';
         DapAnDiv.style.display = 'none';
-        timerDiv.style.display = 'none'; // Ẩn đồng hồ đếm ngược khi kết thúc trò chơi
         resultDiv.innerText = 'Tổng điểm của bạn: ' + score;
         startBtn.style.display = 'block';
         startBtn.innerText = 'Chơi lại';
         currentQuestion = 0;
         score = 0;
     }
+    CheckIMG();
 }
 
 function checkAnswer(selectedOption) {
@@ -88,13 +104,25 @@ function checkAnswer(selectedOption) {
 
     if (selectedOption === questions[currentQuestion].DapAn) {
         score++;
-        resultDiv.innerText = 'Chính xác!';
+        const selectedButton = document.querySelector(`.DapAn[data-dapan="${selectedOption}"]`);
+        selectedButton.classList.add('correct'); // Thêm class 'correct' để thay đổi màu nền thành màu xanh
     } else {
-        resultDiv.innerText = 'Sai rồi!';
+        const selectedButton = document.querySelector(`.DapAn[data-dapan="${selectedOption}"]`);
+        selectedButton.classList.add('incorrect'); // Thêm class 'incorrect' để thay đổi màu nền thành màu đỏ
+
+        // Hiển thị đáp án đúng bằng cách thay đổi màu nền của nút đáp án đúng thành màu xanh
+        const correctButton = document.querySelector(`.DapAn[data-dapan="${questions[currentQuestion].DapAn}"]`);
+        correctButton.classList.add('correct');
     }
 
     currentQuestion++;
-    setTimeout(showQuestion, 1000);
+    setTimeout(showQuestion, 1500);
+}
+
+
+function backHome() {
+    document.querySelector('.StarQuestions').style.display = "block";
+    document.querySelector('.QuestionsBlock').style.display = "none";
 }
 
 
@@ -112,6 +140,7 @@ function lifeline(lifelineType) {
                     const DapAnButton = document.querySelector(`.DapAn[data-dapan="${DapAn}"]`);
                     DapAnButton.style.display = 'none';
                     hiddenAnswers++;
+                    document.getElementById('Hide').style.display = 'none';
                 }
             });
 
@@ -120,14 +149,16 @@ function lifeline(lifelineType) {
     } else if (lifelineType === 'callFriend') {
         // Kiểm tra xem nút callFriend đã được sử dụng chưa
         if (!callFriendUsed) {
-            const GoiDien = questions[currentQuestion].Goi;
+            const GoiDien = questions[currentQuestion].GoiDien;
             var calling = document.getElementById('calling');
+            calling.load();
             calling.play();
             setTimeout(() => {
                 calling.pause();
-                speakText(GoiDien);
-            }, 6000);
-
+                speakText("'"+GoiDien+"'");
+                document.getElementById('Call').style.display = 'none';
+            }, 3000);
+            
             callFriendUsed = true; // Đánh dấu nút callFriend đã được sử dụng
         }
     } else if (lifelineType === 'skipQuestion') {
@@ -135,13 +166,17 @@ function lifeline(lifelineType) {
         if (skipQuestionUsed < 3) {
             // Logic để bỏ qua câu hỏi
             if (!skippedQuestion) {
+                console.log(skippedQuestion);
                 // Nếu chưa bỏ qua câu hỏi trước đó, thực hiện bỏ qua
-                skippedQuestion = true; // Đánh dấu câu hỏi hiện tại đã bị bỏ qua
                 currentQuestion++; // Chuyển sang câu hỏi tiếp theo
                 showQuestion(); // Hiển thị câu hỏi mới
                 skipQuestionUsed++; // Tăng số lần sử dụng nút skipQuestion lên 1
             }
+            if (skipQuestionUsed === 3) {
+                document.getElementById('Skip').style.display = 'none';
+            }
         }
+        
     }
 }
 
@@ -149,10 +184,21 @@ function lifeline(lifelineType) {
 function speakText(text) {
     if ('speechSynthesis' in window) {
       const speech = new SpeechSynthesisUtterance(text);
+      
+      // Kiểm tra xem ngôn ngữ "vi-VN" có sẵn không
+      const voices = window.speechSynthesis.getVoices();
+      const vietnameseVoice = voices.find(voice => voice.lang === 'vi-VN');
+      if (vietnameseVoice) {
+        speech.voice = vietnameseVoice;
+        speech.lang = 'vi-VN';
+      } else {
+        // Nếu không tìm thấy ngôn ngữ "vi-VN", bạn có thể chọn ngôn ngữ mặc định khác
+        // speech.lang = 'en-US'; // Ví dụ: Chọn tiếng Anh (Mỹ) làm ngôn ngữ mặc định
+      }
+      
       window.speechSynthesis.speak(speech);
     } else {
       alert('Trình duyệt của bạn không hỗ trợ Web Speech API.');
     }
   }
-
-startGame();
+  

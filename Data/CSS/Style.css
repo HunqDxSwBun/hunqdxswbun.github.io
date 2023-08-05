@@ -161,7 +161,9 @@ header .HeadApp h1 {
 .Tab {
     background-color: var(--TabBG);
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    /* grid-template-columns: 20% 20% 20% 20% 20%; */
+    grid-template-columns: 20% 20% 20% 20% 20% 20%;
+    overflow: auto;
     margin: 5px 0;
     padding: 4px;
     border-radius: 20px;
@@ -1676,6 +1678,7 @@ header .HeadApp h1 {
 }
 
 .snowflake {
+    display: none;
     color: #fff;
     font-size: 1.5em;
     font-family: Arial, sans-serif;
@@ -1771,3 +1774,85 @@ header .HeadApp h1 {
     -webkit-animation-delay: 4s, 2.5s;
     animation-delay: 4s, 2.5s
 }
+
+.Questions {
+    padding: 10px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.StarQuestions {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.StarQuestions h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: var(--ButtonBG);
+}
+
+.StarQuestions button {
+    width: 250px;
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: var(--BodyCL);
+    background-color: var(--ButtonBG);
+    border: none;
+}
+
+.QuestionsBlock {
+    display: none;
+}
+
+.QuestionsBlock .question img {
+    width: 100%;
+    max-height: 180px;
+    border-radius: 10px;
+}
+
+.QuestionsBlock .Func {
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+
+.QuestionsBlock .Func button {
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 5px;
+}
+.QuestionsBlock .Func button:first-child  {
+    color: var(--BodyCL);
+    background-color: var(--ButtonBG);
+}
+
+
+.QuestionsBlock .question h1 {
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+}
+.QuestionsBlock .DapAn button, #start-btn{
+    font-size: 18px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.QuestionsBlock .DapAn .correct {
+    background-color: #74e700; /* Màu xanh cho đáp án đúng */
+  }
+.QuestionsBlock .DapAn .incorrect {
+    background-color: #ff3300; /* Màu đỏ cho đáp án sai */
+  }
