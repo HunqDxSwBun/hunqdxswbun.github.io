@@ -1,32 +1,12 @@
 [
     {
-        "HinhAnh": "/Data/icon/Logo2.png",
-        "CauHoi": "1 cộng 2 bằng mấy?",
-        "A": "2",
-        "B": "3",
-        "C": "1",
-        "D": "4",
-        "GoiDien": "Anh nghĩ câu A đó em.",
-        "DapAn": "A"
-    },
-    {
-        "HinhAnh": "/Data/icon/Logo2.png",
-        "CauHoi": "Mặt trời mọc từ hướng nào?",
-        "A": "Đông",
-        "B": "Tây",
-        "C": "Nam",
-        "D": "Bắc",
-        "DapAn": "A",
-        "GoiDien": "Anh nghĩ câu A đó em."
-    },
-    {
-        "HinhAnh": "/Data/icon/Logo2.png",
-        "CauHoi": "Bánh mỳ có màu gì?",
-        "A": "Xanh",
-        "B": "Đỏ",
-        "C": "Nâu",
-        "D": "Vàng",
-        "DapAn": "D",
-        "GoiDien": "Anh nghĩ câu A đó em."
+      "HinhAnh": "/Data/IMG/BannerApp.png",
+      "CauHoi": "em thích màu gì ? đố anh biết.",
+      "A": "Xanh",
+      "B": "Đỏ",
+      "C": "Vàng",
+      "D": "Hồng",
+      "DapAn": "D",
+      "GoiDien": "BlackPink fan guộc em đó anh anh đoán thử xem"
     }
-]
+  ]

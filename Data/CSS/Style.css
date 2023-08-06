@@ -1796,23 +1796,26 @@ header .HeadApp h1 {
 }
 
 .StarQuestions button {
+    cursor: pointer;
     width: 250px;
     padding: 10px;
     font-size: 18px;
+    font-weight: bold;
     margin: 10px 0;
     border-radius: 10px;
     color: var(--BodyCL);
     background-color: var(--ButtonBG);
     border: none;
 }
-
+.Questions .Action {
+    margin: 10px 0;
+}
 .QuestionsBlock {
     display: none;
 }
 
 .QuestionsBlock .question img {
     width: 100%;
-    max-height: 180px;
     border-radius: 10px;
 }
 
@@ -1823,10 +1826,12 @@ header .HeadApp h1 {
 
 
 .QuestionsBlock .Func button {
-    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
     font-weight: bold;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     border: none;
     margin: 0 5px;
@@ -1842,10 +1847,13 @@ header .HeadApp h1 {
     margin: 10px 0 20px 0;
 }
 .QuestionsBlock .DapAn button, #start-btn{
+    cursor: pointer;
     font-size: 18px;
+    font-weight: bold;
+    color: var(--BodyBG);
     width: 100%;
     margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     border: none;
 }
@@ -1854,5 +1862,5 @@ header .HeadApp h1 {
     background-color: #74e700; /* Màu xanh cho đáp án đúng */
   }
 .QuestionsBlock .DapAn .incorrect {
-    background-color: #ff3300; /* Màu đỏ cho đáp án sai */
+    background-color: #ff0000; /* Màu đỏ cho đáp án sai */
   }

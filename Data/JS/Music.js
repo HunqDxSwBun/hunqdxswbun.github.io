@@ -408,63 +408,63 @@ navigator.mediaSession.setActionHandler('seekto', (details) => {
   // Xử lý seek to ở thời gian seekTime
 });
 
-let audio1 = audio;
-const container = document.getElementById("container");
-const canvas = document.getElementById("canvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight / 1.5;
+// let audio1 = audio;
+// const container = document.getElementById("container");
+// const canvas = document.getElementById("canvas");
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight / 1.5;
 
-const ctx = canvas.getContext("2d");
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-let audioSource = null;
-let analyser = null;
+// const ctx = canvas.getContext("2d");
+// const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+// let audioSource = null;
+// let analyser = null;
 
-function playAudio() {
-  if (audioSource !== null) {
-    audioSource.disconnect();
-  }
+// function playAudio() {
+//   if (audioSource !== null) {
+//     audioSource.disconnect();
+//   }
 
-  audioSource = audioCtx.createMediaElementSource(audio1);
-  analyser = audioCtx.createAnalyser();
-  audioSource.connect(analyser);
-  analyser.connect(audioCtx.destination);
-  analyser.fftSize = 128 * 8;
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-  const barWidth = canvas.width / bufferLength * 2;
-  let x = 0;
+//   audioSource = audioCtx.createMediaElementSource(audio1);
+//   analyser = audioCtx.createAnalyser();
+//   audioSource.connect(analyser);
+//   analyser.connect(audioCtx.destination);
+//   analyser.fftSize = 128 * 8;
+//   const bufferLength = analyser.frequencyBinCount;
+//   const dataArray = new Uint8Array(bufferLength);
+//   const barWidth = canvas.width / bufferLength * 2;
+//   let x = 0;
 
-  function animate() {
-    x = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    analyser.getByteFrequencyData(dataArray);
-    drawVisualizer({
-      bufferLength,
-      dataArray,
-      barWidth
-    });
-    requestAnimationFrame(animate);
-  }
+//   function animate() {
+//     x = 0;
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     analyser.getByteFrequencyData(dataArray);
+//     drawVisualizer({
+//       bufferLength,
+//       dataArray,
+//       barWidth
+//     });
+//     requestAnimationFrame(animate);
+//   }
 
-  const drawVisualizer = ({
-    bufferLength,
-    dataArray,
-    barWidth
-  }) => {
-    let barHeight;
-    for (let i = 0; i < bufferLength; i++) {
-      barHeight = dataArray[i];
-      const red = (i * barHeight);
-      const green = i;
-      const blue = barHeight;
-      ctx.fillStyle = `#ff2655`;
-      ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-      x += barWidth;
-    }
-  }
+//   const drawVisualizer = ({
+//     bufferLength,
+//     dataArray,
+//     barWidth
+//   }) => {
+//     let barHeight;
+//     for (let i = 0; i < bufferLength; i++) {
+//       barHeight = dataArray[i];
+//       const red = (i * barHeight);
+//       const green = i;
+//       const blue = barHeight;
+//       ctx.fillStyle = `#ff2655`;
+//       ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+//       x += barWidth;
+//     }
+//   }
 
-  animate();
-}
+//   animate();
+// }
 
 console.log(`Phiên bản 1.10.6`)
 

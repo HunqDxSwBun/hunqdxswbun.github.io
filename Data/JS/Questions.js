@@ -33,6 +33,8 @@ function showQuestion() {
     clearTimeout(timer); // Xóa bỏ hẹn giờ trước đó (nếu có)
     document.querySelector('.StarQuestions').style.display = "none";
     document.querySelector('.QuestionsBlock').style.display = "block";
+    document.getElementById('Action').innerText = '';
+
     const allAnswerButtons = document.querySelectorAll('.DapAn');
     allAnswerButtons.forEach((button) => {
         button.classList.remove('correct', 'incorrect');
@@ -64,7 +66,7 @@ function showQuestion() {
             const DapAnButton = document.querySelector(`.DapAn[data-dapan="${DapAn}"]`);
             if (questions[currentQuestion][DapAn]) {
                 DapAnButton.style.display = 'block';
-                DapAnButton.innerText =  questions[currentQuestion][DapAn];
+                DapAnButton.innerText = questions[currentQuestion][DapAn];
                 DapAnButton.disabled = false; // Cho phép người chơi chọn đáp án
             } else {
                 DapAnButton.style.display = 'none';
@@ -100,16 +102,14 @@ function showQuestion() {
 function checkAnswer(selectedOption) {
     clearTimeout(timer); // Xóa bỏ hẹn giờ trả lời
 
-    const resultDiv = document.querySelector('.result');
-
     if (selectedOption === questions[currentQuestion].DapAn) {
         score++;
         const selectedButton = document.querySelector(`.DapAn[data-dapan="${selectedOption}"]`);
         selectedButton.classList.add('correct'); // Thêm class 'correct' để thay đổi màu nền thành màu xanh
     } else {
+
         const selectedButton = document.querySelector(`.DapAn[data-dapan="${selectedOption}"]`);
         selectedButton.classList.add('incorrect'); // Thêm class 'incorrect' để thay đổi màu nền thành màu đỏ
-
         // Hiển thị đáp án đúng bằng cách thay đổi màu nền của nút đáp án đúng thành màu xanh
         const correctButton = document.querySelector(`.DapAn[data-dapan="${questions[currentQuestion].DapAn}"]`);
         correctButton.classList.add('correct');
@@ -147,6 +147,7 @@ function lifeline(lifelineType) {
             hideTwoUsed = true; // Đánh dấu nút hideTwo đã được sử dụng
         }
     } else if (lifelineType === 'callFriend') {
+        var Action = document.getElementById('Action');
         // Kiểm tra xem nút callFriend đã được sử dụng chưa
         if (!callFriendUsed) {
             const GoiDien = questions[currentQuestion].GoiDien;
@@ -154,11 +155,13 @@ function lifeline(lifelineType) {
             calling.load();
             calling.play();
             setTimeout(() => {
+                Action.innerText = GoiDien;
                 calling.pause();
-                speakText("'"+GoiDien+"'");
+                speakText(Action.textContent);
                 document.getElementById('Call').style.display = 'none';
             }, 3000);
             
+
             callFriendUsed = true; // Đánh dấu nút callFriend đã được sử dụng
         }
     } else if (lifelineType === 'skipQuestion') {
@@ -176,29 +179,29 @@ function lifeline(lifelineType) {
                 document.getElementById('Skip').style.display = 'none';
             }
         }
-        
+
     }
 }
 
 
 function speakText(text) {
     if ('speechSynthesis' in window) {
-      const speech = new SpeechSynthesisUtterance(text);
-      
-      // Kiểm tra xem ngôn ngữ "vi-VN" có sẵn không
-      const voices = window.speechSynthesis.getVoices();
-      const vietnameseVoice = voices.find(voice => voice.lang === 'vi-VN');
-      if (vietnameseVoice) {
-        speech.voice = vietnameseVoice;
-        speech.lang = 'vi-VN';
-      } else {
-        // Nếu không tìm thấy ngôn ngữ "vi-VN", bạn có thể chọn ngôn ngữ mặc định khác
-        // speech.lang = 'en-US'; // Ví dụ: Chọn tiếng Anh (Mỹ) làm ngôn ngữ mặc định
-      }
-      
-      window.speechSynthesis.speak(speech);
+        const speech = new SpeechSynthesisUtterance(text);
+
+        // Kiểm tra xem ngôn ngữ "vi-VN" có sẵn không
+        const voices = window.speechSynthesis.getVoices();
+        const vietnameseVoice = voices.find(voice => voice.lang === 'vi-VN');
+        if (vietnameseVoice) {
+            speech.voice = vietnameseVoice;
+            speech.lang = 'vi-VN';
+        } else {
+            // Nếu không tìm thấy ngôn ngữ "vi-VN", bạn có thể chọn ngôn ngữ mặc định khác
+            // speech.lang = 'en-US'; // Ví dụ: Chọn tiếng Anh (Mỹ) làm ngôn ngữ mặc định
+        }
+
+        window.speechSynthesis.speak(speech);
     } else {
-      alert('Trình duyệt của bạn không hỗ trợ Web Speech API.');
+        alert('Trình duyệt của bạn không hỗ trợ Web Speech API.');
     }
-  }
-  
+}
+
