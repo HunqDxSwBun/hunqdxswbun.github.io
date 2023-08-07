@@ -5,6 +5,7 @@ const albums = [
   { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
   { name: "❤ Yêu Xa", dataAlbum: "TinhYeuXa" },
   { name: "Bích Phương", dataAlbum: "BichPhuong" },
+  { name: "Binaural Beats", dataAlbum: "Binaural" },
   { name: "Remix", dataAlbum: "Remix" },
   { name: "EDM", dataAlbum: "EDM" },
   { name: "US UK Mix", dataAlbum: "USUKMix" },

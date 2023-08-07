@@ -45,7 +45,6 @@ header .HeadApp h1 {
 
 ::-webkit-scrollbar-track {
     cursor: pointer;
-
     border-radius: 4px;
     background-color: var(--BodyBG);
 }
