@@ -1,0 +1,1450 @@
+{
+  "quizlist": [
+    {
+      "question": "Câu 1: Bệnh gì mà bác sỹ phải bó tay?",
+      "option": [
+        "Gãy tay",
+        "Cúm",
+        "Đau bụng",
+        "Đau mắt đỏ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 2: Lịch nào dài nhất?",
+      "option": [
+        "Lịch sử",
+        "Lịch Vạn Niên",
+        "Lịch bàn",
+        "Lịch treo tường"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 3: Con đường dài nhất là đường nào?",
+      "option": [
+        "Đường đời",
+        "Đường Quốc lộ",
+        "Đường Trường Sơn",
+        "Đường biên giới"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 4: Quần rộng nhất là quần gì?",
+      "option": [
+        "Quần đảo",
+        "Quần thụng",
+        "Quần đùi",
+        "Quần soóc"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 5: Cái gì mà đi thì nằm, đứng cũng nằm, nhưng nằm lại đứng?",
+      "option": [
+        "Bàn chân",
+        "Bàn tay",
+        "Cái lưng",
+        "Cái cổ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 6: Núi nào mà bị chặt ra từng khúc?",
+      "option": [
+        "Thái Sơn",
+        "Ngũ hành sơn",
+        "Himalaya",
+        "Hoàng Liên Sơn"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 7: Cái gì bằng cái vung, vùng xuống ao, đào chẳng thấy, lấy chẳng được",
+      "option": [
+        "Bóng mặt trăng",
+        "Cái thuyền",
+        "Cái vung",
+        "Cây cầu"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 8: Con gì đập thì sống, không đập thì chết",
+      "option": [
+        "Con tim",
+        "Con đập",
+        "Con ếch",
+        "Con sông"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 9: Bỏ ngoài nướng trong, ăn ngoài bỏ trong là gì?",
+      "option": [
+        "Bắp ngô",
+        "Củ khoai",
+        "Cây mía",
+        "Xúc xích"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 10: Trong 1 cuộc thi chạy, nếu bạn vượt qua người thứ 2 bạn sẽ đứng thứ mấy?",
+      "option": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 11: Sở thú bị cháy, con gì chạy ra đầu tiên?",
+      "option": [
+        "Con người",
+        "Con hổ",
+        "Con voi",
+        "Con khỉ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 12: Có bao nhiêu chữ C trong câu sau đây: 'Cơm, canh, cháo gì tớ cũng thích ăn!'",
+      "option": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 13: Cái gì tay phải cầm được còn tay trái cầm không được?",
+      "option": [
+        "Tay trái",
+        "Cái bút",
+        "Cái kéo",
+        "Đôi đũa"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 14: Tìm điểm sai trong câu: '...dưới ánh nắng sương long lanh triệu cành hồng khoe sắc thắm'",
+      "option": [
+        "khoe sắc thắm",
+        "dưới ánh nắng",
+        "sương long lanh",
+        "triệu cành hồng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 15: Ai cũng biết đỉnh núi Everest cao nhất thế giới. Vậy trước khi đỉnh Everest được khám phá, đỉnh núi nào cao nhất thế giới?",
+      "option": [
+        "Everest",
+        "Kanchenjunga",
+        "Lhotse",
+        "Makalu"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 16: Loại nước giải khát nào chứa sắt và canxi?",
+      "option": [
+        "Cafe",
+        "Coca",
+        "Pepsi",
+        "7up"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 17: Cái gì trong trắng ngoài xanh. Trồng đậu, trồng hành rồi thả heo vào",
+      "option": [
+        "Bánh chưng",
+        "Bánh mì",
+        "Bánh đậu xanh",
+        "Bánh cáy"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 18: Con trai và con chim khác nhau chủ yếu ở điểm nào",
+      "option": [
+        "Môi trường sống",
+        "Đôi chân",
+        "Cái đầu",
+        "Cái tay"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 19: Khi Ronaldo thực hiện quả đá phạt đền, anh ta sẽ sút vào đâu?",
+      "option": [
+        "Trái bóng",
+        "Góc trái",
+        "Góc phải",
+        "Thủ môn"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 20: Con gì mang được miếng gỗ lớn nhưng không mang được hòn sỏi?",
+      "option": [
+        "Con sông",
+        "Con voi",
+        "Con kiến",
+        "Con cua"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 21: Có một mảnh gỗ cần cắt ra làm 50 miếng. Thời gian để cắt được 1 miếng gỗ là 1 phút. Hỏi nếu cắt liên tục không nghỉ thì bao lâu sẽ cắt xong mảnh gỗ",
+      "option": [
+        "49 phút",
+        "48 phút",
+        "50 phút",
+        "51 phút"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 22: Làm sao để cái cân tự cân chính nó?",
+      "option": [
+        "Lật ngược cái cân lại",
+        "Đặt lên cái cân khác",
+        "Đặt 2 cái cân lên bàn cân",
+        "Không thể làm được"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 23: Tôi đi chu du khắp nơi trên thế giới mà tôi vẫn ở nguyên một chỗ. Vậy tôi là ai?",
+      "option": [
+        "Cái tem",
+        "Máy bay",
+        "Cái vali",
+        "Con chim"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 24: Hai người đào trong hai giờ thì được một cái hố. Hỏi nếu một người đào trong một giờ thì được mấy cái hố",
+      "option": [
+        "Một cái hố",
+        "Hai cái hố",
+        "Ba cái hố",
+        "Không được cái hố nào"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 25: Nếu chỉ có một que diêm, trong một ngày mùa đông giá rét. Bước vào căn phòng có một cây đèn, một bếp dầu và một bếp củi, bạn thắp gì trước tiên?",
+      "option": [
+        "Que diêm",
+        "Cây đèn",
+        "Bếp dầu",
+        "Bếp củi"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 26: Con gì càng to càng nhỏ?",
+      "option": [
+        "Con cua",
+        "Con voi",
+        "Con kiến",
+        "Con rùa"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 27: Bạch kê là gà lông trắng, huỳnh kê là gà lông vàng. Vậy ô kê là gì?",
+      "option": [
+        "Đồng ý",
+        "Gà lông đen",
+        "Gà lông xám",
+        "Gà lông nhiều màu"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 28: Cái gì càng kéo càng ngắn",
+      "option": [
+        "Điếu thuốc lá",
+        "Ống hút",
+        "Cái tẩu",
+        "Cái quần"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 29: 30 chia 1/3 rồi cộng thêm 15 thì bằng bao nhiêu",
+      "option": [
+        "105",
+        "25",
+        "75",
+        "90"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 30: Cái gì luôn bảo đến mà không bao giờ đến nơi",
+      "option": [
+        "Ngày mai",
+        "Đỉnh núi",
+        "Vinh quang",
+        "Thất bại"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 31: Một gia đình gồm bố mẹ và 6 người con trai, mỗi người con trai chỉ có một cô em gái. Hỏi gia đình đó có bao nhiêu người",
+      "option": [
+        "9",
+        "7",
+        "8",
+        "10"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 32: Vừa bằng một thước mà bước không qua. Là cái gì?",
+      "option": [
+        "Cái bóng",
+        "Bức tường",
+        "Khe núi",
+        "Sông sâu"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 33: Trên hang đá, dưới hang đá, giữa là con cá thờn bơn. Là cái gì?",
+      "option": [
+        "Cái miệng",
+        "Đôi mắt",
+        "Hang động lớn",
+        "Vực sâu"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 34: Cây gì càng trông càng thấy thấp",
+      "option": [
+        "Cây nến",
+        "Cây cỏ",
+        "Cây cột điện",
+        "Cây cau"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 35: Khi chưa ai biết nó thì nó vẫn là nó. Khi đã biết nó rồi thì nó không còn là nó nữa. Nó là gì?",
+      "option": [
+        "Bí mật",
+        "Tình yêu",
+        "Cuộc sống",
+        "Vinh quang"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 36: Cá gì có bốn màu",
+      "option": [
+        "Cá ngựa",
+        "Cá thần tiên",
+        "Cá chọi",
+        "Cá chép"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 37: Trên lông dưới lông, đêm lồng làm một. Là cái gì?",
+      "option": [
+        "Đôi mắt",
+        "Đôi tai",
+        "Đôi dép",
+        "Đôi chân"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 38: Một đàn chim 15 con đậu trên cây. Người thợ săn giơ súng bắn 5 phát, hỏi trên cây còn mấy con?",
+      "option": [
+        "0",
+        "5",
+        "10",
+        "15"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 39: Vua gọi hoàng hậu bằng gì?",
+      "option": [
+        "Miệng",
+        "Ái phi",
+        "Thái hậu",
+        "Nàng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 40: Cái gì khi dùng thì quăng đi, không dùng lại lấy lại",
+      "option": [
+        "Cái mỏ neo",
+        "Cái bút",
+        "Cái ghế",
+        "Cái cuốc"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 41: Có 2 con cua: 1 con cua đen và 1 con cua đỏ. Hỏi con nào chạy nhanh hơn?",
+      "option": [
+        "Cua đen",
+        "Cua đỏ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 42: Cái gì chứa nhiều nước nhất mà ko ướt tí ti nào?",
+      "option": [
+        "Bản đồ",
+        "Bình nước",
+        "Quả dừa",
+        "Thùng phuy"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 43: Người da trắng tắm biển đen thì họ sẽ bị gì?",
+      "option": [
+        "Bị ướt",
+        "Bị đen",
+        "Bị nổi",
+        "Bị chìm"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 44: Con gì đi ngồi, đứng ngồi, nằm ngồi, ngủ cũng ngồi luôn là con gì?",
+      "option": [
+        "Con ếch",
+        "Con gà",
+        "Con thỏ",
+        "Con chuột"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 45: Có ba quả táo trên bàn và bạn lấy đi hai quả. Hỏi bạn còn bao nhiêu quả táo?",
+      "option": [
+        "2 quả",
+        "1 quả",
+        "3 quả"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 46: Có 2 người bạn 1 mù, 1 câm đi shopping. Câm mua cái nón thì lấy tay chỉ lên đầu và gõ gõ mấy cái còn Mù muốn mua kem đánh răng thì làm sao?",
+      "option": [
+        "Nói: Tôi muốn mua kem đánh răng",
+        "Chỉ vào hộp kem đánh răng",
+        "Làm động tác đánh răng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 47: Bạn làm việc gì đầu tiên mỗi buổi sáng?",
+      "option": [
+        "Thức dậy",
+        "Rửa mặt",
+        "Đánh răng",
+        "Nghe đài"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 48: Tôi có 4 cái chân, 1 cái lưng, nhưng không có cơ thể. Tôi là ai?",
+      "option": [
+        "Cái ghế",
+        "Cái bàn",
+        "Con rùa",
+        "Con ngựa"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 49: Cây nến đốt càng nhiều càng ngắn. Cây gì đốt càng nhiều càng dài?",
+      "option": [
+        "Cây tre",
+        "Cây hương (nhang)",
+        "Cây chuối",
+        "Không có cây đó"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 50: Làm thế nào để có gà chín cựa",
+      "option": [
+        "Luộc nguyên con gà",
+        "Phối giống gà mới",
+        "Lắp thêm cựa giả"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 51: Một kẻ giết người bị kết án tử hình. Hắn ta phải chọn một trong ba căn phòng: Phòng thứ nhất lửa cháy dữ dội, Phòng thứ hai đầy những kẻ ám sát đang giương súng, và phòng thứ ba đầy sư tử nhịn đói trong ba năm. Phòng nào an toàn nhất cho hắn?",
+      "option": [
+        "3",
+        "2",
+        "1"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 52: 2 con vịt đi trước 2 con vịt, 2 con vịt đi sau 2 con vịt, 2 con vịt đi giữa 2 con vịt. Hỏi có mấy con vịt?",
+      "option": [
+        "4",
+        "2",
+        "1",
+        "3"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 53: Có 1 bà kia không biết bơi, xuống nước là bà chết. Một hôm bà đi tàu, bỗng nhiên tàu chìm, nhưng bà không chết.Tại sao (không ai cứu hết)?",
+      "option": [
+        "Bà đi tàu ngầm",
+        "Bà biết lặn",
+        "Bà có áo phao"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 54: Cái gì đen khi bạn mua nó đỏ, khi dùng nó và xám xịt khi vứt nó đi đen xì?",
+      "option": [
+        "Than",
+        "Que diêm",
+        "Bếp lửa"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 55: Có 1 anh chàng làm việc trong 1 tòa nhà 50 tầng, nhưng anh ta lại chỉ đi thang máy lên đến tầng 35 rồi đoạn còn lại anh ta đi thang bộ.Tại sao anh ta lại làm như vậy ?",
+      "option": [
+        "Thang máy không lên được tầng 50",
+        "Anh ta bị điên",
+        "Anh ta sợ độ cao"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 56: Câu chữ nào mà những người vui sướng khi nhìn thấy nó sẽ trở nên buồn bã và ngược lại, những người buồn bã u sầu khi thấy nó sẽ trở nên vui vẻ hơn.",
+      "option": [
+        "Điều đó rồi cũg qua đi.",
+        "Yên tâm đi mai có lương rồi",
+        "Tháng này được thưởng thêm rồi!"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 57: Bên trái đường có một căn nhà xanh, bên phải đường có một căn nhà đỏ. Vậy, nhà Trắng ở đâu ?",
+      "option": [
+        "Ở Mỹ",
+        "Ở phía sau",
+        "Ở trên trời!"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 58: Tại sao con chó không cắn được đuôi của mình?",
+      "option": [
+        "Vì đuôi nó không đủ dài",
+        "Vì nó chưa học Yoga",
+        "Vì cổ nó quá ngắn"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 59: Bà đó bả chết bả bay lên trời.Hỏi tại sao bà ấy chết?",
+      "option": [
+        "bò đá bả chết",
+        "Bà nhảy lầu tự tử",
+        "Bà thất tình"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 60: Bà đó bả chết bả bay lên trời.Hỏi bà ấy chết năm bao nhiêu tuổi?",
+      "option": [
+        "73",
+        "93",
+        "83"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 61: Có 1 đàn chim đậu trên cành, người thợ săn bắn cái rằm. Hỏi chết mấy con?",
+      "option": [
+        "15",
+        "1",
+        "5",
+        "Không chết con nào"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 62: Con gì ăn lửa với nước than?",
+      "option": [
+        "con tàu",
+        "con đường",
+        "con bò",
+        "con người"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 63: Con trai và con gái có điểm gì khác nhau?",
+      "option": [
+        "môi trường sống",
+        "Ngoại hình",
+        "Suy nghĩ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 64: Ở Việt Nam, rồng bay ở đâu?",
+      "option": [
+        "Thăng long",
+        "Sân vận động",
+        "Hồ gươm"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 65: Ở Việt Nam, rồng đáp ở đâu?",
+      "option": [
+        "Hạ long",
+        "Hà nội",
+        "Hải phòng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 67: Nơi nào có đường xá, nhưng không có xe cộ; có nhà ở, nhưng không có người; có siêu thị, công ty... nhưng không có hàng hóa... Đó là nơi nào??!!",
+      "option": [
+        "Ở bản đồ",
+        "Ở Việt nam",
+        "Hải phòng",
+        "Ở trái đất"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 68: Có 3 thằng lùn xếp hàng dọc đi vào hang. Thằng đi sau cầm 1 cái xô, thằng đi giữa cầm 1 cái xẻng, hỏi thằng đi trước cầm gì?",
+      "option": [
+        "Cầm đầu",
+        "Cầm Bom",
+        "Cầm điện thoại"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 69: Có 2 người mặt mũi giống nhau, ngày tháng năm sinh và giờ sinh cũng giống nhau. Nhưng vì sao lại không phải là sinh đôi?",
+      "option": [
+        "Vì họ sinh 3",
+        "Vì họ khác bố",
+        "Vì họ khác mẹ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 70: Có 1 người không may bị té xuống hồ sâu, quần áo đều ướt đẫm hết nhưng không thấy tóc ướt tí nào. Hỏi vì sao?",
+      "option": [
+        "Người này không có tóc",
+        "Người này đội mũ",
+        "Người này là ma"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 71: Tại sao có những người đi taxi nhưng sao họ lại không trả tiền?",
+      "option": [
+        "Vì họ là tài xế",
+        "Vì họ là người mù",
+        "Người này là giám đốc"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 72: Có ông bố người da đen, mẹ người da trắng. Họ vừa mới sinh ra 1 em bé. Hỏi em bé đó có hàm răng màu gì?",
+      "option": [
+        "Bé chưa mọc răng",
+        "Tất nhiên là răng trắng",
+        "Răng vàng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 73: Nhà Lan có 3 anh em, người anh đầu tên là Nhất Hào, người thứ hai tên là Nhị Hào. Hỏi người thứ 3 tên gì?",
+      "option": [
+        "Tên là lan",
+        "Tam hào",
+        "Điệp"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 74: Xe điện chạy với vận tốc 30km/h, gió thổi ngược lại với vận tốc 2m/s. Hỏi khói xe bay với vận tốc bao nhiêu?",
+      "option": [
+        "Xe điện không có khói",
+        "15",
+        "25",
+        "10"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 75: Có 2 con mèo Vàng và con mèo Đen , con mèo Vàng bỏ con mèo Đen đi với con mèo Nâu, 13 năm sau con mèo Vàng về với con mèo Đen hỏi nó nói gì trước tiên",
+      "option": [
+        "Meo meo",
+        "Mèo đen nó chết rồi",
+        "Vẫn còn sống à",
+        "Dạo này khỏe không"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 76: Cái gì có kích thước bằng con voi nhưng chẳng nặng gram nào cả?",
+      "option": [
+        "Bóng con voi",
+        "Bố con voi",
+        "Mẹ con voi",
+        "Con voi"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 77: Nếu bạn nhìn thấy con chim đang đậu trên nhánh cây, làm sao để lấy nhánh cây mà không làm động con chim?",
+      "option": [
+        "Đợi con chim bay đi",
+        "Bắn chết con chim",
+        "Lấy nhánh cây khác"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 78: Cái gì bạn không mượn mà trả?",
+      "option": [
+        "Lời cảm ơn",
+        "Tiền",
+        "Đồ ăn",
+        "Áo khoác"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 79: Bố mẹ có sáu người con trai, mỗi người con trai có một em gái. Hỏi gia đình đó có bao nhiêu người?",
+      "option": [
+        "9",
+        "10",
+        "12",
+        "15"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 80: Bạn có thể kể ra ba ngày liên tiếp mà không có tên là thứ hai, thứ ba, thứ tư, thứ năm, thứ sáu, thứ bảy, chủ nhật?",
+      "option": [
+        "Hôm qua, hôm nay , ngày mai",
+        "Không kể được",
+        "Thứ năm, thứ sáu, thứ 7"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 81: Hoa gì biết ăn, biết nói, biết hát …?",
+      "option": [
+        "Hoa hậu",
+        "Hoa súng",
+        "Hoa nhài",
+        "hoa loa kèn"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 82: Bạn hãy tưởng tượng bạn đang đi trên 1 con thuyền trên 1 dòng sông có rất nhiều cá ăn thịt đến giữa dòng bỗng thuyền của bạn bị thủng 1 lỗ rất to, sau vài phút nữa thuyền sẽ chìm và chắc chắn bạn sẽ là bữa ăn những con cá này. Bạn làm cách nào đơn giản nhất để thoát ra khỏi cái hoàn cảnh chết tiệt này?",
+      "option": [
+        "Thôi, ngừng tưởng tượng đi",
+        "Cố gắng bơi thật nhanh",
+        "Gọi 113",
+        "Gọi bố đến"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 83: Đố bạn chuột nào đi bằng 2 chân?",
+      "option": [
+        "Mickey",
+        "Chuột cống",
+        "Chuột trù",
+        "Chuột đồng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 84: Đố bạn vịt nào đi bằng 2 chân?",
+      "option": [
+        "Vịt nào chẳng đi bằng hai chân",
+        "Vịt trời",
+        "Vịt cái",
+        "Vịt donald"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 85: Một con hổ bị xích vào gốc cây, sợi xích dài 30m. Có 1 bụi cỏ cách gốc cây 31m, đố bạn làm sao con hổ ăn được bụi cỏ?",
+      "option": [
+        "Con hổ không ăn cỏ.",
+        "Co đứt xích",
+        "Bảo con khổ khác giúp 1 tay"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 86: Mỗi năm có 7 tháng 31 ngày. Đố bạn có bao nhiêu tháng có 28 ngày?",
+      "option": [
+        "12",
+        "6",
+        "5",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 87: Đố bạn khi Beckham thực hiện quả đá phạt đền, anh ta sẽ sút vào đâu?",
+      "option": [
+        "Vào bóng",
+        "Vào góc hiểm",
+        "Vào lưới",
+        "Vào bên trái"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 88: Một ly thuỷ tinh đựng đầy nước, làm thế nào để lấy nước dưới đáy ly mà không đổ nước ra ngoài ?",
+      "option": [
+        "Ống hút",
+        "Dùng thìa",
+        "Dùng miệng",
+        "Gọi chủ quán"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 89: Đố bạn có bao nhiêu chữ C trong câu sau đây: “ Cơm, canh, cháo gì tớ cũng thích ăn!”",
+      "option": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 90: Câu hỏi nào mà không ai có thể trả lời “Vâng”?",
+      "option": [
+        "Mày chết rùi hả?",
+        "Mày thích gì?",
+        "Mày thích chết không",
+        "Mày cho tao vay 500k nhé!"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 91: Cái gì tay trái cầm được còn tay phải có muốn cầm cũng không được?",
+      "option": [
+        "Củi trỏ tay phải",
+        "Đầu gối chân trái",
+        "Tóc",
+        "Củi trỏ tay trái"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 92: Cái gì người mua biết, người bán biết, người xài không bao giờ biết?",
+      "option": [
+        "Quan tài",
+        "Phong bì",
+        "Hộp quà",
+        "Thẻ điện thoại"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 93: Tại sao khi bắn súng người ta lại nhắm một mắt?",
+      "option": [
+        "Làm gì có ai bắn súng mà nhằm hai mắt",
+        "Cho chuẩn xác",
+        "Cho oai phong"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 94: Từ nào trong tiếng Việt có chín mẫu tự h?",
+      "option": [
+        "Chín",
+        "Chính",
+        "Chỉnh",
+        "Chào"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 95: Bạn thử chứng minh”Ba n = Bốn với mọi n” thử xem nào?",
+      "option": [
+        "Ba + n = Bố + n",
+        "Chứng minh làm sao được?",
+        "Ba = Bố"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 96: Bạn đang ở trong một cuộc đua và bạn vừa vượt qua người thứ nhì . Vậy bây giờ bạn đang ở vị trí nào trong đoàn đua ấy?",
+      "option": [
+        "Thứ nhì",
+        "Thứ nhất",
+        "Thứ ba"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 97: Cũng trong một cuộc đua, bạn vừa chạy qua người cuối cùng. Vậy bạn đang ở vị trí nào?",
+      "option": [
+        "Cuối cùng",
+        "Thứ năm",
+        "Thứ nhất"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 98: Con mèo nào cực kỳ sợ chuột?",
+      "option": [
+        "Doremon",
+        "Mèo tam thể",
+        "Mèo con",
+        "Mèo già"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 99: Người đàn ông duy nhất trên thế giới có…sữa là ai?",
+      "option": [
+        "Ông thọ",
+        "Ông táo",
+        "Tôn ngộ không"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 100: Trò gì càng chơi càng ra nước?",
+      "option": [
+        "Chơi cờ",
+        "Nghịch nước",
+        "Chơi bài",
+        "Chơi tại bể bơi"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 101: Tôi có cả một hàm răng nhưng không có cái miệng nào cả? Tôi là ai?",
+      "option": [
+        "Cái cưa",
+        "Cái hang",
+        "Cái dao",
+        "Cái thang"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 102: A gọi B bằng bác, B gọi C là ông nội , C kêu D là cậu, D kêu E là dì, E kêu F là chú, F gọi Z là con.Hỏi A gọi Z bằng gì ???",
+      "option": [
+        "Bằng miệng",
+        "Bằng cô",
+        "Bằng chú",
+        "Bằng bác"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 103: Bức tranh nàng Mônalisa, người đẹp này không có gì?",
+      "option": [
+        "Chân mày",
+        "Mắt",
+        "Váy",
+        "Tóc"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 104: Có ba quả táo trên bàn và bạn lấy đi hai quả. Hỏi bạn còn bao nhiêu quả táo?",
+      "option": [
+        "2",
+        "1",
+        "4",
+        "0"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 105: 30 chia 1/2, và cộng thêm 10, bằng bao nhiêu?",
+      "option": [
+        "70",
+        "25",
+        "30",
+        "60"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 106: Con số lớn nhất có duy nhất hai chữ số?",
+      "option": [
+        "9^9",
+        "99",
+        "10",
+        "81"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 107: Có hai bình rộng miệng đựng đầy nước. Làm sao để cho tất cả nước vào trong một cái chậu mà vẫn biết nước nào của bình nào(không được cho cả bình hay bất kỳ dụng cụ đựng nước nào vào chậu) ?",
+      "option": [
+        "Cho đông thành đá",
+        "Ngăn đôi cái chậu",
+        "Thêm phẩm nhuộm"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 108: Toà nhà lớn nhất thế giới?",
+      "option": [
+        "Nhà nước",
+        "Nhà trắng",
+        "Nhà thờ",
+        "Toàn nhà CMC"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 109: Tháng nào ngắn nhất trong năm?",
+      "option": [
+        "Tháng Ba",
+        "Tháng Năm",
+        "Tháng Sáu",
+        "Tháng 12"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 110: Câu hỏi nào mà bạn phải trả lời “có”?",
+      "option": [
+        "Đánh vần từ Có",
+        "Tối nay đi chơi không?",
+        "Xếp hỏi bạn có muốn tăng lương không?"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 111: Loài chó nào nhảy cao bằng toà nhà cao nhất thế giới?",
+      "option": [
+        "Tất cả các loài chó vì các tòa nhà không biết nhảy",
+        "Không có loài nào!",
+        "Chỉ có chú chó Pluto"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 112: Ai có nhà di động đầu tiên?",
+      "option": [
+        "Rùa và ốc sên",
+        "Nước mỹ",
+        "Nước pháp",
+        "Nước anh"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 113: Tại sao sư tử ăn thịt sống?",
+      "option": [
+        "Ứ ! Biết nấu",
+        "Nhiều dinh dưỡng",
+        "Mùi vị ngon",
+        "Ăn nhanh không ôi mất"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 114: Con gì còn đau khổ hơn hươu cao cổ bị viêm họng?",
+      "option": [
+        "Con rết bị đau chân",
+        "Con hổ bị sâu răng",
+        "Con chó bị viêm xoang",
+        "Con người bị trĩ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 115: Một phụ nữ đang mua đồ tại tiệm ngũ kim. Người bán hàng chào giá: “Giá của một là mười hai xu, giá của bốn mươi tư là hai mươi tư xu, và giá của một trăm mười bốn là ba mươi sáu xu.”! Cô ta muốn mua gì vậy ta?",
+      "option": [
+        "Mua số nhà",
+        "Mua số điện thoại",
+        "Mua sổ sổ",
+        "Mua bánh mỳ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 116: Có cổ nhưng không có miệng là gì?",
+      "option": [
+        "Cái áo",
+        "Cái quần",
+        "Cái bút",
+        "Cái khẩu trang"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 117: Tôi luôn mang giày đi ngủ. Tôi là ai?",
+      "option": [
+        "Con ngựa",
+        "Con người",
+        "Con mèo",
+        "Cái bít tất"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 118: Tôi chu du khắp thế giới mà tôi vẫn ở nguyên một chỗ, tôi là ai?",
+      "option": [
+        "Con teem",
+        "cái valy",
+        "Cái găng tay",
+        "Đôi dép"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 119: Hai con chó đang lang thang ở công viên. Con chó trắng tên Đen, con chó đen tên Trắng. Nam thấy chúng dễ thương, liền thẩy trái banh ra xa rồi ra lệnh “Đen, đi lượm trái banh”… Đố bạn con chó nào sẽ đi lượm?",
+      "option": [
+        "Không con nào đi",
+        "Cả hai con đi",
+        "Chó đen",
+        "Chó trắng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 120: 2 người một lớn, một bé đi lên đỉnh một quả núi. Người bé là con của người lớn, nhưng người lớn lại không phải cha của người bé, hỏi người lớn là ai?",
+      "option": [
+        "Mẹ",
+        "Cha giượng",
+        "Ông hàng xóm",
+        "Chú"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 121: Bạn có “chiêu” nào để có thể thức trắng 7 ngày mà vẫn không thiếu ngủ?",
+      "option": [
+        "Ngủ đêm",
+        "Làm ứ gì có nhỉ?",
+        "Uống cà phê"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 122: Tôi có 4 cái chân, 1 cái lưng, nhưng không có cơ thể. Tôi là ai?",
+      "option": [
+        "Cái ghế",
+        "Siêu nhân",
+        "Người ngoài hành tinh",
+        "Mặt trời"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 123: Chứng minh con gái = con dê",
+      "option": [
+        "Con gái>thần tiên>tiền thân>trước khỉ>Mùi>con dê",
+        "2015 = Năm dê",
+        "Dê sẵn rồi không cần chứng minh",
+        "Không chứng minh được"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 124: Tại sao 30 người đàn ông và 2 người đàn bà đánh nhau tán loạn",
+      "option": [
+        "Đánh cờ vua",
+        "Đánh gen",
+        "Hôi của"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 125: Có 1 người muốn làm quen với 1 cô gái, liền chạy lại hỏi tên,cô gái nói: Anh hãy đếm xem trong giỏ có bao nhiêu cây bắp thì khắc biết tên tôi.Người có đếm được 12 cây bắp,hỏi cô gái đó tên gì?",
+      "option": [
+        "Tố Nga",
+        "Thúy kiều",
+        "Bắp Bắp",
+        "Thúy"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 126: Có 1 cô gái người ta thường gọi là tam giác , hỏi cô gái đó tên gì?",
+      "option": [
+        "Thanh kiều",
+        "Thúy kiều",
+        "Tố vân"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 127: Có một cây cầu có trọng tải là 10 tấn, có nghĩa là nếu vượt quá trọng tải trên 10 tấn thì cây cầu sẽ sập. Có một chiếc xe tải chở hàng, tổng trọng tải của xe 8 tấn + hàng 4 tấn = 12 tấn. Vậy đố các bạn làm sao bác tài qua được cây cầu này (Không được bớt hàng ra khỏi xe)?",
+      "option": [
+        "Bác tài cứ đi qua thôi",
+        "Bác chở từng ít một",
+        "Bác gọi máy bay"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 128: Có 1 đàn voi điếc đi ngang qua, hỏi có mấy con?",
+      "option": [
+        "24",
+        "12",
+        "16",
+        "2"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 129: Con gì không gáy ò ó o mà người ta vẫn gọi là gà?",
+      "option": [
+        "Gà mái",
+        "Gà đồi",
+        "Gà tây",
+        "Gà trắng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 130: Có 1 con trâu. Đầu nó thì hướng về hướng mặt trời mọc, nó quay trái 2 vòng sau đó quay ngược lại sau đó lại quay phải hay vòng hỏi cái đuôi của nó chỉ hướng nào?",
+      "option": [
+        "Xuống đất",
+        "Lên trời",
+        "Sang phải",
+        "Sang Trái"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 131: Con trai có gì quí nhất?",
+      "option": [
+        "Ngọc trai",
+        "Tay",
+        "Chân",
+        "Miệng"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 132: Cơ quan quan trọng nhất của phụ nữ là gì ?",
+      "option": [
+        "Hội Liên Hiệp Phụ Nữ",
+        "Môi",
+        "Vòng eo",
+        "Bờ vai"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 133: Hôn con heo trong nhà gọi là?",
+      "option": [
+        "Hôn thú",
+        "Biến thái",
+        "Hôn heo"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 134: Nắng ba năm ta chưa hề bỏ bạn. Là cái gì?",
+      "option": [
+        "Cái bóng",
+        "Cái áo mưa",
+        "Cái ô",
+        "Đôi dép"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 135: Rất thích hôn gọi là?",
+      "option": [
+        "Kết hôn",
+        "Thèm hôn",
+        "Đính hôn",
+        "Tái hôn"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 136: Cái gì Adam có 2 mà Eva chỉ có 1?",
+      "option": [
+        "Chữ a",
+        "Cái môi",
+        "Cái tay",
+        "Cái mi mắt"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 137: Cái gì dài như trái chuối, cầm 1 lúc thì nó chảy nước ra?",
+      "option": [
+        "Que kem",
+        "Quả chuối xanh",
+        "Cái xúc xích"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 138: Những loài thú nào sau đây ăn cơm?",
+      "option": [
+        "Sư tử",
+        "Cọp",
+        "Voi",
+        "Hà mã"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 139: Ng ta phát hiện ra xác chết của một chàng trai treo cổ chết ở nóc nhà. Dưới chân cậu ta cách khoảng 20 cm đến sàn nhà là một vũng nước lớn. Hỏi cậu ta làm sao để có thể leo lên nóc nhà mà tự tử được?",
+      "option": [
+        "Đứng lên tảng nước đá",
+        "Trèo lên nóc nhà",
+        "Có người khác giúp đỡ"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 140: Con chó đen người ta gọi là con chó mực. Con chó vàng, người ta gọi là con chó phèn. Con chó sanh người ta gọi là con chó đẻ. Vậy con chó đỏ, ng ta gọi là con chó gì?",
+      "option": [
+        "Chó đỏ",
+        "Chó dại",
+        "Chó đực"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 141: Con kiến bò lên tai con voi nói gì với con voi mà ngay tức khắc con voi nằm lăn ra chết!!",
+      "option": [
+        "Em có thai với anh rồi!",
+        "Tao đang gọi thêm 100 con kiến nữa đến",
+        "Mày vừa ăn phân của tao"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 142: Trên nhấp dưới giật là đang làm gì?",
+      "option": [
+        "Câu cá",
+        "Chống đẩy",
+        "Đu xà"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 143: Con gì mang được miếng gỗ lớn nhưng ko mang được hòn sỏi?",
+      "option": [
+        "Cong sông",
+        "Con tàu",
+        "Con cá",
+        "Con đường"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 144: Cái gì ở giữa bầu trời và trái đất?",
+      "option": [
+        "Và",
+        "Cái cây",
+        "Ngôi nhà",
+        "Con người"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 145: Có một cây lê có 2 cành, mỗi cành có 2 nhánh lớn, mỗi nhánh lớn có 2 nhánh nhỏ, mỗi nhánh nhò có hai cái lá, cạnh mỗi cái lá có hai quả. Hỏi trên cây đó có mấy quả táo?",
+      "option": [
+        "Không có quả nào",
+        "2",
+        "4",
+        "6"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 146: Cắm vào run rẩy toàn thân, Rút ra nước chảy từ chân xuống sàn, Hỡi chàng công tử giàu sang, Cắm vào xin chớ vội vàng rút ra!",
+      "option": [
+        "Cái tủ lạnh",
+        "Cái máy bơm nước",
+        "Cái vòi hoa xen",
+        "Cái bình nóng lạnh"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 147: Ba thằng Què đi trước 1 thằng què hỏi có mấy thằng què",
+      "option": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 148: Có 1 con rết 100 chân dang đi dạo mát bổng nhiên đụng phải một bãi phân trâu. Rết ngậm ngùi bước tiếp. Hỏi khi đi qua bãi phân châu rết còn mấy chân ?",
+      "option": [
+        "98",
+        "100",
+        "102",
+        "99"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 149: Hãy đối lại một câu trái nghĩa với câu này:”đất lành chim đậu”?",
+      "option": [
+        "Đất giữ chim đi",
+        "Đất không lành chim không đậu",
+        "Chim đậu đất lành"
+      ],
+      "correct": 1
+    },
+    {
+      "question": "Câu 150: 4 : 3 = bao nhiêu",
+      "option": [
+        "2",
+        "1,5",
+        "0,5",
+        "1"
+      ],
+      "correct": 1
+    }
+    
+  ]
+}

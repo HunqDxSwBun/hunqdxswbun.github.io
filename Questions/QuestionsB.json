@@ -1,12 +1,12 @@
 [
-    {
-      "HinhAnh": "/Data/IMG/BannerApp.png",
-      "CauHoi": "em thích màu gì ? đố anh biết.",
-      "A": "Xanh",
-      "B": "Đỏ",
-      "C": "Vàng",
-      "D": "Hồng",
-      "DapAn": "D",
-      "GoiDien": "BlackPink fan guộc em đó anh anh đoán thử xem"
-    }
-  ]
+  {
+    "HinhAnh": "/Data/IMG/BannerApp.png",
+    "CauHoi": "em thích màu gì ? đố anh biết.",
+    "A": "Xanh",
+    "B": "Đỏ",
+    "C": "Vàng",
+    "D": "Hồng",
+    "DapAn": "D",
+    "GoiDien": "BlackPink fan guộc em đó anh anh đoán thử xem"
+  }
+]
