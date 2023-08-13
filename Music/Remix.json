@@ -1,5 +1,23 @@
 [
   {
+    "name": "Bludfire",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/Bludfire.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "Nasty",
+    "singer": "Youtube",
+    "path": "/Music/Music/TongHop/Nasty.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
+    "name": "Thái Hoàng",
+    "singer": "Thái Hoàng",
+    "path": "/Music/Music/TongHop/Thái Hoàng.mp3",
+    "image": "/Data/IMG/404.gif"
+  },
+  {
     "name": "SOFAR  Remix",
     "singer": "Youtube",
     "path": "/Music/Music/TongHop/SOFAR REMIX.mp3",
