@@ -160,8 +160,8 @@ header .HeadApp h1 {
 .Tab {
     background-color: var(--TabBG);
     display: grid;
-    /* grid-template-columns: 20% 20% 20% 20% 20%; */
-    grid-template-columns: calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6);
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    /* grid-template-columns: calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6); */
     overflow: auto;
     margin: 5px 0;
     padding: 4px;
@@ -911,12 +911,15 @@ header .HeadApp h1 {
 }
 
 .YoutubeMp3 {
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 35px auto 35px;
     align-items: center;
     margin: 0;
+    gap: 5px;
 }
 
 .YoutubeMp3 input {
+    width: 100%;
     height: 35px;
     border: none;
     padding: 0 5px;
@@ -930,9 +933,9 @@ header .HeadApp h1 {
 }
 
 .YoutubeMp3 button {
+    color: var(--BodyBG);
     cursor: pointer;
     height: 35px;
-    width: 20%;
     border: none;
     border-radius: 10px;
     background-color: var(--BodyCL);
@@ -960,9 +963,9 @@ header .HeadApp h1 {
     border: 2px solid var(--BodyCL);
     font-weight: bold;
     padding: 7px 2px;
-    width: 20%;
     border-radius: 10px;
     margin-right: 5px;
+    margin: 0 auto;
 }
 
 #YoutubeMp3 iframe {
