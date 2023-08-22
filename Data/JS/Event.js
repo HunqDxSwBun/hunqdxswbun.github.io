@@ -158,13 +158,43 @@ for (var i = 1; i < events.length; i++) {
   var timeDiff = eventDate.getTime() - currentDate.getTime();
   var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-  countdown.textContent = days + 1  ;
+  countdown.textContent = days + 1;
 
   Countdown.appendChild(countdown);
   upnextDiv.appendChild(contentDiv);
   upnextDiv.appendChild(Countdown);
   eventContainer.appendChild(upnextDiv);
+
 }
+
+var SuKienSapToi = events[0].SuKien;
+var NgaySuKien = events[0].Ngay;
+var snowflakes = document.getElementById('snowflakes');
+
+if (SuKienSapToi === 'Sinh Nhật Anh Yêu ❤' || SuKienSapToi === 'Sinh Nhật Em Yêu ❤' ) {
+  snowflakes.style.display = "block";
+  snowflakes.innerHTML = `
+        <div class="snowflake">🎂</div>
+        <div class="snowflake">🎉</div>
+        <div class="snowflake">💕</div>
+        <div class="snowflake">😋</div>
+        <div class="snowflake">🤩</div>
+        <div class="snowflake">🍰</div>
+        <div class="snowflake">🎁</div>
+        <div class="snowflake">💌</div>
+        <div class="snowflake">🍬</div>
+        <div class="snowflake">💋</div>
+        <div class="snowflake">🎈</div>
+        <div class="snowflake">💖</div>
+  `
+  // setTimeout(() => {
+  //   snowflakes.style.display = "none";
+  // }, 15000);
+} else {
+  snowflakes.style.display = "none";
+}
+
+
 
 // Thêm vào phần tử gốc
 var rootElement = document.getElementById("root");
