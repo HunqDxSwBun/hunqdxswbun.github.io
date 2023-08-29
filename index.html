@@ -51,17 +51,21 @@
         <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
             <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
             <div id="MenuMuic">
-              <div class="Tab">
-                <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')"><i class="fa-brands fa-readme"></i></button>
-                <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
-                <!-- <button class="tablinks" onclick="openTAB(event, 'Questions')"> <i class="fa-solid fa-clipboard-question"></i></button> -->
-                <button class="tablinks active" onclick="openTAB(event, 'Home')"><i class="fa-solid fa-house"></i></button>
-                <button class="tablinks" onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
-                <button class="tablinks" onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
-              </div>
+                <div class="Tab">
+                    <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')"><i
+                            class="fa-brands fa-readme"></i></button>
+                    <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
+                    <!-- <button class="tablinks" onclick="openTAB(event, 'Questions')"> <i class="fa-solid fa-clipboard-question"></i></button> -->
+                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
+                            class="fa-solid fa-house"></i></button>
+                    <button class="tablinks" onclick="openTAB(event, 'Music')"><i
+                            class="fa-solid fa-music"></i></button>
+                    <button class="tablinks" onclick="openTAB(event, 'Settings')"> <i
+                            class="fa-solid fa-box"></i></button>
+                </div>
             </div>
-          </div>
-          
+        </div>
+
 
         <audio id="MusicBG" loop>
             <source src="" type="audio/mpeg">
@@ -174,8 +178,8 @@
                 <div class="BlockDashboard">
                     <div class="CDBlock">
                         <!-- CD -->
-                        <div class="cd" onclick="playAudio()" >
-                            <div class="cd-thumb" >
+                        <div class="cd" onclick="playAudio()">
+                            <div class="cd-thumb">
                             </div>
                         </div>
                     </div>
@@ -190,10 +194,10 @@
                                 <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
                             </button>
                         </div>
-                    </div>   
+                    </div>
                 </div>
 
-                <input id="progress" class="progress" type="range"    step="1" min="0" max="100">
+                <input id="progress" class="progress" type="range" step="1" min="0" max="100">
 
                 <!-- Control -->
                 <div class="control">
@@ -217,21 +221,21 @@
 
                 <audio id="audio" src=""></audio>
                 <div class="Album" id="albumContainer">
-         
+
                 </div>
             </div>
 
-          
+
             <div class="playlist">
             </div>
-        
+
 
             <div id="container">
                 <canvas id="canvas"></canvas>
             </div>
-            
+
         </div>
-    </div>   
+    </div>
 
     <div class="tabcontent" id="Event">
         <h1 class="head">Sự kiện</h1>
@@ -379,6 +383,7 @@
                 <h1>Văn bản bảo mật</h1>
                 <p>Chuyển đổi văn bản </p>
             </div>
+
             <div class="SettingBlock Active" id="Frame">
                 <div class="Frame">
                     <div class="file-input">
@@ -429,10 +434,10 @@
                 </div>
             </div>
 
-            <div class="SettingBlock" id="ThanhTich">
-                <i class="fa-solid fa-trophy"></i>
-                <h1>Thành tích</h1>
-                <p>Chưa khả dụng </p>
+            <div class="SettingBlock" onclick="QrCode()">
+                <i class="fa-solid fa-qrcode"></i>
+                <h1>Tạo mã QR</h1>
+                <p>QR nội dung, trang web, WiFi,...</p>
             </div>
 
             <div class="SettingBlock" onclick="HideInfo()">
@@ -440,6 +445,42 @@
                 <h1>Ẩn thông tin</h1>
                 <p>Tính năng ẩn bớt thông tin để chia sẻ</p>
             </div>
+
+            <div class="SettingBlock Active" id="QRcode">
+                <h1>Tạo Mã QR</h1>
+                <label for="qrType">Loại QR:</label>
+                <select id="qrType">
+                    <option value="text">Văn bản, URL, Số điện thoại,...</option>
+                    <option value="wifi">WiFi</option>
+                </select>
+
+                <div id="textOptions">
+                    <label for="qrText">Văn bản hoặc URL:</label>
+                    <input type="text" id="qrText">
+                </div>
+
+                <!-- WiFi options -->
+                <div id="wifiOptions" class="optionGroup">
+                    <label for="wifiSecurity">Mã hoá:</label>
+                    <select id="wifiSecurity">
+                        <option value="nopass">Không có</option>
+                        <option value="WPA">WPA/WPA2</option>
+                        <option value="WEP">WEP</option>
+                    </select>
+
+                    <label for="ssid">Tên WiFi:</label>
+                    <input type="text" id="ssid">
+
+                    <label for="password">Mật Khẩu:</label>
+                    <input type="text" id="password">
+                </div>
+
+                <button id="generateBtn">Tạo mã QR</button>
+                <div id="qrCode"></div>
+                <button id="downloadBtn" style="display: none;">Tải về mã QR</button>
+
+            </div>
+
 
             <div class="SettingBlock">
                 <i class="fa-solid fa-circle-info"></i>
@@ -477,22 +518,27 @@
                     <p id="Action"></p>
                 </div>
                 <div class="question">
-                    <img class="question-image" src="./Data/IMG/BannerApp.png" alt="Câu hỏi">
-                    <h1 class="question-text"></p>
+                    <img class="question-image" srloc="./Data/IMG/BannerApp.png" alt="Câu hỏi">
+                    <h1 class="question-text">
+                        </p>
                 </div>
                 <div class="DapAn">
-                    <button class="DapAn" data-dapan="A" onclick="checkAnswer('A')">A: <span class="option-text"></span></button>
-                    <button class="DapAn" data-dapan="B" onclick="checkAnswer('B')">B: <span class="option-text"></span></button>
-                    <button class="DapAn" data-dapan="C" onclick="checkAnswer('C')">C: <span class="option-text"></span></button>
-                    <button class="DapAn" data-dapan="D" onclick="checkAnswer('D')">D: <span class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="A" onclick="checkAnswer('A')">A: <span
+                            class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="B" onclick="checkAnswer('B')">B: <span
+                            class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="C" onclick="checkAnswer('C')">C: <span
+                            class="option-text"></span></button>
+                    <button class="DapAn" data-dapan="D" onclick="checkAnswer('D')">D: <span
+                            class="option-text"></span></button>
                 </div>
                 <div class="result"></div>
                 <button id="start-btn" onclick="backHome()">Bắt đầu</button>
                 <audio id="calling">
                     <source src="./Data/Questions/Call Sound Effect.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
+                    Your browser does not support the audio element.
                 </audio>
-            </div>
+            </div>lo
         </div>
 
     </div>
@@ -536,4 +582,7 @@
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 
+<!-- Tạo mã QR -->
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script src="./Data/JS/QrCode.js"></script>
 </html>

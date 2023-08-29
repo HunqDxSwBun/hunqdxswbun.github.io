@@ -379,3 +379,12 @@ function CheckIMG() {
 }
 CheckIMG();
 
+
+var vQrCode = document.getElementById("QRcode");
+function QrCode() {
+  if (vQrCode.style.display === "block") {
+    vQrCode.style.display = "none";
+  } else {
+    vQrCode.style.display = "block";
+  }
+}
