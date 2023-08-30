@@ -50,22 +50,33 @@ var events = [
   }
 ];
 
-// Kiểm tra và sắp xếp sự kiện
 var currentDate = new Date();
 var currentYear = currentDate.getFullYear();
 
 events.forEach(function (event) {
   var eventDate = new Date(currentYear, parseInt(event.Ngay.split('/')[1]) - 1, parseInt(event.Ngay.split('/')[0]));
 
-  if (eventDate < currentDate) {
+  if (eventDate.getDate() === currentDate.getDate() && eventDate.getMonth() === currentDate.getMonth()) {
+    // Ngày sự kiện trùng với ngày hiện tại, không cần thay đổi.
+  } else if (eventDate < currentDate) {
     eventDate.setFullYear(eventDate.getFullYear() + 1);
   }
+
 
   event['Ngay'] = eventDate;
 });
 
 events.sort(function (a, b) {
-  return a.Ngay - b.Ngay;
+  var aIsCurrent = a.Ngay <= currentDate;
+  var bIsCurrent = b.Ngay <= currentDate;
+
+  if (aIsCurrent && !bIsCurrent) {
+    return -1; // Sự kiện a đang diễn ra, đặt lên đầu
+  } else if (!aIsCurrent && bIsCurrent) {
+    return 1; // Sự kiện b đang diễn ra, đặt lên đầu
+  } else {
+    return a.Ngay - b.Ngay; // So sánh ngày như bình thường
+  }
 });
 
 // Tạo các phần tử HTML và cài đặt thuộc tính
@@ -187,9 +198,9 @@ if (SuKienSapToi === 'Sinh Nhật Anh Yêu ❤' || SuKienSapToi === 'Sinh Nhật
         <div class="snowflake">🎈</div>
         <div class="snowflake">💖</div>
   `
-  // setTimeout(() => {
-  //   snowflakes.style.display = "none";
-  // }, 15000);
+  setTimeout(() => {
+    snowflakes.style.display = "none";
+  }, 10000);
 } else {
   snowflakes.style.display = "none";
 }

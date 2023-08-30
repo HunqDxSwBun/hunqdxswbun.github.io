@@ -56,6 +56,6 @@ function downloadQRCode() {
 
     const link = document.createElement('a');
     link.href = qrDataURL;
-    link.download = 'qr_code_hunqdswbun.png';
+    link.download = 'qr_code.png';
     link.click();
 }

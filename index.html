@@ -136,8 +136,12 @@
                     </div>
                 </div>
 
-                <div class="Heart" onclick="toggleSize()">
-                    <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
+                <div class="Heart"> 
+                    <a href="./TIMELINE/index.html">
+                        <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
+                    </a>
+                    <!-- onclick="toggleSize()" -->
+                   
                 </div>
 
                 <div class="Info Female">
@@ -448,17 +452,18 @@
 
             <div class="SettingBlock Active" id="QRcode">
                 <h1>Tạo Mã QR</h1>
+                <br>
                 <label for="qrType">Loại QR:</label>
                 <select id="qrType">
                     <option value="text">Văn bản, URL, Số điện thoại,...</option>
                     <option value="wifi">WiFi</option>
                 </select>
-
+        
                 <div id="textOptions">
                     <label for="qrText">Văn bản hoặc URL:</label>
                     <input type="text" id="qrText">
                 </div>
-
+        
                 <!-- WiFi options -->
                 <div id="wifiOptions" class="optionGroup">
                     <label for="wifiSecurity">Mã hoá:</label>
@@ -467,18 +472,17 @@
                         <option value="WPA">WPA/WPA2</option>
                         <option value="WEP">WEP</option>
                     </select>
-
+        
                     <label for="ssid">Tên WiFi:</label>
                     <input type="text" id="ssid">
-
+        
                     <label for="password">Mật Khẩu:</label>
                     <input type="text" id="password">
                 </div>
-
+        
                 <button id="generateBtn">Tạo mã QR</button>
                 <div id="qrCode"></div>
                 <button id="downloadBtn" style="display: none;">Tải về mã QR</button>
-
             </div>
 
 
@@ -547,6 +551,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<!-- Tạo mã QR -->
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script src="./Data/JS/QrCode.js"></script>
+
 <!-- Tổng hợp -->
 <script src="./Data/JS/File.js"></script>
 
@@ -582,7 +590,5 @@
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 
-<!-- Tạo mã QR -->
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-<script src="./Data/JS/QrCode.js"></script>
+
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<title>Nhật kí tình yêu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="./avt/icon.png">
+<link rel="apple-touch-icon" href="./avt/icon.png" sizes="150x150">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link href="//db.onlinewebfonts.com/c/32441506567156636049eb850b53f02a?family=Times+New+Roman" rel="stylesheet" type="text/css" />
+
+<link href="./css/music.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+    <body id="fontchu">
+        <div class="menu">
+            <div class="topnav">
+                <a href="#home" class="active" onclick="mode1()">Story</a>
+                <a style="display: block;" id="dayslove">
+                    <!-- Đếm Ngày Yêu -->
+                    <div class="countup" id="countup1">
+                        <span class="timeel days">00</span>
+                        <span class="timeel timeRefDays">ngày  </span>
+                        <span class="timeel hours">00</span>
+                        <span class="timeel timeRefHours">:</span>
+                        <span class="timeel minutes">00</span>
+                        <span class="timeel timeRefMinutes">:</span>
+                        <span class="timeel seconds">00</span>
+                        <span class="timeel timeRefSeconds"></span>
+                    </div>
+                    <!-- Đếm Ngày Yêu -->
+                </a>
+                <div id="myLinks">
+                    <a href="#" onclick="onFont()"><i class="fas fa-font"></i></a>
+                    <a href="#" onclick="onColor()"><i class="fas fa-paint-roller"></i> </a>
+                    <a class="icon" href="#news" onclick="onSearch()"><i class="fas fa-search"></i></a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="onMenuAll()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+
+            <div class="khoangcach"></div>
+            <div class="font" id="IDfont" style="display: none;">
+                <div class="items">
+                    <a class="icon1" href="#" onclick="FontSizeA()">Chữ nhỏ</a>
+                    <a class="icon1" href="#" onclick="FontSizeB()">Chữ vừa</a>
+                    <a class="icon1" href="#" onclick="FontSizeC()">Chữ to</a>
+                </div>
+                <div class="items">
+                    <a class="icon1" href="#" onclick="FontA()">Apple</a>
+                    <!-- -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; -->
+                    <a class="icon1" href="#" onclick="FontB()">Monospace</a>
+                    <!-- monospace -->
+                    <a class="icon1" href="#" onclick="FontC()">Trái tim </a>
+                </div>
+            </div>
+
+            <div class="font" id="IDcolor" style="display: none;">
+                <div class="items">
+                    <a class="icon1" href="#" onclick="rMode()">Màu Nền</a>
+                    <a class="icon1" href="#" onclick="nenxanh()">Xanh</a>
+                    <a class="icon1" href="#" onclick="nendo()">Đỏ</a>
+                    <a class="icon1" href="#" onclick="nenvang()">Vàng</a>
+                </div>
+                <div class="items">
+                    <a class="icon1" href="#" onclick="rMode2()">Màu khung</a>
+
+                    <a class="icon1" href="#" onclick="khungden()">Đen</a>
+
+                    <a class="icon1" href="#" onclick="khungtrang()">Trắng</a>
+                </div>
+            </div>
+
+            <div class="search" id="IDsearch" style="display: none;">
+                <input type="text" id="myInput" onkeyup="ONSearch()" placeholder="Tìm kiếm chưa khả dụng.." title="tìm kiếm">
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="timeline" id="myStory" onclick="offALL()">
+                <div id="rss-feed"></div>
+            </div>
+        </div>
+
+    </body>
+    <section class="author">
+        <p>Thiết kế bởi tình yêu anh dành cho em ❤</p>
+    </section>
+
+    <script src="./js/file.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js"></script>
+    <script src="./js/music.js"></script>
+    <script src="./js/blog.js"></script>
+</body>
+
+</html>
