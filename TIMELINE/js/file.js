@@ -176,9 +176,10 @@ function offColor() {
  }
 
 
+ var p_var=14;
 
  function FontSizeA() {
-  var p_var=14;
+  p_var--;
   var s=document.getElementsByTagName('p');
   for(i=0;i<s.length;i++)
   {
@@ -187,7 +188,7 @@ function offColor() {
 }
 
 function FontSizeB() {
-  var p_var=18;
+  var p_var=14;
   var s=document.getElementsByTagName('p');
   for(i=0;i<s.length;i++)
   {
@@ -196,7 +197,8 @@ function FontSizeB() {
 }
 
 function FontSizeC() {
-  var p_var=28;
+  p_var++;
+  
   var s=document.getElementsByTagName('p');
   for(i=0;i<s.length;i++)
   {
