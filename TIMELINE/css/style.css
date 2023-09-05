@@ -124,7 +124,7 @@ p {
 	text-align: center;
 	width: 100%;
 	color: var(--link);
-
+	border-radius: 5px;
 }
 .author p {
 	font-size: 16px;

@@ -40,7 +40,7 @@
                     <!-- Đếm Ngày Yêu -->
                     <div class="countup" id="countup1">
                         <span class="timeel days">00</span>
-                        <span class="timeel timeRefDays">ngày  </span>
+                        <span class="timeel timeRefDays">ngày </span>
                         <span class="timeel hours">00</span>
                         <span class="timeel timeRefHours">:</span>
                         <span class="timeel minutes">00</span>
@@ -93,14 +93,28 @@
             </div>
 
             <div class="search" id="IDsearch" style="display: none;">
-                <input type="text" id="myInput" onkeyup="ONSearch()" placeholder="Tìm kiếm chưa khả dụng.." title="tìm kiếm">
+                <input type="text" id="myInput" onkeyup="ONSearch()" placeholder="Tìm kiếm chưa khả dụng.."
+                    title="tìm kiếm">
             </div>
 
         </div>
 
         <div class="container">
             <div class="timeline" id="myStory" onclick="offALL()">
-                <div id="rss-feed"></div>
+                <div id="rss-feed">
+                    <div class="timeline-container">
+                        <div class="timeline-icon">
+                            <img src="/Data/icon/Logo.png" alt="LOGO">
+                        </div>
+
+                        <div class="timeline-body">
+                            <h4 class="timeline-title"><span class="badge">Nhật kí thời gian</span></h4>
+                            <h1>Đang tải bài viết...</h1>
+                            <p class="Cl-Story">Không có bài viết hãy thử tải lại trang nếu như vẫn không có hãy liên hệ Anh Yêu ❤ </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -111,7 +125,9 @@
 
     <script src="./js/file.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js"></script>
     <script src="./js/music.js"></script>
     <script src="./js/blog.js"></script>
