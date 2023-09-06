@@ -13,6 +13,8 @@ const albums = [
   // Thêm các album khác vào đây nếu cần
 ];
 
+
+
 // Lấy đối tượng div "Album" để tiến hành thêm nút
 const albumContainer = document.getElementById("albumContainer");
 

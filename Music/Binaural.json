@@ -4,5 +4,11 @@
         "singer": "Youtube",
         "path": "/Music/Music/Binaural/14 Hz Binaural.mp3",
         "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "14 Hz Binaural",
+        "singer": "Youtube",
+        "path": "https://drive.google.com/uc?export=download&id=1HOi_YdR1DJ1jihlDh_MQP2eW80ByqOj7",
+        "image": "/Music/IMG/Logo.png"
     }
 ]
