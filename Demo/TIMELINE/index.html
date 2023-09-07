@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<title>Nhật kí tình yêu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="./avt/icon.png">
+<link rel="apple-touch-icon" href="./avt/icon.png" sizes="150x150">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link href="//db.onlinewebfonts.com/c/32441506567156636049eb850b53f02a?family=Times+New+Roman" rel="stylesheet" type="text/css" />
+
+<link href="./css/music.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+    <body id="fontchu">
+        <div class="menu">
+            <div class="topnav">
+                <a href="#home" class="active" onclick="mode1()">Story</a>
+                <a style="display: block;" id="dayslove">
+                    <!-- Đếm Ngày Yêu -->
+                    <div class="countup" id="countup1">
+                        <span class="timeel days">00</span>
+                        <span class="timeel timeRefDays">ngày  </span>
+                        <span class="timeel hours">00</span>
+                        <span class="timeel timeRefHours">:</span>
+                        <span class="timeel minutes">00</span>
+                        <span class="timeel timeRefMinutes">:</span>
+                        <span class="timeel seconds">00</span>
+                        <span class="timeel timeRefSeconds"></span>
+                    </div>
+                    <!-- Đếm Ngày Yêu -->
+                </a>
+                <div id="myLinks">
+                    <a href="#" onclick="onFont()"><i class="fas fa-font"></i></a>
+                    <a href="#" onclick="onColor()"><i class="fas fa-paint-roller"></i> </a>
+                    <a class="icon" href="#news" onclick="onSearch()"><i class="fas fa-search"></i></a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="onMenuAll()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+
+            <div class="khoangcach"></div>
+            <div class="font" id="IDfont" style="display: none;">
+                <div class="items">
+                    <a class="icon1" href="#" onclick="FontSizeA()">Chữ nhỏ</a>
+                    <a class="icon1" href="#" onclick="FontSizeB()">Chữ vừa</a>
+                    <a class="icon1" href="#" onclick="FontSizeC()">Chữ to</a>
+                </div>
+                <div class="items">
+                    <a class="icon1" href="#" onclick="FontA()">Apple</a>
+                    <!-- -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; -->
+                    <a class="icon1" href="#" onclick="FontB()">Monospace</a>
+                    <!-- monospace -->
+                    <a class="icon1" href="#" onclick="FontC()">Trái tim </a>
+                </div>
+            </div>
+
+            <div class="font" id="IDcolor" style="display: none;">
+                <div class="items">
+                    <a class="icon1" href="#" onclick="rMode()">Màu Nền</a>
+                    <a class="icon1" href="#" onclick="nenxanh()">Xanh</a>
+                    <a class="icon1" href="#" onclick="nendo()">Đỏ</a>
+                    <a class="icon1" href="#" onclick="nenvang()">Vàng</a>
+                </div>
+                <div class="items">
+                    <a class="icon1" href="#" onclick="rMode2()">Màu khung</a>
+
+                    <a class="icon1" href="#" onclick="khungden()">Đen</a>
+
+                    <a class="icon1" href="#" onclick="khungtrang()">Trắng</a>
+                </div>
+            </div>
+
+            <div class="search" id="IDsearch" style="display: none;">
+                <input type="text" id="myInput" onkeyup="ONSearch()" placeholder="Tìm kiếm chưa khả dụng.." title="tìm kiếm">
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="timeline" id="myStory" onclick="offALL()">
+                <!-- STORY Hùng -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="https://graph.facebook.com/100045640179308/picture?type=large&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Đinh Mạnh Hùng</span></h4>
+                        <p class="Cl-Story"></p>
+                        <audio controls class="iru-tiny-player" data-title=" ">
+                          <source src="https://c1-ex-swe.nixcdn.com/Sony_Audio72/IllWait-KygoSashaSloan-6257279.mp3?st=ekl_9PskLT1jtc9EcX0TgQ&e=1637679979&t=1637593579957">
+                        </audio>
+                        <p class="timeline-subtitle">22/11/21</p>
+                    </div>
+                </div>
+                <!-- STORY Hùng -->
+
+
+                <!-- STORY Hùng -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="/TIMELINE/avt/hunqd.jpg" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Đinh Mạnh Hùng</span></h4>
+                        <p class="Cl-Story">Cảm ơn em yêu anh thích lắm nhá ♥️</p>
+                        <video class="videoStory" controls>
+                                                <source src="/TIMELINE/video/VideoSt1.mp4" type="video/mp4">
+                                              </video>
+                        <p class="timeline-subtitle">14/11/21</p>
+                    </div>
+                </div>
+                <!-- STORY Hùng -->
+
+                <!-- STORY Hùng -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="/TIMELINE/avt/hunqd.jpg" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Đinh Mạnh Hùng</span></h4>
+                        <p class="Cl-Story">Đây cũng là khoảng thời gian khó khăn của đôi ta anh cũng chã biết vì lý do gì nữa nhưng có vẻ hai ta đang gặp khó khăn trong nhiều thứ anh mong ta sẽ vượt qua được khoảng thời gian này và vẫn yêu nhau như những lúc ban đầu hoặc
+                            nhiều hơn nữa.</p>
+                        <p class="timeline-subtitle">14/11/21</p>
+                    </div>
+                </div>
+                <!-- STORY Hùng -->
+
+                <!-- STORY THY -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="/TIMELINE/avt/thy.jpg" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Hoàng Nguyễn Thy Thy</span></h4>
+                        <p class="Cl-Story"></p>
+                        <img class="imgStory" src="/TIMELINE/img/anhst1.jpg" alt="">
+                        <p class="timeline-subtitle">09/11/21</p>
+                    </div>
+                </div>
+                <!-- STORY Thy-->
+
+                <!-- STORY THY -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="/TIMELINE/avt/thy.jpg" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Hoàng Nguyễn Thy Thy</span></h4>
+                        <p class="Cl-Story"> Anh mới tiêm vaccine mũi 1 về bị sốt nên thành íu đúi boy, nhạy cảm boy. Do em ngủ quên nên anh không rủ chơi game, lúc em dậy và em thành cáu gắt girl giận anh. Do bị ảnh hưởng bởi sức khỏe nên làm anh suy nghĩ nhiều muốn có ý
+                            định rút lui không tiến tới sâu hơn nữa, làm em hết hồn khuyên bảo cả đêm. Và sau đêm đó chính thức là người yêu </p>
+
+                        <p class="timeline-subtitle">26/08/21</p>
+                    </div>
+                </div>
+                <!-- STORY Thy-->
+                <!-- STORY THY -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="/TIMELINE/avt/thy.jpg" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Hoàng Nguyễn Thy Thy</span></h4>
+                        <p class="Cl-Story"> Ngày 17/8 mối quan hệ chúng ta bước sang một level mới </p>
+
+                        <p class="timeline-subtitle">17/08/21</p>
+                    </div>
+                </div>
+                <!-- STORY Thy-->
+
+                <!-- STORY THY -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="https://graph.facebook.com/100045640179308/picture?type=large&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Hoàng Nguyễn Thy Thy</span></h4>
+                        <p class="Cl-Story">Em bị khùng nha</p>
+                        <img class="imgStory" src="/TIMELINE/avt/thy.jpg" alt="">
+                        <p class="timeline-subtitle">15/07/21</p>
+                    </div>
+                </div>
+                <!-- STORY Thy-->
+
+                <!-- STORY Hùng -->
+                <div class="timeline-container">
+                    <div class="timeline-icon">
+                        <img src="https://graph.facebook.com/100045640179308/picture?type=large&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" alt="">
+                    </div>
+
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Đinh Mạnh Hùng</span></h4>
+                        <p class="Cl-Story">Anh cũng chã biết là khi nào ta trở thành người yêu của nhau nhưng ta chốt lại là 15 tháng 7 2021</p>
+                        <p class="timeline-subtitle">15/07/21</p>
+                    </div>
+                </div>
+                <!-- STORY Hùng -->
+
+            </div>
+        </div>
+
+    </body>
+    <section class="author">
+        <p>Thiết kế bởi: <a href="https://facebook.com/HunqD" target="_blank" title="ResponsiveMart">HunqD</a></p>
+        <!--         <a href="https://facebook.com/HunqD" target="_blank" class="btn">Xem trang cá nhân</a> -->
+    </section>
+
+    <script src="./js/file.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.13/howler.min.js"></script>
+    <script src="./js/music.js"></script>
+    <script type="text/javascript"></script>
+</body>
+
+</html>

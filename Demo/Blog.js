@@ -100,6 +100,12 @@ function ReloadBlog() {
 
       document.querySelector('#rss-feed').innerHTML = storyHTML;
 
+      // Lớp phủ cho Audio
+      var script = document.createElement('script');
+      script.src = './TIMELINE/js/music.js';
+      document.head.appendChild(script);
+     
+
       // Lấy tất cả các div có lớp wp-block-video
       var videoDivs = document.querySelectorAll('.wp-block-video');
       // Lặp qua từng div và tìm thẻ video trong mỗi div

@@ -5,7 +5,7 @@
 
 <head>
     <!-- Tiêu đề trang -->
-    <title>Nhật kí tình yêu</title>
+    <title>Tải Tệp Lên</title>
 
     <!-- Bộ giải mã và phân loại thiết bị -->
     <meta charset="UTF-8" />
@@ -17,12 +17,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Biểu tượng cho web -->
-    <link rel="icon" href="./Data/icon/Logo2.png" />
+    <link rel="icon" href="/Data/icon/Logo2.png" />
 
     <!-- Biểu tượng iPhone -->
-    <link rel="apple-touch-icon" href="./Data/icon/Logo.png" sizes="150x150" />
+    <link rel="apple-touch-icon" href="/Data/icon/Logo.png" sizes="150x150" />
     <!-- CSS của web -->
-    <link rel="stylesheet" href="./Data/CSS/Style.css" />
+    <link rel="stylesheet" href="/Data/CSS/Style.css" />
 
     <!-- FontAweSome fas fa icon -->
     <script src="https://kit.fontawesome.com/9392097706.js" crossorigiln="anonymous"></script>
@@ -30,13 +30,16 @@
 
 <body>
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
+
         body {
+            background-color: #111;
             margin: 0;
             overflow: hidden;
         }
+
         .forms-studio {
             height: 100vh;
         }
@@ -48,11 +51,47 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
     </style>
-    <div class='forms-studio'><iframe
-            src='https://script.google.com/macros/s/AKfycbzdrKSm1nRFBL-3J_mYxtljJJc0SdPF4dwjGUHhh09qXw--E-wsVa8ETHsmE748282y/exec'></iframe>
-    </div>
+
+   
+        <div class='forms-studio'><iframe
+                src='https://script.google.com/macros/s/AKfycbzdrKSm1nRFBL-3J_mYxtljJJc0SdPF4dwjGUHhh09qXw--E-wsVa8ETHsmE748282y/exec'></iframe>
+        </div>
+
+
+
 </body>
+<script>
+    function GetLink() {
+        var inputElement = document.getElementById("ctrlq-file-0");
+        var dataFiles = inputElement.getAttribute("data-files");
+        var copyText = document.getElementById("myInput");
+        var myLink = document.getElementById("myLink");
+        // Sử dụng regex để trích xuất mã từ chuỗi data-files
+        var match = /{"([^"]+)":"[^"]+"}/.exec(dataFiles);
+
+        if (match) {
+            var code = match[1];
+            copyText.value = code;
+            navigator.clipboard.writeText(code);
+            myLink.value = 'https://drive.google.com/open?id=' + code;
+
+            var link = document.createElement("a");
+
+            // Đặt thuộc tính href (đường dẫn)
+            link.href = 'https://drive.google.com/open?id=' + code;
+
+            // Đặt nội dung của thẻ <a>
+            link.innerText = "Link Google Drive";
+
+            var divLink = document.getElementById("Link");
+            divLink.appendChild(link);
+
+
+        } else {
+            alert("Không tìm thấy mã.");
+        }
+    }
+</script>
 
 </html>
