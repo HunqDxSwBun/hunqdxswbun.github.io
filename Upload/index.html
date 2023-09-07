@@ -37,7 +37,6 @@
         body {
             background-color: #111;
             margin: 0;
-            overflow: hidden;
         }
 
         .forms-studio {
@@ -48,50 +47,35 @@
             width: 100%;
             height: 100vh;
             border: 0;
-            border-radius: 10px;
             overflow: hidden;
         }
+        .terms {
+            font-size: 14px;
+            font-weight: 400;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: black;
+            padding: 10px ;
+            background-color: pink !important;
+        }
+        .terms a {
+            color: #ff2655 ;
+            font-weight: bold;
+            text-decoration: none;
+        }
     </style>
-
-   
-        <div class='forms-studio'><iframe
-                src='https://script.google.com/macros/s/AKfycbzdrKSm1nRFBL-3J_mYxtljJJc0SdPF4dwjGUHhh09qXw--E-wsVa8ETHsmE748282y/exec'></iframe>
-        </div>
+    <p class="terms">
+        Khi bạn sử dụng dịch vụ của chúng tôi, bạn đồng ý tuân theo các  <a href="./terms.html" target="_blank" rel="noopener noreferrer">Điều Khoản</a>
+        của chúng tôi.
+    </p>
+    <div class='forms-studio'><iframe
+            src='https://script.google.com/macros/s/AKfycbzdrKSm1nRFBL-3J_mYxtljJJc0SdPF4dwjGUHhh09qXw--E-wsVa8ETHsmE748282y/exec'></iframe>
+    </div>
 
 
 
 </body>
-<script>
-    function GetLink() {
-        var inputElement = document.getElementById("ctrlq-file-0");
-        var dataFiles = inputElement.getAttribute("data-files");
-        var copyText = document.getElementById("myInput");
-        var myLink = document.getElementById("myLink");
-        // Sử dụng regex để trích xuất mã từ chuỗi data-files
-        var match = /{"([^"]+)":"[^"]+"}/.exec(dataFiles);
-
-        if (match) {
-            var code = match[1];
-            copyText.value = code;
-            navigator.clipboard.writeText(code);
-            myLink.value = 'https://drive.google.com/open?id=' + code;
-
-            var link = document.createElement("a");
-
-            // Đặt thuộc tính href (đường dẫn)
-            link.href = 'https://drive.google.com/open?id=' + code;
-
-            // Đặt nội dung của thẻ <a>
-            link.innerText = "Link Google Drive";
-
-            var divLink = document.getElementById("Link");
-            divLink.appendChild(link);
-
-
-        } else {
-            alert("Không tìm thấy mã.");
-        }
-    }
-</script>
 
 </html>
