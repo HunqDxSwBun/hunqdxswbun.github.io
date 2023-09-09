@@ -203,6 +203,7 @@ header .HeadApp h1 {
 
 .tabcontent img {
     max-width: 100%;
+    height: auto;
 }
 
 .tabcontent.show {
