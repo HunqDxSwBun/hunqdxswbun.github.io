@@ -1,15 +1,22 @@
 // Danh sách các album và thông tin của từng album
+// const albums = [
+//   { name: '🔥 Nghe Nhiều', dataAlbum: "HOT" },
+//   { name: "Âu Mỹ", dataAlbum: "USUK" },
+//   { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
+//   { name: "❤ Yêu Xa", dataAlbum: "TinhYeuXa" },
+//   { name: "Bích Phương", dataAlbum: "BichPhuong" },
+//   { name: "Binaural Beats", dataAlbum: "Binaural" },
+//   { name: "Remix", dataAlbum: "Remix" },
+//   { name: "EDM", dataAlbum: "EDM" },
+//   { name: "US UK Mix", dataAlbum: "USUKMix" },
+//   { name: "Chill", dataAlbum: "Chill" },
+//   // Thêm các album khác vào đây nếu cần
+// ];
+
 const albums = [
-  { name: '🔥 Nghe Nhiều', dataAlbum: "HOT" },
-  { name: "Âu Mỹ", dataAlbum: "USUK" },
   { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
-  { name: "❤ Yêu Xa", dataAlbum: "TinhYeuXa" },
+  { name: 'Remix', dataAlbum: "Remix" },
   { name: "Bích Phương", dataAlbum: "BichPhuong" },
-  { name: "Binaural Beats", dataAlbum: "Binaural" },
-  { name: "Remix", dataAlbum: "Remix" },
-  { name: "EDM", dataAlbum: "EDM" },
-  { name: "US UK Mix", dataAlbum: "USUKMix" },
-  { name: "Chill", dataAlbum: "Chill" },
   // Thêm các album khác vào đây nếu cần
 ];
 
@@ -53,7 +60,7 @@ albums.forEach((album, index) => { // Thêm tham số index vào forEach
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const PLAYER_STORAGE_KEY = "F8_PLAYER";
+const PLAYER_STORAGE_KEY = "HunqD_PLAYER";
 
 const player = $(".player");
 const cd = $(".cd");
@@ -140,6 +147,8 @@ const app = {
         const progressPercent = Math.floor((audio.currentTime / audio.duration) * 100);
         progress.value = progressPercent;
       }
+      const thoiGianDaChuyenDoi = chuyenDoiThoiGian(audio.currentTime);
+      document.getElementById('SeekTimeOnload').innerText = thoiGianDaChuyenDoi;
     };
 
     progress.onchange = function (e) {
@@ -148,6 +157,18 @@ const app = {
       audio.currentTime = seekTime;
 
     };
+
+    function chuyenDoiThoiGian(gio) {
+      const gioInt = Math.floor(gio / 3600);
+      const phutInt = Math.floor((gio % 3600) / 60);
+      const giayInt = Math.floor(gio % 60);
+    
+      if (gioInt > 0) {
+        return `${gioInt}:${phutInt.toString().padStart(2, '0')}:${giayInt.toString().padStart(2, '0')}`;
+      } else {
+        return `${phutInt}:${giayInt.toString().padStart(2, '0')}`;
+      }
+    }
 
     nextBtn.onclick = function () {
       liveOFF();
@@ -317,7 +338,7 @@ const app = {
       }
     });
 
-    fetch(`/Music/${this.config.currentAlbum || "HOT"}.json`)
+    fetch(`/Music/${this.config.currentAlbum || "NhacViet"}.json`)
       .then((response) => response.json())
       .then((data) => {
         _this.loadSongs(data);
@@ -411,63 +432,63 @@ navigator.mediaSession.setActionHandler('seekto', (details) => {
   // Xử lý seek to ở thời gian seekTime
 });
 
-// let audio1 = audio;
-// const container = document.getElementById("container");
-// const canvas = document.getElementById("canvas");
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight / 1.5;
+let audio1 = audio;
+const container = document.getElementById("container");
+const canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight / 1.5;
 
-// const ctx = canvas.getContext("2d");
-// const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-// let audioSource = null;
-// let analyser = null;
+const ctx = canvas.getContext("2d");
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let audioSource = null;
+let analyser = null;
 
-// function playAudio() {
-//   if (audioSource !== null) {
-//     audioSource.disconnect();
-//   }
+function playAudio() {
+  if (audioSource !== null) {
+    audioSource.disconnect();
+  }
 
-//   audioSource = audioCtx.createMediaElementSource(audio1);
-//   analyser = audioCtx.createAnalyser();
-//   audioSource.connect(analyser);
-//   analyser.connect(audioCtx.destination);
-//   analyser.fftSize = 128 * 8;
-//   const bufferLength = analyser.frequencyBinCount;
-//   const dataArray = new Uint8Array(bufferLength);
-//   const barWidth = canvas.width / bufferLength * 2;
-//   let x = 0;
+  audioSource = audioCtx.createMediaElementSource(audio1);
+  analyser = audioCtx.createAnalyser();
+  audioSource.connect(analyser);
+  analyser.connect(audioCtx.destination);
+  analyser.fftSize = 128 * 8;
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  const barWidth = canvas.width / bufferLength * 2;
+  let x = 0;
 
-//   function animate() {
-//     x = 0;
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     analyser.getByteFrequencyData(dataArray);
-//     drawVisualizer({
-//       bufferLength,
-//       dataArray,
-//       barWidth
-//     });
-//     requestAnimationFrame(animate);
-//   }
+  function animate() {
+    x = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    analyser.getByteFrequencyData(dataArray);
+    drawVisualizer({
+      bufferLength,
+      dataArray,
+      barWidth
+    });
+    requestAnimationFrame(animate);
+  }
 
-//   const drawVisualizer = ({
-//     bufferLength,
-//     dataArray,
-//     barWidth
-//   }) => {
-//     let barHeight;
-//     for (let i = 0; i < bufferLength; i++) {
-//       barHeight = dataArray[i];
-//       const red = (i * barHeight);
-//       const green = i;
-//       const blue = barHeight;
-//       ctx.fillStyle = `#ff2655`;
-//       ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-//       x += barWidth;
-//     }
-//   }
+  const drawVisualizer = ({
+    bufferLength,
+    dataArray,
+    barWidth
+  }) => {
+    let barHeight;
+    for (let i = 0; i < bufferLength; i++) {
+      barHeight = dataArray[i];
+      const red = (i * barHeight);
+      const green = i;
+      const blue = barHeight;
+      ctx.fillStyle = `#ff2655`;
+      ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+      x += barWidth;
+    }
+  }
 
-//   animate();
-// }
+  animate();
+}
 
 console.log(`Phiên bản 1.10.6`)
 

@@ -1251,12 +1251,12 @@ header .HeadApp h1 {
 }
 
 .dashboard header h4 {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .dashboard header h2 {
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--ButtonBG);
 }
 
@@ -1293,6 +1293,16 @@ header .HeadApp h1 {
 .Live #LiveNoti {
     font-weight: bold;
     margin: 3px;
+}
+.TimeSeek {
+    color: var(--BodyCL);
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--BodyBG);
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    padding: 0 10px;
 }
 
 .CDBlock {

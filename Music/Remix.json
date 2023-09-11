@@ -1,92 +1,20 @@
 [
   {
-    "name": "Bludfire",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Bludfire.mp3",
-    "image": "/Data/IMG/404.gif"
+    "name": "Việt Nam Airline",
+    "singer": "Pi Seven Remix",
+    "path": "https://drive.google.com/uc?id=1D1b5eBMUCVnji9WoDrl1zM6yClUrGs6U",
+    "image": "/Music/IMG/DJ.png"
   },
   {
-    "name": "Nasty",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Nasty.mp3",
-    "image": "/Data/IMG/404.gif"
+    "name": "BÊ SẮC BẾ Vol5",
+    "singer": "Triple H & Tray C",
+    "path": "https://drive.google.com/uc?id=1D4xw5KPJ607wkUxNWUIRPzGhPRvtdN0s",
+    "image": "/Music/IMG/DJ.png"
   },
   {
-    "name": "Thái Hoàng",
-    "singer": "Thái Hoàng",
-    "path": "/Music/Music/TongHop/Thái Hoàng.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "SOFAR  Remix",
+    "name": "Tiktok Remix",
     "singer": "Youtube",
-    "path": "/Music/Music/TongHop/SOFAR REMIX.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "Chờ đợi có đáng sợ Remix",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Chờ đợi có đáng sợ.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "Don't Côi Remix",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Dont Côi.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "Chờ Em Trong Đêm Remix",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Chờ Em Trong Đêm.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "TikTok Remix",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/TopTopRemix.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "In The Club Remix",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/In The Club.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "Vinahouse",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Vinahey.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "VIET DEEP 2023",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/VIET DEEP 2023  MIXTAPE SET NHẠC CŨ 9X  DEEP HOUSE CHILL.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "VIET DEEP 2023 Vol 2",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/VIET DEEP 2023.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "Mixtape My Everything",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Việt Deep.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "Remix Hot Tiktok",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/Remix Hot Tiktok.mp3",
-    "image": "/Data/IMG/404.gif"
-  },
-  {
-    "name": "NHẠC TRUNG REMIX",
-    "singer": "Youtube",
-    "path": "/Music/Music/TongHop/NHẠC TRUNG REMIX.mp3",
-    "image": "/Data/IMG/404.gif"
+    "path": "https://drive.google.com/uc?id=1D57FG_6qqV3uW6esHzjrKk0AFmT8B8j4",
+    "image": "/Music/IMG/DJ.png"
   }
 ]
