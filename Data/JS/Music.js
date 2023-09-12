@@ -162,7 +162,7 @@ const app = {
       const gioInt = Math.floor(gio / 3600);
       const phutInt = Math.floor((gio % 3600) / 60);
       const giayInt = Math.floor(gio % 60);
-    
+
       if (gioInt > 0) {
         return `${gioInt}:${phutInt.toString().padStart(2, '0')}:${giayInt.toString().padStart(2, '0')}`;
       } else {
@@ -493,3 +493,25 @@ function playAudio() {
 console.log(`Phiên bản 1.10.6`)
 
 
+function SeekTimeOnload() {
+  var inputText = prompt("Nhập tiếng và phút (hh:mm):");
+  
+  if (inputText !== null) {
+    var parts = inputText.split(':');
+    if (parts.length === 2) {
+      var hours = parseInt(parts[0], 10);
+      var minutes = parseInt(parts[1], 10);
+
+      if (!isNaN(hours) && !isNaN(minutes)) {
+        audio.currentTime = (hours * 3600) + (minutes * 60);
+        console.log("Giờ: " + hours + ", Phút: " + minutes);
+      } else {
+        alert("Nhập không hợp lệ. Vui lòng nhập giờ và phút dưới dạng hh:mm.");
+      }
+    } else {
+      alert("Nhập không hợp lệ. Vui lòng nhập giờ và phút dưới dạng hh:mm.");
+    }
+  } else {
+    alert("Bạn đã hủy nhập liệu.");
+  }
+}
