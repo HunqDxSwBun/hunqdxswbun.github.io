@@ -1,14 +1,8 @@
 [
     {
-        "name": "EDM Remix",
-        "singer": "Youtube",
-        "path": "/Music/Music/EDM/EDM1.mp3",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "EDM Remix 2",
-        "singer": "Youtube",
-        "path": "/Music/Music/EDM/EDM2.mp3",
+        "name": "Nhạc EDM",
+        "singer": "YouTube",
+        "path": "https://drive.google.com/uc?id=1NB-WA6OvUKqwhRI0xB2fC_PtGrcTJ60l",
         "image": "/Music/IMG/Logo.png"
     }
 ]

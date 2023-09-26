@@ -17,6 +17,7 @@ const albums = [
   { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
   { name: 'Remix', dataAlbum: "Remix" },
   { name: "Bích Phương", dataAlbum: "BichPhuong" },
+  { name: "EDM", dataAlbum: "EDM" },
   // Thêm các album khác vào đây nếu cần
 ];
 
