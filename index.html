@@ -29,6 +29,7 @@
 </head>
 
 <body>
+
     <div class="snowflakes" id="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -46,7 +47,7 @@
 
     <header>
         <div id="navbar" onclick="Menu()">
-            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart fa-beat-fade"></i>
         </div>
         <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
             <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
@@ -125,7 +126,7 @@
             <div class="Couple">
                 <div class="Info Male">
                     <div class="Avatar" onclick="CoupleChat('Male')">
-                        <img src="https://graph.facebook.com/100045640179308/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
+                        <img src="https://graph.facebook.com/100045640179308/picture?width=9999&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
                             alt="" srcset="">
                     </div>
                     <div class="Name">
@@ -136,17 +137,17 @@
                     </div>
                 </div>
 
-                <div class="Heart"> 
+                <div class="Heart">
                     <a href="./TIMELINE/index.html">
                         <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
                     </a>
                     <!-- onclick="toggleSize()" -->
-                   
+
                 </div>
 
                 <div class="Info Female">
                     <div class="Avatar" onclick="CoupleChat('Female')">
-                        <img src="https://graph.facebook.com/100074217488487/picture?type=large&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
+                        <img src="https://graph.facebook.com/100074217488487/picture?width=9999&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
                             alt="" srcset="">
                     </div>
                     <div class="Name">
@@ -353,28 +354,8 @@
                 <p>Lưu trữ có mã bảo vệ </p>
             </div>
 
-            <div class="SettingBlock" onclick="YoutubeMP3()">
-                <i class="fa-solid fa-download"></i>
-                <h1>HunqD Social</h1>
-                <p>Tải nhạc, video từ YouTube, SoundCloud, Facebook, Twitter, Instagram, TikTok, URL</p>
-            </div>
-
             <div class="SettingBlock Active" id="Folder">
                 <h1>Thư mục</h1>
-            </div>
-
-            <div class="SettingBlock Active" id="YoutubeMp3">
-                <h1>Tải nhạc từ YouTube</h1>
-                <div class="YoutubeMp3">
-                    <input type="text" id="inputLinkYTB" placeholder="Vui lòng nhập Link">
-                    <button onclick="pasteClipboardData()"><i class="fa-regular fa-clipboard"></i></button>
-                    <select name="Type" id="inputTypeYTB">
-                        <option value="mp3">Nhạc</option>
-                        <option value="mp4">Video</option>
-                    </select>
-                    <button onclick="chuyenDoi()"><i class="fa-solid fa-circle-down"></i></button>
-                </div>
-                <div id="outLinkYTB"></div>
             </div>
 
             <div class="SettingBlock" onclick="Frame()">
@@ -439,69 +420,12 @@
                 </div>
             </div>
 
-            <div class="SettingBlock" onclick="QrCode()">
-                <i class="fa-solid fa-qrcode"></i>
-                <h1>Tạo mã QR</h1>
-                <p>QR nội dung, trang web, WiFi,...</p>
-            </div>
-
-            <div class="SettingBlock" onclick="HideInfo()">
-                <i class="fa-solid fa-eye-slash"></i>
-                <h1>Ẩn thông tin</h1>
-                <p>Tính năng ẩn bớt thông tin để chia sẻ</p>
-            </div>
-
-            <div class="SettingBlock Active" id="QRcode">
-                <h1>Tạo Mã QR</h1>
-                <br>
-                <label for="qrType">Loại QR:</label>
-                <select id="qrType">
-                    <option value="text">Văn bản, URL, Số điện thoại,...</option>
-                    <option value="wifi">WiFi</option>
-                </select>
-        
-                <div id="textOptions">
-                    <label for="qrText">Văn bản hoặc URL:</label>
-                    <input type="text" id="qrText">
-                </div>
-        
-                <!-- WiFi options -->
-                <div id="wifiOptions" class="optionGroup">
-                    <label for="wifiSecurity">Mã hoá:</label>
-                    <select id="wifiSecurity">
-                        <option value="nopass">Không có</option>
-                        <option value="WPA">WPA/WPA2</option>
-                        <option value="WEP">WEP</option>
-                    </select>
-        
-                    <label for="ssid">Tên WiFi:</label>
-                    <input type="text" id="ssid">
-        
-                    <label for="password">Mật Khẩu:</label>
-                    <input type="text" id="password">
-                </div>
-        
-                <button id="generateBtn">Tạo mã QR</button>
-                <div id="qrCode"></div>
-                <button id="downloadBtn" style="display: none;">Tải về mã QR</button>
-            </div>
-
-
-            <div class="SettingBlock">
+            <div class="SettingBlock" onclick="location.reload();">
                 <i class="fa-solid fa-circle-info"></i>
                 <h1>Thông tin</h1>
                 <p>Trang được làm với tình yêu của anh và em ❤</p>
             </div>
 
-            <div class="SettingBlock" onclick="location.reload();">
-                <i class="fa-solid fa-circle-question"></i>
-                <h1>Thắc mắc</h1>
-                <p>Hiện tại chưa khả dụng</p>
-            </div>
-        </div>
-        <div class="logOutput">
-            <h1>Console Log</h1>
-            <div id="logOutput"></div>
         </div>
     </div>
 
@@ -553,10 +477,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- Tạo mã QR -->
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-<script src="./Data/JS/QrCode.js"></script>
-
 <!-- Tổng hợp -->
 <script src="./Data/JS/File.js"></script>
 
@@ -571,7 +491,7 @@
 <!-- Đổi thưởng -->
 <script src="./Data/JS/Redeem.js"></script>
 
-<!-- Tải Story --> 
+<!-- Tải Story -->
 <script src="./Data/JS/Download.js"></script>
 
 <!-- Nhạc & Nhạc chuông-->
@@ -588,7 +508,6 @@
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>
-<script src="./Data/JS/Youtube.js"></script>
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 

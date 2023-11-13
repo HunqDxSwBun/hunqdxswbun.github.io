@@ -88,25 +88,15 @@ function Redeem() {
 
 
 var Folderd = document.getElementById("Folder");
-var YTB = document.getElementById("YoutubeMp3");
 
 function Folder() {
   if (Folderd.style.display === "block") {
     Folderd.style.display = "none";
   } else {
     Folderd.style.display = "block";
-    YTB.style.display = "none";
   }
 }
 
-function YoutubeMP3() {
-  if (YTB.style.display === "block") {
-    YTB.style.display = "none";
-  } else {
-    YTB.style.display = "block";
-    Folderd.style.display = "none";
-  }
-}
 
 function Copy(x) {
   navigator.clipboard.writeText(x);
@@ -240,18 +230,6 @@ function CheckWho2() {
 
 }
 
-var vHideInfo = 0
-function HideInfo() {
-  vHideInfo++
-  console.log(vHideInfo);
-  if (vHideInfo === 1) {
-    document.getElementById('Currency').style.filter = 'brightness(0)';
-  } else {
-    vHideInfo = 0
-    document.getElementById('Currency').style.filter = 'brightness(1)';
-  }
-}
-
 
 
 var vFrame = document.getElementById("Frame");
@@ -272,15 +250,6 @@ function Security() {
   } else {
     vSecurity.style.display = "block";
     vFrame.style.display = "none";
-  }
-}
-
-function YoutubeMP3() {
-  if (YTB.style.display === "block") {
-    YTB.style.display = "none";
-  } else {
-    YTB.style.display = "block";
-    Folderd.style.display = "none";
   }
 }
 
@@ -345,24 +314,6 @@ function startMenuCloseTimer() {
   }
 }
 
-// Lưu lại console.log ban đầu để sử dụng sau này
-const originalConsoleLog = console.log;
-
-// Hàm để đưa nội dung vào div và log ra console ban đầu
-function logToDivAndConsole(message) {
-  const logOutputDiv = document.getElementById("logOutput");
-  const logMessage = document.createElement("p");
-  logMessage.textContent = message;
-  logOutputDiv.appendChild(logMessage);
-
-  // Log ra console ban đầu nếu muốn
-  originalConsoleLog(message);
-}
-
-// Ghi đè hàm console.log
-console.log = function (message) {
-  logToDivAndConsole(message);
-};
 
 // Lặp qua tất cả các thẻ img trong trang
 function CheckIMG() {
@@ -378,13 +329,3 @@ function CheckIMG() {
   }
 }
 CheckIMG();
-
-
-var vQrCode = document.getElementById("QRcode");
-function QrCode() {
-  if (vQrCode.style.display === "block") {
-    vQrCode.style.display = "none";
-  } else {
-    vQrCode.style.display = "block";
-  }
-}

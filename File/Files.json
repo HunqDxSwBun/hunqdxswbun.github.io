@@ -16,7 +16,7 @@
     {
       "Tên Folder": "Chặn quảng cáo",
       "Type": "Copy",
-      "Link": "https://hunqdxswbun.github.io/Files/easylist.txt",
+      "Link": "https://hunqdxswbun.github.io/File/Files/easylist.txt",
       "Tên": "Bộ Lọc quảng cáo",
       "Tên Phụ": "v1.0.1"
     },
@@ -26,13 +26,6 @@
       "Link": "https://apps.apple.com/vn/app/adblock/id691121579?l=vi",
       "Tên": "AdBlock",
       "Tên Phụ": "v0505"
-    },
-    {
-      "Tên Folder": "Bộ sưu tập ảnh nền",
-      "Type": "Link",
-      "Link": "/Data/Wallpaper/Wallpaper.zip",
-      "Tên": "Phần 1 ",
-      "Tên Phụ": ""
     },
     {
       "Tên Folder": "Key WARP+",
