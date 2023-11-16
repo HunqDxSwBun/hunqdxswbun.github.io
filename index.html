@@ -46,24 +46,29 @@
     </div>
 
     <header>
+        <div class="Noel" id="Noel" onclick="PlayMusicBG()">
+            <img src="./Data/IMG/2.gif" alt="" srcset="">
+            <audio id="myAudio" loop>
+                <source src="./Events/we-wish-you-a-merry-christmas_56sec-174156.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
         <div id="navbar" onclick="Menu()">
             <i class="fa-solid fa-heart fa-beat-fade"></i>
         </div>
         <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
             <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
-            <div id="MenuMuic">
-                <div class="Tab">
-                    <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')"><i
-                            class="fa-brands fa-readme"></i></button>
-                    <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
-                    <!-- <button class="tablinks" onclick="openTAB(event, 'Questions')"> <i class="fa-solid fa-clipboard-question"></i></button> -->
-                    <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
-                            class="fa-solid fa-house"></i></button>
-                    <button class="tablinks" onclick="openTAB(event, 'Music')"><i
-                            class="fa-solid fa-music"></i></button>
-                    <button class="tablinks" onclick="openTAB(event, 'Settings')"> <i
-                            class="fa-solid fa-box"></i></button>
-                </div>
+
+
+            <div class="Tab">
+                <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')"><i
+                        class="fa-brands fa-readme"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
+                <!-- <button class="tablinks" onclick="openTAB(event, 'Questions')"> <i class="fa-solid fa-clipboard-question"></i></button> -->
+                <button class="tablinks active" onclick="openTAB(event, 'Home')"><i
+                        class="fa-solid fa-house"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Music')"><i class="fa-solid fa-music"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Settings')"> <i class="fa-solid fa-box"></i></button>
             </div>
         </div>
 
@@ -89,13 +94,13 @@
         </div> -->
     </div>
 
-    <div class="tabcontent show" id="Event">
+    <div class="tabcontent " id="Event">
         <h1 class="head">Sự kiện</h1>
         <div class="Event" id="root">
         </div>
     </div>
 
-    <div id="Home" class="tabcontent ">
+    <div id="Home" class="tabcontent show">
         <div class="IMGBG" id="IMGBG"></div>
 
         <div class="NewPost" id="NewPost">
@@ -396,7 +401,7 @@
                 <p>Trang được làm với tình yêu của anh và em ❤</p>
             </div>
 
-         
+
 
             <div class="SettingBlock Active" id="Security">
                 <h1>Chuyển đổi văn bản</h1>
@@ -428,7 +433,7 @@
                 </div>
             </div>
 
-            
+
 
         </div>
     </div>

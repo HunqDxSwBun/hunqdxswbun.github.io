@@ -3,6 +3,7 @@
 :root {
     --BodyCL: #ffffff;
     --HeadCL: #ff2655;
+    
 
     --BodyBG: #ffc0cb;
     --TabBG: #111111;
@@ -16,6 +17,9 @@
 
     --Male: rgb(0, 119, 255);
     --Female: #ff314d;
+
+    --FeedCL: #fff;
+    --FeedBG: #111;
 }
 
 .dark-mode {
@@ -23,6 +27,26 @@
     --TabBG: #2e2e2e;
     --CardBG: #111;
     --StoryBG: #ff2655;
+}
+.NoelMode {
+    --BodyCL: #ffffff;
+    --BodyBG: #001a31;
+    --TabBG:#56c2fd;
+    --HeadCL: #ffffff;
+    --ButtonBG: #003857;
+    --FeedCL: #fff;
+    --FeedBG: #003857;
+    --NewPost: #56c2fd;
+}
+.NoelMode #navbar,
+.NoelMode .HeadComing {
+    color: red;
+}
+.NoelMode .Num {
+    background-color: var(--TabBG) !important;
+}
+.NoelMode .DaysLove .Grid .DGrid:last-child {
+    color: #ffffff;
 }
 
 * {
@@ -44,7 +68,8 @@ body {
 .Info .Avatar img,
 header .HeadApp h1,
 .Num,
-.DaysLove{
+.DaysLove,
+.Noel{
     cursor: url('/Data/IMG/Cur/cus.cur'), auto !important;
 }
 
@@ -77,6 +102,7 @@ header .HeadApp h1,
 #navbar {
     cursor: pointer;
     text-align: center;
+    color: var(--BodyCL);
     background-color: var(--HeadCL);
     position: fixed;
     bottom: 15px;
@@ -476,8 +502,8 @@ header .HeadApp h1,
 }
 
 .Feed {
-    color: #fff;
-    background-color: #111;
+    color: var(--FeedCL);
+    background-color: var(--FeedBG);
     margin-bottom: 10px;
     padding: 15px 10px 10px 10px;
     border-radius: 10px;
@@ -1491,14 +1517,14 @@ header .HeadApp h1,
     justify-content: left;
     padding-bottom: 10px;
     border-radius: 10px;
-    box-shadow: inset 0px 0px 20px 5px var(--HeadCL);
+    border: 3px solid var(--BodyCL);
 }
 
 .Event .HeadComing {
     text-align: left;
     color: var(--BodyCL);
-    background-color: var(--HeadCL);
-    border: 2px solid var(--BodyCL);
+    background-color: var(--TabBG);
+    border: 3px solid var(--BodyCL);
     border-left: 0;
     padding: 5px 10px 10px 10px;
     border-top-right-radius: 20px;
@@ -1686,7 +1712,7 @@ header .HeadApp h1,
 
 .snowflake {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 2.5em;
     font-family: Arial, sans-serif;
     text-shadow: 0 0 5px #000;
     position: fixed;
@@ -1920,4 +1946,15 @@ header .HeadApp h1,
     padding: 10px;
     border-radius: 10px;
     background-color: #fff;
+}
+
+.Noel {
+    position: fixed;
+    left: 15px;
+    bottom: -9px;
+    transition: 0.3s all;
+    z-index: 15;
+}
+.Noel img {
+    max-width: 120px;
 }
