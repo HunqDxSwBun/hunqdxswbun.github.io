@@ -42,7 +42,9 @@ body {
 }
 
 .Info .Avatar img,
-header .HeadApp h1 {
+header .HeadApp h1,
+.Num,
+.DaysLove{
     cursor: url('/Data/IMG/Cur/cus.cur'), auto !important;
 }
 
@@ -1489,6 +1491,7 @@ header .HeadApp h1 {
     justify-content: left;
     padding-bottom: 10px;
     border-radius: 10px;
+    box-shadow: inset 0px 0px 20px 5px var(--HeadCL);
 }
 
 .Event .HeadComing {
@@ -1510,8 +1513,8 @@ header .HeadApp h1 {
 .Event .Upnext {
     background-size: cover;
     background-position: 50% 50%;
-    display: grid;
-    grid-template-columns: auto 60px;
+    display: flex;
+    justify-content: space-between;
     gap: 5px;
     background-color: var(--CardBG);
     box-sizing: border-box;
@@ -1529,9 +1532,10 @@ header .HeadApp h1 {
 }
 
 .Event .Upnext .Countdown {
-    background-color: #00000080;
-    width: 60px;
+    background-color: #000000b0;
     height: 60px;
+    min-width: 60px !important;
+    padding: 0 8px;
     background-size: cover;
     background-position: 50% 50%;
     border-radius: 10px;

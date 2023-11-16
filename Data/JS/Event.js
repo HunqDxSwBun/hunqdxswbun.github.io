@@ -1,6 +1,12 @@
 // JSON dữ liệu
 var events = [
   {
+    "SuKien": "Kỉ niệm 900 ngày",
+    "Ngay": "01/01",
+    "Anh": "/Events/IMG/Kiss.png",
+    "Link": "/index.html"
+  },
+  {
     "SuKien": "Tết Tây",
     "Ngay": "01/01",
     "Anh": "/Events/IMG/HPNY.JPG",
@@ -50,7 +56,10 @@ var events = [
   }
 ];
 
-var currentDate = new Date();
+
+// var currentDate = new Date();
+var currentDate = new Date('2023-01-01 00:00:00');
+
 var currentYear = currentDate.getFullYear();
 
 events.forEach(function (event) {
@@ -58,11 +67,9 @@ events.forEach(function (event) {
 
   if (eventDate.getDate() === currentDate.getDate() && eventDate.getMonth() === currentDate.getMonth()) {
     // Ngày sự kiện trùng với ngày hiện tại, không cần thay đổi.
-  } else if (eventDate < currentDate) {
+  } else if (eventDate.getDate() < currentDate.getDate()) {
     eventDate.setFullYear(eventDate.getFullYear() + 1);
   }
-
-
   event['Ngay'] = eventDate;
 });
 
@@ -169,7 +176,12 @@ for (var i = 1; i < events.length; i++) {
   var timeDiff = eventDate.getTime() - currentDate.getTime();
   var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-  countdown.textContent = days + 1;
+  if (days == 0) {
+    countdown.textContent = 'Đang Diễn Ra' ;
+  } else {
+    countdown.textContent = days + 1;
+  }
+  
 
   Countdown.appendChild(countdown);
   upnextDiv.appendChild(contentDiv);
@@ -177,35 +189,6 @@ for (var i = 1; i < events.length; i++) {
   eventContainer.appendChild(upnextDiv);
 
 }
-
-var SuKienSapToi = events[0].SuKien;
-var NgaySuKien = events[0].Ngay;
-var snowflakes = document.getElementById('snowflakes');
-
-if (SuKienSapToi === 'Sinh Nhật Anh Yêu ❤' || SuKienSapToi === 'Sinh Nhật Em Yêu ❤' ) {
-  snowflakes.style.display = "block";
-  snowflakes.innerHTML = `
-        <div class="snowflake">🎂</div>
-        <div class="snowflake">🎉</div>
-        <div class="snowflake">💕</div>
-        <div class="snowflake">😋</div>
-        <div class="snowflake">🤩</div>
-        <div class="snowflake">🍰</div>
-        <div class="snowflake">🎁</div>
-        <div class="snowflake">💌</div>
-        <div class="snowflake">🍬</div>
-        <div class="snowflake">💋</div>
-        <div class="snowflake">🎈</div>
-        <div class="snowflake">💖</div>
-  `
-  setTimeout(() => {
-    snowflakes.style.display = "none";
-  }, 10000);
-} else {
-  snowflakes.style.display = "none";
-}
-
-
 
 // Thêm vào phần tử gốc
 var rootElement = document.getElementById("root");

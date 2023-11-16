@@ -1,6 +1,6 @@
 
 function countDaysLove() {
-    var startDate = new Date('2021-07-15');
+    var startDate = new Date('2021-07-15 00:00:00');
     // Thu Jul 15 2021 00:00:00 GMT+0700 (Giờ Đông Dương) 
     var currentDate = new Date();
     var timeDifference = currentDate.getTime() - startDate.getTime();

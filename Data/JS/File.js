@@ -88,12 +88,22 @@ function Redeem() {
 
 
 var Folderd = document.getElementById("Folder");
+var vFrame = document.getElementById("Frame");
 
+function Frame() {
+  if (vFrame.style.display === "block") {
+    vFrame.style.display = "none";
+  } else {
+    vFrame.style.display = "block";
+    Folderd.style.display = "none";
+  }
+}
 function Folder() {
   if (Folderd.style.display === "block") {
     Folderd.style.display = "none";
   } else {
     Folderd.style.display = "block";
+    vFrame.style.display = "none";
   }
 }
 
@@ -232,17 +242,9 @@ function CheckWho2() {
 
 
 
-var vFrame = document.getElementById("Frame");
+
 var vSecurity = document.getElementById("Security");
 
-function Frame() {
-  if (vFrame.style.display === "block") {
-    vFrame.style.display = "none";
-  } else {
-    vFrame.style.display = "block";
-    vSecurity.style.display = "none";
-  }
-}
 
 function Security() {
   if (vSecurity.style.display === "block") {

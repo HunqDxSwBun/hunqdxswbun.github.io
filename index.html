@@ -74,7 +74,28 @@
         </audio>
     </header>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Story" class="tabcontent">
+        <h1 class="head">Bảng tin</h1>
+        <div class="Load">
+            <button onclick="ReloadBlog(); alert('Đã tải bài viết mới nhất')"><i
+                    class="fa-solid fa-rotate-right"></i></button>
+        </div>
+
+        <div class="rss-feed" id="rss-feed"></div>
+        <!-- <div class="write">
+            <a href="jetpack://">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+        </div> -->
+    </div>
+
+    <div class="tabcontent show" id="Event">
+        <h1 class="head">Sự kiện</h1>
+        <div class="Event" id="root">
+        </div>
+    </div>
+
+    <div id="Home" class="tabcontent ">
         <div class="IMGBG" id="IMGBG"></div>
 
         <div class="NewPost" id="NewPost">
@@ -161,21 +182,6 @@
         </div>
     </div>
 
-    <div id="Story" class="tabcontent">
-        <h1 class="head">Bảng tin</h1>
-        <div class="Load">
-            <button onclick="ReloadBlog(); alert('Đã tải bài viết mới nhất')"><i
-                    class="fa-solid fa-rotate-right"></i></button>
-        </div>
-
-        <div class="rss-feed" id="rss-feed"></div>
-        <!-- <div class="write">
-            <a href="jetpack://">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-        </div> -->
-    </div>
-
     <div class="tabcontent" id="Music">
         <div class="player">
             <!-- Dashboard -->
@@ -240,12 +246,6 @@
                 <canvas id="canvas"></canvas>
             </div>
 
-        </div>
-    </div>
-
-    <div class="tabcontent" id="Event">
-        <h1 class="head">Sự kiện</h1>
-        <div class="Event" id="root">
         </div>
     </div>
 
@@ -354,20 +354,14 @@
                 <p>Lưu trữ có mã bảo vệ </p>
             </div>
 
-            <div class="SettingBlock Active" id="Folder">
-                <h1>Thư mục</h1>
-            </div>
-
             <div class="SettingBlock" onclick="Frame()">
                 <i class="fa-solid fa-icons"></i>
                 <h1>Khung ảnh</h1>
                 <p>Thêm khung ảnh MyLove vào ảnh.</p>
             </div>
 
-            <div class="SettingBlock" onclick="Security()">
-                <i class="fa-solid fa-shield"></i>
-                <h1>Văn bản bảo mật</h1>
-                <p>Chuyển đổi văn bản </p>
+            <div class="SettingBlock Active" id="Folder">
+                <h1>Thư mục</h1>
             </div>
 
             <div class="SettingBlock Active" id="Frame">
@@ -389,6 +383,20 @@
                     <button id="outbtnDownload" onclick="downloadImage()">Tải ảnh</button>
                 </div>
             </div>
+
+            <div class="SettingBlock" onclick="Security()">
+                <i class="fa-solid fa-shield"></i>
+                <h1>Văn bản bảo mật</h1>
+                <p>Chuyển đổi văn bản </p>
+            </div>
+
+            <div class="SettingBlock" onclick="location.reload();">
+                <i class="fa-solid fa-circle-info"></i>
+                <h1>Thông tin</h1>
+                <p>Trang được làm với tình yêu của anh và em ❤</p>
+            </div>
+
+         
 
             <div class="SettingBlock Active" id="Security">
                 <h1>Chuyển đổi văn bản</h1>
@@ -420,56 +428,9 @@
                 </div>
             </div>
 
-            <div class="SettingBlock" onclick="location.reload();">
-                <i class="fa-solid fa-circle-info"></i>
-                <h1>Thông tin</h1>
-                <p>Trang được làm với tình yêu của anh và em ❤</p>
-            </div>
+            
 
         </div>
-    </div>
-
-    <div class="tabcontent" id="Questions">
-        <div class="Questions">
-            <div class="StarQuestions">
-                <h1>Xem ai hiểu nhau hơn ?</h1>
-                <button onclick="startGameA()">Câu hỏi của Anh Yêu ❤</button>
-                <button onclick="startGameB()">Câu hỏi của Em Yêu ❤</button>
-            </div>
-            <div class="QuestionsBlock">
-                <div class="Func">
-                    <button class="countdown">0s</button>
-                    <button id="Hide" onclick="lifeline('hideTwo')"><i class="fa-solid fa-2"></i></button>
-                    <button id="Call" onclick="lifeline('callFriend')"><i class="fa-solid fa-phone"></i></button>
-                    <button id="Skip" onclick="lifeline('skipQuestion')"><i class="fa-solid fa-forward"></i></button>
-                </div>
-                <div class="Action">
-                    <p id="Action"></p>
-                </div>
-                <div class="question">
-                    <img class="question-image" srloc="./Data/IMG/BannerApp.png" alt="Câu hỏi">
-                    <h1 class="question-text">
-                        </p>
-                </div>
-                <div class="DapAn">
-                    <button class="DapAn" data-dapan="A" onclick="checkAnswer('A')">A: <span
-                            class="option-text"></span></button>
-                    <button class="DapAn" data-dapan="B" onclick="checkAnswer('B')">B: <span
-                            class="option-text"></span></button>
-                    <button class="DapAn" data-dapan="C" onclick="checkAnswer('C')">C: <span
-                            class="option-text"></span></button>
-                    <button class="DapAn" data-dapan="D" onclick="checkAnswer('D')">D: <span
-                            class="option-text"></span></button>
-                </div>
-                <div class="result"></div>
-                <button id="start-btn" onclick="backHome()">Bắt đầu</button>
-                <audio id="calling">
-                    <source src="./Data/Questions/Call Sound Effect.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </div>
-
     </div>
 
 </body>
@@ -504,7 +465,7 @@
 <script src="./Data/JS/Frame.js"></script>
 
 <!-- Các câu hỏi -->
-<script src="./Data/JS/Questions.js"></script>
+<!-- <script src="./Data/JS/Questions.js"></script> -->
 
 <!-- Mở rộng -->
 <script src="./Data/JS/Folder.js"></script>
