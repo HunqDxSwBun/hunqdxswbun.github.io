@@ -1817,21 +1817,21 @@ header .HeadApp h1,
     position: fixed;
     bottom: 15px;
     right: 100px;
-    width: 90px;
+    width: 140px;
     height: 40px;
-    padding: 0 10px;
+    padding: 0 20px;
     border-radius: 100px;
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 10px;
     transition: bottom 0.3s;
     z-index: 2;
     animation: HieuUngnavbar 1s;
     box-sizing: border-box;
-    left: 70%;
-    transform: translate(-65%, 0);
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 .Noel i {
     color: var(--BodyCL);
