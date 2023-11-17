@@ -1807,154 +1807,41 @@ header .HeadApp h1,
     animation-delay: 4s, 2.5s
 }
 
-.Questions {
-    padding: 10px;
-    text-align: center;
-    max-width: 100%;
-}
-
-.StarQuestions {
-    width: 100%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.StarQuestions h1 {
-    font-size: 26px;
-    margin-bottom: 10px;
-    color: var(--ButtonBG);
-}
-
-.StarQuestions button {
-    cursor: pointer;
-    width: 250px;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
-    border-radius: 10px;
-    color: var(--BodyCL);
-    background-color: var(--ButtonBG);
-    border: none;
-}
-
-.Questions .Action {
-    margin: 10px 0;
-}
-
-.QuestionsBlock {
-    display: none;
-}
-
-.QuestionsBlock .question img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.QuestionsBlock .Func {
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-
-.QuestionsBlock .Func button {
-    cursor: pointer;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: none;
-    margin: 0 5px;
-}
-
-.QuestionsBlock .Func button:first-child {
-    color: var(--BodyCL);
-    background-color: var(--ButtonBG);
-}
-
-
-.QuestionsBlock .question h1 {
-    font-size: 20px;
-    margin: 10px 0 20px 0;
-}
-
-.QuestionsBlock .DapAn button,
-#start-btn {
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--BodyBG);
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-}
-
-.QuestionsBlock .DapAn .correct {
-    background-color: #74e700;
-    /* Màu xanh cho đáp án đúng */
-}
-
-.QuestionsBlock .DapAn .incorrect {
-    background-color: #ff0000;
-    /* Màu đỏ cho đáp án sai */
-}
-
-
-#QRcode .optionGroup {
-    display: none;
-}
-
-#QRcode label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-#QRcode input,
-#QRcode select,
-#QRcode button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: var(--BodyCL);
-    border: 2px solid var(--BodyBG);
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-#QRcode button {
-    font-weight: bold;
-    background-color: var(--BodyBG);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-}
-
-#qrCode img {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    border: 5px solid black;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #fff;
-}
 
 .Noel {
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--BodyCL);
+    background-color: #56c2fd;
     position: fixed;
-    left: 15px;
-    bottom: -9px;
-    transition: 0.3s all;
-    z-index: 15;
+    bottom: 15px;
+    right: 100px;
+    width: 90px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    transition: bottom 0.3s;
+    z-index: 2;
+    animation: HieuUngnavbar 1s;
+    box-sizing: border-box;
+    left: 70%;
+    transform: translate(-65%, 0);
 }
-.Noel img {
-    max-width: 120px;
+.Noel i {
+    color: var(--BodyCL);
+}
+@keyframes Noel {
+    0% {
+        transform: translateX(500px)
+    }
+
+    100% {
+        transform: translateX(-500px)
+    }
 }

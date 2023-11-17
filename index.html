@@ -46,16 +46,19 @@
     </div>
 
     <header>
-        <div class="Noel" id="Noel" onclick="PlayMusicBG()">
-            <img src="./Data/IMG/2.gif" alt="" srcset="">
+        <div class="Noel" id="Noel" >
+            <i onclick="NoelMode()" class="fa-solid fa-tree"></i>
+            <i onclick="PlayMusicBG()" id="MusicNoel" class="fa-solid fa-volume-xmark"></i>
             <audio id="myAudio" loop>
                 <source src="./Events/we-wish-you-a-merry-christmas_56sec-174156.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
+
         <div id="navbar" onclick="Menu()">
             <i class="fa-solid fa-heart fa-beat-fade"></i>
         </div>
+
         <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
             <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
 

@@ -123,13 +123,14 @@ const app = {
 
   handleEvents: function () {
     const _this = this;
-
+    var x = document.getElementById("myAudio");
     // Xử lý khi click play
     playBtn.onclick = function () {
       if (_this.isPlaying) {
         audio.pause();
       } else {
         audio.play();
+        x.pause();
       }
     };
 

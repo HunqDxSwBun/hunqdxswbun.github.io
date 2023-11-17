@@ -270,21 +270,17 @@ var timeoutId; // Biến để lưu trữ ID của đối tượng setTimeout
 function Menu() {
   var x = document.getElementById("iMenu");
   var navbar = document.getElementById("navbar");
-
-  // var Noel có thể xoá  vì đây là sự kiện
-  var Noel = document.getElementById("Noel"); 
-
+  
+  var Noel = document.getElementById("Noel");
 
   if (x.style.bottom === "10px") {
     x.style.bottom = "-100px";
     navbar.style.bottom = "15px";
-   
-    Noel.style.bottom = "-9px";
+    Noel.style.bottom = "15px";
   } else {
-    Noel.style.bottom = "65px";
     x.style.bottom = "10px";
     navbar.style.bottom = "80px";
-    
+    Noel.style.bottom = "80px";
   }
 
   // Nếu đã đặt timeout trước đó, hủy bỏ để tránh việc tự đóng menu nếu có thao tác trong 3 giây
@@ -296,8 +292,9 @@ function Menu() {
   timeoutId = setTimeout(function () {
     x.style.bottom = "-100px";
     navbar.style.bottom = "15px";
+    Noel.style.bottom = "15px";
     timeoutId = null; // Đặt lại biến timeoutId thành null sau khi tự đóng menu
-  }, 30000); // 3000 milliseconds = 3 giây
+  }, 3000); // 3000 milliseconds = 3 giây
 }
 
 // Hàm này sẽ được gọi khi người dùng nhấn vào các biểu tượng trong menu,
@@ -344,15 +341,30 @@ CheckIMG();
 
 
 function PlayMusicBG() {
+  var x = document.getElementById("myAudio");
+  var MusicNoel = document.getElementById("MusicNoel");
+  
+  if (x.paused == false) {
+    x.pause();
+    MusicNoel.className = "fa-solid fa-volume-xmark";
+  } else {
+    x.play();
+    MusicNoel.className = "fa-solid fa-volume-high";
+
+  }
+}
+
+
+
+function NoelMode() {
   var body = document.querySelector('body');
   var x = document.getElementById("myAudio");
-  
+
   if (x.paused == false) {
     x.pause();
     body.classList.remove('NoelMode');
   } else {
-    x.currentTime = 0
-    x.play();
+    PlayMusicBG();
     body.classList.add('NoelMode');
     snowflakes.style.display = 'block';
   }
