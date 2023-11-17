@@ -20,7 +20,13 @@
   {
     "name": "MERRY CHRISTMAS",
     "singer": "Youtube",
-    "path": "https://drive.google.com/uv?id=1aRJVofzAW810lNnLQWtbosJF-PK3twug",
+    "path": "https://drive.google.com/uc?id=1aRJVofzAW810lNnLQWtbosJF-PK3twug",
+    "image": "/Music/IMG/DJ.png"
+  },
+  {
+    "name": "Có duyên không nợ",
+    "singer": "Youtube",
+    "path": "https://drive.google.com/uc?id=1hMiWOMCJywjzCZNXa-2swPC8JXqigIMZ",
     "image": "/Music/IMG/DJ.png"
   }
 ]
