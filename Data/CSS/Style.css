@@ -3,7 +3,7 @@
 :root {
     --BodyCL: #ffffff;
     --HeadCL: #ff2655;
-    
+
 
     --BodyBG: #ffc0cb;
     --TabBG: #111111;
@@ -28,26 +28,6 @@
     --CardBG: #111;
     --StoryBG: #ff2655;
 }
-.NoelMode {
-    --BodyCL: #ffffff;
-    --BodyBG: #001a31;
-    --TabBG:#56c2fd;
-    --HeadCL: #ffffff;
-    --ButtonBG: #003857;
-    --FeedCL: #fff;
-    --FeedBG: #003857;
-    --NewPost: #56c2fd;
-}
-.NoelMode #navbar,
-.NoelMode .HeadComing {
-    color: red;
-}
-.NoelMode .Num {
-    background-color: var(--TabBG) !important;
-}
-.NoelMode .DaysLove .Grid .DGrid:last-child {
-    color: #ffffff;
-}
 
 * {
     margin: 0;
@@ -68,8 +48,7 @@ body {
 .Info .Avatar img,
 header .HeadApp h1,
 .Num,
-.DaysLove,
-.Noel{
+.DaysLove {
     cursor: url('/Data/IMG/Cur/cus.cur'), auto !important;
 }
 
@@ -90,39 +69,29 @@ header .HeadApp h1,
     background-color: var(--ButtonBG);
 }
 
-.logOutput {
-    color: greenyellow;
-    background-color: var(--CardBG);
-    font-size: 14px;
-    margin: 10px 15px 50px 15px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
 #navbar {
     cursor: pointer;
-    text-align: center;
     color: var(--BodyCL);
     background-color: var(--HeadCL);
+
     position: fixed;
     bottom: 15px;
-    right: 10px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     transition: bottom 0.3s;
+
     z-index: 2;
     animation: HieuUngnavbar 1s;
     box-sizing: border-box;
     left: 50%;
     transform: translate(-50%, 0);
 }
-
-
 
 @keyframes HieuUngnavbar {
     0% {
@@ -136,12 +105,10 @@ header .HeadApp h1,
 
 
 .menu {
-    bottom: 5px;
     display: block;
     position: fixed;
-    right: 0;
     bottom: -100px;
-    padding: 0 10px;
+    padding: 5px 10px;
     margin: auto 0;
     width: 100%;
     border-radius: 20px;
@@ -173,11 +140,10 @@ header .HeadApp h1,
 
 .Tab {
     background-color: var(--TabBG);
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    /* grid-template-columns: calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     overflow: auto;
-    margin: 5px 0;
     padding: 4px;
     border-radius: 20px;
 }
@@ -187,6 +153,7 @@ header .HeadApp h1,
     cursor: pointer;
     background-color: transparent;
     height: 50px;
+    width: 100%;
     border: none;
     border-radius: 16px;
     transition: 0.3s;
@@ -211,7 +178,7 @@ header .HeadApp h1,
 
 .tabcontent {
     display: none;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .tabcontent img {
@@ -378,8 +345,10 @@ header .HeadApp h1,
     bottom: 100px;
     text-align: center;
     width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    justify-content: space-evenly;
+
+
 }
 
 .Couple .Heart {
@@ -390,6 +359,7 @@ header .HeadApp h1,
     justify-content: center;
     transition: 0.2s;
     padding-bottom: 30px;
+    width: 60px;
 }
 
 .Couple .Heart.large {
@@ -413,24 +383,6 @@ header .HeadApp h1,
     }
 }
 
-.CoupleChat {
-    display: none;
-    position: absolute;
-    bottom: 285px;
-    padding: 10px 20px;
-    max-height: 170px;
-    width: calc(100% - 64px);
-    margin: 0 10px;
-    border-radius: 20px;
-    background-color: var(--CardBG);
-    border: 2px solid var(--BodyCL);
-}
-
-.CoupleChat h1 {
-    font-size: 18px;
-    margin: 0;
-}
-
 .Couple .Heart img {
     width: 40px;
     animation: heart3 1.2s infinite alternate;
@@ -442,7 +394,9 @@ header .HeadApp h1,
         opacity: 0.8;
     }
 }
-
+.Couple .Info {
+    width: 150px;
+}
 .Couple .Info img {
     width: 100px;
     height: 100px;
@@ -607,891 +561,12 @@ header .HeadApp h1,
     text-align: center;
 }
 
-.write {
-    position: fixed;
-    bottom: 20px;
-    right: 16px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--TabBG);
-    height: 40px;
-    width: 40px;
-    border-radius: 16px;
-}
-
-.write i {
-    font-size: 20px;
-    color: var(--HeadCL);
-}
-
-#CustomPIC {
-    background-color: var(--CardBG);
-    padding: 10px 20px 20px 20px;
-    margin-bottom: 10px;
-}
-
-.file-input {
-    margin-bottom: 10px;
-}
-
-.file-input__input {
-    width: 0px;
-    height: 0px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.file-input__label {
-    width: 100%;
-    cursor: pointer;
-    display: block;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    font-size: 14px;
-    padding: 30px 12px;
-    margin: auto;
-    background-color: var(--ButtonBG);
-    border: 2px solid var(--BodyCL);
-}
-
-.file-input__label i {
-    font-size: 30px;
-}
-
-#CustomPIC button {
-    color: var(--BodyCL);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--BodyCL);
-    font-size: 16px;
-    font-weight: bold;
-    padding: 7px 0;
-    width: 80px;
-    border-radius: 10px;
-    margin: auto;
-}
-
-#CustomPIC button:last-child {
-    width: 120px;
-}
-
-
-
-
-#Currency a {
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--ButtonBG);
-    text-decoration: none;
-}
-
-.DownloadApp {
-    cursor: url('/Data/IMG/Cur/cus.cur'), auto;
-    display: flex;
-    margin: 10px;
-    text-align: center;
-    background-color: var(--CardBG);
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.DownloadApp img {
-    margin: auto;
-    width: 100%;
-    border-radius: 14px;
-}
-
-.DownloadApp h1 {
-    color: #fa7f7f;
-    font-size: 22px;
-    text-transform: uppercase;
-}
-
-.SettingDIV {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px 10px;
-}
-
-.SettingBlock {
-    cursor: pointer;
-    margin: 5px auto;
-    width: calc(50% - 10px);
-    text-align: center;
-    background-color: var(--CardBG);
-    padding: 15px 5px;
-    border-radius: 20px;
-    box-sizing: border-box;
-}
-
-.SettingBlock:hover {
-    background-color: var(--CardBGHV);
-}
-
-.SettingBlock.Center {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-}
-
-.SettingBlock.Active {
-    cursor: default;
-    background-color: var(--ButtonBG);
-    display: none;
-    width: calc(100% - 10px);
-    padding: 10px;
-}
-
-.SettingBlock.Active h1 {
-    margin: 0 0 10px 0;
-
-}
-
-.SettingBlock i {
-    font-size: 35px;
-}
-
-
-
-
-.SettingBlock h1 {
-    font-size: 20px;
-    margin: 5px 0 2px 0;
-}
-
-.SettingBlock p {
-    color: #a8a8a8;
-    font-size: 12px;
-}
-
-.SettingBlock input[type="color"] {
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #eee;
-    padding: 0 2px;
-}
-
-.SettingBlock input[type="color"]::-webkit-color-swatch {
-    margin: 0;
-    border: none;
-    border-radius: 10px;
-}
-
-.progress-container {
-    width: calc(100% - 14px);
-    height: 20px;
-    background-color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-    border-radius: 10px;
-    margin: 10px 5px;
-}
-
-.progressbar {
-    width: 0%;
-    height: 100%;
-    background-color: var(--ButtonBG);
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out;
-}
-
-#Dowloading button {
-    display: none;
-    color: var(--BodyCL);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--BodyCL);
-    font-size: 16px;
-    font-weight: bold;
-    padding: 7px 0;
-    width: 150px;
-    border-radius: 10px;
-    margin: auto;
-}
-
-#Dowloading button:hover {
-    color: var(--ButtonBG);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--ButtonBG);
-}
-
-
-#Redeem #codeOutput {
-    overflow: hidden;
-    font-size: 18px;
-    position: relative;
-}
-
-.Redeem {
-    color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Redeem input {
-    color: var(--ButtonBG);
-    text-align: center;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 5px;
-    width: 70%;
-    background-color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-.Redeem button {
-    color: var(--BodyCL);
-    background-color: var(--ButtonBG);
-    border: 2px solid var(--BodyCL);
-    font-size: 16px;
-    font-weight: bold;
-    padding: 7px 0;
-    width: 30%;
-    border-radius: 10px;
-}
-
-.Redeem button:hover {
-    color: var(--ButtonBG);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--ButtonBG);
-}
-
-#Redeem #codeOutput h1 {
-    margin-top: 10px;
-}
-
-#Redeem #codeOutput img {
-    width: 100%;
-    border-radius: 20px;
-    margin: 10px 0;
-}
-
-#Redeem #codeOutput .shop img {
-    width: 80px;
-    border-radius: 50%;
-    margin: 0 5px;
-    border: 4px solid var(--BodyCL);
-}
-
-.Folders {
-    background-color: var(--BodyBG);
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-}
-
-.Folders img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid var(--ButtonBG);
-}
-
-.Folders h1 {
-    font-size: 18px;
-    text-transform: uppercase;
-    color: var(--ButtonBG);
-}
-
-.Folders button {
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
-    border-radius: 10px;
-    color: var(--ButtonBG);
-    background-color: var(--CardBG);
-    border: 2px solid var(--ButtonBG);
-}
-
-.Folders button:hover {
-    color: var(--BodyCL);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--BodyCL);
-}
-
-.Folders button span {
-    font-size: 12px;
-    color: var(--BodyCL);
-    margin-left: 5px;
-}
-
-.YoutubeMp3 {
-    display: grid;
-    grid-template-columns: 50% 35px auto 35px;
-    align-items: center;
-    margin: 0;
-    gap: 5px;
-}
-
-.YoutubeMp3 input {
-    width: 100%;
-    height: 35px;
-    border: none;
-    padding: 0 5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    outline: none;
-}
-
-.YoutubeMp3 input::placeholder {
-    font-size: 14px;
-}
-
-.YoutubeMp3 button {
-    color: var(--BodyBG);
-    cursor: pointer;
-    height: 35px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--BodyCL);
-}
-
-.YoutubeMp3 button:nth-child(2) {
-    width: 35px;
-    border-radius: 0;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-right: 5px;
-}
-
-.YoutubeMp3 button i {
-    font-size: 16px;
-}
-
-.YoutubeMp3 select {
-    font-size: 14px;
-    font-weight: bold;
-    height: 35px;
-    cursor: pointer;
-    color: var(--BodyBG);
-    background-color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-    font-weight: bold;
-    padding: 7px 2px;
-    border-radius: 10px;
-    margin-right: 5px;
-    margin: 0 auto;
-}
-
-#YoutubeMp3 iframe {
-    margin: 10px 0;
-    height: 530px;
-    width: 100%;
-    border: 2px solid var(--BodyCL);
-    border-radius: 10px;
-}
-
-#YoutubeMp3 p {
-    font-size: 14px;
-    color: var(--BodyCL);
-    margin: 10px 0;
-}
-
-.YoutubeMp3 p {
-    font-size: 16px;
-    color: var(--BodyCL);
-}
-
-#outLinkYTB {
-    font-size: 14px;
-}
-
-.ColorPick {
-    background-color: var(--CardBG);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 10px;
-    border: 2px solid var(--BodyCL);
-}
-
-.ColorPick h1 {
-    margin: 0 !important;
-}
-
-#CustomColor button {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--BodyCL);
-    background-color: var(--ButtonBG);
-    width: 100%;
-    padding: 12px 0;
-    margin: 5px 0;
-    border-radius: 10px;
-    border: 2px solid var(--BodyCLs);
-}
-
-/* .SettingBlock.Active .ColorPick:nth-child(2) {
-    background-color: var(--BodyBG);
-}
-.SettingBlock.Active .ColorPick:nth-child(3) {
-    background-color: var(--BodyCL);
-}
-.SettingBlock.Active .ColorPick:nth-child(4) {
-    background-color: var(--HeadCL);
-}
-.SettingBlock.Active .ColorPick:nth-child(5) {
-    background-color: var(--StoryBG);
-}
-.SettingBlock.Active .ColorPick:nth-child(6) {
-    background-color: var(--TabBG);
-}
-.SettingBlock.Active .ColorPick:nth-child(7) {
-    background-color: var(--CardBG);
-}
-.SettingBlock.Active .ColorPick:nth-child(8) {
-    background-color: var(--ButtonBG);
-} */
-
-#Games {
-    text-align: center;
-}
-
-#Games #DiemDanh {
-    color: var(--HeadCL);
-    font-size: 100px;
-}
-
-#Games button {
-    cursor: pointer;
-    width: 50%;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--BodyBG);
-    background-color: var(--ButtonBG);
-    border: none;
-    border-radius: 10px;
-    margin: 2px 0 10px 0;
-}
-
-#Games button:hover {
-    color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-}
-
 
 .tabcontent .head {
     font-size: 22px;
     text-align: center;
     color: var(--HeadCL);
     margin-bottom: 10px;
-}
-
-#Security {
-    color: var(--BodyBG);
-}
-
-.Security {
-    padding: 10px 20px;
-    text-align: center;
-}
-
-.Security .Option {
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-.Security button {
-    cursor: pointer;
-    width: 100%;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--BodyBG);
-    background-color: var(--ButtonBG);
-    border: 2px solid var(--BodyBG);
-    border-radius: 10px;
-    margin: 2px 0 10px 0;
-}
-
-.Security button:hover {
-    color: var(--BodyCL);
-    border: 2px solid var(--BodyCL);
-}
-
-.Security .BTN50 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Security .BTN50 button {
-    cursor: pointer;
-}
-
-.Security .BTN50 button:first-child {
-    width: calc(20% - 2px);
-    margin-right: 2px;
-    color: var(--ButtonBG);
-    background-color: var(--BodyBG);
-    border: 2px solid var(--ButtonBG);
-}
-
-.Security i {
-    font-size: 24px;
-}
-
-.Security .BTN50 button:last-child {
-    width: calc(80% - 2px);
-    margin-left: 2px;
-}
-
-.Security .BTN50 button:first-child:hover {
-    color: var(--BodyBG);
-    background-color: var(--BodyCL);
-    border: 2px solid var(--ButtonBG);
-}
-
-
-.Security textarea {
-    color: var(--ButtonBG);
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    margin: 10px 0 0 0;
-    width: 100%;
-    height: 120px;
-    overflow: auto;
-    background-color: var(--BodyBG);
-    border: 2px solid var(--BodyBG);
-    border-radius: 10px;
-}
-
-.Security label {
-    cursor: pointer;
-    color: var(--BodyBG);
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 5px;
-    vertical-align: middle;
-    position: relative;
-    top: -6px;
-}
-
-
-.Security input[type="radio"] {
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    background-color: var(--BodyBG);
-}
-
-.Security input[type="radio"]:checked::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--ButtonBG);
-}
-
-.Security input[type="radio"]:hover {
-    border-color: #111;
-}
-
-.Security select {
-    color: var(--BodyBG);
-    background-color: transparent;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 10px;
-    width: 100%;
-    border: 2px solid var(--BodyBG);
-    padding: 10px;
-    cursor: pointer;
-}
-
-
-.Security select option {
-    color: var(--BodyCL);
-    background-color: var(--CardBG);
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-
-.player {
-    position: relative;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.player .icon-pause {
-    display: none;
-}
-
-.player.playing .icon-pause {
-    display: inline-block;
-}
-
-.player.playing .icon-play {
-    display: none;
-}
-
-.dashboard {
-    padding: 16px 16px 14px;
-    background-color: var(--CardBG);
-    display: block;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    border-bottom: 2px solid var(--CardBG);
-    border-radius: 10px;
-}
-
-.dashboard header h4 {
-    font-size: 12px;
-}
-
-.dashboard header h2 {
-    text-transform: capitalize;
-    font-size: 16px;
-    color: var(--ButtonBG);
-}
-
-.dashboard .BlockDashboard {
-    display: grid;
-    grid-template-columns: 80px auto;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.Live {
-    margin: 5px 0;
-}
-
-.Live .LiveBTN {
-    cursor: pointer;
-    color: var(--BodyCL);
-    font-size: 12px;
-    font-weight: bold;
-    background-color: var(--BodyBG);
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-}
-
-.Live .LiveBTN i {
-    font-size: 10px;
-}
-
-.Live .LiveBTN.active {
-    background-color: var(--ButtonBG);
-}
-
-.Live #LiveNoti {
-    font-weight: bold;
-    margin: 3px;
-}
-.TimeSeek {
-    color: var(--BodyCL);
-    font-size: 12px;
-    font-weight: bold;
-    background-color: var(--BodyBG);
-    border-radius: 5px;
-    border: none;
-    height: 30px;
-    padding: 0 10px;
-}
-
-.CDBlock {
-    display: block;
-    align-items: center;
-}
-
-.cd {
-    width: 80px;
-}
-
-/* .player.playing .cd-thumb {
-    box-shadow: 0 0 0 2px var(--ButtonBG);
-} */
-.cd-thumb {
-    width: 100%;
-    padding-top: 100%;
-    border-radius: 10px;
-    background-color: var(--BodyBG);
-    background-size: cover;
-    margin: auto;
-}
-
-/* CONTROL */
-.control {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 5px;
-}
-
-.control .btn {
-    cursor: pointer;
-    color: var(--BodyCL);
-    padding: 12px;
-    font-size: 18px;
-}
-
-.control .btn.active {
-    color: var(--ButtonBG);
-}
-
-.control .btn-toggle-play {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
-    color: var(--BodyCL);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--ButtonBG);
-}
-
-
-.progress {
-    cursor: pointer;
-    width: 100%;
-    appearance: none;
-    height: 10px;
-    background: var(--BodyBG);
-    outline: none;
-    border-radius: 8px;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
-}
-
-.progress::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--ButtonBG);
-    cursor: pointer;
-}
-
-/* PLAYLIST */
-.playlist {
-    margin-top: 260px;
-    padding: 12px 12px 60px 12px;
-}
-
-.Album {
-    margin-top: 400px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-    padding: 5px 0;
-    margin: 5px 0 0 0;
-    box-sizing: border-box;
-    white-space: nowrap;
-    /* Ngăn chữ xuống dòng */
-}
-
-.Album button {
-    cursor: pointer;
-    flex: 1;
-    /* Thay đổi width thành flex */
-    text-transform: capitalize;
-    color: var(--BodyCL);
-    font-size: 16px;
-    font-weight: bold;
-    background-color: var(--CardBGHV);
-    border-radius: 5px;
-    border: none;
-    margin: 0 2px;
-    padding: 10px 20px;
-}
-
-.Album .album-btn.active {
-    background-color: var(--ButtonBG);
-}
-
-
-.song {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    background-color: var(--CardMusic);
-    padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 5px rgb(0, 0, 0);
-}
-
-.song.active {
-    background-color: var(--ButtonBG);
-}
-
-.song:active {
-    opacity: 0.8;
-}
-
-.song.active .option,
-.song.active .author,
-.song.active .title {
-    color: #fff;
-}
-
-.song .thumb {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-size: cover;
-    margin: 0 8px;
-}
-
-.song .body {
-    flex: 1;
-    padding: 0 16px;
-}
-
-.song .title {
-    text-transform: capitalize;
-    font-size: 18px;
-    color: var(--text-color);
-}
-
-.song .author {
-    font-size: 12px;
-    color: #999;
-}
-
-.song .option {
-    padding: 16px 8px;
-    font-size: 20px;
-}
-
-.song .option a {
-    color: var(--BodyCL);
 }
 
 .Event {
@@ -1585,263 +660,78 @@ header .HeadApp h1,
     font-weight: bold;
 }
 
-.Frame {
-    text-align: center;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.Frame select {
-    color: var(--BodyCL);
-    background-color: transparent;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 10px;
+.Setting {
+    display: none;
+    position: fixed;
     width: 100%;
-    border: 2px solid var(--BodyCL);
-    padding: 10px;
-    cursor: pointer;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
-.Frame select option {
+.SettingBlock {
+    display: block;
+    cursor: default;
+    background-color: var(--ButtonBG);
+    margin: 5px 10px;
+    text-align: center;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 0px var(--CardBG);
+}
+
+.SettingBlock h1 {
+    font-size: 36px;
+}
+
+.file-input {
+    margin-bottom: 10px;
+}
+
+.file-input__input {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-input__label {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    padding: 30px 12px;
+    margin: auto;
+    background-color: var(--ButtonBG);
+    border: 2px solid var(--BodyCL);
+}
+
+.file-input__label i {
+    font-size: 30px;
+}
+.ButtonBlock {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+#CustomPIC .ButtonBlock button {
+    display: block;
+    color: var(--BodyCL);
+    background-color: var(--BodyBG);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+#CustomPIC .ButtonBlock button:last-child{
     background-color: var(--BodyBG);
 }
 
-.Frame button {
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #f9e5e5;
-    color: var(--ButtonBG);
-    font-weight: bold;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 5px auto;
-    box-sizing: border-box;
-}
-
-.Frame button:hover {
-    color: var(--ButtonBG);
-    background-color: #f9e5e5;
-}
-
-.Frame #outpic {
-    border-radius: 20px;
-    box-sizing: border-box;
-}
-
-.Frame #outpic img {
-    max-width: 100%;
-    border-radius: 10px;
-    display: block;
-    margin: 10px 0;
-}
-
-.Frame #outbtnDownload {
-    display: none;
-}
-
-
-#container {
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    background: #000;
-    width: 100%;
-    height: 100vh;
-}
-
-#canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-@-webkit-keyframes snowflakes-fall {
-    0% {
-        top: -10%
-    }
-
-    100% {
-        top: 100%
-    }
-}
-
-@-webkit-keyframes snowflakes-shake {
-
-    0%,
-    100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0)
-    }
-
-    50% {
-        -webkit-transform: translateX(80px);
-        transform: translateX(80px)
-    }
-}
-
-@keyframes snowflakes-fall {
-    0% {
-        top: -10%
-    }
-
-    100% {
-        top: 100%
-    }
-}
-
-@keyframes snowflakes-shake {
-
-    0%,
-    100% {
-        transform: translateX(0)
-    }
-
-    50% {
-        transform: translateX(50px)
-    }
-}
-
-.snowflake {
-    color: #fff;
-    font-size: 2.5em;
-    font-family: Arial, sans-serif;
-    text-shadow: 0 0 5px #000;
-    position: fixed;
-    top: -10%;
-    z-index: 9999;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-    -webkit-animation-duration: 10s, 3s;
-    -webkit-animation-timing-function: linear, ease-in-out;
-    -webkit-animation-iteration-count: infinite, infinite;
-    -webkit-animation-play-state: running, running;
-    animation-name: snowflakes-fall, snowflakes-shake;
-    animation-duration: 10s, 3s;
-    animation-timing-function: linear, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-play-state: running, running;
-}
-
-.snowflake:nth-of-type(0) {
-    left: 1%;
-    -webkit-animation-delay: 0s, 0s;
-    animation-delay: 0s, 0s
-}
-
-.snowflake:nth-of-type(1) {
-    left: 10%;
-    -webkit-animation-delay: 1s, 1s;
-    animation-delay: 1s, 1s
-}
-
-.snowflake:nth-of-type(2) {
-    left: 20%;
-    -webkit-animation-delay: 6s, .5s;
-    animation-delay: 6s, .5s
-}
-
-.snowflake:nth-of-type(3) {
-    left: 30%;
-    -webkit-animation-delay: 4s, 2s;
-    animation-delay: 4s, 2s
-}
-
-.snowflake:nth-of-type(4) {
-    left: 40%;
-    -webkit-animation-delay: 2s, 2s;
-    animation-delay: 2s, 2s
-}
-
-.snowflake:nth-of-type(5) {
-    left: 50%;
-    -webkit-animation-delay: 8s, 3s;
-    animation-delay: 8s, 3s
-}
-
-.snowflake:nth-of-type(6) {
-    left: 60%;
-    -webkit-animation-delay: 6s, 2s;
-    animation-delay: 6s, 2s
-}
-
-.snowflake:nth-of-type(7) {
-    left: 70%;
-    -webkit-animation-delay: 2.5s, 1s;
-    animation-delay: 2.5s, 1s
-}
-
-.snowflake:nth-of-type(8) {
-    left: 80%;
-    -webkit-animation-delay: 1s, 0s;
-    animation-delay: 1s, 0s
-}
-
-.snowflake:nth-of-type(9) {
-    left: 90%;
-    -webkit-animation-delay: 3s, 1.5s;
-    animation-delay: 3s, 1.5s
-}
-
-.snowflake:nth-of-type(10) {
-    left: 25%;
-    -webkit-animation-delay: 2s, 0s;
-    animation-delay: 2s, 0s
-}
-
-.snowflake:nth-of-type(11) {
-    left: 65%;
-    -webkit-animation-delay: 4s, 2.5s;
-    animation-delay: 4s, 2.5s
-}
-
-
-.Noel {
-    font-size: 18px;
-    cursor: pointer;
-    text-align: center;
-    color: var(--BodyCL);
-    background-color: #56c2fd;
-    position: fixed;
-    bottom: 15px;
-    right: 100px;
-    width: 140px;
-    height: 40px;
-    padding: 0 20px;
-    border-radius: 100px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    transition: bottom 0.3s;
-    z-index: 2;
-    animation: HieuUngnavbar 1s;
-    box-sizing: border-box;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-.Noel i {
-    color: var(--BodyCL);
-}
-@keyframes Noel {
-    0% {
-        transform: translateX(500px)
-    }
-
-    100% {
-        transform: translateX(-500px)
-    }
-}
