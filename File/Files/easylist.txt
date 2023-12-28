@@ -52853,3 +52853,50 @@ browsershots.org#@#.advert_area
 ||business-api.tiktok.com
 ||advertising.apple.com
 
+
+! 2023-11-28 https://ipatool.codevn.net
+ipatool.codevn.net##.swal2-backdrop-show.swal2-center.swal2-container
+
+! 2023-11-28 https://sign.codevn.net
+sign.codevn.net##.swal2-backdrop-show.swal2-center.swal2-container
+
+! 2023-11-29 https://ios.codevn.net
+ios.codevn.net##.swal2-backdrop-show.swal2-center.swal2-container
+
+! 2023-12-04 https://casi3.xyz
+||pbs.twimg.com/media/FwWK2boWABoZf4R.jpg$image
+casi3.xyz##.i656d7d1d1edb9891444361.y656d7d1d1edb1174844497
+casi3.xyz##.j656d7d3f4e7aa214231420.c656d7d3f4e7a4394511991
+casi3.xyz##.is-active.samSupportUsOverlay.overlay-container
+casi3.xyz##.o656d7d72eae81799582044
+casi3.xyz##.c656d7d72eae80377833831.j656d7d72eae7a586381602
+casi3.xyz##.d656d7d9e52784766370385.f656d7d9e5277e384741929
+casi3.xyz##.c656d7e2c463ce791930627.v656d7e2c463c9429423508
+||pbs.twimg.com/media/FwWK2boWABoZf4R.jpg$image
+
+! 2023-12-20 https://www1.vuaphimmoi.net
+www1.vuaphimmoi.net##.popUpBannerBox
+
+! 2023-12-20 https://tvhayss.com
+tvhayss.com##.popUpBannerBox
+
+! 2023-12-28 https://phimtuoitho.tv
+||phimtuoitho.tv/uploads/bg/bg.jpg$image
+||phimtuoitho.tv/uploads/bg/bg.jpg$image
+||img.upanh.tv/2023/11/13/400x300.jpg$image
+phimtuoitho.tv###mp-preload-popup-overlay
+||img.upanh.tv/2023/11/03/728-x-90.gif$image
+||phimtuoitho.tv/uploads/bg/bg.jpg$image
+||phimtuoitho.tv/uploads/bg/bg.jpg$image
+||phimtuoitho.tv/uploads/bg/bg.jpg$image
+||img.upanh.tv/2023/11/03/728-x-90.gif$image
+||phimtuoitho.tv/uploads/tuyen-tap-phim-Giang-Sinh-PhimTuoiTho.Tv.jpg$image
+||img.upanh.tv/2023/11/03/728-x-90.gif$image
+||phimtuoitho.tv/uploads/bg/bg.jpg$image
+phimtuoitho.tv##center
+phimtuoitho.tv##[href="javascript:hide_catfish();"]
+
+! 2023-12-28 https://www2.vuaphimmoi.net
+www2.vuaphimmoi.net##.popUpBannerBox
+
+
