@@ -45,6 +45,8 @@ body {
     z-index: -2;
 }
 
+
+
 .Info .Avatar img,
 header .HeadApp h1,
 .Num,
@@ -191,7 +193,7 @@ header .HeadApp h1,
 }
 
 #Home {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100vh;
     border-top-left-radius: 30px;
@@ -240,10 +242,13 @@ header .HeadApp h1,
     margin-bottom: 0;
 }
 
+
 .CardCouple {
     width: 100%;
     margin: 20px 0;
+    display: block;
 }
+
 
 .DaysLove {
     text-align: center;
@@ -342,13 +347,11 @@ header .HeadApp h1,
 
 .Couple {
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
     text-align: center;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-
-
 }
 
 .Couple .Heart {
@@ -394,9 +397,11 @@ header .HeadApp h1,
         opacity: 0.8;
     }
 }
+
 .Couple .Info {
     width: 150px;
 }
+
 .Couple .Info img {
     width: 100px;
     height: 100px;
@@ -716,11 +721,13 @@ header .HeadApp h1,
 .file-input__label i {
     font-size: 30px;
 }
+
 .ButtonBlock {
     display: flex;
     gap: 5px;
     justify-content: space-between;
 }
+
 #CustomPIC .ButtonBlock button {
     display: block;
     color: var(--BodyCL);
@@ -731,7 +738,47 @@ header .HeadApp h1,
     padding: 8px 10px;
     border-radius: 10px;
 }
-#CustomPIC .ButtonBlock button:last-child{
+
+#CustomPIC .ButtonBlock button:last-child {
     background-color: var(--BodyBG);
 }
 
+/* @media screen and (orientation:portrait) { … } */
+@media screen and (orientation:landscape) {
+    .BlockOne {
+        display: block;
+        margin: auto 0;
+    }
+
+    .BlockTwo {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .CardCouple {
+        width: 100%;
+        margin: 0;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Couple {
+        position: unset;
+    }
+    .tabcontent {
+        padding: 0 180px 50px 180px;
+    }
+    .tabcontent#Home {
+        padding: 0;
+    }
+    #Home .IMGBG {
+        filter: opacity(0.8);
+        background-position: 50% 45%;
+    }
+    .dark-mode #Home .IMGBG{
+        filter: opacity(0.5);
+    }
+}

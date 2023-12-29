@@ -135,3 +135,13 @@ function Info(T1, T2) {
         'info'
     )
 }
+
+
+
+// var body = document.querySelector('body');
+// if (window.matchMedia("(orientation: portrait)").matches) {
+//     body.classList.remove('landscape');
+// }
+// if (window.matchMedia("(orientation: landscape)").matches) {
+//     body.classList.add('landscape');
+// }
