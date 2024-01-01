@@ -25,7 +25,7 @@
 .dark-mode {
     --BodyBG: #000;
     --TabBG: #2e2e2e;
-    --CardBG: #111;
+    --CardBG: #1c1c1c;
     --StoryBG: #ff2655;
 }
 
@@ -145,6 +145,7 @@ header .HeadApp h1,
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 3px;
     overflow: auto;
     padding: 4px;
     border-radius: 20px;
@@ -160,7 +161,12 @@ header .HeadApp h1,
     border-radius: 16px;
     transition: 0.3s;
 }
-
+.Tab .tablinks.landscape {
+    display: none;
+}
+.Tab .tablinks.landscape.MUSIC {
+    background-color: var(--CardBG);
+}
 
 .Tab .tablinks i {
     color: var(--HeadCL);
@@ -745,6 +751,17 @@ header .HeadApp h1,
 
 /* @media screen and (orientation:portrait) { … } */
 @media screen and (orientation:landscape) {
+    #navbar {
+        left: auto;
+        right: 0;
+    }
+    .Tab {
+        width: 250px;
+        margin-left: auto;
+    }
+    .Tab .tablinks.landscape {
+        display: block;
+    }
     .BlockOne {
         display: block;
         margin: auto 0;
@@ -779,6 +796,6 @@ header .HeadApp h1,
         background-position: 50% 45%;
     }
     .dark-mode #Home .IMGBG{
-        filter: opacity(0.5);
+        filter: opacity(0.15);
     }
 }

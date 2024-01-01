@@ -44,7 +44,16 @@
                 <button class="tablinks active" onclick="openTAB(event, 'Home')">
                     <i class="fa-solid fa-house"></i>
                 </button>
-                <button class="tablinks" onclick="openTAB(event, 'Event')"><i class="fa-solid fa-star"></i></button>
+                <button class="tablinks" onclick="openTAB(event, 'Event')">
+                    <i class="fa-solid fa-star"></i>
+                </button>
+                <button class="tablinks landscape" id="toggleMusic" onclick="toggleMusic()">
+                    <audio id="myAudio">
+                        <source src="https://drive.google.com/uc?export=download&id=1w63r3QFEvENokbVAQLO523vHBgro3fSP" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                      </audio>
+                    <i  class="fa-solid fa-music"></i>
+                </button>
 
             </div>
         </div>
@@ -107,7 +116,7 @@
                         <span class="number"></span>
                         <span class="unit">Giờ</span>
                     </div>
-                    <div class="Num" id="Mins">
+                    <div class="Num" id="Mins" onclick="handleRandomImage()">
                         <span class="number"></span>
                         <span class="unit">Phút</span>
                     </div>

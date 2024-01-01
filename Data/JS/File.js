@@ -137,11 +137,20 @@ function Info(T1, T2) {
 }
 
 
+function toggleMusic() {
+    var x = document.getElementById("myAudio");
+    var tablinks = document.getElementById("toggleMusic");
 
-// var body = document.querySelector('body');
-// if (window.matchMedia("(orientation: portrait)").matches) {
-//     body.classList.remove('landscape');
-// }
-// if (window.matchMedia("(orientation: landscape)").matches) {
-//     body.classList.add('landscape');
-// }
+    var currentTime = new Date();
+    var startMinute = currentTime.getMinutes();
+    var startSecond = currentTime.getSeconds();
+    x.currentTime = startMinute * 60 + startSecond;
+
+   if (x.paused == false) {
+    tablinks.classList.remove('MUSIC');
+    x.pause();
+  } else {
+    tablinks.classList.add('MUSIC');
+    x.play();
+  }
+}
