@@ -809,6 +809,13 @@ header .HeadApp h1,
     }
 
     .dark-mode {
+        
+        #navbar {
+    color: #303030 !important;
+    background-color: #000 !important;
+    animation: none !important;
+
+}
 
         .NewPost {
             color: #303030;
@@ -844,7 +851,7 @@ header .HeadApp h1,
         }
 
         .Info.Male .Avatar img {
-            border-color: #000b18 !important;
+            border-color: #05162b !important;
         }
 
         .Info.Female .Avatar img {
@@ -863,6 +870,7 @@ header .HeadApp h1,
         .Info.Male .Age {
             color: var(--Male);
         }
+        
     }
 
 }
