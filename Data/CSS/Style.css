@@ -614,7 +614,7 @@ header .HeadApp h1,
 .Event .HeadComing {
     text-align: left;
     color: var(--BodyCL);
-    background-color: var(--TabBG);
+    background-color: #1b1b1bd5;
     border: 3px solid var(--BodyCL);
     border-left: 0;
     padding: 5px 10px 10px 10px;
@@ -625,6 +625,14 @@ header .HeadApp h1,
 .Event .HeadComing h1 {
     font-size: 20px;
     text-transform: capitalize;
+    margin-bottom: 5px;
+}
+.Event .HeadComing p p:first-child {
+    font-size: 14px;
+    font-weight: bold;
+}
+.Event .HeadComing p p:last-child {
+    font-size: 12px;
 }
 
 .Event .Upnext {
@@ -757,6 +765,11 @@ header .HeadApp h1,
 .TimeNow {
     display: none;
 }
+#EventComingUp {
+    color: #ffffff;
+    font-size: 12px;
+    margin-top: 10px;
+}
 
 /* @media screen and (orientation:portrait) { … } */
 @media screen and (orientation:landscape) {
@@ -856,6 +869,9 @@ header .HeadApp h1,
             background-color: #000;
             box-shadow: none;
         }
+        .DaysLove2  .unit {
+            color: #646464;
+        }
 
         .Info .Avatar img {
             box-shadow: none !important;
@@ -904,6 +920,7 @@ header .HeadApp h1,
             display: block;
             text-align: right;
             padding: 20px;
+            padding-right: 30px;
             text-shadow: none;
         }
     }

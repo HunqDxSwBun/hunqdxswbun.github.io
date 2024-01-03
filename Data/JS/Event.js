@@ -133,8 +133,19 @@ function updateCountdown() {
     var minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
     var seconds = Math.floor((timeDiff / 1000) % 60);
 
+    var EventComingUp = document.getElementById('EventComingUp');
+    var ngay = new Date(eventDate);
+    // Lấy thông tin về ngày, tháng, năm và ngày trong tuần
+    var thu = ngay.toLocaleDateString('vi-VN', { weekday: 'long' }); // 'Fri'
+    var ngayThang = ngay.toLocaleDateString('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' }); // '2/9/2024'
+
+    // Kết hợp thông tin để có định dạng mong muốn
+    var ketQua = thu + ". " + ngayThang;
+
     if (days >= 1) {
-        countdownElement.textContent = days + " Ngày " + hours + ":" + minutes + ":" + seconds;
+        countdownElement.innerHTML = `<p>${ketQua}</p> <p>${days} Ngày ${hours}:${minutes}:${seconds}</p>`
+        EventComingUp.textContent =  events[0].SuKien +' '+ days + ' ngày nữa';
+        
     } else if (days === 0) {
         countdownElement.textContent = hours + " Giờ " + minutes + " Phút " + seconds + ' Giây';
     } else {

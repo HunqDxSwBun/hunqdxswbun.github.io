@@ -206,8 +206,7 @@ var click = 0;
 timedate.addEventListener('click', function () {
     var body = document.querySelector('body');
     var Secs = document.getElementById('Secs');
-    
-    
+
     click++; 
     if (click === 1) {
         body.style.opacity = 1;

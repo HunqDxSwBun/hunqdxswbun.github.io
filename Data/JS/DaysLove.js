@@ -1,9 +1,11 @@
-
 function countDaysLove() {
   var startDate = new Date('2021-07-15T00:00:00+07:00');
 
-  // Thu Jul 15 2021 00:00:00 GMT+0700 (Giờ Đông Dương) 
+  // Lấy thời gian hiện tại theo múi giờ Asia/Ho_Chi_Minh
   var currentDate = new Date();
+  var options = { timeZone: 'Asia/Ho_Chi_Minh' };
+  currentDate = new Date(currentDate.toLocaleString('en-US', options));
+
   var timeDifference = currentDate.getTime() - startDate.getTime();
 
   var dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
@@ -19,9 +21,20 @@ function countDaysLove() {
   document.getElementById("Hours").getElementsByClassName("number")[0].textContent = hours;
   document.getElementById("Mins").getElementsByClassName("number")[0].textContent = minutes;
   document.getElementById("Secs").getElementsByClassName("number")[0].textContent = seconds;
-
 }
+
 setInterval(countDaysLove, 1000);
+var currentDate = new Date();
+var options = {
+  timeZone: 'Asia/Ho_Chi_Minh',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: false
+};
+var formattedDate = new Intl.DateTimeFormat('vi-VN', options).format(currentDate);
+console.log(formattedDate);
+
 // Ngày sinh của Hung và Thy
 var snHung = new Date('2001-08-30');
 var snThy = new Date('2001-10-19');
