@@ -33,7 +33,6 @@ var options = {
   hour12: false
 };
 var formattedDate = new Intl.DateTimeFormat('vi-VN', options).format(currentDate);
-console.log(formattedDate);
 
 // Ngày sinh của Hung và Thy
 var snHung = new Date('2001-08-30');

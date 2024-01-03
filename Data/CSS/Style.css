@@ -766,13 +766,16 @@ header .HeadApp h1,
     display: none;
 }
 #EventComingUp {
-    color: #ffffff;
+    color: #646464;
     font-size: 12px;
     margin-top: 10px;
+    border-right: 2px solid #646464;
+    padding-right: 5px;
+    margin-bottom: 2px;
 }
 
-/* @media screen and (orientation:portrait) { … } */
 @media screen and (orientation:landscape) {
+    
     #navbar {
         left: auto;
         right: 0;
@@ -838,8 +841,14 @@ header .HeadApp h1,
         }
 
         .NewPost {
-            color: #ffffff;
+            color: #646464;
             background-color: #000;
+        }
+        .NewPost:hover {
+            color: #ffffff;
+        }
+        .NewPost h1 {
+            font-size: 16px;
         }
 
         .NewPost p:last-child {

@@ -201,9 +201,9 @@ function initClock() {
 
 initClock();
 
-var timedate = document.getElementById("timedate");
+var DaysLove = document.getElementById("DaysLove");
 var click = 0;
-timedate.addEventListener('click', function () {
+DaysLove.addEventListener('click', function () {
     var body = document.querySelector('body');
     var Secs = document.getElementById('Secs');
 

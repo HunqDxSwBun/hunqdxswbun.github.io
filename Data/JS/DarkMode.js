@@ -5,9 +5,11 @@
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
-  console.log("Đây là trình duyệt trên điện thoại");
+  // console.log("Đây là trình duyệt trên điện thoại");
+
 } else {
-  console.log("Đây là trình duyệt trên máy tính");
+  // console.log("Đây là trình duyệt trên máy tính");
+
 }
 
 // Lấy nút nhấn và thêm sự kiện nhấn vào
