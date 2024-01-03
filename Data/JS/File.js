@@ -176,8 +176,8 @@ function updateClock() {
     var dayOfWeek = now.toLocaleDateString('vi-VN', { weekday: 'long' });
 
     var months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-    var tags = ["mon", "d", "y", "h", "m", "s", "dayOfWeek"];
-    var corr = [months[mo - 1], dy, yr, padNumber(hou, 2), padNumber(min, 2), padNumber(sec, 2), dayOfWeek];
+    var tags = ["mon", "d", "y", "h", "m", "dayOfWeek"];
+    var corr = [months[mo - 1], dy, yr, padNumber(hou, 2), padNumber(min, 2), dayOfWeek];
 
     for (var i = 0; i < tags.length; i++) {
         var element = document.getElementById(tags[i]);
@@ -200,3 +200,24 @@ function initClock() {
 }
 
 initClock();
+
+var timedate = document.getElementById("timedate");
+var click = 0;
+timedate.addEventListener('click', function () {
+    var body = document.querySelector('body');
+    var Secs = document.getElementById('Secs');
+    
+    
+    click++; 
+    if (click === 1) {
+        body.style.opacity = 1;
+        Secs.style.display = 'block';
+    } else if (click === 2) {
+        Secs.style.display = 'none';
+        body.style.opacity = 0.5;
+    } else {
+        body.style.opacity = 0.05;
+        click = 0;
+    }
+    
+});

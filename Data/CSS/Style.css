@@ -206,6 +206,9 @@ header .HeadApp h1,
     height: 100vh;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #Home .IMGBG {
@@ -750,6 +753,7 @@ header .HeadApp h1,
 #CustomPIC .ButtonBlock button:last-child {
     background-color: var(--BodyBG);
 }
+
 .TimeNow {
     display: none;
 }
@@ -814,16 +818,17 @@ header .HeadApp h1,
     .dark-mode {
 
         #navbar {
-            color: #303030 !important;
+            color: #ffffff !important;
             background-color: #000 !important;
             animation: none !important;
 
         }
 
         .NewPost {
-            color: #303030;
+            color: #ffffff;
             background-color: #000;
         }
+
         .NewPost p:last-child {
             display: none;
         }
@@ -833,12 +838,12 @@ header .HeadApp h1,
         }
 
         .DaysLove #DaysLove {
-            color: #858585;
+            color: #ffffff;
             text-shadow: none !important;
         }
 
         .DaysLove .Grid .DGrid:last-child {
-            color: #111111;
+            color: #646464;
         }
 
         .DaysLove .Grid .DGrid:first-child img {
@@ -847,7 +852,7 @@ header .HeadApp h1,
         }
 
         .DaysLove2 .Num {
-            color: #303030;
+            color: #eeeeee;
             background-color: #000;
             box-shadow: none;
         }
@@ -857,13 +862,11 @@ header .HeadApp h1,
         }
 
         .Info.Male .Avatar img {
-            opacity: 0.5;
-            border-color: #05162b !important;
+            border-color: #1c67c2 !important;
         }
 
         .Info.Female .Avatar img {
-            opacity: 0.5;
-            border-color: #75202b !important;
+            border-color: #aa2839 !important;
         }
 
         .Couple .Heart img {
@@ -889,16 +892,18 @@ header .HeadApp h1,
             font-size: 12px;
             color: var(--Male);
         }
+
         .BlockHead {
             display: grid;
             grid-template-columns: auto auto;
             max-width: 100%;
         }
+
         .TimeNow {
-            color: #303030;
+            color: #ffffff;
             display: block;
             text-align: right;
-            padding: 10px;
+            padding: 20px;
             text-shadow: none;
         }
     }
