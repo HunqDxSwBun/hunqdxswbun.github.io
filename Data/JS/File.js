@@ -146,11 +146,57 @@ function toggleMusic() {
     var startSecond = currentTime.getSeconds();
     x.currentTime = startMinute * 60 + startSecond;
 
-   if (x.paused == false) {
-    tablinks.classList.remove('MUSIC');
-    x.pause();
-  } else {
-    tablinks.classList.add('MUSIC');
-    x.play();
-  }
+    if (x.paused == false) {
+        tablinks.classList.remove('MUSIC');
+        x.pause();
+    } else {
+        tablinks.classList.add('MUSIC');
+        x.play();
+    }
 }
+
+
+function padNumber(num, length) {
+    var r = num.toString();
+    while (r.length < length) {
+        r = '0' + r;
+    }
+    return r;
+}
+function updateClock() {
+    var now = new Date();
+    var sec = now.getSeconds(),
+        min = now.getMinutes(),
+        hou = now.getHours(),
+        mo = now.getMonth() + 1,
+        dy = now.getDate(),
+        yr = now.getFullYear();
+
+    // Lấy tên của ngày trong tuần
+    var dayOfWeek = now.toLocaleDateString('vi-VN', { weekday: 'long' });
+
+    var months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+    var tags = ["mon", "d", "y", "h", "m", "s", "dayOfWeek"];
+    var corr = [months[mo - 1], dy, yr, padNumber(hou, 2), padNumber(min, 2), padNumber(sec, 2), dayOfWeek];
+
+    for (var i = 0; i < tags.length; i++) {
+        var element = document.getElementById(tags[i]);
+        if (element) {
+            if (tags[i] === "dayOfWeek") {
+                element.textContent = corr[i]; // Sử dụng textContent để cập nhật nội dung
+            } else {
+                element.firstChild.nodeValue = corr[i];
+            }
+        } else {
+            console.error("Element with id '" + tags[i] + "' not found.");
+        }
+    }
+    
+}
+
+function initClock() {
+    updateClock();
+    window.setInterval(updateClock, 1000);
+}
+
+initClock();

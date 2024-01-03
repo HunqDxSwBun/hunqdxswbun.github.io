@@ -750,6 +750,9 @@ header .HeadApp h1,
 #CustomPIC .ButtonBlock button:last-child {
     background-color: var(--BodyBG);
 }
+.TimeNow {
+    display: none;
+}
 
 /* @media screen and (orientation:portrait) { … } */
 @media screen and (orientation:landscape) {
@@ -809,17 +812,20 @@ header .HeadApp h1,
     }
 
     .dark-mode {
-        
-        #navbar {
-    color: #303030 !important;
-    background-color: #000 !important;
-    animation: none !important;
 
-}
+        #navbar {
+            color: #303030 !important;
+            background-color: #000 !important;
+            animation: none !important;
+
+        }
 
         .NewPost {
             color: #303030;
             background-color: #000;
+        }
+        .NewPost p:last-child {
+            display: none;
         }
 
         .DaysLove {
@@ -851,11 +857,18 @@ header .HeadApp h1,
         }
 
         .Info.Male .Avatar img {
+            opacity: 0.5;
             border-color: #05162b !important;
         }
 
         .Info.Female .Avatar img {
+            opacity: 0.5;
             border-color: #75202b !important;
+        }
+
+        .Couple .Heart img {
+            width: 20px;
+            animation: none;
         }
 
         .Info .Age {
@@ -863,14 +876,31 @@ header .HeadApp h1,
             box-shadow: none !important;
         }
 
+        .Info .Name {
+            text-shadow: none;
+        }
+
         .Info.Female .Age {
+            font-size: 12px;
             color: var(--Female);
         }
 
         .Info.Male .Age {
+            font-size: 12px;
             color: var(--Male);
         }
-        
+        .BlockHead {
+            display: grid;
+            grid-template-columns: auto auto;
+            max-width: 100%;
+        }
+        .TimeNow {
+            color: #303030;
+            display: block;
+            text-align: right;
+            padding: 10px;
+            text-shadow: none;
+        }
     }
 
 }
