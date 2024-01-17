@@ -778,114 +778,110 @@ header .HeadApp h1,
 }
 
 
-.oled-mode {
+.oled-mode #Home .IMGBG {
+    filter: opacity(0.0) !important;
+}
 
-    #Home .IMGBG {
-        filter: opacity(0.0) !important;
-    }
+.oled-mode #navbar {
+    color: #ffffff !important;
+    background-color: #000 !important;
+    animation: none !important;
+}
 
-    #navbar {
-        color: #ffffff !important;
-        background-color: #000 !important;
-        animation: none !important;
+.oled-mode .NewPost {
+    color: #646464;
+    background-color: #000;
+}
 
-    }
+.oled-mode .NewPost:hover {
+    color: #ffffff;
+}
 
-    .NewPost {
-        color: #646464;
-        background-color: #000;
-    }
+.oled-mode .NewPost h1 {
+    font-size: 16px;
+}
 
-    .NewPost:hover {
-        color: #ffffff;
-    }
+.oled-mode .NewPost p:last-child {
+    display: none;
+}
 
-    .NewPost h1 {
-        font-size: 16px;
-    }
+.oled-mode .DaysLove {
+    animation: none !important;
+}
 
-    .NewPost p:last-child {
-        display: none;
-    }
+.oled-mode .DaysLove #DaysLove {
+    color: #ffffff;
+    text-shadow: none !important;
+}
 
-    .DaysLove {
-        animation: none !important;
-    }
+.oled-mode .DaysLove .Grid .DGrid:last-child {
+    color: #646464;
+}
 
-    .DaysLove #DaysLove {
-        color: #ffffff;
-        text-shadow: none !important;
-    }
+.oled-mode .DaysLove .Grid .DGrid:first-child img {
+    display: none;
+    animation: none;
+}
 
-    .DaysLove .Grid .DGrid:last-child {
-        color: #646464;
-    }
+.oled-mode .DaysLove2 .Num {
+    color: #eeeeee;
+    background-color: #000;
+    box-shadow: none;
+}
 
-    .DaysLove .Grid .DGrid:first-child img {
-        display: none;
-        animation: none;
-    }
+.oled-mode .DaysLove2 .unit {
+    color: #646464;
+}
 
-    .DaysLove2 .Num {
-        color: #eeeeee;
-        background-color: #000;
-        box-shadow: none;
-    }
+.oled-mode .Info .Avatar img {
+    box-shadow: none !important;
+}
 
-    .DaysLove2 .unit {
-        color: #646464;
-    }
+.oled-mode .Info.Male .Avatar img {
+    border-color: #1c67c2 !important;
+}
 
-    .Info .Avatar img {
-        box-shadow: none !important;
-    }
+.oled-mode .Info.Female .Avatar img {
+    border-color: #aa2839 !important;
+}
 
-    .Info.Male .Avatar img {
-        border-color: #1c67c2 !important;
-    }
+.oled-mode .Couple .Heart img {
+    width: 20px;
+    animation: none;
+}
 
-    .Info.Female .Avatar img {
-        border-color: #aa2839 !important;
-    }
+.oled-mode .Info .Age {
+    background-color: #000 !important;
+    box-shadow: none !important;
+}
 
-    .Couple .Heart img {
-        width: 20px;
-        animation: none;
-    }
+.oled-mode .Info .Name {
+    text-shadow: none;
+}
 
-    .Info .Age {
-        background-color: #000 !important;
-        box-shadow: none !important;
-    }
+.oled-mode .Info.Female .Age {
+    font-size: 12px;
+    color: var(--Female);
+}
 
-    .Info .Name {
-        text-shadow: none;
-    }
+.oled-mode .Info.Male .Age {
+    font-size: 12px;
+    color: var(--Male);
+}
 
-    .Info.Female .Age {
-        font-size: 12px;
-        color: var(--Female);
-    }
+.oled-mode .BlockHead {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 100%;
+}
 
-    .Info.Male .Age {
-        font-size: 12px;
-        color: var(--Male);
-    }
-
-    .BlockHead {
-        display: grid;
-        grid-template-columns: auto auto;
-        max-width: 100%;
-    }
-
-    .TimeNow {
-        color: #ffffff;
-        display: block;
-        text-align: right;
-        padding: 20px;
-        padding-right: 30px;
-        text-shadow: none;
-    }
+.oled-mode .TimeNow {
+    color: #ffffff;
+    display: block;
+    text-align: right;
+    padding: 20px;
+    padding-right: 30px;
+    text-shadow: none;
 }
 
 
@@ -941,11 +937,11 @@ header .HeadApp h1,
         background-position: 50% 45%;
     }
 
-    .oled.dark-mode #Home .IMGBG {
+    .oled-mode.dark-mode #Home .IMGBG {
         filter: opacity(0.0);
     }
 
-    .oled.dark-mode {
+    .oled-mode.dark-mode {
 
         #navbar {
             color: #ffffff !important;
