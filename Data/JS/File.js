@@ -64,11 +64,11 @@ function Menu() {
         clearTimeout(timeoutId);
     }
 
-    // timeoutId = setTimeout(function () {
-    //     x.style.bottom = "-100px";
-    //     navbar.style.bottom = "15px";
-    //     timeoutId = null;
-    // }, 3000);
+    timeoutId = setTimeout(function () {
+        x.style.bottom = "-100px";
+        navbar.style.bottom = "15px";
+        timeoutId = null;
+    }, 3000);
 }
 
 function cancelMenuClose() {
