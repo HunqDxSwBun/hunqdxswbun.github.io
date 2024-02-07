@@ -14,7 +14,7 @@ var events = [
     },
     {
         "SuKien": "Tết Nguyên Đán",
-        "Ngay": "09/02",
+        "Ngay": "10/02",
         "Anh": "/Events/IMG/TetTa.JPG",
         "Link": "/index.html"
     },
