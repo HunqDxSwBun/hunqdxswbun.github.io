@@ -29,8 +29,17 @@
 </head>
 
 <body class="dark-mode">
+    <div class="Language" id="idLangSelect">
+        <div class="LangSelect">
+            <div class="IconMenu">
+                <img language="vietnamese" class="iConLang active" src="./Data/Lang/VietNam.svg" alt="" srcset="" />
+            </div>
+            <div class="IconMenu">
+                <img language="japanese" class="iConLang" src="./Data/Lang/Japan.svg" alt="" srcset="" />
+            </div>
+        </div>
+    </div>
     <header>
-
         <div id="navbar" onclick="Menu()">
             <i class="fa-solid fa-heart"></i>
         </div>
@@ -49,8 +58,8 @@
                 </button>
                 <button class="tablinks landscape" id="toggleMusic" onclick="toggleMusic()">
                     <audio id="myAudio">
-                        <source src="https://drive.google.com/uc?export=download&id=1w63r3QFEvENokbVAQLO523vHBgro3fSP"
-                            type="audio/mpeg">
+                        <!-- <source src="https://drive.google.com/uc?export=download&id=1w63r3QFEvENokbVAQLO523vHBgro3fSP"
+                            type="audio/mpeg"> -->
                         Your browser does not support the audio element.
                     </audio>
                     <i class="fa-solid fa-music"></i>
@@ -59,6 +68,7 @@
             </div>
         </div>
     </header>
+
 
     <div id="Story" class="tabcontent">
         <h1 class="head">Bảng tin</h1>
@@ -89,17 +99,17 @@
             <div class="NewPost" id="NewPost">
                 <h1>Không có bài viết mới nhất.</h1>
                 <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
-                <p>HunqD</p>
+                <p id="LangA001">HunqD</p>
             </div>
-            <div class="TimeNow" id="timedate" >
+            <div class="TimeNow" id="timedate">
                 <p id="EventComingUp"></p>
                 <a id="dayOfWeek">Monday</a>.
                 <a id="d">1</a>/<a id="mon">January</a>/<a id="y">0</a><br />
                 <a id="h">12</a>:<a id="m">00</a>
-               
+
             </div>
         </div>
-       
+
 
         <div class="CardCouple">
             <div class="BlockOne">
@@ -109,7 +119,7 @@
                         <div class="DGrid">
                             <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
                         </div>
-                        <div class="DGrid">Ngày</div>
+                        <div class="DGrid Date">Ngày</div>
                     </div>
 
                 </div>
@@ -199,6 +209,7 @@
 
 <!-- Tổng hợp -->
 <script src="./Data/JS/File.js"></script>
+<script src="./Data/Lang/Languages.js"></script>
 
 <!-- Giao diện -->
 <script src="./Data/JS/Custom.js"></script>

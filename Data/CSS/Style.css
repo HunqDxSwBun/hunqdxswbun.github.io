@@ -1048,3 +1048,22 @@ header .HeadApp h1,
     }
 
 }
+
+.Language {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    display: flex;
+    top: 100px;
+    right: 10px;
+}
+.Language .LangSelect {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: auto;
+}
+.Language .IconMenu img {
+    width: 100%;
+    height: 30px;
+}

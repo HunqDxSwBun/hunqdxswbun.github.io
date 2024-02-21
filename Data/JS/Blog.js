@@ -210,7 +210,7 @@ fetch(proxyUrl + encodeURIComponent(rssUrl1))
       const NewPost = `
             <h1>${title}</h1>
             <p>${description}</p>
-            <p> ${TimeDiff}</p>
+            <p id="LangA001"> ${TimeDiff}</p>
         `;
 
       document.querySelector('#NewPost').innerHTML = NewPost;
