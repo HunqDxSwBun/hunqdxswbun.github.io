@@ -164,6 +164,8 @@ function padNumber(num, length) {
     return r;
 }
 function updateClock() {
+    const selectedLang = localStorage.getItem("selectedLang");
+
     var now = new Date();
     var sec = now.getSeconds(),
         min = now.getMinutes(),
@@ -173,7 +175,14 @@ function updateClock() {
         yr = now.getFullYear();
 
     // Lấy tên của ngày trong tuần
-    var dayOfWeek = now.toLocaleDateString('vi-VN', { weekday: 'long' });
+    if (selectedLang == 'vietnamese') { 
+        var dayOfWeek = now.toLocaleDateString('vi-VN', { weekday: 'long' });
+
+    }
+    else {
+        var dayOfWeek = now.toLocaleDateString('ja-JP', { weekday: 'long' });
+
+    }
 
     var months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
     var tags = ["mon", "d", "y", "h", "m", "dayOfWeek"];
@@ -191,7 +200,7 @@ function updateClock() {
             console.error("Element with id '" + tags[i] + "' not found.");
         }
     }
-    
+
 }
 
 function initClock() {
@@ -207,7 +216,7 @@ DaysLove.addEventListener('click', function () {
     var body = document.querySelector('body');
     var Secs = document.getElementById('Secs');
 
-    click++; 
+    click++;
     if (click === 1) {
         body.style.opacity = 1;
         Secs.style.display = 'block';
@@ -218,7 +227,7 @@ DaysLove.addEventListener('click', function () {
         body.style.opacity = 0.05;
         click = 0;
     }
-    
+
 });
 
 function Oled() {
