@@ -37,9 +37,9 @@ function ReloadBlog() {
         let timeDiffText = '';
 
         var dateObj = new Date(pubDate);
-        if (selectedLang == 'vietnamese') { 
+        if (selectedLang == 'vietnamese') {
           var daysOfWeek = ["Chủ Nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"];
-        }else{
+        } else {
           var daysOfWeek = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
         }
         var dayOfWeek = daysOfWeek[dateObj.getDay()];
@@ -74,11 +74,11 @@ function ReloadBlog() {
             timeDiffText = "ちょうど終わった";
           }
         }
-        
+
 
         let author = '';
         let srcIMG = '';
- 
+
 
         if (creator === 'HunqD') {
           if (selectedLang == 'vietnamese') {
@@ -109,6 +109,11 @@ function ReloadBlog() {
                     <div class="Name">${author}</div>
                     <div class="Time">${timeDiffText}</div>
                 </div>
+                <div class="Func Translate">
+                <button class="translateButton"><img src="./Data/Lang/VietNam.svg" alt="VietNam"></button>
+                <button class="translateButton2"><img src="./Data/Lang/Japan.svg" alt="Japan"></button>
+              </div>
+                
                 <div class="Func Share">
                 <i class="fa-solid fa-up-right-from-square"></i>
               </div>
@@ -117,13 +122,82 @@ function ReloadBlog() {
         
         <div class="Body">
             <div class="Status">
-                <h1>${title}</h1>
-                <div class="Content">${encoded}</div>
+              <h1 class="Title">${title}</h1>
+              <div class="Content">${encoded}</div>
+              <div class="ContentTranslate"></div>
             </div>
         </div>
       </div>
       `;
       });
+
+      // Bắt sự kiện nhấn vào nút dịch
+      $(document).on('click', '.translateButton', function () {
+        var $this = $(this); // Lưu trữ $(this) trong một biến
+
+        var sourceText = $this.closest('.Feed').find('.Title').html();
+        var sourceText2 = $this.closest('.Feed').find('.Content').html(); // Lấy nội dung của .Content trong cùng một .Feed
+
+        var sourceLang = 'auto';
+        var targetLang = 'vi';
+        // Loại bỏ các thẻ HTML không mong muốn và chuyển đổi ký tự đặc biệt HTML
+        var cleanedText = cleanAndEncodeHTML('[ ' + sourceText + ' ]' + sourceText2);
+
+        var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
+
+        $.getJSON(url, function (data) {
+          // Sử dụng .html() để giữ các thẻ HTML dịch được
+          Done('Văn bản đã được dịch')
+          $this.closest('.Feed').find('.ContentTranslate').html(data[0][0][0]); // Hiển thị kết quả dịch trong .ContentTranslate trong cùng một .Feed
+        });
+      });
+
+      $(document).on('click', '.translateButton2', function () {
+        var $this = $(this); // Lưu trữ $(this) trong một biến
+
+        var sourceText = $this.closest('.Feed').find('.Title').html();
+        var sourceText2 = $this.closest('.Feed').find('.Content').html(); // Lấy nội dung của .Content trong cùng một .Feed
+
+        var sourceLang = 'auto';
+        var targetLang = 'ja';
+        // Loại bỏ các thẻ HTML không mong muốn và chuyển đổi ký tự đặc biệt HTML
+        var cleanedText = cleanAndEncodeHTML('[ ' + sourceText + ' ]' + sourceText2);
+
+        var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
+
+        $.getJSON(url, function (data) {
+          // Sử dụng .html() để giữ các thẻ HTML dịch được
+          Done('テキストは翻訳されました')
+          $this.closest('.Feed').find('.ContentTranslate').html(data[0][0][0]); // Hiển thị kết quả dịch trong .ContentTranslate trong cùng một .Feed
+        });
+      });
+
+
+      function cleanAndEncodeHTML(text) {
+        if (!text) {
+          console.error('Text is not defined or empty');
+          return '';
+        }
+
+        // Loại bỏ các thẻ HTML không mong muốn
+        text = text.replace(/<\/?[^>]+(>|$)/g, '');
+
+        // Loại bỏ tất cả dấu cách
+        text = text.replace(/\s+/g, '');
+
+        // Chuyển đổi các ký tự đặc biệt HTML
+        text = text.replace(/&/g, "&amp;");
+        text = text.replace(/</g, "&lt;");
+        text = text.replace(/>/g, "&gt;");
+
+        return text;
+      }
+
+
+
+
+
+
 
 
       document.querySelector('#rss-feed').innerHTML = storyHTML;
@@ -249,7 +323,7 @@ function ReloadBlog() {
             TimeDiff = "ちょうど終わった";
           }
         }
-        
+
 
         const NewPost = `
             <h1>${title}</h1>

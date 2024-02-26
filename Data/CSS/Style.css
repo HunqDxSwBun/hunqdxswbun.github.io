@@ -493,7 +493,7 @@ header .HeadApp h1,
 
 .Head .Author {
     display: grid;
-    grid-template-columns: 60px auto 30px;
+    grid-template-columns: 60px 120px auto 30px;
     gap: 2px;
 }
 
@@ -514,6 +514,27 @@ header .HeadApp h1,
 
 .Head .Author .Info .Time {
     font-size: 14px;
+}
+
+.Head .Author .Func.Translate {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Head .Author .Func.Translate button {
+    border: none;
+    border-radius: 10px;
+}
+
+.Head .Author .Func.Translate button img {
+    height: 30px;
+    width: 40px;
+}
+
+.Head .Author .Func.Translate button:first-child {
+    background-color: #d80027;
 }
 
 .Head .Author .Func.Share {
@@ -1054,11 +1075,13 @@ header .HeadApp h1,
     padding: 10px;
     display: flex;
 }
+
 .Language .LangSelect {
     display: flex;
     gap: 10px;
     margin: auto;
 }
+
 .Language .IconMenu img {
     width: 100%;
     height: 30px;
