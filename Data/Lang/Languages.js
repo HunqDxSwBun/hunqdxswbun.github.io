@@ -54,6 +54,11 @@ updateLanguage(currentLang);
 changeLangBtn.addEventListener("click", () => {
     // Đổi ngôn ngữ
     currentLang = currentLang === "vietnamese" ? "japanese" : "vietnamese";
+    if (currentLang == 'vietnamese') {
+        Done2('Đã chuyển sang Tiếng Việt')
+    } else {
+        Done2('日本語に切り替えました')
+    }
    setTimeout(() => {
     ReloadBlog();
     ReloadEvent();

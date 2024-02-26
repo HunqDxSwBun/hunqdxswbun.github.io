@@ -2,7 +2,7 @@ ReloadEvent();
 function ReloadEvent() {
     var rootElement = document.getElementById("root");
     rootElement.innerHTML = ''; // Xóa nội dung cũ
-    
+
     const selectedLang = localStorage.getItem("selectedLang");
 
     if (selectedLang == 'vietnamese') {

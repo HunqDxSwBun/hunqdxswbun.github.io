@@ -1,9 +1,4 @@
 .dark-mode {
-    /*
-* @sweetalert2/themes v4.0.5
-* Released under the MIT License.
-*/
-
     .swal2-popup.swal2-toast {
         flex-direction: column;
         align-items: stretch;
@@ -11,7 +6,7 @@
         padding: 1.25em;
         overflow-y: hidden;
         background: #19191a;
-        box-shadow: 0 0 0.625em #d9d9d9;
+        box-shadow: 0 0 0.625em #000;
     }
 
     .swal2-popup.swal2-toast .swal2-header {
@@ -224,7 +219,7 @@
 
     .swal2-container.swal2-backdrop-show,
     .swal2-container.swal2-noanimation {
-        background: rgba(25, 25, 26, 0.75);
+        background: none;
     }
 
     .swal2-container.swal2-backdrop-hide {

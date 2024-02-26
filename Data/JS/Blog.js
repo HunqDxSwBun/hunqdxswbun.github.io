@@ -103,28 +103,27 @@ function ReloadBlog() {
         <div class="Head">
             <div class="Author">
                 <div class="Avatar">
-                    <img src="${srcIMG}" alt="${author}">
+                  <img src="${srcIMG}" alt="${author}">
                 </div>
                 <div class="Info">                                                                             
-                    <div class="Name">${author}</div>
-                    <div class="Time">${timeDiffText}</div>
+                  <div class="Name">${author}</div>
+                  <div class="Time">${timeDiffText}</div>
                 </div>
                 <div class="Func Translate">
-                <button class="translateButton"><img src="./Data/Lang/VietNam.svg" alt="VietNam"></button>
-                <button class="translateButton2"><img src="./Data/Lang/Japan.svg" alt="Japan"></button>
-              </div>
-                
+                  <button class="translateButton"><img src="./Data/Lang/VietNam.svg" alt="VietNam"></button>
+                  <button class="translateButton2"><img src="./Data/Lang/Japan.svg" alt="Japan"></button>
+                </div>
                 <div class="Func Share">
-                <i class="fa-solid fa-up-right-from-square"></i>
-              </div>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </div>
             </div>
         </div>
         
         <div class="Body">
             <div class="Status">
+              <p class="ContentTranslate"></p>
               <h1 class="Title">${title}</h1>
               <div class="Content">${encoded}</div>
-              <div class="ContentTranslate"></div>
             </div>
         </div>
       </div>
@@ -145,10 +144,13 @@ function ReloadBlog() {
 
         var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
 
+
         $.getJSON(url, function (data) {
-          // Sử dụng .html() để giữ các thẻ HTML dịch được
-          Done('Văn bản đã được dịch')
-          $this.closest('.Feed').find('.ContentTranslate').html(data[0][0][0]); // Hiển thị kết quả dịch trong .ContentTranslate trong cùng một .Feed
+          Done2('Văn bản đã được dịch')
+          var translatedText = data[0][0][0];
+          var spacedText = translatedText.replace(/\s+/g, ' ');
+          var boldedText = spacedText.replace(/\[([^\]]+)\]/g, '<b>$1</b> <br>');
+          $this.closest('.Feed').find('.ContentTranslate').html(boldedText);
         });
       });
 
@@ -166,10 +168,14 @@ function ReloadBlog() {
         var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
 
         $.getJSON(url, function (data) {
-          // Sử dụng .html() để giữ các thẻ HTML dịch được
-          Done('テキストは翻訳されました')
-          $this.closest('.Feed').find('.ContentTranslate').html(data[0][0][0]); // Hiển thị kết quả dịch trong .ContentTranslate trong cùng một .Feed
-        });
+          Done2('テキストは翻訳されました');
+          var translatedText = data[0][0][0];
+          var spacedText = translatedText.replace(/\s+/g, ' ');
+          var boldedText = spacedText.replace(/\[([^\]]+)\]/g, '<b>$1</b> <br>');
+          $this.closest('.Feed').find('.ContentTranslate').html(boldedText);
+      });
+      
+
       });
 
 
@@ -289,11 +295,19 @@ function ReloadBlog() {
       if (latestItem !== null) {
         const selectedLang = localStorage.getItem("selectedLang");
         const title = latestItem.querySelector("title").textContent;
-        const description = latestItem.querySelector("description").textContent;
+        let description = latestItem.querySelector("description").textContent;
         const pubDate = latestItem.querySelector("pubDate").textContent;
         const pubDateTimeStamp = Date.parse(pubDate);
         const nowTimeStamp = Date.now();
         const timeDiff = nowTimeStamp - pubDateTimeStamp;
+
+        // Kiểm tra nếu độ dài của description lớn hơn 50
+        if (description.length > 30) {
+          // Cắt chuỗi description để giữ lại 50 ký tự đầu tiên
+          description = description.substring(0, 30);
+          // Thêm "..." vào cuối chuỗi cắt
+          description += "...";
+        }
 
         // Chuyển khoảng thời gian từ millisecond sang giây, phút, giờ hoặc ngày
         const secondDiff = Math.floor(timeDiff / 1000);

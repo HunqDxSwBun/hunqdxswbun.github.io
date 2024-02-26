@@ -20,6 +20,8 @@
 
     --FeedCL: #fff;
     --FeedBG: #111;
+
+    --Translate: #eee;
 }
 
 .dark-mode {
@@ -27,6 +29,7 @@
     --TabBG: #2e2e2e;
     --CardBG: #1c1c1c;
     --StoryBG: #ff2655;
+    --Translate: #919191;
 }
 
 * {
@@ -529,12 +532,16 @@ header .HeadApp h1,
 }
 
 .Head .Author .Func.Translate button img {
-    height: 30px;
-    width: 40px;
+    display: block;
+    height: 25px;
+    width: 30px;
 }
 
 .Head .Author .Func.Translate button:first-child {
     background-color: #d80027;
+}
+.Head .Author .Func.Translate button:last-child {
+    background-color: #f0f0f0;
 }
 
 .Head .Author .Func.Share {
@@ -558,6 +565,18 @@ header .HeadApp h1,
 .Body .Status h1 {
     font-size: 20px;
     margin-bottom: 2px;
+}
+
+.ContentTranslate {
+    border-left: 2px solid var(--Translate);
+    color: var(--Translate);
+    padding-left: 10px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .figure {

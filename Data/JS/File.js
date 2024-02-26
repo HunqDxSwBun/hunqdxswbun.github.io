@@ -105,6 +105,23 @@ function CheckIMG() {
 window.addEventListener('DOMContentLoaded', CheckIMG);
 
 
+function Done2(T1) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
+    });
+    Toast.fire({
+        icon: "success",
+        title: T1
+    });
+}
 
 function Done(T1, T2) {
     Swal.fire(
@@ -175,7 +192,7 @@ function updateClock() {
         yr = now.getFullYear();
 
     // Lấy tên của ngày trong tuần
-    if (selectedLang == 'vietnamese') { 
+    if (selectedLang == 'vietnamese') {
         var dayOfWeek = now.toLocaleDateString('vi-VN', { weekday: 'long' });
 
     }
