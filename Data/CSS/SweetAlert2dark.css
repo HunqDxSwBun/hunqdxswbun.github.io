@@ -7,23 +7,21 @@
     background: #19191a;
     box-shadow: 0 0 0.625em #000;
 }
-
-.dark-mode .swal2-timer-progress-bar {
+.swal2-timer-progress-bar {
     width: 100%;
     height: 0.25em;
-    background: var(--HeadCL);
+    background: var(--HeadCL) !important;
 }
 
-.dark-mode .swal2-icon.swal2-success [class^='swal2-success-line'] {
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
     display: block;
     position: absolute;
     z-index: 2;
     height: .3125em;
     border-radius: .125em;
-    background-color: var(--HeadCL);
+    background-color: var(--HeadCL) !important;
 }
-
-.dark-mode .swal2-icon.swal2-success .swal2-success-ring {
+.swal2-icon.swal2-success .swal2-success-ring {
     position: absolute;
     z-index: 2;
     top: -.25em;
@@ -31,21 +29,30 @@
     box-sizing: content-box;
     width: 100%;
     height: 100%;
-    border: 0.25em solid #ff26553f;
+    border: 0.25em solid #ff26553f !important;
     border-radius: 50%;
 }
 
-.dark-mode .swal2-title {
+.swal2-title {
     position: relative;
     max-width: 100%;
     margin: 0 0 0.4em;
     padding: 0;
-    color: var(--HeadCL);
+    color: var(--HeadCL) !important;
     font-size: 1.875em;
     font-weight: 600;
     text-align: center;
     text-transform: none;
     word-wrap: break-word;
+}
+.swal2-icon.swal2-success {
+    border-color: #ff2655dc !important;
+    color: #ff2655dc !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: var(--HeadCL) !important;
+    color: var(--HeadCL) !important;
 }
 
 .dark-mode {
@@ -398,7 +405,8 @@
         max-width: 100%;
         padding: 1.25em;
         border: none;
-        border-radius: 5px;
+        border-radius: 18px;
+        border: 2px solid var(--HeadCL);
         background: #19191a;
         font-family: inherit;
         font-size: 1rem;
@@ -475,9 +483,9 @@
         border: 0;
         border-radius: 0.25em;
         background: initial;
-        background-color: #2778c4;
+        background-color: var(--HeadCL);
         color: #fff;
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .swal2-styled.swal2-deny {
@@ -809,10 +817,7 @@
         animation: swal2-animate-error-x-mark .5s;
     }
 
-    .swal2-icon.swal2-warning {
-        border-color: #facea8;
-        color: #f8bb86;
-    }
+
 
     .swal2-icon.swal2-info {
         border-color: #9de0f6;
@@ -824,10 +829,7 @@
         color: #87adbd;
     }
 
-    .swal2-icon.swal2-success {
-        border-color: #a5dc86;
-        color: #a5dc86;
-    }
+
 
     .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {
         position: absolute;

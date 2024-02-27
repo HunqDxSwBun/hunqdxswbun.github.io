@@ -258,7 +258,7 @@ function ReloadBlog() {
               .catch((error) => console.error('Lỗi chia sẻ:', error));
           } else {
             // Hiển thị thông báo cho các trình duyệt không hỗ trợ API Web Share
-            alert('Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
+            Warning('Lỗi','Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
           }
         });
       });

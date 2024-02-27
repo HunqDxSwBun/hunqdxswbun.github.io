@@ -34,12 +34,14 @@
         <div id="navbar" onclick="Menu()">
             <i class="fa-solid fa-heart"></i>
         </div>
-
         <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
             <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
             <div class="Tab">
                 <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')">
                     <i class="fa-brands fa-readme"></i>
+                </button>
+                <button class="tablinks" onclick="openTAB(event, 'Music')">
+                    <i class="fa-solid fa-music"></i>
                 </button>
                 <button class="tablinks active" onclick="openTAB(event, 'Home')">
                     <i class="fa-solid fa-house"></i>
@@ -47,35 +49,83 @@
                 <button class="tablinks" onclick="openTAB(event, 'Event')">
                     <i class="fa-solid fa-star"></i>
                 </button>
-                <button class="tablinks landscape" id="toggleMusic" onclick="toggleMusic()">
-                    <audio id="myAudio">
-                        <!-- <source src="https://drive.google.com/uc?export=download&id=1w63r3QFEvENokbVAQLO523vHBgro3fSP"
-                            type="audio/mpeg"> -->
-                        Your browser does not support the audio element.
-                    </audio>
-                    <i class="fa-solid fa-music"></i>
+                <button class="tablinks" onclick="Warning('Đang phát triển')">
+                    <i class="fa-solid fa-boxes-stacked"></i>
                 </button>
-
             </div>
         </div>
     </header>
 
-
     <div id="Story" class="tabcontent">
         <h1 class="head">Bảng tin</h1>
         <div class="Load">
-            <button onclick="ReloadBlog(); alert('Đã tải bài viết mới nhất')"><i
+            <button onclick="ReloadBlog(); Done2('Đã tải bài viết mới nhất')"><i
                     class="fa-solid fa-rotate-right"></i></button>
         </div>
 
         <div class="rss-feed" id="rss-feed"></div>
-        <!-- 
-        <div class="write">
-            <a href="jetpack://">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-        </div> -->
+    </div>
+    
+    <div class="tabcontent" id="Music">
+     
+        <div class="player">
+            <!-- Dashboard -->
+            <div class="dashboard">
+                <div class="BlockDashboard">
+                    <div class="CDBlock">
+                        <!-- CD -->
+                        <div class="cd" onclick="playAudio()">
+                            <div class="cd-thumb">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Header">
+                        <!-- Header -->
+                        <header>
+                            <h4>Đang phát:</h4>
+                            <h2></h2>
+                        </header>
+                        <div class="Live">
+                            <button class="LiveBTN" onclick="liveAUDIO()">
+                                <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
+                            </button>
+                            <button class="TimeSeek" onclick="SeekTimeOnload()" id="SeekTimeOnload">00:00</button>
+                        </div>
+                    </div>
+                </div>
 
+                <input id="progress" class="progress" type="range" step="1" min="0" max="100">
+
+                <!-- Control -->
+                <div class="control">
+                    <div class="btn btn-repeat">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div class="btn btn-prev">
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="btn btn-toggle-play">
+                        <i class="fas fa-pause icon-pause"></i>
+                        <i class="fas fa-play icon-play"></i>
+                    </div>
+                    <div class="btn btn-next">
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                    <div class="btn btn-random">
+                        <i class="fas fa-random"></i>
+                    </div>
+                </div>
+
+                <audio id="audio" src=""></audio>
+                <div class="Album" id="albumContainer">
+
+                </div>
+            </div>
+
+
+            <div class="playlist">
+            </div>
+        </div>
     </div>
 
     <div class="tabcontent " id="Event">
@@ -119,7 +169,7 @@
                         <span class="number"></span>
                         <span class="unit">Năm</span>
                     </div>
-                    <div class="Num" id="Months" >
+                    <div class="Num" id="Months">
                         <span class="number"></span>
                         <span class="unit">Tháng</span>
                     </div>
@@ -213,6 +263,7 @@
 <script src="./Data/JS/DaysLove.js"></script>
 <script src="./Data/JS/Blog.js"></script>
 <script src="./Data/JS/Alert.js"></script>
+<script src="./Data/JS/Music.js"></script>
 
 
 </html>

@@ -21,13 +21,13 @@ function handleSaveImage() {
 
     reader.readAsDataURL(file);
   }
-  alert('Cài đặt hình nền thành công.')
+  Done('Cài đặt hình nền thành công.')
 }
 
 function handleDeleteImage() {
   homeElement.style.backgroundImage = '';
   localStorage.removeItem('homeBackgroundImage');
-  alert('Đã xoá ảnh nền.')
+  Done('Đã xoá ảnh nền.')
 
 }
 
