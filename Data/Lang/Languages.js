@@ -62,6 +62,7 @@ changeLangBtn.addEventListener("click", () => {
    setTimeout(() => {
     ReloadBlog();
     ReloadEvent();
+    location.reload();
    }, 1000);
  
     // Lưu ngôn ngữ đã chọn

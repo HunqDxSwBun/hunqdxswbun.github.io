@@ -298,5 +298,4 @@ function ReloadEvent() {
     // Thêm vào phần tử gốc
     var rootElement = document.getElementById("root");
     rootElement.appendChild(eventContainer);
-
 }

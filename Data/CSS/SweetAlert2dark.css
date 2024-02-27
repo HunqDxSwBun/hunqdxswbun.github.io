@@ -1,13 +1,54 @@
+.dark-mode .swal2-popup.swal2-toast {
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    padding: 1.25em;
+    overflow-y: hidden;
+    background: #19191a;
+    box-shadow: 0 0 0.625em #000;
+}
+
+.dark-mode .swal2-timer-progress-bar {
+    width: 100%;
+    height: 0.25em;
+    background: var(--HeadCL);
+}
+
+.dark-mode .swal2-icon.swal2-success [class^='swal2-success-line'] {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: .3125em;
+    border-radius: .125em;
+    background-color: var(--HeadCL);
+}
+
+.dark-mode .swal2-icon.swal2-success .swal2-success-ring {
+    position: absolute;
+    z-index: 2;
+    top: -.25em;
+    left: -.25em;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    border: 0.25em solid #ff26553f;
+    border-radius: 50%;
+}
+
+.dark-mode .swal2-title {
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 0.4em;
+    padding: 0;
+    color: var(--HeadCL);
+    font-size: 1.875em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    word-wrap: break-word;
+}
+
 .dark-mode {
-    .swal2-popup.swal2-toast {
-        flex-direction: column;
-        align-items: stretch;
-        width: auto;
-        padding: 1.25em;
-        overflow-y: hidden;
-        background: #19191a;
-        box-shadow: 0 0 0.625em #000;
-    }
 
     .swal2-popup.swal2-toast .swal2-header {
         flex-direction: row;
@@ -126,7 +167,7 @@
     }
 
     .swal2-popup.swal2-toast .swal2-success {
-        border-color: #a5dc86;
+        border-color: var(--HeadCL);
     }
 
     .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {
@@ -378,18 +419,7 @@
         padding: 0 1.8em;
     }
 
-    .swal2-title {
-        position: relative;
-        max-width: 100%;
-        margin: 0 0 0.4em;
-        padding: 0;
-        color: #e1e1e1;
-        font-size: 1.875em;
-        font-weight: 600;
-        text-align: center;
-        text-transform: none;
-        word-wrap: break-word;
-    }
+
 
     .swal2-actions {
         display: flex;
@@ -497,11 +527,7 @@
         border-bottom-left-radius: 5px;
     }
 
-    .swal2-timer-progress-bar {
-        width: 100%;
-        height: 0.25em;
-        background: rgba(225, 225, 225, 0.6);
-    }
+
 
     .swal2-image {
         max-width: 100%;
@@ -827,17 +853,6 @@
         border-radius: 0 7.5em 7.5em 0;
     }
 
-    .swal2-icon.swal2-success .swal2-success-ring {
-        position: absolute;
-        z-index: 2;
-        top: -.25em;
-        left: -.25em;
-        box-sizing: content-box;
-        width: 100%;
-        height: 100%;
-        border: 0.25em solid rgba(165, 220, 134, 0.3);
-        border-radius: 50%;
-    }
 
     .swal2-icon.swal2-success .swal2-success-fix {
         position: absolute;
@@ -849,14 +864,7 @@
         transform: rotate(-45deg);
     }
 
-    .swal2-icon.swal2-success [class^='swal2-success-line'] {
-        display: block;
-        position: absolute;
-        z-index: 2;
-        height: .3125em;
-        border-radius: .125em;
-        background-color: #a5dc86;
-    }
+
 
     .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {
         top: 2.875em;

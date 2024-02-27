@@ -578,7 +578,9 @@ header .HeadApp h1,
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
+.ContentTranslate b {
+    font-size: 18px;
+}
 .figure {
     margin: 5px 0;
 }
