@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Sau lời từ khước",
+        "singer": "Phan Mạnh Quỳnh",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228Oo2tIKPS/xWzMz5/Phan%20Manh%20Quynh%20-%20Sau%20Loi%20Tu%20Khuoc%20%28Theme%20Song%20From%20-MAI-%29.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T173251Z&X-Amz-Expires=86400&X-Amz-Signature=feb2577e83d554f75090f6e564d362efbd07afcd9fbd3a6beaafc847607c4279&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Phan%20Manh%20Quynh%20-%20Sau%20Loi%20Tu%20Khuoc%20%28Theme%20Song%20From%20-MAI-%29.flac%22&x-id=GetObject",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Bạn Đời",
+        "singer": "Karik",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228XohALi1v/9VCPBh/Karik%20-%20Ban%20%C4%90oi.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T174019Z&X-Amz-Expires=86400&X-Amz-Signature=f24d0fd26df6c768bcf00772953783bac3a6e954a483f32d0a775abfc0c0f59e&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Karik%20-%20Ban%20%3Foi.flac%22%3B%20filename%2A%3DUTF-8%27%27Karik%2520-%2520Ban%2520%25C4%2590oi.flac&x-id=GetObject",
+        "image": "/Music/IMG/Logo.png"
+    }
+
+]

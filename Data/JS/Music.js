@@ -15,8 +15,8 @@
 
 const albums = [
   { name: "RADIO 1507", dataAlbum: "FM1507" },
-  // { name: 'Remix', dataAlbum: "Remix" },
-  // { name: "Bích Phương", dataAlbum: "BichPhuong" },
+  { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
+  { name: "Remix", dataAlbum: "Remix" },
   // { name: "EDM", dataAlbum: "EDM" },
   // Thêm các album khác vào đây nếu cần
 ];

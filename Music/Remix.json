@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Chill Bass Vol.1",
+        "singer": "Youtube",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/202402287n3yyL3V/d6vO39/ChillBassVol1.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T155139Z&X-Amz-Expires=86400&X-Amz-Signature=402f3faa18507206b6b91314c9fa033ab2b84c73bb1af4ff1f8d168851cfd73c&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22ChillBassVol1.mp3%22&x-id=GetObject",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Vinahouse Vol1",
+        "singer": "Youtube",
+        "path": "https://filebin.net//n1zew7snaxqck0in/Vinahouse.mp3",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Vinahouse Vol2",
+        "singer": "Youtube",
+        "path": "https://filebin.net//n1zew7snaxqck0in/Vinahouse_2.mp3",
+        "image": "/Music/IMG/Logo.png"
+    }
+]

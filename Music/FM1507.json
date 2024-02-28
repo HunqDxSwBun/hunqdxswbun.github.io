@@ -1,20 +1,41 @@
 [
     {
-        "name": "Chill Bass Vol.1",
-        "singer": "Youtube",
-        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/202402287n3yyL3V/d6vO39/ChillBassVol1.mp3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T155139Z&X-Amz-Expires=86400&X-Amz-Signature=402f3faa18507206b6b91314c9fa033ab2b84c73bb1af4ff1f8d168851cfd73c&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22ChillBassVol1.mp3%22&x-id=GetObject",
+        "name": "Sau lời từ khước",
+        "singer": "Phan Mạnh Quỳnh",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228Oo2tIKPS/xWzMz5/Phan%20Manh%20Quynh%20-%20Sau%20Loi%20Tu%20Khuoc%20%28Theme%20Song%20From%20-MAI-%29.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T173251Z&X-Amz-Expires=86400&X-Amz-Signature=feb2577e83d554f75090f6e564d362efbd07afcd9fbd3a6beaafc847607c4279&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Phan%20Manh%20Quynh%20-%20Sau%20Loi%20Tu%20Khuoc%20%28Theme%20Song%20From%20-MAI-%29.flac%22&x-id=GetObject",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Vinahouse Vol1",
-        "singer": "Youtube",
-        "path": "https://filebin.net//n1zew7snaxqck0in/Vinahouse.mp3",
+        "name": "Bạn Đời",
+        "singer": "Karik",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228XohALi1v/9VCPBh/Karik%20-%20Ban%20%C4%90oi.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T174019Z&X-Amz-Expires=86400&X-Amz-Signature=f24d0fd26df6c768bcf00772953783bac3a6e954a483f32d0a775abfc0c0f59e&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Karik%20-%20Ban%20%3Foi.flac%22%3B%20filename%2A%3DUTF-8%27%27Karik%2520-%2520Ban%2520%25C4%2590oi.flac&x-id=GetObject",
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Vinahouse Vol2",
-        "singer": "Youtube",
-        "path": "https://filebin.net//n1zew7snaxqck0in/Vinahouse_2.mp3",
+        "name": "Nước Ngoài",
+        "singer": "Phan Mạnh Quỳnh",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/2024022882hjoU5b/Xg1wQT/Phan%20Manh%20Quynh%20-%20Nuoc%20Ngoai.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T174335Z&X-Amz-Expires=86400&X-Amz-Signature=809b1107b6f7fa1c1d85f815c826f16bcdc004755025dad0fcf6defac2ab62a4&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Phan%20Manh%20Quynh%20-%20Nuoc%20Ngoai.flac%22&x-id=GetObject",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Có Chàng Trai Viết Lên Cây",
+        "singer": "Phan Mạnh Quỳnh",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228hZwokDli/PvAb6d/Phan%20Manh%20Quynh%20-%20Co%20Chang%20Trai%20Viet%20Len%20Cay.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T174554Z&X-Amz-Expires=86400&X-Amz-Signature=bb76fc3d5aa32369ba29e82b20920cd731d1e24bcf2a725aa0b8f40669437446&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Phan%20Manh%20Quynh%20-%20Co%20Chang%20Trai%20Viet%20Len%20Cay.flac%22&x-id=GetObject",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Nhạt",
+        "singer": "Phan Mạnh Quỳnh",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228n7IRpL69/3ZE6yd/Phan%20Manh%20Quynh%20-%20NHAT.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T175121Z&X-Amz-Expires=86400&X-Amz-Signature=cbe56a9338f39557e38eb793f0e33d4b7e715a915578c95ebba2d452d026ed27&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Phan%20Manh%20Quynh%20-%20NHAT.flac%22&x-id=GetObject",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Anh đợi em được không?",
+        "singer": "Mỹ Tâm",
+        "path": "https://tnow-prod-apac.367791ca7abea81096902b345fee7b1f.r2.cloudflarestorage.com/2024-02-28/356aef9187e42ea259586aaae3c8a0c2/20240228n7IRpL69/6Imyhs/My%20Tam%20-%20Anh%20%C4%90oi%20Em%20%C4%90uoc%20Khong.flac?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ee862debb448801ab1904792186e2774%2F20240228%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20240228T175146Z&X-Amz-Expires=86400&X-Amz-Signature=bdf065ccd6fd6e23f8befc52bfe5953a24f1774cdbc0397ddbf57c34541d3a16&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22My%20Tam%20-%20Anh%20%3Foi%20Em%20%3Fuoc%20Khong.flac%22%3B%20filename%2A%3DUTF-8%27%27My%2520Tam%2520-%2520Anh%2520%25C4%2590oi%2520Em%2520%25C4%2590uoc%2520Khong.flac&x-id=GetObject",
         "image": "/Music/IMG/Logo.png"
     }
+
+    
+
 ]
