@@ -95,5 +95,5 @@ function updateLanguage(lang) {
     EHead.textContent = data[lang].EHead;
 
     MText1.textContent = data[lang].MText1;
-    MText2.textContent = data[lang].MText2;
+    MText2.innerHTML = data[lang].MText2;
 }
