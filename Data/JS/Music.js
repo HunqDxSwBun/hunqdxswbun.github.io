@@ -374,19 +374,39 @@ function liveAUDIO() {
   var isActive = button.classList.contains("active");
   var LiveNoti = document.querySelector("#LiveNoti");
 
-  if (hours >= 1 || minutes >= 59) {
-    audio.currentTime = (currentMinute * 60) + currentSecond;
-    LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Đang phát trực tiếp';
-    if (isActive) {
-      button.classList.remove("active");
-      audio.currentTime = 0;
-      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
+  const selectedLang = localStorage.getItem("selectedLang");
+  if (selectedLang == 'vietnamese') { 
+    if (hours >= 1 || minutes >= 59) {
+      audio.currentTime = (currentMinute * 60) + currentSecond;
+      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Đang phát trực tiếp';
+      if (isActive) {
+        button.classList.remove("active");
+        audio.currentTime = 0;
+        LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
+      } else {
+        button.classList.add("active");
+      }
     } else {
-      button.classList.add("active");
+      LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Không thể phát trực tiếp';
     }
-  } else {
-    LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Không thể phát trực tiếp';
   }
+  else {
+    if (hours >= 1 || minutes >= 59) {
+      audio.currentTime = (currentMinute * 60) + currentSecond;
+      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> ライブストリーム';
+      if (isActive) {
+        button.classList.remove("active");
+        audio.currentTime = 0;
+        LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> 直接';
+      } else {
+        button.classList.add("active");
+      }
+    } else {
+      LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ライブ配信ができない';
+    }
+  }
+
+ 
 
 }
 
@@ -436,7 +456,7 @@ navigator.mediaSession.setActionHandler('nexttrack', handleNextTrack);
 
 function SeekTimeOnload() {
   var inputText = prompt("Nhập tiếng và phút (hh:mm):");
-  
+
   if (inputText !== null) {
     var parts = inputText.split(':');
     if (parts.length === 2) {

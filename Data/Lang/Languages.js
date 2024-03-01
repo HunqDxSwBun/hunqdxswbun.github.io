@@ -10,7 +10,10 @@ var data = {
         "HMale": "Mạnh Hùng",
         "HFemale": "Thy Thy",
         "FHead": "Bảng tin",
-        "EHead": "Sự kiện"
+        "EHead": "Sự kiện",
+        "MText1": "Đang phát",
+        "MText2": '<i class="fa-solid fa-circle"></i> Trực tiếp'
+        
     },
     
     "japanese":
@@ -24,7 +27,9 @@ var data = {
         "HMale": "マン フン",
         "HFemale": "ティ ティ",
         "FHead": "餌",
-        "EHead": "イベント"
+        "EHead": "イベント",
+        "MText1": "今プレイ中",
+        "MText2": '<i class="fa-solid fa-circle"></i> 直接'
         
     }
 }
@@ -43,6 +48,9 @@ const HFemale = document.querySelector(".Info.Female .Name");
 
 const FHead = document.querySelector("#Story h1.head");
 const EHead = document.querySelector("#Event h1.head");
+
+const MText1 = document.querySelector("#Music .player .dashboard .Header header h4");
+const MText2 = document.querySelector("#LiveNoti");
 
 
 // Kiểm tra xem có ngôn ngữ đã được lưu không
@@ -85,4 +93,7 @@ function updateLanguage(lang) {
 
     FHead.textContent = data[lang].FHead;
     EHead.textContent = data[lang].EHead;
+
+    MText1.textContent = data[lang].MText1;
+    MText2.textContent = data[lang].MText2;
 }
