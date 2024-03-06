@@ -251,3 +251,4 @@ function Oled() {
     var body = document.querySelector('body');
     body.classList.toggle('oled-mode');
 }
+

@@ -173,6 +173,9 @@ const app = {
     }
 
     nextBtn.onclick = function () {
+      setTimeout(() => {
+        lyrics();
+      }, 500);
       liveOFF();
       if (_this.isRandom) {
         _this.playRandomSong();
@@ -185,6 +188,9 @@ const app = {
     };
 
     prevBtn.onclick = function () {
+      setTimeout(() => {
+        lyrics();
+      }, 500);
       liveOFF();
       if (_this.isRandom) {
         _this.playRandomSong();
@@ -375,7 +381,7 @@ function liveAUDIO() {
   var LiveNoti = document.querySelector("#LiveNoti");
 
   const selectedLang = localStorage.getItem("selectedLang");
-  if (selectedLang == 'vietnamese') { 
+  if (selectedLang == 'vietnamese') {
     if (hours >= 1 || minutes >= 59) {
       audio.currentTime = (currentMinute * 60) + currentSecond;
       LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Đang phát trực tiếp';
@@ -406,7 +412,7 @@ function liveAUDIO() {
     }
   }
 
- 
+
 
 }
 
@@ -414,9 +420,17 @@ function liveAUDIO() {
 function liveOFF() {
   var button = document.querySelector(".LiveBTN");
   var LiveNoti = document.querySelector("#LiveNoti");
-
+  const selectedLang = localStorage.getItem("selectedLang");
   button.classList.remove("active");
-  LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
+  if (selectedLang == 'vietnamese') { 
+    LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
+  } 
+  else {
+    LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> 直接';
+  }
+
+  
+ 
 }
 
 function handlePlayTrack() {

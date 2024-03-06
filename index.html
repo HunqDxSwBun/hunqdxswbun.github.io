@@ -65,16 +65,16 @@
 
         <div class="rss-feed" id="rss-feed"></div>
     </div>
-    
+
     <div class="tabcontent" id="Music">
-     
+
         <div class="player">
             <!-- Dashboard -->
             <div class="dashboard">
                 <div class="BlockDashboard">
                     <div class="CDBlock">
                         <!-- CD -->
-                        <div class="cd" onclick="playAudio()">
+                        <div class="cd" onclick="lyrics()">
                             <div class="cd-thumb">
                             </div>
                         </div>
@@ -90,11 +90,13 @@
                                 <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
                             </button>
                             <button class="TimeSeek" onclick="SeekTimeOnload()" id="SeekTimeOnload">00:00</button>
+                            <button onclick="OnLyric()">Lời bài hát</button>
                         </div>
                     </div>
                 </div>
 
                 <input id="progress" class="progress" type="range" step="1" min="0" max="100">
+
 
                 <!-- Control -->
                 <div class="control">
@@ -122,9 +124,13 @@
                 </div>
             </div>
 
-
-            <div class="playlist">
+            <div class="Footer">
+                <div class="lyrics" id="lyrics">
+                </div>
+                <div class="playlist">
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -264,6 +270,7 @@
 <script src="./Data/JS/Blog.js"></script>
 <script src="./Data/JS/Alert.js"></script>
 <script src="./Data/JS/Music.js"></script>
+<script src="./Data/JS/Lyrics.js"></script>
 
 
 </html>

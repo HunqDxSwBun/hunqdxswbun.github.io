@@ -540,6 +540,7 @@ header .HeadApp h1,
 .Head .Author .Func.Translate button:first-child {
     background-color: #d80027;
 }
+
 .Head .Author .Func.Translate button:last-child {
     background-color: #f0f0f0;
 }
@@ -578,9 +579,11 @@ header .HeadApp h1,
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
 .ContentTranslate b {
     font-size: 18px;
 }
+
 .figure {
     margin: 5px 0;
 }
@@ -1185,7 +1188,8 @@ header .HeadApp h1,
     font-weight: bold;
     margin: 3px;
 }
-.TimeSeek {
+
+.Live button {
     color: var(--BodyCL);
     font-size: 12px;
     font-weight: bold;
@@ -1269,6 +1273,25 @@ header .HeadApp h1,
     border-radius: 50%;
     background-color: var(--ButtonBG);
     cursor: pointer;
+}
+
+.lyrics {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 259px);
+    background-color: var(--CardBG);
+    text-align: center;
+    overflow: auto;
+    padding: 10px;
+    padding-bottom: 80px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.lyrics p {
+    margin: 5px 0;
 }
 
 /* PLAYLIST */
@@ -1368,16 +1391,20 @@ header .HeadApp h1,
     color: var(--BodyCL);
 }
 
-@media screen and (orientation:landscape) { 
+
+
+@media screen and (orientation:landscape) {
     .tabcontent#Music {
         padding: 0;
     }
+
     .player {
         position: relative;
         display: grid;
         grid-template-columns: 40% 60%;
         width: 100%;
     }
+
     .dashboard {
         padding: 60px 20px;
         position: fixed;
@@ -1386,6 +1413,7 @@ header .HeadApp h1,
         width: 40%;
         z-index: 0;
     }
+
     .playlist {
         display: block;
         margin: 0;
