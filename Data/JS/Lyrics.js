@@ -29,10 +29,10 @@ function lyrics() {
         xhr.send();
     }
 
-    // Kiểm tra nội dung của .dashboard .Header header h2
-    var headerContent = document.querySelector('.dashboard .Header header h2').textContent.trim();
+    // Kiểm tra nội dung của .dashboard .Header header h2 và chuyển thành viết thường
+    var headerContent = document.querySelector('.dashboard .Header header h2').textContent.trim().toLowerCase();
 
-    // Đường dẫn đến tệp văn bản chứa lời bài hát
+    // Đường dẫn đến tệp văn bản chứa lời bài hát và chuyển thành viết thường
     var filePath = './Music/Lyrics/' + headerContent + '.txt';
 
     // Tải nội dung của tệp văn bản
