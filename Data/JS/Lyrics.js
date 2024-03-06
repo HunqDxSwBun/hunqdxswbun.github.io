@@ -29,7 +29,7 @@ function lyrics() {
     }
 
     // Kiểm tra nội dung của .dashboard .Header header h2 và chuyển thành viết thường
-    var headerContent = document.querySelector('.dashboard .Header header h2').textContent.trim().toLowerCase();
+    var headerContent = document.querySelector('.dashboard .Header header h2').textContent.trim();
 
     // Đường dẫn đến tệp văn bản chứa lời bài hát và chuyển thành viết thường
     var filePath = './Music/Lyrics/' + headerContent + '.txt';
