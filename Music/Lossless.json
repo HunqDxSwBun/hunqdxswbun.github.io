@@ -72,7 +72,7 @@
         "image": "/Music/IMG/Logo.png"
     },
     {
-        "name": "Khó Vẽ Nụ Cười (feat. Du Uyen)",
+        "name": "Khó Vẽ Nụ Cười",
         "singer": "Đạt G",
         "path": "https://app.koofr.net/content/links/f297c35c-fa0e-42c1-7906-4e75d2dc6f54/files/get/Dat%20G%20-%20Kh%C3%B3%20V%E1%BA%BD%20N%E1%BB%A5%20C%C6%B0%E1%BB%9Di%20(feat.%20Du%20Uyen).flac?path=%2F",
         "image": "/Music/IMG/Logo.png"
@@ -87,12 +87,6 @@
         "name": "Người Tôi Yêu",
         "singer": "Chi Dân",
         "path": "https://app.koofr.net/content/links/d5a8b883-aa95-4e88-484f-c68a754664fe/files/get/Chi%20Dan%20-%20Nguoi%20Toi%20Yeu.flac?path=%2F",
-        "image": "/Music/IMG/Logo.png"
-    },
-    {
-        "name": "Tạm Biệt Nhé",
-        "singer": "Lynk Lee",
-        "path": "https://app.koofr.net/content/links/16bca1a8-b7c4-4af1-682f-08b57b3aae89/files/get/Lynk%20Lee%20-%20T%E1%BA%A1m%20Bi%E1%BB%87t%20Nh%C3%A9.flac?path=%2F",
         "image": "/Music/IMG/Logo.png"
     },
     {
@@ -178,6 +172,25 @@
         "singer": "Sơn Tùng M-TP",
         "path": "https://app.koofr.net/content/links/05307fd5-17ee-46d9-41d5-b7bf4f4ccd41/files/get/Son%20Tung%20M-TP%20-%20N%C6%A1i%20N%C3%A0y%20C%C3%B3%20Anh.flac?path=%2F",
         "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Cơm Đoàn Viên",
+        "singer": "Thành Đạt",
+        "path": "https://app.koofr.net/content/links/f04f72da-ab81-47e9-4328-4dd29c5e3d25/files/get/Th%C3%A0nh%20%C4%90%E1%BA%A1t%20-%20C%C6%A1m%20%C4%90o%C3%A0n%20Vi%C3%AAn.flac?path=%2F",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Cơm Đoàn Viên",
+        "singer": "Thành Đạt ( Beo Remix )",
+        "path": "https://app.koofr.net/content/links/36e10710-6c6d-45dd-6c65-f8d4d0b1ef14/files/get/Th%C3%A0nh%20%C4%90%E1%BA%A1t%20-%20C%C6%A1m%20%C4%90o%C3%A0n%20Vi%C3%AAn%20(Beo%20Remix).flac?path=%2F",
+        "image": "/Music/IMG/Logo.png"
+    },
+    {
+        "name": "Dưới Cơn Mưa",
+        "singer": "LENA LENA x Willdawind x TempoG",
+        "path": "https://app.koofr.net/content/links/65001e73-28c3-40e3-7397-7f7ad5e54e6d/files/get/Tempo%20G%20-%20D%C6%B0%E1%BB%9Bi%20C%C6%A1n%20M%C6%B0a.flac?path=%2F",
+        "image": "/Music/IMG/Logo.png"
     }
+    
 
 ]

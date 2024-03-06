@@ -21,7 +21,6 @@ function lyrics() {
                     // Thông báo khi không thể tìm thấy tệp văn bản
                     var lyricsDiv = document.querySelector('#lyrics');
                     lyricsDiv.innerHTML = '';
-                    Fail('Không tìm thấy', 'Chưa cập nhật lời bài hát');
                 }
             }
         };
@@ -67,13 +66,10 @@ function lyrics() {
                     lyricsDiv.appendChild(lineBreak);
                 }
             });
-            Done2(`${headerContent}`)
         } else {
             // Thông báo khi không có lời bài hát cho bài hát được chọn
             var lyricsDiv = document.querySelector('#lyrics');
             lyricsDiv.innerHTML = '';
-            Fail('Không tìm thấy', "Không có lời bài hát cho bài hát: " + headerContent);
-
         }
     });
 

@@ -59,7 +59,6 @@ header .HeadApp h1,
 
 ::-webkit-scrollbar-track {
     cursor: pointer;
-    border-radius: 4px;
     background-color: var(--BodyBG);
 }
 
@@ -1283,10 +1282,9 @@ header .HeadApp h1,
     background-color: var(--CardBG);
     text-align: center;
     overflow: auto;
-    padding: 10px;
+    padding: 10px 30px;
     padding-bottom: 80px;
-    margin-top: 5px;
-    border-radius: 10px;
+    margin-top: -6px;
     font-size: 18px;
 }
 
@@ -1406,7 +1404,7 @@ header .HeadApp h1,
     }
 
     .dashboard {
-        padding: 60px 20px;
+        padding:  20px;
         position: fixed;
         display: block;
         height: 100vh;
@@ -1420,5 +1418,10 @@ header .HeadApp h1,
         margin-left: 100%;
         right: 0;
         width: 150%;
+    }
+    .lyrics {
+        height: calc(100vh - 250px);
+        bottom: 0;
+        width: calc(40% + 10px);
     }
 }

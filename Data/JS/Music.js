@@ -1,23 +1,9 @@
-// Danh sách các album và thông tin của từng album
-// const albums = [
-//   { name: '🔥 Nghe Nhiều', dataAlbum: "HOT" },
-//   { name: "Âu Mỹ", dataAlbum: "USUK" },
-//   { name: "🇻🇳 Việt Nam", dataAlbum: "NhacViet" },
-//   { name: "❤ Yêu Xa", dataAlbum: "TinhYeuXa" },
-//   { name: "Bích Phương", dataAlbum: "BichPhuong" },
-//   { name: "Binaural Beats", dataAlbum: "Binaural" },
-//   { name: "Remix", dataAlbum: "Remix" },
-//   { name: "EDM", dataAlbum: "EDM" },
-//   { name: "US UK Mix", dataAlbum: "USUKMix" },
-//   { name: "Chill", dataAlbum: "Chill" },
-//   // Thêm các album khác vào đây nếu cần
-// ];
-
 const albums = [
   { name: "RADIO 1507", dataAlbum: "FM1507" },
+  { name: "Em Yêu Mix ❤", dataAlbum: "SwBun" },
   { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
   { name: "Remix", dataAlbum: "Remix" },
-  // { name: "EDM", dataAlbum: "EDM" },
+ 
   // Thêm các album khác vào đây nếu cần
 ];
 
@@ -232,6 +218,9 @@ const app = {
           _this.render();
           audio.play();
           liveOFF();
+          setTimeout(() => {
+            lyrics();
+          }, 500);
         }
       }
     };
