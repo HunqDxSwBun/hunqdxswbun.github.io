@@ -1278,14 +1278,18 @@ header .HeadApp h1,
     display: none;
     position: fixed;
     width: 100%;
-    height: calc(100vh - 259px);
+    height: calc(100vh - 255px);
     background-color: var(--CardBG);
     text-align: center;
     overflow: auto;
     padding: 10px 30px;
     padding-bottom: 80px;
-    margin-top: -6px;
     font-size: 18px;
+    bottom: 0;
+}
+.lyrics::-webkit-scrollbar-track {
+    cursor: pointer;
+    background-color: var(--CardBG);
 }
 
 .lyrics p {
@@ -1420,8 +1424,9 @@ header .HeadApp h1,
         width: 150%;
     }
     .lyrics {
-        height: calc(100vh - 250px);
+        height: calc(100vh - 268px);
         bottom: 0;
-        width: calc(40% + 10px);
+        width: calc(40%);
     }
+    
 }
