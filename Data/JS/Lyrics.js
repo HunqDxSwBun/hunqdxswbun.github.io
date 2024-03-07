@@ -1,14 +1,25 @@
 function OnLyric() {
     var x = document.getElementById("lyrics");
+    var xx = document.getElementById("OnLyric"); 
     if (x.style.display === "block") {
         x.style.display = "none";
+        xx.classList.remove('active');
     } else {
         x.style.display = "block";
+        xx.classList.add('active');
         setTimeout(() => {
             lyrics();
         }, 500);
     }
 }
+
+function OffLyric() {
+    var x = document.getElementById("lyrics");
+    var xx = document.getElementById("OnLyric"); 
+    x.style.display = "none";
+    xx.classList.remove('active');
+}
+
 function lyrics() {
     // Hàm để tải nội dung của một tệp văn bản
     function loadTextFile(file, callback) {
@@ -20,7 +31,7 @@ function lyrics() {
                 } else {
                     // Thông báo khi không thể tìm thấy tệp văn bản
                     var lyricsDiv = document.querySelector('#lyrics');
-                    lyricsDiv.innerHTML = '';
+                    lyricsDiv.innerHTML = 'Không tìm thấy lời cho bài hát này.' ;
                 }
             }
         };

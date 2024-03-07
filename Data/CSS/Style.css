@@ -1189,6 +1189,8 @@ header .HeadApp h1,
 }
 
 .Live button {
+    margin: 2px 0;
+    cursor: pointer;
     color: var(--BodyCL);
     font-size: 12px;
     font-weight: bold;
@@ -1198,7 +1200,9 @@ header .HeadApp h1,
     height: 30px;
     padding: 0 10px;
 }
-
+.Live button.active {
+    background-color: var(--ButtonBG);
+}
 .CDBlock {
     display: block;
     align-items: center;
@@ -1278,12 +1282,13 @@ header .HeadApp h1,
     display: none;
     position: relative;
     width: 100%;
-    height: calc(100vh - 255px);
-    background-color: var(--CardBG);
+    height: calc(100vh - 270px);
+    background-color: var(--TabBG);
+    border-radius: 10px;
     text-align: center;
     overflow: auto;
-    padding: 10px 30px;
-    padding-bottom: 80px;
+    padding: 10px;
+    padding-bottom: 60px;
     margin-top: 10px;
     font-size: 18px;
     bottom: 0;

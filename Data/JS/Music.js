@@ -1,7 +1,8 @@
 const albums = [
   { name: "RADIO 1507", dataAlbum: "FM1507" },
   { name: "Em Yêu Mix ❤", dataAlbum: "SwBun" },
-  { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
+  { name: "US UK", dataAlbum: "USUK" },
+  // { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
   { name: "Remix", dataAlbum: "Remix" },
  
   // Thêm các album khác vào đây nếu cần
@@ -227,6 +228,7 @@ const app = {
 
     albumButtons.forEach((button) => {
       button.addEventListener("click", function () {
+        OffLyric();
         const albumName = this.dataset.album;
         _this.changeAlbum(albumName);
       });
@@ -373,7 +375,7 @@ function liveAUDIO() {
   if (selectedLang == 'vietnamese') {
     if (hours >= 1 || minutes >= 59) {
       audio.currentTime = (currentMinute * 60) + currentSecond;
-      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Đang phát trực tiếp';
+      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
       if (isActive) {
         button.classList.remove("active");
         audio.currentTime = 0;
@@ -382,13 +384,16 @@ function liveAUDIO() {
         button.classList.add("active");
       }
     } else {
-      LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Không thể phát trực tiếp';
+      LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Lỗi';
+      setTimeout(() => {
+        LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
+      }, 3000);
     }
   }
   else {
     if (hours >= 1 || minutes >= 59) {
       audio.currentTime = (currentMinute * 60) + currentSecond;
-      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> ライブストリーム';
+      LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> 直接';
       if (isActive) {
         button.classList.remove("active");
         audio.currentTime = 0;
@@ -397,7 +402,10 @@ function liveAUDIO() {
         button.classList.add("active");
       }
     } else {
-      LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ライブ配信ができない';
+      LiveNoti.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> エラー';
+      setTimeout(() => {
+        LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> 直接';
+      }, 3000);
     }
   }
 
