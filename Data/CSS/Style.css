@@ -1161,6 +1161,9 @@ header .HeadApp h1,
 }
 
 .Live {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     margin: 5px 0;
 }
 
