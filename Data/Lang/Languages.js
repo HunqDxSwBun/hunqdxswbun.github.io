@@ -3,7 +3,7 @@ var data = {
     {
         "HYears": "Năm",
         "HMonths": "Tháng",
-        "HDays": "Ngày", 
+        "HDays": "Ngày",
         "HHours": "Giờ",
         "HMins": "Phút",
         "HSecs": "Giây",
@@ -13,14 +13,14 @@ var data = {
         "EHead": "Sự kiện",
         "MText1": "Đang phát",
         "MText2": '<i class="fa-solid fa-circle"></i> Trực tiếp'
-        
+
     },
-    
+
     "japanese":
     {
         "HYears": "年",
         "HMonths": "月",
-        "HDays": "日", 
+        "HDays": "日",
         "HHours": "時",
         "HMins": "分",
         "HSecs": "秒",
@@ -30,7 +30,7 @@ var data = {
         "EHead": "イベント",
         "MText1": "今プレイ中",
         "MText2": '<i class="fa-solid fa-circle"></i> 直接'
-        
+
     }
 }
 
@@ -53,6 +53,7 @@ const MText1 = document.querySelector("#Music .player .dashboard .Header header 
 const MText2 = document.querySelector("#LiveNoti");
 
 
+
 // Kiểm tra xem có ngôn ngữ đã được lưu không
 let currentLang = localStorage.getItem("selectedLang") || "vietnamese";
 
@@ -60,6 +61,9 @@ let currentLang = localStorage.getItem("selectedLang") || "vietnamese";
 updateLanguage(currentLang);
 
 changeLangBtn.addEventListener("click", () => {
+    changeLang();
+});
+function changeLang() {
     // Đổi ngôn ngữ
     currentLang = currentLang === "vietnamese" ? "japanese" : "vietnamese";
     if (currentLang == 'vietnamese') {
@@ -67,18 +71,15 @@ changeLangBtn.addEventListener("click", () => {
     } else {
         Done2('日本語に切り替えました')
     }
-   setTimeout(() => {
     ReloadBlog();
     ReloadEvent();
-    location.reload();
-   }, 1000);
- 
+
     // Lưu ngôn ngữ đã chọn
     localStorage.setItem("selectedLang", currentLang);
 
     // Cập nhật dữ liệu cho ngôn ngữ mới
     updateLanguage(currentLang);
-});
+}
 
 function updateLanguage(lang) {
     HYears.textContent = data[lang].HYears;
@@ -96,4 +97,11 @@ function updateLanguage(lang) {
 
     MText1.textContent = data[lang].MText1;
     MText2.innerHTML = data[lang].MText2;
+
+    if (lang === 'vietnamese') {
+        document.getElementById("LangA003").innerText = 'Tiếng Việt';
+    } else {
+        document.getElementById("LangA003").innerText = '日本語';
+    }
+  
 }

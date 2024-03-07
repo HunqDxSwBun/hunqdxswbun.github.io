@@ -153,26 +153,6 @@ function Info(T1, T2) {
     )
 }
 
-
-function toggleMusic() {
-    var x = document.getElementById("myAudio");
-    var tablinks = document.getElementById("toggleMusic");
-
-    var currentTime = new Date();
-    var startMinute = currentTime.getMinutes();
-    var startSecond = currentTime.getSeconds();
-    x.currentTime = startMinute * 60 + startSecond;
-
-    if (x.paused == false) {
-        tablinks.classList.remove('MUSIC');
-        x.pause();
-    } else {
-        tablinks.classList.add('MUSIC');
-        x.play();
-    }
-}
-
-
 function padNumber(num, length) {
     var r = num.toString();
     while (r.length < length) {
@@ -247,8 +227,37 @@ DaysLove.addEventListener('click', function () {
 
 });
 
-function Oled() {
+
+function toggleSimpleMode() {
+    var simpleModeSwitch = document.getElementById("simpleMode");
+    if (simpleModeSwitch.classList.contains('on')) {
+        simpleModeSwitch.classList.remove('on');
+        simpleModeSwitch.classList.add('off');
+        // Thực hiện hành động khi tắt chế độ siêu đơn giản
+
+    } else {
+        simpleModeSwitch.classList.remove('off');
+        simpleModeSwitch.classList.add('on');
+        // Thực hiện hành động khi bật chế độ siêu đơn giản
+        Warning('Tính năng này đang phát triển')
+    }
+}
+
+function toggleOledMode() {
     var body = document.querySelector('body');
-    body.classList.toggle('oled-mode');
+    var oledModeSwitch = document.getElementById("oledMode");
+    if (oledModeSwitch.classList.contains('on')) {
+        oledModeSwitch.classList.remove('on');
+        oledModeSwitch.classList.add('off');
+        // Thực hiện hành động khi tắt chế độ OLED
+        body.classList.remove('oled-mode');
+        Done2('Đã tắt chế độ Oled')
+    } else {
+        oledModeSwitch.classList.remove('off');
+        oledModeSwitch.classList.add('on');
+        // Thực hiện hành động khi bật chế độ OLED
+        body.classList.add('oled-mode');
+        Done2('Đã mở chế độ Oled')
+    }
 }
 

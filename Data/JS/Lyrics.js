@@ -1,12 +1,16 @@
 function OnLyric() {
     var x = document.getElementById("lyrics");
     var xx = document.getElementById("OnLyric"); 
+    var dashboard = document.querySelector('.dashboard');
+
     if (x.style.display === "block") {
         x.style.display = "none";
         xx.classList.remove('active');
+        dashboard.classList.remove('active')
     } else {
         x.style.display = "block";
         xx.classList.add('active');
+        dashboard.classList.add('active')
         setTimeout(() => {
             lyrics();
         }, 500);
@@ -21,6 +25,7 @@ function OffLyric() {
 }
 
 function lyrics() {
+  
     // Hàm để tải nội dung của một tệp văn bản
     function loadTextFile(file, callback) {
         var xhr = new XMLHttpRequest();

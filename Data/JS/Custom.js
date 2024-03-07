@@ -1,3 +1,60 @@
+function openBackgroundModal() {
+  const SoLuongAnh = 20;
+  // const homeBackgroundImage = localStorage.getItem("homeBackgroundImage");
+  // const url = new URL(homeBackgroundImage);
+  // const imagePath = url.pathname;
+
+  var modal = document.getElementById("backgroundModal");
+  var modalContent = modal.querySelector('.SelectWallpaper');
+  modalContent.innerHTML = ''; // Clear previous content
+
+  var wallpaperDiv = document.createElement('div');
+  wallpaperDiv.classList.add('Wallpaper');
+
+  // Create image elements and append them to the modal content
+  for (var i = 1; i <= SoLuongAnh; i++) {
+    var imgSrc = `/Data/Wallpaper/${i}.jpg`;
+
+    var imgDiv = document.createElement('div');
+    imgDiv.classList.add('IMG');
+
+    // if (homeBackgroundImage !== null) {
+    //   if (imgSrc === imagePath) {
+    //     imgDiv.classList.add('Active');
+    //   }
+    // }
+
+
+    var imgElement = document.createElement('img');
+    imgElement.src = imgSrc;
+    imgElement.onclick = function () {
+      setBackground(this.src);
+      closeBackgroundModal();
+      Done2('Đổi hình nền thành công')
+    };
+
+    imgDiv.appendChild(imgElement);
+    wallpaperDiv.appendChild(imgDiv);
+  }
+
+  modalContent.appendChild(wallpaperDiv);
+  modal.style.display = "block";
+}
+
+function setBackground(imageSrc) {
+  const homeElement = document.getElementById('IMGBG');
+  homeElement.style.backgroundImage = `url('${imageSrc}')`;
+  localStorage.setItem('homeBackgroundImage', imageSrc);
+}
+function closeBackgroundModal() {
+  var modal = document.getElementById("backgroundModal");
+  modal.style.display = "none";
+}
+
+
+
+
+
 const imageFileInput = document.getElementById('imageFileInput');
 const saveImageBtn = document.getElementById('saveImageBtn');
 const deleteImageBtn = document.getElementById('deleteImageBtn');
@@ -27,7 +84,8 @@ function handleSaveImage() {
 function handleDeleteImage() {
   homeElement.style.backgroundImage = '';
   localStorage.removeItem('homeBackgroundImage');
-  Done('Đã xoá ảnh nền.')
+  closeBackgroundModal();
+  Done('Đã xoá ảnh nền.');
 
 }
 
@@ -39,23 +97,3 @@ window.addEventListener('load', () => {
   }
 });
 
-
-
-const randomImageBtn = document.getElementById('randomImageBtn');
-let currentImageIndex = 1;
-const SoLuongAnh = 20;
-
-randomImageBtn.addEventListener('click', handleRandomImage);
-
-function handleRandomImage() {
-  const imageUrl = `/Data/Wallpaper/${currentImageIndex}.jpg`;
-
-  homeElement.style.backgroundImage = `url('${imageUrl}')`;
-  localStorage.setItem('homeBackgroundImage', imageUrl);
-
-  // Tăng giá trị currentImageIndex và kiểm tra điều kiện lặp lại
-  currentImageIndex++;
-  if (currentImageIndex > SoLuongAnh) {
-    currentImageIndex = 1;
-  }
-}

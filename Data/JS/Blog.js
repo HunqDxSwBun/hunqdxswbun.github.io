@@ -86,7 +86,7 @@ function ReloadBlog() {
           } else {
             author = 'ハニー ❤';
           }
-          srcIMG = 'https://graph.facebook.com/61551995024526/picture?width=9999&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662';
+          srcIMG = './Data/IMG/AVTHung.jpg';
         } else if (creator === 'hoangnguyen thythy') {
           if (selectedLang == 'vietnamese') {
             author = 'Em Yêu ❤';
@@ -131,52 +131,51 @@ function ReloadBlog() {
       });
 
       // Bắt sự kiện nhấn vào nút dịch
-      $(document).on('click', '.translateButton', function () {
-        var $this = $(this); // Lưu trữ $(this) trong một biến
+      // $(document).on('click', '.translateButton', function () {
+      //   var $this = $(this); // Lưu trữ $(this) trong một biến
 
-        var sourceText = $this.closest('.Feed').find('.Title').html();
-        var sourceText2 = $this.closest('.Feed').find('.Content').html(); // Lấy nội dung của .Content trong cùng một .Feed
+      //   var sourceText = $this.closest('.Feed').find('.Title').html();
+      //   var sourceText2 = $this.closest('.Feed').find('.Content').html(); // Lấy nội dung của .Content trong cùng một .Feed
 
-        var sourceLang = 'auto';
-        var targetLang = 'vi';
-        // Loại bỏ các thẻ HTML không mong muốn và chuyển đổi ký tự đặc biệt HTML
-        var cleanedText = cleanAndEncodeHTML('[ ' + sourceText + ' ]' + sourceText2);
+      //   var sourceLang = 'auto';
+      //   var targetLang = 'vi';
+      //   // Loại bỏ các thẻ HTML không mong muốn và chuyển đổi ký tự đặc biệt HTML
+      //   var cleanedText = cleanAndEncodeHTML('[ ' + sourceText + ' ]' + sourceText2);
 
-        var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
+      //   var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
 
 
-        $.getJSON(url, function (data) {
-          Done2('Văn bản đã được dịch')
-          var translatedText = data[0][0][0];
-          var spacedText = translatedText.replace(/\s+/g, ' ');
-          var boldedText = spacedText.replace(/\[([^\]]+)\]/g, '<b>$1</b> <br>');
-          $this.closest('.Feed').find('.ContentTranslate').html(boldedText);
-        });
-      });
+      //   $.getJSON(url, function (data) {
+      //     Done2('Văn bản đã được dịch')
+      //     var translatedText = data[0][0][0];
+      //     var spacedText = translatedText.replace(/\s+/g, ' ');
+      //     var boldedText = spacedText.replace(/\[([^\]]+)\]/g, '<b>$1</b> <br>');
+      //     $this.closest('.Feed').find('.ContentTranslate').html(boldedText);
+      //   });
+      // });
 
-      $(document).on('click', '.translateButton2', function () {
-        var $this = $(this); // Lưu trữ $(this) trong một biến
+      // $(document).on('click', '.translateButton2', function () {
+      //   var $this = $(this); // Lưu trữ $(this) trong một biến
 
-        var sourceText = $this.closest('.Feed').find('.Title').html();
-        var sourceText2 = $this.closest('.Feed').find('.Content').html(); // Lấy nội dung của .Content trong cùng một .Feed
+      //   var sourceText = $this.closest('.Feed').find('.Title').html();
+      //   var sourceText2 = $this.closest('.Feed').find('.Content').html(); // Lấy nội dung của .Content trong cùng một .Feed
 
-        var sourceLang = 'auto';
-        var targetLang = 'ja';
-        // Loại bỏ các thẻ HTML không mong muốn và chuyển đổi ký tự đặc biệt HTML
-        var cleanedText = cleanAndEncodeHTML('[ ' + sourceText + ' ]' + sourceText2);
+      //   var sourceLang = 'auto';
+      //   var targetLang = 'ja';
+      //   // Loại bỏ các thẻ HTML không mong muốn và chuyển đổi ký tự đặc biệt HTML
+      //   var cleanedText = cleanAndEncodeHTML('[ ' + sourceText + ' ]' + sourceText2);
 
-        var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
+      //   var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(cleanedText);
 
-        $.getJSON(url, function (data) {
-          Done2('テキストは翻訳されました');
-          var translatedText = data[0][0][0];
-          var spacedText = translatedText.replace(/\s+/g, ' ');
-          var boldedText = spacedText.replace(/\[([^\]]+)\]/g, '<b>$1</b> <br>');
-          $this.closest('.Feed').find('.ContentTranslate').html(boldedText);
-      });
-      
+      //   $.getJSON(url, function (data) {
+      //     Done2('テキストは翻訳されました');
+      //     var translatedText = data[0][0][0];
+      //     var spacedText = translatedText.replace(/\s+/g, ' ');
+      //     var boldedText = spacedText.replace(/\[([^\]]+)\]/g, '<b>$1</b> <br>');
+      //     $this.closest('.Feed').find('.ContentTranslate').html(boldedText);
+      //   });
 
-      });
+      // });
 
 
       function cleanAndEncodeHTML(text) {
@@ -258,7 +257,7 @@ function ReloadBlog() {
               .catch((error) => console.error('Lỗi chia sẻ:', error));
           } else {
             // Hiển thị thông báo cho các trình duyệt không hỗ trợ API Web Share
-            Warning('Lỗi','Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
+            Warning('Lỗi', 'Trình duyệt của bạn không hỗ trợ chức năng chia sẻ.');
           }
         });
       });

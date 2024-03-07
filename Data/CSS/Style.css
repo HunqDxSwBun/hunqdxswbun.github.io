@@ -59,7 +59,7 @@ header .HeadApp h1,
 
 ::-webkit-scrollbar-track {
     cursor: pointer;
-    background-color: var(--BodyBG);
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -70,7 +70,7 @@ header .HeadApp h1,
 
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: var(--ButtonBG);
+    background-color: transparent;
 }
 
 #navbar {
@@ -222,7 +222,7 @@ header .HeadApp h1,
     z-index: -1;
     width: 100%;
     height: calc(100% - 0px);
-    background-image: url(/Data/Wallpaper/20.jpg);
+    background-image: url(/Data/Wallpaper/1.jpg);
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -495,7 +495,7 @@ header .HeadApp h1,
 
 .Head .Author {
     display: grid;
-    grid-template-columns: 60px 120px auto 30px;
+    grid-template-columns: 60px auto 30px;
     gap: 2px;
 }
 
@@ -519,6 +519,7 @@ header .HeadApp h1,
 }
 
 .Head .Author .Func.Translate {
+    display: none !important;
     text-align: left;
     display: flex;
     align-items: center;
@@ -728,84 +729,6 @@ header .HeadApp h1,
 .Event .Upnext p {
     font-size: 14px;
     font-weight: bold;
-}
-
-.Setting {
-    display: none;
-    position: fixed;
-    width: 100%;
-    top: 50%;
-    transform: translate(0, -50%);
-}
-
-.SettingBlock {
-    display: block;
-    cursor: default;
-    background-color: var(--ButtonBG);
-    margin: 5px 10px;
-    text-align: center;
-    padding: 10px 20px 20px 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px 0px var(--CardBG);
-}
-
-.SettingBlock h1 {
-    font-size: 36px;
-}
-
-.file-input {
-    margin-bottom: 10px;
-}
-
-.file-input__input {
-    width: 0px;
-    height: 0px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.file-input__label {
-    width: 100%;
-    cursor: pointer;
-    display: block;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    font-size: 14px;
-    padding: 30px 12px;
-    margin: auto;
-    background-color: var(--ButtonBG);
-    border: 2px solid var(--BodyCL);
-}
-
-.file-input__label i {
-    font-size: 30px;
-}
-
-.ButtonBlock {
-    display: flex;
-    gap: 5px;
-    justify-content: space-between;
-}
-
-#CustomPIC .ButtonBlock button {
-    display: block;
-    color: var(--BodyCL);
-    background-color: var(--BodyBG);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 10px;
-    border-radius: 10px;
-}
-
-#CustomPIC .ButtonBlock button:last-child {
-    background-color: var(--BodyBG);
 }
 
 .TimeNow {
@@ -1133,14 +1056,20 @@ header .HeadApp h1,
 .dashboard {
     padding: 16px 16px 14px;
     background-color: var(--CardBG);
-    display: block;
+    display: flex;
     position: fixed;
+    flex-wrap: wrap;
+    align-content: flex-start;
     top: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     border-bottom: 2px solid var(--CardBG);
     border-radius: 10px;
+}
+
+.dashboard.active {
+    height: 100vh;
 }
 
 .dashboard header h4 {
@@ -1151,6 +1080,11 @@ header .HeadApp h1,
     text-transform: capitalize;
     font-size: 16px;
     color: var(--ButtonBG);
+}
+
+.Block.A {
+    display: block;
+    width: 100%;
 }
 
 .dashboard .BlockDashboard {
@@ -1203,9 +1137,11 @@ header .HeadApp h1,
     height: 30px;
     padding: 0 10px;
 }
+
 .Live button.active {
     background-color: var(--ButtonBG);
 }
+
 .CDBlock {
     display: block;
     align-items: center;
@@ -1283,9 +1219,9 @@ header .HeadApp h1,
 
 .lyrics {
     display: none;
-    position: relative;
     width: 100%;
-    height: calc(100vh - 270px);
+    height: 60%;
+    position: relative;
     background-color: var(--TabBG);
     border-radius: 10px;
     text-align: center;
@@ -1296,6 +1232,7 @@ header .HeadApp h1,
     font-size: 18px;
     bottom: 0;
 }
+
 .lyrics::-webkit-scrollbar-track {
     cursor: pointer;
     background-color: var(--CardBG);
@@ -1402,6 +1339,239 @@ header .HeadApp h1,
     color: var(--BodyCL);
 }
 
+.Setting h3 {
+    margin-left: 20px;
+}
+
+.Setting .toggle-switch {
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    background-color: var(--CardBGHV);
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.Setting .switch {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.Setting .toggle-switch.on {
+    background-color: var(--ButtonBG);
+}
+
+.Setting .toggle-switch.off .switch {
+    transform: translateX(1px);
+}
+
+.Setting .toggle-switch.on .switch {
+    transform: translateX(25px);
+}
+
+.Setting .modal {
+    display: none;
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+}
+
+.Setting .modal-content {
+    background-color: var(--CardBG);
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 10px;
+}
+
+.Setting .modal-content .Head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.Setting .modal-content .Head span {
+    font-size: 30px;
+}
+
+.Setting .Wallpaper {
+    border-radius: 10px;
+    height: calc(90vh - 200px);
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    overflow: auto;
+}
+
+.Setting .Wallpaper .IMG {
+    overflow: hidden;
+    /* Ẩn nội dung tràn ra khỏi khung hình */
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: var(--CardBG);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(1);
+}
+
+.Setting .Wallpaper .IMG.Active {
+    border: 3px solid var(--ButtonBG);
+    filter: brightness(1);
+}
+
+.Setting .Wallpaper .IMG img {
+    border-radius: 10px;
+    display: block;
+    height: auto;
+}
+
+.Setting .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.Setting .close:hover,
+.Setting .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Setting .ListSetting {
+    margin: 20px;
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Setting .ListSetting:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.Setting .Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--CardMusic);
+    padding: 10px;
+    border-bottom: 1px solid var(--BodyBG);
+}
+
+.Setting .Item:last-child {
+    border: none;
+}
+
+.Setting .Item #toggle-button {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.Setting .Item label {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.Setting .Item button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    color: var(--BodyCL);
+    background-color: transparent;
+    border: none;
+}
+
+.Setting .Item button span {
+    color: #6b6b6b;
+    font-size: 14px;
+}
+
+.Setting .UploadWallpaper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.file-input__input {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-input__label {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    padding: 30px 12px;
+    margin: auto;
+    background-color: var(--ButtonBG);
+}
+
+.file-input__label i {
+    font-size: 30px;
+}
+
+.ButtonBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ButtonBlock button {
+    display: block;
+    height: 100%;
+    color: var(--BodyCL);
+    background-color: var(--BodyBG);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 10px;
+
+}
+
+.ButtonBlock button:last-child {
+    background-color: var(--BodyBG);
+}
 
 
 @media screen and (orientation:landscape) {
@@ -1417,7 +1587,7 @@ header .HeadApp h1,
     }
 
     .dashboard {
-        padding:  20px;
+        padding: 20px;
         position: fixed;
         display: block;
         height: 100vh;
@@ -1432,10 +1602,11 @@ header .HeadApp h1,
         right: 0;
         width: 150%;
     }
+
     .lyrics {
         display: block;
         bottom: 0;
         width: 100%;
     }
-    
+
 }
