@@ -131,8 +131,6 @@ function ReloadEvent() {
         var minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
         var seconds = Math.floor((timeDiff / 1000) % 60);
 
-        console.log(days);
-
         var EventComingUp = document.getElementById('EventComingUp'); // Đảm bảo đây là phần tử thích hợp
         var ngay = new Date(eventDate);
         var thu = ngay.toLocaleDateString('vi-VN', { weekday: 'long' });

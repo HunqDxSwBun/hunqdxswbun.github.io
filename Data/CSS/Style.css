@@ -596,7 +596,8 @@ header .HeadApp h1,
 
 .Body .Status img,
 .Body .Status video {
-    max-width: 100%;
+    width: auto;
+    max-height: 500px;
     border-radius: 10px;
     border: 2px solid var(--BodyBG);
     box-sizing: border-box;
