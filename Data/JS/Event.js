@@ -25,16 +25,6 @@ function ReloadEvent() {
             "Anh": "/Events/IMG/8thang3.JPG"
         },
         {
-            "SuKien": "Giải phóng Miền Nam",
-            "Ngay": "30/04",
-            "Anh": "/Events/IMG/3041975.JPG"
-        },
-        {
-            "SuKien": "Quốc tế lao động",
-            "Ngay": "01/05",
-            "Anh": "/Events/IMG/1thang5.JPG"
-        },
-        {
             "SuKien": "Kỉ niệm ngày yêu",
             "Ngay": "15/07",
             "Anh": "/Events/IMG/Kiss.png"
@@ -43,11 +33,6 @@ function ReloadEvent() {
             "SuKien": "Sinh Nhật Anh Yêu ❤",
             "Ngay": "30/08",
             "Anh": "/Events/IMG/SinhNhat.JPG"
-        },
-        {
-            "SuKien": "Ngày Quốc Khánh",
-            "Ngay": "02/09",
-            "Anh": "/Events/IMG/2thang9.JPG"
         },
         {
             "SuKien": "Sinh Nhật Em Yêu ❤",
@@ -148,7 +133,7 @@ function ReloadEvent() {
 
         }
 
-        
+
     }
 
 

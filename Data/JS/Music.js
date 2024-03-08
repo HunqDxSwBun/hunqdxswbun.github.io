@@ -4,7 +4,7 @@ const albums = [
   { name: "US UK", dataAlbum: "USUK" },
   // { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
   { name: "Remix", dataAlbum: "Remix" },
- 
+
   // Thêm các album khác vào đây nếu cần
 ];
 
@@ -419,15 +419,28 @@ function liveOFF() {
   var LiveNoti = document.querySelector("#LiveNoti");
   const selectedLang = localStorage.getItem("selectedLang");
   button.classList.remove("active");
-  if (selectedLang == 'vietnamese') { 
+  if (selectedLang == 'vietnamese') {
     LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> Trực tiếp';
-  } 
+  }
   else {
     LiveNoti.innerHTML = '<i class="fa-solid fa-circle"></i> 直接';
   }
+}
 
-  
- 
+function CheckBitrate() {
+  const audioElement = audio;
+
+  // Lấy thông tin về bitrate của tệp âm thanh
+  const bitrate = audioElement.getAttribute("bitrate");
+  console.log(bitrate);
+  // Kiểm tra xem bitrate có cao hơn mức bitrate tối thiểu của nhạc lossless hay không (thường là 1411 kbps)
+  if (bitrate >= 1411) {
+    // Hiển thị thông báo rằng nhạc đang phát là lossless
+    console.log("Nhạc đang phát là lossless!");
+  } else {
+    // Hiển thị thông báo rằng nhạc đang phát không phải lossless
+    console.log("Nhạc đang phát không phải lossless.");
+  }
 }
 
 function handlePlayTrack() {
@@ -487,3 +500,5 @@ function SeekTimeOnload() {
     alert("Bạn đã hủy nhập liệu.");
   }
 }
+
+
