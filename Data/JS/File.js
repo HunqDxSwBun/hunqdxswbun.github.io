@@ -251,13 +251,40 @@ function toggleOledMode() {
         oledModeSwitch.classList.add('off');
         // Thực hiện hành động khi tắt chế độ OLED
         body.classList.remove('oled-mode');
-        Done2('Đã tắt chế độ Oled')
     } else {
         oledModeSwitch.classList.remove('off');
         oledModeSwitch.classList.add('on');
         // Thực hiện hành động khi bật chế độ OLED
         body.classList.add('oled-mode');
-        Done2('Đã mở chế độ Oled')
     }
 }
 
+function toggleBGMode() {
+    var body = document.querySelector('body');
+    var BGModeSwitch = document.getElementById("BackgroundMode");
+
+    if (BGModeSwitch.classList.contains('on')) {
+        BGModeSwitch.classList.remove('on');
+        BGModeSwitch.classList.add('off');
+        body.style.backgroundImage = 'none';
+        localStorage.setItem('BGMode', 'off'); // Lưu trạng thái chế độ vào localStorage
+    } else {
+        BGModeSwitch.classList.remove('off');
+        BGModeSwitch.classList.add('on');
+        const homeBackgroundImage = localStorage.getItem("homeBackgroundImage");
+        if (homeBackgroundImage) {
+            body.style.backgroundImage = "url('" + homeBackgroundImage + "')";
+        } else {
+            body.style.backgroundImage = "url('/Data/Wallpaper/1.jpg')";
+        }
+        localStorage.setItem('BGMode', 'on'); // Lưu trạng thái chế độ vào localStorage
+    }
+}
+
+// Phục hồi trạng thái chế độ sau khi tải lại trang
+window.onload = function () {
+    var BGMode = localStorage.getItem('BGMode');
+    if (BGMode === 'on') {
+        toggleBGMode(); // Bật chế độ nếu trạng thái lưu là "on"
+    }
+}

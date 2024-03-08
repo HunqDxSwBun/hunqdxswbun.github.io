@@ -46,6 +46,7 @@ function lyrics() {
 
     // Kiểm tra nội dung của .dashboard .Header header h2 và chuyển thành viết thường
     var headerContent = document.querySelector('.dashboard .Header header h2').textContent.trim();
+    console.log(headerContent);
 
     // Đường dẫn đến tệp văn bản chứa lời bài hát và chuyển thành viết thường
     var filePath = './Music/Lyrics/' + headerContent + '.txt';

@@ -40,17 +40,17 @@
                 <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')">
                     <i class="fa-brands fa-readme"></i>
                 </button>
-                <button class="tablinks" onclick="openTAB(event, 'Music')">
-                    <i class="fa-solid fa-music"></i>
+                <button class="tablinks" onclick="openTAB(event, 'Event')">
+                    <i class="fa-solid fa-star"></i>
                 </button>
                 <button class="tablinks active" onclick="openTAB(event, 'Home')">
                     <i class="fa-solid fa-house"></i>
                 </button>
-                <button class="tablinks" onclick="openTAB(event, 'Event')">
-                    <i class="fa-solid fa-star"></i>
+                <button class="tablinks" onclick="openTAB(event, 'Music')">
+                    <i class="fa-solid fa-music"></i>
                 </button>
                 <button class="tablinks" onclick="openTAB(event, 'Setting')">
-                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <i class="fa-solid fa-gear"></i>
                 </button>
             </div>
         </div>
@@ -66,86 +66,13 @@
         <div class="rss-feed" id="rss-feed"></div>
     </div>
 
-    <div class="tabcontent" id="Music">
-
-        <div class="player">
-            <!-- Dashboard -->
-            <div class="dashboard">
-                <div class="Block A">
-                    <div class="BlockDashboard">
-                        <div class="CDBlock">
-                            <!-- CD -->
-                            <div class="cd" onclick="lyrics()">
-                                <div class="cd-thumb">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="Header">
-                            <!-- Header -->
-                            <header>
-                                <h4>Đang phát:</h4>
-                                <h2></h2>
-                            </header>
-                            <div class="Live">
-                                <button class="LiveBTN" onclick="liveAUDIO()">
-                                    <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
-                                </button>
-                                <button class="TimeSeek" onclick="SeekTimeOnload()" id="SeekTimeOnload">00:00</button>
-                                <button id="OnLyric" onclick="OnLyric()">Lời bài hát</button>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <input id="progress" class="progress" type="range" step="1" min="0" max="100">
-
-
-                    <!-- Control -->
-                    <div class="control">
-                        <div class="btn btn-repeat">
-                            <i class="fas fa-redo"></i>
-                        </div>
-                        <div class="btn btn-prev">
-                            <i class="fas fa-step-backward"></i>
-                        </div>
-                        <div class="btn btn-toggle-play">
-                            <i class="fas fa-pause icon-pause"></i>
-                            <i class="fas fa-play icon-play"></i>
-                        </div>
-                        <div class="btn btn-next">
-                            <i class="fas fa-step-forward"></i>
-                        </div>
-                        <div class="btn btn-random">
-                            <i class="fas fa-random"></i>
-                        </div>
-                    </div>
-
-                    <audio id="audio" src=""></audio>
-                    <div class="Album" id="albumContainer">
-                    </div>
-                </div>
-
-                <div class="lyrics" id="lyrics">
-                </div>
-
-
-            </div>
-
-            <div class="Footer">
-                <div class="playlist">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <div class="tabcontent " id="Event">
         <h1 class="head">Sự kiện</h1>
         <div class="Event" id="root">
         </div>
     </div>
 
-    <div id="Home" class="tabcontent show">
+    <div id="Home" class="tabcontent ">
         <div class="IMGBG" id="IMGBG"></div>
         <div class="BlockHead">
             <div class="NewPost" id="NewPost">
@@ -233,10 +160,83 @@
         </div>
     </div>
 
+    <div class="tabcontent" id="Music">
 
-    <div id="Setting" class="tabcontent ">
-        <h1 class="head">Cài đặt</h1>
+        <div class="player">
+            <!-- Dashboard -->
+            <div class="dashboard">
+                <div class="Block A">
+                    <div class="BlockDashboard">
+                        <div class="CDBlock">
+                            <!-- CD -->
+                            <div class="cd" onclick="lyrics()">
+                                <div class="cd-thumb">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Header">
+                            <!-- Header -->
+                            <header>
+                                <h4>Đang phát:</h4>
+                                <h2></h2>
+                            </header>
+                            <div class="Live">
+                                <button class="LiveBTN" onclick="liveAUDIO()">
+                                    <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
+                                </button>
+                                <button class="TimeSeek" onclick="SeekTimeOnload()" id="SeekTimeOnload">00:00</button>
+                                <button id="OnLyric" onclick="OnLyric()">Lời bài hát</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="progress" class="progress" type="range" step="1" min="0" max="100">
+
+
+                    <!-- Control -->
+                    <div class="control">
+                        <div class="btn btn-repeat">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <div class="btn btn-prev">
+                            <i class="fas fa-step-backward"></i>
+                        </div>
+                        <div class="btn btn-toggle-play">
+                            <i class="fas fa-pause icon-pause"></i>
+                            <i class="fas fa-play icon-play"></i>
+                        </div>
+                        <div class="btn btn-next">
+                            <i class="fas fa-step-forward"></i>
+                        </div>
+                        <div class="btn btn-random">
+                            <i class="fas fa-random"></i>
+                        </div>
+                    </div>
+
+                    <audio id="audio" src=""></audio>
+                    <div class="Album" id="albumContainer">
+                    </div>
+                </div>
+
+                <div class="lyrics" id="lyrics">
+                </div>
+
+
+            </div>
+
+            <div class="Footer">
+                <div class="playlist">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="Setting" class="tabcontent show">
         <div class="Setting">
+            <div class="HeadSetting">
+            </div>
             <div class="ListSetting">
                 <div class="Item">
                     <label>Cài đặt chế độ sáng/tối</label>
@@ -247,7 +247,7 @@
                     <button><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="Item">
-                    <label>Chế độ siêu đơn giản</label>
+                    <label>Chế độ đơn giản</label>
                     <div class="toggle-switch" id="simpleMode" onclick="toggleSimpleMode()">
                         <div class="switch"></div>
                     </div>
@@ -258,14 +258,26 @@
                         <div class="switch"></div>
                     </div>
                 </div>
-            </div>
-
-            <h3></h3>
-            <div class="ListSetting">
+                <div class="Item">
+                    <label>Đồng bộ hình nền</label>
+                    <div class="toggle-switch" id="BackgroundMode" onclick="toggleBGMode()">
+                        <div class="switch"></div>
+                    </div>
+                </div>
                 <div class="Item" onclick="changeLang();">
                     <label>Ngôn ngữ</label>
                     <button><span id="LangA003"></span> <i class="fa-solid fa-chevron-right"></i></button>
                 </div>
+            </div>
+
+            <h3></h3>
+            <div class="ListSetting">
+                <div class="Item">
+                    <label>Phiên bản</label>
+                    <button onclick="Info('Đây là phiên bản mới nhất','Đã cập nhật 8/3/2024')"><span
+                            id="Version">1.2.2</span> </button>
+                </div>
+
             </div>
 
 
