@@ -68,7 +68,7 @@ header .HeadApp h1,
 
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: transparent;
+    background-color: var(--ButtonBG);
 }
 
 #navbar {

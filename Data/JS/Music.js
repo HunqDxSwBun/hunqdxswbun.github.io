@@ -4,7 +4,11 @@ const albums = [
   { name: "US UK", dataAlbum: "USUK" },
   // { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
   { name: "Remix", dataAlbum: "Remix" },
-
+  { name: "Imagine Dragons", dataAlbum: "ImagineDragons" },
+  { name: "Martin Jensen", dataAlbum: "MartinJensen" },
+  { name: "The Chainsomkers", dataAlbum: "TheChainsomkers" },
+  { name: "The Weeknd", dataAlbum: "TheWeeknd" },
+  
   // Thêm các album khác vào đây nếu cần
 ];
 
@@ -427,21 +431,8 @@ function liveOFF() {
   }
 }
 
-function CheckBitrate() {
-  const audioElement = audio;
 
-  // Lấy thông tin về bitrate của tệp âm thanh
-  const bitrate = audioElement.getAttribute("bitrate");
-  console.log(bitrate);
-  // Kiểm tra xem bitrate có cao hơn mức bitrate tối thiểu của nhạc lossless hay không (thường là 1411 kbps)
-  if (bitrate >= 1411) {
-    // Hiển thị thông báo rằng nhạc đang phát là lossless
-    console.log("Nhạc đang phát là lossless!");
-  } else {
-    // Hiển thị thông báo rằng nhạc đang phát không phải lossless
-    console.log("Nhạc đang phát không phải lossless.");
-  }
-}
+
 
 function handlePlayTrack() {
   playBtn.onclick();
