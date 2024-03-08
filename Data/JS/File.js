@@ -298,3 +298,67 @@ window.onload = function () {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const dateElement = document.getElementById("date");
+    const attendanceButton = document.getElementById("attendanceBtn");
+    const historyElement = document.getElementById("history");
+
+    // Lấy ngày hiện tại
+    function getCurrentDate() {
+        const today = new Date();
+        const date = today.getDate();
+        const month = today.getMonth() + 1;
+        const year = today.getFullYear();
+        return `${date}/${month}/${year}`;
+    }
+
+    // Kiểm tra xem đã điểm danh hôm nay chưa
+    function checkAttendance() {
+        const currentDate = getCurrentDate();
+        const attendanceHistory = localStorage.getItem("attendanceHistory");
+        if (attendanceHistory) {
+            const history = JSON.parse(attendanceHistory);
+            if (history.includes(currentDate)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Hiển thị lịch sử điểm danh
+    function displayHistory() {
+        const attendanceHistory = localStorage.getItem("attendanceHistory");
+        if (attendanceHistory) {
+            const history = JSON.parse(attendanceHistory);
+            historyElement.innerHTML = "<h3>Lịch Sử Điểm Danh:</h3>";
+            history.forEach(date => {
+                historyElement.innerHTML += `<p>${date}</p>`;
+            });
+        }
+    }
+
+    // Điểm danh
+    function markAttendance() {
+        if (!checkAttendance()) {
+            const currentDate = getCurrentDate();
+            let attendanceHistory = localStorage.getItem("attendanceHistory");
+            if (attendanceHistory) {
+                attendanceHistory = JSON.parse(attendanceHistory);
+            } else {
+                attendanceHistory = [];
+            }
+            attendanceHistory.push(currentDate);
+            localStorage.setItem("attendanceHistory", JSON.stringify(attendanceHistory));
+            displayHistory();
+        } else {
+            Done2("Bạn đã điểm danh hôm nay rồi!");
+        }
+    }
+
+    // Hiển thị ngày hiện tại và lịch sử điểm danh khi trang được tải
+    dateElement.innerText = "Hôm Nay: " + getCurrentDate();
+    displayHistory();
+
+    // Sự kiện click cho nút điểm danh
+    attendanceButton.addEventListener("click", markAttendance);
+});
