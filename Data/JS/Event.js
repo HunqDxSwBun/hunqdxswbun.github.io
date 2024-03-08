@@ -3,133 +3,77 @@ function ReloadEvent() {
     var rootElement = document.getElementById("root");
     rootElement.innerHTML = ''; // Xóa nội dung cũ
 
-    const selectedLang = localStorage.getItem("selectedLang");
+    var events = [
+        {
+            "SuKien": "Tết Tây",
+            "Ngay": "01/01",
+            "Anh": "/Events/IMG/HPNY.JPG"
+        },
+        {
+            "SuKien": "Tết Nguyên Đán",
+            "Ngay": "29/01",
+            "Anh": "/Events/IMG/TetTa.JPG"
+        },
+        {
+            "SuKien": "Valentine",
+            "Ngay": "14/02",
+            "Anh": "/Events/IMG/Logo.png"
+        },
+        {
+            "SuKien": "Quốc tế phụ nữ",
+            "Ngay": "08/03",
+            "Anh": "/Events/IMG/8thang3.JPG"
+        },
+        {
+            "SuKien": "Giải phóng Miền Nam",
+            "Ngay": "30/04",
+            "Anh": "/Events/IMG/3041975.JPG"
+        },
+        {
+            "SuKien": "Quốc tế lao động",
+            "Ngay": "01/05",
+            "Anh": "/Events/IMG/1thang5.JPG"
+        },
+        {
+            "SuKien": "Kỉ niệm ngày yêu",
+            "Ngay": "15/07",
+            "Anh": "/Events/IMG/Kiss.png"
+        },
+        {
+            "SuKien": "Sinh Nhật Anh Yêu ❤",
+            "Ngay": "30/08",
+            "Anh": "/Events/IMG/SinhNhat.JPG"
+        },
+        {
+            "SuKien": "Ngày Quốc Khánh",
+            "Ngay": "02/09",
+            "Anh": "/Events/IMG/2thang9.JPG"
+        },
+        {
+            "SuKien": "Sinh Nhật Em Yêu ❤",
+            "Ngay": "19/10",
+            "Anh": "/Events/IMG/SinhNhat.JPG"
+        },
+        {
+            "SuKien": "Lễ Chúa giáng sinh",
+            "Ngay": "25/12",
+            "Anh": "/Events/IMG/Noel.png"
+        }
+    ];
 
-    if (selectedLang == 'vietnamese') {
-        var events = [
-            {
-                "SuKien": "Tết Tây",
-                "Ngay": "01/01",
-                "Anh": "/Events/IMG/HPNY.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "Tết Nguyên Đán",
-                "Ngay": "29/01",
-                "Anh": "/Events/IMG/TetTa.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "Valentine",
-                "Ngay": "14/02",
-                "Anh": "/Events/IMG/Logo.png",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "Quốc tế phụ nữ",
-                "Ngay": "08/03",
-                "Anh": "/Events/IMG/8thang3.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "Kỉ niệm ngày yêu",
-                "Ngay": "15/07",
-                "Anh": "/Events/IMG/Kiss.png",
-                "Link": "/Events/2Years/"
-            },
-            {
-                "SuKien": "Sinh Nhật Anh Yêu ❤",
-                "Ngay": "30/08",
-                "Anh": "/Events/IMG/SinhNhat.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "Sinh Nhật Em Yêu ❤",
-                "Ngay": "19/10",
-                "Anh": "/Events/IMG/SinhNhat.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "Lễ Chúa giáng sinh",
-                "Ngay": "25/12",
-                "Anh": "/Events/IMG/Noel.png",
-                "Link": "/index.html"
-            }
-        ];
-    } else {
-        var events = [
-            // {
-            //     "SuKien": "900日記念",
-            //     "Ngay": "01/01",
-            //     "Anh": "/Events/IMG/Kiss.png",
-            //     "Link": "/index.html"
-            // },
-            {
-                "SuKien": "西洋の新年",
-                "Ngay": "01/01",
-                "Anh": "/Events/IMG/HPNY.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "春節",
-                "Ngay": "29/01",
-                "Anh": "/Events/IMG/TetTa.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "バレンタイン",
-                "Ngay": "14/02",
-                "Anh": "/Events/IMG/Logo.png",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "国際女性デー",
-                "Ngay": "08/03",
-                "Anh": "/Events/IMG/8thang3.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "恋愛記念日",
-                "Ngay": "15/07",
-                "Anh": "/Events/IMG/Kiss.png",
-                "Link": "/Events/2Years/"
-            },
-            {
-                "SuKien": "愛する彼の誕生日 ❤",
-                "Ngay": "30/08",
-                "Anh": "/Events/IMG/SinhNhat.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "愛する彼女の誕生日 ❤",
-                "Ngay": "19/10",
-                "Anh": "/Events/IMG/SinhNhat.JPG",
-                "Link": "/index.html"
-            },
-            {
-                "SuKien": "クリスマス",
-                "Ngay": "25/12",
-                "Anh": "/Events/IMG/Noel.png",
-                "Link": "/index.html"
-            }
-        ]
-
-    }
-    // var currentDate = new Date();
     var currentDate = new Date();
-
     var currentYear = currentDate.getFullYear();
 
     events.forEach(function (event) {
         var eventDate = new Date(currentYear, parseInt(event.Ngay.split('/')[1]) - 1, parseInt(event.Ngay.split('/')[0]));
 
         if (eventDate.getDate() === currentDate.getDate() && eventDate.getMonth() === currentDate.getMonth()) {
-            // Ngày sự kiện trùng với ngày hiện tại, không cần thay đổi.
-        } else if (eventDate.getDate() < currentDate.getDate()) {
-
+            //sự kiện đang diễn ra
+            eventDate.setFullYear(eventDate.getFullYear() - 1); // Tăng năm của eventDate lên 1
         }
-        if (eventDate < currentDate) {
-            eventDate.setFullYear(eventDate.getFullYear() + 1);
+
+        if (eventDate.getFullYear() < currentDate.getFullYear() || (eventDate.getFullYear() === currentDate.getFullYear() && eventDate.getMonth() < currentDate.getMonth()) || (eventDate.getFullYear() === currentDate.getFullYear() && eventDate.getMonth() === currentDate.getMonth() && eventDate.getDate() === currentDate.getDate())) {
+            eventDate.setFullYear(eventDate.getFullYear() + 1); // Tăng năm của eventDate lên 1
         }
         event['Ngay'] = eventDate;
     });
@@ -137,10 +81,10 @@ function ReloadEvent() {
     events.sort(function (a, b) {
         var aIsCurrent = a.Ngay <= currentDate;
         var bIsCurrent = b.Ngay <= currentDate;
-
         if (aIsCurrent && !bIsCurrent) {
             return -1; // Sự kiện a đang diễn ra, đặt lên đầu
         } else if (!aIsCurrent && bIsCurrent) {
+
             return 1; // Sự kiện b đang diễn ra, đặt lên đầu
         } else {
             return a.Ngay - b.Ngay; // So sánh ngày như bình thường
@@ -151,17 +95,13 @@ function ReloadEvent() {
     var eventContainer = document.createElement("div");
     eventContainer.classList.add("Event");
 
-    var comingLink = document.createElement("a");
-    comingLink.href = events[0].Link;
-
-    var comingDiv = document.createElement("div");
-    comingDiv.classList.add("Comming");
-    comingDiv.id = "Comming";
-
     var comingDiv = document.createElement("div");
     comingDiv.classList.add("Comming");
     comingDiv.id = "Comming";
     comingDiv.style.backgroundImage = "url(" + events[0].Anh + ")";
+    comingDiv.onclick = function () {
+        OpenEvent();
+    };
 
 
     var headComingDiv = document.createElement("div");
@@ -175,16 +115,13 @@ function ReloadEvent() {
 
     headComingDiv.appendChild(h1Element);
     headComingDiv.appendChild(countdownElement);
-    comingLink.appendChild(comingDiv);
     comingDiv.appendChild(headComingDiv);
-    eventContainer.appendChild(comingLink);
+    eventContainer.appendChild(comingDiv);
+
 
 
     var countdownInterval = setInterval(updateCountdown, 1000);
-
     function updateCountdown() {
-        const selectedLang = localStorage.getItem("selectedLang");
-
         var currentDate = new Date();
         var eventDate = events[0].Ngay;
         var timeDiff = eventDate.getTime() - currentDate.getTime();
@@ -194,49 +131,31 @@ function ReloadEvent() {
         var minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
         var seconds = Math.floor((timeDiff / 1000) % 60);
 
-        var EventComingUp = document.getElementById('EventComingUp');
+        console.log(days);
+
+        var EventComingUp = document.getElementById('EventComingUp'); // Đảm bảo đây là phần tử thích hợp
         var ngay = new Date(eventDate);
-        // Lấy thông tin về ngày, tháng, năm và ngày trong tuần
-        if (selectedLang == 'vietnamese') {
-            var thu = ngay.toLocaleDateString('vi-VN', { weekday: 'long' }); // 'Fri'
-            var ngayThang = ngay.toLocaleDateString('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' }); // '2/9/2024'
-        } else {
-            var thu = ngay.toLocaleDateString('ja-JP', { weekday: 'long' }); // 'Fri'
-            var ngayThang = ngay.toLocaleDateString('ja-JP', { day: 'numeric', month: 'numeric', year: 'numeric' }); // '2/9/2024'
-
-        }
-
-        // Kết hợp thông tin để có định dạng mong muốn
+        var thu = ngay.toLocaleDateString('vi-VN', { weekday: 'long' });
+        var ngayThang = ngay.toLocaleDateString('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' });
         var ketQua = thu + ". " + ngayThang;
 
-        if (selectedLang == 'vietnamese') {
-            if (days >= 1) {
-                countdownElement.innerHTML = `<p>${ketQua}</p> <p>${days} Ngày ${hours}:${minutes}:${seconds}</p>`
-                EventComingUp.textContent = events[0].SuKien + ' ' + days + ' ngày nữa';
-
-            } else if (days === 0) {
-                countdownElement.textContent = hours + " Giờ " + minutes + " Phút " + seconds + ' Giây';
-            } else {
-                countdownElement.textContent = 'Đang diễn ra sự kiện';
-            }
+        if (days >= 1) {
+            countdownElement.innerHTML = `<p>${ketQua}</p> <p>${days} Ngày ${hours}:${minutes}:${seconds}</p>`;
+            EventComingUp.textContent = events[0].SuKien + ' ' + days + ' ngày nữa';
+        } else if (days === 0) {
+            countdownElement.textContent = hours + " Giờ " + minutes + " Phút " + seconds + ' Giây';
         } else {
-            if (days >= 1) {
-                countdownElement.innerHTML = `<p>${ketQua}</p> <p>${days} 日 ${hours}:${minutes}:${seconds}</p>`
-                EventComingUp.textContent = events[0].SuKien + ' 残り' + days + '日';
+            countdownElement.textContent = 'Đang diễn ra sự kiện';
+            EventComingUp.innerHTML = events[0].SuKien + '<br> Đang diễn ra';
 
-            } else if (days === 0) {
-                countdownElement.textContent = hours + " 時間 " + minutes + " 分 " + seconds + ' 秒';
-            } else {
-                countdownElement.textContent = 'イベントが開催中です';
-            }
         }
 
+        
     }
 
 
     // Thêm sự kiện tiếp theo
     for (var i = 1; i < events.length; i++) {
-        const selectedLang = localStorage.getItem("selectedLang");
 
         var upnextDiv = document.createElement("div");
         upnextDiv.classList.add("Upnext");
@@ -253,13 +172,7 @@ function ReloadEvent() {
         var eventDay = eventDate.getDate();
         var eventMonth = eventDate.getMonth() + 1;
         var eventYear = eventDate.getFullYear();
-        if (selectedLang == 'vietnamese') {
-            pElement.textContent = eventDay + " tháng " + eventMonth + " " + eventYear;
-        } else {
-            pElement.textContent = eventYear + " " + eventMonth + "月 " + eventDay;
-        }
-
-
+        pElement.textContent = eventDay + " tháng " + eventMonth + " " + eventYear;
 
         contentDiv.appendChild(h1Element);
         contentDiv.appendChild(pElement);
@@ -281,7 +194,7 @@ function ReloadEvent() {
         if (days == 0) {
             countdown.textContent = 'Đang Diễn Ra';
         } else {
-            countdown.textContent = days + 1;
+            countdown.textContent = days;
         }
 
 
@@ -298,4 +211,12 @@ function ReloadEvent() {
     // Thêm vào phần tử gốc
     var rootElement = document.getElementById("root");
     rootElement.appendChild(eventContainer);
+}
+
+function OpenEvent() {
+    var currentDate = new Date();
+
+    if (currentDate.getDate() == 8 && (currentDate.getMonth() + 1) == 3) {
+        Done('Chức mừng ngày 8/3', '')
+    }
 }

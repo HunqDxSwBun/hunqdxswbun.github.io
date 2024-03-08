@@ -1,3 +1,7 @@
+let Version = '1.2.3';
+document.getElementById("Version").innerText = Version;
+
+
 document.addEventListener('gesturestart', function (event) {
     event.preventDefault(); // Chặn sự kiện zoom
 });
@@ -239,7 +243,11 @@ function toggleSimpleMode() {
         simpleModeSwitch.classList.remove('off');
         simpleModeSwitch.classList.add('on');
         // Thực hiện hành động khi bật chế độ siêu đơn giản
-        Warning('Tính năng này đang phát triển')
+        setTimeout(() => {
+            simpleModeSwitch.classList.remove('on');
+            simpleModeSwitch.classList.add('off');
+        }, 1000);
+        Done2('Tính năng này đang phát triển');
     }
 }
 
@@ -288,3 +296,5 @@ window.onload = function () {
         toggleBGMode(); // Bật chế độ nếu trạng thái lưu là "on"
     }
 }
+
+
