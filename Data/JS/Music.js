@@ -4,6 +4,7 @@ const albums = [
   { name: "US UK", dataAlbum: "USUK" },
   // { name: 'Nhạc Việt Lossless', dataAlbum: "Lossless" },
   { name: "Remix", dataAlbum: "Remix" },
+  { name: "Tropical - SummerMix", dataAlbum: "Tropical" },
   { name: "Imagine Dragons", dataAlbum: "ImagineDragons" },
   { name: "Martin Jensen", dataAlbum: "MartinJensen" },
   { name: "The Chainsomkers", dataAlbum: "TheChainsomkers" },

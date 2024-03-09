@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Summer Mix Vol.1",
+        "singer": "Youtube Mix",
+        "path": "https://pixeldrain.com/api/file/bCuFvuhf",
+        "image": "/Music/IMG/Logo.png",
+        "genre": "Tropical"
+    },
+    {
+        "name": "Summer Mix Vol.2",
+        "singer": "Youtube Mix",
+        "path": "https://pixeldrain.com/api/file/8EeaKUyh",
+        "image": "/Music/IMG/Logo.png",
+        "genre": "Tropical"
+    },
+    {
+        "name": "Summer Mix Vol.3",
+        "singer": "Youtube Mix",
+        "path": "https://pixeldrain.com/api/file/wDV9B7bH",
+        "image": "/Music/IMG/Logo.png",
+        "genre": "Tropical"
+    }
+]
