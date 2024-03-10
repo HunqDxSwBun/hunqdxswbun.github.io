@@ -1,0 +1,44 @@
+[
+  {
+      "name": "Bad Habits",
+      "singer": "Ed Sheeran",
+      "path": "https://pixeldrain.com/api/file/1EPsXECE",
+      "image": "/Music/IMG/Logo.png",
+      "genre": ""
+  },
+  {
+      "name": "I Don't Care",
+      "singer": "Ed Sheeran",
+      "path": "https://pixeldrain.com/api/file/5QKx4LBK",
+      "image": "/Music/IMG/Logo.png",
+      "genre": ""
+  },
+  {
+      "name": "Perfect",
+      "singer": "Ed Sheeran",
+      "path": "https://pixeldrain.com/api/file/KiM2tbSe",
+      "image": "/Music/IMG/Logo.png",
+      "genre": ""
+  },
+  {
+      "name": "Photograph",
+      "singer": "Ed Sheeran",
+      "path": "https://pixeldrain.com/api/file/Dh7wjUJi",
+      "image": "/Music/IMG/Logo.png",
+      "genre": ""
+  },
+  {
+      "name": "Shape of You",
+      "singer": "Ed Sheeran",
+      "path": "https://pixeldrain.com/api/file/yQDQ5ZQj",
+      "image": "/Music/IMG/Logo.png",
+      "genre": ""
+  },
+  {
+      "name": "Thinking out Loud",
+      "singer": "Ed Sheeran",
+      "path": "https://pixeldrain.com/api/file/MCbvs5LZ",
+      "image": "/Music/IMG/Logo.png",
+      "genre": ""
+  }
+]

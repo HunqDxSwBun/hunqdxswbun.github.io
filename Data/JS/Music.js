@@ -9,6 +9,8 @@ const albums = [
   { name: "Martin Jensen", dataAlbum: "MartinJensen" },
   { name: "The Chainsomkers", dataAlbum: "TheChainsomkers" },
   { name: "The Weeknd", dataAlbum: "TheWeeknd" },
+  { name: "Ed Sheeran", dataAlbum: "EdSheeran" },
+  { name: "Justin Bieber", dataAlbum: "JustinBieber" },
   
   // Thêm các album khác vào đây nếu cần
 ];
