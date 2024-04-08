@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+<style>
+  .container {
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  .heart {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://www.freeiconspng.com/thumbs/heart-icon/valentine-heart-icon-6.png'); /* Thay 'heart.png' bằng đường dẫn tới hình trái tim */
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .number {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div>
+    <div class="heart"></div>
+    <span id="DaysLove" class="number">0</span>
+  </div>
+  <div>
+    <span id="Years" class="number">0</span> năm
+    <span id="Months" class="number">0</span> tháng
+    <p id="EventComingUp"></p>
+  </div>
+</div>
+
+<script>
+function countDaysLove() {
+  var startDate = new Date('2021-07-15T00:00:00+07:00');
+
+  // Lấy thời gian hiện tại theo múi giờ Asia/Ho_Chi_Minh
+  var currentDate = new Date();
+  var options = { timeZone: 'Asia/Ho_Chi_Minh' };
+  currentDate = new Date(currentDate.toLocaleString('en-US', options));
+
+  var timeDifference = currentDate.getTime() - startDate.getTime();
+
+  var dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+  var years = Math.floor(dayDifference / 365);
+  var months = Math.floor((dayDifference % 365) / 30);
+
+  document.getElementById("DaysLove").innerHTML = dayDifference;
+  document.getElementById("Months").textContent = months;
+  document.getElementById("Years").textContent = years;
+}
+
+setInterval(countDaysLove, 1000);
+  
+  ReloadEvent();
+
+function ReloadEvent() {
+    var events = [
+        {
+            "SuKien": "Tết Tây",
+            "Ngay": "01/01",
+            "Anh": "/Events/IMG/HPNY.JPG"
+        },
+        {
+            "SuKien": "Tết Nguyên Đán",
+            "Ngay": "29/01",
+            "Anh": "/Events/IMG/TetTa.JPG"
+        },
+        {
+            "SuKien": "Valentine",
+            "Ngay": "14/02",
+            "Anh": "/Events/IMG/Logo.png"
+        },
+        {
+            "SuKien": "Quốc tế phụ nữ",
+            "Ngay": "08/03",
+            "Anh": "/Events/IMG/8thang3.JPG"
+        },
+        {
+            "SuKien": "Kỉ niệm ngày yêu",
+            "Ngay": "15/07",
+            "Anh": "/Events/IMG/Kiss.png"
+        },
+        {
+            "SuKien": "Sinh Nhật Anh Yêu ❤",
+            "Ngay": "30/08",
+            "Anh": "/Events/IMG/SinhNhat.JPG"
+        },
+        {
+            "SuKien": "Sinh Nhật Em Yêu ❤",
+            "Ngay": "19/10",
+            "Anh": "/Events/IMG/SinhNhat.JPG"
+        },
+        {
+            "SuKien": "Lễ Chúa giáng sinh",
+            "Ngay": "25/12",
+            "Anh": "/Events/IMG/Noel.png"
+        }
+    ];
+
+    var currentDate = new Date();
+
+    events.forEach(function (event) {
+        var eventDate = new Date(currentDate.getFullYear(), parseInt(event.Ngay.split('/')[1]) - 1, parseInt(event.Ngay.split('/')[0]));
+
+        if (eventDate.getDate() === currentDate.getDate() && eventDate.getMonth() === currentDate.getMonth()) {
+            // Sự kiện đang diễn ra
+            eventDate.setFullYear(eventDate.getFullYear() - 1);
+        }
+
+        if (eventDate < currentDate || (eventDate.getFullYear() === currentDate.getFullYear() && eventDate.getMonth() < currentDate.getMonth()) || (eventDate.getFullYear() === currentDate.getFullYear() && eventDate.getMonth() === currentDate.getMonth() && eventDate.getDate() === currentDate.getDate())) {
+            eventDate.setFullYear(eventDate.getFullYear() + 1);
+        }
+        event['Ngay'] = eventDate;
+    });
+
+    events.sort(function (a, b) {
+        var aIsCurrent = a.Ngay <= currentDate;
+        var bIsCurrent = b.Ngay <= currentDate;
+        if (aIsCurrent && !bIsCurrent) {
+            return -1;
+        } else if (!aIsCurrent && bIsCurrent) {
+            return 1;
+        } else {
+            return a.Ngay - b.Ngay;
+        }
+    });
+
+    var SuKienSapToi = events[0].SuKien;
+    var NgaySuKien = events[0].Ngay;
+
+    // Đếm ngày còn lại cho sự kiện sắp tới
+    var eventDate = new Date(events[0].Ngay);
+    eventDate.setFullYear(currentDate.getFullYear()); // Đặt năm của sự kiện bằng năm hiện tại
+    if (eventDate < currentDate) {
+        eventDate.setFullYear(currentDate.getFullYear() + 1); // Tăng năm lên 1 nếu sự kiện đã qua
+    }
+
+    var timeDiff = eventDate.getTime() - currentDate.getTime();
+    var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    var EventComingUp = document.getElementById('EventComingUp'); // Đảm bảo đây là phần tử thích hợp
+    var ngay = new Date(events[0].Ngay);
+    var thu = ngay.toLocaleDateString('vi-VN', { weekday: 'long' });
+    var ngayThang = ngay.toLocaleDateString('vi-VN', { day: 'numeric', month: 'numeric', year: 'numeric' });
+    var ketQua = thu + ". " + ngayThang;
+
+    if (days >= 1) {
+        EventComingUp.textContent = events[0].SuKien + ' ' + days + ' ngày nữa';
+    } else if (days === 0) {
+        EventComingUp.innerHTML = events[0].SuKien + '<br> Đang diễn ra';
+    }
+}
+
+</script>
+
+</body>
+</html>
