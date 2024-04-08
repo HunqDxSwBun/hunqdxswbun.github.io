@@ -25,6 +25,16 @@ function ReloadEvent() {
             "Anh": "/Events/IMG/8thang3.JPG"
         },
         {
+            "SuKien": "999 Ngày Yêu",
+            "Ngay": "09/04",
+            "Anh": "/Events/IMG/999.JPG"
+        },
+        {
+            "SuKien": "1000 Ngày Yêu",
+            "Ngay": "10/04",
+            "Anh": "/Events/IMG/1000.JPG"
+        },
+        {
             "SuKien": "Kỉ niệm ngày yêu",
             "Ngay": "15/07",
             "Anh": "/Events/IMG/Kiss.png"
