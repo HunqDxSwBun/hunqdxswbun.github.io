@@ -1,5 +1,5 @@
 function countDaysLove() {
-  var startDate = new Date('2021-07-15T00:00:00+07:00');
+  var startDate = new Date('2021-08-26T00:00:00+07:00');
 
   // Lấy thời gian hiện tại theo múi giờ Asia/Ho_Chi_Minh
   var currentDate = new Date();
