@@ -26,7 +26,7 @@ function ReloadEvent() {
         },
         {
             "SuKien": "Kỉ niệm ngày yêu",
-            "Ngay": "15/07",
+            "Ngay": "26/08",
             "Anh": "/Events/IMG/Kiss.png"
         },
         {
