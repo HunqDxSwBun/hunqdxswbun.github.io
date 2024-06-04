@@ -25,6 +25,11 @@ function ReloadEvent() {
             "Anh": "/Events/IMG/8thang3.JPG"
         },
         {
+            "SuKien": "Tin nhắn đầu tiên",
+            "Ngay": "15/07",
+            "Anh": "/Events/IMG/1507.jpg"
+        },
+        {
             "SuKien": "Kỉ niệm ngày yêu",
             "Ngay": "26/08",
             "Anh": "/Events/IMG/Kiss.png"
