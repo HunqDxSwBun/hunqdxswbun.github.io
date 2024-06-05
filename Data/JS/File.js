@@ -1,4 +1,4 @@
-let Version = '1.2.3';
+let Version = '1.2.5';
 document.getElementById("Version").innerText = Version;
 
 
