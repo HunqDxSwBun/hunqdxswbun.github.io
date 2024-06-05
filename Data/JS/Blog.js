@@ -346,7 +346,7 @@ function ReloadBlog() {
 
         document.querySelector('#NewPost').innerHTML = NewPost;
       }
-
+      Modal();
     })
     .catch(error => console.log(error));
 }
