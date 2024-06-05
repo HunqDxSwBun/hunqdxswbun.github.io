@@ -351,3 +351,29 @@ function ReloadBlog() {
     .catch(error => console.log(error));
 }
 
+function Modal() {
+  // Lấy tất cả các thẻ img có class là wp-block-gallery trong Feed
+  var images = document.querySelectorAll('.Feed .Status img');
+
+    images.forEach(function (img) {
+        img.addEventListener('click', function () {
+            var modal = document.createElement('div');
+            modal.className = 'modal';
+            
+            // Thêm hình ảnh và chữ HunqD vào modal
+            modal.innerHTML = '<span class="close">&times;</span><img class="modal-content" src="' + img.src + '"><div class="caption">Power by HunqD.</div>';
+            
+            document.body.appendChild(modal);
+            
+            var closeBtn = modal.querySelector('.close');
+            
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+                document.body.removeChild(modal);
+            });
+            
+            modal.style.display = 'block';
+        });
+    });
+}
+
