@@ -1737,7 +1737,8 @@ audio::-webkit-media-controls-time-remaining-display {
     margin-top: 10px; /* Điều chỉnh khoảng cách giữa ảnh và chữ caption */
 }
 
-.wp-element-caption {
+.wp-element-caption,
+figcaption {
   font-size: 10px;
   text-align: center;
 }
