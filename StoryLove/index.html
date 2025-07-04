@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Story - Kỷ niệm tình yêu</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Asset/style.css">
+</head>
+
+<body class="text-gray-800">
+
+    <div id="loading-overlay" class="hidden fixed inset-0 bg-white/80 z-50 flex items-center justify-center">
+        <div class="text-center">
+            <i class="fas fa-heart text-pink-500 text-6xl heart-beat"></i>
+            <p id="loading-text" class="mt-4 text-pink-500 font-semibold">Đang xử lý...</p>
+        </div>
+    </div>
+
+    <div id="auth-screen" class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+            <div id="auth-container">
+                <div id="login-form">
+                    <h2 class="text-3xl font-bold text-center text-pink-500 mb-6">Đăng Nhập</h2>
+                    <div id="login-error" class="text-red-500 text-sm mb-4"></div>
+                    <input id="login-email" type="email" placeholder="Email" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <input id="login-password" type="password" placeholder="Mật khẩu" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <button id="login-btn" class="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition">Đăng Nhập</button>
+                    <p class="text-center mt-4">Chưa có tài khoản? <a href="#" id="show-register" class="text-pink-500 hover:underline">Đăng ký ngay</a></p>
+                </div>
+                <div id="register-form" class="hidden">
+                    <h2 class="text-3xl font-bold text-center text-pink-500 mb-6">Đăng Ký</h2>
+                    <div id="register-error" class="text-red-500 text-sm mb-4"></div>
+                    <input id="register-email" type="email" placeholder="Email" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <input id="register-password" type="password" placeholder="Mật khẩu" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <input id="register-invite-code" type="text" placeholder="Mã mời" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <button id="register-btn" class="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition">Đăng Ký</button>
+                    <p class="text-center mt-4">Đã có tài khoản? <a href="#" id="show-login" class="text-pink-500 hover:underline">Đăng nhập</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="couple-code-screen" class="hidden min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 text-center">
+            <h2 class="text-3xl font-bold text-pink-500 mb-6">Mã Cặp Đôi</h2>
+            <p class="mb-6 text-gray-600">Nhập mã để tham gia, hoặc nhập mã riêng của bạn để tạo mới.</p>
+            <div id="couple-code-error" class="text-red-500 text-sm mb-4"></div>
+            <input id="couple-code-input" type="text" placeholder="Nhập mã cặp đôi..." class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 text-center">
+            <button id="join-couple-btn" class="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition mb-2">Tham Gia</button>
+            <p class="my-4 text-gray-500 text-sm">hoặc</p>
+            <button id="create-custom-couple-btn" class="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition">Tạo Cặp Đôi với Mã Này</button>
+        </div>
+    </div>
+
+    <div id="profile-setup-screen" class="hidden min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold text-center text-pink-500 mb-6">Thiết Lập Thông Tin</h2>
+            <div id="profile-setup-error" class="text-red-500 text-sm mb-4"></div>
+            <input id="profile-name" type="text" placeholder="Tên của bạn" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+            <input id="profile-dob" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Ngày sinh" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+            <select id="profile-gender" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white">
+                <option value="" disabled selected>Chọn giới tính</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+            </select>
+            <button id="save-profile-btn" class="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition">Lưu Thông Tin</button>
+        </div>
+    </div>
+
+    <div id="main-app" class="hidden">
+        <header class="bg-white/80 backdrop-blur-sm shadow-md sticky top-0 z-30">
+            <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-pink-500">Love Story</h1>
+                <button id="logout-btn" class="text-gray-500 hover:text-pink-500"><i class="fas fa-sign-out-alt text-xl"></i></button>
+            </div>
+        </header>
+
+        <main class="container mx-auto p-4">
+            <nav class="bg-white rounded-xl shadow-md p-2 mb-6 flex justify-around items-center text-sm md:text-base">
+                <a class="nav-link active" data-tab="main"><i class="fas fa-heart mr-1 md:mr-2"></i>Trang Chính</a>
+                <a class="nav-link" data-tab="streak"><i class="fas fa-fire-alt mr-1 md:mr-2"></i>Streak Love</a>
+                <a class="nav-link" data-tab="story"><i class="fas fa-book-open mr-1 md:mr-2"></i>Story</a>
+                <a class="nav-link" data-tab="events"><i class="fas fa-calendar-alt mr-1 md:mr-2"></i>Sự Kiện</a>
+                <a class="nav-link" data-tab="settings"><i class="fas fa-cog mr-1 md:mr-2"></i>Cài Đặt</a>
+            </nav>
+
+            <div id="main-content" class="tab-content active">
+                <div class="bg-white rounded-2xl shadow-xl p-6 text-center mb-6">
+                    <h2 class="text-2xl font-semibold text-pink-500 mb-2">Chúng ta đã bên nhau</h2>
+                    <div id="day-counter" class="text-5xl md:text-7xl font-bold text-gray-800 my-4">...</div>
+                    <div id="ymd-counter" class="text-lg text-gray-600">... năm ... tháng ... ngày</div>
+                    <div class="mt-4 text-sm text-gray-500">Ngày bắt đầu: <span id="start-date-display">...</span></div>
+                </div>
+
+                <div id="game-scene" class="game-scene-background rounded-2xl shadow-xl p-6 relative h-96">
+                    <div id="partner-1-char-container">
+                        </div>
+                    <div id="partner-2-char-container">
+                        </div>
+                </div>
+            </div>
+            
+            <div id="streak-content" class="tab-content">
+                <div class="bg-white rounded-2xl shadow-xl p-6 max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-orange-500 mb-4">Streak Love</h2>
+                    <div id="streak-heart-container" class="my-6 h-48 flex items-center justify-center text-pink-500 text-9xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="text-5xl font-bold text-gray-800" id="streak-count">0</p>
+                    <p class="text-gray-600 mb-6">ngày</p>
+                    <button id="check-in-btn" class="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed">
+                        <i class="fas fa-calendar-check mr-2"></i> Điểm danh hôm nay
+                    </button>
+                    <div class="mt-6 flex justify-around border-t pt-4">
+                        <div id="partner1-checkin-status" class="text-center">
+                            <p class="font-semibold partner-name">Bạn</p>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                        <div id="partner2-checkin-status" class="text-center">
+                            <p class="font-semibold partner-name">Nửa kia</p>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="story-content" class="tab-content">
+                <div class="text-right mb-4">
+                    <button id="add-story-btn" class="bg-pink-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-pink-600 transition"><i class="fas fa-plus mr-2"></i>Viết Story Mới</button>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-4 mb-6 max-w-2xl mx-auto">
+                    <button id="toggle-filters-btn" class="w-full text-left font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-filter mr-2"></i> Mở bộ lọc <i class="fas fa-chevron-down float-right transition-transform"></i>
+                    </button>
+                    <div id="filter-controls" class="">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 items-end pt-4 border-t">
+                            <div>
+                                <label for="filter-author" class="text-sm font-medium text-gray-700 block mb-1">Người đăng</label>
+                                <select id="filter-author" class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                                    <option value="all">Tất cả</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="filter-date" class="text-sm font-medium text-gray-700 block mb-1">Ngày đăng</label>
+                                <input type="date" id="filter-date" class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <div>
+                                <label for="filter-location" class="text-sm font-medium text-gray-700 block mb-1">Vị trí</label>
+                                <input type="text" id="filter-location" placeholder="Tìm theo vị trí..." class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <div>
+                                <label for="filter-tag" class="text-sm font-medium text-gray-700 block mb-1">Thẻ (Tag)</label>
+                                <input type="text" id="filter-tag" placeholder="vd: #kiniem" class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <div class="md:col-span-2 lg:col-span-2">
+                                <label for="sort-stories" class="text-sm font-medium text-gray-700 block mb-1">Sắp xếp</label>
+                                <select id="sort-stories" class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                                    <option value="desc">Mới nhất</option>
+                                    <option value="asc">Cũ nhất</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="reset-filters-btn" class="mt-4 w-full md:w-auto text-sm text-blue-600 hover:underline">Xóa bộ lọc</button>
+                    </div>
+                </div>
+                <div id="story-feed" class="space-y-6 max-w-2xl mx-auto">
+                    </div>
+            </div>
+
+            <div id="events-content" class="tab-content">
+                 <div class="text-right mb-4">
+                    <button id="add-event-btn" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition"><i class="fas fa-plus mr-2"></i>Thêm Sự Kiện</button>
+                </div>
+                <div id="event-list" class="space-y-4">
+                    </div>
+            </div>
+
+            <div id="settings-content" class="tab-content">
+                <div class="bg-white rounded-2xl shadow-xl p-6 max-w-2xl mx-auto">
+                    <h2 class="text-2xl font-bold text-pink-500 mb-6 border-b pb-4">Cài Đặt Chung</h2>
+                    <div class="mb-6">
+                        <label for="setting-couple-code" class="block font-semibold mb-2">Mã Cặp Đôi của bạn:</label>
+                        <div class="flex items-center">
+                           <input id="setting-couple-code" type="text" readonly class="w-full px-4 py-2 bg-gray-100 border rounded-lg">
+                           <button id="copy-code-btn" class="ml-2 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="setting-start-date" class="block font-semibold mb-2">Ngày bắt đầu yêu</label>
+                        <input id="setting-start-date" type="date" class="w-full px-4 py-2 border rounded-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label for="setting-game-background" class="block font-semibold mb-2">URL Nền Game</label>
+                        <input id="setting-game-background" type="text" placeholder="Dán URL hình ảnh nền vào đây..." class="w-full px-4 py-2 border rounded-lg">
+                    </div>
+
+
+                    <h3 class="text-xl font-bold text-pink-500 mt-8 mb-4 border-b pb-4">Đổi Mã Cặp Đôi</h3>
+                    <div class="mb-6">
+                        <label for="setting-new-couple-code" class="block font-semibold mb-2">Mã Cặp Đôi Mới</label>
+                        <p class="text-sm text-gray-500 mb-2">Lưu ý: Hành động này sẽ thay đổi mã cho cả hai bạn. Mã cũ sẽ không còn hiệu lực.</p>
+                        <div class="flex items-center space-x-2">
+                            <input id="setting-new-couple-code" type="text" placeholder="Nhập mã mới" class="w-full px-4 py-2 border rounded-lg">
+                            <button id="change-code-btn" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition flex-shrink-0">Đổi Mã</button>
+                        </div>
+                        <div id="change-code-error" class="text-red-500 text-sm mt-2"></div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-pink-500 mt-8 mb-4 border-b pb-4">Thông Tin Cá Nhân</h3>
+                    <div id="settings-partner-1"></div>
+                    <div id="settings-partner-2" class="mt-6"></div>
+
+                    <button id="save-settings-btn" class="w-full mt-8 bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition">Lưu Thay Đổi</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <button id="chat-fab" class="hidden fixed bottom-6 right-6 w-16 h-16 bg-pink-500 rounded-full text-white text-3xl shadow-lg flex items-center justify-center z-40">
+        <i class="fas fa-heart"></i>
+    </button>
+
+    <div id="chat-popup" class="fixed bottom-24 right-6 w-[90vw] max-w-sm h-[60vh] bg-white rounded-2xl shadow-2xl flex flex-col z-40">
+        <div id="chat-header" class="p-4 border-b flex justify-between items-center rounded-t-2xl bg-white transition-colors duration-300">
+            <button id="toggle-chat-mode-btn" class="text-sm font-semibold px-3 py-1 rounded-full transition-colors">
+            </button>
+            <button id="close-chat-btn" class="text-gray-400 hover:text-gray-700">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto flex flex-col-reverse">
+        </div>
+        <div class="p-4 border-t">
+            <div class="relative flex items-center space-x-2">
+                <div id="command-popup" class="hidden absolute bottom-full left-0 mb-2 w-full bg-white border rounded-lg shadow-lg p-2">
+                    <button class="command-btn block w-full text-left p-2 hover:bg-gray-100 rounded" data-command="@del-me">@del-me: Xóa tin nhắn của bạn</button>
+                    <button class="command-btn block w-full text-left p-2 hover:bg-gray-100 rounded" data-command="@del-all">@del-all: Xóa toàn bộ cuộc trò chuyện</button>
+                    <button class="command-btn block w-full text-left p-2 hover:bg-gray-100 rounded" data-command="@feel">@feel: Đặt cảm nhận mới</button>
+                </div>
+                <button id="command-toggle-btn" class="text-gray-500 hover:text-pink-500 p-2 rounded-full">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <input id="chat-input" type="text" placeholder="Nhập tin nhắn..." class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400">
+                <button id="chat-send-btn" class="bg-pink-500 text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center hover:bg-pink-600 transition">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="story-modal" class="hidden fixed inset-0 z-40 flex items-center justify-center modal-backdrop p-4">
+        <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-lg">
+            <h2 class="text-2xl font-bold text-pink-500 mb-4">Viết Story Mới</h2>
+            <input id="story-title" type="text" placeholder="Tiêu đề" class="w-full px-4 py-2 mb-3 border rounded-lg">
+            <textarea id="story-textarea" rows="6" placeholder="Bạn đang nghĩ gì..." class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+            <input id="story-location" type="text" placeholder="Vị trí (ví dụ: Cafe The Lofi)" class="w-full px-4 py-2 mt-3 border rounded-lg">
+            <input id="story-tags" type="text" placeholder="Gắn thẻ (ví dụ: #kiniem, #henho)" class="w-full px-4 py-2 mt-3 border rounded-lg">
+            <div class="flex justify-end mt-4 space-x-4">
+                <button id="cancel-story-btn" class="px-6 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Hủy</button>
+                <button id="post-story-btn" class="px-6 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600">Đăng</button>
+            </div>
+        </div>
+    </div>
+    <div id="feeling-modal" class="hidden fixed inset-0 z-40 flex items-center justify-center modal-backdrop p-4">
+        <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md">
+            <h2 class="text-2xl font-bold text-pink-500 mb-4">Cảm nhận của bạn</h2>
+            <input id="feeling-input" type="text" placeholder="Hôm nay bạn thấy thế nào?" class="w-full px-4 py-2 border rounded-lg">
+            <div class="mt-4">
+                <label for="feeling-duration" class="text-sm text-gray-600">Xóa sau:</label>
+                <select id="feeling-duration" class="w-full px-4 py-2 mt-1 border rounded-lg bg-white">
+                    <option value="infinite">Không bao giờ</option>
+                    <option value="15">15 giây</option>
+                    <option value="1800">30 phút</option>
+                    <option value="3600">1 giờ</option>
+                    <option value="10800">3 giờ</option>
+                    <option value="43200">12 giờ</option>
+                    <option value="86400">24 giờ</option>
+                </select>
+            </div>
+            <div class="flex justify-end mt-4 space-x-4">
+                <button id="cancel-feeling-btn" class="px-6 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Hủy</button>
+                <button id="save-feeling-btn" class="px-6 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <div id="event-modal" class="hidden fixed inset-0 z-40 flex items-center justify-center modal-backdrop p-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-lg">
+            <h2 class="text-2xl font-bold text-blue-500 mb-4">Thêm Sự Kiện Mới</h2>
+            <input id="event-name" type="text" placeholder="Tên sự kiện" class="w-full px-4 py-2 mb-4 border rounded-lg">
+            <input id="event-date" type="date" class="w-full px-4 py-2 mb-4 border rounded-lg">
+            <input id="event-image-url" type="text" placeholder="URL hình ảnh (tùy chọn)" class="w-full px-4 py-2 mb-4 border rounded-lg">
+            <select id="event-repeat" class="w-full px-4 py-2 mb-4 border rounded-lg bg-white">
+                <option value="none">Không lặp lại</option>
+                <option value="daily">Mỗi ngày</option>
+                <option value="weekly">Mỗi tuần</option>
+                <option value="monthly">Mỗi tháng</option>
+                <option value="yearly">Mỗi năm</option>
+                <option value="interval">Khoảng ngày</option>
+            </select>
+            <input id="event-interval-days" type="number" placeholder="Lặp lại sau bao nhiêu ngày?" class="hidden w-full px-4 py-2 mb-4 border rounded-lg">
+            <div class="flex justify-end mt-4 space-x-4">
+                <button id="cancel-event-btn" class="px-6 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Hủy</button>
+                <button id="save-event-btn" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <div id="confirm-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-backdrop">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm text-center">
+            <p id="confirm-message" class="text-lg mb-6"></p>
+            <div class="flex justify-center space-x-4">
+                <button id="confirm-cancel-btn" class="px-8 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Hủy</button>
+                <button id="confirm-ok-btn" class="px-8 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="./Asset/script.js"></script>
+
+</html>
