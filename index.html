@@ -1,347 +1,331 @@
 <!DOCTYPE html>
 <html lang="vi">
-<!-- Shift + Alt + F  để sắp xếp lại code ( format code )-->
-<html>
 
 <head>
-    <!-- Tiêu đề trang -->
-    <title>Nhật kí tình yêu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Story - Kỷ niệm tình yêu</title>
 
-    <!-- Bộ giải mã và phân loại thiết bị -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-    <!-- Đảm bảo đặt meta tag sau -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <!-- Biểu tượng cho web -->
-    <link rel="icon" href="./Data/icon/Logo2.png" />
-
-    <!-- Biểu tượng iPhone -->
-    <link rel="apple-touch-icon" href="./Data/icon/Logo.png" sizes="150x150" />
-    <!-- CSS của web -->
-    <link rel="stylesheet" href="./Data/CSS/Style.css" />
-    <link rel="stylesheet" href="./Data/CSS/SweetAlert2dark.css" />
-
-    <!-- FontAweSome fas fa icon -->
-    <script src="https://kit.fontawesome.com/9392097706.js" crossorigiln="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Asset/style.css">
 </head>
 
-<body class="dark-mode">
-    <header>
-        <div id="navbar" onclick="Menu()">
-            <i class="fa-solid fa-heart"></i>
-        </div>
-        <div class="menu" id="iMenu" onmouseenter="cancelMenuClose()" onmouseleave="startMenuCloseTimer()">
-            <!-- Đặt sự kiện onmouseenter và onmouseleave cho menu để theo dõi chuột -->
-            <div class="Tab">
-                <button class="tablinks" id="tablinksStory" onclick="openTAB(event, 'Story')">
-                    <i class="fa-brands fa-readme"></i>
-                </button>
-                <button class="tablinks" onclick="openTAB(event, 'Event')">
-                    <i class="fa-solid fa-star"></i>
-                </button>
-                <button class="tablinks active" onclick="openTAB(event, 'Home')">
-                    <i class="fa-solid fa-house"></i>
-                </button>
-                <button class="tablinks" onclick="openTAB(event, 'Music')">
-                    <i class="fa-solid fa-music"></i>
-                </button>
-                <button class="tablinks" onclick="openTAB(event, 'Setting')">
-                    <i class="fa-solid fa-gear"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+<body>
 
-    <div id="Story" class="tabcontent">
-        <h1 class="head">Câu Chuyện</h1>
-        <div class="Load">
-            <button onclick="ReloadBlog(); Done2('Đã tải bài viết mới nhất')"><i
-                    class="fa-solid fa-rotate-right"></i></button>
-        </div>
-
-        <div class="rss-feed" id="rss-feed"></div>
-    </div>
-
-    <div class="tabcontent" id="Event">
-        <h1 class="head">Sự kiện</h1>
-        <div class="Event" id="root">
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <i class="fas fa-heart heart-icon heart-beat"></i>
+            <p id="loading-text" class="loading-text">Đang xử lý...</p>
         </div>
     </div>
 
-    <div id="Home" class="tabcontent show">
-        <div class="IMGBG" id="IMGBG"></div>
-        <div class="BlockHead">
-            <div class="NewPost" id="NewPost">
-                <h1>Không có bài viết mới nhất.</h1>
-                <p>Chưa thể tải bài viết hoặc đã sảy ra lỗi vui lòng tải lại trang.</p>
-                <p id="LangA001">HunqD</p>
-            </div>
-            <div class="TimeNow" id="timedate">
-                <p id="EventComingUp"></p>
-                <a id="dayOfWeek">Monday</a>.
-                <a id="d">1</a>/<a id="mon">January</a>/<a id="y">0</a><br />
-                <a id="h">12</a>:<a id="m">00</a>
-
-            </div>
-        </div>
-
-
-        <div class="CardCouple">
-            <div class="BlockOne">
-                <div class="DaysLove">
-                    <h1 id="DaysLove"></h1>
-                    <div class="Grid">
-                        <div class="DGrid">
-                            <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
-                        </div>
-                        <div class="DGrid Date">Ngày</div>
-                    </div>
-
+    <div id="auth-screen" class="screen">
+        <div class="card auth-card">
+            <div id="auth-container">
+                <div id="login-form">
+                    <h2 class="card-title">Đăng Nhập</h2>
+                    <div id="login-error" class="error-message"></div>
+                    <input id="login-email" type="email" placeholder="Email" class="input-field">
+                    <input id="login-password" type="password" placeholder="Mật khẩu" class="input-field">
+                    <button id="login-btn" class="btn btn-primary">Đăng Nhập</button>
+                    <p class="auth-switch">Chưa có tài khoản? <a href="#" id="show-register" class="link">Đăng ký
+                            ngay</a></p>
                 </div>
-                <div class="DaysLove2">
-                    <div class="Num" id="Years">
-                        <span class="number"></span>
-                        <span class="unit">Năm</span>
-                    </div>
-                    <div class="Num" id="Months">
-                        <span class="number"></span>
-                        <span class="unit">Tháng</span>
-                    </div>
-                    <div class="Num" id="Hours" onclick="toggleOledMode()">
-                        <span class="number"></span>
-                        <span class="unit">Giờ</span>
-                    </div>
-                    <div class="Num" id="Mins" onclick="handleRandomImage()">
-                        <span class="number"></span>
-                        <span class="unit">Phút</span>
-                    </div>
-                    <div class="Num" id="Secs" onclick="toggleMode()">
-                        <span class="number"></span>
-                        <span class="unit">Giây</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="BlockTwo">
-                <div class="Couple">
-                    <div class="Info Male">
-                        <div class="Avatar">
-                            <img src="./Data/IMG/AVTHung.jpg" alt="" srcset="">
-                        </div>
-                        <div class="Name">Mạnh Hùng</div>
-                        <div class="Age" id="ageHung" onclick="AgeOnload('Hung')">
-                            <i class="fa-solid fa-mars"></i> 22
-                        </div>
-                    </div>
-
-                    <div class="Heart">
-                        <img src="./Data/IMG/icon/heart.png" alt="" srcset="">
-                        <!-- onclick="toggleSize()" -->
-                    </div>
-
-                    <div class="Info Female">
-                        <div class="Avatar">
-                            <img src="https://graph.facebook.com/100074217488487/picture?width=9999&amp;access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662"
-                                alt="" srcset="">
-                        </div>
-                        <div class="Name">
-                            Thy Thy
-                        </div>
-                        <div class="Age" id="ageThy" onclick="AgeOnload('Thy')">
-                            <i class="fa-solid fa-venus"></i>
-                        </div>
-                    </div>
+                <div id="register-form" class="hidden">
+                    <h2 class="card-title">Đăng Ký</h2>
+                    <div id="register-error" class="error-message"></div>
+                    <input id="register-email" type="email" placeholder="Email" class="input-field">
+                    <input id="register-password" type="password" placeholder="Mật khẩu" class="input-field">
+                    <input id="register-invite-code" type="text" placeholder="Mã mời" class="input-field">
+                    <button id="register-btn" class="btn btn-primary">Đăng Ký</button>
+                    <p class="auth-switch">Đã có tài khoản? <a href="#" id="show-login" class="link">Đăng nhập</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="tabcontent" id="Music">
+    <div id="couple-code-screen" class="screen hidden">
+        <div class="card text-center">
+            <h2 class="card-title">Mã Cặp Đôi</h2>
+            <p class="card-subtitle">Nhập mã để tham gia, hoặc nhập mã riêng của bạn để tạo mới.</p>
+            <div id="couple-code-error" class="error-message"></div>
+            <input id="couple-code-input" type="text" placeholder="Nhập mã cặp đôi..." class="input-field text-center">
+            <button id="join-couple-btn" class="btn btn-primary">Tham Gia</button>
+            <p class="divider-text">hoặc</p>
+            <button id="create-custom-couple-btn" class="btn btn-secondary">Tạo Cặp Đôi với Mã Này</button>
+        </div>
+    </div>
 
-        <div class="player">
-            <!-- Dashboard -->
-            <div class="dashboard">
-                <div class="Block A">
-                    <div class="BlockDashboard">
-                        <div class="CDBlock">
-                            <!-- CD -->
-                            <div class="cd" onclick="lyrics()">
-                                <div class="cd-thumb">
-                                </div>
+    <div id="profile-setup-screen" class="screen hidden">
+        <div class="card">
+            <h2 class="card-title">Thiết Lập Thông Tin</h2>
+            <div id="profile-setup-error" class="error-message"></div>
+            <input id="profile-name" type="text" placeholder="Tên của bạn" class="input-field">
+            <input id="profile-dob" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                placeholder="Ngày sinh" class="input-field">
+            <select id="profile-gender" class="input-field select-field">
+                <option value="" disabled selected>Chọn giới tính</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+            </select>
+            <button id="save-profile-btn" class="btn btn-primary">Lưu Thông Tin</button>
+        </div>
+    </div>
+
+    <div id="main-app" class="hidden">
+        <header class="main-header">
+            <div class="container header-container">
+                <h1 class="logo">Love Story</h1>
+            </div>
+        </header>
+
+        <main class="container">
+            <nav class="main-nav">
+                <a class="nav-link active" data-tab="main"><i class="fas fa-heart icon"></i><span>Trang Chính</span></a>
+                <a class="nav-link" data-tab="streak"><i class="fas fa-fire-alt icon"></i><span>Streak Love</span></a>
+                <a class="nav-link" data-tab="story"><i class="fas fa-book-open icon"></i><span>Story</span></a>
+                <a class="nav-link" data-tab="events"><i class="fas fa-calendar-alt icon"></i><span>Sự kiện</span></a>
+                <a class="nav-link" data-tab="settings"><i class="fas fa-cog icon"></i><span>Cài đặt</span></a>
+            </nav>
+
+            <div id="main-content" class="tab-content active">
+                <div id="game-scene" class="game-scene-background">
+                    <div class="card text-center counter-card">
+                        <h2 class="counter-title">Chúng ta đã bên nhau</h2>
+                        <div id="day-counter" class="day-counter">...</div>
+                        <div id="ymd-counter" class="ymd-counter">... năm ... tháng ... ngày</div>
+                        <!-- <div class="start-date">Ngày bắt đầu: <span id="start-date-display">...</span></div> -->
+                    </div>
+                    <div class="box">
+                        <div id="partner-1-char-container"></div>
+                        <div id="partner-2-char-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="streak-content" class="tab-content padding">
+                <div class="card text-center content-section">
+                    <h2 class="section-title orange-title">Streak Love</h2>
+                    <div id="streak-heart-container" class="streak-heart">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p id="streak-count" class="streak-count">0</p>
+                    <p class="streak-unit">ngày</p>
+                    <button id="check-in-btn" class="btn btn-primary check-in-btn">
+                        <i class="fas fa-calendar-check icon"></i> Điểm danh hôm nay
+                    </button>
+                    <div class="check-in-status">
+                        <div id="partner1-checkin-status" class="partner-status">
+                            <p class="partner-name">Bạn</p>
+                            <i class="fas fa-times-circle status-icon-fail"></i>
+                        </div>
+                        <div id="partner2-checkin-status" class="partner-status">
+                            <p class="partner-name">Nửa kia</p>
+                            <i class="fas fa-times-circle status-icon-fail"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="story-content" class="tab-content padding">
+                <div class="text-right fixed">
+                    <button id="add-story-btn" class="btn btn-primary btn-add-story"><i
+                            class="fas fa-plus icon"></i>Story Mới</button>
+                </div>
+                <div class="card filter-card">
+                    <button id="toggle-filters-btn" class="filter-toggle-btn">
+                        <i class="fas fa-filter icon"></i> Mở bộ lọc <i class="fas fa-chevron-down filter-chevron"></i>
+                    </button>
+                    <div id="filter-controls" class="filter-controls">
+                        <div class="filter-grid">
+                            <div>
+                                <label for="filter-author" class="filter-label">Người đăng</label>
+                                <select id="filter-author" class="filter-select">
+                                    <option value="all">Tất cả</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="filter-date" class="filter-label">Ngày đăng</label>
+                                <input type="date" id="filter-date" class="filter-input">
+                            </div>
+                            <div>
+                                <label for="filter-location" class="filter-label">Vị trí</label>
+                                <input type="text" id="filter-location" placeholder="Tìm theo vị trí..."
+                                    class="filter-input">
+                            </div>
+                            <div>
+                                <label for="filter-tag" class="filter-label">Thẻ (Tag)</label>
+                                <input type="text" id="filter-tag" placeholder="vd: #kiniem" class="filter-input">
+                            </div>
+                            <div class="filter-span-2">
+                                <label for="sort-stories" class="filter-label">Sắp xếp</label>
+                                <select id="sort-stories" class="filter-select">
+                                    <option value="desc">Mới nhất</option>
+                                    <option value="asc">Cũ nhất</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="Header">
-                            <!-- Header -->
-                            <header>
-                                <h4>Đang phát:</h4>
-                                <h2></h2>
-                            </header>
-                            <div class="Live">
-                                <button class="LiveBTN" onclick="liveAUDIO()">
-                                    <p id="LiveNoti"><i class="fa-solid fa-circle"></i> Trực tiếp</p>
-                                </button>
-                                <button class="TimeSeek" onclick="SeekTimeOnload()" id="SeekTimeOnload">00:00</button>
-                                <button id="OnLyric" onclick="OnLyric()">Lời bài hát</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <input id="progress" class="progress" type="range" step="1" min="0" max="100">
-
-
-                    <!-- Control -->
-                    <div class="control">
-                        <div class="btn btn-repeat">
-                            <i class="fas fa-redo"></i>
-                        </div>
-                        <div class="btn btn-prev">
-                            <i class="fas fa-step-backward"></i>
-                        </div>
-                        <div class="btn btn-toggle-play">
-                            <i class="fas fa-pause icon-pause"></i>
-                            <i class="fas fa-play icon-play"></i>
-                        </div>
-                        <div class="btn btn-next">
-                            <i class="fas fa-step-forward"></i>
-                        </div>
-                        <div class="btn btn-random">
-                            <i class="fas fa-random"></i>
-                        </div>
-                    </div>
-
-                    <audio id="audio" src=""></audio>
-                    <div class="Album" id="albumContainer">
+                        <button id="reset-filters-btn" class="reset-filter-btn">Xóa bộ lọc</button>
                     </div>
                 </div>
-
-                <div class="lyrics" id="lyrics">
-                </div>
-
-
+                <div id="story-feed" class="story-feed"></div>
             </div>
 
-            <div class="Footer">
-                <div class="playlist">
+            <div id="events-content" class="tab-content padding">
+                <div class="text-right fixed">
+                    <button id="add-event-btn" class="btn btn-blue"><i class="fas fa-plus icon"></i>Thêm Sự
+                        Kiện</button>
                 </div>
+                <div id="event-list" class="event-list"></div>
             </div>
 
+            <div id="settings-content" class="tab-content padding">
+                <div class="card content-section">
+                    <h2 class="section-title with-border">Cài Đặt Chung</h2>
+                    <div class="setting-group">
+                                        <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+
+                        <label for="setting-couple-code" class="setting-label">Mã Cặp Đôi của bạn:</label>
+                        <div class="input-group">
+                            <input id="setting-couple-code" type="text" readonly class="input-field-readonly">
+                            <button id="copy-code-btn" class="btn-copy"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <label for="setting-start-date" class="setting-label">Ngày bắt đầu yêu</label>
+                        <input id="setting-start-date" type="date" class="input-field">
+                    </div>
+                    <div class="setting-group">
+                        <label for="setting-game-background" class="setting-label">URL Nền Game</label>
+                        <input id="setting-game-background" type="text" placeholder="Dán URL hình ảnh nền vào đây..."
+                            class="input-field">
+                    </div>
+
+                    <h3 class="section-subtitle">Đổi Mã Cặp Đôi</h3>
+                    <div class="setting-group">
+                        <label for="setting-new-couple-code" class="setting-label">Mã Cặp Đôi Mới</label>
+                        <p class="setting-note">Lưu ý: Hành động này sẽ thay đổi mã cho cả hai bạn. Mã cũ sẽ không còn
+                            hiệu lực.</p>
+                        <div class="input-group">
+                            <input id="setting-new-couple-code" type="text" placeholder="Nhập mã mới"
+                                class="input-field">
+                            <button id="change-code-btn" class="btn btn-blue btn-shrink">Đổi Mã</button>
+                        </div>
+                        <div id="change-code-error" class="error-message"></div>
+                    </div>
+
+                    <h3 class="section-subtitle">Thông Tin Cá Nhân</h3>
+                    <div id="settings-partner-1"></div>
+                    <div id="settings-partner-2" class="partner-setting-group"></div>
+
+                    <button id="save-settings-btn" class="btn btn-primary btn-full-width">Lưu Thay Đổi</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <button id="chat-fab" class="chat-fab hidden">
+        <i class="fas fa-heart"></i>
+    </button>
+
+    <div id="chat-popup" class="chat-popup">
+        <div id="chat-header" class="chat-header">
+            <button id="toggle-chat-mode-btn" class="chat-mode-btn"></button>
+            <button id="close-chat-btn" class="close-chat-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input-area">
+            <div class="chat-input-wrapper">
+                <div id="command-popup" class="command-popup hidden">
+                    <button class="command-btn" data-command="@del-me">@del-me: Xóa tin nhắn của bạn</button>
+                    <button class="command-btn" data-command="@del-all">@del-all: Xóa toàn bộ cuộc trò chuyện</button>
+                    <button class="command-btn" data-command="@feel">@feel: Đặt cảm nhận mới</button>
+                </div>
+                <button id="command-toggle-btn" class="command-toggle-btn">
+                    <i class="fas fa-at"></i>
+                </button>
+                <input id="chat-input" type="text" placeholder="Nhập tin nhắn..." class="chat-input">
+                <button id="chat-send-btn" class="chat-send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
     </div>
 
-    <div id="Setting" class="tabcontent ">
-        <div class="Setting">
-            <div class="HeadSetting">
-            </div>
-            <div class="ListSetting">
-                <div class="Item">
-                    <label>Cài đặt chế độ sáng/tối</label>
-                    <div id="toggle-button"></div>
-                </div>
-                <div class="Item" onclick="openBackgroundModal()">
-                    <label>Cài đặt hình nền</label>
-                    <button><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-                <div class="Item">
-                    <label>Chế độ đơn giản</label>
-                    <div class="toggle-switch" id="simpleMode" onclick="toggleSimpleMode()">
-                        <div class="switch"></div>
-                    </div>
-                </div>
-                <div class="Item">
-                    <label>Chế độ OLED</label>
-                    <div class="toggle-switch" id="oledMode" onclick="toggleOledMode()">
-                        <div class="switch"></div>
-                    </div>
-                </div>
-                <div class="Item">
-                    <label>Đồng bộ hình nền</label>
-                    <div class="toggle-switch" id="BackgroundMode" onclick="toggleBGMode()">
-                        <div class="switch"></div>
-                    </div>
-                </div>
-                <div class="Item" onclick="changeLang();">
-                    <label>Ngôn ngữ</label>
-                    <button><span id="LangA003"></span> <i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <h3></h3>
-            <div class="ListSetting">
-                <div class="Item">
-                    <label>Phiên bản</label>
-                    <button onclick="Info('Đây là phiên bản mới nhất','Đã cập nhật 5/6/2024')"><span
-                            id="Version">1.2.3</span> </button>
-                </div>
-                <div class="attendance">
-                    <h1>Điểm Danh Hằng Ngày</h1>
-                    <p id="date"></p>
-                    <button id="attendanceBtn">Điểm Danh</button>
-                    <div id="history"></div>
-                </div>
-            </div>
-
-          
-
-
-            <div id="backgroundModal" class="modal">
-                <div class="modal-content">
-                    <div class="Head">
-                        <h1>Chọn hình nền</h1>
-                        <span class="close" onclick="closeBackgroundModal()"><i class="fa-solid fa-x"></i></span>
-                    </div>
-                    <div class="UploadWallpaper">
-                        <div class="file-input">
-                            <input type="file" name="file-input" id="imageFileInput" class="file-input__input" />
-                            <label class="file-input__label" for="imageFileInput">
-                                <span><i class="fa-solid fa-file-import"></i> <br>Tải Ảnh Hoặc Video Ngắn</span></label>
-                        </div>
-                        <div class="ButtonBlock">
-                            <button id="saveImageBtn">Lưu</button>
-                            <button id="deleteImageBtn">Mặc định</button>
-                        </div>
-                    </div>
-
-                    <div class="SelectWallpaper"></div>
-                </div>
+    <div id="story-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Viết Story Mới</h2>
+            <input id="story-title" type="text" placeholder="Tiêu đề" class="input-field">
+            <textarea id="story-textarea" rows="6" placeholder="Bạn đang nghĩ gì..." class="textarea-field"></textarea>
+            <input id="story-location" type="text" placeholder="Vị trí (ví dụ: Cafe The Lofi)" class="input-field">
+            <input id="story-tags" type="text" placeholder="Gắn thẻ (ví dụ: #kiniem, #henho)" class="input-field">
+            <div class="modal-actions">
+                <button id="cancel-story-btn" class="btn btn-cancel">Hủy</button>
+                <button id="post-story-btn" class="btn btn-primary">Đăng</button>
             </div>
         </div>
+    </div>
 
+    <div id="feeling-modal" class="modal-backdrop hidden">
+        <div class="modal-content modal-sm">
+            <h2 class="modal-title">Cảm nhận của bạn</h2>
+            <input id="feeling-input" type="text" placeholder="Hôm nay bạn thấy thế nào?" class="input-field">
+            <div class="setting-group">
+                <label for="feeling-duration" class="setting-label-sm">Xóa sau:</label>
+                <select id="feeling-duration" class="select-field">
+                    <option value="infinite">Không bao giờ</option>
+                    <option value="15">15 giây</option>
+                    <option value="1800">30 phút</option>
+                    <option value="3600">1 giờ</option>
+                    <option value="10800">3 giờ</option>
+                    <option value="43200">12 giờ</option>
+                    <option value="86400">24 giờ</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button id="cancel-feeling-btn" class="btn btn-cancel">Hủy</button>
+                <button id="save-feeling-btn" class="btn btn-primary">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="event-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h2 class="modal-title-blue">Thêm Sự Kiện Mới</h2>
+            <input id="event-name" type="text" placeholder="Tên sự kiện" class="input-field">
+            <input id="event-date" type="date" class="input-field">
+            <input id="event-image-url" type="text" placeholder="URL hình ảnh (tùy chọn)" class="input-field">
+            <select id="event-repeat" class="select-field">
+                <option value="none">Không lặp lại</option>
+                <option value="daily">Mỗi ngày</option>
+                <option value="weekly">Mỗi tuần</option>
+                <option value="monthly">Mỗi tháng</option>
+                <option value="yearly">Mỗi năm</option>
+                <option value="interval">Khoảng ngày</option>
+            </select>
+            <input id="event-interval-days" type="number" placeholder="Lặp lại sau bao nhiêu ngày?"
+                class="input-field hidden">
+            <div class="modal-actions">
+                <button id="cancel-event-btn" class="btn btn-cancel">Hủy</button>
+                <button id="save-event-btn" class="btn btn-blue">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="modal-backdrop hidden z-index-high">
+        <div class="modal-content modal-sm text-center">
+            <p id="confirm-message" class="confirm-message"></p>
+            <div class="modal-actions justify-center">
+                <button id="confirm-cancel-btn" class="btn btn-cancel">Hủy</button>
+                <button id="confirm-ok-btn" class="btn btn-danger">OK</button>
+            </div>
+        </div>
     </div>
 
 </body>
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(function(OneSignal) {
-    OneSignal.init({
-      appId: "12f7bb80-c19b-4e0e-b252-14777e8c0887",
-    });
-  });
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!-- Tổng hợp -->
-<script src="./Data/JS/File.js"></script>
-<script src="./Data/Lang/Languages.js"></script>
-
-<!-- Giao diện -->
-<script src="./Data/JS/Custom.js"></script>
-<script src="./Data/JS/DarkMode.js"></script>
-
-<!-- Sự kiện -->
-<script src="./Data/JS/Event.js"></script>
-
-<!-- Mở rộng -->
-<script src="./Data/JS/DaysLove.js"></script>
-<script src="./Data/JS/Blog.js"></script>
-<script src="./Data/JS/Alert.js"></script>
-<script src="./Data/JS/Music.js"></script>
-<script src="./Data/JS/Lyrics.js"></script>
-
+<script type="module" src="./Asset/script.js"></script>
 
 </html>
